@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backtracking on Ruoke Zhang</title><link>http://localhost:1313/categories/backtracking/</link><description>Recent content in Backtracking on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/backtracking/rss.xml" rel="self" type="application/rss+xml"/><item><title>组合型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</guid><description>&lt;h2 id="模版一">模版一
+&lt;a class="header-anchor" href="#%e6%a8%a1%e7%89%88%e4%b8%80">&lt;/a>
+&lt;/h2>&lt;p>递归树是一颗二叉树，每个分叉是选/不选&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">Solution&lt;/span>: &lt;span style="color:#9ca0b0;font-style:italic">#LC 22&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">generateParenthesis&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, n: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> List[&lt;span style="color:#04a5e5">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 2n个位置里面，选n个位置放左括号。组合型回溯，模版一&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">2&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># open用来记录左括号的数量。只要open&amp;lt;n, 就可以选左括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 右括号的数量为i-open. 只有i-open&amp;lt;open, 才能选右括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">dfs&lt;/span>(i, &lt;span style="color:#04a5e5">open&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>join(path))&lt;span style="color:#9ca0b0;font-style:italic">#与子集型模版不一样的地方：往res里加答案的实际不同。子集型回溯是每次递归都可以加。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选左括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选右括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="模板二">模板二
+&lt;a class="header-anchor" href="#%e6%a8%a1%e6%9d%bf%e4%ba%8c">&lt;/a>
+&lt;/h2>&lt;p>与子集型回溯的模版二类似，答案是选出递归树的某一层。递归树是一颗多叉树，每个分支代表选从起点 i开始的一个数字。
+剪枝: 当前 path还需要m个数，但是剩余可选的数字数量&amp;lt;m
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/comb.png" alt="Alt text" />&lt;/p></description></item><item><title>子集型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</guid><description>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item></channel></rss>

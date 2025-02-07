@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>http://localhost:1313/categories/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>Concurrency</title><link>http://localhost:1313/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
+&lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
+&lt;/h2>&lt;p>Mutual exclusion (e.g., A and B don’t run at same time)，进程的互斥&lt;/p>
+&lt;ul>
+&lt;li>solved with locks&lt;/li>
+&lt;/ul>
+&lt;p>Ordering (e.g., B runs after A does something)，进程的同步&lt;/p>
+&lt;ul>
+&lt;li>solved with condition variables OR semaphores&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;a href="https://pages.cs.wisc.edu/~remzi/Classes/537/Fall2021/Discussion/videos.html" title="CS 537 Videos" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ CS 537 Videos
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://xiaolincoding.com/os/4_process/multithread_sync.html#%E4%BF%A1%E5%8F%B7%E9%87%8F" title="小林coding" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 小林coding
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item></channel></rss>

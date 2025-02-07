@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>http://localhost:1313/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>达人探店</title><link>http://localhost:1313/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/post/</guid><description>&lt;h2 id="连着点两次赞怎么办">连着点两次赞怎么办
+&lt;a class="header-anchor" href="#%e8%bf%9e%e7%9d%80%e7%82%b9%e4%b8%a4%e6%ac%a1%e8%b5%9e%e6%80%8e%e4%b9%88%e5%8a%9e">&lt;/a>
+&lt;/h2></description></item><item><title>Concurrency</title><link>http://localhost:1313/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
+&lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
+&lt;/h2>&lt;p>Mutual exclusion (e.g., A and B don’t run at same time)，进程的互斥&lt;/p>
+&lt;ul>
+&lt;li>solved with locks&lt;/li>
+&lt;/ul>
+&lt;p>Ordering (e.g., B runs after A does something)，进程的同步&lt;/p>
+&lt;ul>
+&lt;li>solved with condition variables OR semaphores&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;a href="https://pages.cs.wisc.edu/~remzi/Classes/537/Fall2021/Discussion/videos.html" title="CS 537 Videos" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ CS 537 Videos
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://xiaolincoding.com/os/4_process/multithread_sync.html#%E4%BF%A1%E5%8F%B7%E9%87%8F" title="小林coding" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 小林coding
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>组合型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</guid><description>&lt;h2 id="模版一">模版一
+&lt;a class="header-anchor" href="#%e6%a8%a1%e7%89%88%e4%b8%80">&lt;/a>
+&lt;/h2>&lt;p>递归树是一颗二叉树，每个分叉是选/不选&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">Solution&lt;/span>: &lt;span style="color:#9ca0b0;font-style:italic">#LC 22&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">generateParenthesis&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, n: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> List[&lt;span style="color:#04a5e5">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 2n个位置里面，选n个位置放左括号。组合型回溯，模版一&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">2&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># open用来记录左括号的数量。只要open&amp;lt;n, 就可以选左括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 右括号的数量为i-open. 只有i-open&amp;lt;open, 才能选右括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">dfs&lt;/span>(i, &lt;span style="color:#04a5e5">open&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>join(path))&lt;span style="color:#9ca0b0;font-style:italic">#与子集型模版不一样的地方：往res里加答案的实际不同。子集型回溯是每次递归都可以加。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选左括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选右括号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="模板二">模板二
+&lt;a class="header-anchor" href="#%e6%a8%a1%e6%9d%bf%e4%ba%8c">&lt;/a>
+&lt;/h2>&lt;p>与子集型回溯的模版二类似，答案是选出递归树的某一层。递归树是一颗多叉树，每个分支代表选从起点 i开始的一个数字。
+剪枝: 当前 path还需要m个数，但是剩余可选的数字数量&amp;lt;m
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/comb.png" alt="Alt text" />&lt;/p></description></item><item><title>二叉树 dfs</title><link>http://localhost:1313/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item><item><title>商户缓存</title><link>http://localhost:1313/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
+&lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e5%b7%a5%e5%85%b7%e7%b1%bb">&lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@Slf4j&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@Component&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">CacheClient&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> StringRedisTemplate stringRedisTemplate;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> ExecutorService CACHE_REBUILD_EXECUTOR &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Executors.&lt;span style="color:#1e66f5">newFixedThreadPool&lt;/span>(10);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#1e66f5">CacheClient&lt;/span>(StringRedisTemplate stringRedisTemplate) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">stringRedisTemplate&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">set&lt;/span>(String key, Object value, Long time, TimeUnit unit) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">set&lt;/span>(key, JSONUtil.&lt;span style="color:#1e66f5">toJsonStr&lt;/span>(value), time, unit);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol>
+&lt;li>ShopServiceImpl Bean 的创建时间
+在 Spring 中，bean 的创建通常发生在 上下文启动时，也就是 Spring 启动并创建 ApplicationContext 时。具体来说，ShopServiceImpl 是一个标注为 @Service 的类，这表示它会被 Spring 自动扫描并注册为一个 bean。当 Spring 启动时，它会扫描到这个类并创建 ShopServiceImpl 的实例。&lt;/li>
+&lt;/ol>
+&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>http://localhost:1313/post/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cachebreakdown/</guid><description>&lt;p>
+&lt;a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7148716168403439616-Krf7/" title="cache problems by Alex Xu" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ cache problems by Alex Xu
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>http://localhost:1313/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
+&lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
+&lt;ol>
+&lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
+&lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">//符号位0+时间戳31bit+序列号32bit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">long&lt;/span> &lt;span style="color:#1e66f5">nextId&lt;/span>(String keyPrefix){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//生成时间戳&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LocalDateTime now&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>LocalDateTime.&lt;span style="color:#1e66f5">now&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> nowSecond&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">toEpochSecond&lt;/span>(ZoneOffset.&lt;span style="color:#1e66f5">UTC&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>nowSecond&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>BEGIN_TIMESTAMP;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//生成序列号. 每一天下的单使用同一个Key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String date&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">format&lt;/span>(DateTimeFormatter.&lt;span style="color:#1e66f5">ofPattern&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;yyyy:MM:dd&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> count&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">increment&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;icr:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>keyPrefix&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#40a02b">&amp;#34;:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>date);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//拼接并返回&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&amp;lt;&lt;/span>COUNT_BITS&lt;span style="color:#04a5e5;font-weight:bold">|&lt;/span>count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>子集型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</guid><description>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item><item><title>Caching Avalanche</title><link>http://localhost:1313/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
+&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>http://localhost:1313/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/caching_patterns/</guid><description>&lt;p>
+&lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Redis Doc: How to use Redis for Query Caching
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns/" title="这里有图片！" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 这里有图片！
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)
+&lt;a class="header-anchor" href="#cache-aside-lazy-loading">&lt;/a>
+&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>http://localhost:1313/post/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
+&lt;h2 id="缓存null值">缓存null值
+&lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98null%e5%80%bc">&lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">queryById&lt;/span>(Long id) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String key&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>CACHE_SHOP_KEY&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>id;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//1. 从 Redis 查询商铺缓存&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String shopJson&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">get&lt;/span>(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//2. 判断是否存在.null和&amp;#34;&amp;#34;都会被算作 blank&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span>(StrUtil.&lt;span style="color:#1e66f5">isNotBlank&lt;/span>(shopJson)){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//3. 存在。直接返回。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Shop shop&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> JSONUtil.&lt;span style="color:#1e66f5">toBean&lt;/span>(shopJson, Shop.&lt;span style="color:#1e66f5">class&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> Result.&lt;span style="color:#1e66f5">ok&lt;/span>(shop);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//判断命中的是否是空值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span>(shopJson&lt;span style="color:#04a5e5;font-weight:bold">!=&lt;/span>&lt;span style="color:#fe640b">null&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> Result.&lt;span style="color:#1e66f5">fail&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;店铺信息不存在。&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//4. shopJson为null,说明缓存里不存在。根据 id茶数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Shop shop&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>getById(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span>(shop&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>&lt;span style="color:#fe640b">null&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//防止缓存穿透，将空值写入 redis&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">set&lt;/span>(key,&lt;span style="color:#40a02b">&amp;#34;&amp;#34;&lt;/span>, CACHE_NULL_TTL, TimeUnit.&lt;span style="color:#1e66f5">MINUTES&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> Result.&lt;span style="color:#1e66f5">fail&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;店铺不存在&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">set&lt;/span>(CACHE_SHOP_KEY &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> id, JSONUtil.&lt;span style="color:#1e66f5">toJsonStr&lt;/span>(shop), CACHE_SHOP_TTL, TimeUnit.&lt;span style="color:#1e66f5">MINUTES&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> Result.&lt;span style="color:#1e66f5">ok&lt;/span>(shop);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="布隆过滤器">布隆过滤器
+&lt;a class="header-anchor" href="#%e5%b8%83%e9%9a%86%e8%bf%87%e6%bb%a4%e5%99%a8">&lt;/a>
+&lt;/h2>&lt;p>TODO&lt;/p></description></item><item><title>JMeter on Mac</title><link>http://localhost:1313/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/jmeter/</guid><description>&lt;p>
+&lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ JMeter使用
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>http://localhost:1313/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;a class="header-anchor" href="#cli">&lt;/a>
+&lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
+&lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>http://localhost:1313/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
+&lt;a class="header-anchor" href="#%e9%bb%91%e9%a9%ac%e7%82%b9%e8%af%84%e7%99%bb%e5%bd%95">&lt;/a>
+&lt;/h2>&lt;h3 id="第一次请求获取验证码">第一次请求：获取验证码
+&lt;a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%af%b7%e6%b1%82%e8%8e%b7%e5%8f%96%e9%aa%8c%e8%af%81%e7%a0%81">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@PostMapping&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;/login&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">login&lt;/span>(&lt;span style="color:#1e66f5;font-weight:bold">@RequestBody&lt;/span> LoginFormDTO loginFormDTO, HttpSession session){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> userService.&lt;span style="color:#1e66f5">login&lt;/span>(loginFormDTO, session);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>后端为其生成随机验证码，并且存入 session&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>http://localhost:1313/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>http://localhost:1313/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;a class="header-anchor" href="#file">&lt;/a>
+&lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
+&lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
+&lt;/h3>&lt;p>To let the code run on every system, use these variables.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// depends on the system. On Mac, it is &amp;#34;/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">separator&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// On Mac, it&amp;#39;s &amp;#34;:&amp;#34;, used to separate filenames in a sequence of files given as a path list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>http://localhost:1313/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/maven/</guid><description>&lt;h2 id="basic">Basic
+&lt;a class="header-anchor" href="#basic">&lt;/a>
+&lt;/h2>&lt;h3 id="java-version">Java Version
+&lt;a class="header-anchor" href="#java-version">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ruoke@Ruokes-MacBook-Pro ~ % mvn -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Apache Maven 3.9.6 &lt;span style="color:#04a5e5;font-weight:bold">(&lt;/span>bc0240f3c744dd6b6ec2920b3cd08dcc295161ae&lt;span style="color:#04a5e5;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Maven home: /Users/ruoke/Documents/devTools/apache-maven-3.9.6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Java version: 21.0.3, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这个 Java 版本是 Maven 本身运行时使用的 Java 版本&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">&amp;lt;java.version&amp;gt;&lt;/span>1.8&lt;span style="color:#8839ef">&amp;lt;/java.version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;/properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item></channel></rss>
