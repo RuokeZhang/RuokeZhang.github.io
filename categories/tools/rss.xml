@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Ruoke Zhang</title><link>http://localhost:1313/categories/tools/</link><description>Recent content in Tools on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tools/rss.xml" rel="self" type="application/rss+xml"/><item><title>JMeter on Mac</title><link>http://localhost:1313/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/jmeter/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/tools/</link><description>Recent content in Tools on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/tools/rss.xml" rel="self" type="application/rss+xml"/><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Maven</title><link>http://localhost:1313/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/maven/</guid><description>&lt;h2 id="basic">Basic
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Maven</title><link>https://ruokezhang.github.io/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/maven/</guid><description>&lt;h2 id="basic">Basic
 &lt;a class="header-anchor" href="#basic">&lt;/a>
 &lt;/h2>&lt;h3 id="java-version">Java Version
 &lt;a class="header-anchor" href="#java-version">&lt;/a>
