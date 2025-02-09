@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Ruoke Zhang</title><link>http://localhost:1313/tags/web/</link><description>Recent content in Web on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/web/rss.xml" rel="self" type="application/rss+xml"/><item><title>JMeter on Mac</title><link>http://localhost:1313/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/jmeter/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Ruoke Zhang</title><link>/tags/web/</link><description>Recent content in Web on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/web/rss.xml" rel="self" type="application/rss+xml"/><item><title>JMeter on Mac</title><link>/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Nginx</title><link>/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>http://localhost:1313/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
 &lt;a class="header-anchor" href="#%e9%bb%91%e9%a9%ac%e7%82%b9%e8%af%84%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;h3 id="第一次请求获取验证码">第一次请求：获取验证码
 &lt;a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%af%b7%e6%b1%82%e8%8e%b7%e5%8f%96%e9%aa%8c%e8%af%81%e7%a0%81">&lt;/a>

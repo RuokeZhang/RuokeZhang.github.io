@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>http://localhost:1313/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linked List</title><link>http://localhost:1313/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/linkedlist/</guid><description>&lt;h2 id="反转链表">反转链表
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linked List</title><link>/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>/post/leetcode/linkedlist/</guid><description>&lt;h2 id="反转链表">反转链表
 &lt;a class="header-anchor" href="#%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -51,7 +51,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="IMG_7764.PNG" alt="Alt text" />&lt;/p></description></item><item><title>排列型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
+&lt;img src="/imgs/img-lazy-loading.gif" data-src="IMG_7764.PNG" alt="Alt text" />&lt;/p></description></item><item><title>排列型回溯</title><link>/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
 &lt;a class="header-anchor" href="#lc-47">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -106,13 +106,13 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>全排列需要一个数组来记录某个元素是否在 path上被用过。
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/for-dfs.png" alt="Alt text" />
-以[1,1&amp;rsquo;,2]为例，在for循环上遍历到1&amp;rsquo;，但是发现1还没有用过时，直接退出递归，就是我画圈的两个地方。最后从控制台输出也可以看出，输出了两遍 1.&lt;/p></description></item><item><title>Java 8的新特性</title><link>http://localhost:1313/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;img src="/imgs/img-lazy-loading.gif" data-src="/for-dfs.png" alt="Alt text" />
+以[1,1&amp;rsquo;,2]为例，在for循环上遍历到1&amp;rsquo;，但是发现1还没有用过时，直接退出递归，就是我画圈的两个地方。最后从控制台输出也可以看出，输出了两遍 1.&lt;/p></description></item><item><title>Java 8的新特性</title><link>/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
-&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>达人探店</title><link>http://localhost:1313/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
+&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>达人探店</title><link>/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
-&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>接口和抽象类</title><link>http://localhost:1313/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>接口和抽象类</title><link>/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>接口是对行为的抽象。&lt;/p>
 &lt;ol>
@@ -226,7 +226,7 @@
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Concurrency</title><link>http://localhost:1313/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
+&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Concurrency</title><link>/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
 &lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
 &lt;/h2>&lt;p>Mutual exclusion (e.g., A and B don’t run at same time)，进程的互斥&lt;/p>
 &lt;ul>
@@ -249,7 +249,7 @@
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>组合型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-combination/</guid><description>&lt;h2 id="模版一">模版一
+&lt;/a>&lt;/p></description></item><item><title>组合型回溯</title><link>/post/leetcode/backtrack/backtracking-combination/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>/post/leetcode/backtrack/backtracking-combination/</guid><description>&lt;h2 id="模版一">模版一
 &lt;a class="header-anchor" href="#%e6%a8%a1%e7%89%88%e4%b8%80">&lt;/a>
 &lt;/h2>&lt;p>递归树是一颗二叉树，每个分叉是选/不选&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -310,7 +310,7 @@
 &lt;a class="header-anchor" href="#%e6%a8%a1%e6%9d%bf%e4%ba%8c">&lt;/a>
 &lt;/h2>&lt;p>与子集型回溯的模版二类似，答案是选出递归树的某一层。递归树是一颗多叉树，每个分支代表选从起点 i开始的一个数字。
 剪枝: 当前 path还需要m个数，但是剩余可选的数字数量&amp;lt;m
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/comb.png" alt="Alt text" />&lt;/p></description></item><item><title>二叉树 dfs</title><link>http://localhost:1313/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item><item><title>商户缓存</title><link>http://localhost:1313/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
+&lt;img src="/imgs/img-lazy-loading.gif" data-src="/comb.png" alt="Alt text" />&lt;/p></description></item><item><title>二叉树 dfs</title><link>/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item><item><title>商户缓存</title><link>/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e5%b7%a5%e5%85%b7%e7%b1%bb">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -354,7 +354,7 @@
 &lt;li>ShopServiceImpl Bean 的创建时间
 在 Spring 中，bean 的创建通常发生在 上下文启动时，也就是 Spring 启动并创建 ApplicationContext 时。具体来说，ShopServiceImpl 是一个标注为 @Service 的类，这表示它会被 Spring 自动扫描并注册为一个 bean。当 Spring 启动时，它会扫描到这个类并创建 ShopServiceImpl 的实例。&lt;/li>
 &lt;/ol>
-&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>http://localhost:1313/post/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cachebreakdown/</guid><description>&lt;p>
+&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>/post/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>/post/cachebreakdown/</guid><description>&lt;p>
 &lt;a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7148716168403439616-Krf7/" title="cache problems by Alex Xu" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  cache problems by Alex Xu
  
@@ -362,13 +362,13 @@
  
 &lt;/a>&lt;/p>
 &lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>http://localhost:1313/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;img src="/imgs/img-lazy-loading.gif" data-src="/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
 &lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
 &lt;ol>
 &lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;img src="/imgs/img-lazy-loading.gif" data-src="/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -400,9 +400,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>子集型回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking-subset/</guid><description>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item><item><title>Caching Avalanche</title><link>http://localhost:1313/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>子集型回溯</title><link>/post/leetcode/backtrack/backtracking-subset/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>/post/leetcode/backtrack/backtracking-subset/</guid><description>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item><item><title>Caching Avalanche</title><link>/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
 Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
-&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>http://localhost:1313/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/caching_patterns/</guid><description>&lt;p>
+&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/caching_patterns/</guid><description>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Redis Doc: How to use Redis for Query Caching
  
@@ -418,7 +418,7 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;/a>&lt;/p>
 &lt;h2 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)
 &lt;a class="header-anchor" href="#cache-aside-lazy-loading">&lt;/a>
-&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>http://localhost:1313/post/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
+&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>/post/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
 &lt;h2 id="缓存null值">缓存null值
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98null%e5%80%bc">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -479,18 +479,18 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="布隆过滤器">布隆过滤器
 &lt;a class="header-anchor" href="#%e5%b8%83%e9%9a%86%e8%bf%87%e6%bb%a4%e5%99%a8">&lt;/a>
-&lt;/h2>&lt;p>TODO&lt;/p></description></item><item><title>JMeter on Mac</title><link>http://localhost:1313/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/jmeter/</guid><description>&lt;p>
+&lt;/h2>&lt;p>TODO&lt;/p></description></item><item><title>JMeter on Mac</title><link>/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>http://localhost:1313/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>http://localhost:1313/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
 &lt;a class="header-anchor" href="#%e9%bb%91%e9%a9%ac%e7%82%b9%e8%af%84%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;h3 id="第一次请求获取验证码">第一次请求：获取验证码
 &lt;a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%af%b7%e6%b1%82%e8%8e%b7%e5%8f%96%e9%aa%8c%e8%af%81%e7%a0%81">&lt;/a>
@@ -517,7 +517,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>http://localhost:1313/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>http://localhost:1313/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
@@ -536,7 +536,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>http://localhost:1313/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/maven/</guid><description>&lt;h2 id="basic">Basic
+&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>/post/maven/</guid><description>&lt;h2 id="basic">Basic
 &lt;a class="header-anchor" href="#basic">&lt;/a>
 &lt;/h2>&lt;h3 id="java-version">Java Version
 &lt;a class="header-anchor" href="#java-version">&lt;/a>
@@ -568,4 +568,4 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>关于我</title><link>http://localhost:1313/about/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/about/</guid><description>你好，我是张若克，欢迎访问我的个人博客。这里是我分享个人经历、技术文章和思考的地方。</description></item></channel></rss>
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>关于我</title><link>/about/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>/about/</guid><description>你好，我是张若克，欢迎访问我的个人博客。这里是我分享个人经历、技术文章和思考的地方。</description></item></channel></rss>

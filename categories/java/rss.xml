@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>http://localhost:1313/categories/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java 8的新特性</title><link>http://localhost:1313/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>/categories/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/categories/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java 8的新特性</title><link>/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
-&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>http://localhost:1313/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>接口是对行为的抽象。&lt;/p>
 &lt;ol>
@@ -114,11 +114,11 @@
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>try-catch-finally</title><link>http://localhost:1313/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>try-catch-finally</title><link>/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>http://localhost:1313/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>http://localhost:1313/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/javaio/</guid><description>&lt;h2 id="file">File
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
@@ -137,7 +137,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>http://localhost:1313/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/maven/</guid><description>&lt;h2 id="basic">Basic
+&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>/post/maven/</guid><description>&lt;h2 id="basic">Basic
 &lt;a class="header-anchor" href="#basic">&lt;/a>
 &lt;/h2>&lt;h3 id="java-version">Java Version
 &lt;a class="header-anchor" href="#java-version">&lt;/a>
