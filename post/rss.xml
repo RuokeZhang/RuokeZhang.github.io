@@ -51,7 +51,29 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/IMG_7764.PNG" alt="Alt text" />&lt;/p></description></item><item><title>排列型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
+&lt;a class="header-anchor" href="#beanfactory-interface">&lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@SpringBootApplication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">DemoJavaSpringApplication&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">main&lt;/span>(String&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConfigurableApplicationContext context&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> SpringApplication.&lt;span style="color:#1e66f5">run&lt;/span>(DemoJavaSpringApplication.&lt;span style="color:#1e66f5">class&lt;/span>, args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
+这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>排列型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
 &lt;a class="header-anchor" href="#lc-47">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -370,7 +392,7 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
@@ -401,7 +423,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>https://ruokezhang.github.io/post/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/synchronized/</guid><description/></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>https://ruokezhang.github.io/post/java/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/synchronized/</guid><description/></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>

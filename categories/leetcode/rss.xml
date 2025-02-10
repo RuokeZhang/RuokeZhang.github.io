@@ -51,7 +51,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/IMG_7764.PNG" alt="Alt text" />&lt;/p></description></item><item><title>排列型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>排列型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
 &lt;a class="header-anchor" href="#lc-47">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
