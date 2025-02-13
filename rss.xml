@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 10 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>动态规划</title><link>https://ruokezhang.github.io/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dp/</guid><description>&lt;h2 id="线性dp">线性dp
+&lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
+&lt;/h2>&lt;p>lc 377&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</guid><description>&lt;h2 id="自底向上dfs-后序遍历">自底向上dfs: 后序遍历
+&lt;a class="header-anchor" href="#%e8%87%aa%e5%ba%95%e5%90%91%e4%b8%8adfs-%e5%90%8e%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
+&lt;/h2>&lt;p>对于当前节点root做什么，需要它的子树的信息。&lt;/p>
+&lt;ol>
+&lt;li>LC1110， 删点成林&lt;/li>
+&lt;li>LC 1026, 节点与其祖先之间的最大差值. preOrder更简单。&lt;/li>
+&lt;li>LC 1123 公共祖先&lt;/li>
+&lt;/ol></description></item><item><title>回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
 &lt;a class="header-anchor" href="#%e5%ad%90%e9%9b%86%e5%9e%8b%e5%9b%9e%e6%ba%af">&lt;/a>
-&lt;/h2>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/linkedlist/</guid><description>&lt;h2 id="反转链表">反转链表
+&lt;/h2>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p>
+&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/linkedlist/</guid><description>&lt;h2 id="反转链表">反转链表
 &lt;a class="header-anchor" href="#%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -510,7 +520,10 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;a class="header-anchor" href="#classfile">&lt;/a>
+&lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。

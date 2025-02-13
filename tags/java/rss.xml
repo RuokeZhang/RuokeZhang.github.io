@@ -221,7 +221,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;a class="header-anchor" href="#classfile">&lt;/a>
+&lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
