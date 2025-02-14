@@ -3,6 +3,10 @@
 &lt;/h2>&lt;p>对于当前节点root做什么，需要它的子树的信息。&lt;/p>
 &lt;ol>
 &lt;li>LC1110， 删点成林&lt;/li>
-&lt;li>LC 1026, 节点与其祖先之间的最大差值. preOrder更简单。&lt;/li>
 &lt;li>LC 1123 公共祖先&lt;/li>
+&lt;/ol>
+&lt;h2 id="先序遍历">先序遍历
+&lt;a class="header-anchor" href="#%e5%85%88%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>LC 1026, 节点与其祖先之间的最大差值.&lt;/li>
 &lt;/ol></description></item><item><title>二叉树 dfs</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item></channel></rss>
