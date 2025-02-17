@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>动态规划</title><link>https://ruokezhang.github.io/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dp/</guid><description>&lt;h2 id="线性dp">线性dp
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
+&lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="深入理解Java虚拟机" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 深入理解Java虚拟机
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="对象已死">对象已死？
+&lt;a class="header-anchor" href="#%e5%af%b9%e8%b1%a1%e5%b7%b2%e6%ad%bb">&lt;/a>
+&lt;/h2>&lt;h3 id="引用计数算法">引用计数算法
+&lt;a class="header-anchor" href="#%e5%bc%95%e7%94%a8%e8%ae%a1%e6%95%b0%e7%ae%97%e6%b3%95">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">* testGC()方法执行后，objA和objB会不会被GC呢？
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">* @author zzm
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">ReferenceCountingGC&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> Object instance &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> &lt;span style="color:#d20f39">int&lt;/span> _1MB &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> 1024 &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> 1024;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"> * 这个成员属性的唯一意义就是占点内存，以便能在GC日志中看清楚是否有回收过
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">byte&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span> bigSize &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#8839ef">new&lt;/span> &lt;span style="color:#d20f39">byte&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">[&lt;/span>2 &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> _1MB&lt;span style="color:#04a5e5;font-weight:bold">]&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">testGC&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ReferenceCountingGC objA &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#8839ef">new&lt;/span> ReferenceCountingGC();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ReferenceCountingGC objB &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#8839ef">new&lt;/span> ReferenceCountingGC();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objA.&lt;span style="color:#1e66f5">instance&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> objB;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objB.&lt;span style="color:#1e66f5">instance&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> objA;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objA &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objB &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// 假设在这行发生GC，objA和objB是否能被回收？&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">gc&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>动态规划</title><link>https://ruokezhang.github.io/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dp/</guid><description>&lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
 &lt;/h2>&lt;p>lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。
 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</guid><description>&lt;h2 id="自底向上dfs-后序遍历">自底向上dfs: 后序遍历
@@ -90,63 +151,7 @@
 &lt;/div>
 &lt;/div>&lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
-这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>排列型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</link><pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/permutation/</guid><description>&lt;h2 id="lc-47">LC 47
-&lt;a class="header-anchor" href="#lc-47">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">permuteUnique&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#04a5e5">int&lt;/span>]]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">len&lt;/span>(nums)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[&lt;span style="color:#fe640b">False&lt;/span>]&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>n
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">dfs&lt;/span>():
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">len&lt;/span>(path)&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>n:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>copy())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> i, x &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">enumerate&lt;/span>(nums):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">not&lt;/span> used[i]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#fe640b">0&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">and&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>nums[i&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>] &lt;span style="color:#04a5e5;font-weight:bold">and&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">not&lt;/span> used[i&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(x)&lt;span style="color:#9ca0b0;font-style:italic">#如果轮到x&amp;#39;进，但是x没用过，输出&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">continue&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used[i]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(x)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used[i]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">False&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>sort()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>全排列需要一个数组来记录某个元素是否在 path上被用过。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/for-dfs.png" alt="Alt text" />
-以[1,1&amp;rsquo;,2]为例，在for循环上遍历到1&amp;rsquo;，但是发现1还没有用过时，直接退出递归，就是我画圈的两个地方。最后从控制台输出也可以看出，输出了两遍 1.&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
+这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
 &lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>Concurrency</title><link>https://ruokezhang.github.io/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
@@ -172,68 +177,7 @@
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>组合型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking-combination/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking-combination/</guid><description>&lt;h2 id="模版一">模版一
-&lt;a class="header-anchor" href="#%e6%a8%a1%e7%89%88%e4%b8%80">&lt;/a>
-&lt;/h2>&lt;p>递归树是一颗二叉树，每个分叉是选/不选&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">Solution&lt;/span>: &lt;span style="color:#9ca0b0;font-style:italic">#LC 22&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">generateParenthesis&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, n: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> List[&lt;span style="color:#04a5e5">str&lt;/span>]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 2n个位置里面，选n个位置放左括号。组合型回溯，模版一&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">2&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>n
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># open用来记录左括号的数量。只要open&amp;lt;n, 就可以选左括号&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 右括号的数量为i-open. 只有i-open&amp;lt;open, 才能选右括号&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">dfs&lt;/span>(i, &lt;span style="color:#04a5e5">open&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span>m:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>join(path))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选左括号&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>n:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;(&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#选右括号&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> i&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#04a5e5">open&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(&lt;span style="color:#40a02b">&amp;#39;)&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#04a5e5">open&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>pop()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="模板二">模板二
-&lt;a class="header-anchor" href="#%e6%a8%a1%e6%9d%bf%e4%ba%8c">&lt;/a>
-&lt;/h2>&lt;p>与子集型回溯的模版二类似，答案是选出递归树的某一层。递归树是一颗多叉树，每个分支代表选从起点 i开始的一个数字。
-剪枝: 当前 path还需要m个数，但是剩余可选的数字数量&amp;lt;m
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/comb.png" alt="Alt text" />&lt;/p></description></item><item><title>二叉树 dfs</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item><item><title>商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
+&lt;/a>&lt;/p></description></item><item><title>商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e5%b7%a5%e5%85%b7%e7%b1%bb">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -323,7 +267,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>子集型回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking-subset/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking-subset/</guid><description>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型并且&lt;strong>不作为参数&lt;/strong>传递给 dfs, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
 Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/caching_patterns/</guid><description>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -443,7 +387,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Synchronized 关键字</title><link>https://ruokezhang.github.io/post/java/synchronized/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/synchronized/</guid><description/></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>

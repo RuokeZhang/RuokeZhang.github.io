@@ -9,4 +9,4 @@
 &lt;a class="header-anchor" href="#%e5%85%88%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>LC 1026, 节点与其祖先之间的最大差值. (也可以postorder)&lt;/li>
-&lt;/ol></description></item><item><title>二叉树 dfs</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/dfs/</guid><description>&lt;p>二叉树回溯与普通回溯的区别在于，不能在边界条件把答案加入res. 因为一个leaf，对它的两个子节点判断root==null, 则会把答案加进 res两次。&lt;/p></description></item></channel></rss>
+&lt;/ol></description></item></channel></rss>
