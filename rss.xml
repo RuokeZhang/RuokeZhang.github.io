@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;h2 id="线程">线程
+&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
+&lt;/h2>&lt;h3 id="线程的实现">线程的实现
+&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%ae%9e%e7%8e%b0">&lt;/a>
+&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])p&lt;/p>
+&lt;p>LC 189 [:]切片操作&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
@@ -37,7 +43,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
+&lt;/div>&lt;h2 id="1524-和为奇数的子数组数目">1524. 和为奇数的子数组数目
+&lt;a class="header-anchor" href="#1524-%e5%92%8c%e4%b8%ba%e5%a5%87%e6%95%b0%e7%9a%84%e5%ad%90%e6%95%b0%e7%bb%84%e6%95%b0%e7%9b%ae">&lt;/a>
+&lt;/h2>&lt;p>利用性质:odd-even=odd, even-odd=odd&lt;/p></description></item><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="深入理解Java虚拟机" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  深入理解Java虚拟机
  
@@ -505,12 +513,7 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="布隆过滤器">布隆过滤器
 &lt;a class="header-anchor" href="#%e5%b8%83%e9%9a%86%e8%bf%87%e6%bb%a4%e5%99%a8">&lt;/a>
-&lt;/h2>&lt;p>TODO&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
-&lt;h2 id="线程">线程
-&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
-&lt;/h2>&lt;h3 id="线程的实现">线程的实现
-&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%ae%9e%e7%8e%b0">&lt;/a>
-&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/jmeter/</guid><description>&lt;p>
+&lt;/h2>&lt;p>TODO&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用
  

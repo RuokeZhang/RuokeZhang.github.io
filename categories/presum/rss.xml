@@ -37,4 +37,6 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div>&lt;h2 id="1524-和为奇数的子数组数目">1524. 和为奇数的子数组数目
+&lt;a class="header-anchor" href="#1524-%e5%92%8c%e4%b8%ba%e5%a5%87%e6%95%b0%e7%9a%84%e5%ad%90%e6%95%b0%e7%bb%84%e6%95%b0%e7%9b%ae">&lt;/a>
+&lt;/h2>&lt;p>利用性质:odd-even=odd, even-odd=odd&lt;/p></description></item></channel></rss>
