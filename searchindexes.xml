@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
+方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
+  </content></entry><entry><title>JMM</title><url>/post/java/juc/jmm/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
+并发问题 CPU Cache Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。
+指令级重排 编译器优化重排 JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。
+解决：禁止编译器重排序
+指令并行重排 CPU做这件事，与CPU的流水线工作相关。指的是一个线程在CPU不同硬件上可以实现并行运行。
+指令级并行不能保证多线程并发执行时的安全性。
+解决：内存屏障
+JMM Java Memory Model, 即Java内存模型。
+为什么Java需要自己的内存模型？因为它需要在不同操作系统上运行时效果一致，所以不能直接用操作系统提供的内存模型，而是自己提供内存模型。
+抽象 JMM 抽象出本地内存和主内存的概念。所有对象实例存在于主内存中，本地内存这是某个线程专有的。一个线程不可以访问其它线程的本地内存。 JMM定义了八种同步操作(lock, read, load&amp;hellip;)和一些规范，比如一个新的变量只能在主内存里诞生
+happens before 如果一个操作 happens-before 另一个操作，那么第一个操作的执行结果将对第二个操作可见，（不管他们是否属于同一个线程），并且第一个操作的执行顺序排在第二个操作之前。
+规则：
+volatile 变量规则：对一个 volatile 变量的写操作 happens-before 于后面对这个 volatile 变量的读操作。 程序顺序规则：一个线程内，按照代码顺序，书写在前面的操作 happens-before 于书写在后面的操作。 三个重要特性 原子性：一组操作要么全部成功执行，要么全都不执行。 可见性：如果一个线程对某个共享变量做了修改，那么其它线程马上可以看到这个变量最新的值。 有序性：指令重排序在多线程下是不安全的，使用volatile可以禁止重排序。
+Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变量是共享且不稳定的。它可以保证可见性。
+每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。   </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
   </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 线程 线程的实现 一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。
 一对一线程模型✨ 每个Java线程对应操作系统中的一个内核线程，充分利用多核处理器的优势。（现在Windows 和 Linux 都是这种）
