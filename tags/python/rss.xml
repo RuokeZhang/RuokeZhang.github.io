@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/python/</link><description>Recent content in Python on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/python/rss.xml" rel="self" type="application/rss+xml"/><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])p&lt;/p>
-&lt;p>LC 189 [:]切片操作&lt;/p></description></item></channel></rss>
+&lt;p>LC 189 [:]切片操作&lt;/p>
+&lt;p>defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
+Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。&lt;/p></description></item></channel></rss>

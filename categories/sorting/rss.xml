@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sorting on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/sorting/</link><description>Recent content in Sorting on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 21 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/sorting/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;a class="header-anchor" href="#merge-sort">&lt;/a>
+&lt;/h2>&lt;p>LC 148: sort a linked list
+快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p></description></item></channel></rss>

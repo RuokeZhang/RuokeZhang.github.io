@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlidingWindow on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/slidingwindow/</link><description>Recent content in SlidingWindow on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/slidingwindow/rss.xml" rel="self" type="application/rss+xml"/><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>LC 219 模版题&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">minSubArrayLen&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, target: &lt;span style="color:#04a5e5">int&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s,l&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>,&lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>inf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> r, x &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#04a5e5;font-weight:bold">+=&lt;/span>x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> s&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;=&lt;/span>target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">min&lt;/span>(res, r&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>l&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#04a5e5;font-weight:bold">-=&lt;/span>nums[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l&lt;span style="color:#04a5e5;font-weight:bold">+=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res &lt;span style="color:#8839ef">if&lt;/span> res&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>inf &lt;span style="color:#8839ef">else&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

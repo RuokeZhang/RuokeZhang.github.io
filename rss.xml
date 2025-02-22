@@ -1,10 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 21 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;a class="header-anchor" href="#merge-sort">&lt;/a>
+&lt;/h2>&lt;p>LC 148: sort a linked list
+快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="线程">线程
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%ae%9e%e7%8e%b0">&lt;/a>
 &lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])p&lt;/p>
-&lt;p>LC 189 [:]切片操作&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
+&lt;p>LC 189 [:]切片操作&lt;/p>
+&lt;p>defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
+Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>LC 219 模版题&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">minSubArrayLen&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, target: &lt;span style="color:#04a5e5">int&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s,l&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>,&lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>inf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> r, x &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#04a5e5;font-weight:bold">+=&lt;/span>x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> s&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;=&lt;/span>target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">min&lt;/span>(res, r&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>l&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#04a5e5;font-weight:bold">-=&lt;/span>nums[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l&lt;span style="color:#04a5e5;font-weight:bold">+=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res &lt;span style="color:#8839ef">if&lt;/span> res&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>inf &lt;span style="color:#8839ef">else&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
