@@ -25,7 +25,8 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])p&lt;/p>
 &lt;p>LC 189 [:]切片操作&lt;/p>
 &lt;p>defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
-Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>LC 219 模版题&lt;/p>
+Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;p>LC 219 模版题&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -52,7 +53,9 @@ Counter 更适合对可迭代对象做频次统计、出现次数分析等，它
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res &lt;span style="color:#8839ef">if&lt;/span> res&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>inf &lt;span style="color:#8839ef">else&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
+&lt;/div>&lt;h2 id="定长滑窗">定长滑窗
+&lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
+&lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
