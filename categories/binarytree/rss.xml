@@ -9,4 +9,7 @@
 &lt;a class="header-anchor" href="#%e5%85%88%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>LC 1026, 节点与其祖先之间的最大差值. (也可以postorder)&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol>
+&lt;h2 id="构造二叉树">构造二叉树
+&lt;a class="header-anchor" href="#%e6%9e%84%e9%80%a0%e4%ba%8c%e5%8f%89%e6%a0%91">&lt;/a>
+&lt;/h2>&lt;p>105：前序和中序构造二叉树。直接 recursion 调用原函数，传入 inorder 和 pre-order 的切片即可。&lt;/p></description></item></channel></rss>

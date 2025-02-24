@@ -10,12 +10,13 @@
 解决：内存屏障
 JMM Java Memory Model, 即Java内存模型。
 为什么Java需要自己的内存模型？因为它需要在不同操作系统上运行时效果一致，所以不能直接用操作系统提供的内存模型，而是自己提供内存模型。
-抽象 JMM 抽象出本地内存和主内存的概念。所有对象实例存在于主内存中，本地内存这是某个线程专有的。一个线程不可以访问其它线程的本地内存。 JMM定义了八种同步操作(lock, read, load&amp;hellip;)和一些规范，比如一个新的变量只能在主内存里诞生
+抽象 JMM 抽象出本地内存和主内存的概念。所有对象实例存在于主内存中，本地内存这是某个线程专有的。一个线程不可以访问其它线程的本地内存。 JMM定义了八种同步操作(lock, read, load&amp;amp;hellip;)和一些规范，比如一个新的变量只能在主内存里诞生
 happens before 如果一个操作 happens-before 另一个操作，那么第一个操作的执行结果将对第二个操作可见，（不管他们是否属于同一个线程），并且第一个操作的执行顺序排在第二个操作之前。
 规则：
 volatile 变量规则：对一个 volatile 变量的写操作 happens-before 于后面对这个 volatile 变量的读操作。 程序顺序规则：一个线程内，按照代码顺序，书写在前面的操作 happens-before 于书写在后面的操作。 三个重要特性 原子性：一组操作要么全部成功执行，要么全都不执行。 可见性：如果一个线程对某个共享变量做了修改，那么其它线程马上可以看到这个变量最新的值。 有序性：指令重排序在多线程下是不安全的，使用volatile可以禁止重排序。
 Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变量是共享且不稳定的。它可以保证可见性。
-每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。   </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
+每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。 无法保证原子性 在创建单例对象时，需要用到 volatile
+1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
   </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 线程 线程的实现 一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。
 一对一线程模型✨ 每个Java线程对应操作系统中的一个内核线程，充分利用多核处理器的优势。（现在Windows 和 Linux 都是这种）
@@ -27,39 +28,43 @@ Java早期采用这种模式。
 创建线程 严格意义上讲，Java创建新线程的方式只有start()方法。
 继承Thread类 override Thread类的run()方法即可。
 1 2 3 4 5 6 7 8 9 10 11 12 class MyThread extends Thread { @Override public void run() { // 线程执行的任务 } public static void main(String[] args) { MyThread thread1 = new MyThread(); thread1.start(); } } 实现 Runnable 接口 需要把我的实现的类对象作为参数传递给 Thread 的创建函数。
-1 2 3 4 5 6 7 public class MyRunnableLambda { public static void main(String[] args) { Runnable runnable = () -&amp;amp;gt; …  </content></entry><entry><title>Python一些常用操作</title><url>/post/leetcode/pythonskill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag><tag>Python</tag></tags><content type="html">  intervals.sort(key=lambda p: p[0])p
+1 2 3 4 5 6 7 public class MyRunnableLambda { public static void main(String[] args) { Runnable runnable = () -&amp;amp;gt; …  </content></entry><entry><title>Python一些常用操作</title><url>/post/leetcode/pythonskill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag><tag>Python</tag></tags><content type="html"><![CDATA[  intervals.sort(key=lambda p: p[0])
 LC 189 [:]切片操作
-defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。 Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。
+dict 1 2 3 4 5 # 包含初始键值对的字典 filled_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;} # 使用 dict() 构造函数 constructed_dict = dict(key1=&#39;value1&#39;, key2=&#39;value2&#39;) defaultdict defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
+1 2 dd = defaultdict(int) # int 类型，缺省值为 0 dd = defaultdict(lambda: &#39;default_value&#39;) Counter Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。
 Iterable: list, tuple, str, dict, set, range, enumerate, map
 del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
-  </content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
+list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 LC 219 模版题
 1 2 3 4 5 6 7 8 9 10 def minSubArrayLen(self, target: int, nums: List[int]) -&gt; int: s,l=0,0 res=inf for r, x in enumerate(nums): s+=x while s&gt;=target: res=min(res, r-l+1) s-=nums[l] l+=1 return res if res&lt;inf else 0 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
 出：下标为i−k+1的元素离开窗口，更新相关统计量。
 LC 1456
 不定长滑窗 LC 1493 LC 2779
-  ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 LC 560 输入：nums = [1,2,3], k = 3 输出：2
-1 2 3 4 5 6 7 8 9 10 11 def subarraySum(self, nums: List[int], k: int) -&amp;gt; int: res=0 n=len(nums) s=[0]*(n+1) for i, x in enumerate(nums): s[i+1]=s[i]+x cnt=defaultdict(int) for sj in s: res+=cnt[sj-k] cnt[sj]+=1 return res 1524. 和为奇数的子数组数目 利用性质:odd-even=odd, even-odd=odd
-  </content></entry><entry><title>垃圾回收</title><url>/post/java/jvm/gc/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">  参考： 深入理解Java虚拟机 ， 极致八股文之JVM垃圾回收器G1&amp;amp;amp;ZGC详解 对象已死？ 引用计数算法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 /** * testGC()方法执行后，objA和objB会不会被GC呢？ * @author zzm */ public class ReferenceCountingGC { public Object instance = null; private static final int _1MB = 1024 * 1024; /** * 这个成员属性的唯一意义就是占点内存，以便能在GC日志中看清楚是否有回收过 */ private byte[] bigSize = new byte[2 * _1MB]; public static void testGC() { ReferenceCountingGC objA = new ReferenceCountingGC(); ReferenceCountingGC objB = new ReferenceCountingGC(); objA.instance = objB; objB.instance = objA; objA = null; objB = null; // 假设在这行发生GC，objA和objB是否能被回收？ System.gc(); } } 缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。
+  ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 普通前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
+1 2 3 def maxAbsoluteSum(self, nums: List[int]) -&amp;gt; int: s = list(accumulate(nums, initial=0)) # nums 的前缀和 return max(s) - min(s) 前缀和与哈希表 枚举右，维护左
+1524. 和为奇数的子数组数目 利用性质:odd-even=odd, even-odd=odd
+LC 560 输入：nums = [1,2,3], k = 3 输出：2
+1 2 3 4 5 6 7 8 9 10 11 def subarraySum(self, nums: List[int], k: int) -&amp;gt; int: res=0 n=len(nums) s=[0]*(n+1) for i, x in enumerate(nums): s[i+1]=s[i]+x cnt=defaultdict(int) for sj in s: res+=cnt[sj-k] cnt[sj]+=1 return res   </content></entry><entry><title>垃圾回收</title><url>/post/java/jvm/gc/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">  参考： 深入理解Java虚拟机 ， 极致八股文之JVM垃圾回收器G1&amp;amp;amp;ZGC详解 对象已死？ 引用计数算法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 /** * testGC()方法执行后，objA和objB会不会被GC呢？ * @author zzm */ public class ReferenceCountingGC { public Object instance = null; private static final int _1MB = 1024 * 1024; /** * 这个成员属性的唯一意义就是占点内存，以便能在GC日志中看清楚是否有回收过 */ private byte[] bigSize = new byte[2 * _1MB]; public static void testGC() { ReferenceCountingGC objA = new ReferenceCountingGC(); ReferenceCountingGC objB = new ReferenceCountingGC(); objA.instance = objB; objB.instance = objA; objA = null; objB = null; // 假设在这行发生GC，objA和objB是否能被回收？ System.gc(); } } 缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。
 可达性分析算法 从GC Root出发，根据引用关系向下搜索，标记所有可以达到的对象。搜索过程中走过的路径叫做“引用链”。
 可作为GC Root的对象：
 虚拟机栈栈帧中局部变量表中的对象（方法参数、临时变量、实例方法的this对象） 方法区中类静态属性引用的对象 方法区中常量引用的对象 本地方法栈中 Native方法引用的对象 所有被 synchronized 持有的对象 Java 虚拟机内部的引用：基本数据类型对应的 Class对象、常驻的异常对象、系统类加载器 即使被标记为不可达，也不是一定会被回收。
 引用的概念 一般只用强引用和软引用，因为软引用可以加速JVM垃圾回收的速度。
-强引用：Object obj=new …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html">  线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
+强引用：Object obj=new …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
 LC 139: 单词拆分
 leetcode可以通过leet和code组成。如果code在 wordSet中，那么dp[9]=dp[4]
 House Robber LC 198: 空间优化
 LC 213 打家劫舍 II: 所有房子围成一圈。考虑只能偷前(n-1)个房子的情况，和只能偷后(n-1)个房子的情况
-最大子数组和 LC 53:dp[i]存放以当前元素结尾的最大和
-dp[i]=max(dp[i-1]+nums[i], nums[i])
-LC 1749 任意子数组和的绝对值的最大值: 遍历过程中，保持一个以当前元素结尾的最大和与最小和。
+最大子数组和 LC 53:dp[i]存放以当前元素结尾的最大和 dp[i]=max(dp[i-1]+nums[i], nums[i])
+空间优化：
+1 2 f=max(x, f+x) res=max(f, res) LC 1749 任意子数组和的绝对值的最大值: 遍历过程中，保持一个以当前元素结尾的最大和与最小和。绝对值最大-&amp;gt;子数组和最大或最小
 网格图 DP 基础题只需要做：63. 不同路径 II
 dp[i+1][j+1]表示遍历到grid[i][j]时的方案数。初始化时，只需要考虑dp[1]这一行的值
+最长回文子串 dp[j][i]表示s[j:i+1]是否为回文。i从左往右遍历，j从i往左遍历。
 01背包 lc 494 记忆化搜索：选恰好k个，使得容量恰好等于c，求方案数. 递推是从后往前，dp只不过是把递推改写成了从前往后遍历。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 class Solution: def findTargetSumWays(self, nums: List[int], target: int) -&amp;amp;gt; int: s=sum(nums) p=(target+s)//2 if (target+s)%2!=0: return 0 @cache def dfs(i, c): if i&amp;amp;lt;0: if c==0: return 1 #代表一种方案成功 return 0 #如果容量不够 if nums[i]&amp;amp;gt;c: return dfs(i-1, c) return dfs(i-1, c)+dfs(i-1, c-nums[i]) return dfs(len(nums)-1, p) 把这个翻译成 dp
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 class Solution: def …  </content></entry><entry><title>二叉树</title><url>/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">  自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
-LC 1110， 删点成林 LC 1123 公共祖先 先序遍历 LC 1026, 节点与其祖先之间的最大差值. (也可以postorder)   </content></entry><entry><title>回溯</title><url>/post/leetcode/backtrack/backtracking/</url><categories><category>Leetcode</category><category>Backtracking</category></categories><tags><tag>leetcode</tag></tags><content type="html">  子集型回溯 在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 状态一定不变。不管有多少个分支，每个分支都要考虑这个问题。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 class Solution: def findTargetSumWays(self, nums: List[int], target: int) -&amp;gt; int: s=sum(nums) p=(target+s)//2 if (target+s)%2!=0: return 0 @cache def dfs(i, c): if i&amp;lt;0: if c==0: return 1 #代表一种方案成功 return 0 #如果容量不够 if nums[i]&amp;gt;c: return dfs(i-1, c) return dfs(i-1, c)+dfs(i-1, c-nums[i]) return …  ]]></content></entry><entry><title>二叉树</title><url>/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">  自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
+LC 1110， 删点成林 LC 1123 公共祖先 先序遍历 LC 1026, 节点与其祖先之间的最大差值. (也可以postorder) 构造二叉树 105：前序和中序构造二叉树。直接 recursion 调用原函数，传入 inorder 和 pre-order 的切片即可。
+  </content></entry><entry><title>回溯</title><url>/post/leetcode/backtrack/backtracking/</url><categories><category>Leetcode</category><category>Backtracking</category></categories><tags><tag>leetcode</tag></tags><content type="html">  子集型回溯 在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 状态一定不变。不管有多少个分支，每个分支都要考虑这个问题。
 如果 path是immutable，如string，它作为参数传递给dfs，这种情况下根本没有在修改它的状态，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.
 模版一：选或不选 从输入的角度思考
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 class Solution: #LC78题子集 def subsets(self, nums: List[int]) -&amp;amp;gt; List[List[int]]: path=[] res=[] def dfs(i): if i==len(nums): res.append(path.copy()) return #选择这个 path.append(nums[i]) dfs(i+1) #不选这个 path.pop() dfs(i+1) dfs(0) return res path.copy()的时间复杂度为O(N), 总体时间复杂度(N*2^N).
