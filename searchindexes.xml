@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 堆 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
+用一个数组 tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
+最后统计最长的连续1子数组长度即可。
+  </content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
   </content></entry><entry><title>JMM</title><url>/post/java/juc/jmm/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
@@ -39,8 +42,8 @@ LC 219 模版题
 1 2 3 4 5 6 7 8 9 10 def minSubArrayLen(self, target: int, nums: List[int]) -&gt; int: s,l=0,0 res=inf for r, x in enumerate(nums): s+=x while s&gt;=target: res=min(res, r-l+1) s-=nums[l] l+=1 return res if res&lt;inf else 0 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
 出：下标为i−k+1的元素离开窗口，更新相关统计量。
-LC 1456
-不定长滑窗 LC 1493 LC 2779
+LC 1456 LC 1052 爱生气的书店老板：答案=所有不生气时间的客人数量+窗口内生气的客人数量
+不定长滑窗 window里最多只能有两个不同元素: 使用set可能会超时，因此使用cnt[] LC 1493 LC 2779
   ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 普通前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
 1 2 3 def maxAbsoluteSum(self, nums: List[int]) -&amp;gt; int: s = list(accumulate(nums, initial=0)) # nums 的前缀和 return max(s) - min(s) 前缀和与哈希表 枚举右，维护左
 1524. 和为奇数的子数组数目 利用性质:odd-even=odd, even-odd=odd
@@ -50,7 +53,7 @@ LC 560 输入：nums = [1,2,3], k = 3 输出：2
 可作为GC Root的对象：
 虚拟机栈栈帧中局部变量表中的对象（方法参数、临时变量、实例方法的this对象） 方法区中类静态属性引用的对象 方法区中常量引用的对象 本地方法栈中 Native方法引用的对象 所有被 synchronized 持有的对象 Java 虚拟机内部的引用：基本数据类型对应的 Class对象、常驻的异常对象、系统类加载器 即使被标记为不可达，也不是一定会被回收。
 引用的概念 一般只用强引用和软引用，因为软引用可以加速JVM垃圾回收的速度。
-强引用：Object obj=new …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
+强引用：Object obj=new …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
 LC 139: 单词拆分
 leetcode可以通过leet和code组成。如果code在 wordSet中，那么dp[9]=dp[4]
 House Robber LC 198: 空间优化
@@ -62,7 +65,7 @@ LC 213 打家劫舍 II: 所有房子围成一圈。考虑只能偷前(n-1)个房
 dp[i+1][j+1]表示遍历到grid[i][j]时的方案数。初始化时，只需要考虑dp[1]这一行的值
 最长回文子串 dp[j][i]表示s[j:i+1]是否为回文。i从左往右遍历，j从i往左遍历。
 01背包 lc 494 记忆化搜索：选恰好k个，使得容量恰好等于c，求方案数. 递推是从后往前，dp只不过是把递推改写成了从前往后遍历。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 class Solution: def findTargetSumWays(self, nums: List[int], target: int) -&amp;gt; int: s=sum(nums) p=(target+s)//2 if (target+s)%2!=0: return 0 @cache def dfs(i, c): if i&amp;lt;0: if c==0: return 1 #代表一种方案成功 return 0 #如果容量不够 if nums[i]&amp;gt;c: return dfs(i-1, c) return dfs(i-1, c)+dfs(i-1, c-nums[i]) return …  ]]></content></entry><entry><title>二叉树</title><url>/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">  自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 class Solution: def findTargetSumWays(self, nums: List[int], target: int) -&amp;gt; int: s=sum(nums) p=(target+s)//2 if (target+s)%2!=0: return 0 @cache def dfs(i, c): if i&amp;lt;0: if c==0: return 1 #代表一种方案成功 return 0 #如果容量不够 if nums[i]&amp;gt;c: return dfs(i-1, c) return dfs(i-1, c)+dfs(i-1, c-nums[i]) …  ]]></content></entry><entry><title>二叉树</title><url>/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">  自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
 LC 1110， 删点成林 LC 1123 公共祖先 先序遍历 LC 1026, 节点与其祖先之间的最大差值. (也可以postorder) 构造二叉树 105：前序和中序构造二叉树。直接 recursion 调用原函数，传入 inorder 和 pre-order 的切片即可。
   </content></entry><entry><title>回溯</title><url>/post/leetcode/backtrack/backtracking/</url><categories><category>Leetcode</category><category>Backtracking</category></categories><tags><tag>leetcode</tag></tags><content type="html">  子集型回溯 在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 状态一定不变。不管有多少个分支，每个分支都要考虑这个问题。
 如果 path是immutable，如string，它作为参数传递给dfs，这种情况下根本没有在修改它的状态，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.
