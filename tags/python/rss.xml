@@ -9,6 +9,8 @@
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 包含初始键值对的字典&lt;/span>
@@ -16,8 +18,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 使用 dict() 构造函数&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>constructed_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">dict&lt;/span>(key1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value1&amp;#39;&lt;/span>, key2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value2&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>valueList&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">list&lt;/span>(filled_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>values())
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="defaultdict">defaultdict
-&lt;a class="header-anchor" href="#defaultdict">&lt;/a>
-&lt;/h2>&lt;p>defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。&lt;/p></description></item></channel></rss>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item></channel></rss>

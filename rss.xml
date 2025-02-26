@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>栈、堆、队列</title><link>https://ruokezhang.github.io/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/stackqueue/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
+&lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
+&lt;ol>
+&lt;li>从后往前，找第一组升序的nums[i]和nums[i+1], 比如129&lt;strong>47&lt;/strong>653，找到了nums[4]=4.&lt;/li>
+&lt;li>从后往前，找第一个比nums[i]大的数nums[j]，也就是 5&lt;/li>
+&lt;li>交换nums[i]和nums[j], 得到 129&lt;strong>5&lt;/strong>76&lt;strong>4&lt;/strong>3，此时nums[i]后面的数字全都是降序排列&lt;/li>
+&lt;li>把nums[i]后面的数字按升序排列，得到 1295&lt;strong>3467&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
+&lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>栈、堆、队列</title><link>https://ruokezhang.github.io/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/stackqueue/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/mOr1u6/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -45,6 +56,8 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 包含初始键值对的字典&lt;/span>
@@ -52,11 +65,11 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 使用 dict() 构造函数&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>constructed_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">dict&lt;/span>(key1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value1&amp;#39;&lt;/span>, key2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value2&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>valueList&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">list&lt;/span>(filled_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>values())
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="defaultdict">defaultdict
-&lt;a class="header-anchor" href="#defaultdict">&lt;/a>
-&lt;/h2>&lt;p>defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
 &lt;p>LC 219 模版题&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
