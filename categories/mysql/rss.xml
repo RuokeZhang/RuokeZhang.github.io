@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/mysql/</link><description>Recent content in MySQL on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/mysql/rss.xml" rel="self" type="application/rss+xml"/><item><title>索引</title><link>https://ruokezhang.github.io/post/mysql/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/</guid><description>&lt;h2 id="聚簇索引二级索引">聚簇索引、二级索引
+&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95%e4%ba%8c%e7%ba%a7%e7%b4%a2%e5%bc%95">&lt;/a>
+&lt;/h2>&lt;h3 id="聚簇索引">聚簇索引
+&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95">&lt;/a>
+&lt;/h3>&lt;p>InnoDB中，每个表都有一个聚簇索引，它决定着数据在磁盘上存储的物理顺序。&lt;/p>
+&lt;ol>
+&lt;li>如果有 primary key, 即为聚簇索引&lt;/li>
+&lt;li>如果没有 primary key, 选择一个唯一的非空索引作为聚簇索引&lt;/li>
+&lt;li>如果还是没有，InnoDB隐式地创建一个自增列作为聚簇索引&lt;/li>
+&lt;/ol>
+&lt;h3 id="b-tree">B+ Tree
+&lt;a class="header-anchor" href="#b-tree">&lt;/a>
+&lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item></channel></rss>
