@@ -12,11 +12,21 @@ B+树相比B树的优点：
 B+树的非叶子节点可以存储更多的键值和指针，降低树的高度，减少磁盘 I/O 次数。 范围查找时，B树需要遍历整颗树；B+树只需要遍历叶子结点的链表。 顺序访问方便。 B+树相比二叉树的优点： B+树中，一个节点最多有m个孩子，m的值通常为几百到几千。搜索的时间复杂度为O(logN)，底数为 m.
 二级索引 聚簇索引的叶子节点存实际数据，二级索引的叶子节点存主键值。
 如果根据二级索引查询，并且需要查的数据不止主键，那么就需要回表，也就是查询两次 B+树。如果查的数据只有主键，那么不需要回表。
-  </content></entry><entry><title>技巧题</title><url>/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
+主键索引、唯一索引、前缀索引 1 CREATE UNIQUE INDEX xxx ON xxxtable(col1, col2) 一个表可以有多个唯一索引，必须建在 UNIQUE 字段之上。
+普通索引：不要求字段为 PRIMARY 或 UNIQUE
+前缀索引：对字符类型字段的前几个字符建立索引，目的是减少索引占用空间。字符类型：char, varchar, binary, varbinary.
+binary类型是用来存储字节字符串的， 可以用来存储图片、视频等二进制数据。
+单列索引、复合索引 复合索引也叫联合索引，指的是在多个字段上创建索引。唯一值多的列通常放在最前面。
+最左匹配 最左匹配：对 (col1, col2, col3) 创建联合索引。在 B+树的存储中，是先按col1排序，如果col1相同就再按col2排序，以此类推。
+可以使用的查询条件：
+col1 = ?
+col1 = ? AND col2 = …  </content></entry><entry><title>技巧题</title><url>/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
 从后往前，找第一组升序的nums[i]和nums[i+1], 比如12947653，找到了nums[4]=4. 从后往前，找第一个比nums[i]大的数nums[j]，也就是 5 交换nums[i]和nums[j], 得到 12957643，此时nums[i]后面的数字全都是降序排列 把nums[i]后面的数字按升序排列，得到 12953467 128. Longest Consecutive Sequence [100,4,200,1,3,2]
 首先把所有数字都加入set中，这样判断某个数字是否存在，就只需要O(1)的时间。 遍历每个数字x，看谁能作为一个序列的起点。如果x-1也在set中，那么x就不能作为起点，continue 如果x能作为起点，就不断地判断x+1是否在set中 169. Majority Element 摩尔计数法，只能找到数量＞数字个数一半的众数。
 如 1,1,1,2,3,9,9则不行
 48. Rotate Image 先水平翻转，再沿主对角线翻转
+41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
+遍历数组的 index，判断nums[i]是否等于 nums[nums[i]+1], 如果不等于，则用循环交换。
   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 堆 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
