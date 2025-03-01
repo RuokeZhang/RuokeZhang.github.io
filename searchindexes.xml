@@ -79,6 +79,8 @@ LC 1456 LC 1052 爱生气的书店老板：答案=所有不生气时间的客人
 1 2 3 4 5 6 7 8 9 10 def minSubArrayLen(self, target: int, nums: List[int]) -&gt; int: s,l=0,0 res=inf for r, x in enumerate(nums): s+=x while s&gt;=target: res=min(res, r-l+1) s-=nums[l] l+=1 return res if res&lt;inf else 0 最长窗口 window里最多只能有两个不同元素/最多可以改变k个元素，求最长子串
 先加右边。如果不符合条件，while循环不断pop左边，得到 valid子串，然后更新 res.
 LC 2024
+LC 2779
+1658. 将 x 减到 0 的最小操作数 逆向思维
   ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 普通前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
 1 2 3 def maxAbsoluteSum(self, nums: List[int]) -&amp;gt; int: s = list(accumulate(nums, initial=0)) # nums 的前缀和 return max(s) - min(s) 前缀和与哈希表 枚举右，维护左
 1524. 和为奇数的子数组数目 利用性质:odd-even=odd, even-odd=odd
