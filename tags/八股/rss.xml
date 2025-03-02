@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>八股 on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/%E5%85%AB%E8%82%A1/</link><description>Recent content in 八股 on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/%E5%85%AB%E8%82%A1/rss.xml" rel="self" type="application/rss+xml"/><item><title>ThreadLocal&amp;线程池</title><link>https://ruokezhang.github.io/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>八股 on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/%E5%85%AB%E8%82%A1/</link><description>Recent content in 八股 on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/%E5%85%AB%E8%82%A1/rss.xml" rel="self" type="application/rss+xml"/><item><title>Transaction</title><link>https://ruokezhang.github.io/post/mysql/transactionmysql/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/transactionmysql/</guid><description>&lt;p>参考：小林 coding&lt;/p>
+&lt;h2 id="事务的特性">事务的特性
+&lt;a class="header-anchor" href="#%e4%ba%8b%e5%8a%a1%e7%9a%84%e7%89%b9%e6%80%a7">&lt;/a>
+&lt;/h2>&lt;p>atomicity: undo log&lt;/p>
+&lt;p>consistency: 由其他三个特性实现.事务在执行前后，数据库从一个一致性状态转变到另一个一致性状态。&lt;/p>
+&lt;p>isolation: MVCC/lock.一个事物的执行不影响其它事务的执行&lt;/p></description></item><item><title>索引</title><link>https://ruokezhang.github.io/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/sqlindex/</guid><description>&lt;h2 id="聚簇索引二级索引">聚簇索引、二级索引
+&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95%e4%ba%8c%e7%ba%a7%e7%b4%a2%e5%bc%95">&lt;/a>
+&lt;/h2>&lt;h3 id="聚簇索引">聚簇索引
+&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95">&lt;/a>
+&lt;/h3>&lt;p>InnoDB中，每个表都有一个聚簇索引，它决定着数据在磁盘上存储的物理顺序。&lt;/p>
+&lt;ol>
+&lt;li>如果有 primary key, 即为聚簇索引&lt;/li>
+&lt;li>如果没有 primary key, 选择一个唯一的非空索引作为聚簇索引&lt;/li>
+&lt;li>如果还是没有，InnoDB隐式地创建一个自增列作为聚簇索引&lt;/li>
+&lt;/ol>
+&lt;h3 id="b-tree">B+ Tree
+&lt;a class="header-anchor" href="#b-tree">&lt;/a>
+&lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item><item><title>ThreadLocal&amp;线程池</title><link>https://ruokezhang.github.io/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
 &lt;/h2>&lt;p>Thread类里面有一个变量threadLocals，可以视为一个 HashMap，用来存放线程私有的内容。&lt;/p>
