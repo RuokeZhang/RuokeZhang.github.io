@@ -6,7 +6,7 @@
  
 &lt;/a>&lt;/p>
 &lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
 Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/caching_patterns/</guid><description>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">

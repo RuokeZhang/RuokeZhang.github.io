@@ -53,7 +53,7 @@
  
 &lt;/a>&lt;/p>
 &lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
 &lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
 &lt;ol>

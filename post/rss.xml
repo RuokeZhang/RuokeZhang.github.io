@@ -286,7 +286,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
 &lt;a class="header-anchor" href="#beanfactory-interface">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -386,7 +386,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
  
 &lt;/a>&lt;/p>
 &lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
 &lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
 &lt;ol>
