@@ -16,8 +16,8 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>&lt;/p>
-&lt;h2 id="堆">堆
-&lt;a class="header-anchor" href="#%e5%a0%86">&lt;/a>
+&lt;h2 id="栈">栈
+&lt;a class="header-anchor" href="#%e6%a0%88">&lt;/a>
 &lt;/h2>&lt;h3 id="32-最长有效括号">32 最长有效括号
 &lt;a class="header-anchor" href="#32-%e6%9c%80%e9%95%bf%e6%9c%89%e6%95%88%e6%8b%ac%e5%8f%b7">&lt;/a>
 &lt;/h3>&lt;p>&amp;ldquo;()(())&amp;rdquo;&lt;/p>

@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Transaction</title><url>/post/mysql/transactionmysql/</url><categories><category>MySQL</category></categories><tags><tag>MySQL</tag><tag>八股</tag></tags><content type="html">  参考：小林 coding
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>问题排查</title><url>/post/java/jvm/oom/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">   参考视频 内存溢出的原因 一次性申请太多对象-&amp;amp;gt;分页查询 内存泄漏：可达但不再使用的对象仍然占用内存-&amp;amp;gt;找到并释放这些对象 本身资源不够-&amp;amp;gt;jmap -heap [process id]查看堆信息 jmap是一个JDK命令行工具，用来生成heap dump。heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息。
+或者，添加JVM参数-XX:+HeapDumpOnOutOfMemoryError，当程序发生OOM时，JVM会自动生成heap dump。
+内存泄漏的原因 Heap Dump 添加参数-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/ruoke/Documents/java_web
+生成一个 heap dump文件，使用jvisualmap分析。可以找到 GC root，然后看报错对应的代码行号。
+1 -XX:+HeapDumpOnOutOfMemoryError -XX:ErrorFile=/logs/oom_dump/xxx.log -XX:HeapDumpPath=/logs/oom_dump/xxx.hprof 常用参数 堆内存 初始堆大小（-Xms）：-Xms4G
+最大堆大小（-Xmx）：-Xmx4G
+通常设置为一样的，避免动态扩容带来的性能开销。
+-Xmn512m：为新生代分配 256M 内存
+新生代分配内存大一点，可以将对象尽量留在新生代，因为 minor GC 的开销比 full GC 小很多。
+-XX:NewRatio=1
+设置老年代与新生代内存的比值为 1
+-XX:MaxMetaspaceSize=2G
+设置 Metaspace 的最大大小
+垃圾回收器 -XX:+UseConcMarkSweepGC
+指定使用CMS垃圾回收器
+-XX:MaxGCPauseMillis=50
+使用G1垃圾回收器时，指定期望的最大停顿时间为50毫秒。
+-XX:+PrintGCDetails -XX:+PrintGCDateStamps
+打印垃圾回收的日志及时间戳
+-Xloggc:/path/to/gc.log
+指定垃圾回收日志文件
+CPU 100% 参考B站讲解 内存不足 物理内存不足，操作系统在磁盘上划分出一块区域，叫做Swap，虚拟内 …  </content></entry><entry><title>Transaction</title><url>/post/mysql/transactionmysql/</url><categories><category>MySQL</category></categories><tags><tag>MySQL</tag><tag>八股</tag></tags><content type="html">  参考：小林 coding
 事务的特性 atomicity: undo log
 consistency: 由其他三个特性实现.事务在执行前后，数据库从一个一致性状态转变到另一个一致性状态。
 isolation: MVCC/lock.一个事物的执行不影响其它事务的执行
@@ -49,10 +70,10 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 48. Rotate Image 先水平翻转，再沿主对角线翻转
 41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
 遍历数组的 index，判断nums[i]是否等于 nums[nums[i]+1], 如果不等于，则用循环交换。
-75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 堆 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
+75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 栈 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
-  </content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+单调栈 每日温度   </content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
 双指针 LC 75: Sort Colors
@@ -132,6 +153,13 @@ LC 1110， 删点成林 LC 1123 公共祖先 先序遍历 LC 1026, 节点与其�
 直径 LC 543: return -1 if not root
 LC 687
 LC 124：最大路径和
+2385. 感染二叉树需要的总时间🌟 diameter表示必须经过start节点的最大直径。
+startDepth表示 start 到叶子节点的深度
+res=max(diameter-startDepth, startDepth)
+在更新 diameter 的时候，必须确保当前路径含有 start
+dfs返回两个值。
+深度：如果root这棵树不含有start, 返回root到叶子的深度；如果这棵树含有start，返回root到start的深度。
+该树是否含有start，T/Fh
   </content></entry><entry><title>回溯</title><url>/post/leetcode/backtrack/backtracking/</url><categories><category>Leetcode</category><category>Backtracking</category></categories><tags><tag>leetcode</tag></tags><content type="html">  子集型回溯 在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 状态一定不变。不管有多少个分支，每个分支都要考虑这个问题。
 如果 path是immutable，如string，它作为参数传递给dfs，这种情况下根本没有在修改它的状态，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.
 模版一：选或不选 从输入的角度思考
