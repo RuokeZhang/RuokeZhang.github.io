@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>问题排查</title><link>https://ruokezhang.github.io/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/oom/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Virtualization</title><link>https://ruokezhang.github.io/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/virtualization/</guid><description>&lt;p>
+&lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="参考的技术博客" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 参考的技术博客
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;br>
+
+&lt;a href="https://pages.cs.wisc.edu/~remzi/OSTEP/Educators-Slides/Tyler/sep17/paging.pdf" title="OSTEP slides" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ OSTEP slides
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;br>
+
+&lt;a href="https://os.phil-opp.com/paging-introduction/" title="参考" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 参考
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="虚拟内存">虚拟内存
+&lt;a class="header-anchor" href="#%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98">&lt;/a>
+&lt;/h2>&lt;p>虚拟化：每个进程都认为，自己有自己的地址空间，多个进程的地址空间是分开的。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="地址空间" />&lt;/p>
+&lt;p>实际上，CPU 拿到这些虚拟的地址，会让它内部的 &lt;strong>MMU 把虚拟地址翻译成物理地址，也就是内存中的地址&lt;/strong>。内存里，每个地址可以存放一个字节。&lt;/p></description></item><item><title>问题排查</title><link>https://ruokezhang.github.io/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/oom/</guid><description>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
  

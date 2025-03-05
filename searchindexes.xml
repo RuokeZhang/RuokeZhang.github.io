@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>问题排查</title><url>/post/java/jvm/oom/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">   参考视频 内存溢出的原因 一次性申请太多对象-&amp;amp;gt;分页查询 内存泄漏：可达但不再使用的对象仍然占用内存-&amp;amp;gt;找到并释放这些对象 本身资源不够-&amp;amp;gt;jmap -heap [process id]查看堆信息 jmap是一个JDK命令行工具，用来生成heap dump。heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Virtualization</title><url>/post/os/virtualization/</url><categories><category>Operating System</category></categories><tags><tag>Operating System</tag></tags><content type="html">   参考的技术博客 OSTEP slides 参考 虚拟内存 虚拟化：每个进程都认为，自己有自己的地址空间，多个进程的地址空间是分开的。 实际上，CPU 拿到这些虚拟的地址，会让它内部的 MMU 把虚拟地址翻译成物理地址，也就是内存中的地址。内存里，每个地址可以存放一个字节。
+分段 每个 segment对应地址空间里的logical entity, 比如stack/data。每个segment都可以：
+单独放在内存的某个地方 拥有自己的protection bits grow and shrink MMU为每个进程保持一个segment table. 在虚拟地址中，top bits表示segment的序号，low bits表示segment内的offset。
+虚拟地址0x0240对应的物理地址是多少？
+这里有4个segment，所以用2位来表示segment序号。该地址二进制为00000000001001000000，前两位00是段号，即segment 0；后12位是偏移量。
+因此它对应的物理地址是0x2000+0x240=0x2240
+分段的缺点 会出现外部内存碎片。因为每个segment必须是整块出现的，如果一个segment过大，而内存中可能有多个小空间（碎片），却没有一个能放得下该segment的空间。
+外部内存碎片是 OS 可见的。
+分页 为了解决外部内存碎片的问题，分页方法把每个进程的地址空间切割成相同大小的page，放入内存中。内存中的每个可以容纳page 的单位，叫做 page frame, 页帧。 页表 每个进程拥有一个页表。 里面记录着该进程的pages分别存放在哪个页帧。
+一个页表有多大？
+Linux中，一个page大小为4KB。假设系统为32位，那么一个进程的address space由32位表示，由于每一个address space可以保存一个byte，那么一个进程的address space大小为2^32=4GB.
+4GB/4KB=2^20,即一个进程可以拥有2^20个page. 假设page table里面一项的数据大小为4KB，那么一个page table的大小为2^20*4KB=4MB.
+page table 存储在内存中，MMU负责做翻译。 分页的映射 在32位系统中，一个逻辑地址由20位虚拟页号+12位页内偏移量组成。
+当某段数据 …  </content></entry><entry><title>问题排查</title><url>/post/java/jvm/oom/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">   参考视频 内存溢出的原因 一次性申请太多对象-&amp;amp;gt;分页查询 内存泄漏：可达但不再使用的对象仍然占用内存-&amp;amp;gt;找到并释放这些对象 本身资源不够-&amp;amp;gt;jmap -heap [process id]查看堆信息 jmap是一个JDK命令行工具，用来生成heap dump。heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息。
 或者，添加JVM参数-XX:+HeapDumpOnOutOfMemoryError，当程序发生OOM时，JVM会自动生成heap dump。
 内存泄漏的原因 Heap Dump 添加参数-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/ruoke/Documents/java_web
 生成一个 heap dump文件，使用jvisualmap分析。可以找到 GC root，然后看报错对应的代码行号。
@@ -63,17 +76,20 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 1 2 3 4 5 6 7 8 9 public void set(T value) { Thread t = Thread.currentThread(); ThreadLocalMap map = getMap(t);//拿到这个线程所私有的threadLocals对象 if (map != null) { map.set(this, value); } else { createMap(t, value); } } 一个线程可以创建多个ThreadLocal对象，存放不同的值，但是这些值都是存在同一个ThreadLocalMap里面的。
 内存泄露 ThreadLocalMap里面，对于key(ThreadLocal)是弱引用，对于 value(我们存储的值)是强引用。 如果一个线程持续存活，那么下一次垃圾回收时，会回收掉 key, 但不会回收掉 value。
 避免内存泄露：使用完 ThreadLocal之后，调用它的instance方法remove().
-  </content></entry><entry><title>技巧题</title><url>/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
+线程池 创建线程池 new ThreadPoolExecutor() Executors工具类。比如Executors.newFixedThreadPool(3); 核心参数 corePoolSize maximumPoolSize workQueue keepAliveTime unit threadFactory handler 当有任务到来时，如果正在工作的线程数不到corePoolSize，则直接安排线程执行该任务；
+如果核心线程已满，则将该任务放入workQueue。
+如 …  </content></entry><entry><title>技巧题</title><url>/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
 从后往前，找第一组升序的nums[i]和nums[i+1], 比如12947653，找到了nums[4]=4. 从后往前，找第一个比nums[i]大的数nums[j]，也就是 5 交换nums[i]和nums[j], 得到 12957643，此时nums[i]后面的数字全都是降序排列 把nums[i]后面的数字按升序排列，得到 12953467 128. Longest Consecutive Sequence [100,4,200,1,3,2]
 首先把所有数字都加入set中，这样判断某个数字是否存在，就只需要O(1)的时间。 遍历每个数字x，看谁能作为一个序列的起点。如果x-1也在set中，那么x就不能作为起点，continue 如果x能作为起点，就不断地判断x+1是否在set中 169. Majority Element 摩尔计数法，只能找到数量＞数字个数一半的众数。
 如 1,1,1,2,3,9,9则不行
 48. Rotate Image 先水平翻转，再沿主对角线翻转
 41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
 遍历数组的 index，判断nums[i]是否等于 nums[nums[i]+1], 如果不等于，则用循环交换。
-75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 栈 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
+75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 栈 32 最长有效括号 &ldquo;()(())&rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
-单调栈 每日温度   </content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+单调栈 每日温度 LC 155 最小栈 单调双端队列 滑动窗口最大值 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res=[] dq=collections.deque() for i, x in enumerate(nums): if dq and dq[0]&lt;i-k+1: dq.popleft() while dq and nums[dq[-1]]&lt;=x: dq.pop() dq.append(i) if i&gt;=k-1: res.append(nums[dq[0]]) return res LCR 184对应LC 155
+  ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
 双指针 LC 75: Sort Colors
@@ -113,6 +129,7 @@ Iterable: list, tuple, str, dict, set, range, enumerate, map
 del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
 list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found sort() 它直接在原列表上进行排序操作，不创建新的列表。只能应用于列表。
 iterable Iterable: list, tuple, str, dict, set, range, enumerate, map sorted(iterable)返回一个新的已排序列表。原始的可迭代对象不会被修改。时间复杂度为O(nlogn)
+deque = collections.deque()
   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
