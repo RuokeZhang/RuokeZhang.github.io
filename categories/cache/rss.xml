@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cache on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/cache/</link><description>Recent content in Cache on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/cache/rss.xml" rel="self" type="application/rss+xml"/><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cachebreakdown/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cache on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/cache/</link><description>Recent content in Cache on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/cache/rss.xml" rel="self" type="application/rss+xml"/><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/redis/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachebreakdown/</guid><description>&lt;p>
 &lt;a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7148716168403439616-Krf7/" title="cache problems by Alex Xu" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  cache problems by Alex Xu
  
@@ -6,9 +6,9 @@
  
 &lt;/a>&lt;/p>
 &lt;p>缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/cacheBreakdown.png" alt="Alt text" />&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/redis/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
 Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
-&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/caching_patterns/</guid><description>&lt;p>
+&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/caching_patterns/</guid><description>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Redis Doc: How to use Redis for Query Caching
  
@@ -24,7 +24,7 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;/a>&lt;/p>
 &lt;h2 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)
 &lt;a class="header-anchor" href="#cache-aside-lazy-loading">&lt;/a>
-&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>https://ruokezhang.github.io/post/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
+&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>https://ruokezhang.github.io/post/redis/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
 &lt;h2 id="缓存null值">缓存null值
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98null%e5%80%bc">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">

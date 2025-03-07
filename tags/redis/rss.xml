@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>持久化</title><link>https://ruokezhang.github.io/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
+
+&lt;a href="https://www.bilibili.com/video/BV1sK421i7B8/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 参考视频
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="aof">AOF
+&lt;a class="header-anchor" href="#aof">&lt;/a>
+&lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着讲这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
 &lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
@@ -45,7 +55,7 @@
 &lt;li>ShopServiceImpl Bean 的创建时间
 在 Spring 中，bean 的创建通常发生在 上下文启动时，也就是 Spring 启动并创建 ApplicationContext 时。具体来说，ShopServiceImpl 是一个标注为 @Service 的类，这表示它会被 Spring 自动扫描并注册为一个 bean。当 Spring 启动时，它会扫描到这个类并创建 ShopServiceImpl 的实例。&lt;/li>
 &lt;/ol>
-&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cachebreakdown/</guid><description>&lt;p>
+&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/redis/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachebreakdown/</guid><description>&lt;p>
 &lt;a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7148716168403439616-Krf7/" title="cache problems by Alex Xu" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  cache problems by Alex Xu
  
@@ -91,9 +101,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>Caching Avalanche</title><link>https://ruokezhang.github.io/post/redis/cacheavalanche/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cacheavalanche/</guid><description>&lt;p>同一时段，大量Key过期：给不同的Key TTL设置为不同的随机值
 Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
-&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/caching_patterns/</guid><description>&lt;p>
+&lt;p>其它解决方案：降级限流&lt;/p></description></item><item><title>Caching Patterns</title><link>https://ruokezhang.github.io/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/caching_patterns/</guid><description>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Redis Doc: How to use Redis for Query Caching
  
@@ -109,7 +119,7 @@ Redis宕机：利用 Redis 集群，提高服务的可用性&lt;/p>
 &lt;/a>&lt;/p>
 &lt;h2 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)
 &lt;a class="header-anchor" href="#cache-aside-lazy-loading">&lt;/a>
-&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>https://ruokezhang.github.io/post/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
+&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>Caching Penetration 缓存穿透</title><link>https://ruokezhang.github.io/post/redis/cachepenetration/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachepenetration/</guid><description>&lt;p>缓存穿透：发出大量读请求给 Redis,然而这些数据不存在 Redis 里面，也不存在数据库里面，给数据库造成巨大压力。&lt;/p>
 &lt;h2 id="缓存null值">缓存null值
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98null%e5%80%bc">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
