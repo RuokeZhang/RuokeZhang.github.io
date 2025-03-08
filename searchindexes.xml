@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Process</title><url>/post/os/process/</url><categories><category>Operating System</category></categories><tags><tag>Operating System</tag><tag>CSAPP</tag></tags><content type="html">  Process 进程独有的：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Distribued Training</title><url>/ai/parallelism/</url><categories><category>ML-related</category></categories><tags><tag>AI</tag></tags><content type="html">  通信实现方式 机器内通信 NVLink：GPU之间直接通信的技术。NVLink 3.0 的单向带宽可达 50 GB/s。 PCIe：一种通用的高速总线标准，用于连接 GPU、CPU 和其他外设。 在 PCIe 架构下，GPU 之间的通信需要通过 CPU 和系统内存，带宽和延迟不如 NVLink。PCIe 4.0 x16 的单向带宽为 31.5 GB/s。 PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。 机器间通信 TCP/IP: 通信速率收到硬件限制，比机内通信更慢。
+通信后端 NCCL NCCL 是 NVIDIA 开发的高性能通信库，专为多 GPU 和多节点之间的通信优化。
+利用 NVLink、PCIe 等高速互联技术，提供极高的带宽和低延迟。
+NCCL-Test 则是用来验证 NCCL 在不同硬件环境（如 NVLink、PCIe、TCP）下的性能和正确性的工具。
+Gloo 适合 CPU 分布式训练或多节点训练
+RLlib RLlib 是 Ray 生态系统中的一个库，专注于强化学习的分布式训练。
+  </content></entry><entry><title>Process</title><url>/post/os/process/</url><categories><category>Operating System</category></categories><tags><tag>Operating System</tag><tag>CSAPP</tag></tags><content type="html">  Process 进程独有的：
 PC stack pointer(存储返回地址) address space file descriptors 想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。
 内核空间 内核空间位于整个地址空间的顶部，是所有用户进程共有的。用户进程的地址空间处于地址空间的底部。 只要系统在运行，内核就始终处于活动状态。它不像其他进程那样启动和停止；而是在系统启动时初始化，并持续运行直到系统关闭。 进程的终止 终止一个进程有三种方法：
 收到了default action为terminate的signal 从main方法返回 显式call exit fork() 在fork()创建子进程时，子进程会继承父进程的一切，包括PC，stack pointer, fd; 子进程拥有和父进程一模一样，但是分开的虚拟地址空间，并且这两个虚拟地址空间指向同一块物理内存。因为父进程把 page table复制给子进程。
@@ -103,7 +109,10 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 48. Rotate Image 先水平翻转，再沿主对角线翻转
 41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
 遍历数组的 index，判断nums[i]是否等于 nums[nums[i]+1], 如果不等于，则用循环交换。
-75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 栈 32 最长有效括号 &ldquo;()(())&rdquo;
+75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;lt;=p2: while i&amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1 136 x^x=0
+0^x=x
+可以不断xor，来消除所有出现了两次的数字
+  </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 栈 32 最长有效括号 &ldquo;()(())&rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
 单调栈 每日温度 LC 155 最小栈 单调双端队列 滑动窗口最大值 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res=[] dq=collections.deque() for i, x in enumerate(nums): if dq and dq[0]&lt;i-k+1: dq.popleft() while dq and nums[dq[-1]]&lt;=x: dq.pop() dq.append(i) if i&gt;=k-1: res.append(nums[dq[0]]) return res LCR 184对应LC 155
@@ -194,7 +203,7 @@ res=max(diameter-startDepth, startDepth)
 在更新 diameter 的时候，必须确保当前路径含有 start
 dfs返回两个值。
 深度：如果root这棵树不含有start, 返回root到叶子的深度；如果这棵树含有start，返回root到start的深度。
-该树是否含有start，T/Fh
+该树是否含有start，T/F
   </content></entry><entry><title>回溯</title><url>/post/leetcode/backtrack/backtracking/</url><categories><category>Leetcode</category><category>Backtracking</category></categories><tags><tag>leetcode</tag></tags><content type="html">  子集型回溯 在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 状态一定不变。不管有多少个分支，每个分支都要考虑这个问题。
 如果 path是immutable，如string，它作为参数传递给dfs，这种情况下根本没有在修改它的状态，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.
 模版一：选或不选 从输入的角度思考

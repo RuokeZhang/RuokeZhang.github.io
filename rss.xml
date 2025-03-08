@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>https://ruokezhang.github.io/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/process/</guid><description>&lt;h2 id="process">Process
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distribued Training</title><link>https://ruokezhang.github.io/ai/parallelism/</link><pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/ai/parallelism/</guid><description>&lt;h2 id="通信实现方式">通信实现方式
+&lt;a class="header-anchor" href="#%e9%80%9a%e4%bf%a1%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f">&lt;/a>
+&lt;/h2>&lt;h3 id="机器内通信">机器内通信
+&lt;a class="header-anchor" href="#%e6%9c%ba%e5%99%a8%e5%86%85%e9%80%9a%e4%bf%a1">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>NVLink：GPU之间直接通信的技术。NVLink 3.0 的单向带宽可达 50 GB/s。&lt;/li>
+&lt;li>PCIe：一种通用的高速总线标准，用于连接 GPU、CPU 和其他外设。
+在 PCIe 架构下，GPU 之间的通信需要通过 CPU 和系统内存，带宽和延迟不如 NVLink。PCIe 4.0 x16 的单向带宽为 31.5 GB/s。
+PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。&lt;/li>
+&lt;/ol>
+&lt;h3 id="机器间通信">机器间通信
+&lt;a class="header-anchor" href="#%e6%9c%ba%e5%99%a8%e9%97%b4%e9%80%9a%e4%bf%a1">&lt;/a>
+&lt;/h3>&lt;p>TCP/IP: 通信速率收到硬件限制，比机内通信更慢。&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/process/</guid><description>&lt;h2 id="process">Process
 &lt;a class="header-anchor" href="#process">&lt;/a>
 &lt;/h2>&lt;p>进程独有的：&lt;/p>
 &lt;ol>
