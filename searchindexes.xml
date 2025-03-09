@@ -115,7 +115,7 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
   </content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 栈 32 最长有效括号 &ldquo;()(())&rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
-单调栈 每日温度 LC 155 最小栈 单调双端队列 滑动窗口最大值 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res=[] dq=collections.deque() for i, x in enumerate(nums): if dq and dq[0]&lt;i-k+1: dq.popleft() while dq and nums[dq[-1]]&lt;=x: dq.pop() dq.append(i) if i&gt;=k-1: res.append(nums[dq[0]]) return res LCR 184对应LC 155
+单调栈 每日温度 LC 155 最小栈 单调双端队列 滑动窗口最大值 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res=[] dq=collections.deque() for i, x in enumerate(nums): if dq and dq[0]&lt;i-k+1: dq.popleft() while dq and nums[dq[-1]]&lt;=x: dq.pop() dq.append(i) if i&gt;=k-1: res.append(nums[dq[0]]) return res LCR 184对应LC 155(min stack)
   ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
@@ -157,7 +157,7 @@ del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
 list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found sort() 它直接在原列表上进行排序操作，不创建新的列表。只能应用于列表。
 iterable Iterable: list, tuple, str, dict, set, range, enumerate, map sorted(iterable)返回一个新的已排序列表。原始的可迭代对象不会被修改。时间复杂度为O(nlogn)
 deque = collections.deque()
-  ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
+ACM模式 知乎整理   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
 出：下标为i−k+1的元素离开窗口，更新相关统计量。
@@ -213,7 +213,7 @@ LC 90 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution: def subset
 K 个一组翻转链表 快慢指针 可以用来找中间节点、判断链表是否有环
 1 2 3 4 5 6 7 8 9 slow=head fast=head while fast and fast.next: fast=fast.next.next slow=slow.next if fast is slow: #代表有环 #出循环。代表没有环。 #此时slow为奇数链表的中间节点，偶数链表的第二个中间节点 若初始化fast=head.next,则最后可以得到 slow为正中间的节点。比如节点总数为8，slow停留在第四个节点。
 LC 143(快慢指针+反转链表) 首先找到中间节点mid，给mid后面都反转。因为从结果来看，这些指针都是需要被反转的。 图上表示反转后的结果，之后只需要不断地让head1.next=head2, head2.next=head1 即可。 经过观察发现，不过是奇数还是偶数链表，当head2.next为 None 时可以结束循环。
-  </content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
+复制随机链表   </content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
 实现类 DefaultListableBeanFactory这个类去实现 BeanFactory。 他继承了一个类，DefaultSingletonBeanRegistry，这个类是用来注册单例的。它有一个字段singletonObjects用来存放 Bean
 1 2 3 4 5 6 7 8 Field field= DefaultSingletonBeanRegistry.class.getDeclaredField(&#34;singletonObjects&#34;); field.setAccessible(true); //拿到那个实际的beanFactory对象 ConfigurableListableBeanFactory beanFactory = context.getBeanFactory(); Map&lt;String, Object&gt; map=(Map&lt;String, Object&gt;) field.get(beanFactory); map.forEach((k,v)-&gt;{ System.out.println(k); }); spring启动之后，打印出所有bean的名字.
 application context比 beanFactory多什么   ]]></content></entry><entry><title>Java 8的新特性</title><url>/javabasic/java8/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html"><![CDATA[  Functional Interface 函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。
