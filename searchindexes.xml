@@ -104,7 +104,7 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 如果核心线程已满，则将该任务放入workQueue。
 如 …  </content></entry><entry><title>技巧题</title><url>/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
 从后往前，找第一组升序的nums[i]和nums[i+1], 比如12947653，找到了nums[4]=4. 从后往前，找第一个比nums[i]大的数nums[j]，也就是 5 交换nums[i]和nums[j], 得到 12957643，此时nums[i]后面的数字全都是降序排列 把nums[i]后面的数字按升序排列，得到 12953467 128. Longest Consecutive Sequence [100,4,200,1,3,2]
-首先把所有数字都加入set中，这样判断某个数字是否存在，就只需要O(1)的时间。 遍历每个数字x，看谁能作为一个序列的起点。如果x-1也在set中，那么x就不能作为起点，continue 如果x能作为起点，就不断地判断x+1是否在set中 169. Majority Element 摩尔计数法，只能找到数量＞数字个数一半的众数。
+首先把所有数字都加入set中，这样判断某个数字是否存在，就只需要O(1)的时间。 在 set 中遍历每个数字x，看谁能作为一个序列的起点。如果x-1也在set中，那么x就不能作为起点，continue 如果x能作为起点，就不断地判断x+1是否在set中 169. Majority Element 摩尔计数法，只能找到数量＞数字个数一半的众数。
 如 1,1,1,2,3,9,9则不行
 48. Rotate Image 先水平翻转，再沿主对角线翻转
 41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
@@ -213,7 +213,8 @@ LC 90 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution: def subset
 K 个一组翻转链表 快慢指针 可以用来找中间节点、判断链表是否有环
 1 2 3 4 5 6 7 8 9 slow=head fast=head while fast and fast.next: fast=fast.next.next slow=slow.next if fast is slow: #代表有环 #出循环。代表没有环。 #此时slow为奇数链表的中间节点，偶数链表的第二个中间节点 若初始化fast=head.next,则最后可以得到 slow为正中间的节点。比如节点总数为8，slow停留在第四个节点。
 LC 143(快慢指针+反转链表) 首先找到中间节点mid，给mid后面都反转。因为从结果来看，这些指针都是需要被反转的。 图上表示反转后的结果，之后只需要不断地让head1.next=head2, head2.next=head1 即可。 经过观察发现，不过是奇数还是偶数链表，当head2.next为 None 时可以结束循环。
-复制随机链表   </content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
+复制随机链表 TODO
+  </content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
 实现类 DefaultListableBeanFactory这个类去实现 BeanFactory。 他继承了一个类，DefaultSingletonBeanRegistry，这个类是用来注册单例的。它有一个字段singletonObjects用来存放 Bean
 1 2 3 4 5 6 7 8 Field field= DefaultSingletonBeanRegistry.class.getDeclaredField(&#34;singletonObjects&#34;); field.setAccessible(true); //拿到那个实际的beanFactory对象 ConfigurableListableBeanFactory beanFactory = context.getBeanFactory(); Map&lt;String, Object&gt; map=(Map&lt;String, Object&gt;) field.get(beanFactory); map.forEach((k,v)-&gt;{ System.out.println(k); }); spring启动之后，打印出所有bean的名字.
 application context比 beanFactory多什么   ]]></content></entry><entry><title>Java 8的新特性</title><url>/javabasic/java8/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html"><![CDATA[  Functional Interface 函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。
@@ -300,5 +301,23 @@ Maven Install 1 2 3 4 5 6 7 8 9 10 &lt;plugin&gt; &lt;groupId&gt;org.apache.mave
 Debug java: invalid target release: 21
 Module hm-dianping SDK 1.8 is not compatible with the source version 21.
 确保pom里面指定的 Java version 和 JDK 版本与 IDEA Project Structure里面指定的版本一致 右键pom.xml，选择 maven-&gt;reload   ]]></content></entry><entry><title>关于我</title><url>/about/</url><categories/><tags/><content type="html">  
-你好，我是张若克，欢迎访问我的个人博客。这里是我分享个人经历、技术文章和思考的地方。
+因为平时有做笔记的习惯，但自己做笔记会杂乱无章。因此决定把笔记放在网站上，push一下自己整理笔记。  
+绝大多数内容是为了找国内实习而整理的八股。我喜欢深入理解这些内容，而不是简单的背诵。虽然这样效率可能会有点低，但也算是我个人的一个坚持吧。
+
+我现在处于 gap year期间。很多人不理解我为什么要放弃硕士 offer回国待一年。我只是想有一段完全空闲的时间，做做自己想做的事。  
+一直以来，我都要上课、写作业、准备考试，有时候我会觉得自己在为拿 A 而学习，压缩时间来准备考试，而不是花时间去向内探索。  
+本科毕业之后，我决定用一年来休息，毕竟我本科读了五年，还读了两个专业。
+
+初中的时候看过一本游记，《泛若不系之舟》，在书里我第一次见到了gap year这个词。作者去了一些小众旅游国家，比如印度，我也很想去那里看看。  
+对于当时中二的我来说，gap year这个词非常有魅力，它好像象征着自由。  
+我从没想过自己真的会选择拥有 gap year。但这一年，我也没有去环游世界。  
+我可能会后悔吧。但现在我只想多赚些钱，我想拥有很好的身体，可以在我有钱了之后，去探索世界。
+
+我已经在很充分地体验我的人生了。我喜欢尝试不同的运动、尝试小城市里没见过的小吃。我也喜欢看电影、去剧场看偶像。  
+我最喜欢的事情是去漂亮的自然景观处拍照，这是我梦里最常出现的场景。不过我已经很久没去了。我难以忘记 22 年暑假的黄石之旅。  
+祝我发大财、祝我健康、祝我更加热烈地拥抱这个世界。
+
+Ruoke  
+2025.03.10  
+于武汉家中，和姥姥姥爷妈妈一起
   </content></entry></search>

@@ -788,4 +788,22 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>关于我</title><link>https://ruokezhang.github.io/about/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/about/</guid><description>你好，我是张若克，欢迎访问我的个人博客。这里是我分享个人经历、技术文章和思考的地方。</description></item></channel></rss>
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>关于我</title><link>https://ruokezhang.github.io/about/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/about/</guid><description>因为平时有做笔记的习惯，但自己做笔记会杂乱无章。因此决定把笔记放在网站上，push一下自己整理笔记。 
+绝大多数内容是为了找国内实习而整理的八股。我喜欢深入理解这些内容，而不是简单的背诵。虽然这样效率可能会有点低，但也算是我个人的一个坚持吧。
+
+我现在处于 gap year期间。很多人不理解我为什么要放弃硕士 offer回国待一年。我只是想有一段完全空闲的时间，做做自己想做的事。 
+一直以来，我都要上课、写作业、准备考试，有时候我会觉得自己在为拿 A 而学习，压缩时间来准备考试，而不是花时间去向内探索。 
+本科毕业之后，我决定用一年来休息，毕竟我本科读了五年，还读了两个专业。
+
+初中的时候看过一本游记，《泛若不系之舟》，在书里我第一次见到了gap year这个词。作者去了一些小众旅游国家，比如印度，我也很想去那里看看。 
+对于当时中二的我来说，gap year这个词非常有魅力，它好像象征着自由。 
+我从没想过自己真的会选择拥有 gap year。但这一年，我也没有去环游世界。 
+我可能会后悔吧。但现在我只想多赚些钱，我想拥有很好的身体，可以在我有钱了之后，去探索世界。
+
+我已经在很充分地体验我的人生了。我喜欢尝试不同的运动、尝试小城市里没见过的小吃。我也喜欢看电影、去剧场看偶像。 
+我最喜欢的事情是去漂亮的自然景观处拍照，这是我梦里最常出现的场景。不过我已经很久没去了。我难以忘记 22 年暑假的黄石之旅。 
+祝我发大财、祝我健康、祝我更加热烈地拥抱这个世界。
+
+Ruoke 
+2025.03.10 
+于武汉家中，和姥姥姥爷妈妈一起</description></item></channel></rss>
