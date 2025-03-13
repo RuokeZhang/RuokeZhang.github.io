@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>持久化</title><link>https://ruokezhang.github.io/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>黑马点评登录设计</title><link>https://ruokezhang.github.io/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;h2 id="短信验证码登录">短信验证码登录
+&lt;a class="header-anchor" href="#%e7%9f%ad%e4%bf%a1%e9%aa%8c%e8%af%81%e7%a0%81%e7%99%bb%e5%bd%95">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。&lt;/li>
+&lt;li>登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。&lt;/li>
+&lt;li>如果该用户不存在，则创建用户并且保存用户到数据库。&lt;/li>
+&lt;li>随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。&lt;/li>
+&lt;/ol>
+&lt;h2 id="校验登录状态">校验登录状态
+&lt;a class="header-anchor" href="#%e6%a0%a1%e9%aa%8c%e7%99%bb%e5%bd%95%e7%8a%b6%e6%80%81">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。&lt;/li>
+&lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
+&lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中。&lt;/li>
+&lt;/ol>
+&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>持久化</title><link>https://ruokezhang.github.io/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
 
 &lt;a href="https://www.bilibili.com/video/BV1sK421i7B8/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
@@ -11,51 +27,18 @@
 &lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着讲这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
-&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="缓存工具类">缓存工具类
-&lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e5%b7%a5%e5%85%b7%e7%b1%bb">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@Slf4j&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@Component&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">CacheClient&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> StringRedisTemplate stringRedisTemplate;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> ExecutorService CACHE_REBUILD_EXECUTOR &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Executors.&lt;span style="color:#1e66f5">newFixedThreadPool&lt;/span>(10);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#1e66f5">CacheClient&lt;/span>(StringRedisTemplate stringRedisTemplate) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">stringRedisTemplate&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">set&lt;/span>(String key, Object value, Long time, TimeUnit unit) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">set&lt;/span>(key, JSONUtil.&lt;span style="color:#1e66f5">toJsonStr&lt;/span>(value), time, unit);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol>
-&lt;li>ShopServiceImpl Bean 的创建时间
-在 Spring 中，bean 的创建通常发生在 上下文启动时，也就是 Spring 启动并创建 ApplicationContext 时。具体来说，ShopServiceImpl 是一个标注为 @Service 的类，这表示它会被 Spring 自动扫描并注册为一个 bean。当 Spring 启动时，它会扫描到这个类并创建 ShopServiceImpl 的实例。&lt;/li>
+&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
+&lt;a class="header-anchor" href="#%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
+&lt;/h2>&lt;h3 id="缓存更新策略">缓存更新策略
+&lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%9b%b4%e6%96%b0%e7%ad%96%e7%95%a5">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>内存淘汰：Redis 内存不足时自动淘汰部分数据，下次请求时更新缓存&lt;/li>
+&lt;li>超时剔除：给缓存数据添加 TTL 时间，到期后自动删除缓存。下次请求时更新缓存。&lt;/li>
+&lt;li>主动更新：在修改数据库的同时更新缓存。&lt;/li>
 &lt;/ol>
-&lt;p>因此，ShopServiceImpl 实例会在 Spring 容器启动时被创建，通常是 应用启动时。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/redis/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachebreakdown/</guid><description>&lt;p>
+&lt;h3 id="缓存数据库一致性">缓存数据库一致性
+&lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
+&lt;/h3>&lt;p>有请求并发到来时，不管是先更新缓存后更新数据库，还是先更新数据库后更新缓存，都可能出现缓存不一致问题。&lt;/p></description></item><item><title>Caching Breakdown 缓存击穿</title><link>https://ruokezhang.github.io/post/redis/cachebreakdown/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/cachebreakdown/</guid><description>&lt;p>
 &lt;a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7148716168403439616-Krf7/" title="cache problems by Alex Xu" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  cache problems by Alex Xu
  
