@@ -3,8 +3,23 @@
 &ldquo;&gt;&ldquo;可看作寻找x+1的左侧边界
 &ldquo;&lt;=&ldquo;看做寻找x+1的左侧边界-1
 &ldquo;&lt;&ldquo;看做寻找x的左侧边界-1
-  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html">  
-短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中。 Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。
+非单调数组 红色（l-1及其左边）代表目标左边，蓝色（r及其右边）代表目标及其右边，也就是说nums[n-1]初始为蓝色。
+162. 寻找峰值 每次拿nums[mid]和 nums[mid+1]比较。以左闭右开写法举例：
+nums[mid]&lt;nums[mid+1]: 峰值在mid+1及其右侧， 因此l=mid+1 nums[mid]&gt;nums[mid+1]: 峰值为mid及其左侧区域, r=mid 注意这题需要初始 r=len(nums)-1，不然 nums[mid+1]会溢出。但即使如此，num[n-1]也不会在答案中被漏掉，这是因为循环结束时，l==r, 会返回。如[1,2,3,4].
+左闭右开写法: r及其右边可能是答案，l-1及其左边不是答案
+1901. 寻找峰值 II 灵神图解 要求时间复杂度为O(NlogM)，因此只需要对行进行二分。
+先找行，nums[mid]这行里面最大的元素，拿它和它下面的元素A比较。
+如果小于，则从A出发，一定存在一条单调递增直到峰值的路径，并且不会走到mid那一行，因为 mid那一行最大的都比A小了。
+所以就在下面那几排找峰值即可。
+153. 寻找旋转排序数组中的最小值 将nums[mid]与nums[n-1]比较。
+  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
+短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。 Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。
+UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所有ThreadLocal都存在该线程私有的ThreadLocalMap中。
+通过ThreadLocal的 get, set, remove方法，我们可以充分利用该线程的用户信息。
+1 2 3 4 5 6 7 8 9 10 11 12 public class UserHolder { private static final ThreadLocal&lt;UserDTO&gt; tl = new ThreadLocal&lt;&gt;(); public static void saveUser(UserDTO userDTO){ tl.set(userDTO); } public static UserDTO getUser(){ return tl.get(); } public static void removeUser(){ tl.remove(); } } 一个需要登录的请求线程完成工作之后，loginInterceptor里面定义的afterCompletion方法会把该用户从UserHolder中移除。
+  ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html">  DFS LC 200 岛屿数量
+DFS可以用来找聚在一起的符合要求的格子，在访问过某个格子后，改变它的标记。
+外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.
   </content></entry><entry><title>异常、泛型</title><url>/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
 Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，JVM 一般会选择终止线程。
 Exception 类具有Checked Exception和 Unchecked Exception 这两个子类。
@@ -278,13 +293,9 @@ Failed Attempt 2: Test And Set 也就是用一个标志来当作锁，错误的�
 线程A查缓存未命中，查数据库x=20 线程B更新数据库,x=21 线程B删除缓存 线程A把旧数据写入缓存,x=20 很小概率会出现这种情况。因为步骤一和步骤四之间，线程 B 查了数据库，但是实际上线程 A 查缓存写缓存都很快。
 如果删除缓存操作失败了怎么办？
 @Transactional 注解修饰方法。如果删除缓存失败，那么数据库更新的操作也需要回滚。
-其它方法 查询商铺缓存 采用主动更新+超时剔除的策略。
-根据 ID 查商铺，如果缓存没有命中，则查数据库，将结果写入缓存并设置超时时间。 修改数据时，先把新的数据存入数据库，再删除缓存。 缓存工具类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 @Slf4j @Component public class CacheClient { private final StringRedisTemplate stringRedisTemplate; private static final ExecutorService CACHE_REBUILD_EXECUTOR = Executors.newFixedThreadPool(10); public CacheClient(StringRedisTemplate stringRedisTemplate) { this.stringRedisTemplate = stringRedisTemplate; } public void set(String key, Object value, Long time, TimeUnit unit) { stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(value), time, unit); } } StringRedisTemplate 是一个由 Spring Boot 自动配置的 Redis 访问工具类，它会在 Spring 启动时根据 application.yml 中的配置自动实例化。
-Spring 会为每个 Redis 连接池和相关配置创建一个 StringRedisTemplate 的单例实例，并将它注入到需要的地方。
-CacheClient：
-CacheClient 是一个标注为 @Component 的类，这意味着 Spring 会自动将它注册为一个 bean 并将其注入到其他类中。 由于 CacheClient 使用构造器注入 StringRedisTemplate，因此 Spring 会先创建 StringRedisTemplate 的单例实例，然后将其传入 CacheClient 的构造函数，从而完成注入。
-缓存穿透 用户请求的数据既不在缓存内，也不在数据库内。大量此类请求会给数据库造成巨大压力。
-缓存空值。   </content></entry><entry><title>Caching Breakdown 缓存击穿</title><url>/post/redis/cachebreakdown/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">   cache problems by Alex Xu 缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。 互斥锁 为查询数据库的操作加锁，只允许一个请求线程去查数据库并且重建缓存。其他线程发现缓存里没数据，想要去数据库查数据时，发现有锁，因此休眠一会儿，再去缓存里查数据，直到它从缓存里拿到数据为止。
+其它方法 商铺缓存 采用主动更新+超时剔除的策略。
+根据 ID 查商铺，如果缓存没有命中，则查数据库，将结果写入缓存并设置超时时间。 修改数据时，先把新的数据存入数据库，再删除缓存。 把 Shop 对象转换成 JSON 字符串，作为 value 存储到 Redis 中。
+缓存工具类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 @Slf4j @Component public class CacheClient { private final StringRedisTemplate stringRedisTemplate; private static final ExecutorService CACHE_REBUILD_EXECUTOR = Executors.newFixedThreadPool(10); public CacheClient(StringRedisTemplate stringRedisTemplate) { this.stringRedisTemplate = stringRedisTemplate; } public void …  </content></entry><entry><title>Caching Breakdown 缓存击穿</title><url>/post/redis/cachebreakdown/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">   cache problems by Alex Xu 缓存击穿也叫hot key问题。当一个 hot key(频繁被访问的 key)突然 expire，有大量的请求到达数据库。 互斥锁 为查询数据库的操作加锁，只允许一个请求线程去查数据库并且重建缓存。其他线程发现缓存里没数据，想要去数据库查数据时，发现有锁，因此休眠一会儿，再去缓存里查数据，直到它从缓存里拿到数据为止。
 优点：实现简单，一致性强。没有额外的内存消耗（过期时间）
 逻辑过期 Hotspot data never expires，但它真正的有效期是存在它自己的数据结构里面。 一个线程A去数据库查数据，它占了锁，然后返回过期数据。它让线程 B 去重建缓存，并且重设逻辑过期时间。线程 B 重建完了之后，释放锁。
 如果其中线程 C 查缓存，发现它已经过期，它尝试获取锁但是失败，线程 C 马上返回过期数据。

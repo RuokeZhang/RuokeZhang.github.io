@@ -110,7 +110,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;h2 id="dfs">DFS
+&lt;a class="header-anchor" href="#dfs">&lt;/a>
+&lt;/h2>&lt;p>LC 200 岛屿数量&lt;br>
+DFS可以用来找&lt;strong>聚在一起的符合要求的格子&lt;/strong>，在访问过某个格子后，改变它的标记。&lt;br>
+外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>

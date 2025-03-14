@@ -124,9 +124,13 @@
 &lt;/h2>&lt;ol>
 &lt;li>前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。&lt;/li>
 &lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
-&lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中。&lt;/li>
+&lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。&lt;/li>
 &lt;/ol>
-&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;h2 id="dfs">DFS
+&lt;a class="header-anchor" href="#dfs">&lt;/a>
+&lt;/h2>&lt;p>LC 200 岛屿数量&lt;br>
+DFS可以用来找&lt;strong>聚在一起的符合要求的格子&lt;/strong>，在访问过某个格子后，改变它的标记。&lt;br>
+外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
