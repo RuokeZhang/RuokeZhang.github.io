@@ -1,18 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>高可用</title><url>/post/redis/highavailability/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">    </content></entry><entry><title>Binary Search</title><url>/post/leetcode/binarysearch/</url><categories><category>Leetcode</category><category>BinarySearch</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  闭区间写法 找该数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution: # 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1 def search(self, nums: List[int], target: int) -&gt; int: left = 0 right = len(nums) - 1 while left &lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: return mid elif nums[mid] &lt; target: left = mid + 1 elif nums[mid] &gt; target: right = mid - 1 return -1 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 def search(self, nums: List[int], target: int) -&gt; int: left = 0 right = len(nums) - 1 while left &lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: right=mid-1 elif nums[mid] &lt; target: left = mid + 1 elif nums[mid] &gt; target: right = mid - 1 return left 左闭右开 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def left_bound(nums: List[int], target: int) -&gt; int: left = 0 right = len(nums) while left &lt; right: mid = left + (right - left) // 2 if nums[mid] == target: right = mid elif nums[mid] &lt; target: left = mid + 1 elif nums[mid] &gt; target: right = mid return left 如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。
-&lt;, &lt;=, &gt;, &gt;= &ldquo;&gt;=&ldquo;即为寻找某数的左侧边界
-&ldquo;&gt;&ldquo;可看作寻找x+1的左侧边界
-&ldquo;&lt;=&ldquo;看做寻找x+1的左侧边界-1
-&ldquo;&lt;&ldquo;看做寻找x的左侧边界-1
-非单调数组 红色（l-1及其左边）代表目标左边，蓝色（r及其右边）代表目标及其右边，也就是说nums[n-1]初始为蓝色。
-162. 寻找峰值 每次拿nums[mid]和 nums[mid+1]比较。以左闭右开写法举例：
-nums[mid]&lt;nums[mid+1]: 峰值在mid+1及其右侧， 因此l=mid+1 nums[mid]&gt;nums[mid+1]: 峰值为mid及其左侧区域, r=mid 注意这题需要初始 r=len(nums)-1，不然 nums[mid+1]会溢出。但即使如此，num[n-1]也不会在答案中被漏掉，这是因为循环结束时，l==r, 会返回。如[1,2,3,4].
-左闭右开写法: r及其右边可能是答案，l-1及其左边不是答案
-1901. 寻找峰值 II 灵神图解 要求时间复杂度为O(NlogM)，因此只需要对行进行二分。
-先找行，nums[mid]这行里面最大的元素，拿它和它下面的元素A比较。
-如果小于，则从A出发，一定存在一条单调递增直到峰值的路径，并且不会走到mid那一行，因为 mid那一行最大的都比A小了。
-所以就在下面那几排找峰值即可。
-153. 寻找旋转排序数组中的最小值 将nums[mid]与nums[n-1]比较。
-  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>高可用</title><url>/post/redis/highavailability/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">  主从复制 主服务器负责读写请求，从服务器默认只负责读请求。
+主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。
+从节点向主节点发送 SYNC 命令，希望建立连接。 主节点回复 FULLRESYNC 命令给从节点，并且携带两个参数：主节点的runID和复制进度offset 主节点执行bgsave, 生成RDB文件，传输给从节点。（主节点生成RDB文件期间、传输RDB文件期间，还有从节点加载RDB文件期间，主节点会把新的写命令写入replication buffer中。） 从节点将RDB数据加载进内存；主节点把replication buffer中的命令发给从节点，让它执行。 主从节点在完成第一次同步后，就会维护一个TCP长连接。
+问题 如果向主节点请求全量复制的从节点太多，主节点就要fork出多个子进程来生成 RDB 文件，可能造成主节点阻塞。
+并且，传输多份 RDB 文件可能占用主节点的带宽。
+  </content></entry><entry><title>Binary Search</title><url>/post/leetcode/binarysearch/</url><categories><category>Leetcode</category><category>BinarySearch</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  闭区间写法 找该数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution: # 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: return mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return -1 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: right=mid-1 elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return left 左闭右开 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def left_bound(nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) while left &amp;lt; right: mid = left + (right - left) // 2 if nums[mid] == target: right = mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid return …  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
 短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。 Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。
 UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所有ThreadLocal都存在该线程私有的ThreadLocalMap中。
 通过ThreadLocal的 get, set, remove方法，我们可以充分利用该线程的用户信息。
@@ -265,6 +256,8 @@ LC 146. LRU Cache 双向链表-&gt;实现插入和删除节点都为 O(1)
 dict-&gt;key 为 key，value 为 Node
 辅助函数: remove(node), get_node(key)-&gt;node（返回节点并且把该节点放到链表最前端）, push_front(node)
 可以一直保持 dummy.pre为最后一个节点，因为在 push_front的时候就修改了 dummy.pre
+LC 106. 相交链表 设 A 链表自己的部分长为 x, B 链表自己的部分长为 y, 两个链表共同部分长为 z。
+思路：让从 AB 链表出发的两个指针都走上距离x+y+z，它们会在c1节点相遇。
   ]]></content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
 实现类 DefaultListableBeanFactory这个类去实现 BeanFactory。 他继承了一个类，DefaultSingletonBeanRegistry，这个类是用来注册单例的。它有一个字段singletonObjects用来存放 Bean
 1 2 3 4 5 6 7 8 Field field= DefaultSingletonBeanRegistry.class.getDeclaredField(&#34;singletonObjects&#34;); field.setAccessible(true); //拿到那个实际的beanFactory对象 ConfigurableListableBeanFactory beanFactory = context.getBeanFactory(); Map&lt;String, Object&gt; map=(Map&lt;String, Object&gt;) field.get(beanFactory); map.forEach((k,v)-&gt;{ System.out.println(k); }); spring启动之后，打印出所有bean的名字.
