@@ -1,14 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>高可用</title><url>/post/redis/highavailability/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">  主从复制 主服务器负责读写请求，从服务器默认只负责读请求。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>MySQL锁</title><url>/post/mysql/lock/</url><categories><category>MySQL</category></categories><tags><tag>MySQL</tag><tag>八股</tag></tags><content type="html">  全局锁 一般在做全库备份的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。
+1 flush tables with read lock 表级锁 表锁 表共享读锁。多个线程能同时获取这个锁，获取锁的线程可以读这个表，但不能写这个表。MyISAM 处理读请求时，会获取该表的表共享读锁。而 InnoDB 默认是行锁，通过 MVCC 来处理读请求。 表独占写锁。只有一个线程能获取这个锁，它可以对表进行写操作。其它任何线程都不可以读这张表。 1 lock tables t_student read; 触发表锁：ALTER/DROP/TRUNCATE TABLE
+意向锁 意向锁是表级锁，它的主要作用是避免全表扫描。（🌟号操作体现）
+InnoDB 里面读某个 record，通过无锁的 MVCC 机制来实现，此时不会给表加意向锁。
+意向锁和行级锁不冲突，意向锁之间也不冲突。
+锁类型 表级 S 锁（共享锁） 表级 X 锁（排他锁） 表级 IS 锁（意向共享锁） 表级 IX 锁（意向排他锁） 表级 S 锁（共享锁） 兼容 冲突 兼容 兼容 表级 X 锁（排他锁） 冲突 冲突 冲突 冲突 表级 IS 锁（意向共享锁） 兼容 冲突 兼容 兼容 表级 IX 锁（意向排他锁） 冲突 冲突 兼容 兼容 意向读锁IS 1 SELECT... LOCK IN SHARE MODE 当我们通过这种操作去读某一行数据时，会给这一行加上行级读锁，这时候数据库也会给这个表加上表级意向读锁。
+当有其它线程给某一行加写锁时，根据索引判断这行是否加了读锁，如果没加，写锁可以被加上；如果这行已经加了读锁，则不能加写锁。 当有其它线程给全表加写锁时，会发现表已经有意向读锁，因此不能完成写操作。🌟 当有其它线程给某一行/全表加读锁时，不冲突 意向写锁IX 1 select ... for update; 这个操作给这个表加上意向写锁，并且给该行加上写锁。
+当有其它线程给某一行加写锁时，根据索引判断这行是否已经有写锁，如果没有，写锁可以被加上；如果这行已经加了写锁，则不能再加写锁。 当有其它线程给全表加写锁时，会发现表已经有意向写锁，因此不能完成写操作。🌟 当有其它线程给某一行加读锁时，根据索引判断是不是同一行，如果是，则读锁不能加上；如果不是，可以加上 当有其它线程给全表加读锁时，可以完成。  …  </content></entry><entry><title>高可用</title><url>/post/redis/highavailability/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html"><![CDATA[  主从复制 主要优点：数据备份、读写分离，通常和哨兵模式结合使用。 主服务器负责读写请求，从服务器默认只负责读请求。
 主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。
 从节点向主节点发送 SYNC 命令，希望建立连接。 主节点回复 FULLRESYNC 命令给从节点，并且携带两个参数：主节点的runID和复制进度offset 主节点执行bgsave, 生成RDB文件，传输给从节点。（主节点生成RDB文件期间、传输RDB文件期间，还有从节点加载RDB文件期间，主节点会把新的写命令写入replication buffer中。） 从节点将RDB数据加载进内存；主节点把replication buffer中的命令发给从节点，让它执行。 主从节点在完成第一次同步后，就会维护一个TCP长连接。
-问题 如果向主节点请求全量复制的从节点太多，主节点就要fork出多个子进程来生成 RDB 文件，可能造成主节点阻塞。
+配置 1 2 3 4 5 6 # 主节点配置 bind 0.0.0.0 port 6379 # 从节点配置 replicaof &amp;lt;master-ip&amp;gt; &amp;lt;master-port&amp;gt; 问题 如果向主节点请求全量复制的从节点太多，主节点就要fork出多个子进程来生成 RDB 文件，可能造成主节点阻塞。
 并且，传输多份 RDB 文件可能占用主节点的带宽。
-  </content></entry><entry><title>Binary Search</title><url>/post/leetcode/binarysearch/</url><categories><category>Leetcode</category><category>BinarySearch</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  闭区间写法 找该数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution: # 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: return mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return -1 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: right=mid-1 elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return left 左闭右开 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def left_bound(nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) while left &amp;lt; right: mid = left + (right - left) // 2 if nums[mid] == target: right = mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid return …  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
+解决：让某些从节点从其他从节点进行复制，而不是直接从主节点复制。这样可以减少主节点的直接压力。
+增量复制 如果主节点和从节点的网络连接突然断开了，那么在他们重新建立连接的时候，就会发生增量复制。
+从节点会把 replication offset 携带在 PSYNC 命令中。
+master_repl_offset标记主节点写到的位置，slave_repl_offse标记从节点读到的位置。
+主节点在发送写命令给从节点的同时，还会把写命令发送给repl_backlog_buffer，这是一个专门用于增量复制的环形缓冲区，默认大小为 1MB。
+发生增量复制时，主节点会根据两个 offset 判断从节点需要补充的数据是否在repl_backlog_buffer中。如果不在就得选择全量复制。
+如果在，主节点就把repl_backlog_buffer中，从节点缺乏的那部分数据放入replication buffer，然后发给从节点。
+主从数据不一致 原因：主从复制是异步进行的。主节点在处 …  ]]></content></entry><entry><title>Binary Search</title><url>/post/leetcode/binarysearch/</url><categories><category>Leetcode</category><category>BinarySearch</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  闭区间写法 找该数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution: # 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: return mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return -1 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: right=mid-1 elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return left 左闭右开 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def left_bound(nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) while left &amp;lt; right: mid = left + (right - left) // 2 if nums[mid] == target: right = mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid return …  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
 短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。 Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。
 UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所有ThreadLocal都存在该线程私有的ThreadLocalMap中。
 通过ThreadLocal的 get, set, remove方法，我们可以充分利用该线程的用户信息。
 1 2 3 4 5 6 7 8 9 10 11 12 public class UserHolder { private static final ThreadLocal&lt;UserDTO&gt; tl = new ThreadLocal&lt;&gt;(); public static void saveUser(UserDTO userDTO){ tl.set(userDTO); } public static UserDTO getUser(){ return tl.get(); } public static void removeUser(){ tl.remove(); } } 一个需要登录的请求线程完成工作之后，loginInterceptor里面定义的afterCompletion方法会把该用户从UserHolder中移除。
-  ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html">  DFS LC 200 岛屿数量 DFS可以用来找聚在一起的符合要求的格子，在访问过某个格子后，改变它的标记。
+  ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html">   图题单 网格图题单 DFS LC 200 岛屿数量 DFS可以用来找聚在一起的符合要求的格子，在访问过某个格子后，改变它的标记。
 外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.
 BFS 994 腐烂的橘子 BFS用来一层一层地往外蔓延，可以记录蔓延的时间。
   </content></entry><entry><title>异常、泛型</title><url>/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
@@ -151,6 +165,8 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 res和 multi用来记录当前字符串的前缀，以及当前字符串需要重复的倍数。
 记住 multi也有可能是100。
 单调栈 每日温度 LC 155 最小栈 Largest Rectangle in Histogram; 需要前后两个哨兵节点[0] 单调双端队列 滑动窗口最大值 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res=[] dq=collections.deque() for i, x in enumerate(nums): if dq and dq[0]&lt;i-k+1: dq.popleft() while dq and nums[dq[-1]]&lt;=x: dq.pop() dq.append(i) if i&gt;=k-1: res.append(nums[dq[0]]) return res LCR 184对应LC 155(min stack)
+括号相关题 使字符串平衡的最小交换次数（贪心） 遇到左括号cnt+1, 遇到右括号cnt-1。不能使 cnt为负数，因此当cnt为 0，遇到右括号时，把它和左括号交换，此时操作数加一。
+为了使总操作数最小，每次尽量与最右边的左括号交换，这样可以保证cnt-1 尽量到后面才执行。
   ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
@@ -171,6 +187,8 @@ volatile 变量规则：对一个 volatile 变量的写操作 happens-before 于
 Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变量是共享且不稳定的。它可以保证可见性。
 每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。 无法保证原子性 在创建单例对象时，需要用到 volatile
 1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
+quick sort 以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。
+215 数组中的第K个最大元素
   </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 线程 线程的实现 一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。
 一对一线程模型✨ 每个Java线程对应操作系统中的一个内核线程，充分利用多核处理器的优势。（现在Windows 和 Linux 都是这种）
@@ -184,15 +202,18 @@ Java早期采用这种模式。
 1 2 3 4 5 6 7 8 9 10 11 12 class MyThread extends Thread { @Override public void run() { // 线程执行的任务 } public static void main(String[] args) { MyThread thread1 = new MyThread(); thread1.start(); } } 实现 Runnable 接口 需要把我的实现的类对象作为参数传递给 Thread 的创建函数。
 1 2 3 4 5 6 7 public class MyRunnableLambda { public static void main(String[] args) { Runnable runnable = () -&amp;amp;gt; …  </content></entry><entry><title>Python一些常用操作</title><url>/post/leetcode/pythonskill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag><tag>Python</tag></tags><content type="html"><![CDATA[  intervals.sort(key=lambda p: p[0])
 LC 189 [:]切片操作
-dict 1 2 3 4 5 6 7 # 包含初始键值对的字典 filled_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;} # 使用 dict() 构造函数 constructed_dict = dict(key1=&#39;value1&#39;, key2=&#39;value2&#39;) valueList=list(filled_dict.values()) LC 49
+dict 1 2 3 4 5 6 7 8 9 10 11 # 包含初始键值对的字典 filled_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;} # 使用 dict() 构造函数 constructed_dict = dict(key1=&#39;value1&#39;, key2=&#39;value2&#39;) valueList=list(filled_dict.values()) my_dict = {&#39;apple&#39;: 1, &#39;banana&#39;: 2, &#39;cherry&#39;: 3} for key in my_dict.keys(): print(f&#34;Key: {key}&#34;) LC 49
 defaultdict defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
 1 2 dd = defaultdict(int) # int 类型，缺省值为 0 dd = defaultdict(lambda: &#39;default_value&#39;) Counter Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。
 Iterable: list, tuple, str, dict, set, range, enumerate, map
 del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
-list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found sort() 它直接在原列表上进行排序操作，不创建新的列表。只能应用于列表。
+新建一个 Counter
+1 collections.Counter(nums) list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found sort() 它直接在原列表上进行排序操作，不创建新的列表。只能应用于列表。
 iterable Iterable: list, tuple, str, dict, set, range, enumerate, map sorted(iterable)返回一个新的已排序列表。原始的可迭代对象不会被修改。时间复杂度为O(nlogn)
 deque = collections.deque()
 ACM模式 知乎整理 zip 1 2 3 4 5 names = [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;] scores = [90, 85, 88] zipped = zip(names, scores) print(list(zipped)) 输出: [(&lsquo;Alice&rsquo;, 90), (&lsquo;Bob&rsquo;, 85), (&lsquo;Charlie&rsquo;, 88)]
+heapq 1 2 3 4 5 6 7 import heapq heap = [] heapq.heappush(heap, 3) heapq.heappush(heap, 1) heapq.heappush(heap, 2) print(heap) # 输出: [1, 3, 2] 对于单个元素：如果元素是可比较的（例如整数、浮点数等），那么堆会根据元素的大小进行排序，最小的元素位于堆顶。
+对于元组元素：当元素是元组时，堆会首先比较元组的第一个元素。如果第一个元素相等，再比较第二个元素，以此类推。在你给出的代码中，压入堆的元素是 (value, key) 元组，堆会根据 value（即元素出现的频率）进行排序，value 最小的元素位于堆顶。
   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。

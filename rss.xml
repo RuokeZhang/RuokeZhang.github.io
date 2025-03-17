@@ -1,6 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>高可用</title><link>https://ruokezhang.github.io/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL锁</title><link>https://ruokezhang.github.io/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
+&lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e9%94%81">&lt;/a>
+&lt;/h2>&lt;p>一般在做&lt;strong>全库备份&lt;/strong>的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>flush tables &lt;span style="color:#8839ef">with&lt;/span> &lt;span style="color:#8839ef">read&lt;/span> &lt;span style="color:#8839ef">lock&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="表级锁">表级锁
+&lt;a class="header-anchor" href="#%e8%a1%a8%e7%ba%a7%e9%94%81">&lt;/a>
+&lt;/h2>&lt;h3 id="表锁">表锁
+&lt;a class="header-anchor" href="#%e8%a1%a8%e9%94%81">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>表共享读锁。多个线程能同时获取这个锁，获取锁的线程可以读这个表，但不能写这个表。MyISAM 处理读请求时，会获取该表的表共享读锁。而 InnoDB 默认是&lt;strong>行锁&lt;/strong>，通过 MVCC 来处理读请求。&lt;/li>
+&lt;li>表独占写锁。只有一个线程能获取这个锁，它可以对表进行写操作。其它任何线程都不可以读这张表。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>高可用</title><link>https://ruokezhang.github.io/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
 &lt;a class="header-anchor" href="#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
+&lt;/h2>&lt;p>主要优点：数据备份、读写分离，通常和&lt;strong>哨兵模式&lt;/strong>结合使用。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
 主服务器负责&lt;strong>读写请求&lt;/strong>，从服务器&lt;strong>默认只负责读请求&lt;/strong>。&lt;br>
 主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarysearch/</guid><description>&lt;h2 id="闭区间写法">闭区间写法
 &lt;a class="header-anchor" href="#%e9%97%ad%e5%8c%ba%e9%97%b4%e5%86%99%e6%b3%95">&lt;/a>
@@ -130,7 +158,21 @@
 &lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
 &lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。&lt;/li>
 &lt;/ol>
-&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;h2 id="dfs">DFS
+&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/" title="网格图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 网格图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="dfs">DFS
 &lt;a class="header-anchor" href="#dfs">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-200-岛屿数量">LC 200 岛屿数量
 &lt;a class="header-anchor" href="#lc-200-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f">&lt;/a>
@@ -356,7 +398,10 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;p>LC 148: sort a linked list
-快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p>
+&lt;h2 id="quick-sort">quick sort
+&lt;a class="header-anchor" href="#quick-sort">&lt;/a>
+&lt;/h2>&lt;p>以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="线程">线程
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现
@@ -367,13 +412,17 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#dict">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 包含初始键值对的字典&lt;/span>
@@ -383,6 +432,10 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>constructed_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">dict&lt;/span>(key1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value1&amp;#39;&lt;/span>, key2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value2&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>valueList&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">list&lt;/span>(filled_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>values())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> {&lt;span style="color:#40a02b">&amp;#39;apple&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;banana&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;cherry&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> key &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> my_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>keys():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
