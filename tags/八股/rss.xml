@@ -74,4 +74,4 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%ae%9e%e7%8e%b0">&lt;/a>
-&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item></channel></rss>
+&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item></channel></rss>

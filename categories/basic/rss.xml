@@ -1,10 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/basic/</link><description>Recent content in Basic on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/basic/rss.xml" rel="self" type="application/rss+xml"/><item><title>异常、泛型</title><link>https://ruokezhang.github.io/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/basic/</link><description>Recent content in Basic on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/basic/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+&lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
+&lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
+&lt;h3 id="api">API
+&lt;a class="header-anchor" href="#api">&lt;/a>
+&lt;/h3>&lt;h4 id="获取class对象">获取Class对象
+&lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96class%e5%af%b9%e8%b1%a1">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String str&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> String.&lt;span style="color:#1e66f5">class&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="通过反射创建对象">通过反射创建对象
+&lt;a class="header-anchor" href="#%e9%80%9a%e8%bf%87%e5%8f%8d%e5%b0%84%e5%88%9b%e5%bb%ba%e5%af%b9%e8%b1%a1">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;com.example.User&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="获取字段">获取字段
+&lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e6%ae%b5">&lt;/a>
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
 &lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable具有 Exception和 Error 两个子类&lt;/p>
-&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>https://ruokezhang.github.io/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
+&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>https://ruokezhang.github.io/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
 &lt;a class="header-anchor" href="#collection%e6%8e%a5%e5%8f%a3">&lt;/a>
 &lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
@@ -72,9 +119,9 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;h3 id="时间复杂度">时间复杂度
 &lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">&lt;/a>
 &lt;/h3>&lt;p>理想情况下，HashMap 的插入、删除和查找操作平均时间复杂度都是 O (1)。&lt;br>
-如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
-&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>https://ruokezhang.github.io/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>接口是对行为的抽象。&lt;/p>
 &lt;ol>
@@ -188,7 +235,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>try-catch-finally</title><link>https://ruokezhang.github.io/post/java/trycatchfinally/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/trycatchfinally/</guid><description/></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
