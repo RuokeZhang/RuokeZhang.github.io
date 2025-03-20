@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java后端面试</title><link>https://ruokezhang.github.io/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/interview/</guid><description>&lt;h2 id="20250319-小红书日常一面">2025.03.19 小红书日常一面
+&lt;a class="header-anchor" href="#20250319-%e5%b0%8f%e7%ba%a2%e4%b9%a6%e6%97%a5%e5%b8%b8%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>IO和NIO的区别&lt;/li>
+&lt;li>JVM内存模型，堆里面具体有哪些东西&lt;/li>
+&lt;li>手写监听者模式/单例模式&lt;/li>
+&lt;li>ThreadLocal实现原理，并发安全吗，map里面放什么东西，内存泄露如何排查&lt;/li>
+&lt;li>get请求里面放什么，参数如何区分&lt;/li>
+&lt;li>讲一下泛型，泛型类的字节码文件是怎样的。&lt;/li>
+&lt;li>Spring 注解，RequestBody什么用处&lt;/li>
+&lt;li>ArrayList如何扩容&lt;/li>
+&lt;/ol>
+&lt;h2 id="20250320-sap日常二面">2025.03.20 SAP日常二面
+&lt;a class="header-anchor" href="#20250320-sap%e6%97%a5%e5%b8%b8%e4%ba%8c%e9%9d%a2">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>two sum, three sum&lt;/li>
+&lt;li>缓存空值有问题，应选择布隆过滤器&lt;/li>
+&lt;li>限流&lt;/li>
+&lt;li>Zookeeper 了解吗（因为我讲 Redisson 的时候提到了）&lt;/li>
+&lt;li>如果用户名+密码登录，如何保证数据安全&lt;/li>
+&lt;li>SQL的UPDATE语句的准确写法&lt;/li>
+&lt;/ol>
+&lt;h2 id="20250320-阿里云暑期一面">2025.03.20 阿里云暑期一面
+&lt;a class="header-anchor" href="#20250320-%e9%98%bf%e9%87%8c%e4%ba%91%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>前缀树：输入法提示&lt;/li>
+&lt;li>Redis内部有锁吗&lt;/li>
+&lt;li>讲讲SETNX&lt;/li>
+&lt;li>sorted set的底层实现&lt;/li>
+&lt;li>RDB，AOF的优缺点&lt;/li>
+&lt;li>分布式锁&lt;/li>
+&lt;li>登录验证，为什么要把token存在redis里面，还有更好的方法吗？&lt;/li>
+&lt;li>ThreadLocal 使用的时候需要注意什么问题？&lt;/li>
+&lt;li>是先拿锁，再判断库存；还是先在 lua 脚本里面判断库存，再拿锁&lt;/li>
+&lt;/ol></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API
@@ -278,7 +312,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>哈希表+链表/红黑树实现。解决哈希冲突的方法有 chaining/probing，一般使用chaining.&lt;/li>
-&lt;li>哈希值如何计算？拿到key的hashcode()。将原 hashcode和hashcode右移16位的值进行异或运算。&lt;/li>
+&lt;li>哈希值如何计算？拿到key的hashcode()。将&lt;strong>原 hashcode和hashcode右移16位的值进行异或运算&lt;/strong>。&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -289,8 +323,8 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ol start="3">
-&lt;li>计算数组下标。hash &amp;amp; (length-1)，相当于hash%length.&lt;/li>
-&lt;li>如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，升级成红黑树。&lt;/li>
+&lt;li>计算数组下标。&lt;strong>hash&amp;amp;(length-1)&lt;/strong>，相当于hash%length. 二进制运算比取模运算更快。&lt;/li>
+&lt;li>如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，并且哈希表长度大于64时，升级成红黑树。&lt;/li>
 &lt;li>红黑树节点数少于6时，变回链表。&lt;/li>
 &lt;li>初始容量16，负载因子0.75，扩容至原来的两倍。&lt;/li>
 &lt;li>并非线程安全。扩容的时候可能会造成链表成环。&lt;/li>
@@ -390,7 +424,7 @@ PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。&lt;/li>
 &lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item><item><title>ThreadLocal&amp;线程池</title><link>https://ruokezhang.github.io/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
-&lt;/h2>&lt;p>Thread类里面有一个变量threadLocals，可以视为一个 HashMap，用来存放线程私有的内容。&lt;/p>
+&lt;/h2>&lt;p>&lt;strong>Thread类&lt;/strong>里面有一个变量threadLocals，可以视为一个 HashMap，用来存放线程私有的内容。&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -403,7 +437,7 @@ PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是该ThreadLocal对象自己。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>
@@ -1015,4 +1049,4 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 
 Ruoke 
 2025.03.10 
-于武汉家中，和姥姥姥爷妈妈一起</description></item></channel></rss>
+于武汉家中，和姥姥姥爷妈妈一起</description></item><item><title/><link>https://ruokezhang.github.io/post/java/network/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

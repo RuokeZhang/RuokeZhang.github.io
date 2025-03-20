@@ -99,7 +99,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>哈希表+链表/红黑树实现。解决哈希冲突的方法有 chaining/probing，一般使用chaining.&lt;/li>
-&lt;li>哈希值如何计算？拿到key的hashcode()。将原 hashcode和hashcode右移16位的值进行异或运算。&lt;/li>
+&lt;li>哈希值如何计算？拿到key的hashcode()。将&lt;strong>原 hashcode和hashcode右移16位的值进行异或运算&lt;/strong>。&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -110,8 +110,8 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ol start="3">
-&lt;li>计算数组下标。hash &amp;amp; (length-1)，相当于hash%length.&lt;/li>
-&lt;li>如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，升级成红黑树。&lt;/li>
+&lt;li>计算数组下标。&lt;strong>hash&amp;amp;(length-1)&lt;/strong>，相当于hash%length. 二进制运算比取模运算更快。&lt;/li>
+&lt;li>如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，并且哈希表长度大于64时，升级成红黑树。&lt;/li>
 &lt;li>红黑树节点数少于6时，变回链表。&lt;/li>
 &lt;li>初始容量16，负载因子0.75，扩容至原来的两倍。&lt;/li>
 &lt;li>并非线程安全。扩容的时候可能会造成链表成环。&lt;/li>
