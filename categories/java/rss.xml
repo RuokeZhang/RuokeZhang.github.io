@@ -32,6 +32,20 @@
 &lt;li>登录验证，为什么要把token存在redis里面，还有更好的方法吗？&lt;/li>
 &lt;li>ThreadLocal 使用的时候需要注意什么问题？&lt;/li>
 &lt;li>是先拿锁，再判断库存；还是先在 lua 脚本里面判断库存，再拿锁&lt;/li>
+&lt;/ol>
+&lt;h2 id="20250321-paypal上海-full-stack-暑期实习一面">2025.03.21 PayPal上海 full stack 暑期实习一面
+&lt;a class="header-anchor" href="#20250321-paypal%e4%b8%8a%e6%b5%b7-full-stack-%e6%9a%91%e6%9c%9f%e5%ae%9e%e4%b9%a0%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>合并排序数组&lt;/li>
+&lt;li>数字符串里面一共有多少个 palindrome&lt;/li>
+&lt;/ol>
+&lt;h2 id="20250322-月之暗面搜推实习一面">2025.03.22 月之暗面搜推实习一面
+&lt;a class="header-anchor" href="#20250322-%e6%9c%88%e4%b9%8b%e6%9a%97%e9%9d%a2%e6%90%9c%e6%8e%a8%e5%ae%9e%e4%b9%a0%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>协程&lt;/li>
+&lt;li>讲讲go reduce这个项目的细节&lt;/li>
+&lt;li>手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？&lt;/li>
+&lt;li>Redis的数据结构，为什么不用string而是用hash，我说少一步序列化操作&lt;/li>
 &lt;/ol></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
