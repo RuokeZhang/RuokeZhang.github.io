@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Java后端面试</title><url>/post/interview/</url><categories><category>Java</category></categories><tags><tag>Java</tag></tags><content type="html">  2025.03.19 小红书日常一面 IO和NIO的区别 JVM内存模型，堆里面具体有哪些东西 手写监听者模式/单例模式 ThreadLocal实现原理，并发安全吗，map里面放什么东西，内存泄露如何排查 get请求里面放什么，参数如何区分 讲一下泛型，泛型类的字节码文件是怎样的。 Spring 注解，RequestBody什么用处 ArrayList如何扩容 2025.03.20 SAP日常二面 two sum, three sum 缓存空值有问题，应选择布隆过滤器 限流 Zookeeper 了解吗（因为我讲 Redisson 的时候提到了） 如果用户名+密码登录，如何保证数据安全。了解Oauth2吗？ SQL的UPDATE语句的准确写法 2025.03.20 阿里云暑期一面 前缀树：输入法提示 Redis内部有锁吗 讲讲SETNX sorted set的底层实现 RDB，AOF的优缺点 分布式锁 登录验证，为什么要把token存在redis里面，还有更好的方法吗？ ThreadLocal 使用的时候需要注意什么问题？ 是先拿锁，再判断库存；还是先在 lua 脚本里面判断库存，再拿锁 2025.03.21 PayPal上海 full stack 暑期实习一面 合并排序数组 数字符串里面一共有多少个 palindrome 2025.03.22 月之暗面搜推实习一面 协程 讲讲go reduce这个项目的细节 手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？ Redis的数据结构，为什么不用string而是用hash，我说少一步序列化操作   </content></entry><entry><title>Java反射&动态代理</title><url>/post/java/javabasic/reflection/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html"><![CDATA[  反射 反射是Java在运行时动态获取类的信息（如类名、方法、属性、构造方法等）并操作类的能力
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Redis面试题整理</title><url>/post/redis/redis_interview/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">  Zset 压缩列表 当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。
+跳表 采用多级索引；插入、删除、范围查找的时间复杂度都是O(logN)
+字典：存储 member→score 的映射，实现 O(1) 的分数查找。
+比红黑树的优点：范围查找更简单。
+  </content></entry><entry><title>MySQL常见面试题</title><url>/post/mysql/mysql_interview/</url><categories><category>MySQL</category></categories><tags><tag>MySQL</tag><tag>八股</tag></tags><content type="html">  存储引擎对比 InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址 InnoDB 支持 ACID 事务，MyISAM 不支持 InnoDB支持行级锁，MyISAM 不支持 什么是页分裂 当向已满的索引页(通常是16KB)插入新数据时，存储引擎会将当前页分裂成两个页，以容纳新数据
+这个过程涉及：分配新页、移动部分数据到新页、更新前后页的指针
+页分裂会导致性能下降，因为它是相对昂贵的操作
+对于纯粹的自增主键顺序写入，InnoDB确实会优先分配新页而非分裂现有页，这是自增主键性能优势的重要原因。但在实际生产环境中，由于并发等因素，仍可能发生少量页分裂。
+为什么会发生？ 每个节点（页）必须保持有序。在主键是非自增的情况下，我们必须保证后一个数据页中所有行的主键值比前一个数据页中的最大主键值要大。
+填充因子（Fill Factor） 定义页的初始填充率（如 innodb_fill_factor=80 表示页只填充 80%）。
+剩余空间用于后续插入，减少页分裂概率。
+解决方案 1 2 3 4 5 CREATE TABLE orders ( id BIGINT AUTO_INCREMENT PRIMARY KEY, -- 自增主键（聚簇索引） snowflake_id BIGINT UNIQUE, -- 雪花ID作为业务唯一键 ... ); InnoDB的可重复读隔离级别下解决幻读 对于快照读(普通SELECT)：通过MVCC，可重复读隔离级别，在事务第一次查询时创建ReadView
+对于当前读(SELECT&amp;hellip;FOR UPDATE/LOCK IN SHARE MODE/INSERT/UPDATE/DELETE)：通过间隙锁和Next-Key Lock避免幻读。
+SELECT * FROM t WHERE id &amp;gt; 100 FOR UPDATE会锁定id&amp;gt;100的所有间隙
+  </content></entry><entry><title>Java后端面试</title><url>/post/interview/</url><categories><category>Java</category></categories><tags><tag>Java</tag></tags><content type="html">  面经 2025.03.19 小红书日常一面 IO和NIO的区别 JVM内存模型，堆里面具体有哪些东西 手写监听者模式/单例模式 ThreadLocal实现原理，并发安全吗，map里面放什么东西，内存泄露如何排查 get请求里面放什么，参数如何区分 讲一下泛型，泛型类的字节码文件是怎样的。 Spring 注解，RequestBody什么用处 ArrayList如何扩容 虚拟机栈有多大？一个栈帧有多大？ SQL的UPDATE语句的准确写法 2025.03.20 SAP日常二面 two sum, three sum 缓存空值有问题，应选择布隆过滤器 限流 Zookeeper 了解吗（因为我讲 Redisson 的时候提到了） 如果用户名+密码登录，如何保证数据安全。如何加密？RSA？ 点评项目中，点赞数量太多怎么办 2025.03.20 阿里云暑期一面 前缀树：输入法提示 Redis内部有锁吗 讲讲SETNX sorted set的底层实现 RDB，AOF的优缺点 分布式锁 登录验证，为什么要把token存在redis里面，还有更好的方法吗？了解Oauth2吗？ ThreadLocal 使用的时候需要注意什么问题？ 是先拿锁，再判断库存；还是先在 lua 脚本里面判断库存，再拿锁 有对商户列表做缓存吗？如何解决按照不同的条件排序还能做到缓存？ 2025.03.21 PayPal上海 full stack 暑期实习一面 合并排序数组 数字符串里面一共有多少个 palindrome 2025.03.22 月之暗面搜推实习一面 协程 讲讲go reduce这个项目的细节 手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？懒汉/饿汉 Redis的数据结构，为什么不用string而是用hash，我说少一步序列化操作 2025.03.24 SAP日常二面 为什么用Kafka？优点；用的是Confluent Kafka吗？ 讲讲对分布式锁的理解，项目代码里面如何实现？我回答MultiLock. 2025.03.25 字节暑期一面 如果某条 SQL 执行太慢，怎么排查，用过什么工具 EXPLAIN 会出现一个表格，表格最后有一个 extra column，请介绍 方法区里面有什么？ 讲一讲 G1 为什么需要四次挥手？client 最后为什么要 wait？ 讲一讲建立HTTPS连接 …  </content></entry><entry><title>Java反射&动态代理</title><url>/post/java/javabasic/reflection/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html"><![CDATA[  反射 反射是Java在运行时动态获取类的信息（如类名、方法、属性、构造方法等）并操作类的能力
 API 获取Class对象 1 2 3 4 5 6 7 String str=&amp;#34;test&amp;#34;; Class&amp;lt;?&amp;gt; clazz = String.class; String str = &amp;#34;test&amp;#34;; Class&amp;lt;?&amp;gt; clazz = str.getClass(); Class&amp;lt;?&amp;gt; clazz = Class.forName(&amp;#34;java.lang.String&amp;#34;); 通过反射创建对象 1 2 3 4 5 Class&amp;lt;?&amp;gt; clazz = Class.forName(&amp;#34;com.example.User&amp;#34;); Object obj = clazz.getDeclaredConstructor().newInstance(); Constructor&amp;lt;?&amp;gt; constructor = clazz.getConstructor(String.class, int.class); Object obj = constructor.newInstance(&amp;#34;Alice&amp;#34;, 25); 获取字段 getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)
 优点 可以访问类的私有对象/字段, 方便单元测试 1 2 3 Field nameField = personClass.getDeclaredField(&amp;#34;name&amp;#34;); nameField.setAccessible(true); // 如果字段是 private，需要设置可访问性 System.out.println(&amp;#34;Name before: &amp;#34; + nameField.get(person)); 动态代理，提高代码复用性
 Spring框架
@@ -30,6 +44,7 @@ UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所�
   ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html">   图题单 网格图题单 DFS LC 200 岛屿数量 DFS可以用来找聚在一起的符合要求的格子，在访问过某个格子后，改变它的标记。
 外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.
 BFS 994 腐烂的橘子 BFS用来一层一层地往外蔓延，可以记录蔓延的时间。
+拓扑排序 DFS写法讲解 针对有向无环图
   </content></entry><entry><title>异常、泛型</title><url>/post/java/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
 Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，JVM 一般会选择终止线程。
 Exception 类具有Checked Exception和 Unchecked Exception 这两个子类。
@@ -193,6 +208,7 @@ volatile 变量规则：对一个 volatile 变量的写操作 happens-before 于
 Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变量是共享且不稳定的。它可以保证可见性。
 每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。 无法保证原子性 在创建单例对象时，需要用到 volatile
 1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
+LC 23. Merge k Sorted Lists
 quick sort 以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。
 215 数组中的第K个最大元素
   </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
@@ -277,6 +293,8 @@ dfs返回两个值。
 求子集的这种做法，一定等到i=n时，遍历完所有元素才添加答案。
 LC 90 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution: def subsetsWithDup(self, nums: List[int]) -&amp;amp;gt; List[List[int]]: n=len(nums) res=[] path=[] nums.sort() def dfs(i): if i==n: res.append(path.copy()) return #选 path.append(nums[i]) dfs(i+1) path.pop() #不选 if len(path)==0 or (len(path)&amp;amp;gt;0 and path[-1]!=nums[i]): dfs(i+1) dfs(0) return res 以 111 为例，检查当前 path，只有 path 中最后一个元素与当前元素不相等时，才可以不选当前元素。换句话说，如果两个相同的数字挨在一起，并且选了第一个数字，那就也必须选第二 …  </content></entry><entry><title>Linked List</title><url>/post/leetcode/linkedlist/</url><categories><category>Leetcode</category><category>LinkedList</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 反转链表 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -&gt; Optional[ListNode]: #因为答案的头节点可能会改，所以搞一个dummy dummy=ListNode(next=head) pre=dummy #移动pre, cur到1和2 for _ in range(left-1): pre=pre.next cur=pre.next #记录一下此时pre p0=pre #开始反转2到4这一段, 其实就是分别把2到4的next改了 for _ in range(right-left+1): nxt=cur.next cur.next=pre pre=cur cur=nxt #新的pre,cur分别是4，5 #连接 2 和 5 p0.next.next=cur #连接1和4 p0.next=pre return dummy.next 反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur. 如果是反转一整条链表，那么最后返回pre就好了。
 K 个一组翻转链表 快慢指针 可以用来找中间节点、判断链表是否有环
+这种写法，比如有4个节点，slow最后停在第三个节点。
+如果把fast初始化为 head.next，slow 最后停在第二个节点。
 1 2 3 4 5 6 7 8 9 slow=head fast=head while fast and fast.next: fast=fast.next.next slow=slow.next if fast is slow: #代表有环 #出循环。代表没有环。 #此时slow为奇数链表的中间节点，偶数链表的第二个中间节点 若初始化fast=head.next,则最后可以得到 slow为正中间的节点。比如节点总数为8，slow停留在第四个节点。
 LC 143(快慢指针+反转链表) 首先找到中间节点mid，给mid后面都反转。因为从结果来看，这些指针都是需要被反转的。 图上表示反转后的结果，之后只需要不断地让head1.next=head2, head2.next=head1 即可。 经过观察发现，不过是奇数还是偶数链表，当head2.next为 None 时可以结束循环。
 复制随机链表 TODO
@@ -305,6 +323,8 @@ AOP 将横切关注点（如日志、事务、权限校验）从核心业务逻�
 前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。
 1 2 3 4 @PutMapping(&#34;/like/{id}&#34;) public Result likeBlog(@PathVariable(&#34;id&#34;) Long id) { return blogService.likeBlog(id); } 前端发请求的时候不携带当前是否点赞的状态，由后端判断该用户是否给这篇帖子点赞过，判断即是看sorted set里面有没有这个用户的 ID。
 接下来更新 post数据库里面的点赞数量，更新Redis的 sorted set。
+高点赞量 分页查询，避免一次性获取全部数据 限制最大存储数量 1 2 # 只保留最近的 1000 个点赞用户 ZREMRANGEBYRANK post:likes:123 0 -1001 冷热数据分离 用户点赞时，先写入 Redis ZSET。
+后台异步任务定期同步到 MySQL（避免高频写入压力）
 Feed流 当某人发布一篇帖子，我们把帖子内容保存到数据库里，同时推送到这个人粉丝的收件箱里。收件箱按时间戳从新到旧（从大到小）排序。但是 feed里面的数据不断更新，最新的帖子的 index 为 0，所以所有帖子的index都会发生变化，因此不能用传统的分页模式查询帖子。 收件箱用sorted set设计，每次读取的时候，记录上次读到的最旧一条帖子的时间戳（A）；分页查的时候，就只查这条时间戳更早的帖子。如果有好几个帖子的时间戳都为 A，那么第二次分页查的时候 第一次请求，由前端获取时间戳，offset初始化为0。返回查到的最小时间戳。 以后的请求，传过去的时间戳是第一次请求返回的那个。   ]]></content></entry><entry><title>接口和抽象类</title><url>/post/java/javabasic/interfaceabstractclass/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html"><![CDATA[  Interface 接口是对行为的抽象。
 abstract method, Java 8以前接口只能有抽象方法 default method，提供方法体，Java 8 以后有 static method, 提供方法体，Java 8 以后有，可以通过Interface.method()调用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 public interface MyInterface { // 抽象方法 void abstractMethod(); // 默认方法 default void defaultMethod() { System.out.println(&#34;这是接口的默认方法&#34;); privateHelperMethod(); // 调用私有辅助方法（注意：私有方法是Java 9的特性，这里仅为示例） } // 静态方法 static void staticMethod() { System.out.println(&#34;这是接口的静态方法&#34;); } // 私有辅助方法（Java 9 特性，但为了完整性展示，包含在此） private void privateHelperMethod() { System.out.println(&#34;这是接口的私有辅助方法&#34;); } } public class MyClass implements MyInterface { @Override public void abstractMethod() { System.out.println(&#34;实现接口的抽象方法&#34;); } // 可以选择覆盖默认方法 @Override public void defaultMethod() { System.out.println(&#34;覆盖接口的默认方法&#34;); MyInterface.super.defaultMethod(); // 调用接口的默认方法 } } public class Main { public static void main(String[] args) { MyClass myClass = new MyClass(); // 调用实现的抽象方法 myClass.abstractMethod(); // 调用默认方法 myClass.defaultMethod(); // 注意这里调用的是覆盖后的版本 // 调用接口的静态方法 MyInterface.staticMethod(); } } Abstract Class 抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。
 抽象类可以继承另一个类，也可以实现多个interface。
@@ -316,13 +336,17 @@ Failed Attempt 2: Test And Set 也就是用一个标志来当作锁，错误的�
 那么，使用 Cache Aside 策略，也就是只有在读数据的时候，cache 才有可能被更新。
 写策略：当我们修改数据时，更新数据库里的数据，直接删除缓存中的数据。
 读策略：当读数据时，如果发现缓存里没有该数据，则从数据库里面读数据更新到缓存中。
-先更新后删除 线程A遵循读策略，线程B同时更新数据
-线程A查缓存未命中，查数据库x=20 线程B更新数据库,x=21 线程B删除缓存 线程A把旧数据写入缓存,x=20 很小概率会出现这种情况。因为步骤一和步骤四之间，线程 B 查了数据库，但是实际上线程 A 查缓存写缓存都很快。
+先更新后删除（延迟双删） 线程A遵循读策略，线程B同时更新数据
+线程A查缓存未命中，查数据库x=20 线程B更新数据库,x=21 线程B删除缓存（第一次删除） 线程A把旧数据写入缓存,x=20 线程B延迟一段时间后主动执行第二次删除（非被动检测） 很小概率会出现这种情况。因为步骤一和步骤四之间，线程 B 查了数据库，但是实际上线程 A 查缓存写缓存都很快。
+延迟时间（如500ms）需大于&amp;amp;quot;查询DB+写入缓存&amp;amp;quot;的耗时（通常 &amp;amp;lt; 100ms）
+只要延迟时间设置合理，可以覆盖线程A的旧数据写入操作（步骤4）
+即使没有发生并发冲突，重复删除也是安全的幂等操作
 如果删除缓存操作失败了怎么办？
 @Transactional 注解修饰方法。如果删除缓存失败，那么数据库更新的操作也需要回滚。
 其它方法 商铺缓存 采用主动更新+超时剔除的策略。
-根据 ID 查商铺，如果缓存没有命中，则查数据库，将结果写入缓存并设置超时时间。 修改数据时，先把新的数据存入数据库，再删除缓存。 把 Shop 对象转换成 JSON 字符串，作为 value 存储到 Redis 中。
-缓存工具类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 @Slf4j @Component public class CacheClient { private final StringRedisTemplate stringRedisTemplate; private static final ExecutorService CACHE_REBUILD_EXECUTOR = Executors.newFixedThreadPool(10); public CacheClient(StringRedisTemplate stringRedisTemplate) { this.stringRedisTemplate = stringRedisTemplate; } public void …  </content></entry><entry><title>优惠券秒杀</title><url>/post/blackhorserating/voucher/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  全局ID生成器: Redis自增 使用数据库自增ID的缺点：
+根据 ID 查商铺，如果缓存没有命中，则查数据库，将结果写入缓存并设置超时时间。 修改数据时，先把新的数据存入数据库，再删除缓存。 把 Shop 对象转换成 JSON 字符串，作为 value 存储到 Redis 中。这适用于对象的结构复杂，且更新操作较少的情况。
+如果更新操作较多，可以在redis里面存hash
+缓存工具类 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 @Slf4j @Component public class CacheClient { private final StringRedisTemplate stringRedisTemplate; private static final …  </content></entry><entry><title>优惠券秒杀</title><url>/post/blackhorserating/voucher/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  全局ID生成器: Redis自增 使用数据库自增ID的缺点：
 可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。 当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。 1 2 3 4 5 6 7 8 9 10 11 12 //符号位0+时间戳31bit+序列号32bit public long nextId(String keyPrefix){ //生成时间戳 LocalDateTime now=LocalDateTime.now(); long nowSecond=now.toEpochSecond(ZoneOffset.UTC); long timestamp=nowSecond-BEGIN_TIMESTAMP; //生成序列号. 每一天下的单使用同一个Key String date=now.format(DateTimeFormatter.ofPattern(&amp;#34;yyyy:MM:dd&amp;#34;)); long count= stringRedisTemplate.opsForValue().increment(&amp;#34;icr:&amp;#34;+keyPrefix+&amp;#34;:&amp;#34;+date); //拼接并返回 return timestamp&amp;lt;&amp;lt;COUNT_BITS|count; } 这里的 keyPrefix表示一种object,比如优惠券订单
 超卖问题 假设200qps，200 个请求同时抢优惠券，然而优惠券的总数只有 100 张。 JMeter 测试发现，有 45% 的失败率；数据库查看，发现此时该库存数量为 -9，出现超卖情况。
 乐观锁-版本号法 先从数据库查到一个版本号 A，向数据库更新的时候确认一下自己拿到的版本号A和此时数据库里的版本号B是否一致。 如果一致, set version+1; 不一致，则放弃更新操作。

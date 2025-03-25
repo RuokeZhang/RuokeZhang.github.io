@@ -2,6 +2,7 @@
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;p>LC 148: sort a linked list
 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p>
+&lt;p>LC 23. Merge k Sorted Lists&lt;/p>
 &lt;h2 id="quick-sort">quick sort
 &lt;a class="header-anchor" href="#quick-sort">&lt;/a>
 &lt;/h2>&lt;p>以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。&lt;/p></description></item></channel></rss>

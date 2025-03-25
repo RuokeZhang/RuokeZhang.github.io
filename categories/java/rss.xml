@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java后端面试</title><link>https://ruokezhang.github.io/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/interview/</guid><description>&lt;h2 id="20250319-小红书日常一面">2025.03.19 小红书日常一面
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java后端面试</title><link>https://ruokezhang.github.io/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/interview/</guid><description>&lt;h2 id="面经">面经
+&lt;a class="header-anchor" href="#%e9%9d%a2%e7%bb%8f">&lt;/a>
+&lt;/h2>&lt;h3 id="20250319-小红书日常一面">2025.03.19 小红书日常一面
 &lt;a class="header-anchor" href="#20250319-%e5%b0%8f%e7%ba%a2%e4%b9%a6%e6%97%a5%e5%b8%b8%e4%b8%80%e9%9d%a2">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>IO和NIO的区别&lt;/li>
 &lt;li>JVM内存模型，堆里面具体有哪些东西&lt;/li>
 &lt;li>手写监听者模式/单例模式&lt;/li>
@@ -9,44 +11,72 @@
 &lt;li>讲一下泛型，泛型类的字节码文件是怎样的。&lt;/li>
 &lt;li>Spring 注解，RequestBody什么用处&lt;/li>
 &lt;li>ArrayList如何扩容&lt;/li>
+&lt;li>虚拟机栈有多大？一个栈帧有多大？&lt;/li>
+&lt;li>SQL的UPDATE语句的准确写法&lt;/li>
 &lt;/ol>
-&lt;h2 id="20250320-sap日常二面">2025.03.20 SAP日常二面
+&lt;h3 id="20250320-sap日常二面">2025.03.20 SAP日常二面
 &lt;a class="header-anchor" href="#20250320-sap%e6%97%a5%e5%b8%b8%e4%ba%8c%e9%9d%a2">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>two sum, three sum&lt;/li>
 &lt;li>缓存空值有问题，应选择布隆过滤器&lt;/li>
 &lt;li>限流&lt;/li>
 &lt;li>Zookeeper 了解吗（因为我讲 Redisson 的时候提到了）&lt;/li>
-&lt;li>如果用户名+密码登录，如何保证数据安全。了解Oauth2吗？&lt;/li>
-&lt;li>SQL的UPDATE语句的准确写法&lt;/li>
+&lt;li>如果用户名+密码登录，如何保证数据安全。如何加密？RSA？&lt;/li>
+&lt;li>点评项目中，点赞数量太多怎么办&lt;/li>
 &lt;/ol>
-&lt;h2 id="20250320-阿里云暑期一面">2025.03.20 阿里云暑期一面
+&lt;h3 id="20250320-阿里云暑期一面">2025.03.20 阿里云暑期一面
 &lt;a class="header-anchor" href="#20250320-%e9%98%bf%e9%87%8c%e4%ba%91%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>前缀树：输入法提示&lt;/li>
 &lt;li>Redis内部有锁吗&lt;/li>
 &lt;li>讲讲SETNX&lt;/li>
 &lt;li>sorted set的底层实现&lt;/li>
 &lt;li>RDB，AOF的优缺点&lt;/li>
 &lt;li>分布式锁&lt;/li>
-&lt;li>登录验证，为什么要把token存在redis里面，还有更好的方法吗？&lt;/li>
+&lt;li>登录验证，为什么要把token存在redis里面，还有更好的方法吗？了解Oauth2吗？&lt;/li>
 &lt;li>ThreadLocal 使用的时候需要注意什么问题？&lt;/li>
 &lt;li>是先拿锁，再判断库存；还是先在 lua 脚本里面判断库存，再拿锁&lt;/li>
+&lt;li>有对商户列表做缓存吗？如何解决按照不同的条件排序还能做到缓存？&lt;/li>
 &lt;/ol>
-&lt;h2 id="20250321-paypal上海-full-stack-暑期实习一面">2025.03.21 PayPal上海 full stack 暑期实习一面
+&lt;h3 id="20250321-paypal上海-full-stack-暑期实习一面">2025.03.21 PayPal上海 full stack 暑期实习一面
 &lt;a class="header-anchor" href="#20250321-paypal%e4%b8%8a%e6%b5%b7-full-stack-%e6%9a%91%e6%9c%9f%e5%ae%9e%e4%b9%a0%e4%b8%80%e9%9d%a2">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>合并排序数组&lt;/li>
 &lt;li>数字符串里面一共有多少个 palindrome&lt;/li>
 &lt;/ol>
-&lt;h2 id="20250322-月之暗面搜推实习一面">2025.03.22 月之暗面搜推实习一面
+&lt;h3 id="20250322-月之暗面搜推实习一面">2025.03.22 月之暗面搜推实习一面
 &lt;a class="header-anchor" href="#20250322-%e6%9c%88%e4%b9%8b%e6%9a%97%e9%9d%a2%e6%90%9c%e6%8e%a8%e5%ae%9e%e4%b9%a0%e4%b8%80%e9%9d%a2">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>协程&lt;/li>
 &lt;li>讲讲go reduce这个项目的细节&lt;/li>
-&lt;li>手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？&lt;/li>
+&lt;li>手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？懒汉/饿汉&lt;/li>
 &lt;li>Redis的数据结构，为什么不用string而是用hash，我说少一步序列化操作&lt;/li>
-&lt;/ol></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+&lt;/ol>
+&lt;h3 id="20250324-sap日常二面">2025.03.24 SAP日常二面
+&lt;a class="header-anchor" href="#20250324-sap%e6%97%a5%e5%b8%b8%e4%ba%8c%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>为什么用Kafka？优点；用的是Confluent Kafka吗？&lt;/li>
+&lt;li>讲讲对分布式锁的理解，项目代码里面如何实现？我回答MultiLock.&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250325-字节暑期一面">2025.03.25 字节暑期一面
+&lt;a class="header-anchor" href="#20250325-%e5%ad%97%e8%8a%82%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>如果某条 SQL 执行太慢，怎么排查，用过什么工具&lt;/li>
+&lt;li>EXPLAIN 会出现一个表格，表格最后有一个 extra column，请介绍&lt;/li>
+&lt;li>方法区里面有什么？&lt;/li>
+&lt;li>讲一讲 G1&lt;/li>
+&lt;li>为什么需要四次挥手？client 最后为什么要 wait？&lt;/li>
+&lt;li>讲一讲建立HTTPS连接的过程&lt;/li>
+&lt;li>手撕 48 和 3&lt;/li>
+&lt;/ol>
+&lt;h2 id="面试准备">面试准备
+&lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
+&lt;/h2>&lt;h3 id="git">git
+&lt;a class="header-anchor" href="#git">&lt;/a>
+&lt;/h3>&lt;h4 id="git-merge适合团队协作">git merge：适合团队协作
+&lt;a class="header-anchor" href="#git-merge%e9%80%82%e5%90%88%e5%9b%a2%e9%98%9f%e5%8d%8f%e4%bd%9c">&lt;/a>
+&lt;/h4>&lt;p>将两个分支的提交历史合并，生成一个新的合并提交（merge commit），保留原始分支的完整历史（包括分叉和合并的痕迹）。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/gitMerge.png" alt="Alt text" />&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API
