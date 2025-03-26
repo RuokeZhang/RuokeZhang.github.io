@@ -22,7 +22,7 @@
 &lt;li>限流&lt;/li>
 &lt;li>Zookeeper 了解吗（因为我讲 Redisson 的时候提到了）&lt;/li>
 &lt;li>如果用户名+密码登录，如何保证数据安全。如何加密？RSA？&lt;/li>
-&lt;li>点评项目中，点赞数量太多怎么办&lt;/li>
+&lt;li>点评项目中，点赞数量太多怎么办。（大 key问题）&lt;/li>
 &lt;/ol>
 &lt;h3 id="20250320-阿里云暑期一面">2025.03.20 阿里云暑期一面
 &lt;a class="header-anchor" href="#20250320-%e9%98%bf%e9%87%8c%e4%ba%91%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
@@ -49,7 +49,7 @@
 &lt;/h3>&lt;ol>
 &lt;li>协程&lt;/li>
 &lt;li>讲讲go reduce这个项目的细节&lt;/li>
-&lt;li>手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？懒汉/饿汉&lt;/li>
+&lt;li>手写单例模式，除了双重检验锁，还有什么别的方法可以实现吗？懒汉/饿汉。为什么加 volatile，禁止指令重排序，开辟空间，（实例化，分配给该对象）。&lt;/li>
 &lt;li>Redis的数据结构，为什么不用string而是用hash，我说少一步序列化操作&lt;/li>
 &lt;/ol>
 &lt;h3 id="20250324-sap日常二面">2025.03.24 SAP日常二面
@@ -61,7 +61,7 @@
 &lt;h3 id="20250325-字节暑期一面">2025.03.25 字节暑期一面
 &lt;a class="header-anchor" href="#20250325-%e5%ad%97%e8%8a%82%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
 &lt;/h3>&lt;ol>
-&lt;li>如果某条 SQL 执行太慢，怎么排查，用过什么工具&lt;/li>
+&lt;li>如果某条 SQL 执行太慢，怎么排查，用过什么工具。联表查询：小表驱动大表。&lt;/li>
 &lt;li>EXPLAIN 会出现一个表格，表格最后有一个 extra column，请介绍&lt;/li>
 &lt;li>方法区里面有什么？&lt;/li>
 &lt;li>讲一讲 G1&lt;/li>
@@ -69,13 +69,15 @@
 &lt;li>讲一讲建立HTTPS连接的过程&lt;/li>
 &lt;li>手撕 48 和 3&lt;/li>
 &lt;li>MySQL主从复制讲一下&lt;/li>
-&lt;li>讲一下Spring的AOP，并且除了动态代理的实现，还有什么实现方法？&lt;/li>
+&lt;li>讲一下Spring的AOP，并且除了动态代理的实现，还有什么实现方法？ASM 字节码操作。&lt;/li>
 &lt;/ol>
 &lt;h3 id="20250326-paypal暑期二面">2025.03.26 PayPal暑期二面
 &lt;a class="header-anchor" href="#20250326-paypal%e6%9a%91%e6%9c%9f%e4%ba%8c%e9%9d%a2">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>手写快排&lt;/li>
 &lt;li>为啥要把用户信息存到ThreadLocal里面去&lt;/li>
+&lt;li>filter和interceptor的区别&lt;/li>
+&lt;li>interceptor 和&lt;/li>
 &lt;/ol>
 &lt;h2 id="面试准备">面试准备
 &lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
