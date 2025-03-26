@@ -68,6 +68,14 @@
 &lt;li>为什么需要四次挥手？client 最后为什么要 wait？&lt;/li>
 &lt;li>讲一讲建立HTTPS连接的过程&lt;/li>
 &lt;li>手撕 48 和 3&lt;/li>
+&lt;li>MySQL主从复制讲一下&lt;/li>
+&lt;li>讲一下Spring的AOP，并且除了动态代理的实现，还有什么实现方法？&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250326-paypal暑期二面">2025.03.26 PayPal暑期二面
+&lt;a class="header-anchor" href="#20250326-paypal%e6%9a%91%e6%9c%9f%e4%ba%8c%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>手写快排&lt;/li>
+&lt;li>为啥要把用户信息存到ThreadLocal里面去&lt;/li>
 &lt;/ol>
 &lt;h2 id="面试准备">面试准备
 &lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
@@ -135,11 +143,11 @@
 &lt;h2 id="校验登录状态">校验登录状态
 &lt;a class="header-anchor" href="#%e6%a0%a1%e9%aa%8c%e7%99%bb%e5%bd%95%e7%8a%b6%e6%80%81">&lt;/a>
 &lt;/h2>&lt;ol>
-&lt;li>前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。&lt;/li>
+&lt;li>前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。如果没有token直接放行&lt;/li>
 &lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
 &lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。&lt;/li>
 &lt;/ol>
-&lt;p>Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;p>第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>

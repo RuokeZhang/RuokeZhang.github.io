@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Redis面试题整理</title><url>/post/redis/redis_interview/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">  Zset 压缩列表 当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>MySQL日志</title><url>/post/mysql/log/</url><categories><category>MySQL</category></categories><tags><tag>MySQL</tag><tag>八股</tag></tags><content type="html">  所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成
+redo log 视频讲解 实现事务的持久性 物理存储特性 文件结构
+由固定大小的文件组成(如 ib_logfile0, ib_logfile1) 循环写入(ring buffer)设计 物理写入总是追加到文件末尾 写入模式
+1 2 // 伪代码表示物理写入 write(log_file, log_record, log_size); // 总是追加写 Write-Ahead Logging (WAL)： 在Buffer Pool中更新数据页，该数据页成为脏页。 将数据页的物理变更（如“页号 X，偏移 Y 写入数据 Z”）顺序写入 redo log buffer。 当执行 COMMIT 时，根据配置参数 innodb_flush_log_at_trx_commit 决定行为（通常默认值为 1） 参数值 行为 持久性保证 1 (默认) 1. 写 PageCache
+2. 立即 fsync() 刷盘 完全持久 0 每秒批量写入+刷盘 可能丢失1秒数据 2 写 PageCache 但延迟刷盘 仅保证OS不崩溃 异步脏页刷盘， 后台线程把BufferPool中的数据刷新到硬盘上 undo log 实现事务回滚，保证事物的原子性 结合 ReadView实现 MVCC，为record保留版本链 Binlog 基本概念 Binlog (Binary Log) 是MySQL Server层实现的二进制日志，记录所有修改数据的SQL语句（逻辑日志）,事务提交的时候写入。
+核心特性 记录内容：
+所有DDL（CREATE/ALTER等）和DML（INSERT/UPDATE等）语句 以事件形式存储，包含执行耗时、错误码等元信息 与Redo Log对比：
+Binlog Redo Log 层级 Server层 InnoDB引擎层 类型 逻辑日志（SQL语句） 物理日志（页修改） 用途 主从复制/数据恢复 崩溃恢复 三种格式：
+STATEMENT：记录原始SQL（可能主从不一致） ROW：记录行数据变化（默认推荐） MIXED：混合模式 主从复制 server-id 是 MySQL 实例的唯一标识，主从库都得有且不能重复，用来区分不同节点。
+主库开启一个线程来处理 binlog 分发，叫 Binlog Dump 线程。
+从库这边有两个关键线程，一个是 I/O 线程，负责跟主库建立连接，请求主库 binlog，然后写到自己的中继日志里；另一个是 SQL 线程，从 I/O 线程写的中继日志里读取内容，在从库执行 SQL 语句来更新数据。
+主库参数 log-bin 开启二进制日志，binlog-format 设置日志格式
+从库参数 Master_Host是主库的ip Master_User是用户 Master_Port是端口 Master_Log_File是主库binlog文件名   </content></entry><entry><title>Redis面试题整理</title><url>/post/redis/redis_interview/</url><categories><category>Redis</category><category>Cache</category></categories><tags><tag>Redis</tag></tags><content type="html">  Zset 压缩列表 当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。
 跳表 采用多级索引；插入、删除、范围查找的时间复杂度都是O(logN)
 字典：存储 member→score 的映射，实现 O(1) 的分数查找。
 比红黑树的优点：范围查找更简单。
@@ -37,7 +49,7 @@ master_repl_offset标记主节点写到的位置，slave_repl_offse标记从节�
 发生增量复制时，主节点会根据两个 offset 判断从节点需要补充的数据是否在repl_backlog_buffer中。如果不在就得选择全量复制。
 如果在，主节点就把repl_backlog_buffer中，从节点缺乏的那部分数据放入replication buffer，然后发给从节点。
 主从数据不一致 原因：主从复制是异步进行的。主节点在处 …  ]]></content></entry><entry><title>Binary Search</title><url>/post/leetcode/binarysearch/</url><categories><category>Leetcode</category><category>BinarySearch</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  闭区间写法 找该数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution: # 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: return mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return -1 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 def search(self, nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = left + (right - left) // 2 if nums[mid] == target: right=mid-1 elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid - 1 return left 左闭右开 找左边界 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def left_bound(nums: List[int], target: int) -&amp;gt; int: left = 0 right = len(nums) while left &amp;lt; right: mid = left + (right - left) // 2 if nums[mid] == target: right = mid elif nums[mid] &amp;lt; target: left = mid + 1 elif nums[mid] &amp;gt; target: right = mid return …  ]]></content></entry><entry><title>黑马点评登录设计</title><url>/post/blackhorserating/login/</url><categories><category>BlackHorse Rating</category></categories><tags><tag>Java</tag><tag>Redis</tag></tags><content type="html"><![CDATA[  
-短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。 Aside：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，则无法处理请求。
+短信验证码登录 登录界面输入手机号，然后点获取验证码。此时后端首先校验手机号格式是否正确，接着生成一个验证码。把手机号和对应的验证码存入 Redis，设置过期时间为 2 分钟。 登录界面填写验证码，然后点击登录。此时后端对比传过来的手机号和验证码。如果一致，则进行下一步。 如果该用户不存在，则创建用户并且保存用户到数据库。 随机生成token，作为登录令牌；并将 User 对象转成 Hash，以 token 为 key，以 hash为 value，存入 Redis。 校验登录状态 前端携带的请求会带有 token，所有请求都会被RefreshTokenInterceptor拦截。如果没有token直接放行 首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。 如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。 第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。
 UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所有ThreadLocal都存在该线程私有的ThreadLocalMap中。
 通过ThreadLocal的 get, set, remove方法，我们可以充分利用该线程的用户信息。
 1 2 3 4 5 6 7 8 9 10 11 12 public class UserHolder { private static final ThreadLocal&lt;UserDTO&gt; tl = new ThreadLocal&lt;&gt;(); public static void saveUser(UserDTO userDTO){ tl.set(userDTO); } public static UserDTO getUser(){ return tl.get(); } public static void removeUser(){ tl.remove(); } } 一个需要登录的请求线程完成工作之后，loginInterceptor里面定义的afterCompletion方法会把该用户从UserHolder中移除。
@@ -210,8 +222,7 @@ Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变
 1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>Sorting</title><url>/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html">  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
 LC 23. Merge k Sorted Lists
 quick sort 以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。
-215 数组中的第K个最大元素
-  </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
+215 数组中的第K个最大元素 视频讲解   </content></entry><entry><title>Java线程</title><url>/post/java/juc/thread/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 线程 线程的实现 一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。
 一对一线程模型✨ 每个Java线程对应操作系统中的一个内核线程，充分利用多核处理器的优势。（现在Windows 和 Linux 都是这种）
 JVM通过调用操作系统提供的线程库实现Java线程的创建和同步，Java线程的调度和管理由操作系统负责。
@@ -258,10 +269,10 @@ LC 560 输入：nums = [1,2,3], k = 3 输出：2
 定义哈希表minS, key为数组中的元素x，value为所有x所在的位置的前缀和最小值(不包括x本身)
   </content></entry><entry><title>垃圾回收</title><url>/post/java/jvm/gc/</url><categories><category>Java</category><category>JVM</category></categories><tags><tag>Java</tag></tags><content type="html">  参考： 深入理解Java虚拟机 ， 极致八股文之JVM垃圾回收器G1&amp;amp;amp;ZGC详解 对象已死？ 引用计数算法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 /** * testGC()方法执行后，objA和objB会不会被GC呢？ * @author zzm */ public class ReferenceCountingGC { public Object instance = null; private static final int _1MB = 1024 * 1024; /** * 这个成员属性的唯一意义就是占点内存，以便能在GC日志中看清楚是否有回收过 */ private byte[] bigSize = new byte[2 * _1MB]; public static void testGC() { ReferenceCountingGC objA = new ReferenceCountingGC(); ReferenceCountingGC objB = new ReferenceCountingGC(); objA.instance = objB; objB.instance = objA; objA = null; objB = null; // 假设在这行发生GC，objA和objB是否能被回收？ System.gc(); } } 缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。
 可达性分析算法 从GC Root出发，根据引用关系向下搜索，标记所有可以达到的对象。搜索过程中走过的路径叫做“引用链”。
-可作为GC Root的对象：
-虚拟机栈栈帧中局部变量表中的对象（方法参数、临时变量、实例方法的this对象） 方法区中类静态属性引用的对象 方法区中常量引用的对象 本地方法栈中 Native方法引用的对象 所有被 synchronized 持有的对象 Java 虚拟机内部的引用：基本数据类型对应的 Class对象、常驻的异常对象、系统类加载器 即使被标记为不可达，也不是一定会被回收。
+🌟可作为GC Root的对象：
+虚拟机栈栈帧中局部变量表中的对象（方法参数、临时变量、实例方法的this对象） 方法区中类静态变量 方法区中常量引用的对象 本地方法栈中 Native方法引用的对象 所有被 synchronized 持有的对象 Java 虚拟机内部的引用：基本数据类型对应的 Class对象、常驻的异常对象、系统类加载器 即使被标记为不可达，也不是一定会被回收。
 引用的概念 一般只用强引用和软引用，因为软引用可以加速JVM垃圾回收的速度。
-强引用：Object obj=new …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
+强引用：Object obj=new Object()，垃圾 …  </content></entry><entry><title>动态规划</title><url>/post/leetcode/dp/</url><categories><category>Leetcode</category><category>dp</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 线性dp lc 377: 与完全背包的不同点在于：[1,3],[3,1]被算作两个不同的答案。因此解法类似permutation型的回溯。 如果用cache修饰 dfs, 则不能使用全局变量res来计算个数，必须把res作为 dfs的返回值。
 LC 139: 单词拆分
 leetcode可以通过leet和code组成。如果code在 wordSet中，那么dp[9]=dp[4]
 House Robber LC 198: 空间优化
@@ -307,9 +318,10 @@ LC 106. 相交链表 设 A 链表自己的部分长为 x, B 链表自己的部�
   ]]></content></entry><entry><title>Spring</title><url>/post/spring/</url><categories><category>Spring</category></categories><tags><tag>Java</tag><tag>Web</tag></tags><content type="html"><![CDATA[  BeanFactory Interface 1 2 3 4 5 6 @SpringBootApplication public class DemoJavaSpringApplication { public static void main(String[] args) { ConfigurableApplicationContext context= SpringApplication.run(DemoJavaSpringApplication.class, args); } } 可以发现ConfigurableApplicationContext接口继承了BeanFactory接口 这个context里面包含了一个beanFactory变量。
 实现类 DefaultListableBeanFactory这个类去实现 BeanFactory。 他继承了一个类，DefaultSingletonBeanRegistry，这个类是用来注册单例的。它有一个字段singletonObjects用来存放 Bean
 1 2 3 4 5 6 7 8 Field field= DefaultSingletonBeanRegistry.class.getDeclaredField(&#34;singletonObjects&#34;); field.setAccessible(true); //拿到那个实际的beanFactory对象 ConfigurableListableBeanFactory beanFactory = context.getBeanFactory(); Map&lt;String, Object&gt; map=(Map&lt;String, Object&gt;) field.get(beanFactory); map.forEach((k,v)-&gt;{ System.out.println(k); }); spring启动之后，打印出所有bean的名字.
-AOP 将横切关注点（如日志、事务、权限校验）从核心业务逻辑中分离出来，通过动态代理实现代码的复用和解耦。
+AOP 动态代理 将横切关注点（如日志、事务、权限校验）从核心业务逻辑中分离出来，通过动态代理实现代码的复用和解耦。
 1 2 3 4 5 6 7 8 @Aspect @Component public class LogAspect { @Before(&#34;execution(* com.example.service.*.*(..))&#34;) public void beforeMethod(JoinPoint joinPoint) { System.out.println(&#34;方法执行前：&#34; + joinPoint.getSignature().getName()); } } @Aspect 用来定义切面逻辑，@PointCut用来标注切入点。
 1 2 3 4 5 6 7 @Pointcut(&#34;execution(* com.example.service.*.*(..))&#34;) public void serviceMethods() {} @Before(&#34;serviceMethods()&#34;) public void beforeServiceMethod(JoinPoint joinPoint) { System.out.println(&#34;Service方法执行前&#34;); } serviceMethods()：定义了一个切入点方法，方法体为空（仅用于承载切入点表达式）。
+字节码操作 像 ASM、Javassist 这样的工具，能在字节码层面修改类的行为。比如添加方法、修改方法逻辑、增加字段等。这样避免修改源码。
 @Transactional Spring 注解的事务（@Transactional）本质上是对数据库事务的一种抽象和管理，它底层依赖数据库提供的事务功能 。比如对于 MySQL 数据库，Spring 事务最终会调用 MySQL 的事务机制来实现事务控制。
 不同的隔离级别对 Spring @Transactional方法的运行影响很大。
 读未提交隔离级别下，可能会读到其他事务没提交的数据；

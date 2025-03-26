@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/mysql/</link><description>Recent content in MySQL on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/mysql/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/mysql/</link><description>Recent content in MySQL on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/mysql/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL日志</title><link>https://ruokezhang.github.io/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/log/</guid><description>&lt;p>所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成&lt;/p>
+&lt;h2 id="redo-log">redo log
+&lt;a class="header-anchor" href="#redo-log">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="视频讲解" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 视频讲解
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
+&lt;ol>
+&lt;li>实现事务的持久性&lt;/li>
+&lt;/ol>
+&lt;h3 id="物理存储特性">物理存储特性
+&lt;a class="header-anchor" href="#%e7%89%a9%e7%90%86%e5%ad%98%e5%82%a8%e7%89%b9%e6%80%a7">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>文件结构&lt;/strong>&lt;/p></description></item><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
 &lt;a class="header-anchor" href="#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e5%af%b9%e6%af%94">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址&lt;/li>

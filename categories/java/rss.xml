@@ -68,6 +68,14 @@
 &lt;li>为什么需要四次挥手？client 最后为什么要 wait？&lt;/li>
 &lt;li>讲一讲建立HTTPS连接的过程&lt;/li>
 &lt;li>手撕 48 和 3&lt;/li>
+&lt;li>MySQL主从复制讲一下&lt;/li>
+&lt;li>讲一下Spring的AOP，并且除了动态代理的实现，还有什么实现方法？&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250326-paypal暑期二面">2025.03.26 PayPal暑期二面
+&lt;a class="header-anchor" href="#20250326-paypal%e6%9a%91%e6%9c%9f%e4%ba%8c%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>手写快排&lt;/li>
+&lt;li>为啥要把用户信息存到ThreadLocal里面去&lt;/li>
 &lt;/ol>
 &lt;h2 id="面试准备">面试准备
 &lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
