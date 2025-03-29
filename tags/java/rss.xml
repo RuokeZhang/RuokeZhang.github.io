@@ -77,7 +77,19 @@
 &lt;li>手写快排&lt;/li>
 &lt;li>为啥要把用户信息存到ThreadLocal里面去&lt;/li>
 &lt;li>filter和interceptor的区别&lt;/li>
-&lt;li>interceptor 和&lt;/li>
+&lt;li>interceptor 和 AOP的区别&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250327-字节暑期二面">2025.03.27 字节暑期二面
+&lt;a class="header-anchor" href="#20250327-%e5%ad%97%e8%8a%82%e6%9a%91%e6%9c%9f%e4%ba%8c%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>合并 k个有序数组&lt;/li>
+&lt;li>讲讲 redo log&lt;/li>
+&lt;li>讲讲MySQL锁&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250327-初创团队实习">2025.03.27 初创团队实习
+&lt;a class="header-anchor" href="#20250327-%e5%88%9d%e5%88%9b%e5%9b%a2%e9%98%9f%e5%ae%9e%e4%b9%a0">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>有用过AWS实现多个服务之间通信吗？&lt;/li>
 &lt;/ol>
 &lt;h2 id="面试准备">面试准备
 &lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>

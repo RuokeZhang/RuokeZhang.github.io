@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Interview on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/interview/</link><description>Recent content in Interview on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/interview/rss.xml" rel="self" type="application/rss+xml"/><item><title>系统设计</title><link>https://ruokezhang.github.io/post/system_deigsn/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/system_deigsn/</guid><description>&lt;h2 id="cap">CAP
+&lt;a class="header-anchor" href="#cap">&lt;/a>
+&lt;/h2>&lt;p>Consistency：所有节点同时看到相同的数据（强一致性）。&lt;/p>
+&lt;p>Availability: 99.999%的成功率，一年之内只有5分钟系统不可用&lt;/p>
+&lt;p>Partition Tolerance：系统在网络分区时仍能继续工作。&lt;/p></description></item></channel></rss>

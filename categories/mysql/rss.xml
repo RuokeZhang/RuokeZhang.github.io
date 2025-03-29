@@ -10,7 +10,7 @@
 &lt;/a>
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
 &lt;ol>
-&lt;li>实现事务的持久性&lt;/li>
+&lt;li>实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/li>
 &lt;/ol>
 &lt;h3 id="物理存储特性">物理存储特性
 &lt;a class="header-anchor" href="#%e7%89%a9%e7%90%86%e5%ad%98%e5%82%a8%e7%89%b9%e6%80%a7">&lt;/a>
