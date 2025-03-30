@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NetWork on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/network/</link><description>Recent content in NetWork on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/network/rss.xml" rel="self" type="application/rss+xml"/><item><title>网络</title><link>https://ruokezhang.github.io/post/java/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
+&lt;h2 id="tcp-重传">TCP 重传
+&lt;a class="header-anchor" href="#tcp-%e9%87%8d%e4%bc%a0">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>超时重传：设置一个计时器，时间应略长于RTT。如果超时了还没有收到ACK，则立即重传&lt;/li>
+&lt;li>快速重传：当连续收到三个相同的 ACK 时，立即重传&lt;/li>
+&lt;li>SACK（选择性确认）：接收方可以告诉发送方接收到了哪几个消息，还缺哪个消息&lt;/li>
+&lt;li>DSACK（重复确认）：接收方收到两个2，就会用DSACK告诉发送方，它有两个 2，别重传了。只是因为网络延迟问题。&lt;/li>
+&lt;/ol>
+&lt;h2 id="tcp流量控制">TCP流量控制
+&lt;a class="header-anchor" href="#tcp%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6">&lt;/a>
+&lt;/h2>&lt;h3 id="慢启动">慢启动
+&lt;a class="header-anchor" href="#%e6%85%a2%e5%90%af%e5%8a%a8">&lt;/a>
+&lt;/h3>&lt;p>刚开始传输时，发送方每收到一个ACK确认，就把发送窗口翻倍（指数增长）。初始窗口长度为 1.&lt;/p></description></item></channel></rss>
