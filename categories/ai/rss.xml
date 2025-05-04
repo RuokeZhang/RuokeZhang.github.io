@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+&lt;a class="header-anchor" href="#project-1">&lt;/a>
+&lt;/h2>&lt;h3 id="project-setup">project setup
+&lt;a class="header-anchor" href="#project-setup">&lt;/a>
+&lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
+&lt;h4 id="setuppy">setup.py
+&lt;a class="header-anchor" href="#setuppy">&lt;/a>
+&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item></channel></rss>

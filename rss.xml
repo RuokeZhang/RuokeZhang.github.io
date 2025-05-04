@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>网络</title><link>https://ruokezhang.github.io/post/java/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+&lt;a class="header-anchor" href="#project-1">&lt;/a>
+&lt;/h2>&lt;h3 id="project-setup">project setup
+&lt;a class="header-anchor" href="#project-setup">&lt;/a>
+&lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
+&lt;h4 id="setuppy">setup.py
+&lt;a class="header-anchor" href="#setuppy">&lt;/a>
+&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item><item><title>数据结构</title><link>https://ruokezhang.github.io/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;a class="header-anchor" href="#trie">&lt;/a>
+&lt;/h2>&lt;p>LC 208&lt;/p></description></item><item><title>网络</title><link>https://ruokezhang.github.io/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="tcp-重传">TCP 重传
 &lt;a class="header-anchor" href="#tcp-%e9%87%8d%e4%bc%a0">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -151,6 +160,13 @@
 &lt;a class="header-anchor" href="#20250327-%e5%88%9d%e5%88%9b%e5%9b%a2%e9%98%9f%e5%ae%9e%e4%b9%a0">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>有用过AWS实现多个服务之间通信吗？&lt;/li>
+&lt;/ol>
+&lt;h3 id="20250401-淘天暑期一面">2025.04.01 淘天暑期一面
+&lt;a class="header-anchor" href="#20250401-%e6%b7%98%e5%a4%a9%e6%9a%91%e6%9c%9f%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>讲SpringMVC如何处理请求&lt;/li>
+&lt;li>联合索引最左匹配&lt;/li>
+&lt;li>线程池&lt;/li>
 &lt;/ol>
 &lt;h2 id="面试准备">面试准备
 &lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
@@ -605,12 +621,22 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#%e7%bc%96%e8%af%91%e5%99%a8%e4%bc%98%e5%8c%96%e9%87%8d%e6%8e%92">&lt;/a>
 &lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
-&lt;/h2>&lt;p>LC 148: sort a linked list
-快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p>
-&lt;p>LC 23. Merge k Sorted Lists&lt;/p>
+&lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: sort a linked list
+&lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
+&lt;/h3>&lt;p>快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p>
+&lt;h3 id="lc-23-merge-k-sorted-lists">LC 23. Merge k Sorted Lists
+&lt;a class="header-anchor" href="#lc-23-merge-k-sorted-lists">&lt;/a>
+&lt;/h3>&lt;p>注意边界情况&lt;/p>
 &lt;h2 id="quick-sort">quick sort
 &lt;a class="header-anchor" href="#quick-sort">&lt;/a>
-&lt;/h2>&lt;p>以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;/h2>&lt;p>以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。
+
+&lt;a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/solutions/821137/ji-yu-kuai-pai-de-suo-you-topkwen-ti-jia-ylsd/" title="python模版" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ python模版
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="线程">线程
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现
@@ -652,7 +678,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
 &lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
 &lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
-&lt;a href="https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
@@ -660,9 +686,9 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/a>&lt;/p>
 &lt;h2 id="一维前缀和">一维前缀和
 &lt;a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e5%89%8d%e7%bc%80%e5%92%8c">&lt;/a>
-&lt;/h2>&lt;h3 id="普通前缀和">普通前缀和
-&lt;a class="header-anchor" href="#%e6%99%ae%e9%80%9a%e5%89%8d%e7%bc%80%e5%92%8c">&lt;/a>
-&lt;/h3>&lt;p>LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
+&lt;/h2>&lt;h3 id="lc-1749">LC 1749
+&lt;a class="header-anchor" href="#lc-1749">&lt;/a>
+&lt;/h3>&lt;p>任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -675,9 +701,15 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="前缀和与哈希表">前缀和与哈希表
-&lt;a class="header-anchor" href="#%e5%89%8d%e7%bc%80%e5%92%8c%e4%b8%8e%e5%93%88%e5%b8%8c%e8%a1%a8">&lt;/a>
-&lt;/h3>&lt;p>枚举右，维护左&lt;/p></description></item><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
+&lt;/div>&lt;h3 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
+&lt;a class="header-anchor" href="#2055-%e8%9c%a1%e7%83%9b%e4%b9%8b%e9%97%b4%e7%9a%84%e7%9b%98%e5%ad%90">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>找a或其右边第一个蜡烛&lt;/li>
+&lt;li>找b或其左边第一个蜡烛&lt;/li>
+&lt;li>用前缀和，算他们之间的盘子数量&lt;/li>
+&lt;/ol>
+&lt;p>步骤1，2可以用二分，但是会超时&lt;br>
+最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="深入理解Java虚拟机" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  深入理解Java虚拟机
  
