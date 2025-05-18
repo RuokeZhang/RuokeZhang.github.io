@@ -238,26 +238,25 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 中位数 比它小的个数=比它大的个数 或者
 比它小的个数=比它大的个数-1
 回文 可以构成回文：除了允许一个字符可以出现奇数次，所有字符都必须出现偶数次 如果有 m 种字母出现奇数次，只需修改其中 ⌊m/2⌋个字母, 就可以使这些字符组成回文 模运算 结合律：2845 位运算 幂相关 lowbit = n &amp; (-n)：提取最低位的 1 n ^= lowbit：移除最低位的 1 lowbit.bit_length() - 1：计算 2 的幂的指数 区间 两个区间有重叠 [a,b], [c,d]重叠：a&lt;=d and c&lt;=b
-  ]]></content></entry><entry><title>栈、堆、队列</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 栈 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
+  ]]></content></entry><entry><title>Stack&Queue&Heap</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 合法括号字符串 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
-394. decode string 输入：s = &amp;ldquo;3[a]2[bc]&amp;rdquo; 输出：&amp;ldquo;aaabcbc&amp;rdquo;
+856. 括号的分数🌟 () 得 1 分。 AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。 (A) 得 2 * A 分，其中 A 是平衡括号字符串。
+比如()(())(),初始化stack=[0], res=0
+每次见到(，往 stack 里面 push res, 表示存储之前的计算结果。另外要把res清零，接下来要开始用 res计算该括号内的值了。
+每次见到), 需要计算它和它对应的左括号这一串的值大小，要么是1，要么是2*res值，则可以得到一个新的res；pop掉对应的左括号，则可以得到这对括号之前的值，所以res+=stack.pop()。如果此时结尾了，会返回res, 如果后面还有(,那么res会被放到栈里去。
+1111. 有效括号的嵌套深度 思路一：(相当于加深度，)相当于降深度。每次遇到(时，把它分给深度较低的那个组，用 a, b分别记录两个组的深度。
+思路二： 把嵌套深度为奇数的括号，和嵌套深度为偶数的括号，分别分到两个组。
+邻项消除 1717. 删除子字符串的最大得分 贪心，先尽量删分值大的 ab, 再删分值小的 ba. 不需要用 while，因为消除之后两个字母都没了，所以一边 append 一边 pop 即可
+735. 小行星碰撞 需要用 while， 因为有时候碰撞过后，新的小行星会留下来，继续和栈里的行星碰撞。
+如果条件分支复杂，就加一个 flag。
+表达式解析 394. decode string 输入：s = &amp;ldquo;3[a]2[bc]&amp;rdquo; 输出：&amp;ldquo;aaabcbc&amp;rdquo;
 遇到[, 入栈，清空res和 multi
 遇到]，出栈
 res和 multi用来记录当前字符串的前缀，以及当前字符串需要重复的倍数。
 记住 multi也有可能是100。
-邻项消除 1717. 删除子字符串的最大得分 贪心，先尽量删分值大的 ab, 再删分值小的 ba. 不需要用 while，因为消除之后两个字母都没了，所以一边 append 一边 pop 即可
-735. 小行星碰撞 需要用 while， 因为有时候碰撞过后，新的小行星会留下来，继续和栈里的行星碰撞。
-单调栈 找左/右边第一个更大的数：降序栈
-找左/右边第一个更小的数：升序栈
-遍历方向：双向都可以，一种是去除无用，一种是去除已经有答案的数。
-去除已经有答案的数：在循环里，一边把它弹出来，一边给它答案.
-去除无用：在新遍历到某个数的时候，给它答案。
-找右边第一个更大/小的数：从左到右遍历是去除已经有答案的数，从右到左是去除无用
-739. 每日温度 从右往左遍历，此时发现5比2，3大，因此可以去除2和3。降序栈。已经不会是别人答案的数，不需要放在栈里。 从左往右遍历，降序栈。已经拥有答案的数，不需要放在栈里。 LC 155 最小栈 84. Largest Rectangle in Histogram 需要前后两个哨兵节点[0]。找左右第一个更小的元素	用升序栈。当 heights[i]从栈里 pop 出来的时候，更新的答案高为heights[i]
-1124. 表现良好的最长时间段 找最远的l, r，使得s[r]&amp;gt;s[l]。这题是求最长，和其他单调栈模版不一样，需要两次遍历。
-85.最大矩形 给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
-思路：前缀和+栈。为每一行，计算该列的前缀和。问题 …  ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+224. 基本计算器 变量：res, num, sign, stack
+先考虑不带括号的情况，比如10+2-1 遇见数字，更新 num …  ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
 双指针 LC 75: Sort Colors
@@ -309,6 +308,14 @@ deque = collections.deque()
 ACM模式 知乎整理 zip 1 2 3 4 5 names = [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;] scores = [90, 85, 88] zipped = zip(names, scores) print(list(zipped)) 输出: [(&lsquo;Alice&rsquo;, 90), (&lsquo;Bob&rsquo;, 85), (&lsquo;Charlie&rsquo;, 88)]
 heapq 1 2 3 4 5 6 7 import heapq heap = [] heapq.heappush(heap, 3) heapq.heappush(heap, 1) heapq.heappush(heap, 2) print(heap) # 输出: [1, 3, 2] 对于单个元素：如果元素是可比较的（例如整数、浮点数等），那么堆会根据元素的大小进行排序，最小的元素位于堆顶。
 对于元组元素：当元素是元组时，堆会首先比较元组的第一个元素。如果第一个元素相等，再比较第二个元素，以此类推。在你给出的代码中，压入堆的元素是 (value, key) 元组，堆会根据 value（即元素出现的频率）进行排序，value 最小的元素位于堆顶。
+除法 python3 的地板除 &ldquo;//&rdquo; 是整数除法， &ldquo;-3 // 2 = -2&rdquo; ；向下取整
+python3 的除法 &ldquo;/&rdquo; 是浮点除法， &ldquo;-3 / 2 = -1.5&rdquo; ；
+而其他语言的除法是向零取整。在 Python 中要这样写：
+int(a/float(b))
+这里的 int 取整，是向零取整
+负数 isdigit()无法判断负数，应该这样判断：
+x.lstrip(&rsquo;-&rsquo;).isdigit()
+注意如果想改变 x, 需要用 x=x.lstrip(c)
   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
