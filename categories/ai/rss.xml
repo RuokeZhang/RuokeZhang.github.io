@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>LLM笔记</title><link>https://ruokezhang.github.io/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
+&lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>保持简洁&lt;/li>
+&lt;li>不用提供太多示例，示例会降低推理效果&lt;/li>
+&lt;/ol>
+&lt;h2 id="常见prompt">常见prompt
+&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81prompt">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>markdown 格式（任务指令提示和系统提示）&lt;/li>
+&lt;li>角色扮演（任务指令提示和系统提示）&lt;/li>
+&lt;li>奖励机制/情绪激励(任务指令提示)&lt;/li>
+&lt;li>具体的示例&lt;/li>
+&lt;li>隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示)&lt;/li>
+&lt;li>要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示)&lt;/li>
+&lt;/ol>
+&lt;h2 id="system-prompt">system prompt
+&lt;a class="header-anchor" href="#system-prompt">&lt;/a>
+&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
 &lt;a class="header-anchor" href="#project-1">&lt;/a>
 &lt;/h2>&lt;h3 id="project-setup">project setup
 &lt;a class="header-anchor" href="#project-setup">&lt;/a>
