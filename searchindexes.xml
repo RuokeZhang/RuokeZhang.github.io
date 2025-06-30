@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>LLM笔记</title><url>/post/mlops/llm/</url><categories><category>AI</category></categories><tags><tag>mlops</tag></tags><content type="html">  推理模型的 prompt 保持简洁 不用提供太多示例，示例会降低推理效果 常见prompt markdown 格式（任务指令提示和系统提示） 角色扮演（任务指令提示和系统提示） 奖励机制/情绪激励(任务指令提示) 具体的示例 隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示) 要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示) system prompt 角色设定、提供示例、设计工作流程
-  </content></entry><entry><title>Simulation</title><url>/post/leetcode/imitation/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  755. 倒水   </content></entry><entry><title>mlops笔记</title><url>/post/mlops/project/</url><categories><category>AI</category></categories><tags><tag>mlops</tag></tags><content type="html"><![CDATA[  Project 1 project setup src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>cloud</title><url>/post/cloud/</url><categories><category>Cloud</category></categories><tags><tag>Docker, AWS</tag></tags><content type="html">  Docker Dockerfile Usage: select base image(usually with python), install dependencies using pip
+drawback: need command line to assign port number
+docker compose easy to assign port mapping
+volumes 1 volumes: - ./mlflow-artifacts:/mlflow-artifacts 将本地的 ./mlflow-artifacts 目录映射到容器内的 /mlflow-artifacts 目录，实现：
+数据持久化：容器重启/删除后，数据不会丢失
+实时同步：本地修改会立即反映到容器内（反之亦然）
+Airflow   </content></entry><entry><title>mlops zoomcamp @DataTalksClub</title><url>/post/mlops/zoomcamp/</url><categories><category>AI</category></categories><tags><tag>mlops</tag></tags><content type="html">  Orchestration Use Airflow and MLFlow
+Step 1 Docker Env airflow https://airflow.apache.org/docs/docker-stack/index.html get Airflow&amp;rsquo;s official docker compose
+1 curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39; mlflow other dependencies   </content></entry><entry><title>LLM笔记</title><url>/post/mlops/llm/</url><categories><category>AI</category></categories><tags><tag>mlops</tag></tags><content type="html">  推理模型的 prompt 保持简洁 不用提供太多示例，示例会降低推理效果 常见prompt markdown 格式（任务指令提示和系统提示） 角色扮演（任务指令提示和系统提示） 奖励机制/情绪激励(任务指令提示) 具体的示例 隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示) 要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示) system prompt 角色设定、提供示例、设计工作流程
+  </content></entry><entry><title>Simulation</title><url>/post/leetcode/simulation/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  755. 倒水 时间顺序 2534. 通过门的时间 模拟的结束条件为所有人都进入/离开 内层循环里放时间   </content></entry><entry><title>mlops笔记</title><url>/post/mlops/project/</url><categories><category>AI</category></categories><tags><tag>mlops</tag></tags><content type="html"><![CDATA[  Project 1 project setup src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。
 setup.py setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。
 1 pip install -e . 执行setup.py文件，安装library
 1 2 3 4 5 6 7 8 9 10 11 12 from setuptools import setup,find_packages with open(&#34;requirements.txt&#34;) as f: requirements = f.read().splitlines() setup( name=&#34;MLOPS-PROJECT-1&#34;, version=&#34;0.1&#34;, author=&#34;Sudhanshu&#34;, packages=find_packages(), install_requires = requirements, ) Data Ingestion 把 csv文件放在Google cloud上面 把账号，bucket相关配置放在config.yaml里面 定义read_yaml文件，把配置存在字典中，并返回字典 把配置字典作为参数传递，创建DataIngestion类对象，把 csv文件下载到本地，并且通过sklearn来划分train/test data Data Preprocessing 定义DataProcessor类，从config.yaml里面读train_path, test_path, processed_dir 定义preprocess_data函数，洗数据（去掉重复行、从配置中获取分类列和数值列的名称、创建一个 LabelEncoder 对象，用于将分类数据转换为数值数据、从配置中获取偏度阈值，遍历偏度大于阈值的列应用对数变换，以减少偏度） Training mlflow.start_run() mlflow.log_artifact(self.train_path , artifact_path=&ldquo;datasets&rdquo;) 使用RandomizedSearchCV进行超参数调优 把训练好的模型输出到文件里，mlflow.log_artifact(self.model_output_path) mlflow.log_params(best_lgbm_model.get_params()) mlflow.log_metrics(metrics) CI/CD 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 # Use the Jenkins image as the base image FROM jenkins/jenkins:lts # Switch to root user to install dependencies USER root # Install prerequisites and Docker RUN apt-get update -y &amp;&amp; \ apt-get install -y apt-transport-https ca-certificates curl gnupg software-properties-common &amp;&amp; \ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - &amp;&amp; \ echo &#34;deb [arch=arm64] https://download.docker.com/linux/debian bullseye stable&#34; &gt; /etc/apt/sources.list.d/docker.list &amp;&amp; \ apt-get update -y &amp;&amp; \ apt-get install -y docker-ce docker-ce-cli containerd.io &amp;&amp; \ apt-get clean # Add Jenkins user to the Docker group (create if it doesn&#39;t exist) RUN groupadd -f docker &amp;&amp; \ usermod -aG docker jenkins # Create the Docker directory and volume for DinD RUN mkdir -p /var/lib/docker VOLUME /var/lib/docker # Switch back to the Jenkins user USER jenkins   ]]></content></entry><entry><title>数据结构</title><url>/post/leetcode/data_structure/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  Trie LC 208
@@ -312,6 +320,9 @@ deque = collections.deque()
 ACM模式 知乎整理 zip 1 2 3 4 5 names = [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;] scores = [90, 85, 88] zipped = zip(names, scores) print(list(zipped)) 输出: [(&lsquo;Alice&rsquo;, 90), (&lsquo;Bob&rsquo;, 85), (&lsquo;Charlie&rsquo;, 88)]
 heapq 1 2 3 4 5 6 7 import heapq heap = [] heapq.heappush(heap, 3) heapq.heappush(heap, 1) heapq.heappush(heap, 2) print(heap) # 输出: [1, 3, 2] 对于单个元素：如果元素是可比较的（例如整数、浮点数等），那么堆会根据元素的大小进行排序，最小的元素位于堆顶。
 对于元组元素：当元素是元组时，堆会首先比较元组的第一个元素。如果第一个元素相等，再比较第二个元素，以此类推。在你给出的代码中，压入堆的元素是 (value, key) 元组，堆会根据 value（即元素出现的频率）进行排序，value 最小的元素位于堆顶。
+heapify(pq) 的作用是将任意列表转换为合法的最小堆，时间复杂度为 O (n)。
+转换后： pq[0] 是最小值。
+其他元素的位置满足堆性质，但不保证整体有序。
 除法 python3 的地板除 &ldquo;//&rdquo; 是整数除法， &ldquo;-3 // 2 = -2&rdquo; ；向下取整
 python3 的除法 &ldquo;/&rdquo; 是浮点除法， &ldquo;-3 / 2 = -1.5&rdquo; ；
 而其他语言的除法是向零取整。在 Python 中要这样写：
@@ -320,6 +331,11 @@ int(a/float(b))
 负数 isdigit()无法判断负数，应该这样判断：
 x.lstrip(&rsquo;-&rsquo;).isdigit()
 注意如果想改变 x, 需要用 x=x.lstrip(c)
+sort 1 ListNode.__lt__ = lambda a, b: a.val &lt; b.val # 让堆可以比较节点大小 前K个高频单词 Complexity heap heapify: Time: O(k)
+heapq.heappush: Time&amp;Space: O(logK)
+Recursion merge sort: T(n)=2T(n/2)+T(n)=T(nLogn)
+S(n)=S(logn)
+LC 23: T(k)=2T(k/2)+O(n)=T(nLogK)
   ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
@@ -337,7 +353,9 @@ LC 2779
 1658. 将 x 减到 0 的最小操作数 逆向思维
 LC 3
 与LC3 类似的问题：最少需要把字符串分成多少份，使得每一份都没有重复字母？
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 def soln(password: str) -&gt; int: count = 1 seen = set() for i in range(len(password)): c = password[i] if c in seen: seen = {c} count += 1 else: seen.add(c) print(count) return count   ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 def soln(password: str) -&gt; int: count = 1 seen = set() for i in range(len(password)): c = password[i] if c in seen: seen = {c} count += 1 else: seen.add(c) print(count) return count 1438. 绝对差不超过限制的最长连续子数组🌟 用两个队列专门存放当前窗口中的最大值和最小值.
+最大值队列里面单调递减，因为遇到了新的更大的值，需要把之前的元素从队尾 pop
+求子数组个数(越短越合法) 713. 乘积小于 K 的子数组   ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
 1 2 3 def maxAbsoluteSum(self, nums: List[int]) -&amp;amp;gt; int: s = list(accumulate(nums, initial=0)) # nums 的前缀和 return max(s) - min(s) 2055. 蜡烛之间的盘子 找a或其右边第一个蜡烛 找b或其左边第一个蜡烛 用前缀和，算他们之间的盘子数量 步骤1，2可以用二分，但是会超时
 最好是预处理，记录每个位置左边/右边的第一个蜡烛位置
 前缀和与哈希表 枚举右，维护左. 关键找出【维护左】的性质！
@@ -514,4 +532,4 @@ Module hm-dianping SDK 1.8 is not compatible with the source version 21.
 Ruoke  
 2025.03.10  
 于武汉家中，和姥姥姥爷妈妈一起
-  </content></entry></search>
+  </content></entry><entry><title/><url>/post/leetcode/company_wise/</url><categories/><tags/><content type="html">  heap 重构字符串(Roblox) 任务调度器(Roblox, Snowflake) 前K个高频单词(Adobe) 前 K 个高频元素(Adobe, Bloomberg) 最多可以参加的会议数目(Snowflake) 查找和最小的 K 对数字(Linkedin, Google) 最后一块石头的重量(Nvidia) 数据流的中位数(Snowflake) Merge k Sorted Lists(Bloomberg, Snowflake, Nvidia, Microsoft) 股票价格波动(Google) prefix sum 乘积小于 K 的子数组(Airbnb) 最大连续1的个数 III(Microsoft, Expedia) 和可被 K 整除的子数组(Expedia) 二维区域和检索 - 矩阵不可变(Snowflake) Subarray Sum Equals K(Bloomberg) Product of Array Except Self(Bloomberg, Microsoft) Meeting Rooms II(Microsoft) trie 添加与搜索单词 - 数据结构设计(Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) 最长公共前缀(Bloomberg) 最长公共前缀的长度(Databricks) Implement Trie (Prefix Tree)(Snowflake) 设计内存文件系统(Snowflake) 删除子文件夹(Snowflake, Google) 搜索推荐系统(Docusign, Amazon) 单词搜索 II(Microsoft, Google, Airbnb) stack Basic Calculator II(Tesla) Max Stack(Linkedin) Nested List Weight Sum II(Linkedin) Valid Parentheses(Nvidia, Expedia) 逆波兰表达式求值(Microsoft) 基本计算器(Microsoft) 有效的括号(Microsoft) 最长有效括号(Tiktok) 最大矩形(Tiktok) 柱状图中最大的矩形(Microsoft) 简化路径(Snowflake, Tiktok) 去除重复字母(Expedia) 队列中可以看到的人数(Expedia) 使字符串平衡的最小交换次数(Expedia) 子数组范围和(Tiktok) queue 设计循环队列(Tesla, Cloudflare) 敲击计数器(Snowflake, Cloudflare, Databricks) 绝对差不超过限制的最长连续子数组(Google) hash 缺失的第一个正数(Tesla) 丢失的数字(Meta, Microsoft, Bloomberg) sort 数组中的第K个最大元素(Microsoft) sliding window 最大连续1的个数 III(SAP, Salesforce, LinkedIn, Meta, Google) 子串的最大出现次数(Hubspot, Salesforce) 至多包含两个不同字符的最长子串(Ebay, Google, Tiktok) 至多包含 K 个不同字符的最长子串(Microsoft) 乘积小于 K 的子数组(Paypal, Oracle, Salesforce) 学生分数的最小差值 最小区间(Lyft, Databricks)   </content></entry></search>
