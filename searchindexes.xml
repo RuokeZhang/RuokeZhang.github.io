@@ -105,12 +105,23 @@ master_repl_offset标记主节点写到的位置，slave_repl_offse标记从节�
 UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所有ThreadLocal都存在该线程私有的ThreadLocalMap中。
 通过ThreadLocal的 get, set, remove方法，我们可以充分利用该线程的用户信息。
 1 2 3 4 5 6 7 8 9 10 11 12 public class UserHolder { private static final ThreadLocal&lt;UserDTO&gt; tl = new ThreadLocal&lt;&gt;(); public static void saveUser(UserDTO userDTO){ tl.set(userDTO); } public static UserDTO getUser(){ return tl.get(); } public static void removeUser(){ tl.remove(); } } 一个需要登录的请求线程完成工作之后，loginInterceptor里面定义的afterCompletion方法会把该用户从UserHolder中移除。
-  ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html">   图题单 网格图题单 DFS LC 200 岛屿数量 DFS可以用来找聚在一起的符合要求的格子，在访问过某个格子后，改变它的标记。
-外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.
-BFS 994 腐烂的橘子 BFS用来一层一层地往外蔓延，可以记录蔓延的时间。
-1311. 获取你好友已观看的视频 注意要在加入队列的时候，标记该节点为已访问
-拓扑排序 DFS写法讲解 针对有向无环图。
-  </content></entry><entry><title>异常、泛型</title><url>/post/java/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
+  ]]></content></entry><entry><title>图</title><url>/post/leetcode/dfs_bfs/</url><categories><category>Leetcode</category><category>graph</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   图题单 网格图题单 图 DFS 找连通块、判断是否有环
+261. 以图判树 无向图，判断是否无环并且联通。
+用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递
+1 2 3 4 5 6 7 8 9 10 def dfs(i, parent): vis[i]=True for nxt in g[i]: if nxt==parent: continue if vis[nxt]: return False if not dfs(nxt, i): return False return True 比如1-3-6，1-5-6,如果这样连，那一定是有环的，所以不需要三种颜色
+207. 课程表 有向图，判断是否无环
+为什么必须用三色？
+因为要区分：当前路径上的，还有之前已经遍历结束的某个节点。
+比如1-&amp;gt;3-&amp;gt;6（已经遍历完6了），此时遍历1-&amp;gt;5-&amp;gt;6，又遇见5，显然这里没有环 如果用True/False， 则这两种情况都算True
+2192. 有向无环图中一个节点的所有祖先 要找到某个节点的所有祖先，但是不需要在dfs的时候把所有本次搜索经过的节点都带上，因为，我们会遍历每个节点，作为起点。所以在搜索的时候，我们只要把这个起点加进祖先列表即可。
+dfs条件：当下一个节点不在本次搜索之中的时候，可以去遍历它.
+遍历过该节点，需要恢复它吗？
+不需要.
+比如0-&amp;gt;3-&amp;gt;6, 0-&amp;gt;4-&amp;gt;6。第二次到6的时候其实是不同的一条路，这个时候6被标记为没有被访问过～
+当 start = 0：
+走路径 0→3→6 时，第一次到达 6，满足 vis[6] != 0，于是 ans[6].append(0)，然后你回溯时如果写了 vis[6] = -1，等于擦掉“6 已被 start=0 访问过”的标记。
+回到 0 再走另一条路径 0→4→6，再次检查到 vis[6] != 0（因为被你复原成了 -1），又会 ans[6].append(0) —— 同一个祖先 0 被加了两次。
+1 2 3 4 5 6 7 8 9 10 def dfs(i, start): # i, start分别是现在到的节点和最开始的祖先 #找它能到的所有节点 vis[i]=start for child in g[i]: …  ]]></content></entry><entry><title>异常、泛型</title><url>/post/java/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
 Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，JVM 一般会选择终止线程。
 Exception 类具有Checked Exception和 Unchecked Exception 这两个子类。
 Checked Exception 表明异常是在编译时就会被检查，如果该异常没有被 catch 捕获，或者没有被 throws, 就通不过编译。 包括 IOException, ClassNotFoundException.
@@ -247,7 +258,7 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 中位数 比它小的个数=比它大的个数 或者
 比它小的个数=比它大的个数-1
 回文 可以构成回文：除了允许一个字符可以出现奇数次，所有字符都必须出现偶数次 如果有 m 种字母出现奇数次，只需修改其中 ⌊m/2⌋个字母, 就可以使这些字符组成回文 模运算 结合律：2845 位运算 幂相关 lowbit = n &amp; (-n)：提取最低位的 1 n ^= lowbit：移除最低位的 1 lowbit.bit_length() - 1：计算 2 的幂的指数 区间 两个区间有重叠 [a,b], [c,d]重叠：a&lt;=d and c&lt;=b
-  ]]></content></entry><entry><title>Stack&Queue&Heap</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 合法括号字符串 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
+分治 395. 至少有 K 个重复字符的最长子串   ]]></content></entry><entry><title>Stack&Queue&Heap</title><url>/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 合法括号字符串 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
 856. 括号的分数🌟 () 得 1 分。 AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。 (A) 得 2 * A 分，其中 A 是平衡括号字符串。
@@ -268,13 +279,15 @@ res和 multi用来记录当前字符串的前缀，以及当前字符串需要�
 用栈来处理括号
 变量：res, num, sign, stack
 初始+号（sign=1）很重要！
-先 …  ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html">  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
+先 …  ]]></content></entry><entry><title>Array</title><url>/post/leetcode/array/</url><categories><category>Leetcode</category><category>Array</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  LC 188 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4]
 方法一：切片操作；取数组里的后k个元素：nums[-k%n:]
 方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。
 双指针 LC 75: Sort Colors
 15. 三数之和 双指针，需要注意索引处理.
 首先外层指针需去重，内层的两个指针在每次获得答案的时候去重
-  </content></entry><entry><title>JMM</title><url>/post/java/juc/jmm/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
+双序列双指针 844. 比较含退格的字符串 结束循环的条件必须是 while i&gt;=0 or j&gt;=0。不然的话，当 i&lt;0, j&gt;=0 的时候，循环就结束了，判断为 False，而j此时或许还在#上。
+某个指针或许需要多一次，循环移动，来把这个字符串消耗完。比如&quot;nzp#o#g&quot;和&quot;b#nzp#o#g&quot;
+  ]]></content></entry><entry><title>JMM</title><url>/post/java/juc/jmm/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 并发问题 CPU Cache Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。
 指令级重排 编译器优化重排 JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。
 解决：禁止编译器重排序
@@ -308,43 +321,25 @@ Java早期采用这种模式。
 1 2 3 4 5 6 7 8 9 10 11 12 class MyThread extends Thread { @Override public void run() { // 线程执行的任务 } public static void main(String[] args) { MyThread thread1 = new MyThread(); thread1.start(); } } 实现 Runnable 接口 需要把我的实现的类对象作为参数传递给 Thread 的创建函数。
 1 2 3 4 5 6 7 public class MyRunnableLambda { public static void main(String[] args) { Runnable runnable = () -&amp;amp;gt; …  </content></entry><entry><title>Python一些常用操作</title><url>/post/leetcode/pythonskill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag><tag>Python</tag></tags><content type="html"><![CDATA[  intervals.sort(key=lambda p: p[0])
 LC 189 [:]切片操作
-dict 1 2 3 4 5 6 7 8 9 10 11 # 包含初始键值对的字典 filled_dict = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;} # 使用 dict() 构造函数 constructed_dict = dict(key1=&#39;value1&#39;, key2=&#39;value2&#39;) valueList=list(filled_dict.values()) my_dict = {&#39;apple&#39;: 1, &#39;banana&#39;: 2, &#39;cherry&#39;: 3} for key in my_dict.keys(): print(f&#34;Key: {key}&#34;) LC 49
+dict 1 2 3 4 5 6 7 8 9 10 11 # 包含初始键值对的字典 filled_dict = {&amp;#39;key1&amp;#39;: &amp;#39;value1&amp;#39;, &amp;#39;key2&amp;#39;: &amp;#39;value2&amp;#39;} # 使用 dict() 构造函数 constructed_dict = dict(key1=&amp;#39;value1&amp;#39;, key2=&amp;#39;value2&amp;#39;) valueList=list(filled_dict.values()) my_dict = {&amp;#39;apple&amp;#39;: 1, &amp;#39;banana&amp;#39;: 2, &amp;#39;cherry&amp;#39;: 3} for key in my_dict.keys(): print(f&amp;#34;Key: {key}&amp;#34;) LC 49
 defaultdict defaultdict(int) 更适合一般的需要“键不存在时给默认值”的场景，不一定都是计数。
-1 2 3 dd = defaultdict(int) # int 类型，缺省值为 0 dd = defaultdict(lambda: &#39;default_value&#39;) defaultdict(lambda: [0, 0]) # key 为一个数组 Counter Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。
+1 2 3 dd = defaultdict(int) # int 类型，缺省值为 0 dd = defaultdict(lambda: &amp;#39;default_value&amp;#39;) defaultdict(lambda: [0, 0]) # key 为一个数组 Counter Counter 更适合对可迭代对象做频次统计、出现次数分析等，它自带的计数方法可以让实现许多场景更为简洁。Counter(p)表示从一个iterable创建计数器。
 Iterable: list, tuple, str, dict, set, range, enumerate, map
 del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
 新建一个 Counter
-1 collections.Counter(nums) list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 # 在索引1到4之间查找数字3 position = numbers.index(3, 1, 4) print(position) # 输出: 2 # 尝试查找不存在的数字 try: position = numbers.index(7) except ValueError as e: print(&#34;Not found&#34;) # 输出: Not found sort() 它直接在原列表上进行排序操作，不创建新的列表。只能应用于列表。
-iterable Iterable: list, tuple, str, dict, set, range, enumerate, map sorted(iterable)返回一个新的已排序列表。原始的可迭代对象不会被修改。时间复杂度为O(nlogn)
-deque = collections.deque()
-ACM模式 知乎整理 zip 1 2 3 4 5 names = [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;] scores = [90, 85, 88] zipped = zip(names, scores) print(list(zipped)) 输出: [(&lsquo;Alice&rsquo;, 90), (&lsquo;Bob&rsquo;, 85), (&lsquo;Charlie&rsquo;, 88)]
-heapq 1 2 3 4 5 6 7 import heapq heap = [] heapq.heappush(heap, 3) heapq.heappush(heap, 1) heapq.heappush(heap, 2) print(heap) # 输出: [1, 3, 2] 对于单个元素：如果元素是可比较的（例如整数、浮点数等），那么堆会根据元素的大小进行排序，最小的元素位于堆顶。
-对于元组元素：当元素是元组时，堆会首先比较元组的第一个元素。如果第一个元素相等，再比较第二个元素，以此类推。在你给出的代码中，压入堆的元素是 (value, key) 元组，堆会根据 value（即元素出现的频率）进行排序，value 最小的元素位于堆顶。
-heapify(pq) 的作用是将任意列表转换为合法的最小堆，时间复杂度为 O (n)。
-转换后： pq[0] 是最小值。
-其他元素的位置满足堆性质，但不保证整体有序。
-除法 python3 的地板除 &ldquo;//&rdquo; 是整数除法， &ldquo;-3 // 2 = -2&rdquo; ；向下取整
-python3 的除法 &ldquo;/&rdquo; 是浮点除法， &ldquo;-3 / 2 = -1.5&rdquo; ；
-而其他语言的除法是向零取整。在 Python 中要这样写：
-int(a/float(b))
-这里的 int 取整，是向零取整
-负数 isdigit()无法判断负数，应该这样判断：
-x.lstrip(&rsquo;-&rsquo;).isdigit()
-注意如果想改变 x, 需要用 x=x.lstrip(c)
-sort 1 ListNode.__lt__ = lambda a, b: a.val &lt; b.val # 让堆可以比较节点大小 前K个高频单词 Complexity heap heapify: Time: O(k)
-heapq.heappush: Time&amp;Space: O(logK)
-Recursion merge sort: T(n)=2T(n/2)+T(n)=T(nLogn)
-S(n)=S(logn)
-LC 23: T(k)=2T(k/2)+O(n)=T(nLogK)
-  ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
+1 collections.Counter(nums) list index() 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 numbers = [1, 2, 3, 4, 5] # 查找数字3的位置 position = numbers.index(3) print(position) # 输出: 2 …  ]]></content></entry><entry><title>滑动窗口</title><url>/post/leetcode/slidingwindow/</url><categories><category>Leetcode</category><category>SlidingWindow</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  reference：灵茶山艾府
 定长滑窗 入：下标为i的元素进入窗口，更新相关统计量。如果i&lt;k−1则重复第一步。
 更新：更新答案。一般是更新最大值/最小值。
 出：下标为i−k+1的元素离开窗口，更新相关统计量。
 LC 1456 LC 1052 爱生气的书店老板：答案=所有不生气时间的客人数量+窗口内生气的客人数量
+1297. 子串的最大出现次数✨ 高频题，贪心思想
 不定长滑窗 LC 2779
-最短窗口 LC 219 模版题 1 2 3 4 5 6 7 8 9 10 def minSubArrayLen(self, target: int, nums: List[int]) -&gt; int: s,l=0,0 res=inf for r, x in enumerate(nums): s+=x while s&gt;=target: res=min(res, r-l+1) s-=nums[l] l+=1 return res if res&lt;inf else 0 2904. 最短且字典序最小的美丽子字符串 while循环的作用：尽可能缩小答案的长度
+最短窗口 如果符合条件，while循环里先更新答案，并且pop左边
+LC 219 模版题 1 2 3 4 5 6 7 8 9 10 def minSubArrayLen(self, target: int, nums: List[int]) -&gt; int: s,l=0,0 res=inf for r, x in enumerate(nums): s+=x while s&gt;=target: res=min(res, r-l+1) s-=nums[l] l+=1 return res if res&lt;inf else 0 🌟如果这题的条件改为 s==target 时才能更新答案，则这种方式有局限性，因为 target=0 时会有问题。
+所以优先考虑以下写法：
+1 2 3 4 5 while cur&gt;target_r: cur-=nums[l] l+=1 if cur==target_r: res=min(res, i-l+1) 2904. 最短且字典序最小的美丽子字符串 while循环的作用：尽可能缩小答案的长度
 字典序最小：直接比较两个字符串的大小
-76. 最小覆盖子串 直接比较两个字符串的counter即可
+76. 最小覆盖子串🌟 最优解法
 1234. 替换子串得到平衡字符串 正难则反
 最长窗口 window里最多只能有两个不同元素/最多可以改变k个元素，求最长子串
 先加右边。如果不符合条件，while循环不断pop左边，得到 valid子串，然后更新 res.
@@ -355,7 +350,12 @@ LC 3
 与LC3 类似的问题：最少需要把字符串分成多少份，使得每一份都没有重复字母？
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 def soln(password: str) -&gt; int: count = 1 seen = set() for i in range(len(password)): c = password[i] if c in seen: seen = {c} count += 1 else: seen.add(c) print(count) return count 1438. 绝对差不超过限制的最长连续子数组🌟 用两个队列专门存放当前窗口中的最大值和最小值.
 最大值队列里面单调递减，因为遇到了新的更大的值，需要把之前的元素从队尾 pop
-求子数组个数(越短越合法) 713. 乘积小于 K 的子数组   ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
+求子数组个数-越短越合法 713. 乘积小于 K 的子数组 求子数组个数-恰好型 930. 和相同的二元子数组 把两个滑动窗口合并起来，维护同一个右端点 right 和两个左端点 left 1和 left 2.
+left 1 在左边，意思是正好符合条件。left 2 在右边，正好不符合条件。
+424. 替换后的最长重复字符（高频） 给窗口内每个字符计数，每次获取到次数最多的字符出现的次数，
+当前窗口长度-该次数=需要被替换的次数
+992. K 个不同整数的子数组 可以转化为，atMostK(k)-atMostK(k-1)
+  ]]></content></entry><entry><title>前缀和</title><url>/post/leetcode/presum/</url><categories><category>Leetcode</category><category>preSum</category></categories><tags><tag>leetcode</tag></tags><content type="html">   前缀和题单 一维前缀和 LC 1749 任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。
 1 2 3 def maxAbsoluteSum(self, nums: List[int]) -&amp;amp;gt; int: s = list(accumulate(nums, initial=0)) # nums 的前缀和 return max(s) - min(s) 2055. 蜡烛之间的盘子 找a或其右边第一个蜡烛 找b或其左边第一个蜡烛 用前缀和，算他们之间的盘子数量 步骤1，2可以用二分，但是会超时
 最好是预处理，记录每个位置左边/右边的第一个蜡烛位置
 前缀和与哈希表 枚举右，维护左. 关键找出【维护左】的性质！
@@ -532,4 +532,4 @@ Module hm-dianping SDK 1.8 is not compatible with the source version 21.
 Ruoke  
 2025.03.10  
 于武汉家中，和姥姥姥爷妈妈一起
-  </content></entry><entry><title/><url>/post/leetcode/company_wise/</url><categories/><tags/><content type="html">  heap 重构字符串(Roblox) 任务调度器(Roblox, Snowflake) 前K个高频单词(Adobe) 前 K 个高频元素(Adobe, Bloomberg) 最多可以参加的会议数目(Snowflake) 查找和最小的 K 对数字(Linkedin, Google) 最后一块石头的重量(Nvidia) 数据流的中位数(Snowflake) Merge k Sorted Lists(Bloomberg, Snowflake, Nvidia, Microsoft) 股票价格波动(Google) prefix sum 乘积小于 K 的子数组(Airbnb) 最大连续1的个数 III(Microsoft, Expedia) 和可被 K 整除的子数组(Expedia) 二维区域和检索 - 矩阵不可变(Snowflake) Subarray Sum Equals K(Bloomberg) Product of Array Except Self(Bloomberg, Microsoft) Meeting Rooms II(Microsoft) trie 添加与搜索单词 - 数据结构设计(Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) 最长公共前缀(Bloomberg) 最长公共前缀的长度(Databricks) Implement Trie (Prefix Tree)(Snowflake) 设计内存文件系统(Snowflake) 删除子文件夹(Snowflake, Google) 搜索推荐系统(Docusign, Amazon) 单词搜索 II(Microsoft, Google, Airbnb) stack Basic Calculator II(Tesla) Max Stack(Linkedin) Nested List Weight Sum II(Linkedin) Valid Parentheses(Nvidia, Expedia) 逆波兰表达式求值(Microsoft) 基本计算器(Microsoft) 有效的括号(Microsoft) 最长有效括号(Tiktok) 最大矩形(Tiktok) 柱状图中最大的矩形(Microsoft) 简化路径(Snowflake, Tiktok) 去除重复字母(Expedia) 队列中可以看到的人数(Expedia) 使字符串平衡的最小交换次数(Expedia) 子数组范围和(Tiktok) queue 设计循环队列(Tesla, Cloudflare) 敲击计数器(Snowflake, Cloudflare, Databricks) 绝对差不超过限制的最长连续子数组(Google) hash 缺失的第一个正数(Tesla) 丢失的数字(Meta, Microsoft, Bloomberg) sort 数组中的第K个最大元素(Microsoft) sliding window 最大连续1的个数 III(SAP, Salesforce, LinkedIn, Meta, Google) 子串的最大出现次数(Hubspot, Salesforce) 至多包含两个不同字符的最长子串(Ebay, Google, Tiktok) 至多包含 K 个不同字符的最长子串(Microsoft) 乘积小于 K 的子数组(Paypal, Oracle, Salesforce) 学生分数的最小差值 最小区间(Lyft, Databricks)   </content></entry></search>
+  </content></entry><entry><title/><url>/post/leetcode/company_wise/</url><categories/><tags/><content type="html">  heap 重构字符串(Roblox) 任务调度器(Roblox, Snowflake) 前K个高频单词(Adobe) 前 K 个高频元素(Adobe, Bloomberg) 最多可以参加的会议数目(Snowflake) 查找和最小的 K 对数字(Linkedin, Google) 最后一块石头的重量(Nvidia) 数据流的中位数(Snowflake) Merge k Sorted Lists(Bloomberg, Snowflake, Nvidia, Microsoft) 股票价格波动(Google) 会议室 III prefix sum 乘积小于 K 的子数组(Airbnb) 最大连续1的个数 III(Microsoft, Expedia) 和可被 K 整除的子数组(Expedia) 二维区域和检索 - 矩阵不可变(Snowflake) Subarray Sum Equals K(Bloomberg) Product of Array Except Self(Bloomberg, Microsoft) Meeting Rooms II(Microsoft) trie 添加与搜索单词 - 数据结构设计(Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) 最长公共前缀(Bloomberg) 最长公共前缀的长度(Databricks) Implement Trie (Prefix Tree)(Snowflake) 设计内存文件系统(Snowflake) 删除子文件夹(Snowflake, Google) 搜索推荐系统(Docusign, Amazon) 单词搜索 II(Microsoft, Google, Airbnb) stack Basic Calculator II(Tesla) Max Stack(Linkedin) Nested List Weight Sum II(Linkedin) Valid Parentheses(Nvidia, Expedia) 逆波兰表达式求值(Microsoft) 基本计算器(Microsoft) 有效的括号(Microsoft) 最长有效括号(Tiktok) 最大矩形(Tiktok) 柱状图中最大的矩形(Microsoft) 简化路径(Snowflake, Tiktok) 去除重复字母(Expedia) 队列中可以看到的人数(Expedia) 使字符串平衡的最小交换次数(Expedia) 子数组范围和(Tiktok) queue 设计循环队列(Tesla, Cloudflare) 敲击计数器(Snowflake, Cloudflare, Databricks) 绝对差不超过限制的最长连续子数组(Google) 错题集 设计循环队列(Tesla, Cloudflare) hash 缺失的第一个正数(Tesla) 丢失的数字(Meta, Microsoft, Bloomberg) sort 数组中的第K个最大元素(Microsoft) sliding window 最大连续1的个数 III(SAP, Salesforce, LinkedIn, Meta, Google) 替换后的最长重复字符(Adobe, Amazon, Bytedance, Bloomberg) 子串的最大出现次数(Hubspot, Salesforce) 至多包含两个不同字符的最长子串(Ebay, Google, Tiktok) 至多包含 K 个不同字符的最长子串(Microsoft) 乘积小于 K 的子数组(Paypal, Oracle, Salesforce) 最小区间(Lyft, Databricks) 大小为 K 且平均值大于等于阈值的子数组数目(LinkedIn)   </content></entry></search>

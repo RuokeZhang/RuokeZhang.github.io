@@ -148,12 +148,15 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>&lt;/p>
-&lt;h2 id="dfs">DFS
+&lt;h2 id="图">图
+&lt;a class="header-anchor" href="#%e5%9b%be">&lt;/a>
+&lt;/h2>&lt;h3 id="dfs">DFS
 &lt;a class="header-anchor" href="#dfs">&lt;/a>
-&lt;/h2>&lt;h3 id="lc-200-岛屿数量">LC 200 岛屿数量
-&lt;a class="header-anchor" href="#lc-200-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f">&lt;/a>
-&lt;/h3>&lt;p>DFS可以用来找&lt;strong>聚在一起的符合要求的格子&lt;/strong>，在访问过某个格子后，改变它的标记。&lt;br>
-外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;h4 id="261-以图判树">261. 以图判树
+&lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>

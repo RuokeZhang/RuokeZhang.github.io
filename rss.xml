@@ -472,12 +472,15 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>&lt;/p>
-&lt;h2 id="dfs">DFS
+&lt;h2 id="图">图
+&lt;a class="header-anchor" href="#%e5%9b%be">&lt;/a>
+&lt;/h2>&lt;h3 id="dfs">DFS
 &lt;a class="header-anchor" href="#dfs">&lt;/a>
-&lt;/h2>&lt;h3 id="lc-200-岛屿数量">LC 200 岛屿数量
-&lt;a class="header-anchor" href="#lc-200-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f">&lt;/a>
-&lt;/h3>&lt;p>DFS可以用来找&lt;strong>聚在一起的符合要求的格子&lt;/strong>，在访问过某个格子后，改变它的标记。&lt;br>
-外层循环遍历每个格子，当见到一个新的符合要求的格子，对它调用 DFS，这一次搜索就能找到一块岛屿，并且保证组成岛屿的部分都不会被再次访问，答案+1.&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;h4 id="261-以图判树">261. 以图判树
+&lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
@@ -1334,6 +1337,11 @@ Ruoke
 &lt;li>股票价格波动(Google)&lt;/li>
 &lt;/ol>
 &lt;/li>
+&lt;li>
+&lt;ol start="2402">
+&lt;li>会议室 III&lt;/li>
+&lt;/ol>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="prefix-sum">prefix sum
 &lt;a class="header-anchor" href="#prefix-sum">&lt;/a>
@@ -1484,6 +1492,15 @@ Ruoke
 &lt;/ol>
 &lt;/li>
 &lt;/ul>
+&lt;h3 id="错题集">错题集
+&lt;a class="header-anchor" href="#%e9%94%99%e9%a2%98%e9%9b%86">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;ol start="622">
+&lt;li>设计循环队列(Tesla, Cloudflare)&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
 &lt;h2 id="hash">hash
 &lt;a class="header-anchor" href="#hash">&lt;/a>
 &lt;/h2>&lt;ul>
@@ -1516,6 +1533,11 @@ Ruoke
 &lt;/ol>
 &lt;/li>
 &lt;li>
+&lt;ol start="424">
+&lt;li>替换后的最长重复字符(Adobe, Amazon, Bytedance, Bloomberg)&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
 &lt;ol start="1297">
 &lt;li>子串的最大出现次数(Hubspot, Salesforce)&lt;/li>
 &lt;/ol>
@@ -1536,13 +1558,13 @@ Ruoke
 &lt;/ol>
 &lt;/li>
 &lt;li>
-&lt;ol start="1984">
-&lt;li>学生分数的最小差值&lt;/li>
+&lt;ol start="632">
+&lt;li>最小区间(Lyft, Databricks)&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;li>
-&lt;ol start="632">
-&lt;li>最小区间(Lyft, Databricks)&lt;/li>
+&lt;ol start="1343">
+&lt;li>大小为 K 且平均值大于等于阈值的子数组数目(LinkedIn)&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ul></description></item></channel></rss>
