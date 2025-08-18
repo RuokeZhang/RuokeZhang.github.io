@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>cloud</title><url>/post/cloud/</url><categories><category>Cloud</category></categories><tags><tag>Docker, AWS</tag></tags><content type="html">  Docker Dockerfile Usage: select base image(usually with python), install dependencies using pip
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>string</title><url>/post/leetcode/string/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  KMP https://www.zhihu.com/question/21923021/answer/37475572 28. 找出字符串中第一个匹配项的下标 模式串：abababzababab
+第一步：一边遍历模式串，一边构造next数组。
+next[i]表示字符串s[0:i+1]的前缀和后缀最大的公共长度 初始化j=0，i从1遍历到n-1。j的位置表示，此时s[:j]是公共前后缀 遍历时，如果此时有公共前后缀，不断比较s[i]和s[j]，一旦发现他们不同，则在循环中回退j，直到s[:j]成为公共前后缀。回退到此时的次长公共前后缀，将j移动到next[j-1]即可 再次比较s[i]和s[j]，如果相同，则移动j，并且为next[i]赋值 第二步：比较两个字符串
+abeababeabf
+abeabf
+i遍历字符串，j指向模式串。一次循环中，j的位置表示needle[0:j]和字符串匹配 当此时有匹配，检查haystack[i]与needle[j]是否相同，如果不相同，回退j至next[j-1] 再次比较haystack[i]与needle[j]，如果相同，移动j   </content></entry><entry><title>cloud</title><url>/post/cloud/</url><categories><category>Cloud</category></categories><tags><tag>Docker, AWS</tag></tags><content type="html">  Docker Dockerfile Usage: select base image(usually with python), install dependencies using pip
 drawback: need command line to assign port number
 docker compose easy to assign port mapping
 volumes 1 volumes: - ./mlflow-artifacts:/mlflow-artifacts 将本地的 ./mlflow-artifacts 目录映射到容器内的 /mlflow-artifacts 目录，实现：
@@ -114,14 +119,14 @@ UserHolder 每个 ThreadLocal 可以存放一个对象，同一个线程的所�
 因为要区分：当前路径上的，还有之前已经遍历结束的某个节点。
 比如1-&amp;gt;3-&amp;gt;6（已经遍历完6了），此时遍历1-&amp;gt;5-&amp;gt;6，又遇见5，显然这里没有环 如果用True/False， 则这两种情况都算True
 2192. 有向无环图中一个节点的所有祖先 要找到某个节点的所有祖先，但是不需要在dfs的时候把所有本次搜索经过的节点都带上，因为，我们会遍历每个节点，作为起点。所以在搜索的时候，我们只要把这个起点加进祖先列表即可。
-dfs条件：当下一个节点不在本次搜索之中的时候，可以去遍历它.
+dfs条件：当下一个节点在本次搜索之中，没有被搜到过的时候，可以去遍历它.所以每次dfs的时候，vis[i]表示这次搜索的起点，
 遍历过该节点，需要恢复它吗？
 不需要.
 比如0-&amp;gt;3-&amp;gt;6, 0-&amp;gt;4-&amp;gt;6。第二次到6的时候其实是不同的一条路，这个时候6被标记为没有被访问过～
 当 start = 0：
 走路径 0→3→6 时，第一次到达 6，满足 vis[6] != 0，于是 ans[6].append(0)，然后你回溯时如果写了 vis[6] = -1，等于擦掉“6 已被 start=0 访问过”的标记。
 回到 0 再走另一条路径 0→4→6，再次检查到 vis[6] != 0（因为被你复原成了 -1），又会 ans[6].append(0) —— 同一个祖先 0 被加了两次。
-1 2 3 4 5 6 7 8 9 10 def dfs(i, start): # i, start分别是现在到的节点和最开始的祖先 #找它能到的所有节点 vis[i]=start for child in g[i]: …  ]]></content></entry><entry><title>异常、泛型</title><url>/post/java/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
+1 2 3 4 5 6 7 8 9 10 def dfs(i, start): # i, start分别是现在到的节点和最开始的祖先 # …  ]]></content></entry><entry><title>异常、泛型</title><url>/post/java/javabasic/exceptionr/</url><categories><category>Java</category><category>Basic</category></categories><tags><tag>Java</tag></tags><content type="html">  异常 Throwable Throwable具有 Exception和 Error 两个子类
 Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，JVM 一般会选择终止线程。
 Exception 类具有Checked Exception和 Unchecked Exception 这两个子类。
 Checked Exception 表明异常是在编译时就会被检查，如果该异常没有被 catch 捕获，或者没有被 throws, 就通不过编译。 包括 IOException, ClassNotFoundException.
@@ -285,8 +290,11 @@ res和 multi用来记录当前字符串的前缀，以及当前字符串需要�
 双指针 LC 75: Sort Colors
 15. 三数之和 双指针，需要注意索引处理.
 首先外层指针需去重，内层的两个指针在每次获得答案的时候去重
-双序列双指针 844. 比较含退格的字符串 结束循环的条件必须是 while i&gt;=0 or j&gt;=0。不然的话，当 i&lt;0, j&gt;=0 的时候，循环就结束了，判断为 False，而j此时或许还在#上。
-某个指针或许需要多一次，循环移动，来把这个字符串消耗完。比如&quot;nzp#o#g&quot;和&quot;b#nzp#o#g&quot;
+双序列 双序列双指针 88. 合并两个有序数组 输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6]
+双指针应当从后往前移动
+844. 比较含退格的字符串 结束循环的条件必须是 while i&gt;=0 or j&gt;=0。不然的话，当 i&lt;0, j&gt;=0 的时候，循环就结束了，判断为 False，而j此时或许还在#上。
+某个指针或许需要多一次，循环移动，来把这个字符串消耗完。比如&quot;n&quot;和&quot;b#n&quot;
   ]]></content></entry><entry><title>JMM</title><url>/post/java/juc/jmm/</url><categories><category>Java</category><category>JUC</category></categories><tags><tag>Java</tag><tag>八股</tag></tags><content type="html">  参考：JavaGuide
 并发问题 CPU Cache Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。
 指令级重排 编译器优化重排 JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。
