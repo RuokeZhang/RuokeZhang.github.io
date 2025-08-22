@@ -30,7 +30,12 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;li>内层循环里放时间&lt;/li>
 &lt;/ol></description></item><item><title>数据结构</title><link>https://ruokezhang.github.io/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
 &lt;a class="header-anchor" href="#trie">&lt;/a>
-&lt;/h2>&lt;p>LC 208&lt;/p></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;h2 id="300-最长递增子序列">300. 最长递增子序列
+&lt;/h2>&lt;h4 id="440-字典序的第k小数字">440. 字典序的第K小数字
+&lt;a class="header-anchor" href="#440-%e5%ad%97%e5%85%b8%e5%ba%8f%e7%9a%84%e7%ac%ack%e5%b0%8f%e6%95%b0%e5%ad%97">&lt;/a>
+&lt;/h4>&lt;ul>
+&lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
+&lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
+&lt;/ul></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;h2 id="300-最长递增子序列">300. 最长递增子序列
 &lt;a class="header-anchor" href="#300-%e6%9c%80%e9%95%bf%e9%80%92%e5%a2%9e%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
 &lt;/h2>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1ub411Q7sB/?vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="灵神视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -43,7 +48,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;p>反证法可证明：g是一个严格递增的数组&lt;/p>
 &lt;h2 id="659-分割数组为连续子序列">659. 分割数组为连续子序列
 &lt;a class="header-anchor" href="#659-%e5%88%86%e5%89%b2%e6%95%b0%e7%bb%84%e4%b8%ba%e8%bf%9e%e7%bb%ad%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
-&lt;/h2>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarysearch/</guid><description>&lt;h2 id="闭区间写法">闭区间写法
+&lt;/h2>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarysearch/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="闭区间写法">闭区间写法
 &lt;a class="header-anchor" href="#%e9%97%ad%e5%8c%ba%e9%97%b4%e5%86%99%e6%b3%95">&lt;/a>
 &lt;/h2>&lt;h3 id="找该数">找该数
 &lt;a class="header-anchor" href="#%e6%89%be%e8%af%a5%e6%95%b0">&lt;/a>
