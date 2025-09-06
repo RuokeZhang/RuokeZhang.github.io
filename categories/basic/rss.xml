@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Ruoke Zhang</title><link>https://ruokezhang.github.io/categories/basic/</link><description>Recent content in Basic on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/categories/basic/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Ruoke Zhang</title><link>http://localhost:1313/categories/basic/</link><description>Recent content in Basic on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/basic/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java反射&amp;动态代理</title><link>http://localhost:1313/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API
@@ -45,15 +45,15 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="获取字段">获取字段
 &lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e6%ae%b5">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>异常、泛型</title><link>http://localhost:1313/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable具有 Exception和 Error 两个子类&lt;/p>
-&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>https://ruokezhang.github.io/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
+&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>http://localhost:1313/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
 &lt;a class="header-anchor" href="#collection%e6%8e%a5%e5%8f%a3">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -119,9 +119,9 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;h3 id="时间复杂度">时间复杂度
 &lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">&lt;/a>
 &lt;/h3>&lt;p>理想情况下，HashMap 的插入、删除和查找操作平均时间复杂度都是 O (1)。&lt;br>
-如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Java 8的新特性</title><link>http://localhost:1313/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
-&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>接口和抽象类</title><link>http://localhost:1313/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>接口是对行为的抽象。&lt;/p>
 &lt;ol>
@@ -235,7 +235,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Java IO</title><link>http://localhost:1313/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>

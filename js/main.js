@@ -183,7 +183,7 @@ NexT.utils = {
   registerToolButtons: function () {
     const buttons = document.querySelector('.tool-buttons');
     
-    const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme)');
+    const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme):not(#goto-gtranslate)');
     scrollbar_buttons.forEach(button => {
       let targetId = button.id;
       if (targetId != '') {
@@ -198,6 +198,26 @@ NexT.utils = {
       const cur_theme = document.documentElement.getAttribute('data-theme');
       window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
     });
+
+    const langButton = buttons.querySelector('div#goto-gtranslate');
+    if (langButton) {
+      langButton.addEventListener('click', () => {
+        const currentLang = langButton.getAttribute('data-current-lang');
+        const zhUrl = langButton.getAttribute('data-zh-url');
+        const enUrl = langButton.getAttribute('data-en-url');
+        
+        let targetUrl;
+        if (currentLang === 'zh-cn') {
+          targetUrl = enUrl;
+        } else {
+          targetUrl = zhUrl;
+        }
+        
+        if (targetUrl) {
+          window.location.href = targetUrl;
+        }
+      });
+    }
   },
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
@@ -548,7 +568,7 @@ NexT.utils = {
       const isSubPath = !NexT.CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
-  },
+  },*/
 	
   registerLangSelect: function() {
     const selects = document.querySelectorAll('.lang-select');
@@ -563,7 +583,7 @@ NexT.utils = {
         window.location.href = target.dataset.href;
       });
     });
-  },*/
+  },
 
   registerSidebarTOC: function () {
     const toc = document.getElementById('TableOfContents');
@@ -881,8 +901,8 @@ NexT.boot.refresh = function() {
   // NexT.CONFIG.lazyload && window.lozad('.post-body img').observe();
   // NexT.CONFIG.pangu && window.pangu.spacingPage();
   /*NexT.utils.registerTabsTag();
-  NexT.utils.registerActiveMenuItem();
-  NexT.utils.registerLangSelect();*/
+  NexT.utils.registerActiveMenuItem();*/
+  NexT.utils.registerLangSelect();
   /*NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();*/
 

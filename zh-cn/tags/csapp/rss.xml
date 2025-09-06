@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CSAPP on Ruoke Zhang</title><link>http://localhost:1313/zh-cn/tags/csapp/</link><description>Recent content in CSAPP on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/tags/csapp/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>http://localhost:1313/zh-cn/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/os/process/</guid><description>&lt;h2 id="process">Process
+&lt;a class="header-anchor" href="#process">&lt;/a>
+&lt;/h2>&lt;p>进程独有的：&lt;/p>
+&lt;ol>
+&lt;li>PC&lt;/li>
+&lt;li>stack pointer(存储返回地址)&lt;/li>
+&lt;li>address space&lt;/li>
+&lt;li>file descriptors&lt;/li>
+&lt;/ol>
+&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item></channel></rss>

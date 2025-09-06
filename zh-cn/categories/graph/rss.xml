@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Graph on Ruoke Zhang</title><link>http://localhost:1313/zh-cn/categories/graph/</link><description>Recent content in Graph on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/categories/graph/rss.xml" rel="self" type="application/rss+xml"/><item><title>图</title><link>http://localhost:1313/zh-cn/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/" title="网格图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 网格图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="图">图
+&lt;a class="header-anchor" href="#%e5%9b%be">&lt;/a>
+&lt;/h2>&lt;h3 id="dfs">DFS
+&lt;a class="header-anchor" href="#dfs">&lt;/a>
+&lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;h4 id="261-以图判树">261. 以图判树
+&lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item></channel></rss>

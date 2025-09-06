@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mlops on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/mlops/</link><description>Recent content in Mlops on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/mlops/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mlops on Ruoke Zhang</title><link>http://localhost:1313/tags/mlops/</link><description>Recent content in Mlops on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mlops/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops zoomcamp @DataTalksClub</title><link>http://localhost:1313/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
 &lt;a class="header-anchor" href="#orchestration">&lt;/a>
 &lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
 &lt;h3 id="step-1-docker-env">Step 1 Docker Env
@@ -27,7 +27,7 @@
 &lt;a class="header-anchor" href="#other-dependencies">&lt;/a>
 &lt;/h4>&lt;h3 id="heading">
 &lt;a class="header-anchor" href="#heading">&lt;/a>
-&lt;/h3></description></item><item><title>LLM笔记</title><link>https://ruokezhang.github.io/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
+&lt;/h3></description></item><item><title>LLM笔记</title><link>http://localhost:1313/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
 &lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>保持简洁&lt;/li>
@@ -45,7 +45,7 @@
 &lt;/ol>
 &lt;h2 id="system-prompt">system prompt
 &lt;a class="header-anchor" href="#system-prompt">&lt;/a>
-&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>mlops笔记</title><link>http://localhost:1313/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
 &lt;a class="header-anchor" href="#project-1">&lt;/a>
 &lt;/h2>&lt;h3 id="project-setup">project setup
 &lt;a class="header-anchor" href="#project-setup">&lt;/a>

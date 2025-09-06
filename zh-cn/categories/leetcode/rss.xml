@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>http://localhost:1313/zh-cn/categories/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/categories/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>http://localhost:1313/zh-cn/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
+&lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
+&lt;h2 id="脑筋急转弯">脑筋急转弯
+&lt;a class="header-anchor" href="#%e8%84%91%e7%ad%8b%e6%80%a5%e8%bd%ac%e5%bc%af">&lt;/a>
+&lt;/h2>&lt;h4 id="2749-得到整数零需要执行的最少操作数">2749. 得到整数零需要执行的最少操作数
+&lt;a class="header-anchor" href="#2749-%e5%be%97%e5%88%b0%e6%95%b4%e6%95%b0%e9%9b%b6%e9%9c%80%e8%a6%81%e6%89%a7%e8%a1%8c%e7%9a%84%e6%9c%80%e5%b0%91%e6%93%8d%e4%bd%9c%e6%95%b0">&lt;/a>
+&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>http://localhost:1313/zh-cn/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
+&lt;a class="header-anchor" href="#%e8%b4%a8%e6%95%b0">&lt;/a>
+&lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
+&lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 时间复杂度 O(MX * log log MX)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MX &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">1_000_001&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>is_prime &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [&lt;span style="color:#fe640b">False&lt;/span>] &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> &lt;span style="color:#fe640b">2&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> [&lt;span style="color:#fe640b">True&lt;/span>] &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> (MX &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># 0 和 1 不是质数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>primes &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> i &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(&lt;span style="color:#fe640b">2&lt;/span>, MX):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> is_prime[i]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> primes&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> j &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(i &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> i, MX, i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># j 是质数 i 的倍数&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
+&lt;a class="header-anchor" href="#204-%e8%ae%a1%e6%95%b0%e8%b4%a8%e6%95%b0">&lt;/a>
+&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>http://localhost:1313/zh-cn/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;a class="header-anchor" href="#kmp">&lt;/a>
+&lt;/h3>&lt;p>
+&lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.zhihu.com/question/21923021/answer/37475572
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h4 id="28-找出字符串中第一个匹配项的下标">28. 找出字符串中第一个匹配项的下标
+&lt;a class="header-anchor" href="#28-%e6%89%be%e5%87%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8c%b9%e9%85%8d%e9%a1%b9%e7%9a%84%e4%b8%8b%e6%a0%87">&lt;/a>
+&lt;/h4>&lt;p>模式串：abababzababab&lt;/p>
+&lt;p>第一步：一边遍历模式串，一边构造next数组。&lt;/p>
+&lt;ul>
+&lt;li>next[i]表示字符串s[0:i+1]的前缀和后缀&lt;strong>最大的&lt;/strong>公共长度&lt;/li>
+&lt;li>初始化j=0，i从1遍历到n-1。j的位置表示，此时s[:j]是公共前后缀&lt;/li>
+&lt;li>遍历时，如果&lt;strong>此时有公共前后缀&lt;/strong>，不断比较s[i]和s[j]，一旦发现他们不同，则&lt;strong>在循环中回退j，直到s[:j]成为公共前后缀&lt;/strong>。回退到此时的&lt;strong>次长公共前后缀&lt;/strong>，将j移动到next[j-1]即可&lt;/li>
+&lt;li>再次比较s[i]和s[j]，如果相同，则移动j，并且为next[i]赋值&lt;/li>
+&lt;/ul>
+&lt;p>第二步：比较两个字符串&lt;br>
+abeababeabf&lt;br>
+abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://localhost:1313/zh-cn/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
+&lt;a class="header-anchor" href="#755-%e5%80%92%e6%b0%b4">&lt;/a>
+&lt;/h3>&lt;h2 id="时间顺序">时间顺序
+&lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f">&lt;/a>
+&lt;/h2>&lt;h3 id="2534-通过门的时间">2534. 通过门的时间
+&lt;a class="header-anchor" href="#2534-%e9%80%9a%e8%bf%87%e9%97%a8%e7%9a%84%e6%97%b6%e9%97%b4">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>模拟的结束条件为所有人都进入/离开&lt;/li>
+&lt;li>内层循环里放时间&lt;/li>
+&lt;/ol></description></item><item><title>数据结构</title><link>http://localhost:1313/zh-cn/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;a class="header-anchor" href="#trie">&lt;/a>
+&lt;/h2>&lt;h4 id="440-字典序的第k小数字">440. 字典序的第K小数字
+&lt;a class="header-anchor" href="#440-%e5%ad%97%e5%85%b8%e5%ba%8f%e7%9a%84%e7%ac%ack%e5%b0%8f%e6%95%b0%e5%ad%97">&lt;/a>
+&lt;/h4>&lt;ul>
+&lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
+&lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
+&lt;/ul></description></item><item><title>贪心</title><link>http://localhost:1313/zh-cn/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h4 id="300-最长递增子序列">300. 最长递增子序列
+&lt;a class="header-anchor" href="#300-%e6%9c%80%e9%95%bf%e9%80%92%e5%a2%9e%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
+&lt;/h4>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1ub411Q7sB/?vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="灵神视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神视频
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>定义 g[i] 表示长为 i+1 的上升子序列的末尾元素的最小值。&lt;/p>
+&lt;p>反证法可证明：g是一个严格递增的数组&lt;/p>
+&lt;h4 id="659-分割数组为连续子序列">659. 分割数组为连续子序列
+&lt;a class="header-anchor" href="#659-%e5%88%86%e5%89%b2%e6%95%b0%e7%bb%84%e4%b8%ba%e8%bf%9e%e7%bb%ad%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
+&lt;/h4>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>Binary Search</title><link>http://localhost:1313/zh-cn/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/binarysearch/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="闭区间写法">闭区间写法
+&lt;a class="header-anchor" href="#%e9%97%ad%e5%8c%ba%e9%97%b4%e5%86%99%e6%b3%95">&lt;/a>
+&lt;/h2>&lt;h3 id="找该数">找该数
+&lt;a class="header-anchor" href="#%e6%89%be%e8%af%a5%e6%95%b0">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 标准的二分搜索框架，搜索目标元素的索引，若不存在则返回 -1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">search&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>], target: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">len&lt;/span>(nums) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> (right &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> left) &lt;span style="color:#04a5e5;font-weight:bold">//&lt;/span> &lt;span style="color:#fe640b">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="找左边界">找左边界
+&lt;a class="header-anchor" href="#%e6%89%be%e5%b7%a6%e8%be%b9%e7%95%8c">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">search&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>], target: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">len&lt;/span>(nums) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> (right &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> left) &lt;span style="color:#04a5e5;font-weight:bold">//&lt;/span> &lt;span style="color:#fe640b">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>mid&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="左闭右开">左闭右开
+&lt;a class="header-anchor" href="#%e5%b7%a6%e9%97%ad%e5%8f%b3%e5%bc%80">&lt;/a>
+&lt;/h2>&lt;h3 id="找左边界-1">找左边界
+&lt;a class="header-anchor" href="#%e6%89%be%e5%b7%a6%e8%be%b9%e7%95%8c-1">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">left_bound&lt;/span>(nums: List[&lt;span style="color:#04a5e5">int&lt;/span>], target: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> left &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> (right &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> left) &lt;span style="color:#04a5e5;font-weight:bold">//&lt;/span> &lt;span style="color:#fe640b">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>http://localhost:1313/zh-cn/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/" title="网格图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 网格图题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="图">图
+&lt;a class="header-anchor" href="#%e5%9b%be">&lt;/a>
+&lt;/h2>&lt;h3 id="dfs">DFS
+&lt;a class="header-anchor" href="#dfs">&lt;/a>
+&lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;h4 id="261-以图判树">261. 以图判树
+&lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>技巧题</title><link>http://localhost:1313/zh-cn/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
+&lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
+&lt;ol>
+&lt;li>从后往前，找第一组升序的nums[i]和nums[i+1], 比如129&lt;strong>47&lt;/strong>653，找到了nums[4]=4.&lt;/li>
+&lt;li>从后往前，找第一个比nums[i]大的数nums[j]，也就是 5&lt;/li>
+&lt;li>交换nums[i]和nums[j], 得到 129&lt;strong>5&lt;/strong>76&lt;strong>4&lt;/strong>3，此时nums[i]后面的数字全都是降序排列&lt;/li>
+&lt;li>把nums[i]后面的数字按升序排列，得到 1295&lt;strong>3467&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
+&lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>http://localhost:1313/zh-cn/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/stackqueue/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/circle/discuss/mOr1u6/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://leetcode.cn/discuss/post/9oZFK9/" title="单调栈" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 单调栈
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="合法括号字符串">合法括号字符串
+&lt;a class="header-anchor" href="#%e5%90%88%e6%b3%95%e6%8b%ac%e5%8f%b7%e5%ad%97%e7%ac%a6%e4%b8%b2">&lt;/a>
+&lt;/h2>&lt;h3 id="32-最长有效括号">32 最长有效括号
+&lt;a class="header-anchor" href="#32-%e6%9c%80%e9%95%bf%e6%9c%89%e6%95%88%e6%8b%ac%e5%8f%b7">&lt;/a>
+&lt;/h3>&lt;p>&amp;ldquo;()(())&amp;rdquo;&lt;/p>
+&lt;p>用一个&lt;strong>数组tmp&lt;/strong>记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.&lt;/p></description></item><item><title>Array</title><link>http://localhost:1313/zh-cn/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/array/</guid><description>&lt;h3 id="lc-188">LC 188
+&lt;a class="header-anchor" href="#lc-188">&lt;/a>
+&lt;/h3>&lt;p>输入: nums = [1,2,3,4,5,6,7], k = 3
+输出: [5,6,7,1,2,3,4]&lt;/p>
+&lt;p>方法一：切片操作；取数组里的后k个元素：nums[-k%n:]&lt;/p>
+&lt;p>方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。&lt;/p></description></item><item><title>Sorting</title><link>http://localhost:1313/zh-cn/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;a class="header-anchor" href="#merge-sort">&lt;/a>
+&lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: sort a linked list
+&lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
+&lt;/h3>&lt;p>快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None&lt;/p>
+&lt;h3 id="lc-23-merge-k-sorted-lists">LC 23. Merge k Sorted Lists
+&lt;a class="header-anchor" href="#lc-23-merge-k-sorted-lists">&lt;/a>
+&lt;/h3>&lt;p>注意边界情况&lt;/p>
+&lt;h2 id="quick-sort">quick sort
+&lt;a class="header-anchor" href="#quick-sort">&lt;/a>
+&lt;/h2>&lt;p>以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。
+
+&lt;a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/solutions/821137/ji-yu-kuai-pai-de-suo-you-topkwen-ti-jia-ylsd/" title="python模版" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ python模版
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>Python一些常用操作</title><link>http://localhost:1313/zh-cn/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
+&lt;p>LC 189 [:]切片操作&lt;/p>
+&lt;h2 id="dict">dict
+&lt;a class="header-anchor" href="#dict">&lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 包含初始键值对的字典&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filled_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> {&lt;span style="color:#40a02b">&amp;#39;key1&amp;#39;&lt;/span>: &lt;span style="color:#40a02b">&amp;#39;value1&amp;#39;&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;key2&amp;#39;&lt;/span>: &lt;span style="color:#40a02b">&amp;#39;value2&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 使用 dict() 构造函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>constructed_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">dict&lt;/span>(key1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value1&amp;#39;&lt;/span>, key2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#39;value2&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>valueList&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">list&lt;/span>(filled_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>values())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> {&lt;span style="color:#40a02b">&amp;#39;apple&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;banana&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;cherry&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> key &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> my_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>keys():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>http://localhost:1313/zh-cn/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;h2 id="定长滑窗">定长滑窗
+&lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
+&lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
+&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>http://localhost:1313/zh-cn/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/presum/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 前缀和题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="一维前缀和">一维前缀和
+&lt;a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e5%89%8d%e7%bc%80%e5%92%8c">&lt;/a>
+&lt;/h2>&lt;h3 id="lc-1749">LC 1749
+&lt;a class="header-anchor" href="#lc-1749">&lt;/a>
+&lt;/h3>&lt;p>任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">maxAbsoluteSum&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">list&lt;/span>(accumulate(nums, initial&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>)) &lt;span style="color:#9ca0b0;font-style:italic"># nums 的前缀和&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
+&lt;a class="header-anchor" href="#2055-%e8%9c%a1%e7%83%9b%e4%b9%8b%e9%97%b4%e7%9a%84%e7%9b%98%e5%ad%90">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>找a或其右边第一个蜡烛&lt;/li>
+&lt;li>找b或其左边第一个蜡烛&lt;/li>
+&lt;li>用前缀和，算他们之间的盘子数量&lt;/li>
+&lt;/ol>
+&lt;p>步骤1，2可以用二分，但是会超时&lt;br>
+最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>动态规划</title><link>http://localhost:1313/zh-cn/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/dp/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="线性dp">线性dp
+&lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;h4 id="10-正则表达式匹配">10. 正则表达式匹配
+&lt;a class="header-anchor" href="#10-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e5%8c%b9%e9%85%8d">&lt;/a>
+&lt;/h4>&lt;p>dp[i][j]表示s(0,i-1)与p(0,j-1)匹配&lt;/p>
+&lt;p>base case: s为空，p为空，True；s为空，p为x&lt;em>x&lt;/em>类型，True&lt;br>
+每次比较s[i], p[j],如果不匹配且p[j]为*，且s[i]与p[j-1]匹配，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母
+如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>http://localhost:1313/zh-cn/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="自底向上dfs-后序遍历">自底向上dfs: 后序遍历
+&lt;a class="header-anchor" href="#%e8%87%aa%e5%ba%95%e5%90%91%e4%b8%8adfs-%e5%90%8e%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
+&lt;/h2>&lt;p>对于当前节点root做什么，需要它的子树的信息。&lt;/p>
+&lt;h4 id="lc-1110-删点成林">LC 1110， 删点成林
+&lt;a class="header-anchor" href="#lc-1110-%e5%88%a0%e7%82%b9%e6%88%90%e6%9e%97">&lt;/a>
+&lt;/h4>&lt;h4 id="lc-1123-公共祖先">LC 1123 公共祖先
+&lt;a class="header-anchor" href="#lc-1123-%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88">&lt;/a>
+&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item><item><title>回溯</title><link>http://localhost:1313/zh-cn/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
+&lt;a class="header-anchor" href="#%e5%ad%90%e9%9b%86%e5%9e%8b%e5%9b%9e%e6%ba%af">&lt;/a>
+&lt;/h2>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p>
+&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>http://localhost:1313/zh-cn/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/linkedlist/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="反转链表">反转链表
+&lt;a class="header-anchor" href="#%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8">&lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">reverseBetween&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, head: Optional[ListNode], left: &lt;span style="color:#04a5e5">int&lt;/span>, right: &lt;span style="color:#04a5e5">int&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#因为答案的头节点可能会改，所以搞一个dummy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dummy&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>ListNode(&lt;span style="color:#04a5e5">next&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>head)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pre&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>dummy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#移动pre, cur到1和2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> _ &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(left&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pre&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#记录一下此时pre&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#开始反转2到4这一段, 其实就是分别把2到4的next改了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> _ &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(right&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>left&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nxt&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pre&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>nxt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#新的pre,cur分别是4，5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#连接 2 和 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#连接1和4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

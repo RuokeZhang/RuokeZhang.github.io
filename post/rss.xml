@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>http://localhost:1313/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>http://localhost:1313/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
 &lt;h2 id="脑筋急转弯">脑筋急转弯
 &lt;a class="header-anchor" href="#%e8%84%91%e7%ad%8b%e6%80%a5%e8%bd%ac%e5%bc%af">&lt;/a>
 &lt;/h2>&lt;h4 id="2749-得到整数零需要执行的最少操作数">2749. 得到整数零需要执行的最少操作数
 &lt;a class="header-anchor" href="#2749-%e5%be%97%e5%88%b0%e6%95%b4%e6%95%b0%e9%9b%b6%e9%9c%80%e8%a6%81%e6%89%a7%e8%a1%8c%e7%9a%84%e6%9c%80%e5%b0%91%e6%93%8d%e4%bd%9c%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>https://ruokezhang.github.io/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
+&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>http://localhost:1313/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
 &lt;a class="header-anchor" href="#%e8%b4%a8%e6%95%b0">&lt;/a>
 &lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
 &lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
@@ -35,7 +35,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
 &lt;a class="header-anchor" href="#204-%e8%ae%a1%e6%95%b0%e8%b4%a8%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>https://ruokezhang.github.io/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>http://localhost:1313/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
 &lt;/h3>&lt;p>
 &lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -56,7 +56,7 @@
 &lt;/ul>
 &lt;p>第二步：比较两个字符串&lt;br>
 abeababeabf&lt;br>
-abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokezhang.github.io/post/cloud/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/cloud/</guid><description>&lt;h2 id="docker">Docker
+abeabf&lt;/p></description></item><item><title>cloud</title><link>http://localhost:1313/post/cloud/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/cloud/</guid><description>&lt;h2 id="docker">Docker
 &lt;a class="header-anchor" href="#docker">&lt;/a>
 &lt;/h2>&lt;h3 id="dockerfile">Dockerfile
 &lt;a class="header-anchor" href="#dockerfile">&lt;/a>
@@ -76,7 +76,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>将本地的 ./mlflow-artifacts 目录映射到容器内的 /mlflow-artifacts 目录，实现：&lt;/p>
-&lt;p>数据持久化：容器重启/删除后，数据不会丢失&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
+&lt;p>数据持久化：容器重启/删除后，数据不会丢失&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>http://localhost:1313/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
 &lt;a class="header-anchor" href="#orchestration">&lt;/a>
 &lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
 &lt;h3 id="step-1-docker-env">Step 1 Docker Env
@@ -105,7 +105,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;a class="header-anchor" href="#other-dependencies">&lt;/a>
 &lt;/h4>&lt;h3 id="heading">
 &lt;a class="header-anchor" href="#heading">&lt;/a>
-&lt;/h3></description></item><item><title>LLM笔记</title><link>https://ruokezhang.github.io/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
+&lt;/h3></description></item><item><title>LLM笔记</title><link>http://localhost:1313/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
 &lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>保持简洁&lt;/li>
@@ -123,7 +123,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/ol>
 &lt;h2 id="system-prompt">system prompt
 &lt;a class="header-anchor" href="#system-prompt">&lt;/a>
-&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
+&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>Simulation</title><link>http://localhost:1313/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
 &lt;a class="header-anchor" href="#755-%e5%80%92%e6%b0%b4">&lt;/a>
 &lt;/h3>&lt;h2 id="时间顺序">时间顺序
 &lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f">&lt;/a>
@@ -132,21 +132,21 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/h3>&lt;ol>
 &lt;li>模拟的结束条件为所有人都进入/离开&lt;/li>
 &lt;li>内层循环里放时间&lt;/li>
-&lt;/ol></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+&lt;/ol></description></item><item><title>mlops笔记</title><link>http://localhost:1313/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
 &lt;a class="header-anchor" href="#project-1">&lt;/a>
 &lt;/h2>&lt;h3 id="project-setup">project setup
 &lt;a class="header-anchor" href="#project-setup">&lt;/a>
 &lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
 &lt;h4 id="setuppy">setup.py
 &lt;a class="header-anchor" href="#setuppy">&lt;/a>
-&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item><item><title>数据结构</title><link>https://ruokezhang.github.io/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item><item><title>数据结构</title><link>http://localhost:1313/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
 &lt;a class="header-anchor" href="#trie">&lt;/a>
 &lt;/h2>&lt;h4 id="440-字典序的第k小数字">440. 字典序的第K小数字
 &lt;a class="header-anchor" href="#440-%e5%ad%97%e5%85%b8%e5%ba%8f%e7%9a%84%e7%ac%ack%e5%b0%8f%e6%95%b0%e5%ad%97">&lt;/a>
 &lt;/h4>&lt;ul>
 &lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
 &lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
-&lt;/ul></description></item><item><title>网络</title><link>https://ruokezhang.github.io/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
+&lt;/ul></description></item><item><title>网络</title><link>http://localhost:1313/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/network/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="tcp-重传">TCP 重传
 &lt;a class="header-anchor" href="#tcp-%e9%87%8d%e4%bc%a0">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -159,11 +159,11 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;a class="header-anchor" href="#tcp%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6">&lt;/a>
 &lt;/h2>&lt;h3 id="慢启动">慢启动
 &lt;a class="header-anchor" href="#%e6%85%a2%e5%90%af%e5%8a%a8">&lt;/a>
-&lt;/h3>&lt;p>刚开始传输时，发送方每收到一个ACK确认，就把发送窗口翻倍（指数增长）。初始窗口长度为 1.&lt;/p></description></item><item><title>系统设计</title><link>https://ruokezhang.github.io/post/system_deigsn/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/system_deigsn/</guid><description>&lt;h2 id="cap">CAP
+&lt;/h3>&lt;p>刚开始传输时，发送方每收到一个ACK确认，就把发送窗口翻倍（指数增长）。初始窗口长度为 1.&lt;/p></description></item><item><title>系统设计</title><link>http://localhost:1313/post/system_deigsn/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/system_deigsn/</guid><description>&lt;h2 id="cap">CAP
 &lt;a class="header-anchor" href="#cap">&lt;/a>
 &lt;/h2>&lt;p>Consistency：所有节点同时看到相同的数据（强一致性）。&lt;/p>
 &lt;p>Availability: 99.999%的成功率，一年之内只有5分钟系统不可用&lt;/p>
-&lt;p>Partition Tolerance：系统在网络分区时仍能继续工作。&lt;/p></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;p>Partition Tolerance：系统在网络分区时仍能继续工作。&lt;/p></description></item><item><title>贪心</title><link>http://localhost:1313/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/greedy/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -183,7 +183,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;p>反证法可证明：g是一个严格递增的数组&lt;/p>
 &lt;h4 id="659-分割数组为连续子序列">659. 分割数组为连续子序列
 &lt;a class="header-anchor" href="#659-%e5%88%86%e5%89%b2%e6%95%b0%e7%bb%84%e4%b8%ba%e8%bf%9e%e7%bb%ad%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
-&lt;/h4>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>MySQL日志</title><link>https://ruokezhang.github.io/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/log/</guid><description>&lt;p>所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成&lt;/p>
+&lt;/h4>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>MySQL日志</title><link>http://localhost:1313/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mysql/log/</guid><description>&lt;p>所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成&lt;/p>
 &lt;h2 id="redo-log">redo log
 &lt;a class="header-anchor" href="#redo-log">&lt;/a>
 &lt;/h2>&lt;p>
@@ -193,7 +193,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/li>
 &lt;/ol>
@@ -201,11 +201,11 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;a class="header-anchor" href="#%e7%89%a9%e7%90%86%e5%ad%98%e5%82%a8%e7%89%b9%e6%80%a7">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>
-&lt;p>&lt;strong>文件结构&lt;/strong>&lt;/p></description></item><item><title>Redis面试题整理</title><link>https://ruokezhang.github.io/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
+&lt;p>&lt;strong>文件结构&lt;/strong>&lt;/p></description></item><item><title>Redis面试题整理</title><link>http://localhost:1313/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
 &lt;a class="header-anchor" href="#zset">&lt;/a>
 &lt;/h2>&lt;h3 id="压缩列表">压缩列表
 &lt;a class="header-anchor" href="#%e5%8e%8b%e7%bc%a9%e5%88%97%e8%a1%a8">&lt;/a>
-&lt;/h3>&lt;p>当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p></description></item><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
+&lt;/h3>&lt;p>当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p></description></item><item><title>MySQL常见面试题</title><link>http://localhost:1313/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
 &lt;a class="header-anchor" href="#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e5%af%b9%e6%af%94">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址&lt;/li>
@@ -214,7 +214,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/ol>
 &lt;h2 id="什么是页分裂">什么是页分裂
 &lt;a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%a1%b5%e5%88%86%e8%a3%82">&lt;/a>
-&lt;/h2>&lt;p>当向已满的索引页(通常是16KB)插入新数据时，存储引擎会将当前页分裂成两个页，以容纳新数据&lt;/p></description></item><item><title>Java后端面试</title><link>https://ruokezhang.github.io/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/interview/</guid><description>&lt;h2 id="面经">面经
+&lt;/h2>&lt;p>当向已满的索引页(通常是16KB)插入新数据时，存储引擎会将当前页分裂成两个页，以容纳新数据&lt;/p></description></item><item><title>Java后端面试</title><link>http://localhost:1313/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/interview/</guid><description>&lt;h2 id="面经">面经
 &lt;a class="header-anchor" href="#%e9%9d%a2%e7%bb%8f">&lt;/a>
 &lt;/h2>&lt;h3 id="20250319-小红书日常一面">2025.03.19 小红书日常一面
 &lt;a class="header-anchor" href="#20250319-%e5%b0%8f%e7%ba%a2%e4%b9%a6%e6%97%a5%e5%b8%b8%e4%b8%80%e9%9d%a2">&lt;/a>
@@ -321,7 +321,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/h3>&lt;h4 id="git-merge适合团队协作">git merge：适合团队协作
 &lt;a class="header-anchor" href="#git-merge%e9%80%82%e5%90%88%e5%9b%a2%e9%98%9f%e5%8d%8f%e4%bd%9c">&lt;/a>
 &lt;/h4>&lt;p>将两个分支的提交历史合并，生成一个新的合并提交（merge commit），保留原始分支的完整历史（包括分叉和合并的痕迹）。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/gitMerge.png" alt="Alt text" />&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/gitMerge.png" alt="Alt text" />&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>http://localhost:1313/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API
@@ -368,7 +368,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/div>
 &lt;/div>&lt;h4 id="获取字段">获取字段
 &lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e6%ae%b5">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>MySQL锁</title><link>https://ruokezhang.github.io/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>MySQL锁</title><link>http://localhost:1313/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e9%94%81">&lt;/a>
 &lt;/h2>&lt;p>一般在做&lt;strong>全库备份&lt;/strong>的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -395,12 +395,12 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>高可用</title><link>https://ruokezhang.github.io/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
+&lt;/div>&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>高可用</title><link>http://localhost:1313/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
 &lt;a class="header-anchor" href="#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6">&lt;/a>
 &lt;/h2>&lt;p>主要优点：数据备份、读写分离，通常和&lt;strong>哨兵模式&lt;/strong>结合使用。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
 主服务器负责&lt;strong>读写请求&lt;/strong>，从服务器&lt;strong>默认只负责读请求&lt;/strong>。&lt;br>
-主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarysearch/</guid><description>&lt;p>
+主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p></description></item><item><title>Binary Search</title><link>http://localhost:1313/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarysearch/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
  
@@ -519,7 +519,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>黑马点评登录设计</title><link>https://ruokezhang.github.io/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>黑马点评登录设计</title><link>http://localhost:1313/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="短信验证码登录">短信验证码登录
 &lt;a class="header-anchor" href="#%e7%9f%ad%e4%bf%a1%e9%aa%8c%e8%af%81%e7%a0%81%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -535,7 +535,7 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
 &lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。&lt;/li>
 &lt;/ol>
-&lt;p>第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;p>第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。&lt;/p></description></item><item><title>图</title><link>http://localhost:1313/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  图题单
  
@@ -557,15 +557,15 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;h4 id="261-以图判树">261. 以图判树
 &lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
 &lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
-&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>异常、泛型</title><link>http://localhost:1313/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable具有 Exception和 Error 两个子类&lt;/p>
-&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>https://ruokezhang.github.io/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
+&lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>http://localhost:1313/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
 &lt;a class="header-anchor" href="#collection%e6%8e%a5%e5%8f%a3">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -631,7 +631,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;h3 id="时间复杂度">时间复杂度
 &lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">&lt;/a>
 &lt;/h3>&lt;p>理想情况下，HashMap 的插入、删除和查找操作平均时间复杂度都是 O (1)。&lt;br>
-如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/process/</guid><description>&lt;h2 id="process">Process
+如果转成红黑树，操作的时间复杂度会稳定在 O (log n)&lt;/p></description></item><item><title>Process</title><link>http://localhost:1313/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/process/</guid><description>&lt;h2 id="process">Process
 &lt;a class="header-anchor" href="#process">&lt;/a>
 &lt;/h2>&lt;p>进程独有的：&lt;/p>
 &lt;ol>
@@ -640,7 +640,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;li>address space&lt;/li>
 &lt;li>file descriptors&lt;/li>
 &lt;/ol>
-&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item><item><title>持久化</title><link>https://ruokezhang.github.io/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
+&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item><item><title>持久化</title><link>http://localhost:1313/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
 
 &lt;a href="https://www.bilibili.com/video/BV1sK421i7B8/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
@@ -650,7 +650,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/a>&lt;/p>
 &lt;h2 id="aof">AOF
 &lt;a class="header-anchor" href="#aof">&lt;/a>
-&lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着将这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/virtualization/</guid><description>&lt;p>
+&lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着将这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>Virtualization</title><link>http://localhost:1313/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/virtualization/</guid><description>&lt;p>
 &lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="参考的技术博客" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考的技术博客
  
@@ -674,8 +674,8 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;h2 id="虚拟内存">虚拟内存
 &lt;a class="header-anchor" href="#%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98">&lt;/a>
 &lt;/h2>&lt;p>虚拟化：每个进程都认为，自己有自己的地址空间，多个进程的地址空间是分开的。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="地址空间" />&lt;/p>
-&lt;p>实际上，CPU 拿到这些虚拟的地址，会让它内部的 &lt;strong>MMU 把虚拟地址翻译成物理地址，也就是内存中的地址&lt;/strong>。内存里，每个地址可以存放一个字节。&lt;/p></description></item><item><title>问题排查</title><link>https://ruokezhang.github.io/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/oom/</guid><description>&lt;p>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="地址空间" />&lt;/p>
+&lt;p>实际上，CPU 拿到这些虚拟的地址，会让它内部的 &lt;strong>MMU 把虚拟地址翻译成物理地址，也就是内存中的地址&lt;/strong>。内存里，每个地址可以存放一个字节。&lt;/p></description></item><item><title>问题排查</title><link>http://localhost:1313/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/jvm/oom/</guid><description>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
  
@@ -691,12 +691,12 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/ol>
 &lt;blockquote>
 &lt;p>jmap是一个JDK命令行工具，用来生成heap dump。&lt;strong>heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息&lt;/strong>。&lt;br>
-或者，添加JVM参数-XX:+HeapDumpOnOutOfMemoryError，当程序发生OOM时，JVM会自动生成heap dump。&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/post/mysql/transactionmysql/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/transactionmysql/</guid><description>&lt;p>参考：小林 coding&lt;/p>
+或者，添加JVM参数-XX:+HeapDumpOnOutOfMemoryError，当程序发生OOM时，JVM会自动生成heap dump。&lt;/p></description></item><item><title>Transaction</title><link>http://localhost:1313/post/mysql/transactionmysql/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mysql/transactionmysql/</guid><description>&lt;p>参考：小林 coding&lt;/p>
 &lt;h2 id="事务的特性">事务的特性
 &lt;a class="header-anchor" href="#%e4%ba%8b%e5%8a%a1%e7%9a%84%e7%89%b9%e6%80%a7">&lt;/a>
 &lt;/h2>&lt;p>atomicity: undo log&lt;/p>
 &lt;p>consistency: 由其他三个特性实现.事务在执行前后，数据库从一个一致性状态转变到另一个一致性状态。&lt;/p>
-&lt;p>isolation: MVCC/lock.一个事物的执行不影响其它事务的执行&lt;/p></description></item><item><title>索引</title><link>https://ruokezhang.github.io/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/mysql/sqlindex/</guid><description>&lt;h2 id="聚簇索引二级索引">聚簇索引、二级索引
+&lt;p>isolation: MVCC/lock.一个事物的执行不影响其它事务的执行&lt;/p></description></item><item><title>索引</title><link>http://localhost:1313/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/mysql/sqlindex/</guid><description>&lt;h2 id="聚簇索引二级索引">聚簇索引、二级索引
 &lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95%e4%ba%8c%e7%ba%a7%e7%b4%a2%e5%bc%95">&lt;/a>
 &lt;/h2>&lt;h3 id="聚簇索引">聚簇索引
 &lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95">&lt;/a>
@@ -708,7 +708,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/ol>
 &lt;h3 id="b-tree">B+ Tree
 &lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item><item><title>ThreadLocal&amp;线程池</title><link>https://ruokezhang.github.io/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item><item><title>ThreadLocal&amp;线程池</title><link>http://localhost:1313/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
 &lt;/h2>&lt;p>&lt;strong>Thread类&lt;/strong>里面有一个变量threadLocals，可以视为一个 HashMap，用来存放线程私有的内容。&lt;/p>
@@ -724,7 +724,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>技巧题</title><link>http://localhost:1313/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>
@@ -735,7 +735,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/ol>
 &lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
 &lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
-&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>https://ruokezhang.github.io/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/stackqueue/</guid><description>&lt;p>
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>http://localhost:1313/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/stackqueue/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/mOr1u6/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -754,23 +754,23 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;/h2>&lt;h3 id="32-最长有效括号">32 最长有效括号
 &lt;a class="header-anchor" href="#32-%e6%9c%80%e9%95%bf%e6%9c%89%e6%95%88%e6%8b%ac%e5%8f%b7">&lt;/a>
 &lt;/h3>&lt;p>&amp;ldquo;()(())&amp;rdquo;&lt;/p>
-&lt;p>用一个&lt;strong>数组tmp&lt;/strong>记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.&lt;/p></description></item><item><title>Array</title><link>https://ruokezhang.github.io/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/array/</guid><description>&lt;h3 id="lc-188">LC 188
+&lt;p>用一个&lt;strong>数组tmp&lt;/strong>记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.&lt;/p></description></item><item><title>Array</title><link>http://localhost:1313/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/array/</guid><description>&lt;h3 id="lc-188">LC 188
 &lt;a class="header-anchor" href="#lc-188">&lt;/a>
 &lt;/h3>&lt;p>输入: nums = [1,2,3,4,5,6,7], k = 3
 输出: [5,6,7,1,2,3,4]&lt;/p>
 &lt;p>方法一：切片操作；取数组里的后k个元素：nums[-k%n:]&lt;/p>
-&lt;p>方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/jmm/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;p>方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。&lt;/p></description></item><item><title>JMM</title><link>http://localhost:1313/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/juc/jmm/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="并发问题">并发问题
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/CPUCache.png" alt="Alt text" />
 Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。&lt;/p>
 &lt;h3 id="指令级重排">指令级重排
 &lt;a class="header-anchor" href="#%e6%8c%87%e4%bb%a4%e7%ba%a7%e9%87%8d%e6%8e%92">&lt;/a>
 &lt;/h3>&lt;h3 id="编译器优化重排">编译器优化重排
 &lt;a class="header-anchor" href="#%e7%bc%96%e8%af%91%e5%99%a8%e4%bc%98%e5%8c%96%e9%87%8d%e6%8e%92">&lt;/a>
-&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Sorting</title><link>http://localhost:1313/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: sort a linked list
 &lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
@@ -787,12 +787,12 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;/a>&lt;/p></description></item><item><title>Java线程</title><link>http://localhost:1313/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="线程">线程
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%ae%9e%e7%8e%b0">&lt;/a>
-&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
+&lt;/h3>&lt;p>一个Java程序作为一个进程，运行时实际上是多线程并发的, main函数就是主线程。每个调用过start()方法，并且还未结束的java.lang.Thread类的实例就是一个线程。Java线程是Java程序的并发执行单位。&lt;/p></description></item><item><title>Python一些常用操作</title><link>http://localhost:1313/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
 &lt;p>LC 189 [:]切片操作&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
@@ -824,11 +824,11 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>http://localhost:1313/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
 &lt;h2 id="定长滑窗">定长滑窗
 &lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
 &lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
-&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
+&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>http://localhost:1313/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
@@ -860,7 +860,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;li>用前缀和，算他们之间的盘子数量&lt;/li>
 &lt;/ol>
 &lt;p>步骤1，2可以用二分，但是会超时&lt;br>
-最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>垃圾回收</title><link>https://ruokezhang.github.io/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/gc/</guid><description>&lt;p>参考：
+最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>垃圾回收</title><link>http://localhost:1313/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/jvm/gc/</guid><description>&lt;p>参考：
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="深入理解Java虚拟机" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  深入理解Java虚拟机
  
@@ -925,7 +925,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>动态规划</title><link>https://ruokezhang.github.io/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dp/</guid><description>&lt;p>
+&lt;/div>&lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>动态规划</title><link>http://localhost:1313/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/dp/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -934,13 +934,13 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/a>&lt;/p>
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h4 id="10-正则表达式匹配">10. 正则表达式匹配
 &lt;a class="header-anchor" href="#10-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e5%8c%b9%e9%85%8d">&lt;/a>
 &lt;/h4>&lt;p>dp[i][j]表示s(0,i-1)与p(0,j-1)匹配&lt;/p>
 &lt;p>base case: s为空，p为空，True；s为空，p为x&lt;em>x&lt;/em>类型，True&lt;br>
 每次比较s[i], p[j],如果不匹配且p[j]为*，且s[i]与p[j-1]匹配，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母
-如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
+如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>http://localhost:1313/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -954,10 +954,10 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#lc-1110-%e5%88%a0%e7%82%b9%e6%88%90%e6%9e%97">&lt;/a>
 &lt;/h4>&lt;h4 id="lc-1123-公共祖先">LC 1123 公共祖先
 &lt;a class="header-anchor" href="#lc-1123-%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88">&lt;/a>
-&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item><item><title>回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
+&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item><item><title>回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
 &lt;a class="header-anchor" href="#%e5%ad%90%e9%9b%86%e5%9e%8b%e5%9b%9e%e6%ba%af">&lt;/a>
 &lt;/h2>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p>
-&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/linkedlist/</guid><description>&lt;p>
+&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>http://localhost:1313/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/linkedlist/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -1017,7 +1017,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Spring</title><link>http://localhost:1313/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
 &lt;a class="header-anchor" href="#beanfactory-interface">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1038,13 +1038,13 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
-这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/bean.png" alt="Alt text" />
+这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>Java 8的新特性</title><link>http://localhost:1313/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
-&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
+&lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>达人探店</title><link>http://localhost:1313/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
-&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>接口和抽象类</title><link>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>接口和抽象类</title><link>http://localhost:1313/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>接口是对行为的抽象。&lt;/p>
 &lt;ol>
@@ -1158,7 +1158,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Concurrency</title><link>https://ruokezhang.github.io/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
+&lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>Concurrency</title><link>http://localhost:1313/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/os/concurrency/</guid><description>&lt;h2 id="目标">目标
 &lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
 &lt;/h2>&lt;p>Mutual exclusion (e.g., A and B don’t run at same time)，进程的互斥&lt;/p>
 &lt;ul>
@@ -1181,7 +1181,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>https://ruokezhang.github.io/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
+&lt;/a>&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>http://localhost:1313/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
 &lt;/h2>&lt;h3 id="缓存更新策略">缓存更新策略
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%9b%b4%e6%96%b0%e7%ad%96%e7%95%a5">&lt;/a>
@@ -1192,13 +1192,13 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/ol>
 &lt;h3 id="缓存数据库一致性">缓存数据库一致性
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
-&lt;/h3>&lt;p>有请求并发到来时，不管是先更新缓存后更新数据库，还是先更新数据库后更新缓存，都可能出现缓存不一致问题。&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;/h3>&lt;p>有请求并发到来时，不管是先更新缓存后更新数据库，还是先更新数据库后更新缓存，都可能出现缓存不一致问题。&lt;/p></description></item><item><title>优惠券秒杀</title><link>http://localhost:1313/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
 &lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
 &lt;ol>
 &lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1230,14 +1230,14 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/jmeter/</guid><description>&lt;p>
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>JMeter on Mac</title><link>http://localhost:1313/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Redis缓存</title><link>https://ruokezhang.github.io/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/redis/caching_patterns/</guid><description>&lt;h2 id="caching-patterns">Caching Patterns
+安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Redis缓存</title><link>http://localhost:1313/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/redis/caching_patterns/</guid><description>&lt;h2 id="caching-patterns">Caching Patterns
 &lt;a class="header-anchor" href="#caching-patterns">&lt;/a>
 &lt;/h2>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -1255,14 +1255,14 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/a>&lt;/p>
 &lt;h2 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)
 &lt;a class="header-anchor" href="#cache-aside-lazy-loading">&lt;/a>
-&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>JVM Basic</title><link>http://localhost:1313/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>http://localhost:1313/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>https://ruokezhang.github.io/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
+master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Session登录</title><link>http://localhost:1313/post/session/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/session/</guid><description>&lt;h2 id="黑马点评登录">黑马点评登录
 &lt;a class="header-anchor" href="#%e9%bb%91%e9%a9%ac%e7%82%b9%e8%af%84%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;h3 id="第一次请求获取验证码">第一次请求：获取验证码
 &lt;a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%af%b7%e6%b1%82%e8%8e%b7%e5%8f%96%e9%aa%8c%e8%af%81%e7%a0%81">&lt;/a>
@@ -1289,7 +1289,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Java IO</title><link>http://localhost:1313/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
@@ -1308,7 +1308,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>https://ruokezhang.github.io/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/maven/</guid><description>&lt;h2 id="basic">Basic
+&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>http://localhost:1313/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/maven/</guid><description>&lt;h2 id="basic">Basic
 &lt;a class="header-anchor" href="#basic">&lt;/a>
 &lt;/h2>&lt;h3 id="java-version">Java Version
 &lt;a class="header-anchor" href="#java-version">&lt;/a>
@@ -1340,7 +1340,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>http://localhost:1313/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>

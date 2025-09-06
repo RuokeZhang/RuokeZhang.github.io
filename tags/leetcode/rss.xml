@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>http://localhost:1313/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>http://localhost:1313/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
 &lt;h2 id="脑筋急转弯">脑筋急转弯
 &lt;a class="header-anchor" href="#%e8%84%91%e7%ad%8b%e6%80%a5%e8%bd%ac%e5%bc%af">&lt;/a>
 &lt;/h2>&lt;h4 id="2749-得到整数零需要执行的最少操作数">2749. 得到整数零需要执行的最少操作数
 &lt;a class="header-anchor" href="#2749-%e5%be%97%e5%88%b0%e6%95%b4%e6%95%b0%e9%9b%b6%e9%9c%80%e8%a6%81%e6%89%a7%e8%a1%8c%e7%9a%84%e6%9c%80%e5%b0%91%e6%93%8d%e4%bd%9c%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>https://ruokezhang.github.io/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
+&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>http://localhost:1313/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
 &lt;a class="header-anchor" href="#%e8%b4%a8%e6%95%b0">&lt;/a>
 &lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
 &lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
@@ -35,7 +35,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
 &lt;a class="header-anchor" href="#204-%e8%ae%a1%e6%95%b0%e8%b4%a8%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>https://ruokezhang.github.io/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>http://localhost:1313/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
 &lt;/h3>&lt;p>
 &lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -56,7 +56,7 @@
 &lt;/ul>
 &lt;p>第二步：比较两个字符串&lt;br>
 abeababeabf&lt;br>
-abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
+abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://localhost:1313/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
 &lt;a class="header-anchor" href="#755-%e5%80%92%e6%b0%b4">&lt;/a>
 &lt;/h3>&lt;h2 id="时间顺序">时间顺序
 &lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f">&lt;/a>
@@ -65,14 +65,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/h3>&lt;ol>
 &lt;li>模拟的结束条件为所有人都进入/离开&lt;/li>
 &lt;li>内层循环里放时间&lt;/li>
-&lt;/ol></description></item><item><title>数据结构</title><link>https://ruokezhang.github.io/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;/ol></description></item><item><title>数据结构</title><link>http://localhost:1313/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
 &lt;a class="header-anchor" href="#trie">&lt;/a>
 &lt;/h2>&lt;h4 id="440-字典序的第k小数字">440. 字典序的第K小数字
 &lt;a class="header-anchor" href="#440-%e5%ad%97%e5%85%b8%e5%ba%8f%e7%9a%84%e7%ac%ack%e5%b0%8f%e6%95%b0%e5%ad%97">&lt;/a>
 &lt;/h4>&lt;ul>
 &lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
 &lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
-&lt;/ul></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;/ul></description></item><item><title>贪心</title><link>http://localhost:1313/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/greedy/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -92,7 +92,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;p>反证法可证明：g是一个严格递增的数组&lt;/p>
 &lt;h4 id="659-分割数组为连续子序列">659. 分割数组为连续子序列
 &lt;a class="header-anchor" href="#659-%e5%88%86%e5%89%b2%e6%95%b0%e7%bb%84%e4%b8%ba%e8%bf%9e%e7%bb%ad%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
-&lt;/h4>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarysearch/</guid><description>&lt;p>
+&lt;/h4>&lt;p>tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。&lt;/p></description></item><item><title>Binary Search</title><link>http://localhost:1313/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarysearch/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
  
@@ -211,7 +211,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>http://localhost:1313/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  图题单
  
@@ -233,7 +233,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;h4 id="261-以图判树">261. 以图判树
 &lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
 &lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
-&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>技巧题</title><link>http://localhost:1313/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>
@@ -244,7 +244,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/ol>
 &lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
 &lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
-&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>https://ruokezhang.github.io/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/stackqueue/</guid><description>&lt;p>
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>http://localhost:1313/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/stackqueue/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/mOr1u6/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -263,12 +263,12 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/h2>&lt;h3 id="32-最长有效括号">32 最长有效括号
 &lt;a class="header-anchor" href="#32-%e6%9c%80%e9%95%bf%e6%9c%89%e6%95%88%e6%8b%ac%e5%8f%b7">&lt;/a>
 &lt;/h3>&lt;p>&amp;ldquo;()(())&amp;rdquo;&lt;/p>
-&lt;p>用一个&lt;strong>数组tmp&lt;/strong>记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.&lt;/p></description></item><item><title>Array</title><link>https://ruokezhang.github.io/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/array/</guid><description>&lt;h3 id="lc-188">LC 188
+&lt;p>用一个&lt;strong>数组tmp&lt;/strong>记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.&lt;/p></description></item><item><title>Array</title><link>http://localhost:1313/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/array/</guid><description>&lt;h3 id="lc-188">LC 188
 &lt;a class="header-anchor" href="#lc-188">&lt;/a>
 &lt;/h3>&lt;p>输入: nums = [1,2,3,4,5,6,7], k = 3
 输出: [5,6,7,1,2,3,4]&lt;/p>
 &lt;p>方法一：切片操作；取数组里的后k个元素：nums[-k%n:]&lt;/p>
-&lt;p>方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;p>方法二：先反转整体，再反转局部. 反转过程单独实现，不要用切片，因为可能会产生额外空间。&lt;/p></description></item><item><title>Sorting</title><link>http://localhost:1313/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: sort a linked list
 &lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
@@ -285,7 +285,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>Python一些常用操作</title><link>https://ruokezhang.github.io/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
+&lt;/a>&lt;/p></description></item><item><title>Python一些常用操作</title><link>http://localhost:1313/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
 &lt;p>LC 189 [:]切片操作&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
@@ -317,11 +317,11 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>http://localhost:1313/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
 &lt;h2 id="定长滑窗">定长滑窗
 &lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
 &lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
-&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>https://ruokezhang.github.io/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/presum/</guid><description>&lt;p>
+&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item><item><title>前缀和</title><link>http://localhost:1313/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="前缀和题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  前缀和题单
  
@@ -353,7 +353,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;li>用前缀和，算他们之间的盘子数量&lt;/li>
 &lt;/ol>
 &lt;p>步骤1，2可以用二分，但是会超时&lt;br>
-最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>动态规划</title><link>https://ruokezhang.github.io/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/dp/</guid><description>&lt;p>
+最好是预处理，记录每个位置左边/右边的第一个蜡烛位置&lt;/p></description></item><item><title>动态规划</title><link>http://localhost:1313/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/dp/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -362,13 +362,13 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/a>&lt;/p>
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h4 id="10-正则表达式匹配">10. 正则表达式匹配
 &lt;a class="header-anchor" href="#10-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e5%8c%b9%e9%85%8d">&lt;/a>
 &lt;/h4>&lt;p>dp[i][j]表示s(0,i-1)与p(0,j-1)匹配&lt;/p>
 &lt;p>base case: s为空，p为空，True；s为空，p为x&lt;em>x&lt;/em>类型，True&lt;br>
 每次比较s[i], p[j],如果不匹配且p[j]为*，且s[i]与p[j-1]匹配，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母
-如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
+如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>http://localhost:1313/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -382,10 +382,10 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;a class="header-anchor" href="#lc-1110-%e5%88%a0%e7%82%b9%e6%88%90%e6%9e%97">&lt;/a>
 &lt;/h4>&lt;h4 id="lc-1123-公共祖先">LC 1123 公共祖先
 &lt;a class="header-anchor" href="#lc-1123-%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88">&lt;/a>
-&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item><item><title>回溯</title><link>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
+&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item><item><title>回溯</title><link>http://localhost:1313/post/leetcode/backtrack/backtracking/</link><pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/backtrack/backtracking/</guid><description>&lt;h2 id="子集型回溯">子集型回溯
 &lt;a class="header-anchor" href="#%e5%ad%90%e9%9b%86%e5%9e%8b%e5%9b%9e%e6%ba%af">&lt;/a>
 &lt;/h2>&lt;p>在一次 dfs函数里面，如果 path 是 mutable 类型, 一定保证path进入函数和出函数时 &lt;strong>状态一定不变&lt;/strong>。不管有多少个分支，每个分支都要考虑这个问题。&lt;/p>
-&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/linkedlist/</guid><description>&lt;p>
+&lt;p>如果 path是immutable，如string，它作为参数传递给dfs，这种情况下&lt;strong>根本没有在修改它的状态&lt;/strong>，而是每次新建一个string，传给子节点。因而不需要恢复状态。LC 257.&lt;/p></description></item><item><title>Linked List</title><link>http://localhost:1313/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/post/leetcode/linkedlist/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -445,4 +445,4 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>
