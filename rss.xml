@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
 &lt;h2 id="脑筋急转弯">脑筋急转弯
@@ -163,7 +163,14 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;a class="header-anchor" href="#cap">&lt;/a>
 &lt;/h2>&lt;p>Consistency：所有节点同时看到相同的数据（强一致性）。&lt;/p>
 &lt;p>Availability: 99.999%的成功率，一年之内只有5分钟系统不可用&lt;/p>
-&lt;p>Partition Tolerance：系统在网络分区时仍能继续工作。&lt;/p></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;h4 id="300-最长递增子序列">300. 最长递增子序列
+&lt;p>Partition Tolerance：系统在网络分区时仍能继续工作。&lt;/p></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h4 id="300-最长递增子序列">300. 最长递增子序列
 &lt;a class="header-anchor" href="#300-%e6%9c%80%e9%95%bf%e9%80%92%e5%a2%9e%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
 &lt;/h4>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1ub411Q7sB/?vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="灵神视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -1345,25 +1352,7 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>关于我</title><link>https://ruokezhang.github.io/about/</link><pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/about/</guid><description>因为平时有做笔记的习惯，但自己做笔记会杂乱无章。因此决定把笔记放在网站上，push一下自己整理笔记。 
-绝大多数内容是为了找国内实习而整理的八股。我喜欢深入理解这些内容，而不是简单的背诵。虽然这样效率可能会有点低，但也算是我个人的一个坚持吧。
-
-我现在处于 gap year期间。很多人不理解我为什么要放弃硕士 offer回国待一年。我只是想有一段完全空闲的时间，做做自己想做的事。 
-一直以来，我都要上课、写作业、准备考试，有时候我会觉得自己在为拿 A 而学习，压缩时间来准备考试，而不是花时间去向内探索。 
-本科毕业之后，我决定用一年来休息，毕竟我本科读了五年，还读了两个专业。
-
-初中的时候看过一本游记，《泛若不系之舟》，在书里我第一次见到了gap year这个词。作者去了一些小众旅游国家，比如印度，我也很想去那里看看。 
-对于当时中二的我来说，gap year这个词非常有魅力，它好像象征着自由。 
-我从没想过自己真的会选择拥有 gap year。但这一年，我也没有去环游世界。 
-我可能会后悔吧。但现在我只想多赚些钱，我想拥有很好的身体，可以在我有钱了之后，去探索世界。
-
-我已经在很充分地体验我的人生了。我喜欢尝试不同的运动、尝试小城市里没见过的小吃。我也喜欢看电影、去剧场看偶像。 
-我最喜欢的事情是去漂亮的自然景观处拍照，这是我梦里最常出现的场景。不过我已经很久没去了。我难以忘记 22 年暑假的黄石之旅。 
-祝我发大财、祝我健康、祝我更加热烈地拥抱这个世界。
-
-Ruoke 
-2025.03.10 
-于武汉家中，和姥姥姥爷妈妈一起</description></item><item><title/><link>https://ruokezhang.github.io/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>

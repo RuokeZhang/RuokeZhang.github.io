@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>https://ruokezhang.github.io/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
 &lt;h2 id="脑筋急转弯">脑筋急转弯
@@ -72,7 +72,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/h4>&lt;ul>
 &lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
 &lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
-&lt;/ul></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;h4 id="300-最长递增子序列">300. 最长递增子序列
+&lt;/ul></description></item><item><title>贪心</title><link>https://ruokezhang.github.io/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h4 id="300-最长递增子序列">300. 最长递增子序列
 &lt;a class="header-anchor" href="#300-%e6%9c%80%e9%95%bf%e9%80%92%e5%a2%9e%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
 &lt;/h4>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1ub411Q7sB/?vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="灵神视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
