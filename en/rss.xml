@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>http://localhost:1313/en/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL Logs</title><link>http://localhost:1313/en/post/mysql-logs/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-logs/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/en/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL Logs</title><link>https://ruokezhang.github.io/en/post/mysql-logs/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-logs/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p>
 &lt;h2 id="redo-log">redo log
 &lt;a class="header-anchor" href="#redo-log">&lt;/a>
 &lt;/h2>&lt;p>
@@ -8,7 +8,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>Implements transaction durability. redo log is flushed to disk first, then dirty pages are flushed to disk&lt;/li>
 &lt;/ol>
@@ -24,7 +24,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>http://localhost:1313/en/post/mysql-interview-questions/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-interview-questions/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
+&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview-questions/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview-questions/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
 &lt;a class="header-anchor" href="#storage-engine-comparison">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li>
@@ -33,7 +33,7 @@
 &lt;/ol>
 &lt;h2 id="what-is-page-split">What is Page Split
 &lt;a class="header-anchor" href="#what-is-page-split">&lt;/a>
-&lt;/h2>&lt;p>When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;/h2>&lt;p>When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class names, methods, properties, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -80,7 +80,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>MySQL Locks</title><link>http://localhost:1313/en/post/mysql-locks/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-locks/</guid><description>&lt;h2 id="global-lock">Global Lock
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>MySQL Locks</title><link>https://ruokezhang.github.io/en/post/mysql-locks/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-locks/</guid><description>&lt;h2 id="global-lock">Global Lock
 &lt;a class="header-anchor" href="#global-lock">&lt;/a>
 &lt;/h2>&lt;p>Generally used when doing &lt;strong>full database backup&lt;/strong>. It blocks write operations and only allows read requests. Therefore, it&amp;rsquo;s usually chosen during business low-peak periods for full database backup.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -107,18 +107,18 @@
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>Exceptions and Generics</title><link>http://localhost:1313/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;/div>&lt;p>Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -183,7 +183,7 @@ Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Indexes</title><link>http://localhost:1313/en/post/mysql-indexes/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-indexes/</guid><description>&lt;h2 id="clustered-index-secondary-index">Clustered Index, Secondary Index
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Indexes</title><link>https://ruokezhang.github.io/en/post/mysql-indexes/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-indexes/</guid><description>&lt;h2 id="clustered-index-secondary-index">Clustered Index, Secondary Index
 &lt;a class="header-anchor" href="#clustered-index-secondary-index">&lt;/a>
 &lt;/h2>&lt;h3 id="clustered-index">Clustered Index
 &lt;a class="header-anchor" href="#clustered-index">&lt;/a>
@@ -195,7 +195,7 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/ol>
 &lt;h3 id="b-tree">B+ Tree
 &lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>http://localhost:1313/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -309,10 +309,10 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>http://localhost:1313/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>http://localhost:1313/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>http://localhost:1313/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>https://ruokezhang.github.io/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://ruokezhang.github.io/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
 &lt;a class="header-anchor" href="#welcome-to-my-technical-blog">&lt;/a>
 &lt;/h1>&lt;p>Hello and welcome to my blog! This is where I share my journey in software development, system design, and technology exploration.&lt;/p>
 &lt;h2 id="what-to-expect">What to Expect
@@ -335,7 +335,7 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/ul>
 &lt;h2 id="why-this-blog">Why This Blog?
 &lt;a class="header-anchor" href="#why-this-blog">&lt;/a>
-&lt;/h2>&lt;p>This blog serves multiple purposes:&lt;/p></description></item><item><title>About</title><link>http://localhost:1313/en/about/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/about/</guid><description>&lt;h1 id="about-me">About Me
+&lt;/h2>&lt;p>This blog serves multiple purposes:&lt;/p></description></item><item><title>About</title><link>https://ruokezhang.github.io/en/about/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/about/</guid><description>&lt;h1 id="about-me">About Me
 &lt;a class="header-anchor" href="#about-me">&lt;/a>
 &lt;/h1>&lt;p>Welcome to my blog! I&amp;rsquo;m Ruoke Zhang, a passionate developer sharing my learning journey.&lt;/p>
 &lt;h2 id="what-youll-find-here">What You&amp;rsquo;ll Find Here
