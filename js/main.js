@@ -124,25 +124,27 @@ HTMLElement.prototype.wrap = function (wrapper) {
 
 NexT.utils = {
   registerMenuClick: function() {
-    const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
-    pMenus.forEach(function(item) {
-      const icon = item.querySelector('span > i');
-      var ul = item.nextElementSibling;  
-      
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        ul.classList.toggle('expand');
-        if (ul.classList.contains('expand')) {
-          icon.className = 'fa fa-angle-down';
-        } else {
-          icon.className = 'fa fa-angle-right';
-        }
-      });
+    const menuItems = document.querySelectorAll('.main-menu > li > a');
+    menuItems.forEach(function(item) {
+      const submenu = item.nextElementSibling;
+      if (submenu && submenu.tagName === 'UL') {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          submenu.classList.toggle('expand');
+          const icon = item.querySelector('span > i');
+          if (icon) {
+            if (submenu.classList.contains('expand')) {
+              icon.className = 'fa fa-angle-down';
+            } else {
+              icon.className = 'fa fa-angle-right';
+            }
+          }
+        });
 
-      var cCls = ul.querySelectorAll('.menu-item-active');
-      if (cCls != null && cCls.length > 0) {
-        item.click();
+        const activeSubItems = submenu.querySelectorAll('.menu-item-active');
+        if (activeSubItems.length > 0) {
+          item.click();
+        }
       }
     });
   },
