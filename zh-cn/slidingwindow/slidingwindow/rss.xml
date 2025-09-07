@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlidingWindow on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/slidingwindow/slidingwindow/</link><description>Recent content in SlidingWindow on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/slidingwindow/slidingwindow/rss.xml" rel="self" type="application/rss+xml"/><item><title>滑动窗口</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;h2 id="定长滑窗">定长滑窗
+&lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
+&lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
+&lt;p>更新：更新答案。一般是更新最大值/最小值。&lt;/p></description></item></channel></rss>

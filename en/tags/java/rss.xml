@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>http://localhost:1313/en/tags/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class names, methods, properties, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -45,18 +45,18 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Exceptions and Generics</title><link>http://localhost:1313/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -121,7 +121,7 @@ Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>http://localhost:1313/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -235,7 +235,7 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>http://localhost:1313/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
 &lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item></channel></rss>

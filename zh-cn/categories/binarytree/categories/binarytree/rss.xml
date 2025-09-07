@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BinaryTree on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/binarytree/categories/binarytree/</link><description>Recent content in BinaryTree on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/binarytree/categories/binarytree/rss.xml" rel="self" type="application/rss+xml"/><item><title>二叉树</title><link>https://ruokezhang.github.io/zh-cn/post/%E4%BA%8C%E5%8F%89%E6%A0%91/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 灵神题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="自底向上dfs-后序遍历">自底向上dfs: 后序遍历
+&lt;a class="header-anchor" href="#%e8%87%aa%e5%ba%95%e5%90%91%e4%b8%8adfs-%e5%90%8e%e5%ba%8f%e9%81%8d%e5%8e%86">&lt;/a>
+&lt;/h2>&lt;p>对于当前节点root做什么，需要它的子树的信息。&lt;/p>
+&lt;h4 id="lc-1110-删点成林">LC 1110， 删点成林
+&lt;a class="header-anchor" href="#lc-1110-%e5%88%a0%e7%82%b9%e6%88%90%e6%9e%97">&lt;/a>
+&lt;/h4>&lt;h4 id="lc-1123-公共祖先">LC 1123 公共祖先
+&lt;a class="header-anchor" href="#lc-1123-%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88">&lt;/a>
+&lt;/h4>&lt;p>dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度&lt;/p></description></item></channel></rss>

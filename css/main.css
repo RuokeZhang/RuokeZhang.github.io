@@ -1931,45 +1931,6 @@ header.header {
   max-height: 42px;
 }
 
-.lang-select-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-.lang-select-wrap .lang-select-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background: var(--content-bg-color);
-  transition: all 0.2s ease;
-}
-
-.lang-select-wrap .lang-select-label:hover {
-  border-color: #fc6423;
-  color: #fc6423;
-}
-
-.lang-select-wrap .lang-select-label i {
-  margin-right: 6px;
-}
-
-.lang-select-wrap .lang-select {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.lang-select-wrap .lang-select option {
-  padding: 8px 12px;
-}
-
 .site-author-image {
   border: 1px solid #eee;
   width: 120px;
@@ -2637,23 +2598,6 @@ header.header {
 
 .tool-buttons .goto-comments-on {
   display: block;
-}
-
-.tool-buttons .lang-select-wrap .lang-select {
-  width: 100%;
-  height: 100%;
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-  cursor: pointer;
-  outline: none;
-  font-size: inherit;
-  text-align: center;
-}
-
-.tool-buttons .lang-select-wrap .lang-select option {
-  background: #f5f7f9;
-  color: #555;
 }
 
 .back-to-top {

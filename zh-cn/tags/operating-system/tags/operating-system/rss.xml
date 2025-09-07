@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/operating-system/tags/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/operating-system/tags/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>https://ruokezhang.github.io/zh-cn/post/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/process/</guid><description>&lt;h2 id="process">Process
+&lt;a class="header-anchor" href="#process">&lt;/a>
+&lt;/h2>&lt;p>进程独有的：&lt;/p>
+&lt;ol>
+&lt;li>PC&lt;/li>
+&lt;li>stack pointer(存储返回地址)&lt;/li>
+&lt;li>address space&lt;/li>
+&lt;li>file descriptors&lt;/li>
+&lt;/ol>
+&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/zh-cn/post/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/virtualization/</guid><description>&lt;p>
+&lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="参考的技术博客" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 参考的技术博客
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;br>
+
+&lt;a href="https://pages.cs.wisc.edu/~remzi/OSTEP/Educators-Slides/Tyler/sep17/paging.pdf" title="OSTEP slides" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ OSTEP slides
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;br>
+
+&lt;a href="https://os.phil-opp.com/paging-introduction/" title="参考" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 参考
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="虚拟内存">虚拟内存
+&lt;a class="header-anchor" href="#%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98">&lt;/a>
+&lt;/h2>&lt;p>虚拟化：每个进程都认为，自己有自己的地址空间，多个进程的地址空间是分开的。
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="地址空间" />&lt;/p>
+&lt;p>实际上，CPU 拿到这些虚拟的地址，会让它内部的 &lt;strong>MMU 把虚拟地址翻译成物理地址，也就是内存中的地址&lt;/strong>。内存里，每个地址可以存放一个字节。&lt;/p></description></item><item><title>Concurrency</title><link>https://ruokezhang.github.io/zh-cn/post/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/concurrency/</guid><description>&lt;h2 id="目标">目标
+&lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
+&lt;/h2>&lt;p>Mutual exclusion (e.g., A and B don’t run at same time)，进程的互斥&lt;/p>
+&lt;ul>
+&lt;li>solved with locks&lt;/li>
+&lt;/ul>
+&lt;p>Ordering (e.g., B runs after A does something)，进程的同步&lt;/p>
+&lt;ul>
+&lt;li>solved with condition variables OR semaphores&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;a href="https://pages.cs.wisc.edu/~remzi/Classes/537/Fall2021/Discussion/videos.html" title="CS 537 Videos" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ CS 537 Videos
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://xiaolincoding.com/os/4_process/multithread_sync.html#%E4%BF%A1%E5%8F%B7%E9%87%8F" title="小林coding" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 小林coding
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item></channel></rss>
