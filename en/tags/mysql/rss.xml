@@ -24,7 +24,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview-questions/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview-questions/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
+&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
 &lt;a class="header-anchor" href="#storage-engine-comparison">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li>

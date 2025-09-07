@@ -24,7 +24,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview-questions/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview-questions/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
+&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
 &lt;a class="header-anchor" href="#storage-engine-comparison">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li>
@@ -195,7 +195,30 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/ol>
 &lt;h3 id="b-tree">B+ Tree
 &lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;h2 id="concurrency-issues">Concurrency Issues
+&lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
+&lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
+&lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
+&lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
+&lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
+&lt;/h3>&lt;h3 id="compiler-optimization-reordering">Compiler Optimization Reordering
+&lt;a class="header-anchor" href="#compiler-optimization-reordering">&lt;/a>
+&lt;/h3>&lt;p>JVM and JIT do this. For Java programs, instruction reordering is performed during compilation without changing its semantics, similar to g1, g2 optimization reordering.&lt;/p>
+&lt;p>Solution: Prohibit compiler reordering&lt;/p>
+&lt;h3 id="instruction-parallel-reordering">Instruction Parallel Reordering
+&lt;a class="header-anchor" href="#instruction-parallel-reordering">&lt;/a>
+&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Java Threads</title><link>https://ruokezhang.github.io/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;h2 id="threads">Threads
+&lt;a class="header-anchor" href="#threads">&lt;/a>
+&lt;/h2>&lt;h3 id="thread-implementation">Thread Implementation
+&lt;a class="header-anchor" href="#thread-implementation">&lt;/a>
+&lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
+&lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
+&lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
+&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -312,7 +335,15 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>https://ruokezhang.github.io/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://ruokezhang.github.io/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/en/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/jmeter/</guid><description>&lt;p>
+&lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter Usage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ JMeter Usage
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p>
+&lt;p>In this path, run the sh jmeter command to start JMeter.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>https://ruokezhang.github.io/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://ruokezhang.github.io/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
 &lt;a class="header-anchor" href="#welcome-to-my-technical-blog">&lt;/a>
 &lt;/h1>&lt;p>Hello and welcome to my blog! This is where I share my journey in software development, system design, and technology exploration.&lt;/p>
 &lt;h2 id="what-to-expect">What to Expect

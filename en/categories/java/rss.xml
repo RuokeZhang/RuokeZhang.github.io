@@ -121,7 +121,30 @@ Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;h2 id="concurrency-issues">Concurrency Issues
+&lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
+&lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
+&lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
+&lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
+&lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
+&lt;/h3>&lt;h3 id="compiler-optimization-reordering">Compiler Optimization Reordering
+&lt;a class="header-anchor" href="#compiler-optimization-reordering">&lt;/a>
+&lt;/h3>&lt;p>JVM and JIT do this. For Java programs, instruction reordering is performed during compilation without changing its semantics, similar to g1, g2 optimization reordering.&lt;/p>
+&lt;p>Solution: Prohibit compiler reordering&lt;/p>
+&lt;h3 id="instruction-parallel-reordering">Instruction Parallel Reordering
+&lt;a class="header-anchor" href="#instruction-parallel-reordering">&lt;/a>
+&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Java Threads</title><link>https://ruokezhang.github.io/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;h2 id="threads">Threads
+&lt;a class="header-anchor" href="#threads">&lt;/a>
+&lt;/h2>&lt;h3 id="thread-implementation">Thread Implementation
+&lt;a class="header-anchor" href="#thread-implementation">&lt;/a>
+&lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
+&lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
+&lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
+&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
