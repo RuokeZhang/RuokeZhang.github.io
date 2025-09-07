@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/jvm/</link><description>Recent content in JVM on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/jvm/rss.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting</title><link>https://ruokezhang.github.io/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/oom/</guid><description>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Reference video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Reference video (Chinese)
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="causes-of-outofmemoryerror">Causes of OutOfMemoryError
+&lt;a class="header-anchor" href="#causes-of-outofmemoryerror">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>Allocating too many objects at once → use pagination/streaming&lt;/li>
+&lt;li>Memory leak: reachable but no-longer-needed objects still retained → find and release them&lt;/li>
+&lt;li>Insufficient resources → use to inspect the heap&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>jmap is a JDK CLI tool to generate a heap dump. A heap dump is a binary snapshot of all objects on the heap.
+Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>Garbage Collection</title><link>https://ruokezhang.github.io/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
+&lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="Understanding the JVM (3rd Edition, Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Understanding the JVM (3rd Edition, Chinese)
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>, 
+&lt;a href="%e6%9e%81%e8%87%b4%e5%85%ab%e8%82%a1%e6%96%87%e4%b9%8bJVM%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8G1&amp;amp;ZGC%e8%af%a6%e8%a7%a3" title="G1 &amp;amp; ZGC deep dive (Chinese)" >
+ G1 &amp;amp; ZGC deep dive (Chinese)
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="is-an-object-dead">Is an Object Dead?
+&lt;a class="header-anchor" href="#is-an-object-dead">&lt;/a>
+&lt;/h2>&lt;h3 id="reference-counting">Reference Counting
+&lt;a class="header-anchor" href="#reference-counting">&lt;/a>
+&lt;/h3>&lt;p>Drawback: they reference each other, so neither count goes to 0; they won’t be collected.&lt;/p>
+&lt;h3 id="reachability-analysis">Reachability Analysis
+&lt;a class="header-anchor" href="#reachability-analysis">&lt;/a>
+&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;a class="header-anchor" href="#classfile">&lt;/a>
+&lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
+&lt;h3 id="basic-info">Basic Info
+&lt;a class="header-anchor" href="#basic-info">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
+&lt;ol>
+&lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
+&lt;li>Version number, representing the compiler (javac) version.&lt;/li>
+&lt;li>access flags&lt;/li>
+&lt;/ol>
+&lt;h3 id="constant-pool">Constant Pool
+&lt;a class="header-anchor" href="#constant-pool">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
+There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>BlackHorse Rating Login Design</title><link>https://ruokezhang.github.io/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;h2 id="sms-verification-code-login">SMS Verification Code Login
+&lt;a class="header-anchor" href="#sms-verification-code-login">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>User enters phone number on login page and clicks &amp;ldquo;Get Code&amp;rdquo;. Backend validates phone format, generates a verification code, stores phone:code in Redis with 2-minute expiry.&lt;/li>
+&lt;li>User enters code and clicks &amp;ldquo;Login&amp;rdquo;. Backend compares submitted code with stored value.&lt;/li>
+&lt;li>If user doesn&amp;rsquo;t exist, create and save to database.&lt;/li>
+&lt;li>Generate random token as login credential; convert User object to Hash and store as token:userHash in Redis.&lt;/li>
+&lt;/ol>
+&lt;h2 id="login-status-validation">Login Status Validation
+&lt;a class="header-anchor" href="#login-status-validation">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>Requests carry token in header. RefreshTokenInterceptor intercepts all requests (passes through if no token).&lt;/li>
+&lt;li>Extract token from header, retrieve user Map from Redis using token.&lt;/li>
+&lt;li>If user exists, convert Map to UserDTO, store in ThreadLocal, and refresh token expiry.&lt;/li>
+&lt;/ol>
+&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Influencer Exploration</title><link>https://ruokezhang.github.io/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
+&lt;a class="header-anchor" href="#like-design">&lt;/a>
+&lt;/h2>&lt;p>Use Redis sorted set: key is post ID, set stores user IDs who liked, score is timestamp of like.&lt;/p>
+&lt;p>When frontend views post details, backend needs to:&lt;/p>
+&lt;ol>
+&lt;li>Fetch content from database by post ID&lt;/li>
+&lt;li>Check Redis to determine if current user liked this post&lt;/li>
+&lt;li>Add liked field to Blog object and return to frontend&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@PutMapping&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;/like/{id}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">likeBlog&lt;/span>(&lt;span style="color:#1e66f5;font-weight:bold">@PathVariable&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;id&amp;#34;&lt;/span>) Long id) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> blogService.&lt;span style="color:#1e66f5">likeBlog&lt;/span>(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
+&lt;a class="header-anchor" href="#consistency">&lt;/a>
+&lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
+&lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>Memory Eviction: Redis automatically evicts data when memory is low; cache updated on next request.&lt;/li>
+&lt;li>TTL Expiry: Set TTL on cached data; deleted automatically when expired; updated on next request.&lt;/li>
+&lt;li>Active Update: Update cache simultaneously with database modification.&lt;/li>
+&lt;/ol>
+&lt;h3 id="cache-database-consistency">Cache-Database Consistency
+&lt;a class="header-anchor" href="#cache-database-consistency">&lt;/a>
+&lt;/h3>&lt;p>Concurrent requests can cause inconsistency regardless of update order (cache first or database first).&lt;/p>
+&lt;p>Use &lt;strong>Cache Aside&lt;/strong> strategy: cache only updated during read operations.&lt;/p>
+&lt;ul>
+&lt;li>Write strategy: When modifying data, update database and &lt;strong>delete&lt;/strong> cache.&lt;/li>
+&lt;li>Read strategy: When reading data, if cache miss, read from database and update cache.&lt;/li>
+&lt;/ul>
+&lt;h4 id="update-then-delete-delayed-double-delete">Update-Then-Delete (Delayed Double Delete)
+&lt;a class="header-anchor" href="#update-then-delete-delayed-double-delete">&lt;/a>
+&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
+&lt;a class="header-anchor" href="#global-id-generator-redis-auto-increment">&lt;/a>
+&lt;/h2>&lt;p>Disadvantages of database auto-increment IDs:&lt;/p>
+&lt;ol>
+&lt;li>May expose business metrics: users could infer daily coupon sales.&lt;/li>
+&lt;li>Large coupon volumes lead to oversized IDs; sharding causes ID conflicts.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// Sign bit 0 + 31-bit timestamp + 32-bit sequence number&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">long&lt;/span> &lt;span style="color:#1e66f5">nextId&lt;/span>(String keyPrefix){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Generate timestamp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LocalDateTime now&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>LocalDateTime.&lt;span style="color:#1e66f5">now&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> nowSecond&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">toEpochSecond&lt;/span>(ZoneOffset.&lt;span style="color:#1e66f5">UTC&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>nowSecond&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>BEGIN_TIMESTAMP;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Generate sequence number. Same key per day&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String date&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">format&lt;/span>(DateTimeFormatter.&lt;span style="color:#1e66f5">ofPattern&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;yyyy:MM:dd&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> count&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">increment&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;icr:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>keyPrefix&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#40a02b">&amp;#34;:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>date);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Combine and return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&amp;lt;&lt;/span>COUNT_BITS&lt;span style="color:#04a5e5;font-weight:bold">|&lt;/span>count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item></channel></rss>

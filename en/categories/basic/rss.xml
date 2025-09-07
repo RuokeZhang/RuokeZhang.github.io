@@ -45,7 +45,54 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;a class="header-anchor" href="#reflection">&lt;/a>
+&lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class name, methods, fields, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
+&lt;h3 id="api">API
+&lt;a class="header-anchor" href="#api">&lt;/a>
+&lt;/h3>&lt;h4 id="getting-a-class-object">Getting a Class Object
+&lt;a class="header-anchor" href="#getting-a-class-object">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String str&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> String.&lt;span style="color:#1e66f5">class&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="creating-objects-via-reflection">Creating Objects via Reflection
+&lt;a class="header-anchor" href="#creating-objects-via-reflection">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;com.example.User&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="getting-fields">Getting Fields
+&lt;a class="header-anchor" href="#getting-fields">&lt;/a>
+&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
@@ -54,7 +101,16 @@ Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;a class="header-anchor" href="#exceptions">&lt;/a>
+&lt;/h2>&lt;h3 id="throwable">Throwable
+&lt;a class="header-anchor" href="#throwable">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+Throwable has two subclasses: Exception and Error.&lt;/p>
+&lt;p>Error class represents serious errors, which are generally not recommended to be caught by &lt;code>catch&lt;/code> in our programs. We can only optimize Errors by optimizing the code. When an Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
+&lt;p>Exception class has two subclasses: Checked Exception and Unchecked Exception.
+Checked Exception means that the exception will be checked at compile time. If the exception is not caught by &lt;code>catch&lt;/code> or not &lt;code>throws&lt;/code>, it will not pass compilation. This includes &lt;code>IOException&lt;/code>, &lt;code>ClassNotFoundException&lt;/code>.
+Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
 &lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
@@ -121,7 +177,74 @@ Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+&lt;a class="header-anchor" href="#collection-interface">&lt;/a>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;h2 id="list">List
+&lt;a class="header-anchor" href="#list">&lt;/a>
+&lt;/h2>&lt;h3 id="arraylist">ArrayList
+&lt;a class="header-anchor" href="#arraylist">&lt;/a>
+&lt;/h3>&lt;h4 id="basic-concepts">Basic Concepts
+&lt;a class="header-anchor" href="#basic-concepts">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Allows null values.&lt;/li>
+&lt;li>Memory is contiguous, saving memory space.&lt;/li>
+&lt;li>Insertion time complexity: O(n) for insertion at the head because all subsequent elements need to be shifted; O(1) for insertion at the tail if no resizing is needed, otherwise O(n) to copy the original ArrayList and then O(1) for insertion. O(n) for insertion in the middle.&lt;/li>
+&lt;li>Deletion time complexity: Corresponds to insertion time complexity.&lt;/li>
+&lt;li>Not thread-safe.&lt;/li>
+&lt;/ol>
+&lt;h4 id="underlying-implementation">Underlying Implementation
+&lt;a class="header-anchor" href="#underlying-implementation">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Implemented by dynamic array. Random access to a node only requires calculating its address, so random access is O(1). Implements the &lt;code>RandomAccess&lt;/code> marker interface.&lt;/li>
+&lt;li>If no initial capacity is specified, the default initial capacity is 0. When the first element is added, the capacity becomes 10. &lt;strong>Each dynamic expansion increases the capacity to 1.5 times the original.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h4 id="differences-between-arraylist-and-array">Differences between ArrayList and Array
+&lt;a class="header-anchor" href="#differences-between-arraylist-and-array">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>ArrayList can be dynamically resized; Array cannot, its length is fixed and needs to be specified when initializing the array.&lt;/li>
+&lt;li>ArrayList supports generics.&lt;/li>
+&lt;li>ArrayList only supports objects; for primitive data types, their wrapper classes like Integer, Double are needed. Array supports both primitive data types and objects.&lt;/li>
+&lt;/ol>
+&lt;h3 id="linkedlist">LinkedList
+&lt;a class="header-anchor" href="#linkedlist">&lt;/a>
+&lt;/h3>&lt;h4 id="underlying-implementation-1">Underlying Implementation
+&lt;a class="header-anchor" href="#underlying-implementation-1">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Implemented by a doubly linked list. Insertion/deletion at the head/tail are both O(1).&lt;/li>
+&lt;li>Does not support random access. Time complexity for accessing a specific element is O(n).&lt;/li>
+&lt;li>Performance is not as good as ArrayList, rarely used in actual development.&lt;/li>
+&lt;li>Not thread-safe.&lt;/li>
+&lt;li>Allows null values.&lt;/li>
+&lt;li>Occupies more space than ArrayList because it stores pointers in addition to data.&lt;/li>
+&lt;/ol>
+&lt;h2 id="hashmap">HashMap
+&lt;a class="header-anchor" href="#hashmap">&lt;/a>
+&lt;/h2>&lt;h3 id="implementation-principle">Implementation Principle
+&lt;a class="header-anchor" href="#implementation-principle">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>Implemented by hash table + linked list/red-black tree. Hash collision resolution methods include chaining/probing, usually chaining.&lt;/li>
+&lt;li>How is the hash value calculated? Get the &lt;code>hashCode()&lt;/code> of the key. Perform an XOR operation between the &lt;strong>original hashcode and the hashcode shifted right by 16 bits&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>Calculate array index. &lt;strong>&lt;code>hash &amp;amp; (length - 1)&lt;/code>&lt;/strong>, equivalent to &lt;code>hash % length&lt;/code>. Binary operations are faster than modulo operations.&lt;/li>
+&lt;li>If a collision occurs, check if the key exists in the linked list or red-black tree. If it exists, replace the value directly. If not, add it. When the linked list length is 8 and the hash table length is greater than 64, it is converted to a red-black tree.&lt;/li>
+&lt;li>If the number of red-black tree nodes is less than 6, it reverts to a linked list.&lt;/li>
+&lt;li>Initial capacity is 16, load factor is 0.75, expands to twice the original size.&lt;/li>
+&lt;li>Not thread-safe. Resizing may cause a circular linked list.&lt;/li>
+&lt;/ol>
+&lt;h3 id="time-complexity">Time Complexity
+&lt;a class="header-anchor" href="#time-complexity">&lt;/a>
+&lt;/h3>&lt;p>Ideally, the average time complexity for HashMap&amp;rsquo;s insertion, deletion, and lookup operations is O(1).
+If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -235,7 +358,124 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;a class="header-anchor" href="#interface">&lt;/a>
+&lt;/h2>&lt;p>An interface is an abstraction of behavior.&lt;/p>
+&lt;ol>
+&lt;li>Abstract methods: Before Java 8, interfaces could only have abstract methods.&lt;/li>
+&lt;li>Default methods: Provide method bodies, available since Java 8.&lt;/li>
+&lt;li>Static methods: Provide method bodies, available since Java 8, can be called via &lt;code>Interface.method()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">29
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">30
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">31
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">32
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">33
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">34
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">35
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">36
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">37
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">38
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">39
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">40
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">41
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">42
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">43
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">44
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">45
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">46
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">47
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">48
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">49
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">interface&lt;/span> &lt;span style="color:#df8e1d">MyInterface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Abstract method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">abstractMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">default&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">defaultMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the default method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> privateHelperMethod(); &lt;span style="color:#9ca0b0;font-style:italic">// Call private helper method (Note: private methods are a Java 9 feature, shown here for example only)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Static method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">staticMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the static method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Private helper method (Java 9 feature, but included for completeness)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">privateHelperMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the private helper method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">MyClass&lt;/span> &lt;span style="color:#d20f39">implements&lt;/span> MyInterface {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">abstractMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Implementing the abstract method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Can choose to override the default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">defaultMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Overriding the default method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">super&lt;/span>.&lt;span style="color:#1e66f5">defaultMethod&lt;/span>(); &lt;span style="color:#9ca0b0;font-style:italic">// Call the default method of the interface&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">Main&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">main&lt;/span>(String&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyClass myClass &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#8839ef">new&lt;/span> MyClass();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the implemented abstract method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myClass.&lt;span style="color:#1e66f5">abstractMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myClass.&lt;span style="color:#1e66f5">defaultMethod&lt;/span>(); &lt;span style="color:#9ca0b0;font-style:italic">// Note that the overridden version is called here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the static method of the interface&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">staticMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="abstract-class">Abstract Class
+&lt;a class="header-anchor" href="#abstract-class">&lt;/a>
+&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item></channel></rss>
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>https://ruokezhang.github.io/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;a class="header-anchor" href="#functional-interface">&lt;/a>
+&lt;/h2>&lt;p>A functional interface is defined as an interface that must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
+&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item></channel></rss>

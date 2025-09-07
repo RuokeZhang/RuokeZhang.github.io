@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Array on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/array/</link><description>Recent content in Array on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/array/rss.xml" rel="self" type="application/rss+xml"/><item><title>Array</title><link>https://ruokezhang.github.io/en/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/array/</guid><description>&lt;h3 id="lc-188-rotate-array">LC 188 Rotate Array
+&lt;a class="header-anchor" href="#lc-188-rotate-array">&lt;/a>
+&lt;/h3>&lt;p>Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]&lt;/p>
+&lt;p>Method 1: Slicing operation; take last k elements: nums[-k%n:]&lt;/p>
+&lt;p>Method 2: Reverse entire array first, then reverse parts. Implement reversal separately without slicing to avoid extra space.&lt;/p>
+&lt;h2 id="two-pointers">Two Pointers
+&lt;a class="header-anchor" href="#two-pointers">&lt;/a>
+&lt;/h2>&lt;h3 id="opposite-direction-two-pointers">Opposite Direction Two Pointers
+&lt;a class="header-anchor" href="#opposite-direction-two-pointers">&lt;/a>
+&lt;/h3>&lt;h4 id="lc-75-sort-colors">LC 75: Sort Colors
+&lt;a class="header-anchor" href="#lc-75-sort-colors">&lt;/a>
+&lt;/h4>&lt;p>Use pointer i to traverse array, left and right pointers point to &lt;strong>next position to fill 0 or 2&lt;/strong>.
+First continuously fill 2s, then fill 0s when encountered.
+Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sorting on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/sorting/</link><description>Recent content in Sorting on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 21 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/sorting/rss.xml" rel="self" type="application/rss+xml"/><item><title>Sorting</title><link>https://ruokezhang.github.io/en/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">Merge Sort
+&lt;a class="header-anchor" href="#merge-sort">&lt;/a>
+&lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: Sort a Linked List
+&lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
+&lt;/h3>&lt;p>Use fast and slow pointers to divide into two halves, break in the middle, recursively sort each half, and finally merge the two sorted linked lists in ascending order. Boundary conditions: head==None or head.next==None.&lt;/p>
+&lt;h3 id="lc-23-merge-k-sorted-lists">LC 23. Merge k Sorted Lists
+&lt;a class="header-anchor" href="#lc-23-merge-k-sorted-lists">&lt;/a>
+&lt;/h3>&lt;p>Pay attention to edge cases.&lt;/p>
+&lt;h2 id="quick-sort">Quick Sort
+&lt;a class="header-anchor" href="#quick-sort">&lt;/a>
+&lt;/h2>&lt;p>Using an element of the array (usually the first element) as the pivot, move all elements smaller than the pivot to its left, and all elements larger than the pivot to its right.
+
+&lt;a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/solutions/821137/ji-yu-kuai-pai-de-suo-you-topkwen-ti-jia-ylsd/" title="Python Template" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Python Template
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item></channel></rss>

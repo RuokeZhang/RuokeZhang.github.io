@@ -45,7 +45,70 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;a class="header-anchor" href="#reflection">&lt;/a>
+&lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class name, methods, fields, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
+&lt;h3 id="api">API
+&lt;a class="header-anchor" href="#api">&lt;/a>
+&lt;/h3>&lt;h4 id="getting-a-class-object">Getting a Class Object
+&lt;a class="header-anchor" href="#getting-a-class-object">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>String str&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> String.&lt;span style="color:#1e66f5">class&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="creating-objects-via-reflection">Creating Objects via Reflection
+&lt;a class="header-anchor" href="#creating-objects-via-reflection">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;com.example.User&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="getting-fields">Getting Fields
+&lt;a class="header-anchor" href="#getting-fields">&lt;/a>
+&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>BlackHorse Rating Login Design</title><link>https://ruokezhang.github.io/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;h2 id="sms-verification-code-login">SMS Verification Code Login
+&lt;a class="header-anchor" href="#sms-verification-code-login">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>User enters phone number on login page and clicks &amp;ldquo;Get Code&amp;rdquo;. Backend validates phone format, generates a verification code, stores phone:code in Redis with 2-minute expiry.&lt;/li>
+&lt;li>User enters code and clicks &amp;ldquo;Login&amp;rdquo;. Backend compares submitted code with stored value.&lt;/li>
+&lt;li>If user doesn&amp;rsquo;t exist, create and save to database.&lt;/li>
+&lt;li>Generate random token as login credential; convert User object to Hash and store as token:userHash in Redis.&lt;/li>
+&lt;/ol>
+&lt;h2 id="login-status-validation">Login Status Validation
+&lt;a class="header-anchor" href="#login-status-validation">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>Requests carry token in header. RefreshTokenInterceptor intercepts all requests (passes through if no token).&lt;/li>
+&lt;li>Extract token from header, retrieve user Map from Redis using token.&lt;/li>
+&lt;li>If user exists, convert Map to UserDTO, store in ThreadLocal, and refresh token expiry.&lt;/li>
+&lt;/ol>
+&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
@@ -54,7 +117,16 @@ Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;a class="header-anchor" href="#exceptions">&lt;/a>
+&lt;/h2>&lt;h3 id="throwable">Throwable
+&lt;a class="header-anchor" href="#throwable">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+Throwable has two subclasses: Exception and Error.&lt;/p>
+&lt;p>Error class represents serious errors, which are generally not recommended to be caught by &lt;code>catch&lt;/code> in our programs. We can only optimize Errors by optimizing the code. When an Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
+&lt;p>Exception class has two subclasses: Checked Exception and Unchecked Exception.
+Checked Exception means that the exception will be checked at compile time. If the exception is not caught by &lt;code>catch&lt;/code> or not &lt;code>throws&lt;/code>, it will not pass compilation. This includes &lt;code>IOException&lt;/code>, &lt;code>ClassNotFoundException&lt;/code>.
+Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
 &lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
@@ -121,7 +193,106 @@ Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+&lt;a class="header-anchor" href="#collection-interface">&lt;/a>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;h2 id="list">List
+&lt;a class="header-anchor" href="#list">&lt;/a>
+&lt;/h2>&lt;h3 id="arraylist">ArrayList
+&lt;a class="header-anchor" href="#arraylist">&lt;/a>
+&lt;/h3>&lt;h4 id="basic-concepts">Basic Concepts
+&lt;a class="header-anchor" href="#basic-concepts">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Allows null values.&lt;/li>
+&lt;li>Memory is contiguous, saving memory space.&lt;/li>
+&lt;li>Insertion time complexity: O(n) for insertion at the head because all subsequent elements need to be shifted; O(1) for insertion at the tail if no resizing is needed, otherwise O(n) to copy the original ArrayList and then O(1) for insertion. O(n) for insertion in the middle.&lt;/li>
+&lt;li>Deletion time complexity: Corresponds to insertion time complexity.&lt;/li>
+&lt;li>Not thread-safe.&lt;/li>
+&lt;/ol>
+&lt;h4 id="underlying-implementation">Underlying Implementation
+&lt;a class="header-anchor" href="#underlying-implementation">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Implemented by dynamic array. Random access to a node only requires calculating its address, so random access is O(1). Implements the &lt;code>RandomAccess&lt;/code> marker interface.&lt;/li>
+&lt;li>If no initial capacity is specified, the default initial capacity is 0. When the first element is added, the capacity becomes 10. &lt;strong>Each dynamic expansion increases the capacity to 1.5 times the original.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h4 id="differences-between-arraylist-and-array">Differences between ArrayList and Array
+&lt;a class="header-anchor" href="#differences-between-arraylist-and-array">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>ArrayList can be dynamically resized; Array cannot, its length is fixed and needs to be specified when initializing the array.&lt;/li>
+&lt;li>ArrayList supports generics.&lt;/li>
+&lt;li>ArrayList only supports objects; for primitive data types, their wrapper classes like Integer, Double are needed. Array supports both primitive data types and objects.&lt;/li>
+&lt;/ol>
+&lt;h3 id="linkedlist">LinkedList
+&lt;a class="header-anchor" href="#linkedlist">&lt;/a>
+&lt;/h3>&lt;h4 id="underlying-implementation-1">Underlying Implementation
+&lt;a class="header-anchor" href="#underlying-implementation-1">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>Implemented by a doubly linked list. Insertion/deletion at the head/tail are both O(1).&lt;/li>
+&lt;li>Does not support random access. Time complexity for accessing a specific element is O(n).&lt;/li>
+&lt;li>Performance is not as good as ArrayList, rarely used in actual development.&lt;/li>
+&lt;li>Not thread-safe.&lt;/li>
+&lt;li>Allows null values.&lt;/li>
+&lt;li>Occupies more space than ArrayList because it stores pointers in addition to data.&lt;/li>
+&lt;/ol>
+&lt;h2 id="hashmap">HashMap
+&lt;a class="header-anchor" href="#hashmap">&lt;/a>
+&lt;/h2>&lt;h3 id="implementation-principle">Implementation Principle
+&lt;a class="header-anchor" href="#implementation-principle">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>Implemented by hash table + linked list/red-black tree. Hash collision resolution methods include chaining/probing, usually chaining.&lt;/li>
+&lt;li>How is the hash value calculated? Get the &lt;code>hashCode()&lt;/code> of the key. Perform an XOR operation between the &lt;strong>original hashcode and the hashcode shifted right by 16 bits&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>Calculate array index. &lt;strong>&lt;code>hash &amp;amp; (length - 1)&lt;/code>&lt;/strong>, equivalent to &lt;code>hash % length&lt;/code>. Binary operations are faster than modulo operations.&lt;/li>
+&lt;li>If a collision occurs, check if the key exists in the linked list or red-black tree. If it exists, replace the value directly. If not, add it. When the linked list length is 8 and the hash table length is greater than 64, it is converted to a red-black tree.&lt;/li>
+&lt;li>If the number of red-black tree nodes is less than 6, it reverts to a linked list.&lt;/li>
+&lt;li>Initial capacity is 16, load factor is 0.75, expands to twice the original size.&lt;/li>
+&lt;li>Not thread-safe. Resizing may cause a circular linked list.&lt;/li>
+&lt;/ol>
+&lt;h3 id="time-complexity">Time Complexity
+&lt;a class="header-anchor" href="#time-complexity">&lt;/a>
+&lt;/h3>&lt;p>Ideally, the average time complexity for HashMap&amp;rsquo;s insertion, deletion, and lookup operations is O(1).
+If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Troubleshooting</title><link>https://ruokezhang.github.io/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/oom/</guid><description>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Reference video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Reference video (Chinese)
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="causes-of-outofmemoryerror">Causes of OutOfMemoryError
+&lt;a class="header-anchor" href="#causes-of-outofmemoryerror">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>Allocating too many objects at once → use pagination/streaming&lt;/li>
+&lt;li>Memory leak: reachable but no-longer-needed objects still retained → find and release them&lt;/li>
+&lt;li>Insufficient resources → use to inspect the heap&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>jmap is a JDK CLI tool to generate a heap dump. A heap dump is a binary snapshot of all objects on the heap.
+Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>ThreadLocal &amp; ThreadPool</title><link>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;h2 id="threadlocal">ThreadLocal
+&lt;a class="header-anchor" href="#threadlocal">&lt;/a>
+&lt;/h2>&lt;p>The &lt;strong>&lt;code>Thread&lt;/code> class&lt;/strong> has a variable &lt;code>threadLocals&lt;/code>, which can be considered a &lt;code>HashMap&lt;/code> used to store thread-private content.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">/* ThreadLocal values pertaining to this thread. This map is maintained
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"> * by the ThreadLocal class. */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="concurrency-issues">Concurrency Issues
 &lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
@@ -144,7 +315,48 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
 &lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
 &lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
-&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Garbage Collection</title><link>https://ruokezhang.github.io/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
+&lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="Understanding the JVM (3rd Edition, Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Understanding the JVM (3rd Edition, Chinese)
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>, 
+&lt;a href="%e6%9e%81%e8%87%b4%e5%85%ab%e8%82%a1%e6%96%87%e4%b9%8bJVM%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8G1&amp;amp;ZGC%e8%af%a6%e8%a7%a3" title="G1 &amp;amp; ZGC deep dive (Chinese)" >
+ G1 &amp;amp; ZGC deep dive (Chinese)
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="is-an-object-dead">Is an Object Dead?
+&lt;a class="header-anchor" href="#is-an-object-dead">&lt;/a>
+&lt;/h2>&lt;h3 id="reference-counting">Reference Counting
+&lt;a class="header-anchor" href="#reference-counting">&lt;/a>
+&lt;/h3>&lt;p>Drawback: they reference each other, so neither count goes to 0; they won’t be collected.&lt;/p>
+&lt;h3 id="reachability-analysis">Reachability Analysis
+&lt;a class="header-anchor" href="#reachability-analysis">&lt;/a>
+&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>Influencer Exploration</title><link>https://ruokezhang.github.io/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
+&lt;a class="header-anchor" href="#like-design">&lt;/a>
+&lt;/h2>&lt;p>Use Redis sorted set: key is post ID, set stores user IDs who liked, score is timestamp of like.&lt;/p>
+&lt;p>When frontend views post details, backend needs to:&lt;/p>
+&lt;ol>
+&lt;li>Fetch content from database by post ID&lt;/li>
+&lt;li>Check Redis to determine if current user liked this post&lt;/li>
+&lt;li>Add liked field to Blog object and return to frontend&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@PutMapping&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;/like/{id}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">likeBlog&lt;/span>(&lt;span style="color:#1e66f5;font-weight:bold">@PathVariable&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;id&amp;#34;&lt;/span>) Long id) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> blogService.&lt;span style="color:#1e66f5">likeBlog&lt;/span>(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -258,7 +470,196 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;a class="header-anchor" href="#interface">&lt;/a>
+&lt;/h2>&lt;p>An interface is an abstraction of behavior.&lt;/p>
+&lt;ol>
+&lt;li>Abstract methods: Before Java 8, interfaces could only have abstract methods.&lt;/li>
+&lt;li>Default methods: Provide method bodies, available since Java 8.&lt;/li>
+&lt;li>Static methods: Provide method bodies, available since Java 8, can be called via &lt;code>Interface.method()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">29
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">30
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">31
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">32
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">33
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">34
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">35
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">36
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">37
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">38
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">39
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">40
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">41
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">42
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">43
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">44
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">45
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">46
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">47
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">48
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">49
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">interface&lt;/span> &lt;span style="color:#df8e1d">MyInterface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Abstract method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">abstractMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">default&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">defaultMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the default method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> privateHelperMethod(); &lt;span style="color:#9ca0b0;font-style:italic">// Call private helper method (Note: private methods are a Java 9 feature, shown here for example only)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Static method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">staticMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the static method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Private helper method (Java 9 feature, but included for completeness)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">privateHelperMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;This is the private helper method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">MyClass&lt;/span> &lt;span style="color:#d20f39">implements&lt;/span> MyInterface {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">abstractMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Implementing the abstract method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Can choose to override the default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">defaultMethod&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Overriding the default method of the interface&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">super&lt;/span>.&lt;span style="color:#1e66f5">defaultMethod&lt;/span>(); &lt;span style="color:#9ca0b0;font-style:italic">// Call the default method of the interface&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">class&lt;/span> &lt;span style="color:#df8e1d">Main&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">main&lt;/span>(String&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span> args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyClass myClass &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#8839ef">new&lt;/span> MyClass();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the implemented abstract method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myClass.&lt;span style="color:#1e66f5">abstractMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the default method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myClass.&lt;span style="color:#1e66f5">defaultMethod&lt;/span>(); &lt;span style="color:#9ca0b0;font-style:italic">// Note that the overridden version is called here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the static method of the interface&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">staticMethod&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="abstract-class">Abstract Class
+&lt;a class="header-anchor" href="#abstract-class">&lt;/a>
+&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item></channel></rss>
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>https://ruokezhang.github.io/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;a class="header-anchor" href="#functional-interface">&lt;/a>
+&lt;/h2>&lt;p>A functional interface is defined as an interface that must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
+&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
+&lt;a class="header-anchor" href="#consistency">&lt;/a>
+&lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
+&lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>Memory Eviction: Redis automatically evicts data when memory is low; cache updated on next request.&lt;/li>
+&lt;li>TTL Expiry: Set TTL on cached data; deleted automatically when expired; updated on next request.&lt;/li>
+&lt;li>Active Update: Update cache simultaneously with database modification.&lt;/li>
+&lt;/ol>
+&lt;h3 id="cache-database-consistency">Cache-Database Consistency
+&lt;a class="header-anchor" href="#cache-database-consistency">&lt;/a>
+&lt;/h3>&lt;p>Concurrent requests can cause inconsistency regardless of update order (cache first or database first).&lt;/p>
+&lt;p>Use &lt;strong>Cache Aside&lt;/strong> strategy: cache only updated during read operations.&lt;/p>
+&lt;ul>
+&lt;li>Write strategy: When modifying data, update database and &lt;strong>delete&lt;/strong> cache.&lt;/li>
+&lt;li>Read strategy: When reading data, if cache miss, read from database and update cache.&lt;/li>
+&lt;/ul>
+&lt;h4 id="update-then-delete-delayed-double-delete">Update-Then-Delete (Delayed Double Delete)
+&lt;a class="header-anchor" href="#update-then-delete-delayed-double-delete">&lt;/a>
+&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
+&lt;a class="header-anchor" href="#global-id-generator-redis-auto-increment">&lt;/a>
+&lt;/h2>&lt;p>Disadvantages of database auto-increment IDs:&lt;/p>
+&lt;ol>
+&lt;li>May expose business metrics: users could infer daily coupon sales.&lt;/li>
+&lt;li>Large coupon volumes lead to oversized IDs; sharding causes ID conflicts.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// Sign bit 0 + 31-bit timestamp + 32-bit sequence number&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">long&lt;/span> &lt;span style="color:#1e66f5">nextId&lt;/span>(String keyPrefix){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Generate timestamp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LocalDateTime now&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>LocalDateTime.&lt;span style="color:#1e66f5">now&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> nowSecond&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">toEpochSecond&lt;/span>(ZoneOffset.&lt;span style="color:#1e66f5">UTC&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>nowSecond&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>BEGIN_TIMESTAMP;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Generate sequence number. Same key per day&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String date&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>now.&lt;span style="color:#1e66f5">format&lt;/span>(DateTimeFormatter.&lt;span style="color:#1e66f5">ofPattern&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;yyyy:MM:dd&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> count&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">increment&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;icr:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>keyPrefix&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#40a02b">&amp;#34;:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>date);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Combine and return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&amp;lt;&lt;/span>COUNT_BITS&lt;span style="color:#04a5e5;font-weight:bold">|&lt;/span>count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;a class="header-anchor" href="#classfile">&lt;/a>
+&lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
+&lt;h3 id="basic-info">Basic Info
+&lt;a class="header-anchor" href="#basic-info">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
+&lt;ol>
+&lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
+&lt;li>Version number, representing the compiler (javac) version.&lt;/li>
+&lt;li>access flags&lt;/li>
+&lt;/ol>
+&lt;h3 id="constant-pool">Constant Pool
+&lt;a class="header-anchor" href="#constant-pool">&lt;/a>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
+There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item></channel></rss>
