@@ -116,11 +116,6 @@ NexT.plugins.register = function() {
 ;
 /* util tools */
 
-console.log('🔧 Utils.js 文件已加载');
-console.log('🔧🔧🔧 这是一个测试消息 - 如果你看到这个，说明utils.js正在执行 🔧🔧🔧');
-console.warn('⚠️ 警告级别的测试消息 - 应该很明显');
-console.error('❌ 错误级别的测试消息 - 应该是红色的');
-
 HTMLElement.prototype.wrap = function (wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
@@ -186,17 +181,9 @@ NexT.utils = {
   },
 
   registerToolButtons: function () {
-    console.log('🚀 registerToolButtons 函数开始执行');
     const buttons = document.querySelector('.tool-buttons');
-    console.log('Tool buttons container:', buttons);
-    
-    if (!buttons) {
-      console.error('❌ 未找到 .tool-buttons 容器!');
-      return;
-    }
     
     const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme):not(#goto-gtranslate)');
-    console.log('Scrollbar buttons found:', scrollbar_buttons.length);
     scrollbar_buttons.forEach(button => {
       let targetId = button.id;
       if (targetId != '') {
@@ -207,63 +194,32 @@ NexT.utils = {
       });
     });
 
-    const themeButton = buttons.querySelector('div#toggle-theme');
-    console.log('Theme button found:', themeButton);
-    if (themeButton) {
-      themeButton.addEventListener('click', () => {
-        console.log('🌙 Theme button clicked!');
-        const cur_theme = document.documentElement.getAttribute('data-theme');
-        window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
-      });
-    }
+    buttons.querySelector('div#toggle-theme').addEventListener('click', () => {
+      const cur_theme = document.documentElement.getAttribute('data-theme');
+      window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
+    });
 
     const langButton = buttons.querySelector('div#goto-gtranslate');
-    console.log('Language button found:', langButton);
-    
     if (langButton) {
-      console.log('✅ 语言按钮存在，添加事件监听器');
-      
-      // 添加鼠标事件来测试按钮是否可交互
-      langButton.addEventListener('mouseenter', () => {
-        console.log('🖱️ 鼠标进入语言按钮');
-      });
-      
-      langButton.addEventListener('click', (e) => {
-        console.log('🎯 语言按钮被点击了!');
-        console.log('Event:', e);
-        
+      langButton.addEventListener('click', () => {
         const currentPath = window.location.pathname;
         let targetUrl;
-        console.log("当前路径:", currentPath);
-        
+        console.log("currentPath:", currentPath);
         // 检测当前是否在中文页面
         if (currentPath.startsWith('/zh-cn/')) {
           // 从中文切换到英文
           targetUrl = currentPath.replace('/zh-cn/', '/en/');
-          console.log('切换到英文:', targetUrl);
         } else if (currentPath.startsWith('/en/')) {
           // 从英文切换到中文
           targetUrl = currentPath.replace('/en/', '/zh-cn/');
-          console.log('切换到中文:', targetUrl);
         } else {
           // 如果在根路径，默认切换到英文
           targetUrl = '/en/';
-          console.log('从根路径切换到英文:', targetUrl);
         }
         
-        console.log('即将跳转到:', targetUrl);
         window.location.href = targetUrl;
       });
-    } else {
-      console.error('❌ 语言按钮未找到!');
-      console.log('容器中的所有按钮:');
-      const allButtons = buttons.querySelectorAll('div');
-      allButtons.forEach((btn, index) => {
-        console.log(`按钮 ${index}:`, btn.id, btn.className);
-      });
     }
-    
-    console.log('✅ registerToolButtons 函数执行完成');
   },
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
@@ -876,19 +832,14 @@ NexT.utils = {
 })();
 
 NexT.boot.registerEvents = function() {
-  console.log('🚀 NexT.boot.registerEvents 开始执行');
 
   NexT.utils.registerMenuClick();
   NexT.utils.registerImageLoadEvent();
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
-  console.log('📞 即将调用 registerToolButtons');
   NexT.utils.registerToolButtons();
-  console.log('✅ registerToolButtons 调用完成');
   // Register comment's components
   NexT.plugins.register();
-  
-  console.log('✅ NexT.boot.registerEvents 执行完成');
 
   // Register comment counter click event
   const commentCnt = document.querySelector('#comments-count');
@@ -973,14 +924,10 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🎯 DOMContentLoaded 事件触发');
   NexT.boot.registerEvents();
   NexT.boot.motion();
   NexT.boot.refresh();
-  console.log('🎉 所有启动函数执行完成');
 });
-
-console.log('📜 next-boot.js 文件已加载');
 
 ;
 /* global NexT, CONFIG */
