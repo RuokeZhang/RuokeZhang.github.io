@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on Ruoke Zhang</title><link>http://localhost:1313/en/categories/jvm/</link><description>Recent content in JVM on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/jvm/rss.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting</title><link>http://localhost:1313/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/oom/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/jvm/</link><description>Recent content in JVM on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/jvm/rss.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting</title><link>https://ruokezhang.github.io/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/oom/</guid><description>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Reference video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Reference video (Chinese)
  
@@ -14,7 +14,7 @@
 &lt;/ol>
 &lt;blockquote>
 &lt;p>jmap is a JDK CLI tool to generate a heap dump. A heap dump is a binary snapshot of all objects on the heap.
-Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>Garbage Collection</title><link>http://localhost:1313/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
+Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>Garbage Collection</title><link>https://ruokezhang.github.io/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="Understanding the JVM (3rd Edition, Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Understanding the JVM (3rd Edition, Chinese)
  
@@ -32,13 +32,13 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/h3>&lt;p>Drawback: they reference each other, so neither count goes to 0; they won’t be collected.&lt;/p>
 &lt;h3 id="reachability-analysis">Reachability Analysis
 &lt;a class="header-anchor" href="#reachability-analysis">&lt;/a>
-&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>JVM Basic</title><link>http://localhost:1313/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/classFile.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="basic-info">Basic Info
 &lt;a class="header-anchor" href="#basic-info">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/general.png" alt="Alt text" />&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
 &lt;li>Version number, representing the compiler (javac) version.&lt;/li>
@@ -46,5 +46,5 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/ol>
 &lt;h3 id="constant-pool">Constant Pool
 &lt;a class="header-anchor" href="#constant-pool">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/constantPool.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
 There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item></channel></rss>

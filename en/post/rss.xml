@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>http://localhost:1313/en/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>http://localhost:1313/en/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="common-operations">Common Operations
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="common-operations">Common Operations
 &lt;a class="header-anchor" href="#common-operations">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count(): Returns the number of 1s in the binary representation of x. Can also be interpreted as the minimum number of powers of 2 needed to represent x.&lt;/p>
 &lt;h2 id="brain-teasers">Brain Teasers
@@ -6,7 +6,7 @@
 &lt;/h2>&lt;h4 id="2749-minimum-operations-to-make-the-integer-zero">2749. Minimum Operations to Make the Integer Zero
 &lt;a class="header-anchor" href="#2749-minimum-operations-to-make-the-integer-zero">&lt;/a>
 &lt;/h4>&lt;p>Let x = num1 - k * num2, then the problem transforms to: Can x be represented using k powers of 2 (duplicates allowed)?&lt;/p>
-&lt;p>Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p></description></item><item><title>Company Wise</title><link>http://localhost:1313/en/post/leetcode/company_wise/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/company_wise/</guid><description>&lt;ul>
+&lt;p>Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p></description></item><item><title>Company Wise</title><link>https://ruokezhang.github.io/en/post/leetcode/company_wise/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/company_wise/</guid><description>&lt;ul>
 &lt;li>
 &lt;ol start="767">
 &lt;li>Reorganize String (Roblox)&lt;/li>
@@ -283,7 +283,7 @@
 &lt;li>Number of Subarrays of Size K and Average Greater than or Equal to Threshold (LinkedIn)&lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;/ul></description></item><item><title>Math</title><link>http://localhost:1313/en/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/math/</guid><description>&lt;h2 id="prime-numbers">Prime Numbers
+&lt;/ul></description></item><item><title>Math</title><link>https://ruokezhang.github.io/en/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/math/</guid><description>&lt;h2 id="prime-numbers">Prime Numbers
 &lt;a class="header-anchor" href="#prime-numbers">&lt;/a>
 &lt;/h2>&lt;h3 id="sieve-of-eratosthenes">Sieve of Eratosthenes
 &lt;a class="header-anchor" href="#sieve-of-eratosthenes">&lt;/a>
@@ -313,7 +313,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="204-count-primes">204. Count Primes
 &lt;a class="header-anchor" href="#204-count-primes">&lt;/a>
-&lt;/h4>&lt;p>p[i] represents the number of primes less than or equal to i. Starting from i=2, p[i]==0 &amp;lt;=&amp;gt; i is prime. Then, starting from i&lt;em>i, mark multiples of i as composite (by setting p[i&lt;/em>k]=-1). And, p[i] is assigned p[i-1]+1.&lt;/p></description></item><item><title>String</title><link>http://localhost:1313/en/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;/h4>&lt;p>p[i] represents the number of primes less than or equal to i. Starting from i=2, p[i]==0 &amp;lt;=&amp;gt; i is prime. Then, starting from i&lt;em>i, mark multiples of i as composite (by setting p[i&lt;/em>k]=-1). And, p[i] is assigned p[i-1]+1.&lt;/p></description></item><item><title>String</title><link>https://ruokezhang.github.io/en/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
 &lt;/h3>&lt;p>
 &lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -334,7 +334,7 @@
 &lt;/ul>
 &lt;p>Step 2: Compare two strings
 abeababeabf
-abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://localhost:1313/en/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/simulation/</guid><description>&lt;h3 id="755-pour-water">755. Pour Water
+abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/en/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/simulation/</guid><description>&lt;h3 id="755-pour-water">755. Pour Water
 &lt;a class="header-anchor" href="#755-pour-water">&lt;/a>
 &lt;/h3>&lt;h2 id="time-order">Time Order
 &lt;a class="header-anchor" href="#time-order">&lt;/a>
@@ -350,14 +350,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Data Structure</title><link>http://localhost:1313/en/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;/div></description></item><item><title>Data Structure</title><link>https://ruokezhang.github.io/en/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
 &lt;a class="header-anchor" href="#trie">&lt;/a>
 &lt;/h2>&lt;h4 id="440-k-th-smallest-in-lexicographical-order">440. K-th Smallest in Lexicographical Order
 &lt;a class="header-anchor" href="#440-k-th-smallest-in-lexicographical-order">&lt;/a>
 &lt;/h4>&lt;ul>
 &lt;li>How to get lexicographical order from smallest to largest? Build a deca-tree for numbers and then traverse it in pre-order.&lt;/li>
 &lt;li>How to get the number of children of a node? Use the next node on the same level.&lt;/li>
-&lt;/ul></description></item><item><title>Network</title><link>http://localhost:1313/en/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/network/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
+&lt;/ul></description></item><item><title>Network</title><link>https://ruokezhang.github.io/en/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="tcp-retransmission">TCP Retransmission
 &lt;a class="header-anchor" href="#tcp-retransmission">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -370,7 +370,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;a class="header-anchor" href="#tcp-flow-control">&lt;/a>
 &lt;/h2>&lt;h3 id="slow-start">Slow Start
 &lt;a class="header-anchor" href="#slow-start">&lt;/a>
-&lt;/h3>&lt;p>When transmission begins, the sender doubles its congestion window for each ACK received (exponential growth). The initial window size is 1.&lt;/p></description></item><item><title>Greedy</title><link>http://localhost:1313/en/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;/h3>&lt;p>When transmission begins, the sender doubles its congestion window for each ACK received (exponential growth). The initial window size is 1.&lt;/p></description></item><item><title>Greedy</title><link>https://ruokezhang.github.io/en/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/greedy/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="Ling Shen Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Ling Shen Problem List
  
@@ -390,7 +390,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;p>Proof by contradiction: g is a strictly increasing array.&lt;/p>
 &lt;h4 id="659-split-array-into-consecutive-subsequences">659. Split Array into Consecutive Subsequences
 &lt;a class="header-anchor" href="#659-split-array-into-consecutive-subsequences">&lt;/a>
-&lt;/h4>&lt;p>tail[i] is used to represent the number of subsequences ending with i. This way, when i+1 is encountered, it can be placed.&lt;/p></description></item><item><title>MySQL Logs</title><link>http://localhost:1313/en/post/mysql-logs/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-logs/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p>
+&lt;/h4>&lt;p>tail[i] is used to represent the number of subsequences ending with i. This way, when i+1 is encountered, it can be placed.&lt;/p></description></item><item><title>MySQL Logs</title><link>https://ruokezhang.github.io/en/post/mysql-logs/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-logs/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p>
 &lt;h2 id="redo-log">redo log
 &lt;a class="header-anchor" href="#redo-log">&lt;/a>
 &lt;/h2>&lt;p>
@@ -400,7 +400,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>Implements transaction durability. redo log is flushed to disk first, then dirty pages are flushed to disk&lt;/li>
 &lt;/ol>
@@ -416,7 +416,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>MySQL Logs</title><link>http://localhost:1313/en/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql/log/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first performed in the Buffer Pool.&lt;/p>
+&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>MySQL Logs</title><link>https://ruokezhang.github.io/en/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/log/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first performed in the Buffer Pool.&lt;/p>
 &lt;h2 id="redo-log">Redo Log
 &lt;a class="header-anchor" href="#redo-log">&lt;/a>
 &lt;/h2>&lt;p>
@@ -426,7 +426,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>Provides transaction durability. Redo log is flushed first; dirty pages are flushed later.&lt;/li>
 &lt;/ol>
@@ -491,7 +491,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;ul>
 &lt;li>Dirty page flushing is asynchronous; background threads flush Buffer Pool pages to disk.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redolog1.png" alt="Alt text" />&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>http://localhost:1313/en/post/mysql-interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-interview/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redolog1.png" alt="Alt text" />&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
 &lt;a class="header-anchor" href="#storage-engine-comparison">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li>
@@ -500,7 +500,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/ol>
 &lt;h2 id="what-is-page-split">What is Page Split
 &lt;a class="header-anchor" href="#what-is-page-split">&lt;/a>
-&lt;/h2>&lt;p>When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;/h2>&lt;p>When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class names, methods, properties, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -547,7 +547,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class name, methods, fields, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -594,7 +594,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>MySQL Locks</title><link>http://localhost:1313/en/post/mysql-locks/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-locks/</guid><description>&lt;h2 id="global-lock">Global Lock
+&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>MySQL Locks</title><link>https://ruokezhang.github.io/en/post/mysql-locks/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-locks/</guid><description>&lt;h2 id="global-lock">Global Lock
 &lt;a class="header-anchor" href="#global-lock">&lt;/a>
 &lt;/h2>&lt;p>Generally used when doing &lt;strong>full database backup&lt;/strong>. It blocks write operations and only allows read requests. Therefore, it&amp;rsquo;s usually chosen during business low-peak periods for full database backup.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -621,7 +621,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>MySQL Locks</title><link>http://localhost:1313/en/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql/lock/</guid><description>&lt;h2 id="global-locks">Global Locks
+&lt;/div>&lt;p>Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>MySQL Locks</title><link>https://ruokezhang.github.io/en/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/lock/</guid><description>&lt;h2 id="global-locks">Global Locks
 &lt;a class="header-anchor" href="#global-locks">&lt;/a>
 &lt;/h2>&lt;p>Typically used for full backups. Blocks writes and allows only reads, so usually run during off-peak.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -648,7 +648,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>DDL such as ALTER/DROP/TRUNCATE triggers table locks.&lt;/p></description></item><item><title>Transaction</title><link>http://localhost:1313/en/post/mysql/transactionmysql/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql/transactionmysql/</guid><description>&lt;p>Reference: Xiaolin coding&lt;/p>
+&lt;/div>&lt;p>DDL such as ALTER/DROP/TRUNCATE triggers table locks.&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</guid><description>&lt;p>Reference: Xiaolin coding&lt;/p>
 &lt;h2 id="acid-properties">ACID Properties
 &lt;a class="header-anchor" href="#acid-properties">&lt;/a>
 &lt;/h2>&lt;ul>
@@ -665,7 +665,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/ul>
 &lt;h2 id="isolation-levels">Isolation Levels
 &lt;a class="header-anchor" href="#isolation-levels">&lt;/a>
-&lt;/h2>&lt;p>Possible anomalies: dirty read, non-repeatable read, phantom read.&lt;/p></description></item><item><title>Binary Search</title><link>http://localhost:1313/en/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/binarysearch/</guid><description>&lt;p>
+&lt;/h2>&lt;p>Possible anomalies: dirty read, non-repeatable read, phantom read.&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/en/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/binarysearch/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
  
@@ -784,7 +784,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>BlackHorse Rating Login Design</title><link>http://localhost:1313/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;/div>&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>BlackHorse Rating Login Design</title><link>https://ruokezhang.github.io/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="sms-verification-code-login">SMS Verification Code Login
 &lt;a class="header-anchor" href="#sms-verification-code-login">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -800,25 +800,25 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://lo
 &lt;li>Extract token from header, retrieve user Map from Redis using token.&lt;/li>
 &lt;li>If user exists, convert Map to UserDTO, store in ThreadLocal, and refresh token expiry.&lt;/li>
 &lt;/ol>
-&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Exceptions and Generics</title><link>http://localhost:1313/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>http://localhost:1313/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error.&lt;/p>
 &lt;p>Error class represents serious errors, which are generally not recommended to be caught by &lt;code>catch&lt;/code> in our programs. We can only optimize Errors by optimizing the code. When an Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>Exception class has two subclasses: Checked Exception and Unchecked Exception.
 Checked Exception means that the exception will be checked at compile time. If the exception is not caught by &lt;code>catch&lt;/code> or not &lt;code>throws&lt;/code>, it will not pass compilation. This includes &lt;code>IOException&lt;/code>, &lt;code>ClassNotFoundException&lt;/code>.
-Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Graph</title><link>http://localhost:1313/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Graph</title><link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="Graph Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Graph Problem List
  
@@ -840,9 +840,9 @@ Unchecked Exception means that it will not be checked at compile time. It includ
 &lt;h4 id="261-graph-valid-tree">261. Graph Valid Tree
 &lt;a class="header-anchor" href="#261-graph-valid-tree">&lt;/a>
 &lt;/h4>&lt;p>&lt;strong>Undirected graph&lt;/strong>, check if it&amp;rsquo;s &lt;strong>acyclic and connected&lt;/strong>.&lt;/p>
-&lt;p>Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+&lt;p>Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -907,9 +907,9 @@ Unchecked Exception means that it will not be checked at compile time. It includ
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -974,7 +974,7 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, the average time complexity for HashMap&amp;rsquo;s insertion, deletion, and lookup operations is O(1).
-If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Process</title><link>http://localhost:1313/en/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/process/</guid><description>&lt;h2 id="process">Process
+If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/en/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/process/</guid><description>&lt;h2 id="process">Process
 &lt;a class="header-anchor" href="#process">&lt;/a>
 &lt;/h2>&lt;p>A process uniquely owns:&lt;/p>
 &lt;ol>
@@ -992,7 +992,7 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;/ol>
 &lt;h3 id="process-termination">Process termination
 &lt;a class="header-anchor" href="#process-termination">&lt;/a>
-&lt;/h3>&lt;p>A process can terminate via three paths:&lt;/p></description></item><item><title>Virtualization</title><link>http://localhost:1313/en/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/virtualization/</guid><description>&lt;p>
+&lt;/h3>&lt;p>A process can terminate via three paths:&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/en/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/virtualization/</guid><description>&lt;p>
 &lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="Referenced technical blog" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Referenced technical blog
  
@@ -1016,8 +1016,8 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;h2 id="virtual-memory">Virtual Memory
 &lt;a class="header-anchor" href="#virtual-memory">&lt;/a>
 &lt;/h2>&lt;p>Virtualization: each process believes it has its own address space, and different processes&amp;rsquo; address spaces are isolated from each other.
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="Address Space" />&lt;/p>
-&lt;p>In practice, when the CPU gets a virtual address, the MMU inside the CPU translates the virtual address into a physical address (an address in main memory). Each memory address refers to a single byte.&lt;/p></description></item><item><title>Troubleshooting</title><link>http://localhost:1313/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/oom/</guid><description>&lt;p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="Address Space" />&lt;/p>
+&lt;p>In practice, when the CPU gets a virtual address, the MMU inside the CPU translates the virtual address into a physical address (an address in main memory). Each memory address refers to a single byte.&lt;/p></description></item><item><title>Troubleshooting</title><link>https://ruokezhang.github.io/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/oom/</guid><description>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Reference video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Reference video (Chinese)
  
@@ -1033,13 +1033,13 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;/ol>
 &lt;blockquote>
 &lt;p>jmap is a JDK CLI tool to generate a heap dump. A heap dump is a binary snapshot of all objects on the heap.
-Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>Transaction</title><link>http://localhost:1313/en/post/mysql-transaction/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-transaction/</guid><description>&lt;p>Reference: Xiaolin Coding&lt;/p>
+Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/en/post/mysql-transaction/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-transaction/</guid><description>&lt;p>Reference: Xiaolin Coding&lt;/p>
 &lt;h2 id="transaction-properties">Transaction Properties
 &lt;a class="header-anchor" href="#transaction-properties">&lt;/a>
 &lt;/h2>&lt;p>&lt;strong>Atomicity&lt;/strong>: Implemented via &lt;code>undo log&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Consistency&lt;/strong>: Achieved through the other three properties. Before and after a transaction, the database transitions from one consistent state to another.&lt;/p>
 &lt;p>&lt;strong>Isolation&lt;/strong>: Implemented via MVCC/locking. The execution of one transaction does not affect the execution of others.&lt;/p>
-&lt;p>&lt;strong>Durability&lt;/strong>: Implemented via &lt;code>redo log&lt;/code>. Once a transaction is committed, its changes to the database are permanent, even in the event of a system failure or crash.&lt;/p></description></item><item><title>Indexes</title><link>http://localhost:1313/en/post/mysql-indexes/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql-indexes/</guid><description>&lt;h2 id="clustered-index-secondary-index">Clustered Index, Secondary Index
+&lt;p>&lt;strong>Durability&lt;/strong>: Implemented via &lt;code>redo log&lt;/code>. Once a transaction is committed, its changes to the database are permanent, even in the event of a system failure or crash.&lt;/p></description></item><item><title>Indexes</title><link>https://ruokezhang.github.io/en/post/mysql-indexes/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-indexes/</guid><description>&lt;h2 id="clustered-index-secondary-index">Clustered Index, Secondary Index
 &lt;a class="header-anchor" href="#clustered-index-secondary-index">&lt;/a>
 &lt;/h2>&lt;h3 id="clustered-index">Clustered Index
 &lt;a class="header-anchor" href="#clustered-index">&lt;/a>
@@ -1051,7 +1051,7 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/ol>
 &lt;h3 id="b-tree">B+ Tree
 &lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Indexes</title><link>http://localhost:1313/en/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql/sqlindex/</guid><description>&lt;h2 id="clustered-vs-secondary-indexes">Clustered vs Secondary Indexes
+&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Indexes</title><link>https://ruokezhang.github.io/en/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/sqlindex/</guid><description>&lt;h2 id="clustered-vs-secondary-indexes">Clustered vs Secondary Indexes
 &lt;a class="header-anchor" href="#clustered-vs-secondary-indexes">&lt;/a>
 &lt;/h2>&lt;h3 id="clustered-index">Clustered Index
 &lt;a class="header-anchor" href="#clustered-index">&lt;/a>
@@ -1063,7 +1063,7 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/ol>
 &lt;h3 id="b-tree">B+ Tree
 &lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB stores both clustered and secondary indexes as B+ Trees.&lt;/p></description></item><item><title>ThreadLocal &amp; ThreadPool</title><link>http://localhost:1313/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;/h3>&lt;p>By default, InnoDB stores both clustered and secondary indexes as B+ Trees.&lt;/p></description></item><item><title>ThreadLocal &amp; ThreadPool</title><link>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
 &lt;/h2>&lt;p>The &lt;strong>&lt;code>Thread&lt;/code> class&lt;/strong> has a variable &lt;code>threadLocals&lt;/code>, which can be considered a &lt;code>HashMap&lt;/code> used to store thread-private content.&lt;/p>
@@ -1079,7 +1079,7 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>Skill Problems</title><link>http://localhost:1313/en/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/div>&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>Skill Problems</title><link>https://ruokezhang.github.io/en/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>Consider the last permutation: 5-4-3-2-1, all in descending order.&lt;/p>
 &lt;ol>
@@ -1090,7 +1090,7 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/ol>
 &lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
 &lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
-&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Array</title><link>http://localhost:1313/en/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/array/</guid><description>&lt;h3 id="lc-188-rotate-array">LC 188 Rotate Array
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Array</title><link>https://ruokezhang.github.io/en/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/array/</guid><description>&lt;h3 id="lc-188-rotate-array">LC 188 Rotate Array
 &lt;a class="header-anchor" href="#lc-188-rotate-array">&lt;/a>
 &lt;/h3>&lt;p>Input: nums = [1,2,3,4,5,6,7], k = 3
 Output: [5,6,7,1,2,3,4]&lt;/p>
@@ -1104,12 +1104,12 @@ Output: [5,6,7,1,2,3,4]&lt;/p>
 &lt;a class="header-anchor" href="#lc-75-sort-colors">&lt;/a>
 &lt;/h4>&lt;p>Use pointer i to traverse array, left and right pointers point to &lt;strong>next position to fill 0 or 2&lt;/strong>.
 First continuously fill 2s, then fill 0s when encountered.
-Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></description></item><item><title>JMM</title><link>http://localhost:1313/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="concurrency-issues">Concurrency Issues
 &lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
 The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
 &lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
 &lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
@@ -1119,7 +1119,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;p>Solution: Prohibit compiler reordering&lt;/p>
 &lt;h3 id="instruction-parallel-reordering">Instruction Parallel Reordering
 &lt;a class="header-anchor" href="#instruction-parallel-reordering">&lt;/a>
-&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Sorting</title><link>http://localhost:1313/en/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">Merge Sort
+&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/en/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">Merge Sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: Sort a Linked List
 &lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
@@ -1136,7 +1136,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>Common Python Operations</title><link>http://localhost:1313/en/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
+&lt;/a>&lt;/p></description></item><item><title>Common Python Operations</title><link>https://ruokezhang.github.io/en/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
 &lt;p>LC 189 [:] slicing operation&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
@@ -1168,7 +1168,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>Java Threads</title><link>http://localhost:1313/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>Java Threads</title><link>https://ruokezhang.github.io/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="threads">Threads
 &lt;a class="header-anchor" href="#threads">&lt;/a>
 &lt;/h2>&lt;h3 id="thread-implementation">Thread Implementation
@@ -1176,7 +1176,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
 &lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
 &lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
-&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Prefix Sum</title><link>http://localhost:1313/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/presum/</guid><description>&lt;p>
+&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Prefix Sum</title><link>https://ruokezhang.github.io/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="Prefix Sum Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Prefix Sum Problem List
  
@@ -1208,7 +1208,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;li>Use prefix sum to count the number of plates between them&lt;/li>
 &lt;/ol>
 &lt;p>Steps 1 and 2 can use binary search, but it will time out.
-It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p></description></item><item><title>Sliding Window</title><link>http://localhost:1313/en/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/slidingwindow/</guid><description>&lt;p>reference: Lingchashan Aifu&lt;/p>
+It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p></description></item><item><title>Sliding Window</title><link>https://ruokezhang.github.io/en/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/slidingwindow/</guid><description>&lt;p>reference: Lingchashan Aifu&lt;/p>
 &lt;h2 id="fixed-size-sliding-window">Fixed-size Sliding Window
 &lt;a class="header-anchor" href="#fixed-size-sliding-window">&lt;/a>
 &lt;/h2>&lt;p>Entry: The element at index i enters the window, update relevant statistics. If i&amp;lt;k-1, repeat the first step.&lt;/p>
@@ -1218,7 +1218,7 @@ It&amp;rsquo;s best to pre-process and record the position of the first candle t
 LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grumpy times + number of grumpy customers within the window.&lt;/p>
 &lt;h4 id="1297-maximum-number-of-occurrences-of-a-substring-">1297. Maximum Number of Occurrences of a Substring ✨
 &lt;a class="header-anchor" href="#1297-maximum-number-of-occurrences-of-a-substring-">&lt;/a>
-&lt;/h4>&lt;p>High-frequency problem, greedy approach.&lt;/p></description></item><item><title>Garbage Collection</title><link>http://localhost:1313/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
+&lt;/h4>&lt;p>High-frequency problem, greedy approach.&lt;/p></description></item><item><title>Garbage Collection</title><link>https://ruokezhang.github.io/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="Understanding the JVM (3rd Edition, Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Understanding the JVM (3rd Edition, Chinese)
  
@@ -1236,7 +1236,7 @@ LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grum
 &lt;/h3>&lt;p>Drawback: they reference each other, so neither count goes to 0; they won’t be collected.&lt;/p>
 &lt;h3 id="reachability-analysis">Reachability Analysis
 &lt;a class="header-anchor" href="#reachability-analysis">&lt;/a>
-&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>Dynamic Programming</title><link>http://localhost:1313/en/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/dp/</guid><description>&lt;p>
+&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>Dynamic Programming</title><link>https://ruokezhang.github.io/en/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dp/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="Ling Shen Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Ling Shen Problem List
  
@@ -1245,13 +1245,13 @@ LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grum
 &lt;/a>&lt;/p>
 &lt;h2 id="linear-dp">Linear DP
 &lt;a class="header-anchor" href="#linear-dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h4 id="10-regular-expression-matching">10. Regular Expression Matching
 &lt;a class="header-anchor" href="#10-regular-expression-matching">&lt;/a>
 &lt;/h4>&lt;p>dp[i][j] indicates if s(0,i-1) matches p(0,j-1)&lt;/p>
 &lt;p>Base case: s empty, p empty → True; s empty, p x&lt;em>x&lt;/em> type → True
 Compare s[i], p[j]: if not match and p[j] is *, and s[i] matches p[j-1], three possibilities: match one letter, zero letters, multiple letters.
-If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item><item><title>Linked List</title><link>http://localhost:1313/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
+If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
 &lt;a class="header-anchor" href="#reverse-linked-list">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1304,7 +1304,7 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Influencer Exploration</title><link>http://localhost:1313/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item><item><title>Influencer Exploration</title><link>https://ruokezhang.github.io/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
 &lt;a class="header-anchor" href="#like-design">&lt;/a>
 &lt;/h2>&lt;p>Use Redis sorted set: key is post ID, set stores user IDs who liked, score is timestamp of like.&lt;/p>
 &lt;p>When frontend views post details, backend needs to:&lt;/p>
@@ -1327,7 +1327,7 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>http://localhost:1313/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -1441,7 +1441,7 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>http://localhost:1313/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>An interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -1555,13 +1555,13 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>http://localhost:1313/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>http://localhost:1313/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>https://ruokezhang.github.io/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>A functional interface is defined as an interface that must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>Concurrency</title><link>http://localhost:1313/en/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/concurrency/</guid><description>&lt;h2 id="goals">Goals
+&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>Concurrency</title><link>https://ruokezhang.github.io/en/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/concurrency/</guid><description>&lt;h2 id="goals">Goals
 &lt;a class="header-anchor" href="#goals">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>Mutual exclusion (e.g., A and B don’t run at the same time) — process mutual exclusion
@@ -1598,7 +1598,7 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>http://localhost:1313/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
+&lt;/a>&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
 &lt;a class="header-anchor" href="#consistency">&lt;/a>
 &lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
 &lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
@@ -1617,14 +1617,14 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/ul>
 &lt;h4 id="update-then-delete-delayed-double-delete">Update-Then-Delete (Delayed Double Delete)
 &lt;a class="header-anchor" href="#update-then-delete-delayed-double-delete">&lt;/a>
-&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>http://localhost:1313/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
+&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
 &lt;a class="header-anchor" href="#global-id-generator-redis-auto-increment">&lt;/a>
 &lt;/h2>&lt;p>Disadvantages of database auto-increment IDs:&lt;/p>
 &lt;ol>
 &lt;li>May expose business metrics: users could infer daily coupon sales.&lt;/li>
 &lt;li>Large coupon volumes lead to oversized IDs; sharding causes ID conflicts.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/p>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -1655,7 +1655,7 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item><item><title>JMeter on Mac</title><link>http://localhost:1313/en/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/jmeter/</guid><description>&lt;p>
+&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/en/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter Usage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter Usage
  
@@ -1663,13 +1663,13 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
  
 &lt;/a>
 Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p>
-&lt;p>In this path, run the sh jmeter command to start JMeter.&lt;/p></description></item><item><title>JVM Basic</title><link>http://localhost:1313/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;p>In this path, run the sh jmeter command to start JMeter.&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/classFile.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="basic-info">Basic Info
 &lt;a class="header-anchor" href="#basic-info">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/general.png" alt="Alt text" />&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
 &lt;li>Version number, representing the compiler (javac) version.&lt;/li>
@@ -1677,8 +1677,8 @@ Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p
 &lt;/ol>
 &lt;h3 id="constant-pool">Constant Pool
 &lt;a class="header-anchor" href="#constant-pool">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/constantPool.png" alt="Alt text" />
-There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>http://localhost:1313/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>http://localhost:1313/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
+There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>https://ruokezhang.github.io/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://ruokezhang.github.io/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
 &lt;a class="header-anchor" href="#welcome-to-my-technical-blog">&lt;/a>
 &lt;/h1>&lt;p>Hello and welcome to my blog! This is where I share my journey in software development, system design, and technology exploration.&lt;/p>
 &lt;h2 id="what-to-expect">What to Expect
@@ -1701,4 +1701,4 @@ There are 14 kinds of constants, grouped into literals and symbolic references. 
 &lt;/ul>
 &lt;h2 id="why-this-blog">Why This Blog?
 &lt;a class="header-anchor" href="#why-this-blog">&lt;/a>
-&lt;/h2>&lt;p>This blog serves multiple purposes:&lt;/p></description></item><item><title/><link>http://localhost:1313/en/post/leetcode/stackqueue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/stackqueue/</guid><description/></item><item><title/><link>http://localhost:1313/en/post/mysql/mysql_interview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/mysql/mysql_interview/</guid><description/></item></channel></rss>
+&lt;/h2>&lt;p>This blog serves multiple purposes:&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</guid><description/></item><item><title/><link>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</guid><description/></item></channel></rss>
