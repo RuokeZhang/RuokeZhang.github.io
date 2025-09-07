@@ -1693,27 +1693,4 @@ Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p
 &lt;h3 id="constant-pool">Constant Pool
 &lt;a class="header-anchor" href="#constant-pool">&lt;/a>
 &lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
-There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item><item><title>Welcome to My Blog</title><link>https://ruokezhang.github.io/en/post/welcome/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://ruokezhang.github.io/en/post/welcome/</guid><description>&lt;h1 id="welcome-to-my-technical-blog">Welcome to My Technical Blog
-&lt;a class="header-anchor" href="#welcome-to-my-technical-blog">&lt;/a>
-&lt;/h1>&lt;p>Hello and welcome to my blog! This is where I share my journey in software development, system design, and technology exploration.&lt;/p>
-&lt;h2 id="what-to-expect">What to Expect
-&lt;a class="header-anchor" href="#what-to-expect">&lt;/a>
-&lt;/h2>&lt;h3 id="technical-content">Technical Content
-&lt;a class="header-anchor" href="#technical-content">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Backend Development&lt;/strong>: Java, Spring Boot, microservices&lt;/li>
-&lt;li>&lt;strong>Database&lt;/strong>: MySQL optimization, Redis caching strategies&lt;/li>
-&lt;li>&lt;strong>System Design&lt;/strong>: Scalable architecture patterns&lt;/li>
-&lt;li>&lt;strong>Algorithms&lt;/strong>: LeetCode solutions and analysis&lt;/li>
-&lt;/ul>
-&lt;h3 id="learning-notes">Learning Notes
-&lt;a class="header-anchor" href="#learning-notes">&lt;/a>
-&lt;/h3>&lt;p>I believe in learning in public. You&amp;rsquo;ll find my notes on:&lt;/p>
-&lt;ul>
-&lt;li>New technologies I&amp;rsquo;m exploring&lt;/li>
-&lt;li>Books I&amp;rsquo;m reading&lt;/li>
-&lt;li>Conferences and talks I attend&lt;/li>
-&lt;/ul>
-&lt;h2 id="why-this-blog">Why This Blog?
-&lt;a class="header-anchor" href="#why-this-blog">&lt;/a>
-&lt;/h2>&lt;p>This blog serves multiple purposes:&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</guid><description/></item><item><title/><link>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</guid><description/></item></channel></rss>
+There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/stackqueue/</guid><description/></item><item><title/><link>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/mysql_interview/</guid><description/></item></channel></rss>

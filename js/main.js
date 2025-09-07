@@ -337,20 +337,17 @@ NexT.utils = {
     const minute = 1000 * 60;
     const hour = minute * 60;
     const day = hour * 24;
-    const month = day * 30;
-    const year = month * 12;
 
     let result;
     if (mode == 1) {
-      const monthCount = dateDiff / month;
       const dayCount = dateDiff / day;
       const hourCount = dateDiff / hour;
       const minuteCount = dateDiff / minute;
 
-      if (monthCount > 12) {
+      if (dayCount >= 365) {
         result = datePost.toLocaleDateString().replace(/\//g, '-');
-      } else if (monthCount >= 1) {
-        result = parseInt(monthCount) + NexT.CONFIG.i18n.ds_month;
+      } else if (dayCount >= 30) {
+        result = parseInt(dayCount / 30) + NexT.CONFIG.i18n.ds_month;
       } else if (dayCount >= 1) {
         result = parseInt(dayCount) + NexT.CONFIG.i18n.ds_day;
       } else if (hourCount >= 1) {
@@ -361,13 +358,14 @@ NexT.utils = {
         result = NexT.CONFIG.i18n.ds_just;
       }
     } else if (mode == 2) {
-      const yearCount = parseInt(dateDiff / year);
-      if (yearCount >= 1) {
-        const dayCount = parseInt((dateDiff - (yearCount * year)) / day);
-        result = yearCount + NexT.CONFIG.i18n.ds_years + dayCount + NexT.CONFIG.i18n.ds_days;
+      const days = Math.floor(dateDiff / day);
+      const years = Math.floor(days / 365);
+      const remainingDays = days % 365;
+      
+      if (years >= 1) {
+        result = years + NexT.CONFIG.i18n.ds_years + remainingDays + NexT.CONFIG.i18n.ds_days;
       } else {
-        const dayCount = parseInt(dateDiff / day);
-        result = dayCount + NexT.CONFIG.i18n.ds_days;
+        result = days + NexT.CONFIG.i18n.ds_days;
       }
     } else {
       result = parseInt(dateDiff / day);

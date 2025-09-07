@@ -579,9 +579,4 @@ In this path, run the sh jmeter command to start JMeter.
 javap -v Main.class temp.txt Use this to inspect constant pool information.
 Fields, Methods, Attributes Take methods as an example: the table records access_flags (public/static/volatile), and references into the constant pool (method name string, method descriptor string).
 Class Life Cycle Loading, Linking (Verification, Preparation, Resolution), Initialization, Use, Unloading
-Loading A …  </content></entry><entry><title>Welcome to My Blog</title><url>/en/post/welcome/</url><categories><category>general</category></categories><tags><tag>welcome</tag><tag>introduction</tag></tags><content type="html">  Welcome to My Technical Blog Hello and welcome to my blog! This is where I share my journey in software development, system design, and technology exploration.
-What to Expect Technical Content Backend Development: Java, Spring Boot, microservices Database: MySQL optimization, Redis caching strategies System Design: Scalable architecture patterns Algorithms: LeetCode solutions and analysis Learning Notes I believe in learning in public. You&amp;rsquo;ll find my notes on:
-New technologies I&amp;rsquo;m exploring Books I&amp;rsquo;m reading Conferences and talks I attend Why This Blog? This blog serves multiple purposes:
-Documentation: A place to document my learning journey Sharing: Contributing to the developer community Reflection: Writing helps me understand concepts better Thank you for visiting, and I hope you find the content useful!
-Happy coding!
-  </content></entry><entry><title/><url>/en/post/leetcode/stackqueue/</url><categories/><tags/><content type="html">    </content></entry><entry><title/><url>/en/post/mysql/mysql_interview/</url><categories/><tags/><content type="html">    </content></entry></search>
+Loading A …  </content></entry><entry><title/><url>/en/post/leetcode/stackqueue/</url><categories/><tags/><content type="html">    </content></entry><entry><title/><url>/en/post/mysql/mysql_interview/</url><categories/><tags/><content type="html">    </content></entry></search>
