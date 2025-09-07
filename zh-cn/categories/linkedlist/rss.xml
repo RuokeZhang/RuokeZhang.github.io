@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LinkedList on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/linkedlist/</link><description>Recent content in LinkedList on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/linkedlist/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linked List</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/linkedlist/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LinkedList on Ruoke Zhang</title><link>http://localhost:1313/zh-cn/categories/linkedlist/</link><description>Recent content in LinkedList on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/categories/linkedlist/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linked List</title><link>http://localhost:1313/zh-cn/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/leetcode/linkedlist/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -58,4 +58,4 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

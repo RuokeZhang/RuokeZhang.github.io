@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>https://ruokezhang.github.io/en/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/process/</guid><description>&lt;h2 id="process">Process
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>http://localhost:1313/en/tags/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>http://localhost:1313/en/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/process/</guid><description>&lt;h2 id="process">Process
 &lt;a class="header-anchor" href="#process">&lt;/a>
 &lt;/h2>&lt;p>A process uniquely owns:&lt;/p>
 &lt;ol>
@@ -16,7 +16,7 @@
 &lt;/ol>
 &lt;h3 id="process-termination">Process termination
 &lt;a class="header-anchor" href="#process-termination">&lt;/a>
-&lt;/h3>&lt;p>A process can terminate via three paths:&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/en/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/virtualization/</guid><description>&lt;p>
+&lt;/h3>&lt;p>A process can terminate via three paths:&lt;/p></description></item><item><title>Virtualization</title><link>http://localhost:1313/en/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/virtualization/</guid><description>&lt;p>
 &lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="Referenced technical blog" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Referenced technical blog
  
@@ -40,8 +40,8 @@
 &lt;h2 id="virtual-memory">Virtual Memory
 &lt;a class="header-anchor" href="#virtual-memory">&lt;/a>
 &lt;/h2>&lt;p>Virtualization: each process believes it has its own address space, and different processes&amp;rsquo; address spaces are isolated from each other.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="Address Space" />&lt;/p>
-&lt;p>In practice, when the CPU gets a virtual address, the MMU inside the CPU translates the virtual address into a physical address (an address in main memory). Each memory address refers to a single byte.&lt;/p></description></item><item><title>Concurrency</title><link>https://ruokezhang.github.io/en/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/os/concurrency/</guid><description>&lt;h2 id="goals">Goals
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/address_space.png" alt="Address Space" />&lt;/p>
+&lt;p>In practice, when the CPU gets a virtual address, the MMU inside the CPU translates the virtual address into a physical address (an address in main memory). Each memory address refers to a single byte.&lt;/p></description></item><item><title>Concurrency</title><link>http://localhost:1313/en/post/os/concurrency/</link><pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/os/concurrency/</guid><description>&lt;h2 id="goals">Goals
 &lt;a class="header-anchor" href="#goals">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>Mutual exclusion (e.g., A and B don’t run at the same time) — process mutual exclusion

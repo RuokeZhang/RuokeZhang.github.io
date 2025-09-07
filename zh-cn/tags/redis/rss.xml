@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>Redis面试题整理</title><link>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Ruoke Zhang</title><link>http://localhost:1313/zh-cn/tags/redis/</link><description>Recent content in Redis on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/tags/redis/rss.xml" rel="self" type="application/rss+xml"/><item><title>Redis面试题整理</title><link>http://localhost:1313/zh-cn/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
 &lt;a class="header-anchor" href="#zset">&lt;/a>
 &lt;/h2>&lt;h3 id="压缩列表">压缩列表
 &lt;a class="header-anchor" href="#%e5%8e%8b%e7%bc%a9%e5%88%97%e8%a1%a8">&lt;/a>
-&lt;/h3>&lt;p>当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p></description></item><item><title>高可用</title><link>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
+&lt;/h3>&lt;p>当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p></description></item><item><title>高可用</title><link>http://localhost:1313/zh-cn/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
 &lt;a class="header-anchor" href="#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6">&lt;/a>
 &lt;/h2>&lt;p>主要优点：数据备份、读写分离，通常和&lt;strong>哨兵模式&lt;/strong>结合使用。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
 主服务器负责&lt;strong>读写请求&lt;/strong>，从服务器&lt;strong>默认只负责读请求&lt;/strong>。&lt;br>
-主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p></description></item><item><title>黑马点评登录设计</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p></description></item><item><title>黑马点评登录设计</title><link>http://localhost:1313/zh-cn/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="短信验证码登录">短信验证码登录
 &lt;a class="header-anchor" href="#%e7%9f%ad%e4%bf%a1%e9%aa%8c%e8%af%81%e7%a0%81%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -23,7 +23,7 @@
 &lt;li>首先获取请求头中的 token，然后基于token获取redis中存储的用户（一个 Map对象）。&lt;/li>
 &lt;li>如果用户存在，则将Map对象转换为UserDTO，并且把它存储在ThreadLocal中，并且刷新 token 的有效期。&lt;/li>
 &lt;/ol>
-&lt;p>第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。&lt;/p></description></item><item><title>持久化</title><link>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
+&lt;p>第二个Interceptor：除了指定的（不需要用户登陆的）路径之外，其它请求路径都会被 LoginInterceptor 拦截，如果此时没有登录，（UserHolder里为空—），则无法处理请求。&lt;/p></description></item><item><title>持久化</title><link>http://localhost:1313/zh-cn/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
 
 &lt;a href="https://www.bilibili.com/video/BV1sK421i7B8/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
@@ -33,10 +33,10 @@
 &lt;/a>&lt;/p>
 &lt;h2 id="aof">AOF
 &lt;a class="header-anchor" href="#aof">&lt;/a>
-&lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着将这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
+&lt;/h2>&lt;p>Append Ony File，是一个&lt;strong>文本文件&lt;/strong>，因此较大。 当客户端发起一个写请求时，Redis 主线程首先在内存中执行写操作，接着将这个写命令同步到&lt;strong>磁盘中的 AOF 日志&lt;/strong>中。&lt;/p></description></item><item><title>达人探店</title><link>http://localhost:1313/zh-cn/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
 &lt;a class="header-anchor" href="#%e7%82%b9%e8%b5%9e%e8%ae%be%e8%ae%a1">&lt;/a>
 &lt;/h2>&lt;p>用Redis的 sorted set, key是当前 post的ID，set里面存点赞用户的 ID，score 为点赞的时间戳。&lt;/p>
-&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
+&lt;p>前端在看帖子详情的时候，后端不仅需要根据帖子id去数据库里拿内容，还要通过redis判断帖子是否被当前用户点过赞。在 Blog里面加一个liked字段，作为结果一并返回给前端。&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>http://localhost:1313/zh-cn/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
 &lt;/h2>&lt;h3 id="缓存更新策略">缓存更新策略
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%9b%b4%e6%96%b0%e7%ad%96%e7%95%a5">&lt;/a>
@@ -47,13 +47,13 @@
 &lt;/ol>
 &lt;h3 id="缓存数据库一致性">缓存数据库一致性
 &lt;a class="header-anchor" href="#%e7%bc%93%e5%ad%98%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
-&lt;/h3>&lt;p>有请求并发到来时，不管是先更新缓存后更新数据库，还是先更新数据库后更新缓存，都可能出现缓存不一致问题。&lt;/p></description></item><item><title>优惠券秒杀</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
+&lt;/h3>&lt;p>有请求并发到来时，不管是先更新缓存后更新数据库，还是先更新数据库后更新缓存，都可能出现缓存不一致问题。&lt;/p></description></item><item><title>优惠券秒杀</title><link>http://localhost:1313/zh-cn/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/blackhorserating/voucher/</guid><description>&lt;h2 id="全局id生成器-redis自增">全局ID生成器: Redis自增
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80id%e7%94%9f%e6%88%90%e5%99%a8-redis%e8%87%aa%e5%a2%9e">&lt;/a>
 &lt;/h2>&lt;p>使用数据库自增ID的缺点：&lt;/p>
 &lt;ol>
 &lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -85,7 +85,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>Redis缓存</title><link>https://ruokezhang.github.io/zh-cn/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/caching_patterns/</guid><description>&lt;h2 id="caching-patterns">Caching Patterns
+&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>Redis缓存</title><link>http://localhost:1313/zh-cn/post/redis/caching_patterns/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/zh-cn/post/redis/caching_patterns/</guid><description>&lt;h2 id="caching-patterns">Caching Patterns
 &lt;a class="header-anchor" href="#caching-patterns">&lt;/a>
 &lt;/h2>&lt;p>
 &lt;a href="https://redis.io/learn/howtos/solutions/microservices/caching" title=" Redis Doc: How to use Redis for Query Caching" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">

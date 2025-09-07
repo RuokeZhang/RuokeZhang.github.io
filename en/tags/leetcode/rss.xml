@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="common-operations">Common Operations
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leetcode on Ruoke Zhang</title><link>http://localhost:1313/en/tags/leetcode/</link><description>Recent content in Leetcode on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/leetcode/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>http://localhost:1313/en/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="common-operations">Common Operations
 &lt;a class="header-anchor" href="#common-operations">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count(): Returns the number of 1s in the binary representation of x. Can also be interpreted as the minimum number of powers of 2 needed to represent x.&lt;/p>
 &lt;h2 id="brain-teasers">Brain Teasers
@@ -6,7 +6,7 @@
 &lt;/h2>&lt;h4 id="2749-minimum-operations-to-make-the-integer-zero">2749. Minimum Operations to Make the Integer Zero
 &lt;a class="header-anchor" href="#2749-minimum-operations-to-make-the-integer-zero">&lt;/a>
 &lt;/h4>&lt;p>Let x = num1 - k * num2, then the problem transforms to: Can x be represented using k powers of 2 (duplicates allowed)?&lt;/p>
-&lt;p>Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p></description></item><item><title>Company Wise</title><link>https://ruokezhang.github.io/en/post/leetcode/company_wise/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/company_wise/</guid><description>&lt;ul>
+&lt;p>Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p></description></item><item><title>Company Wise</title><link>http://localhost:1313/en/post/leetcode/company_wise/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/company_wise/</guid><description>&lt;ul>
 &lt;li>
 &lt;ol start="767">
 &lt;li>Reorganize String (Roblox)&lt;/li>
@@ -283,7 +283,7 @@
 &lt;li>Number of Subarrays of Size K and Average Greater than or Equal to Threshold (LinkedIn)&lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;/ul></description></item><item><title>Math</title><link>https://ruokezhang.github.io/en/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/math/</guid><description>&lt;h2 id="prime-numbers">Prime Numbers
+&lt;/ul></description></item><item><title>Math</title><link>http://localhost:1313/en/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/math/</guid><description>&lt;h2 id="prime-numbers">Prime Numbers
 &lt;a class="header-anchor" href="#prime-numbers">&lt;/a>
 &lt;/h2>&lt;h3 id="sieve-of-eratosthenes">Sieve of Eratosthenes
 &lt;a class="header-anchor" href="#sieve-of-eratosthenes">&lt;/a>
@@ -313,7 +313,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="204-count-primes">204. Count Primes
 &lt;a class="header-anchor" href="#204-count-primes">&lt;/a>
-&lt;/h4>&lt;p>p[i] represents the number of primes less than or equal to i. Starting from i=2, p[i]==0 &amp;lt;=&amp;gt; i is prime. Then, starting from i&lt;em>i, mark multiples of i as composite (by setting p[i&lt;/em>k]=-1). And, p[i] is assigned p[i-1]+1.&lt;/p></description></item><item><title>String</title><link>https://ruokezhang.github.io/en/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;/h4>&lt;p>p[i] represents the number of primes less than or equal to i. Starting from i=2, p[i]==0 &amp;lt;=&amp;gt; i is prime. Then, starting from i&lt;em>i, mark multiples of i as composite (by setting p[i&lt;/em>k]=-1). And, p[i] is assigned p[i-1]+1.&lt;/p></description></item><item><title>String</title><link>http://localhost:1313/en/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
 &lt;/h3>&lt;p>
 &lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -334,7 +334,7 @@
 &lt;/ul>
 &lt;p>Step 2: Compare two strings
 abeababeabf
-abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/en/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/simulation/</guid><description>&lt;h3 id="755-pour-water">755. Pour Water
+abeabf&lt;/p></description></item><item><title>Simulation</title><link>http://localhost:1313/en/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/simulation/</guid><description>&lt;h3 id="755-pour-water">755. Pour Water
 &lt;a class="header-anchor" href="#755-pour-water">&lt;/a>
 &lt;/h3>&lt;h2 id="time-order">Time Order
 &lt;a class="header-anchor" href="#time-order">&lt;/a>
@@ -350,14 +350,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Data Structure</title><link>https://ruokezhang.github.io/en/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
+&lt;/div></description></item><item><title>Data Structure</title><link>http://localhost:1313/en/post/leetcode/data_structure/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/data_structure/</guid><description>&lt;h2 id="trie">Trie
 &lt;a class="header-anchor" href="#trie">&lt;/a>
 &lt;/h2>&lt;h4 id="440-k-th-smallest-in-lexicographical-order">440. K-th Smallest in Lexicographical Order
 &lt;a class="header-anchor" href="#440-k-th-smallest-in-lexicographical-order">&lt;/a>
 &lt;/h4>&lt;ul>
 &lt;li>How to get lexicographical order from smallest to largest? Build a deca-tree for numbers and then traverse it in pre-order.&lt;/li>
 &lt;li>How to get the number of children of a node? Use the next node on the same level.&lt;/li>
-&lt;/ul></description></item><item><title>Greedy</title><link>https://ruokezhang.github.io/en/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/greedy/</guid><description>&lt;p>
+&lt;/ul></description></item><item><title>Greedy</title><link>http://localhost:1313/en/post/leetcode/greedy/</link><pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/greedy/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/g6KTKL/" title="Ling Shen Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Ling Shen Problem List
  
@@ -377,7 +377,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;p>Proof by contradiction: g is a strictly increasing array.&lt;/p>
 &lt;h4 id="659-split-array-into-consecutive-subsequences">659. Split Array into Consecutive Subsequences
 &lt;a class="header-anchor" href="#659-split-array-into-consecutive-subsequences">&lt;/a>
-&lt;/h4>&lt;p>tail[i] is used to represent the number of subsequences ending with i. This way, when i+1 is encountered, it can be placed.&lt;/p></description></item><item><title>Binary Search</title><link>https://ruokezhang.github.io/en/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/binarysearch/</guid><description>&lt;p>
+&lt;/h4>&lt;p>tail[i] is used to represent the number of subsequences ending with i. This way, when i+1 is encountered, it can be placed.&lt;/p></description></item><item><title>Binary Search</title><link>http://localhost:1313/en/post/leetcode/binarysearch/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/binarysearch/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" title="https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/
  
@@ -496,7 +496,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>Graph</title><link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;/div>&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>Graph</title><link>http://localhost:1313/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="Graph Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Graph Problem List
  
@@ -518,7 +518,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;h4 id="261-graph-valid-tree">261. Graph Valid Tree
 &lt;a class="header-anchor" href="#261-graph-valid-tree">&lt;/a>
 &lt;/h4>&lt;p>&lt;strong>Undirected graph&lt;/strong>, check if it&amp;rsquo;s &lt;strong>acyclic and connected&lt;/strong>.&lt;/p>
-&lt;p>Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p></description></item><item><title>Skill Problems</title><link>https://ruokezhang.github.io/en/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;p>Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p></description></item><item><title>Skill Problems</title><link>http://localhost:1313/en/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
 &lt;/h2>&lt;p>Consider the last permutation: 5-4-3-2-1, all in descending order.&lt;/p>
 &lt;ol>
@@ -529,7 +529,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/ol>
 &lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
 &lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
-&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Array</title><link>https://ruokezhang.github.io/en/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/array/</guid><description>&lt;h3 id="lc-188-rotate-array">LC 188 Rotate Array
+&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Array</title><link>http://localhost:1313/en/post/leetcode/array/</link><pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/array/</guid><description>&lt;h3 id="lc-188-rotate-array">LC 188 Rotate Array
 &lt;a class="header-anchor" href="#lc-188-rotate-array">&lt;/a>
 &lt;/h3>&lt;p>Input: nums = [1,2,3,4,5,6,7], k = 3
 Output: [5,6,7,1,2,3,4]&lt;/p>
@@ -543,7 +543,7 @@ Output: [5,6,7,1,2,3,4]&lt;/p>
 &lt;a class="header-anchor" href="#lc-75-sort-colors">&lt;/a>
 &lt;/h4>&lt;p>Use pointer i to traverse array, left and right pointers point to &lt;strong>next position to fill 0 or 2&lt;/strong>.
 First continuously fill 2s, then fill 0s when encountered.
-Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/en/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">Merge Sort
+Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></description></item><item><title>Sorting</title><link>http://localhost:1313/en/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">Merge Sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: Sort a Linked List
 &lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
@@ -560,7 +560,7 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>&lt;/p></description></item><item><title>Common Python Operations</title><link>https://ruokezhang.github.io/en/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
+&lt;/a>&lt;/p></description></item><item><title>Common Python Operations</title><link>http://localhost:1313/en/post/leetcode/pythonskill/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/pythonskill/</guid><description>&lt;p>intervals.sort(key=lambda p: p[0])&lt;/p>
 &lt;p>LC 189 [:] slicing operation&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
@@ -592,7 +592,7 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>Prefix Sum</title><link>https://ruokezhang.github.io/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid><description>&lt;p>
+&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>Prefix Sum</title><link>http://localhost:1313/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="Prefix Sum Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Prefix Sum Problem List
  
@@ -624,7 +624,7 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;li>Use prefix sum to count the number of plates between them&lt;/li>
 &lt;/ol>
 &lt;p>Steps 1 and 2 can use binary search, but it will time out.
-It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p></description></item><item><title>Sliding Window</title><link>https://ruokezhang.github.io/en/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/slidingwindow/</guid><description>&lt;p>reference: Lingchashan Aifu&lt;/p>
+It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p></description></item><item><title>Sliding Window</title><link>http://localhost:1313/en/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/slidingwindow/</guid><description>&lt;p>reference: Lingchashan Aifu&lt;/p>
 &lt;h2 id="fixed-size-sliding-window">Fixed-size Sliding Window
 &lt;a class="header-anchor" href="#fixed-size-sliding-window">&lt;/a>
 &lt;/h2>&lt;p>Entry: The element at index i enters the window, update relevant statistics. If i&amp;lt;k-1, repeat the first step.&lt;/p>
@@ -634,7 +634,7 @@ It&amp;rsquo;s best to pre-process and record the position of the first candle t
 LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grumpy times + number of grumpy customers within the window.&lt;/p>
 &lt;h4 id="1297-maximum-number-of-occurrences-of-a-substring-">1297. Maximum Number of Occurrences of a Substring ✨
 &lt;a class="header-anchor" href="#1297-maximum-number-of-occurrences-of-a-substring-">&lt;/a>
-&lt;/h4>&lt;p>High-frequency problem, greedy approach.&lt;/p></description></item><item><title>Dynamic Programming</title><link>https://ruokezhang.github.io/en/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dp/</guid><description>&lt;p>
+&lt;/h4>&lt;p>High-frequency problem, greedy approach.&lt;/p></description></item><item><title>Dynamic Programming</title><link>http://localhost:1313/en/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/dp/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="Ling Shen Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Ling Shen Problem List
  
@@ -643,13 +643,13 @@ LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grum
 &lt;/a>&lt;/p>
 &lt;h2 id="linear-dp">Linear DP
 &lt;a class="header-anchor" href="#linear-dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h4 id="10-regular-expression-matching">10. Regular Expression Matching
 &lt;a class="header-anchor" href="#10-regular-expression-matching">&lt;/a>
 &lt;/h4>&lt;p>dp[i][j] indicates if s(0,i-1) matches p(0,j-1)&lt;/p>
 &lt;p>Base case: s empty, p empty → True; s empty, p x&lt;em>x&lt;/em> type → True
 Compare s[i], p[j]: if not match and p[j] is *, and s[i] matches p[j-1], three possibilities: match one letter, zero letters, multiple letters.
-If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
+If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item><item><title>Linked List</title><link>http://localhost:1313/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
 &lt;a class="header-anchor" href="#reverse-linked-list">&lt;/a>
 &lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -702,4 +702,4 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

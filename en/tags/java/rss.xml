@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Ruoke Zhang</title><link>http://localhost:1313/en/tags/java/</link><description>Recent content in Java on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/java/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-reflection-dynamic-proxy/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class names, methods, properties, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -45,7 +45,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
+&lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>http://localhost:1313/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
 &lt;/h2>&lt;p>Reflection is Java&amp;rsquo;s ability to dynamically &lt;strong>obtain class information&lt;/strong> (such as class name, methods, fields, constructors, etc.) and &lt;strong>manipulate classes&lt;/strong> at &lt;strong>runtime&lt;/strong>.&lt;/p>
 &lt;h3 id="api">API
@@ -92,7 +92,7 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
-&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>BlackHorse Rating Login Design</title><link>https://ruokezhang.github.io/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
+&lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>BlackHorse Rating Login Design</title><link>http://localhost:1313/en/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="sms-verification-code-login">SMS Verification Code Login
 &lt;a class="header-anchor" href="#sms-verification-code-login">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -108,27 +108,27 @@
 &lt;li>Extract token from header, retrieve user Map from Redis using token.&lt;/li>
 &lt;li>If user exists, convert Map to UserDTO, store in ThreadLocal, and refresh token expiry.&lt;/li>
 &lt;/ol>
-&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
+&lt;p>LoginInterceptor intercepts all paths except specified public ones. If UserHolder is empty (not logged in), request is rejected.&lt;/p></description></item><item><title>Exceptions and Generics</title><link>http://localhost:1313/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error&lt;/p>
 &lt;p>The Error class represents serious errors that are generally not recommended to be caught with catch in our programs. We can only optimize Error by optimizing code. When Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>The Exception class has two subclasses: Checked Exception and Unchecked Exception.&lt;br>
 Checked Exception indicates that the exception will be checked at compile time. If the exception is not caught with catch or declared with throws, it won&amp;rsquo;t pass compilation. This includes IOException, ClassNotFoundException.&lt;br>
-Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
+Unchecked Exception indicates that it won&amp;rsquo;t be checked at compile time. It includes RuntimeException and its subclasses, such as NullPointerException, ArrayIndexOutOfBoundsException, and ClassCastException that may occur during forced type conversion.&lt;/p></description></item><item><title>Exceptions, Generics</title><link>http://localhost:1313/en/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
 Throwable has two subclasses: Exception and Error.&lt;/p>
 &lt;p>Error class represents serious errors, which are generally not recommended to be caught by &lt;code>catch&lt;/code> in our programs. We can only optimize Errors by optimizing the code. When an Error occurs, &lt;strong>JVM generally chooses to terminate the thread&lt;/strong>.&lt;/p>
 &lt;p>Exception class has two subclasses: Checked Exception and Unchecked Exception.
 Checked Exception means that the exception will be checked at compile time. If the exception is not caught by &lt;code>catch&lt;/code> or not &lt;code>throws&lt;/code>, it will not pass compilation. This includes &lt;code>IOException&lt;/code>, &lt;code>ClassNotFoundException&lt;/code>.
-Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+Unchecked Exception means that it will not be checked at compile time. It includes &lt;code>RuntimeException&lt;/code> and its subclasses, such as &lt;code>NullPointerException&lt;/code>, &lt;code>ArrayIndexOutOfBoundsException&lt;/code>, and &lt;code>ClassCastException&lt;/code> that may occur during forced type conversion.&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java-collections/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-collections/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -193,9 +193,9 @@ Unchecked Exception means that it will not be checked at compile time. It includ
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, HashMap&amp;rsquo;s insertion, deletion, and search operations have an average time complexity of O(1).&lt;br>
-If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>https://ruokezhang.github.io/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
+If converted to red-black tree, operation time complexity stabilizes at O(log n)&lt;/p></description></item><item><title>Java Collections</title><link>http://localhost:1313/en/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection-interface">Collection Interface
 &lt;a class="header-anchor" href="#collection-interface">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/hierarchy-of-collection-framework.jpg" alt="collection" />&lt;/p>
 &lt;h2 id="list">List
 &lt;a class="header-anchor" href="#list">&lt;/a>
 &lt;/h2>&lt;h3 id="arraylist">ArrayList
@@ -260,7 +260,7 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;h3 id="time-complexity">Time Complexity
 &lt;a class="header-anchor" href="#time-complexity">&lt;/a>
 &lt;/h3>&lt;p>Ideally, the average time complexity for HashMap&amp;rsquo;s insertion, deletion, and lookup operations is O(1).
-If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Troubleshooting</title><link>https://ruokezhang.github.io/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/oom/</guid><description>&lt;p>
+If converted to a red-black tree, the time complexity of operations will stabilize at O(log n).&lt;/p></description></item><item><title>Troubleshooting</title><link>http://localhost:1313/en/post/java/jvm/oom/</link><pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/oom/</guid><description>&lt;p>
 &lt;a href="https://www.bilibili.com/video/BV1Lb4y1j7uc/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Reference video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Reference video (Chinese)
  
@@ -276,7 +276,7 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;/ol>
 &lt;blockquote>
 &lt;p>jmap is a JDK CLI tool to generate a heap dump. A heap dump is a binary snapshot of all objects on the heap.
-Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>ThreadLocal &amp; ThreadPool</title><link>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically on OOM.&lt;/p></description></item><item><title>ThreadLocal &amp; ThreadPool</title><link>http://localhost:1313/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
 &lt;/h2>&lt;p>The &lt;strong>&lt;code>Thread&lt;/code> class&lt;/strong> has a variable &lt;code>threadLocals&lt;/code>, which can be considered a &lt;code>HashMap&lt;/code> used to store thread-private content.&lt;/p>
@@ -292,12 +292,12 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;/div>&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>JMM</title><link>http://localhost:1313/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="concurrency-issues">Concurrency Issues
 &lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/CPUCache.png" alt="Alt text" />
 The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
 &lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
 &lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
@@ -307,7 +307,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;p>Solution: Prohibit compiler reordering&lt;/p>
 &lt;h3 id="instruction-parallel-reordering">Instruction Parallel Reordering
 &lt;a class="header-anchor" href="#instruction-parallel-reordering">&lt;/a>
-&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Java Threads</title><link>https://ruokezhang.github.io/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
+&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Java Threads</title><link>http://localhost:1313/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
 &lt;h2 id="threads">Threads
 &lt;a class="header-anchor" href="#threads">&lt;/a>
 &lt;/h2>&lt;h3 id="thread-implementation">Thread Implementation
@@ -315,7 +315,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
 &lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
 &lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
-&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Garbage Collection</title><link>https://ruokezhang.github.io/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
+&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item><item><title>Garbage Collection</title><link>http://localhost:1313/en/post/java/jvm/gc/</link><pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/gc/</guid><description>&lt;p>References: 
 &lt;a href="https://github.com/RongleXie/java-books-collections/blob/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E5%91%A8%E5%BF%97%E6%98%8E.pdf" title="Understanding the JVM (3rd Edition, Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Understanding the JVM (3rd Edition, Chinese)
  
@@ -333,7 +333,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/h3>&lt;p>Drawback: they reference each other, so neither count goes to 0; they won’t be collected.&lt;/p>
 &lt;h3 id="reachability-analysis">Reachability Analysis
 &lt;a class="header-anchor" href="#reachability-analysis">&lt;/a>
-&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>Influencer Exploration</title><link>https://ruokezhang.github.io/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
+&lt;/h3>&lt;p>Start from GC Roots and traverse references downward, marking all reachable objects. The traversal paths are “reference chains.”&lt;/p></description></item><item><title>Influencer Exploration</title><link>http://localhost:1313/en/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/post/</guid><description>&lt;h2 id="like-design">Like Design
 &lt;a class="header-anchor" href="#like-design">&lt;/a>
 &lt;/h2>&lt;p>Use Redis sorted set: key is post ID, set stores user IDs who liked, score is timestamp of like.&lt;/p>
 &lt;p>When frontend views post details, backend needs to:&lt;/p>
@@ -356,7 +356,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
+&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>Interface and Abstract Class</title><link>http://localhost:1313/en/post/java-interface-abstract-class/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java-interface-abstract-class/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>Interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -470,7 +470,7 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
+&lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>http://localhost:1313/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
 &lt;/h2>&lt;p>An interface is an abstraction of behavior.&lt;/p>
 &lt;ol>
@@ -584,13 +584,13 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/div>
 &lt;/div>&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
-&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>http://localhost:1313/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>The definition of a functional interface is that it must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>https://ruokezhang.github.io/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
+&lt;p>This abstract method represents that it can perform some behavior, but what specifically it does is determined by the caller through overriding this abstract method. This can be accomplished through anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>New Features in Java 8</title><link>http://localhost:1313/en/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>A functional interface is defined as an interface that must contain only one abstract method. It can have many static or default methods (with implementations), but there must be only one abstract method.&lt;/p>
-&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
+&lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>http://localhost:1313/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
 &lt;a class="header-anchor" href="#consistency">&lt;/a>
 &lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
 &lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
@@ -609,14 +609,14 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/ul>
 &lt;h4 id="update-then-delete-delayed-double-delete">Update-Then-Delete (Delayed Double Delete)
 &lt;a class="header-anchor" href="#update-then-delete-delayed-double-delete">&lt;/a>
-&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
+&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item><item><title>Coupon Seckill</title><link>http://localhost:1313/en/post/blackhorserating/voucher/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/blackhorserating/voucher/</guid><description>&lt;h2 id="global-id-generator-redis-auto-increment">Global ID Generator: Redis Auto-increment
 &lt;a class="header-anchor" href="#global-id-generator-redis-auto-increment">&lt;/a>
 &lt;/h2>&lt;p>Disadvantages of database auto-increment IDs:&lt;/p>
 &lt;ol>
 &lt;li>May expose business metrics: users could infer daily coupon sales.&lt;/li>
 &lt;li>Large coupon volumes lead to oversized IDs; sharding causes ID conflicts.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/p>
+&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/uniqueID.png" alt="Alt text" />&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -647,13 +647,13 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item><item><title>JVM Basic</title><link>http://localhost:1313/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
+&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/classFile.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="basic-info">Basic Info
 &lt;a class="header-anchor" href="#basic-info">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/general.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
 &lt;li>Version number, representing the compiler (javac) version.&lt;/li>
@@ -661,5 +661,5 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/ol>
 &lt;h3 id="constant-pool">Constant Pool
 &lt;a class="header-anchor" href="#constant-pool">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="http://localhost:1313/constantPool.png" alt="Alt text" />
 There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item></channel></rss>

@@ -2191,38 +2191,6 @@ header.header {
   color: #fc6423;
 }
 
-.site-state {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  line-height: 1.4;
-}
-
-.site-state-item {
-  padding: 0 15px;
-  border-left: 1px solid #eee;
-}
-
-.site-state-item:first-child {
-  border-left: none;
-}
-
-.site-state-item a {
-  border-bottom: 0;
-  display: block;
-}
-
-.site-state-item-count {
-  display: block;
-  font-size: 1em;
-  font-weight: 600;
-}
-
-.site-state-item-name {
-  color: #999;
-  font-size: 0.8125em;
-}
-
 .sidebar-card-widget {
   background: var(--content-bg-color);
   border-radius: initial;
@@ -2776,13 +2744,13 @@ header.header {
 
 @media (min-width: 992px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 
 @media (max-width: 991px) {
   .post-body {
-    text-align: justify;
+    text-align: left;
   }
 }
 
