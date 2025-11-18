@@ -8,9 +8,12 @@
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
 &lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
-&lt;h4 id="10-正则表达式匹配">10. 正则表达式匹配
-&lt;a class="header-anchor" href="#10-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e5%8c%b9%e9%85%8d">&lt;/a>
-&lt;/h4>&lt;p>dp[i][j]表示s(0,i-1)与p(0,j-1)匹配&lt;/p>
-&lt;p>base case: s为空，p为空，True；s为空，p为x&lt;em>x&lt;/em>类型，True&lt;br>
-每次比较s[i], p[j],如果不匹配且p[j]为*，且s[i]与p[j-1]匹配，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母
-如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item></channel></rss>
+&lt;h3 id="排列型">排列型
+&lt;a class="header-anchor" href="#%e6%8e%92%e5%88%97%e5%9e%8b">&lt;/a>
+&lt;/h3>&lt;p>外层遍历target，内层遍历可用的数字&lt;/p>
+&lt;h4 id="70-爬楼梯">70. 爬楼梯
+&lt;a class="header-anchor" href="#70-%e7%88%ac%e6%a5%bc%e6%a2%af">&lt;/a>
+&lt;/h4>&lt;p>这里的1和2也可以无数次被用，并且不同顺序算为不同的答案&lt;/p>
+&lt;h4 id="lc-377">lc 377:
+&lt;a class="header-anchor" href="#lc-377">&lt;/a>
+&lt;/h4>&lt;p>排列型：外层target，内层nums&lt;/p></description></item></channel></rss>

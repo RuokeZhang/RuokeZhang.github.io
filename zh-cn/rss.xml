@@ -38,7 +38,14 @@
 &lt;/div>
 &lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
 &lt;a class="header-anchor" href="#204-%e8%ae%a1%e6%95%b0%e8%b4%a8%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
+&lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</guid><description>&lt;p>
+&lt;a href="https://leetcode.cn/discuss/post/3144832/fen-xiang-gun-ti-dan-zi-fu-chuan-kmpzhan-ugt4/" title="题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 题单
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
 &lt;/h3>&lt;p>
 &lt;a href="https://www.zhihu.com/question/21923021/answer/37475572" title="https://www.zhihu.com/question/21923021/answer/37475572" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -126,16 +133,11 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/ol>
 &lt;h2 id="system-prompt">system prompt
 &lt;a class="header-anchor" href="#system-prompt">&lt;/a>
-&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</guid><description>&lt;h3 id="755-倒水">755. 倒水
+&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>Simulation</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</guid><description>&lt;h4 id="755-倒水">755. 倒水
 &lt;a class="header-anchor" href="#755-%e5%80%92%e6%b0%b4">&lt;/a>
-&lt;/h3>&lt;h2 id="时间顺序">时间顺序
-&lt;a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f">&lt;/a>
-&lt;/h2>&lt;h3 id="2534-通过门的时间">2534. 通过门的时间
-&lt;a class="header-anchor" href="#2534-%e9%80%9a%e8%bf%87%e9%97%a8%e7%9a%84%e6%97%b6%e9%97%b4">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>模拟的结束条件为所有人都进入/离开&lt;/li>
-&lt;li>内层循环里放时间&lt;/li>
-&lt;/ol></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
+&lt;/h4>&lt;h4 id="799-香槟塔">799. 香槟塔
+&lt;a class="header-anchor" href="#799-%e9%a6%99%e6%a7%9f%e5%a1%94">&lt;/a>
+&lt;/h4>&lt;p>用row=[pour]表示初始情况下，第0排的水杯数。然后遍历每一行，把每一行多余的水放到下一行去（每一次循环，创建下一排的容量数组）。&lt;/p></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
 &lt;a class="header-anchor" href="#project-1">&lt;/a>
 &lt;/h2>&lt;h3 id="project-setup">project setup
 &lt;a class="header-anchor" href="#project-setup">&lt;/a>
@@ -149,7 +151,12 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/h4>&lt;ul>
 &lt;li>如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li>
 &lt;li>如何得到某个节点的孩子个数？用同一层下一个&lt;/li>
-&lt;/ul></description></item><item><title>网络</title><link>https://ruokezhang.github.io/zh-cn/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
+&lt;/ul>
+&lt;h2 id="union-find">union find
+&lt;a class="header-anchor" href="#union-find">&lt;/a>
+&lt;/h2>&lt;h4 id="305-岛屿数量-ii">305. 岛屿数量 II
+&lt;a class="header-anchor" href="#305-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f-ii">&lt;/a>
+&lt;/h4>&lt;p>给网格图的每个位置编一个索引即可。每加入一块陆地，就在它的上下左右搜索是否有陆地，如果有，连通它们，并且cc-=1&lt;/p></description></item><item><title>网络</title><link>https://ruokezhang.github.io/zh-cn/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="tcp-重传">TCP 重传
 &lt;a class="header-anchor" href="#tcp-%e9%87%8d%e4%bc%a0">&lt;/a>
 &lt;/h2>&lt;ol>
@@ -557,10 +564,10 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;/h2>&lt;h3 id="dfs">DFS
 &lt;a class="header-anchor" href="#dfs">&lt;/a>
 &lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;p>对于无向图，如果不需要判断是否有环，则无需用parent，仅用vis即可&lt;/p>
 &lt;h4 id="261-以图判树">261. 以图判树
 &lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
-&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
-&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
@@ -950,12 +957,15 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
 &lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
-&lt;h4 id="10-正则表达式匹配">10. 正则表达式匹配
-&lt;a class="header-anchor" href="#10-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e5%8c%b9%e9%85%8d">&lt;/a>
-&lt;/h4>&lt;p>dp[i][j]表示s(0,i-1)与p(0,j-1)匹配&lt;/p>
-&lt;p>base case: s为空，p为空，True；s为空，p为x&lt;em>x&lt;/em>类型，True&lt;br>
-每次比较s[i], p[j],如果不匹配且p[j]为*，且s[i]与p[j-1]匹配，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母
-如果不匹配且p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
+&lt;h3 id="排列型">排列型
+&lt;a class="header-anchor" href="#%e6%8e%92%e5%88%97%e5%9e%8b">&lt;/a>
+&lt;/h3>&lt;p>外层遍历target，内层遍历可用的数字&lt;/p>
+&lt;h4 id="70-爬楼梯">70. 爬楼梯
+&lt;a class="header-anchor" href="#70-%e7%88%ac%e6%a5%bc%e6%a2%af">&lt;/a>
+&lt;/h4>&lt;p>这里的1和2也可以无数次被用，并且不同顺序算为不同的答案&lt;/p>
+&lt;h4 id="lc-377">lc 377:
+&lt;a class="header-anchor" href="#lc-377">&lt;/a>
+&lt;/h4>&lt;p>排列型：外层target，内层nums&lt;/p></description></item><item><title>二叉树</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/binarytree/binarytree/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/binarytree/binarytree/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/K0n2gO/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  
@@ -1355,7 +1365,9 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
+&lt;a class="header-anchor" href="#failure">&lt;/a>
+&lt;/h2>&lt;p>During a big promotion our model’s TPM (500,000 tokens/min) was exhausted and many highlight requests started failing. My goal was to stabilize the service quickly without just dropping requests. I added a worker-side token bucket (Redis) so a task only calls the model if tokens are available, otherwise it gets delayed and retried later. I also tied autoscaling to token usage and queue length so we automatically add capacity when pressure rises. Within minutes the failure rate fell below 1% and the task queue stopped growing.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>
@@ -1634,4 +1646,66 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;li>大小为 K 且平均值大于等于阈值的子数组数目(LinkedIn)&lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/followup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/followup/</guid><description>&lt;h3 id="300-最长递增子序列">300. 最长递增子序列
+&lt;a class="header-anchor" href="#300-%e6%9c%80%e9%95%bf%e9%80%92%e5%a2%9e%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
+&lt;/h3>&lt;h4 id="输出子序列">输出子序列
+&lt;a class="header-anchor" href="#%e8%be%93%e5%87%ba%e5%ad%90%e5%ba%8f%e5%88%97">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>nums &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [&lt;span style="color:#fe640b">10&lt;/span>,&lt;span style="color:#fe640b">9&lt;/span>,&lt;span style="color:#fe640b">2&lt;/span>,&lt;span style="color:#fe640b">5&lt;/span>,&lt;span style="color:#fe640b">3&lt;/span>,&lt;span style="color:#fe640b">7&lt;/span>,&lt;span style="color:#fe640b">101&lt;/span>,&lt;span style="color:#fe640b">18&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">bisect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">sol&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g_idx&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#04a5e5">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>n &lt;span style="color:#9ca0b0;font-style:italic">#记录nums[i]在最终答案里的上一个数字的index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> i, x &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>bisect&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>bisect_left(g, x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> idx&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># its has a preceding number&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent[i]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>g_idx[idx&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> idx&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#04a5e5">len&lt;/span>(g):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g[idx]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g_idx[idx]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> g_idx&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur_idx&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>g_idx[&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>[]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">while&lt;/span> cur_idx&lt;span style="color:#04a5e5;font-weight:bold">!=-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(nums[cur_idx])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur_idx&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>parent[cur_idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res[::&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">``&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

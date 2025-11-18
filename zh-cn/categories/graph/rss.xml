@@ -17,7 +17,7 @@
 &lt;/h2>&lt;h3 id="dfs">DFS
 &lt;a class="header-anchor" href="#dfs">&lt;/a>
 &lt;/h3>&lt;p>找连通块、判断是否有环&lt;/p>
+&lt;p>对于无向图，如果不需要判断是否有环，则无需用parent，仅用vis即可&lt;/p>
 &lt;h4 id="261-以图判树">261. 以图判树
 &lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
-&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p>
-&lt;p>用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递&lt;/p></description></item></channel></rss>
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p></description></item></channel></rss>
