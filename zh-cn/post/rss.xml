@@ -844,9 +844,9 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/a>&lt;/p>
 &lt;h2 id="一维前缀和">一维前缀和
 &lt;a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e5%89%8d%e7%bc%80%e5%92%8c">&lt;/a>
-&lt;/h2>&lt;h3 id="lc-1749">LC 1749
+&lt;/h2>&lt;h4 id="lc-1749">LC 1749
 &lt;a class="header-anchor" href="#lc-1749">&lt;/a>
-&lt;/h3>&lt;p>任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
+&lt;/h4>&lt;p>任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -859,9 +859,9 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
+&lt;/div>&lt;h4 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
 &lt;a class="header-anchor" href="#2055-%e8%9c%a1%e7%83%9b%e4%b9%8b%e9%97%b4%e7%9a%84%e7%9b%98%e5%ad%90">&lt;/a>
-&lt;/h3>&lt;ol>
+&lt;/h4>&lt;ol>
 &lt;li>找a或其右边第一个蜡烛&lt;/li>
 &lt;li>找b或其左边第一个蜡烛&lt;/li>
 &lt;li>用前缀和，算他们之间的盘子数量&lt;/li>
@@ -1661,8 +1661,6 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>nums &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [&lt;span style="color:#fe640b">10&lt;/span>,&lt;span style="color:#fe640b">9&lt;/span>,&lt;span style="color:#fe640b">2&lt;/span>,&lt;span style="color:#fe640b">5&lt;/span>,&lt;span style="color:#fe640b">3&lt;/span>,&lt;span style="color:#fe640b">7&lt;/span>,&lt;span style="color:#fe640b">101&lt;/span>,&lt;span style="color:#fe640b">18&lt;/span>]
@@ -1689,8 +1687,8 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(nums[cur_idx])
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur_idx&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>parent[cur_idx]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> res[::&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">``&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div>&lt;h3 id="162-寻找峰值">162. 寻找峰值
+&lt;a class="header-anchor" href="#162-%e5%af%bb%e6%89%be%e5%b3%b0%e5%80%bc">&lt;/a>
+&lt;/h3>&lt;p>DoorDash面经&lt;/p></description></item></channel></rss>
