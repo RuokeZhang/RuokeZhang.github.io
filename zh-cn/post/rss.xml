@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>读写分离&amp;分表分库</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</link><pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</guid><description>&lt;h2 id="读写分离">读写分离
+&lt;a class="header-anchor" href="#%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb">&lt;/a>
+&lt;/h2>&lt;h3 id="常见架构">常见架构
+&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%9e%b6%e6%9e%84">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>一主多从&lt;/li>
+&lt;li>主主互备 + 多从：两个主库互为主从，解决主库单点故障，读请求仍走从库&lt;/li>
+&lt;/ul>
+&lt;h3 id="实现">实现
+&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>在业务和数据库之间加一层代理（MySQL Router），由它把读写请求分发给不同节点&lt;/li>
+&lt;li>第三方组件（sharding-jdbc）&lt;/li>
+&lt;/ul>
+&lt;h2 id="分库分表">分库分表
+&lt;a class="header-anchor" href="#%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>单表的数据达到千万级别以上-&amp;gt;分表&lt;/li>
+&lt;li>单库的 CPU/IO/ 连接数达到上限-&amp;gt;分库&lt;/li>
+&lt;/ul>
+&lt;h3 id="路由规则">路由规则
+&lt;a class="header-anchor" href="#%e8%b7%af%e7%94%b1%e8%a7%84%e5%88%99">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>哈希路由（取模）&lt;/li>
+&lt;li>范围路由 （user_id 1&lt;del>100 万→库 0，101&lt;/del>200 万→库 1）&lt;/li>
+&lt;li>一致性哈希（把 key 和节点映射到同一个哈希环上，key 顺时针找到第一个节点作为归属节点）&lt;/li>
+&lt;/ul>
+&lt;h3 id="数据迁移">数据迁移
+&lt;a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e8%bf%81%e7%a7%bb">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>停机迁移：在半夜做&lt;/li>
+&lt;li>双写：所有写操作同时写入旧存储和新存储，后台异步迁移旧存储中双写前的历史数据到新存储，对比新旧存储的数据，修正不一致的数据&lt;/li>
+&lt;/ul>
+&lt;h3 id="分布式事务">分布式事务
+&lt;a class="header-anchor" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e4%ba%8b%e5%8a%a1">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>分布式ID（订单ID）。比如“订单库写订单 + 库存库扣库存 + 用户库减余额”涉及到三个库，&lt;/li>
+&lt;li>本地消息表 + 消息队列
+&lt;ul>
+&lt;li>在一个 MySQL 单机事务里，同时完成两件事：创建订单+扣库存。一是往order表里面添加order，二是在msg_table里添加“扣库存消息”&lt;/li>
+&lt;li>异步线程扫一遍msg_table，把消息都发给message queue&lt;/li>
+&lt;li>消费者执行跨库操作。如果不成功，MQ会自动重试&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Kafka</title><link>https://ruokezhang.github.io/zh-cn/post/kafka/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/kafka/</guid><description>&lt;h2 id="architecture">architecture
+&lt;a class="header-anchor" href="#architecture">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>同一个topic的partition不会跨cluster&lt;/li>
+&lt;li>一个broker里面可能含有不同topic的partition&lt;/li>
+&lt;li>partition在存储上可以被看作为一个可追加的日志文件，每条消息加进去的时候带有一个offset&lt;/li>
+&lt;li>fault-tolerant: 多个节点故障时，集群仍能持续提供服务且数据不丢失。
+&lt;ul>
+&lt;li>同一个partition会有多个replica,每个replica要么是leader（只有一个）, 要么是follower&lt;/li>
+&lt;li>同一个broker里面不会有同一个partition的多个replica&lt;/li>
+&lt;li>同一个broker里面会有同一个topic的不同的partition&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="partiton">partiton
+&lt;a class="header-anchor" href="#partiton">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>高并发：多个producer可以向多个partition同时写入&lt;/li>
+&lt;li>Kafka 只保证在单个 Partition 内消息的顺序性&lt;/li>
+&lt;li>高可用：多个replica&lt;/li>
+&lt;/ul>
+&lt;h3 id="leader">leader
+&lt;a class="header-anchor" href="#leader">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>负责读写&lt;/li>
+&lt;li>Leader 负责管理 In-Sync Replicas（同步副本集）。它要确保 Follower 能跟上自己的进度，将落后的 Follower 踢出 ISR。
+&lt;ul>
+&lt;li>ISR：如果一个 Follower 在replica.lag.time.max.ms时间内没有发送pull request,它就会被踢出ISR&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="follower">follower
+&lt;a class="header-anchor" href="#follower">&lt;/a>
+&lt;/h3>&lt;p>定期向leader发送&lt;strong>pull&lt;/strong>请求&lt;/p></description></item><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="常见操作">常见操作
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%93%8d%e4%bd%9c">&lt;/a>
 &lt;/h2>&lt;p>x.bit_count()：返回x的二进制表示中，有几个1。也可以理解为，x最少需要用几个2的幂次之和来表示。&lt;/p>
 &lt;h2 id="脑筋急转弯">脑筋急转弯
