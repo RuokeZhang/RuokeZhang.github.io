@@ -52,24 +52,19 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
-&lt;ol>
-&lt;li>实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/li>
-&lt;/ol>
-&lt;h3 id="物理存储特性">物理存储特性
-&lt;a class="header-anchor" href="#%e7%89%a9%e7%90%86%e5%ad%98%e5%82%a8%e7%89%b9%e6%80%a7">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>文件结构&lt;/strong>&lt;/p></description></item><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />
+实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/p></description></item><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
 &lt;a class="header-anchor" href="#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e5%af%b9%e6%af%94">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址&lt;/li>
 &lt;li>InnoDB 支持 ACID 事务，MyISAM 不支持&lt;/li>
 &lt;li>InnoDB支持行级锁，MyISAM 不支持&lt;/li>
 &lt;/ol>
-&lt;h2 id="什么是页分裂">什么是页分裂
-&lt;a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%a1%b5%e5%88%86%e8%a3%82">&lt;/a>
-&lt;/h2>&lt;p>当向已满的索引页(通常是16KB)插入新数据时，存储引擎会将当前页分裂成两个页，以容纳新数据&lt;/p></description></item><item><title>MySQL锁</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
+&lt;h2 id="innodb的可重复读隔离级别下解决幻读">InnoDB的可重复读隔离级别下解决幻读
+&lt;a class="header-anchor" href="#innodb%e7%9a%84%e5%8f%af%e9%87%8d%e5%a4%8d%e8%af%bb%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e4%b8%8b%e8%a7%a3%e5%86%b3%e5%b9%bb%e8%af%bb">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>对于快照读(普通SELECT)：通过MVCC，可重复读隔离级别，在&lt;strong>事务第一次查询&lt;/strong>时创建ReadView&lt;/p></description></item><item><title>MySQL锁</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
 &lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e9%94%81">&lt;/a>
 &lt;/h2>&lt;p>一般在做&lt;strong>全库备份&lt;/strong>的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">

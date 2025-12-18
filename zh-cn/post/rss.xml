@@ -277,15 +277,8 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
-&lt;ol>
-&lt;li>实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/li>
-&lt;/ol>
-&lt;h3 id="物理存储特性">物理存储特性
-&lt;a class="header-anchor" href="#%e7%89%a9%e7%90%86%e5%ad%98%e5%82%a8%e7%89%b9%e6%80%a7">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>文件结构&lt;/strong>&lt;/p></description></item><item><title>Redis面试题整理</title><link>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />
+实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/p></description></item><item><title>Redis面试题整理</title><link>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</link><pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</guid><description>&lt;h2 id="zset">Zset
 &lt;a class="header-anchor" href="#zset">&lt;/a>
 &lt;/h2>&lt;h3 id="压缩列表">压缩列表
 &lt;a class="header-anchor" href="#%e5%8e%8b%e7%bc%a9%e5%88%97%e8%a1%a8">&lt;/a>
@@ -296,9 +289,11 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;li>InnoDB 支持 ACID 事务，MyISAM 不支持&lt;/li>
 &lt;li>InnoDB支持行级锁，MyISAM 不支持&lt;/li>
 &lt;/ol>
-&lt;h2 id="什么是页分裂">什么是页分裂
-&lt;a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%a1%b5%e5%88%86%e8%a3%82">&lt;/a>
-&lt;/h2>&lt;p>当向已满的索引页(通常是16KB)插入新数据时，存储引擎会将当前页分裂成两个页，以容纳新数据&lt;/p></description></item><item><title>Java后端面试</title><link>https://ruokezhang.github.io/zh-cn/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/</guid><description>&lt;h2 id="面经">面经
+&lt;h2 id="innodb的可重复读隔离级别下解决幻读">InnoDB的可重复读隔离级别下解决幻读
+&lt;a class="header-anchor" href="#innodb%e7%9a%84%e5%8f%af%e9%87%8d%e5%a4%8d%e8%af%bb%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e4%b8%8b%e8%a7%a3%e5%86%b3%e5%b9%bb%e8%af%bb">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>对于快照读(普通SELECT)：通过MVCC，可重复读隔离级别，在&lt;strong>事务第一次查询&lt;/strong>时创建ReadView&lt;/p></description></item><item><title>Java后端面试</title><link>https://ruokezhang.github.io/zh-cn/post/interview/</link><pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/</guid><description>&lt;h2 id="面经">面经
 &lt;a class="header-anchor" href="#%e9%9d%a2%e7%bb%8f">&lt;/a>
 &lt;/h2>&lt;h3 id="20250319-小红书日常一面">2025.03.19 小红书日常一面
 &lt;a class="header-anchor" href="#20250319-%e5%b0%8f%e7%ba%a2%e4%b9%a6%e6%97%a5%e5%b8%b8%e4%b8%80%e9%9d%a2">&lt;/a>
