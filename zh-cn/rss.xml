@@ -55,6 +55,7 @@
 &lt;li>同一个broker里面会有同一个topic的不同的partition&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li>
 &lt;/ul>
 &lt;h2 id="partiton">partiton
 &lt;a class="header-anchor" href="#partiton">&lt;/a>
@@ -70,6 +71,7 @@
 &lt;li>Leader 负责管理 In-Sync Replicas（同步副本集）。它要确保 Follower 能跟上自己的进度，将落后的 Follower 踢出 ISR。
 &lt;ul>
 &lt;li>ISR：如果一个 Follower 在replica.lag.time.max.ms时间内没有发送pull request,它就会被踢出ISR&lt;/li>
+&lt;li>ISR存放在zookeeper中，controller broker会查看ISR中的信息，以方便知道每个partition的follwer是否跟上了它们的leader&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
