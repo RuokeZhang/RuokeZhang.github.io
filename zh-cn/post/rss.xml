@@ -476,8 +476,8 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>高可用</title><link>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制">主从复制
-&lt;a class="header-anchor" href="#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6">&lt;/a>
+&lt;/div>&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>高可用</title><link>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</guid><description>&lt;h2 id="主从复制master---slave-replication">主从复制(master - slave replication)
+&lt;a class="header-anchor" href="#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6master---slave-replication">&lt;/a>
 &lt;/h2>&lt;p>主要优点：数据备份、读写分离，通常和&lt;strong>哨兵模式&lt;/strong>结合使用。
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png" alt="Alt text" />
 主服务器负责&lt;strong>读写请求&lt;/strong>，从服务器&lt;strong>默认只负责读请求&lt;/strong>。&lt;br>
