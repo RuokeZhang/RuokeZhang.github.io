@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/projects/</link><description>Recent content in Projects on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/projects/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
+&lt;a class="header-anchor" href="#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>RPC has small header overhead, 能灵活定制传输格式&lt;/li>
+&lt;li>服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li>
+&lt;li>负载均衡：RPC 在客户端实现负载均衡&lt;/li>
+&lt;li>容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li>
+&lt;/ul>
+&lt;h2 id="serialization">Serialization
+&lt;a class="header-anchor" href="#serialization">&lt;/a>
+&lt;/h2>&lt;h3 id="kyro">Kyro
+&lt;a class="header-anchor" href="#kyro">&lt;/a>
+&lt;/h3>&lt;p>速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p></description></item></channel></rss>

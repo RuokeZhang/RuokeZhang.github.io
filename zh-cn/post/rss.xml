@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>读写分离&amp;分表分库</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</link><pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</guid><description>&lt;h2 id="读写分离">读写分离
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
+&lt;a class="header-anchor" href="#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>RPC has small header overhead, 能灵活定制传输格式&lt;/li>
+&lt;li>服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li>
+&lt;li>负载均衡：RPC 在客户端实现负载均衡&lt;/li>
+&lt;li>容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li>
+&lt;/ul>
+&lt;h2 id="serialization">Serialization
+&lt;a class="header-anchor" href="#serialization">&lt;/a>
+&lt;/h2>&lt;h3 id="kyro">Kyro
+&lt;a class="header-anchor" href="#kyro">&lt;/a>
+&lt;/h3>&lt;p>速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p></description></item><item><title>读写分离&amp;分表分库</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</link><pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</guid><description>&lt;h2 id="读写分离">读写分离
 &lt;a class="header-anchor" href="#%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb">&lt;/a>
 &lt;/h2>&lt;h3 id="常见架构">常见架构
 &lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%9e%b6%e6%9e%84">&lt;/a>
@@ -142,27 +154,7 @@
 &lt;/ul>
 &lt;p>第二步：比较两个字符串&lt;br>
 abeababeabf&lt;br>
-abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokezhang.github.io/zh-cn/post/cloud/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/cloud/</guid><description>&lt;h2 id="docker">Docker
-&lt;a class="header-anchor" href="#docker">&lt;/a>
-&lt;/h2>&lt;h3 id="dockerfile">Dockerfile
-&lt;a class="header-anchor" href="#dockerfile">&lt;/a>
-&lt;/h3>&lt;p>Usage: select base image(usually with python), install dependencies using pip&lt;/p>
-&lt;p>drawback: need command line to assign port number&lt;/p>
-&lt;h3 id="docker-compose">docker compose
-&lt;a class="header-anchor" href="#docker-compose">&lt;/a>
-&lt;/h3>&lt;p>easy to assign port mapping&lt;/p>
-&lt;h3 id="volumes">volumes
-&lt;a class="header-anchor" href="#volumes">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">volumes&lt;/span>: - ./mlflow-artifacts:/mlflow-artifacts
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>将本地的 ./mlflow-artifacts 目录映射到容器内的 /mlflow-artifacts 目录，实现：&lt;/p>
-&lt;p>数据持久化：容器重启/删除后，数据不会丢失&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
+abeabf&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
 &lt;a class="header-anchor" href="#orchestration">&lt;/a>
 &lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
 &lt;h3 id="step-1-docker-env">Step 1 Docker Env
@@ -232,20 +224,30 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;a class="header-anchor" href="#union-find">&lt;/a>
 &lt;/h2>&lt;h4 id="305-岛屿数量-ii">305. 岛屿数量 II
 &lt;a class="header-anchor" href="#305-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f-ii">&lt;/a>
-&lt;/h4>&lt;p>给网格图的每个位置编一个索引即可。每加入一块陆地，就在它的上下左右搜索是否有陆地，如果有，连通它们，并且cc-=1&lt;/p></description></item><item><title>网络</title><link>https://ruokezhang.github.io/zh-cn/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/network/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />&lt;/p>
-&lt;h2 id="tcp-重传">TCP 重传
+&lt;/h4>&lt;p>给网格图的每个位置编一个索引即可。每加入一块陆地，就在它的上下左右搜索是否有陆地，如果有，连通它们，并且cc-=1&lt;/p></description></item><item><title>网络</title><link>https://ruokezhang.github.io/zh-cn/post/network/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/network/</guid><description>&lt;h2 id="tcp-可靠传输">TCP 可靠传输
+&lt;a class="header-anchor" href="#tcp-%e5%8f%af%e9%9d%a0%e4%bc%a0%e8%be%93">&lt;/a>
+&lt;/h2>&lt;h3 id="tcp-重传">TCP 重传
 &lt;a class="header-anchor" href="#tcp-%e9%87%8d%e4%bc%a0">&lt;/a>
-&lt;/h2>&lt;ol>
+&lt;/h3>&lt;ol>
 &lt;li>超时重传：设置一个计时器，时间应略长于RTT。如果超时了还没有收到ACK，则立即重传&lt;/li>
 &lt;li>快速重传：当连续收到三个相同的 ACK 时，立即重传&lt;/li>
 &lt;li>SACK（选择性确认）：接收方可以告诉发送方接收到了哪几个消息，还缺哪个消息&lt;/li>
 &lt;li>DSACK（重复确认）：接收方收到两个2，就会用DSACK告诉发送方，它有两个 2，别重传了。只是因为网络延迟问题。&lt;/li>
 &lt;/ol>
-&lt;h2 id="tcp流量控制">TCP流量控制
-&lt;a class="header-anchor" href="#tcp%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6">&lt;/a>
-&lt;/h2>&lt;h3 id="慢启动">慢启动
-&lt;a class="header-anchor" href="#%e6%85%a2%e5%90%af%e5%8a%a8">&lt;/a>
-&lt;/h3>&lt;p>刚开始传输时，发送方每收到一个ACK确认，就把发送窗口翻倍（指数增长）。初始窗口长度为 1.&lt;/p></description></item><item><title>系统设计</title><link>https://ruokezhang.github.io/zh-cn/post/system_deigsn/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/system_deigsn/</guid><description>&lt;h2 id="cap">CAP
+&lt;h3 id="流量控制--拥塞控制">流量控制 &amp;amp; 拥塞控制
+&lt;a class="header-anchor" href="#%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6--%e6%8b%a5%e5%a1%9e%e6%8e%a7%e5%88%b6">&lt;/a>
+&lt;/h3>&lt;h4 id="流量控制">流量控制
+&lt;a class="header-anchor" href="#%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6">&lt;/a>
+&lt;/h4>&lt;ul>
+&lt;li>核心机制：&lt;strong>滑动窗口（接收窗口 rwnd）&lt;/strong>&lt;/li>
+&lt;li>实现逻辑：接收方通过 ACK 报文通告当前可用缓冲区大小（rwnd），发送方实际发送窗口 = min(拥塞窗口 cwnd, 接收窗口 rwnd)&lt;/li>
+&lt;li>目的：防止发送方速率超过接收方处理能力，避免接收缓冲区溢出&lt;/li>
+&lt;/ul>
+&lt;h4 id="拥塞控制基于拥塞窗口-cwnd单位mss">拥塞控制（基于拥塞窗口 cwnd，单位：MSS）
+&lt;a class="header-anchor" href="#%e6%8b%a5%e5%a1%9e%e6%8e%a7%e5%88%b6%e5%9f%ba%e4%ba%8e%e6%8b%a5%e5%a1%9e%e7%aa%97%e5%8f%a3-cwnd%e5%8d%95%e4%bd%8dmss">&lt;/a>
+&lt;/h4>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>慢启动阶段&lt;/strong>&lt;/p></description></item><item><title>系统设计</title><link>https://ruokezhang.github.io/zh-cn/post/system_deigsn/</link><pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/system_deigsn/</guid><description>&lt;h2 id="cap">CAP
 &lt;a class="header-anchor" href="#cap">&lt;/a>
 &lt;/h2>&lt;p>Consistency：所有节点同时看到相同的数据（强一致性）。&lt;/p>
 &lt;p>Availability: 99.999%的成功率，一年之内只有5分钟系统不可用&lt;/p>
@@ -395,14 +397,9 @@ abeabf&lt;/p></description></item><item><title>cloud</title><link>https://ruokez
 &lt;li>联合索引最左匹配&lt;/li>
 &lt;li>线程池&lt;/li>
 &lt;/ol>
-&lt;h2 id="面试准备">面试准备
-&lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
-&lt;/h2>&lt;h3 id="git">git
-&lt;a class="header-anchor" href="#git">&lt;/a>
-&lt;/h3>&lt;h4 id="git-merge适合团队协作">git merge：适合团队协作
-&lt;a class="header-anchor" href="#git-merge%e9%80%82%e5%90%88%e5%9b%a2%e9%98%9f%e5%8d%8f%e4%bd%9c">&lt;/a>
-&lt;/h4>&lt;p>将两个分支的提交历史合并，生成一个新的合并提交（merge commit），保留原始分支的完整历史（包括分叉和合并的痕迹）。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/gitMerge.png" alt="Alt text" />&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+&lt;h3 id="202512-tt-一面">2025.12 TT 一面
+&lt;a class="header-anchor" href="#202512-tt-%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;p>拓扑排序：&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API

@@ -98,14 +98,9 @@
 &lt;li>联合索引最左匹配&lt;/li>
 &lt;li>线程池&lt;/li>
 &lt;/ol>
-&lt;h2 id="面试准备">面试准备
-&lt;a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87">&lt;/a>
-&lt;/h2>&lt;h3 id="git">git
-&lt;a class="header-anchor" href="#git">&lt;/a>
-&lt;/h3>&lt;h4 id="git-merge适合团队协作">git merge：适合团队协作
-&lt;a class="header-anchor" href="#git-merge%e9%80%82%e5%90%88%e5%9b%a2%e9%98%9f%e5%8d%8f%e4%bd%9c">&lt;/a>
-&lt;/h4>&lt;p>将两个分支的提交历史合并，生成一个新的合并提交（merge commit），保留原始分支的完整历史（包括分叉和合并的痕迹）。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/gitMerge.png" alt="Alt text" />&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
+&lt;h3 id="202512-tt-一面">2025.12 TT 一面
+&lt;a class="header-anchor" href="#202512-tt-%e4%b8%80%e9%9d%a2">&lt;/a>
+&lt;/h3>&lt;p>拓扑排序：&lt;/p></description></item><item><title>Java反射&amp;动态代理</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/reflection/</guid><description>&lt;h2 id="反射">反射
 &lt;a class="header-anchor" href="#%e5%8f%8d%e5%b0%84">&lt;/a>
 &lt;/h2>&lt;p>反射是Java在&lt;strong>运行时&lt;/strong>动态&lt;strong>获取类的信息&lt;/strong>（如类名、方法、属性、构造方法等）并&lt;strong>操作类&lt;/strong>的能力&lt;/p>
 &lt;h3 id="api">API
