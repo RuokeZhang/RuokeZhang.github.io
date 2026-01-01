@@ -454,11 +454,11 @@ lc 377: 排列型：外层target，内层nums
 1 2 3 4 5 6 7 def kadane(arr): res=arr[0] cur=arr[0] for i in range(1,len(arr)): cur=max(cur+arr[i], arr[i]) res=max(res, cur) return res LC 53 dp[i]存放以当前元素结尾的最大和
 dp[i]=max(dp[i-1]+nums[i], nums[i])
 空间优化：
-1 2 f=max(x, f+x) res=max(f, res) LC 1749 任意子数组和的绝对值的最大值: 遍历过程中，保持一个以当前元素结尾的最大和与最小和。绝对值最大-&amp;amp;gt;子数组和最大或最小
+1 2 f=max(x, f+x) res=max(f, res) LC 1749 任意子数组和的绝对值的最大值 遍历过程中，保持一个以当前元素结尾的最大和与最小和。绝对值最大-&amp;amp;gt;子数组和最大或最小
+2321. 拼接数组的最大分数 怎么换，能让 nums1 的数组和最大化？其实就是找一个子数组，答案为 s1+diff(nums2子数组-nums1 子数组)，也就是最大化 diff 数组的子数组和
 网格图 DP 基础题只需要做：63. 不同路径 II
 dp[i+1][j+1]表示遍历到grid[i][j]时的方案数。初始化时，dp[0][1]=1
-329. 矩阵中的最长递增路径 记忆化搜索，dfs(i,j)表示从这个格子开始往四周搜索，找到最长的长度之后，填入dp[i][j]
-最大子数组和 定义状态 f[i] 表示以 a[i] 结尾的最大子数组和，不和 i 左边拼起来就是 f[i]=a[i]，和 i 左边拼 …  </content></entry><entry><title>二叉树</title><url>/zh-cn/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
+329. 矩阵中的最长递增路径 记忆化搜索，dfs(i,j)表示从 …  </content></entry><entry><title>二叉树</title><url>/zh-cn/post/leetcode/binarytree/binarytree/</url><categories><category>Leetcode</category><category>BinaryTree</category></categories><tags><tag>leetcode</tag></tags><content type="html">   灵神题单 自底向上dfs: 后序遍历 对于当前节点root做什么，需要它的子树的信息。
 LC 1110， 删点成林 LC 1123 公共祖先 dfs函数返回：以root为根的子树的所有叶子的最近公共祖先，还有从叶子结点往上数，到root的深度
 1530. 好叶子节点对的数量 dfs(root): return all the leaves and their distances to root(a dict)
 先序遍历 LC 1026, 节点与其祖先之间的最大差值. (也可以postorder) 构造二叉树 105：前序和中序构造二叉树。直接 recursion 调用原函数，传入 inorder 和 pre-order 的切片即可。
