@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/c-/</link><description>Recent content in C++ on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/c-/rss.xml" rel="self" type="application/rss+xml"/><item><title>C++</title><link>https://ruokezhang.github.io/zh-cn/post/cpp/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/cpp/</guid><description>&lt;h2 id="左值右值">左值右值
+&lt;a class="header-anchor" href="#%e5%b7%a6%e5%80%bc%e5%8f%b3%e5%80%bc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>左值：可以取地址的对象&lt;/p>
+&lt;ul>
+&lt;li>int a=5 中的 a&lt;/li>
+&lt;li>++i （这是一个对象）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>右值：表达式结束后销毁的&lt;strong>临时&lt;/strong>对象。&lt;/p>
+&lt;ul>
+&lt;li>int a=5 中的 5&lt;/li>
+&lt;li>i++（返回自增前的临时值）&lt;/li>
+&lt;li>纯右值（prvalue）：字面量，临时对象&lt;/li>
+&lt;li>将亡值（xvalue）：通过 std::move 转换后的对象（即将被销毁，可被 “移动” 资源的对象）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>std::move
+用于完成移动构造。移动构造避免不必要的拷贝，提高性能&lt;/p></description></item></channel></rss>

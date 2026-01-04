@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/projects/</link><description>Recent content in Projects on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/projects/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/projects/</link><description>Recent content in Projects on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/projects/rss.xml" rel="self" type="application/rss+xml"/><item><title>IntelliFLow</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link><pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid><description>&lt;p>
+&lt;a href="https://lilianweng.github.io/posts/2023-06-23-agent/" title="agent overview" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ agent overview
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://modelcontextprotocol.io/docs/develop/build-server" title="mcp tutorial" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ mcp tutorial
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/rag/rag-chunking-phase" title="RAG chunking by Microsoft" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ RAG chunking by Microsoft
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
 &lt;a class="header-anchor" href="#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>RPC has small header overhead, 能灵活定制传输格式&lt;/li>

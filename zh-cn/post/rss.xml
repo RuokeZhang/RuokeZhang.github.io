@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/post/</link><description>Recent content in Posts on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/post/rss.xml" rel="self" type="application/rss+xml"/><item><title>IntelliFLow</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link><pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid><description>&lt;p>
+&lt;a href="https://lilianweng.github.io/posts/2023-06-23-agent/" title="agent overview" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ agent overview
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://modelcontextprotocol.io/docs/develop/build-server" title="mcp tutorial" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ mcp tutorial
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/rag/rag-chunking-phase" title="RAG chunking by Microsoft" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ RAG chunking by Microsoft
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
 &lt;a class="header-anchor" href="#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>RPC has small header overhead, 能灵活定制传输格式&lt;/li>
@@ -1421,7 +1441,28 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
+可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item><item><title>C++</title><link>https://ruokezhang.github.io/zh-cn/post/cpp/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/cpp/</guid><description>&lt;h2 id="左值右值">左值右值
+&lt;a class="header-anchor" href="#%e5%b7%a6%e5%80%bc%e5%8f%b3%e5%80%bc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>左值：可以取地址的对象&lt;/p>
+&lt;ul>
+&lt;li>int a=5 中的 a&lt;/li>
+&lt;li>++i （这是一个对象）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>右值：表达式结束后销毁的&lt;strong>临时&lt;/strong>对象。&lt;/p>
+&lt;ul>
+&lt;li>int a=5 中的 5&lt;/li>
+&lt;li>i++（返回自增前的临时值）&lt;/li>
+&lt;li>纯右值（prvalue）：字面量，临时对象&lt;/li>
+&lt;li>将亡值（xvalue）：通过 std::move 转换后的对象（即将被销毁，可被 “移动” 资源的对象）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>std::move
+用于完成移动构造。移动构造避免不必要的拷贝，提高性能&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
 &lt;a class="header-anchor" href="#failure">&lt;/a>
 &lt;/h2>&lt;p>During a big promotion our model’s TPM (500,000 tokens/min) was exhausted and many highlight requests started failing. My goal was to stabilize the service quickly without just dropping requests. I added a worker-side token bucket (Redis) so a task only calls the model if tokens are available, otherwise it gets delayed and retried later. I also tied autoscaling to token usage and queue length so we automatically add capacity when pressure rises. Within minutes the failure rate fell below 1% and the task queue stopped growing.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
