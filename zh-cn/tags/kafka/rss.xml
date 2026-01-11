@@ -12,6 +12,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li>
+&lt;li>Zookeeper: 管理broker的状态&lt;/li>
 &lt;/ul>
 &lt;h2 id="partiton">partiton
 &lt;a class="header-anchor" href="#partiton">&lt;/a>

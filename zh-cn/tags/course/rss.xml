@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
+&lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
+&lt;/h2>&lt;p>protobuf IDL&lt;/p>
+&lt;ol>
+&lt;li>define .proto file，定义Request, Response格式，函数签名&lt;/li>
+&lt;li>protobuf自动生成CalculatorStub
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>channel &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> grpc.&lt;span style="color:#1e66f5">insecure_channel&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;服务端IP:端口&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> 客户端Stub&lt;span style="color:#d20f39">（&lt;/span>服务端函数的&lt;span style="color:#d20f39">“&lt;/span>本地替身&lt;span style="color:#d20f39">”）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stub &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> CalculatorStub(channel)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> 调用Stub的Add方法&lt;span style="color:#d20f39">（&lt;/span>感觉和调用本地函数一样&lt;span style="color:#d20f39">）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> AddRequest(num1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>2, num2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>3)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stub.&lt;span style="color:#1e66f5">Add&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>server side实现add的具体逻辑&lt;/li>
+&lt;/ol>
+&lt;h2 id="semantics">Semantics
+&lt;a class="header-anchor" href="#semantics">&lt;/a>
+&lt;/h2>&lt;p>At most once&lt;/p></description></item></channel></rss>

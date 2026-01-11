@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>IntelliFLow</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link><pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
+&lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
+&lt;/h2>&lt;p>protobuf IDL&lt;/p>
+&lt;ol>
+&lt;li>define .proto file，定义Request, Response格式，函数签名&lt;/li>
+&lt;li>protobuf自动生成CalculatorStub
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>channel &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> grpc.&lt;span style="color:#1e66f5">insecure_channel&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;服务端IP:端口&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> 客户端Stub&lt;span style="color:#d20f39">（&lt;/span>服务端函数的&lt;span style="color:#d20f39">“&lt;/span>本地替身&lt;span style="color:#d20f39">”）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stub &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> CalculatorStub(channel)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> 调用Stub的Add方法&lt;span style="color:#d20f39">（&lt;/span>感觉和调用本地函数一样&lt;span style="color:#d20f39">）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> AddRequest(num1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>2, num2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>3)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stub.&lt;span style="color:#1e66f5">Add&lt;/span>(request)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>server side实现add的具体逻辑&lt;/li>
+&lt;/ol>
+&lt;h2 id="semantics">Semantics
+&lt;a class="header-anchor" href="#semantics">&lt;/a>
+&lt;/h2>&lt;p>At most once&lt;/p></description></item><item><title>File System</title><link>https://ruokezhang.github.io/zh-cn/post/os/file_system/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/file_system/</guid><description>&lt;h2 id="文件系统">文件系统
+&lt;a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f">&lt;/a>
+&lt;/h2>&lt;h3 id="inode">inode
+&lt;a class="header-anchor" href="#inode">&lt;/a>
+&lt;/h3>&lt;p>每个文件都有唯一的 inode, &lt;strong>只在当前文件系统唯一&lt;/strong>&lt;/p>
+&lt;p>存放的信息有&lt;/p>
+&lt;ul>
+&lt;li>文件权限（File Permissions）：读（r=read）、写（w=write）、执行（x=execute），示例：rw-r&amp;ndash;r&amp;ndash;（所有者可读可写，所属组和其他用户仅可读）&lt;/li>
+&lt;li>文件所有者和所属组（File Owner &amp;amp; Group）：
+&lt;ul>
+&lt;li>所有者 UID（User ID）&lt;/li>
+&lt;li>所属组 GID（Group ID）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>文件大小（File Size）：单位字节（Byte），区分普通文件（存储内容大小）和目录文件（存储目录项的大小）&lt;/li>
+&lt;li>时间戳（Timestamps）：3 个核心时间属性
+&lt;ul>
+&lt;li>ctime（Change Time）：inode 元数据修改时间（如权限、所有者变更）&lt;/li>
+&lt;li>mtime（Modify Time）：文件内容修改时间&lt;/li>
+&lt;li>atime（Access Time）：文件内容最后访问时间&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>数据块指针（Data Block Pointers）：最核心字段，直接或间接指向存储文件内容的数据块物理地址&lt;/li>
+&lt;li>链接数（Link Count）：指向该 inode 的硬链接数量，默认新建文件时 link count = 1&lt;/li>
+&lt;/ul>
+&lt;p>读取普通文件的流程&lt;/p></description></item><item><title>IntelliFLow</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link><pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid><description>&lt;p>
 &lt;a href="https://lilianweng.github.io/posts/2023-06-23-agent/" title="agent overview" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  agent overview
  
@@ -88,6 +146,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li>
+&lt;li>Zookeeper: 管理broker的状态&lt;/li>
 &lt;/ul>
 &lt;h2 id="partiton">partiton
 &lt;a class="header-anchor" href="#partiton">&lt;/a>
@@ -744,16 +803,25 @@ PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。&lt;/li>
 &lt;/ol>
 &lt;h3 id="机器间通信">机器间通信
 &lt;a class="header-anchor" href="#%e6%9c%ba%e5%99%a8%e9%97%b4%e9%80%9a%e4%bf%a1">&lt;/a>
-&lt;/h3>&lt;p>TCP/IP: 通信速率收到硬件限制，比机内通信更慢。&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/zh-cn/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/process/</guid><description>&lt;h2 id="process">Process
-&lt;a class="header-anchor" href="#process">&lt;/a>
-&lt;/h2>&lt;p>进程独有的：&lt;/p>
-&lt;ol>
-&lt;li>PC&lt;/li>
-&lt;li>stack pointer(存储返回地址)&lt;/li>
-&lt;li>address space&lt;/li>
-&lt;li>file descriptors&lt;/li>
-&lt;/ol>
-&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item><item><title>持久化</title><link>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
+&lt;/h3>&lt;p>TCP/IP: 通信速率收到硬件限制，比机内通信更慢。&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/zh-cn/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/process/</guid><description>&lt;h2 id="进程和线程的区别">进程和线程的区别
+&lt;a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>进程：操作系统资源分配的最小单位，拥有独立的地址空间、文件描述符等。&lt;/li>
+&lt;li>线程：CPU 调度的最小单位，共享进程的资源，包括代码段、数据段、堆等。线程&lt;strong>不共享栈空间&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="pcb">PCB
+&lt;a class="header-anchor" href="#pcb">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>操作系统每创建一个进程，都会创建一个 process control block，里面存储进程的 PID 和信息&lt;/li>
+&lt;li>process name&lt;/li>
+&lt;li>procee status(ready/blocked/running)&lt;/li>
+&lt;li>pc, stack pointer, file descriptors&lt;/li>
+&lt;li>process对资源(CPU 时间、内存空间）的需求情况&lt;/li>
+&lt;/ul>
+&lt;h2 id="线程模型">线程模型
+&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e6%a8%a1%e5%9e%8b">&lt;/a>
+&lt;/h2>&lt;p>UT：用户线程&lt;br>
+KT：内核线程&lt;/p></description></item><item><title>持久化</title><link>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/</guid><description>&lt;p>参考：小林 coding&lt;br>
 
 &lt;a href="https://www.bilibili.com/video/BV1sK421i7B8/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478" title="参考视频" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考视频
@@ -1479,7 +1547,58 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;p>std::move
 用于完成移动构造。移动构造避免不必要的拷贝，提高性能&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
 &lt;a class="header-anchor" href="#failure">&lt;/a>
-&lt;/h2>&lt;p>During a big promotion our model’s TPM (500,000 tokens/min) was exhausted and many highlight requests started failing. My goal was to stabilize the service quickly without just dropping requests. I added a worker-side token bucket (Redis) so a task only calls the model if tokens are available, otherwise it gets delayed and retried later. I also tied autoscaling to token usage and queue length so we automatically add capacity when pressure rises. Within minutes the failure rate fell below 1% and the task queue stopped growing.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+&lt;/h2>&lt;p>During a big promotion our model’s TPM (500,000 tokens/min) was exhausted and many highlight requests started failing. My goal was to stabilize the service quickly without just dropping requests. I added a worker-side token bucket (Redis) so a task only calls the model if tokens are available, otherwise it gets delayed and retried later. I also tied autoscaling to token usage and queue length so we automatically add capacity when pressure rises. Within minutes the failure rate fell below 1% and the task queue stopped growing.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_labs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_labs/</guid><description>&lt;h1 id="lab-0">Lab 0
+&lt;a class="header-anchor" href="#lab-0">&lt;/a>
+&lt;/h1>&lt;h2 id="node">Node
+&lt;a class="header-anchor" href="#node">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>一个Node可以有parent和多个child node&lt;/li>
+&lt;/ul>
+&lt;h3 id="field">field
+&lt;a class="header-anchor" href="#field">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@VizIgnore&lt;/span> &lt;span style="color:#1e66f5;font-weight:bold">@NonNull&lt;/span> &lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">final&lt;/span> Address address;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">transient&lt;/span> Consumer&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Triple&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Address, Address, Message&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&lt;/span> messageAdder;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">//模拟网络通信行为&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">transient&lt;/span> Consumer&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Triple&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Address, Address&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span>, Message&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&lt;/span> batchMessageAdder;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">transient&lt;/span> Consumer&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Triple&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Address, Timer, Pair&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Integer, Integer&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> timerAdder;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">private&lt;/span> &lt;span style="color:#d20f39">transient&lt;/span> Consumer&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&lt;/span>Throwable&lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> throwableCatcher;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#1e66f5">Address&lt;/span>(String identifier) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">identifier&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> identifier;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">parentAddress&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">subIdentifier&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">this&lt;/span>.&lt;span style="color:#1e66f5">fullAddressString&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> identifier; &lt;span style="color:#9ca0b0;font-style:italic">// 完整地址就是核心标识&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="function">function
+&lt;a class="header-anchor" href="#function">&lt;/a>
+&lt;/h3>&lt;h4 id="init">init():
+&lt;a class="header-anchor" href="#init">&lt;/a>
+&lt;/h4>&lt;p>这是节点的入口。如果你需要在节点启动时就发消息（比如 Client 一上来就要 Ping），写在这里。不要在构造函数里发消息。&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>
@@ -1818,4 +1937,4 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/div>
 &lt;/div>&lt;h3 id="162-寻找峰值">162. 寻找峰值
 &lt;a class="header-anchor" href="#162-%e5%af%bb%e6%89%be%e5%b3%b0%e5%80%bc">&lt;/a>
-&lt;/h3>&lt;p>DoorDash面经&lt;/p></description></item></channel></rss>
+&lt;/h3>&lt;p>DoorDash面经&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</guid><description/></item></channel></rss>

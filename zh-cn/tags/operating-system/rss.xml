@@ -1,13 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>Process</title><link>https://ruokezhang.github.io/zh-cn/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/process/</guid><description>&lt;h2 id="process">Process
-&lt;a class="header-anchor" href="#process">&lt;/a>
-&lt;/h2>&lt;p>进程独有的：&lt;/p>
-&lt;ol>
-&lt;li>PC&lt;/li>
-&lt;li>stack pointer(存储返回地址)&lt;/li>
-&lt;li>address space&lt;/li>
-&lt;li>file descriptors&lt;/li>
-&lt;/ol>
-&lt;p>想要去 manipulate一个 process，我们必须交给内核态去做这件事，也就是在用户程序中调用 syscall。对于每个syscall，我们都必须检查它的 return value，如果为-1，则说明出错了。&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/zh-cn/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/virtualization/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Operating System on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/operating-system/</link><description>Recent content in Operating System on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/operating-system/rss.xml" rel="self" type="application/rss+xml"/><item><title>File System</title><link>https://ruokezhang.github.io/zh-cn/post/os/file_system/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/file_system/</guid><description>&lt;h2 id="文件系统">文件系统
+&lt;a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f">&lt;/a>
+&lt;/h2>&lt;h3 id="inode">inode
+&lt;a class="header-anchor" href="#inode">&lt;/a>
+&lt;/h3>&lt;p>每个文件都有唯一的 inode, &lt;strong>只在当前文件系统唯一&lt;/strong>&lt;/p>
+&lt;p>存放的信息有&lt;/p>
+&lt;ul>
+&lt;li>文件权限（File Permissions）：读（r=read）、写（w=write）、执行（x=execute），示例：rw-r&amp;ndash;r&amp;ndash;（所有者可读可写，所属组和其他用户仅可读）&lt;/li>
+&lt;li>文件所有者和所属组（File Owner &amp;amp; Group）：
+&lt;ul>
+&lt;li>所有者 UID（User ID）&lt;/li>
+&lt;li>所属组 GID（Group ID）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>文件大小（File Size）：单位字节（Byte），区分普通文件（存储内容大小）和目录文件（存储目录项的大小）&lt;/li>
+&lt;li>时间戳（Timestamps）：3 个核心时间属性
+&lt;ul>
+&lt;li>ctime（Change Time）：inode 元数据修改时间（如权限、所有者变更）&lt;/li>
+&lt;li>mtime（Modify Time）：文件内容修改时间&lt;/li>
+&lt;li>atime（Access Time）：文件内容最后访问时间&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>数据块指针（Data Block Pointers）：最核心字段，直接或间接指向存储文件内容的数据块物理地址&lt;/li>
+&lt;li>链接数（Link Count）：指向该 inode 的硬链接数量，默认新建文件时 link count = 1&lt;/li>
+&lt;/ul>
+&lt;p>读取普通文件的流程&lt;/p></description></item><item><title>Process</title><link>https://ruokezhang.github.io/zh-cn/post/os/process/</link><pubDate>Fri, 07 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/process/</guid><description>&lt;h2 id="进程和线程的区别">进程和线程的区别
+&lt;a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e5%92%8c%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>进程：操作系统资源分配的最小单位，拥有独立的地址空间、文件描述符等。&lt;/li>
+&lt;li>线程：CPU 调度的最小单位，共享进程的资源，包括代码段、数据段、堆等。线程&lt;strong>不共享栈空间&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="pcb">PCB
+&lt;a class="header-anchor" href="#pcb">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>操作系统每创建一个进程，都会创建一个 process control block，里面存储进程的 PID 和信息&lt;/li>
+&lt;li>process name&lt;/li>
+&lt;li>procee status(ready/blocked/running)&lt;/li>
+&lt;li>pc, stack pointer, file descriptors&lt;/li>
+&lt;li>process对资源(CPU 时间、内存空间）的需求情况&lt;/li>
+&lt;/ul>
+&lt;h2 id="线程模型">线程模型
+&lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b%e6%a8%a1%e5%9e%8b">&lt;/a>
+&lt;/h2>&lt;p>UT：用户线程&lt;br>
+KT：内核线程&lt;/p></description></item><item><title>Virtualization</title><link>https://ruokezhang.github.io/zh-cn/post/os/virtualization/</link><pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/virtualization/</guid><description>&lt;p>
 &lt;a href="https://notes.yxy.ninja/OS/Process/Address-Space" title="参考的技术博客" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  参考的技术博客
  
