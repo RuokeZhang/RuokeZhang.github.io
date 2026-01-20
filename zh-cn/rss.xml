@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h1 id="rpc-basic">RPC Basic
 &lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
-&lt;/h2>&lt;p>protobuf IDL&lt;/p>
+&lt;/h1>&lt;p>protobuf IDL&lt;/p>
 &lt;ol>
 &lt;li>define .proto file，定义Request, Response格式，函数签名&lt;/li>
 &lt;li>protobuf自动生成CalculatorStub
@@ -178,7 +178,13 @@
 &lt;a class="header-anchor" href="#%e8%84%91%e7%ad%8b%e6%80%a5%e8%bd%ac%e5%bc%af">&lt;/a>
 &lt;/h2>&lt;h4 id="2749-得到整数零需要执行的最少操作数">2749. 得到整数零需要执行的最少操作数
 &lt;a class="header-anchor" href="#2749-%e5%be%97%e5%88%b0%e6%95%b4%e6%95%b0%e9%9b%b6%e9%9c%80%e8%a6%81%e6%89%a7%e8%a1%8c%e7%9a%84%e6%9c%80%e5%b0%91%e6%93%8d%e4%bd%9c%e6%95%b0">&lt;/a>
-&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/math/</guid><description>&lt;h2 id="质数">质数
+&lt;/h4>&lt;p>设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？&lt;/p></description></item><item><title>Math</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/math/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/math/</guid><description>&lt;h2 id="运算规则">运算规则
+&lt;a class="header-anchor" href="#%e8%bf%90%e7%ae%97%e8%a7%84%e5%88%99">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>//：向下取zheng&lt;/li>
+&lt;li>int(): 向0取整&lt;/li>
+&lt;/ul>
+&lt;h2 id="质数">质数
 &lt;a class="header-anchor" href="#%e8%b4%a8%e6%95%b0">&lt;/a>
 &lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
 &lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
@@ -905,18 +911,18 @@ KT：内核线程&lt;/p></description></item><item><title>持久化</title><link
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/skill/</guid><description>&lt;h2 id="31-next-permutation">31. Next Permutation
+&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>技巧题</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/skill/</link><pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/skill/</guid><description>&lt;h4 id="31-next-permutation">31. Next Permutation
 &lt;a class="header-anchor" href="#31-next-permutation">&lt;/a>
-&lt;/h2>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
+&lt;/h4>&lt;p>考虑最后一个permutation：5-4-3-2-1，全部降序。&lt;/p>
 &lt;ol>
 &lt;li>从后往前，找第一组升序的nums[i]和nums[i+1], 比如129&lt;strong>47&lt;/strong>653，找到了nums[4]=4.&lt;/li>
 &lt;li>从后往前，找第一个比nums[i]大的数nums[j]，也就是 5&lt;/li>
 &lt;li>交换nums[i]和nums[j], 得到 129&lt;strong>5&lt;/strong>76&lt;strong>4&lt;/strong>3，此时nums[i]后面的数字全都是降序排列&lt;/li>
 &lt;li>把nums[i]后面的数字按升序排列，得到 1295&lt;strong>3467&lt;/strong>&lt;/li>
 &lt;/ol>
-&lt;h2 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
+&lt;h4 id="128-longest-consecutive-sequence">128. Longest Consecutive Sequence
 &lt;a class="header-anchor" href="#128-longest-consecutive-sequence">&lt;/a>
-&lt;/h2>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/stackqueue/</guid><description>&lt;p>
+&lt;/h4>&lt;p>[100,4,200,1,3,2]&lt;/p></description></item><item><title>Stack&amp;Queue&amp;Heap</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/stackqueue/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/stackqueue/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/circle/discuss/mOr1u6/" title="灵神题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  灵神题单
  

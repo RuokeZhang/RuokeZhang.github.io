@@ -30,7 +30,7 @@ Email: jaade1107@gmail.com (personal use) Email: jaade1107@gmail.com (job applic
 那么x最大为多少？x最大时，k最小，即k=x.bit_count()
 把k从小到大枚举，第一个满足等式的，即为答案
 3495. 使数组元素都变为零的最少操作次数 对一个数字除以 4 并向下取整：二进制右移两位 对于一个数字，如果它的二进制表示有n位，那么它需要(n+1)//2次操作可以变成0
-1 2 3 4 5 6 7 8 9 10 11 12 def get(x): #计算从1到x。所有数的二进制的(位数+1)//2之和 #比如从16到31，1000到1111，都是四位数 #1=1, 2=10, 3=11, 4=100,5=101,6=110,7=111,8=1110 base=1 cnt=0 i=1 #表示从1位数的二进制开始遍历 while base&amp;lt;=x: end=min(x, 2*base-1) cnt+=(i+1)//2*(end-base+1)#位数*有几个数是i位的二进制数 base*=2 i+=1   </content></entry><entry><title>Math</title><url>/zh-cn/post/leetcode/math/</url><categories><category>Leetcode</category><category>Math</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  质数 埃氏筛 1 2 3 4 5 6 7 8 9 # 时间复杂度 O(MX * log log MX) MX = 1_000_001 is_prime = [False] * 2 + [True] * (MX - 2) # 0 和 1 不是质数 primes = [] for i in range(2, MX): if is_prime[i]: primes.append(i) for j in range(i * i, MX, i): is_prime[j] = False # j 是质数 i 的倍数 204. 计数质数 p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &lt;=&gt; i是质数。则从ii开始，标记i的倍数为合数（通过令p[ik]=-1来实现）。并且，p[i]被赋值为p[i-1]+1
+1 2 3 4 5 6 7 8 9 10 11 12 def get(x): #计算从1到x。所有数的二进制的(位数+1)//2之和 #比如从16到31，1000到1111，都是四位数 #1=1, 2=10, 3=11, 4=100,5=101,6=110,7=111,8=1110 base=1 cnt=0 i=1 #表示从1位数的二进制开始遍历 while base&amp;lt;=x: end=min(x, 2*base-1) cnt+=(i+1)//2*(end-base+1)#位数*有几个数是i位的二进制数 base*=2 i+=1   </content></entry><entry><title>Math</title><url>/zh-cn/post/leetcode/math/</url><categories><category>Leetcode</category><category>Math</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  运算规则 //：向下取zheng int(): 向0取整 质数 埃氏筛 1 2 3 4 5 6 7 8 9 # 时间复杂度 O(MX * log log MX) MX = 1_000_001 is_prime = [False] * 2 + [True] * (MX - 2) # 0 和 1 不是质数 primes = [] for i in range(2, MX): if is_prime[i]: primes.append(i) for j in range(i * i, MX, i): is_prime[j] = False # j 是质数 i 的倍数 204. 计数质数 p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &lt;=&gt; i是质数。则从ii开始，标记i的倍数为合数（通过令p[ik]=-1来实现）。并且，p[i]被赋值为p[i-1]+1
 如果遇到p[i]&lt;0，则i为合数，p[i]=p[i-1]
 2523. 范围内最接近的两个质数 组合数学 乘法原理 快速幂 1922. 统计好数字的数目 注意python内置函数pow(x, y, m)用来计算x**y mod m
 组合计数 2514. 统计同位异构字符串数目 用到了乘法逆元 a*pow(b,-1,m)%mod
@@ -50,8 +50,12 @@ k=2
 括号内是新编号，括号外是旧编号
 如果我们事先知道，有4个人，k=2时，胜利者为0
 那即可得知：有5个人，k=2时，胜利者为2
-1 2 f(n, k)=（ f(n-1, k)+k )%n f(1,k)=0 最大公因数 1 g = gcd(*numsDivide) python可以直接用gcd函数求一个数组的最大公因数
-1 2 3 4 def gcd(a: int, b: int) -&gt; int: while b: a, b = b, a % b return abs(a) 模 若 (A - B) % k = 0，则等价于 A % k = B % k
+1 2 f(n, k)=（ f(n-1, k)+k )%n f(1,k)=0 最大公因数 任何非零整数 $a$ 与 $0$ 的最大公约数都是 $|a|$
+1 g = gcd(*numsDivide) python可以直接用gcd函数求一个数组的最大公因数
+1 2 3 4 def gcd(a: int, b: int) -&gt; int: while b: a, b = b, a % b return abs(a) GCD 可以用来解决斜率精度问题（竖线）
+149. 直线上最多的点数 为什么要用//?
+因为用/的话，会出现-0.0和0.0这种情况
+模 若 (A - B) % k = 0，则等价于 A % k = B % k
 其它 2195. 向数组中追加 K 个整数 用求和公式
   ]]></content></entry><entry><title>string</title><url>/zh-cn/post/leetcode/string/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   题单 KMP https://www.zhihu.com/question/21923021/answer/37475572 28. 找出字符串中第一个匹配项的下标 模式串：abababzababab
 第一步：一边遍历模式串，一边构造next数组。
@@ -319,31 +323,19 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
 内存泄露 ThreadLocalMap里面，对于key(ThreadLocal)是弱引用，对于 value(我们存储的值)是强引用。 如果一个线程持续存活，那么下一次垃圾回收时，会回收掉 key, 但不会回收掉 value。
 避免内存泄露：使用完 ThreadLocal之后，调用它的instance方法remove().
 线程安全 ThreadLocalMap是线程安全的，因为他只能被当前线程访问。
-线程池 创建线程池 new ThreadPoolExecutor() Executors工具类。比如Executors.newFixedThreadPool(3); 核心参数 corePoolSize maximumPoolSize workQueue keepAliveTime unit threadFactory handler 当有任务到来时，如果正在工作的线程数不到corePoolSize，则直接安排线 …  </content></entry><entry><title>技巧题</title><url>/zh-cn/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
+线程池 创建线程池 new ThreadPoolExecutor() Executors工具类。比如Executors.newFixedThreadPool(3); 核心参数 corePoolSize maximumPoolSize workQueue keepAliveTime unit threadFactory handler 当有任务到来时，如果正在工作的线程数不到corePoolSize，则直接安排线 …  </content></entry><entry><title>技巧题</title><url>/zh-cn/post/leetcode/skill/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html">  31. Next Permutation 考虑最后一个permutation：5-4-3-2-1，全部降序。
 从后往前，找第一组升序的nums[i]和nums[i+1], 比如12947653，找到了nums[4]=4. 从后往前，找第一个比nums[i]大的数nums[j]，也就是 5 交换nums[i]和nums[j], 得到 12957643，此时nums[i]后面的数字全都是降序排列 把nums[i]后面的数字按升序排列，得到 12953467 128. Longest Consecutive Sequence [100,4,200,1,3,2]
 首先把所有数字都加入set中，这样判断某个数字是否存在，就只需要O(1)的时间。 在 set 中遍历每个数字x，看谁能作为一个序列的起点。如果x-1也在set中，那么x就不能作为起点，continue 如果x能作为起点，就不断地判断x+1是否在set中 169. Majority Element 摩尔计数法，只能找到数量＞数字个数一半的众数。
 如 1,1,1,2,3,9,9则不行
 48. Rotate Image 先水平翻转，再沿主对角线翻转
 41. First Missing Positive 原地哈希，把值为i+1的元素放到数组中下标为i的地方.
 遍历数组的 index，判断nums[i]是否等于 nums[nums[i]+1], 如果不等于，则用循环交换。
-75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&lt;=p2: #注意这里的循环条件 while i&lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1 136 x^x=0
+75. Sort Colors 1 2 3 4 5 6 7 8 9 10 11 12 def sortColors(self, nums: List[int]) -&amp;amp;gt; None: n=len(nums) p0,p2=0,n-1 i=0 while i&amp;amp;lt;=p2: #注意这里的循环条件 while i&amp;amp;lt;=p2 and nums[i]==2: nums[i], nums[p2]=nums[p2], nums[i] p2-=1 if nums[i]==0: nums[i],nums[p0]=nums[p0], nums[i] p0+=1 i+=1 136 x^x=0
 0^x=x
 可以不断xor，来消除所有出现了两次的数字
 287. Find Duplicate 类比快慢指针，判断链表中是否有环。
 [1,3,4,2,2]可以看作
-从 index0 开始，nums[0]=1;
-到 index=1, nums[1]=3;
-到 index=3, nums[3]=2;
-到 index=2, nums[2]=4;
-到 index=4, nums[4]=2
-那么存在一个从节点 4 到节点 2的环，此时2确实是那个 duplicate
-394. Decode String 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 def decodeString(self, s: str) -&gt; str: stack=[] res=&#34;&#34; multi=0 for x in s: if x==&#39;[&#39;:s stack.append([res, multi]) res=&#34;&#34; multi=0 elif x==&#39;]&#39;: preFix, m=stack.pop() res=preFix+m*res elif &#39;0&#39;&lt;=x&lt;=&#39;9&#39;: multi=int(x)+multi*10 else: res+=x return res 79. Word Search 回溯。dfs(i, j, k)表示从board[i][j]开始，可以匹配word[k:], 并且不用到重复的元素。注意dfs结束后恢复数组！
-88. 合并两个有序数组 倒序双指针
-32. 最长有效括号 把可行的匹配括号位置上标注为1，找最长的连续1的长度
-中位数 比它小的个数=比它大的个数 或者
-比它小的个数=比它大的个数-1
-回文 可以构成回文：除了允许一个字符可以出现奇数次，所有字符都必须出现偶数次 如果有 m 种字母出现奇数次，只需修改其中 ⌊m/2⌋个字母, 就可以使这些字符组成回文 模运算 结合律：2845 位运算 幂相关 lowbit = n &amp; (-n)：提取最低位的 1 n ^= lowbit：移除最低位的 1 lowbit.bit_length() - 1：计算 2 的幂的指数 区间 两个区间有重叠 [a,b], [c,d]重叠：a&lt;=d and c&lt;=b
-分治 395. 至少有 K 个重复字符的最长子串   ]]></content></entry><entry><title>Stack&Queue&Heap</title><url>/zh-cn/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 单调栈 栈 普通栈 636. 函数的独占时间 自己构造调用栈即可。不管当前的 operation 是 start还是end，栈顶都代表当前正在执行的函数
+从 index0  …  </content></entry><entry><title>Stack&Queue&Heap</title><url>/zh-cn/post/leetcode/stackqueue/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 单调栈 栈 普通栈 636. 函数的独占时间 自己构造调用栈即可。不管当前的 operation 是 start还是end，栈顶都代表当前正在执行的函数
 合法括号字符串 32 最长有效括号 &amp;ldquo;()(())&amp;rdquo;
 用一个数组tmp记录匹配成功的index。遇到(时，把它的 index 加入栈。遇到）时，从栈里pop出一个(，它们两个匹配成功，于是把tmp中它们两个的index上都标记为1.
 最后统计最长的连续1子数组长度即可。
