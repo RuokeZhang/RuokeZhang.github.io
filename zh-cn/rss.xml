@@ -1610,7 +1610,9 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;a class="header-anchor" href="#function">&lt;/a>
 &lt;/h3>&lt;h4 id="init">init():
 &lt;a class="header-anchor" href="#init">&lt;/a>
-&lt;/h4>&lt;p>这是节点的入口。如果你需要在节点启动时就发消息（比如 Client 一上来就要 Ping），写在这里。不要在构造函数里发消息。&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/course_notes/llm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/llm/</guid><description>&lt;h2 id="线性">线性
+&lt;/h4>&lt;p>这是节点的入口。如果你需要在节点启动时就发消息（比如 Client 一上来就要 Ping），写在这里。不要在构造函数里发消息。&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/course_notes/llm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/llm/</guid><description>&lt;h1 id="lecture">Lecture
+&lt;a class="header-anchor" href="#lecture">&lt;/a>
+&lt;/h1>&lt;h2 id="线性">线性
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7">&lt;/a>
 &lt;/h2>&lt;h3 id="二分类">二分类
 &lt;a class="header-anchor" href="#%e4%ba%8c%e5%88%86%e7%b1%bb">&lt;/a>
@@ -1659,7 +1661,83 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;a class="header-anchor" href="#random-forest">&lt;/a>
 &lt;/h3>&lt;h3 id="gradient-boosted-trees-eg-xgboost">Gradient Boosted Trees (e.g., XGBoost)
 &lt;a class="header-anchor" href="#gradient-boosted-trees-eg-xgboost">&lt;/a>
-&lt;/h3></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+&lt;/h3>&lt;h1 id="lecture-6">Lecture 6
+&lt;a class="header-anchor" href="#lecture-6">&lt;/a>
+&lt;/h1>&lt;h2 id="word-embeddings--x2vec">Word Embeddings &amp;amp; X2Vec
+&lt;a class="header-anchor" href="#word-embeddings--x2vec">&lt;/a>
+&lt;/h2>&lt;h3 id="word2vec">Word2Vec
+&lt;a class="header-anchor" href="#word2vec">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>Skip-Gram， semi-supervised&lt;/li>
+&lt;li>生成训练数据：通过移动窗口扫描句子，生成 (输入词, 目标词) 对&lt;/li>
+&lt;li>架构：input(one-hot), 1 hidden layer, softmax classifier&lt;/li>
+&lt;/ul>
+&lt;h3 id="product2vec-x2vec">Product2Vec (X2Vec)
+&lt;a class="header-anchor" href="#product2vec-x2vec">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>View Similarity：学习 Substitutability（可替代性/严格相似）&lt;/li>
+&lt;li>Purchase Similarity：学习 Complementarity（互补性/搭配关系）&lt;/li>
+&lt;/ul>
+&lt;h2 id="bert">BERT
+&lt;a class="header-anchor" href="#bert">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>bert base: 12 layers of encoder&lt;/li>
+&lt;li>[CLS]：放在句首，用于整个句子的分类表示。&lt;/li>
+&lt;li>[SEP]：放在句尾或两句之间，作为分隔符。&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>normalization： all lower case&lt;/li>
+&lt;li>WordPiece Tokenization&lt;/li>
+&lt;li>add special tokens: [CLS]/[SEP]&lt;/li>
+&lt;li>Token IDs(BERT vocab)&lt;/li>
+&lt;li>each token got 3 embeddings，sum them up
+&lt;ul>
+&lt;li>token embedding(get from a huge matrix, size of [Vocab_Size, 768])&lt;/li>
+&lt;li>position embedding(get from a matrix, size of [Max_Len, 768])&lt;/li>
+&lt;li>segment embedding&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>got a matrix[token_size*768]&lt;/li>
+&lt;li>pass the matrix through a 12 Encoder Layers. After that, [CLS] would gather information from the entire sentence&lt;/li>
+&lt;/ol>
+&lt;h3 id="usage">usage
+&lt;a class="header-anchor" href="#usage">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>get tokenizer&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>tokenizer &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> BertTokenizer&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>from_pretrained(&lt;span style="color:#40a02b">&amp;#34;bert-base-uncased&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>get tokens and token_ids&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>tokens &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> tokenizer&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>tokenize(text)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>input_ids &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> tokenizer&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>convert_tokens_to_ids(tokens)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="3">
+&lt;li>get embedding&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>outputs &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> bert_model(input_ids&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>input_ids, attention_mask&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>attention_mask)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>对应第5,6,7步&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>
