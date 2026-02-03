@@ -8,7 +8,8 @@
 &lt;a class="header-anchor" href="#%e8%b4%a8%e6%95%b0">&lt;/a>
 &lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
 &lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>&lt;p>比如想找到[2, right]中的所有质数&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -21,15 +22,15 @@
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 时间复杂度 O(MX * log log MX)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MX &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">1_000_001&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>is_prime &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [&lt;span style="color:#fe640b">False&lt;/span>] &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> &lt;span style="color:#fe640b">2&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> [&lt;span style="color:#fe640b">True&lt;/span>] &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> (MX &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># 0 和 1 不是质数&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>primes &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> []
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> i &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(&lt;span style="color:#fe640b">2&lt;/span>, MX):
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># 时间复杂度 O(right * log log right)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>is_prime &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [&lt;span style="color:#fe640b">True&lt;/span>]&lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span>(right&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>is_prime[&lt;span style="color:#fe640b">0&lt;/span>]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>is_prime[&lt;span style="color:#fe640b">1&lt;/span>]&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> i &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(&lt;span style="color:#fe640b">2&lt;/span>, isqrt(right)&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> is_prime[i]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> primes&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(i)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> j &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(i &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> i, MX, i):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># j 是质数 i 的倍数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> j &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(i &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> i, right&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span> i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
