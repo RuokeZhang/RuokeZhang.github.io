@@ -1,0 +1,304 @@
+Date,Question,Topic,New/Review,🌟,Need Review,Notes,Column 1
+9.5,2749. 得到整数零需要执行的最少操作数,Daily,New,,Yes,"设x = num1 - k * num2，则问题转化为：能否用k个2的幂次（允许重复）表示x？
+找x的上下界，并且枚举。可对x = num1 - k * num2画图，k为横轴，x为纵轴。则答案为这条直线在第一象限上的某些点，通过分析x=2^(i1)+...2^(ik)这个等式，找到可能的x值。    
+由于2的幂次最小是1，所以x>=k  
+那么x最大为多少？x最大时，k最小，即k=x.bit_count()",
+,3495. 使数组元素都变为零的最少操作次数,Daily,New,,Yes,"对一个数字除以 4 并向下取整：**二进制右移两位**
+对于一个数字，如果它的二进制表示有n位，那么它需要(n+1)//2次操作可以变成0
+get(x)计算计算从1到x。所有数的二进制的(位数+1)//2之和",
+,740. 删除并获得点数,DP,Review,,Yes,如果选了x，删除并且获得点数，则所有x+1和x-1都一起都被删掉，所以把所有其它的x都删掉并获得点数,
+9.8,1317. 将整数转换为两个无零整数的和,Daily,New,,Yes,"从低位到高位，如果x>=2，则一个数被赋上low(x/2),另一个high(x//2)
+如果x<=1,则向高位借一位
+循环条件为while n>1，因为n>=2时才有必要分，n<=1的话也没办法借位了",
+,41. 缺失的第一个正数,Basic,Review,,Yes,"记得在交换前，一定让index=arr[i]-1
+还有循环条件是 while 1<=arr[i]<=n and arr[i]!=arr[arr[i]-1] 因为此时的arr[i]一定是可以对应到一个位置的，把它放到需要的位置上
+不可以是arr[i]!=i+1, 因为i+1不一定在这个数组中存在，这会陷入无限循环",
+,309. 买卖股票的最佳时机含冷冻期,"Basic, Amazon, Meta",New,,Yes,"冷冻期：如果当天卖出了，则第二天不可以买入  
+0: 当天卖出，不持有  
+1: 持有状态  
+2: 不持有，且非当天卖出  ",
+,708. 循环有序列表的插入,"Meta, Amazon, TikTok",New,,Yes,"分三种情况：链表长度为0，1，大于等于2
+
+第三种情况，令cur=head.next, pre=head 
+- 当找到符合条件的位置break
+- 边界情况：insertVal>=最大值，或insertVal<=最小值
+- pre=head再次出现（说明链表中所有元素都相同）",
+,494. 目标和,Basic,Review,,Yes,"需要转化！设所有正数的和为P，所有负数的绝对值之和为N，P+N=sum(nums), P-N=target
+解得P=(target+s)/2，转化为416题！",
+,2327. 知道秘密的人数,Daily,New,,Yes,"用known[i]表示恰好在第i天知道秘密的人,并且它在[i, i+forget-1]期间都知道秘密。。那么在未来的第j天，第i天贡献了known[i]知道秘密的人。其中，j属于[i+delay, i+forget-1]",
+9.1,2831. 找出最长等值子数组,Amazon,New,,Yes,"先用的是滑动窗口+Heap，但可优化:建立一个map,key为正数，value为一个list，里面记录所有值为key的index.
+遍历每一个分组,用滑动窗口。
+total_length=index_list[r]-index_list[l]+1#删除前的长度
+equal_cnt=r-l+1#相同字符的个数",
+,1733. 需要教语言的最少人数,Daily,New,,Yes,贪心思想，找到所有不能和朋友交流的人，然后思考让他们学习哪门语言比较好。肯定是选其中最少人不会的语言好。,
+9.12,684. 冗余连接,Basic,Review,,Yes,注意union find的写法。,
+,1135. 最低成本连通所有城市,Amazon,Review,,Yes,"Kruskal算法寻找最小生成树。先按权重从小到大给edge排序，接着连接每个edge两端的顶点。每次连接，图中的连通块数量-=1。
+等到连通块数量==1时，说明最小生成树已经生成。",
+,827. 最大人工岛,"TikTok, Amazon, Google, Meta",Review,,Yes,"需要给每个岛屿编号，编号从2开始。用编号直接修改grid[i][j]的值
+有一个字典islands，里面记录每个岛屿的面积大小。key是从2开始的编号(len(islands)+2)
+在一开始搜索并求面积的时候，每搜索到一个岛屿，就把它加入islands里面",
+,1163. 按字典序排在最后的子串,Amazon,Review,,Yes,,
+,673. 最长递增子序列的个数,"TikTok, Amazon, Google, Meta",New,💗,Yes,"cnt[i]为考虑以 nums[i] 结尾的最长上升子序列的个数
+dp[i] 为考虑前 i 个元素，以第 i 个数字结尾的最长上升子序列的长度",
+,647. 回文子串,"Amazon, Google, Meta, Basic",New,,Yes,不管了我不优化了,
+,435. 无重叠区间,"Basic, TikTok, Google, Meta, Amazon",New,❤️,Yes,贪心：每次选择端点最小的区间，这样能获得的取件数量一定是最大的,
+,297. 二叉树的序列化与反序列化,"Basic, TikTok, Amazon, Google, Meta",Review,❤️,Yes,"用#代表空，注意用，分割不同的节点，先序遍历。反序列化时，用DFS（），每次pop出一个元素。
+用先序遍历就是方便构造树",
+9.14,271. 字符串的编码与解码,"Amazon, Google, Meta, Basic",New,❤️,Yes,"用前四位表示这一块的长度,然后加上这一块的实际内容
+解码时，用 index追踪解码到哪里了，注意循环条件为while index<len(s)-3:
+因为要确保当前循环包含了长度信息。",
+,966. 元音拼写检查器,Daily,New,,Yes,"用一个Set和两个哈希表。第一个哈希表的key为word.lower(),value 为word,方便模糊匹配
+第二个哈希表的key 为这个单词的所有元音字母变成?, 并且所有字母小写的样子
+构造哈希表时，逆序遍历，这样哈希表对应的值就会是wordlist里面出现的最早的匹配词汇",
+,235. 二叉搜索树的最近公共祖先,Basic,Review,,Yes,"直接原函数递归. 通过比较root，p, q的值，来确定往哪边子树搜索",
+9.15,377. 组合总和 Ⅳ,Basic,Review,,Yes,和爬楼梯一样做法,
+,799. 香槟塔,"TikTok, Google, Amazon",New,❤️,Yes,用row=[pour[表示初始情况下，第0排的水杯数。然后遍历每一行，把每一行多余的水放到下一行去（每一次循环，创建下一排的容量数组）。,
+,153. 寻找旋转排序数组中的最小值,Basic,Review,,Yes,注意，每次 nums[mid]与nums[n-1]比较！,
+,238. 除自身以外数组的乘积,Basic,Review,,Yes,"用三个长度为n的数组，left, right, res",
+,83. 删除排序链表中的重复元素,,New,,Yes,while cur.next 只要外层循环即可,
+,621. 任务调度器,Google,Review,,Yes,注意每次循环必定有一个任务被执行，所以每层循环结束时，都要time+=1,
+,2334. 元素值大于变化阈值的子数组,TikTok,Review,,Yes,,
+,2524. 子数组的最大频率分数,Paypal,New,,Yes,"用一个字典存放，每个数字为key, value为一个stack，记录着这个数字的1次幂，2次幂....",
+,1944. 队列中可以看到的人数,Google,Review,,Yes,从右往左遍历，保持栈中降序。一旦有人被左边的人挡住，则pop出去。,
+9/20,3508. 设计路由器,Daily,New,,Yes,lazy q，用 head 表示从第几个 index 开始，是有效的数据,
+9.23,1293. 网格中的最短路径,"Google, Amazon, Meta, TikTok",Review,,Yes,vis[x][y][剩余移除次数],
+,1802. 有界数组中指定下标处的最大值,"Microsoft, Google, Paypal, Amazon, Meta, TikTok",New,,Yes,"nums[index] 的值被 最大化，意味着其它元素之和被最小化，即从index往左右两边走，最好的方案是每次递减1.
+如果这样做的sum<=maxSum,即是合法的，要找到最大的nums[index]=x，需要采用二分x
+计算sum需要O（1），定义cal函数，计算元素为cnt,最大值为x的单调数组的和",
+,1249. 移除无效的括号,"Microsoft, Google, Amazon, Meta, TikTok",Review,❤️,Yes,"用栈，遍历字符串，每次遇到不合法的右括号，把它的index放到set中
+最后遍历完，如果stack中还有左括号，那么这些左括号的index也需要被remove掉！
+两个set取并集",
+,138. 随机链表的复制,"Google, Microsoft, Amazon, Meta, TikTok",Review,❤️,Yes,分成三步：复制节点，把copy node的random指针也连上，最后拆分两条链表。注意最后一步的循环条件为while cur.next.next,
+,66. 加一,"Google, Microsoft, Amazon, Meta, TikTok",New,,Yes,从右往左遍历，找到第一个不为9的元素，并且把它+1,
+,7. 整数反转,Google,Review,❤️,Yes,分情况讨论：sign=1或sign=-1时，都要考虑溢出的情况,
+,67. 二进制求和,Google,New,,Yes,可以用zfill给左边全部填上0,
+,3623. 统计梯形的数目 I,Google,New,,Yes,,
+,540. 有序数组中的单一元素,Google,New,❤️,Yes,二分查找。首先是观察符合条件的元素都在even index上才行,
+,44. 通配符匹配,Google,New,❤️,Yes,,
+,10. 正则表达式匹配,Google,Review,,Yes,"dp[i][j]表示s(0,i-1)与p(0,j-1)匹配. 每次比较s[i], p[j],来确定dp[i+1][j+1]的值
+
+- base case: s为空，p为空，True；s为空，p为x*x*类型，True。如何初始化？从j=1开始遍历，确定dp[0][j+1]的值。只有当p[j]=='*'且 dp[0][j-1]为True时，dp[0][j+1]才为True
+
+- 如果匹配，dp[i+1][j+1]直接为True
+
+- 如果p[j]为*，**且s[i]与p[j-1]匹配**，则有三种可能，匹配一个字母，匹配零个字母，匹配多个字母  
+
+- 如果p[j]为*，且s[i]与p[j-1]不匹配，则看看匹配零个字母这种方案是否可行",
+9.27,37. 解数独,"Google, Amazon, Meta",Review,,Yes,"使用三个变量记录状态：rowHas, colHas, boxHas,每个元素的值为True/False
+solve(i,j)的意思是填充从(i,j)开始的第一个空余位置。所以在函数开始时，需要移动到下一个空余的位置。
+可以使用辅助函数next_position(i,j)来找到下一个坐标. 如果到了尽头，返回(9,0)即可
+solve函数最后返回False。终止的条件是：solve(next_i, next_j)为True，或者next_i==9, 意思是不还原了",
+,2514. 统计同位异构字符串数目,Mathworks,New,,Yes,,
+9.28,500. 键盘行,"Mathworks, Google, Microsoft",New,,Yes,"用一个 string 代表从 a 到 z 每个字母所在的行数
+rowIdx = ""12210111011122000010020202""",
+,638. 大礼包,"Mathworks, Google, Amazon",New,,Yes,"完全背包. 首先用 DFS 搜索，每次尝试用一个礼包，返回当前需求下的最小花费。然后再记忆化搜索。
+时间复杂度：状态数量*每个状态的耗时。状态数量：所有 needs 中的元素相乘",
+,1130. 叶值的最小代价生成树,Mathworks,Review,,Yes,,
+,1048. 最长字符串链,Mathworks,New,,Yes,,
+,743. 网络延迟时间,Basic,Review,,Yes,,
+,310. 最小高度树,"Google, Basic",Review,,Yes,用队列,
+,1376. 通知所有员工所需的时间,,New,,Yes,"当访问某个员工 x 时，看通知它的时间是否已经算出来过, manager[x]>0
+如果没算出来过，先去递归计算他的上司需要多少时间（dfs(manager[x])）然后直接加上它上司通知它的时间，inform[x]+=dfs(manager[x])
+把x标记为：已经知道通知它需要的时间： manager[x]=-1
+最后返回答案inform[x]",
+10.5,1472. 设计浏览器历史记录,Bloomberg,New,,Yes,,
+,526. 优美的排列,,Review,,Yes,状压DP,
+,1353. 最多可以参加的会议数目,Google,Review,❤️,Yes,"最好的情况是：从day1到day max,每天参加不同的会议
+这个会议并不需要完整地参与，而是每一天，尽量找一个新的会议参加。所以外层遍历day
+为什么要找结束时间最早的会议A参加呢？因为如果先去参加别的会议，过一天，A有可能就结束了",
+,778. 水位上升的泳池中游泳,"Google, Amazon, Meta",Review,,Yes,"dijkstra, 把两个节点之间，高度的最大值，当作这两个节点之间的边权值",
+,99. 恢复二叉搜索树,"Google, Meta, Amazon, Microsoft, Bloomberg, TikTok",Review,,Yes,"中序遍历，需要使用一个prev来保存刚才访问过的节点, 这就顺便起到了cur的作用（保存刚才访问到的值）",
+,437. 路径总和 III,"Google, Amazon, Meta, Microsoft",Review,,Yes,"保持前缀和, dfs(root, prefix)的意思是遍历到当前节点，传递着从根节点到root's parent的路径之和",
+10.11,3593. 使叶子路径成本相等的最小增量,Google,New,,Yes,找他儿子中的最大路径值，数有多少个儿子不是这个最大路径值,
+,341. 扁平化嵌套列表迭代器,"Meta, Google, Bloomberg",New,❤️,Yes,"使用stack。熟悉把所有元素倒序加入stack。每次在调用hasNext的时候，检查栈顶元素是否为integer，如果是，直接返回True
+如果不是，则把那个栈顶的list拿出来，倒序加入现在的stack，一直这样做，直到栈顶元素为Integer
+当stack为空，返回False",
+,834. 树中距离之和,"Google, Microsoft, Amazon",Review,,Yes,,
+,96. 不同的二叉搜索树,"Google, Amazon, Meta, Microsoft, Bloomberg, TikTok",New,,Yes,"#G[n]表示由n个节点组成的二叉搜索树的个数
+        #f[i]表示其中以i为root的二叉搜索树的个数
+        #想象i为root，那么它的左边节点一共有i-1个，右边节点一共有n-i个。而它的左子树和右子树都是二叉搜索树，所以对应的个数为G[i-1]和G[n-i]",
+,95. 不同的二叉搜索树 II,"Google, Meta, Microsoft",New,,Yes,"build(l,r)表示返回一个list,里面是由节点[l,r]构建的所有BST
+每次调用函数时，枚举root_value, 把他们分别作为root，然后可以得到这种情况下的左子树集合、右子树集合，然后拼接起来即可。root 的value可以在[l,r]之间",
+,1976. 到达目的地的方案数,"Google, Amazon, Microsoft, Meta, Bloomberg",New,❤️,Yes,"一边Dijkstra，一边更新dp
+dp[i]表示从0到i节点的最短路径的个数",
+10.12,631. 设计 Excel 求和公式,"Rippling, Google, Amazon, Microsoft",New,,Yes,每次set/sum的时候，由于有可能会影响到后续节点，都要调用_topo_sort来更新顺序（填充stack），再用_execute_stack来把栈清空，对于每一个被pop出来的节点，都去调用_calc_sum来更新它的值,
+,460. LFU 缓存,"Amazon, Meta",New,,Yes,,
+,465. 最优账单平衡,Rippling,Review,,Yes,注意右移j位得到的人，代表编号为j的人（也就是反着的）,
+10.13,4. 寻找两个正序数组的中位数,Rippling,Review,,Yes,注意：二分符合条件时直接break,
+10.14,6. Z 字形变换,Google,Review,,Yes,"1.设置direction为-1
+2. 先追加，再更新direction/下一次的行index",
+,959. 由斜杠划分区域,"Google, Meta, TikTok, Amazon, Bloomberg, Microsoft",New,,Yes,"对于每个小方格，给它分成四个三角形，从左边那个开始，顺时针分别标注0123
+每个小方格都有自己的index，所以每个小方格的base为4*m*m(m为长款）
+注意，如果小方格右边/下面还有小方格，则需要把靠在一起的小三角形union一下",
+,1368. 使网格图至少有一条有效路径的最小代价,Google,Review,,Yes,把 Dijkstra 的“按距离最小弹出 + 优先队列”思路，换成了“双端队列 deque + 常数时间插入”,
+,444. 序列重建,Google,Review,,Yes,需要用Kahn。然后一开始需要遍历nums里面出现的所有元素，把所有入度为0的数字都加入到队列中,
+,"1000. 合并石头的最低成本
+",Google,New,,Yes,,
+,354. 俄罗斯套娃信封问题,Google,New,,Yes,先把信封按宽度从小到大排序，再把它们按高度从大到小排序，最后只需要在高度上面搜索LIS即可,
+,808. 分汤,"Google, Amazon",New,,Yes,概率DP，记忆化搜索,
+,642. 设计搜索自动补全系统,"Google, Bloomberg, Amazon, Meta, Microsoft, TikTok",New,❤️,Yes,,
+,1110. 删点成林,Google,Review,,Yes,,
+,939. 最小面积矩形,"Google, Amazon, Meta",New,,Yes,"枚举左上角和右下角，看另外两个顶点是否也存在
+注意：set里面不能放list，只能放tuple!!!",
+,962. 最大宽度坡,"Google, Bloomberg, Amazon, Meta, Microsoft, TikTok",Review,,Yes,需要遍历两遍！！,
+,"493. 翻转对
+","Amazon, Google, Meta, Microsoft, Bloomberg",New,❤️,Yes,"在统计跨越翻转对时，左右两部分都已经排好序了！
+所以统计中间的时候，就是同向双指针. i ,j 分别指向数组的两边。外层循环左边的指针，如果找到了对应的 j，则j 及其左边的，肯定也符合规律",
+,1169. 查询无效交易,"Bloomberg, Amazon, Microsoft",Review,,Yes,,
+10.19,1274. 矩形内船只的数目,Bloomberg,New,,Yes,"时间复杂度：只有包含船的区域才会继续递归，递归深度为O(log(max(m,n)),所以时间为10*(log(max(m,n)（如果剪枝）
+空间复杂度：即递归深度",
+,312. 戳气球,Bloomberg,Review,,Yes,"dp[i][j]表示把这两个位置中间的所有气球全部戳爆，能获得的最大分数
+所以首尾要加上两个1",
+,135. 分发糖果,Bloomberg,Review,,Yes,"注意start的设置！！！
+如果i++之后，和上一个谷底是一样的，则start就=i，因为它这里也可以得到0个糖果",
+,166. 分数到小数,"Google, Amazon, Meta, Microsoft, Bloomberg, TikTok",New,❤️,Yes,,
+10/23,676. 实现一个魔法字典,Bloomberg,Review,,Yes,在换字符的时候，nxt_ch不能等于ch,
+10/24,430. 扁平化多级双向链表,Bloomberg,Review,,Yes,,
+,780. 到达终点,"expedia, Amazon, Google",New,,Yes,注意用取模代替多次减法,
+,2366. 将数组排序的最少替换次数,"expedia, Google, Amazon",New,,Yes,"从右往左贪心，维护遇见的最小值。如果新遇见的数字大于最小值，则需要拆分。
+尽量平均拆！需要拆多少份才能保证每一份都不超过mn?答案是k=ceil(nums[i]/mn)
+拆分后的最小值为多少？是nums[i]/k",
+10/31,706. 设计哈希映射,expedia,New,,Yes,,
+,1334. 阈值距离内邻居最少的城市,"Google, Amazon, Microsoft, Bloomberg, expedia",New,❤️,Yes,Dijkstra/floyd两种做法都可以！floyd更适合稠密图！！,
+,1547. 切棍子的最小成本,"expedia, Google, Amazon, Meta, Microsoft, Bloomberg",New,❤️,Yes,,
+,1541. 平衡括号字符串的最少插入次数,"Google, Amazon, Meta, expedia, TikTok",Review,,Yes,"用score代表所期待的)数量。如果遇见(,则score+=1
+如果遇见),如果score>0,则score-=2，但是还要判断下一个字符是不是)
+如果score==0，则代表还要补一个(
+最后返回res+score",
+,1487. 保证文件名唯一,expedia,New,,Yes,还是需要一些技巧的,
+,2168. 每个数字的频率都相同的独特子字符串的数量,expedia,Review,,Yes,对于每个起点i，都建一个cnt字典！,
+,988. 从叶结点开始的最小字符串,Bloomberg,New,,Yes,自顶向下才可以！！,
+,498. 对角线遍历,Bloomberg,New,,Yes,"一共有m+n-1条对角线，对于第 i 条对角线，上面的横纵坐标之和为i
+遍历每一条对角线，有从上往下的，还有从下往上的
+比如从上往下的，初始化x=0,y=i但是当i>=n时，y为n-1",
+,854. 相似度为 K 的字符串,DoorDash,New,,Yes,"用一个neighbor函数，传递进入一个字符串，返回字符串array，代表经过一次操作，可能获得的更贴近s2的字符串，
+具体就是找s中第一个与s2不同的位置，然后找一下s后面哪个位置可以与这个位置交换。当然不可以把原本正确的给换坏了
+然后用BFS找最短距离即可",
+,334. 递增的三元子序列,Bloomberg,New,,Yes,"用first, second来保存当前遇到的最小和第二小",
+,450. 删除二叉搜索树中的节点,Bloomberg,Review,,Yes,deleteNode返回的是删除目标节点后的树。当删除root节点时，如果只有左孩子，就直接返回左孩子就好了,
+,1366. 通过投票对团队排名,Bloomberg,New,,Yes,"自定义排序.sorted(cnt)可以对一个字典cnt里的key排序，返回排序好的key 
+这一题就是先建一个字典，每个key是队伍的名字，value是一个数字，代表获得 第几个排名时的投票数，因此直接排序这样的value即可",
+,220. 存在重复元素 III,Bloomberg,Review,,Yes,"用bucket来装这些数字，每个bucket实际上是一个set. 
+滑动窗口，保持每时每刻，所有bucket里面的元素，他们的indexDiff都不超出限制。
+每次新添加一个数字的时候，检查bucket是否为空，若不为空,则可以直接返回True.若为空，则检查一下旁边的bucket里面是否有与当前value之差小于等于valueDIff的元素",
+,3713. 最长的平衡子串 I,Bloomberg,New,,Yes,"暴力解法，这题不可以用滑动窗口。
+为每个起点i维护一个cnt数组，在遍历加入字母的时候，检查是否此时len(cnt.values())==1",
+,1823. 找出游戏的获胜者,Bloomberg,New,❤️,Yes,约瑟夫环,
+,"1922. 统计好数字的数目
+",Bloomberg,New,,Yes,,
+,2048. 下一个更大的数值平衡数,Bloomberg,New,,Yes,直接枚举就可以了,
+11/16,1387. 将整数按权重排序,Bloomberg,New,,Yes,"记忆化搜索，自顶向下
+如果从底往上的话，很难确定上界",
+11/17,763. 划分字母区间,Bloomberg,New,,Yes,"把start设为-1，并且在遍历过程中，先更新rightmost. 
+然后再检查，if i==rightmost， 则可以划分了。此时再把start设为i",
+,1244. 力扣排行榜,Bloomberg,Review,,Yes,使用SortedDict，遍历的时候就是按照key排好序的！,
+,274. H 指数,Bloomberg,Review,,Yes,,
+,134. 加油站,Bloomberg,Review,,Yes,"同时维护total.cur
+cur一旦小于0，则吧可能的起点设置为i+1,同时再吧cur恢复为0
+如果最后total<0,返回-1",
+,787. K 站中转内最便宜的航班,Bloomberg,Review,,Yes,bellman ford,
+,853. 车队,Bloomberg,Review,,Yes,先排序，再计算每辆车到终点需要的时间。保持降序栈，在左边的车反而需要更长时间，所以不会与任何其他车形成车队，所以最后返回栈的长度即可,
+,768. 最多能完成排序的块 II,Bloomberg,New,,Yes,stack,
+,12. 整数转罗马数字,DoorDash,New,,Yes,使用哈希表，按照从大到小顺序排列.注意400/900/40/90这些都要事先定义好,
+,18. 四数之和,DoorDash,New,,Yes,"1. 四个数，都需要去重
+2. 注意edge case。当nums[l]+nums[l+1]>cur_target时，不能直接return，而是break,因为可能只是j太大了，而不是i,j都太大了",
+,2065. 最大化一张图中的路径价值,"DoorDash, Amazon, Google",New,,Yes,Dijkstra剪枝，普通dfs求解,
+,3123. 最短路径中的边,DoorDash,New,,Yes,"我们可以从终点 n−1 出发，倒着 DFS 或 BFS，设当前在点 y，邻居为 x，边权为 w，如果满足
+HARD
+dis[x]+w=dis[y]
+则说明 x-y 这条边在从 0 到 n−1 的最短路上",
+,456. 132 模式,DoorDash,New,❤️,Yes,"把元素分为三种：可以作为【1】，【2】，【3】的
+从右往左遍历，保持可以作为【2】的数字的最大值（这是因为方便找到对应的【1】）
+我们先用给定的阈值移除元素，再将该阈值加入数据结构中。",
+11/20,556. 下一个更大元素 III,"DoorDash, Bloomberg, Microsoft, Meta, Amazon, TikTok, Google",New,❤️,Yes,用数学方法遍历并且构造,
+,162. 寻找峰值,DoorDash,Review,❤️,Yes,"注意mid只和mid+1比，这样永远不会越界
+r及其右边可能是答案，l-1及其左边不是答案
+所以，如果nums[mid[<nums[mid+1]时，mid已经不会是答案了",
+11/22,3755. 最大平衡异或子数组的长度,,New,,Yes,用diff记录偶数和奇数的数量差，并且存放到哈希表中,
+,3756. 连接非零数字并乘以其数字和 II,,New,,Yes,,
+,2964. 可被整除的三元组数量,,Review,,Yes,,
+,3255. 长度为 K 的子数组的能量值 II,,New,1595,Yes,分组循环，虽然做出来了，但是花了半个小时,
+,1510. 石子游戏 IV,,Review,,Yes,,
+,1405. 最长快乐字符串,TikTok,Review,,Yes,"尽量让a=b=c的情况出现，每次加一个
+LeetCode 984 String Without AAA or BBB（2种字符版本）
+LeetCode 767 Reorganize String（相邻不能相同，堆贪心）
+LeetCode 358 Rearrange String k Distance Apart（更强限制：距离至少 k）",
+,133. 克隆图,TikTok,Review,,Yes,"133 Clone Graph（就是这题）
+
+接着刷：138 Copy List with Random Pointer（完全同一套路：old -> new 映射 + 先建再连）
+
+再刷：1485 Clone Binary Tree With Random Pointer（如果你刷得到的话）",
+,2999. 统计强大整数的数目,,New,,Yes,数位DP,
+,1146. 快照数组,TikTok,Review,1771,Yes,bisect写法,
+,215. 数组中的第K个最大元素,TikTok,Review,,Yes,,
+12/23,1136. 并行课程,TikTok,New,1710,Yes,"面试题变种，Kahn算法
+LeetCode 802 — Find Eventual Safe States",
+12/24,802. 找到最终的安全状态,,New,1962,Yes,"Kahn算法，反向建图，最后所有入度为0的节点即为答案
+入度为0<=>该节点safe. 根据题意，如果一个节点，所有能到它的节点都是安全的，那么它就是安全的",
+12/31,851. 喧闹和富有,,New,,Yes,dfs(x)返回不比自己穷的人当中，最不安静的那个人,
+,2050. 并行课程 III,,New,,Yes,kahn写法，本质上是拓扑+DP,
+,173. 二叉搜索树迭代器,,Review,,Yes,stack 里面放：还没访问，但未来一定会访问的节点,
+1/1,1059. 从起点到终点的所有路径,,New,,Yes,"dfs(x)或者拓扑排序（类似802）都可以做。
+1557/2127",
+,1191. K 次串联后最大子数组之和,,New,,Yes,kadane,
+,918. 环形子数组的最大和,,Review,,Yes,环形子数组最大和，当这个子数组由前缀和后缀共同组成时，可以理解为整个数组的和-子数组最小和,
+,2321. 拼接数组的最大分数,,New,,Yes,怎么换，能让 nums1 的数组和最大化？其实就是找一个子数组，答案为 s1+diff(nums2子数组-nums1 子数组)，也就是最大化 diff 数组的子数组和,
+,1186. 删除一次得到子数组最大和,,New,1799,Yes,"DP 分别记录删除/不删除的最大和
+dp_drop[i]:考虑两种情况：之前 drop 过/之前没 drop 过打算 drop 当前元素",
+1/3,3628. 插入一个字母的最大子序列数,,New,1754,Yes,"先计算不插入字母时的LCT序列个数（可以用115题的模版）或者直接考虑状态机DP
+再计算插入字母，增加的LCT序列个数
+插入L，增加的LCT序列个数就是现在有的CT序列个数
+插入T，增加的个数就是现有的LC序列个数
+在s[i]和s[i+1]之间插入C，增加的个数就是s(0,j)的L个数*s(i+1, n-1)中的T个数",
+,3290. 最高乘法得分,,Review,,Yes,"A必须要选完,所以初始化的时候，如果从A的后面一半开始从头匹配B，都是不合理的，设置为-inf",
+,1391. 检查网格中是否存在有效路径,,New,1746,Yes,"注意，不需要考虑上一步是从哪个方向过来的。
+比如这一个格子如果是个横线，就让它往左边或者往右边走都去尝试，反正有 vis 数组
+但是走到下一个格子的时候，比如当前决定了往左走，左边那个格子只能属于几种特殊的类型
+所以需要两个字典",
+,218. 天际线问题,TikTok,New,,Yes,扫描线+懒删除堆. 需要再做更多扫描线的题,
+,215. 数组中的第K个最大元素,TikTok,Review,,Yes,"时间复杂度：O(N/2)+O(N/4)+O(N/8)+...=O(N)
+i从左往右搜索，找到第一个 nums[i]>=pivot  
+j从右往左搜索，找到第一个 nums[j]<=pivot  
+i 和 j 中间的是尚未搜索到的元素  
+每次找到了一组 i 和 j，并且它们当中仍然有未搜索到的元素，就交换 nums[i]和 nums[j]  
+若出现了 i>=j 的情况，表示所有元素都搜索完了，可以直接返回
+相关题目：324， 1985",
+,381. O(1) 时间插入、删除和获取随机元素 - 允许重复,TikTok,New,,Yes,self.val_to_pos=defaultdict(set)，主要是注意细节,
+,2074. 反转偶数长度组的节点,TikTok,New,1685,Yes,注意细节即可,
+1/6,297. 二叉树的序列化与反序列化,TikTok,Review,,Yes,"recursive parsing, dfs(i）返回Node还有下一个开始 parse的index，index需要注意细节",
+,140. 单词拆分 II,TikTok,Review,,Yes,回溯做法。dfs(i)返回s(0:i)可以表示成的所有组合,
+1/14,364. 嵌套列表加权和 II,Linkedin,New,,Yes,知道怎么做但是代码写不出来. 不用递归也可以写，使用next数组即可,
+,716. 最大栈,Linkedin,New,,Yes,,
+,339. 嵌套列表加权和,Linkedin,New,,Yes,"BFS空间复杂度：列表的最大宽度
+DFS：列表的最大深度。两种写法都写一下",
+,636. 函数的独占时间,Linkedin,New,,Yes,模拟调用栈,
+,296. 最佳的碰头地点,Linkedin,New,,Yes,"用距离和+DP做的
+更优解法：直接用相向双指针计算中位数到所有位置的距离和",
+,277. 搜寻名人,Linkedin,Review,,Yes,"需要用技巧来优化
+调用一次knows(i,j)，一定能淘汰一个人。若为True，淘汰i; 若为False，淘汰j
+关键是：第一步找到一个人，这个人不认识任何人/或为最后一个人。这一步得到的candidate一定是唯一的
+如果有两个或以上的人，都不认识任何人，那么根本不存在名人",
+,244. 最短单词距离 II,Linkedin,New,,Yes,双指针每次计算距离，然后根据值的大小，选择移动其中一个指针,
+,156. 上下翻转二叉树,Linkedin,New,,Yes,"用递归写的，并非最优
+类似反转链表的写法最好，需要记忆",
+,1188. 设计有限阻塞队列,Linkedin,New,,Yes,"用semaphore
+acquire(), release()
+with lock()表示给操作data的地方加锁",
+,319. 灯泡开关,Linkedin,New,,Yes,"第i轮，切换所有i的倍数的灯泡。
+对于编号为k的灯泡，会被切换m次，m是它的因数的个数.如果有偶数个因数，则最后被灭
+只有完全平方数的灯泡，在经过n轮之后，是两着的",
+,946. 验证栈序列,Linkedin,Review,,Yes,栈模拟，循环写复杂了,
+1/17,149. 直线上最多的点数,Linkedin,New,,Yes,对于每个固定的点i，找到出现次数最多的斜率。把斜率保存为delta_y/delta_x的形式。如果是负数，一律保证分子为负，分母为正。另外用//而不是/来消除-0.0和0.0不一致的情况,
+,254. 因子的组合,Linkedin,New,❤️,Yes,回溯法 (Backtracking) 通常依赖修改外部变量（副作用），不能配合 @cache 使用,
+,261. 以图判树,Linkedin,Review,,Yes,"无向图判断是否有环：parent; vis[x]=True/False
+或者用union find做",
+,311. 稀疏矩阵的乘法,Linkedin,Review,,Yes,CSR (压缩行存储) 思想，时间复杂度=有效乘法的次数,
+1/19,265. 粉刷房子 II,Linkedin,New,,Yes,,
+,432. 全 O(1) 的数据结构,Linkedin,New,,Yes,,
+2/1,2523. 范围内最接近的两个质数,,Review,,Yes,,
+,3025. 人员站位的方案数 I,,Review,,Yes,对于每一个左上角的A，保持一个右下角点的y轴最大值，任何后续小于等于这个y值的点都不能作为右下角,
+,2468. 根据限制分割消息,,Review,,Yes,"cap 代表当前的前 cap 位已经被分配，cur 代表正好分到第 cur 个 partition，然后总 partition 数量也是 cur
+如果 cur 有进位，则 cap 也要减少(前面 cur-1 个组能放的字符数量都得少一个）",
+2/3,895. 最大频率栈,,Review,,Yes,"stack 的每个位置都是一个列表，比如 stack[0]装所有元素的**第一次出现**的实例
+pop 的时候，从 stack[-1]的尾部拿走元素
+比如 5 出现了两次，第一个 5 出现在 stack[0],第二个出现在 stack[1]",
