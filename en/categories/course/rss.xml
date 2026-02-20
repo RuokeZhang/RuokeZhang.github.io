@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</guid><description>&lt;h1 id="rpc-basics">RPC Basics
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basics">RPC Basics
 &lt;a class="header-anchor" href="#rpc-basics">&lt;/a>
-&lt;/h1>&lt;p>protobuf IDL&lt;/p>
+&lt;/h2>&lt;p>protobuf IDL&lt;/p>
 &lt;ol>
 &lt;li>Define the &lt;code>.proto&lt;/code> file: define Request/Response formats and function signatures.&lt;/li>
 &lt;li>Protobuf generates &lt;code>CalculatorStub&lt;/code> automatically.
@@ -31,6 +31,6 @@
 &lt;/li>
 &lt;li>Implement the actual logic for &lt;code>add&lt;/code> on the server side.&lt;/li>
 &lt;/ol>
-&lt;h2 id="semantics">Semantics
+&lt;h3 id="semantics">Semantics
 &lt;a class="header-anchor" href="#semantics">&lt;/a>
-&lt;/h2>&lt;p>At most once&lt;/p></description></item></channel></rss>
+&lt;/h3>&lt;p>At most once&lt;/p></description></item></channel></rss>

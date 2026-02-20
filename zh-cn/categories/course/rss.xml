@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h1 id="rpc-basic">RPC Basic
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
 &lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
-&lt;/h1>&lt;p>protobuf IDL&lt;/p>
+&lt;/h2>&lt;p>protobuf IDL&lt;/p>
 &lt;ol>
 &lt;li>define .proto file，定义Request, Response格式，函数签名&lt;/li>
 &lt;li>protobuf自动生成CalculatorStub
@@ -31,6 +31,6 @@
 &lt;/li>
 &lt;li>server side实现add的具体逻辑&lt;/li>
 &lt;/ol>
-&lt;h2 id="semantics">Semantics
+&lt;h3 id="semantics">Semantics
 &lt;a class="header-anchor" href="#semantics">&lt;/a>
-&lt;/h2>&lt;p>At most once&lt;/p></description></item></channel></rss>
+&lt;/h3>&lt;p>At most once&lt;/p></description></item></channel></rss>

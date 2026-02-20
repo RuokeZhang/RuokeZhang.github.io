@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h1 id="rpc-basic">RPC Basic
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
 &lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
-&lt;/h1>&lt;p>protobuf IDL&lt;/p>
+&lt;/h2>&lt;p>protobuf IDL&lt;/p>
 &lt;ol>
 &lt;li>define .proto file，定义Request, Response格式，函数签名&lt;/li>
 &lt;li>protobuf自动生成CalculatorStub
@@ -31,9 +31,9 @@
 &lt;/li>
 &lt;li>server side实现add的具体逻辑&lt;/li>
 &lt;/ol>
-&lt;h2 id="semantics">Semantics
+&lt;h3 id="semantics">Semantics
 &lt;a class="header-anchor" href="#semantics">&lt;/a>
-&lt;/h2>&lt;p>At most once&lt;/p></description></item><item><title>File System</title><link>https://ruokezhang.github.io/zh-cn/post/os/file_system/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/file_system/</guid><description>&lt;h2 id="文件系统">文件系统
+&lt;/h3>&lt;p>At most once&lt;/p></description></item><item><title>File System</title><link>https://ruokezhang.github.io/zh-cn/post/os/file_system/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/os/file_system/</guid><description>&lt;h2 id="文件系统">文件系统
 &lt;a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f">&lt;/a>
 &lt;/h2>&lt;h3 id="inode">inode
 &lt;a class="header-anchor" href="#inode">&lt;/a>
