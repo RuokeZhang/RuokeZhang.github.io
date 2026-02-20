@@ -5,7 +5,8 @@
 &lt;a class="header-anchor" href="#api">&lt;/a>
 &lt;/h3>&lt;h4 id="getting-class-objects">Getting Class Objects
 &lt;a class="header-anchor" href="#getting-class-objects">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -22,12 +23,14 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>; 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="creating-objects-through-reflection">Creating Objects Through Reflection
+&lt;/div>
+
+&lt;h4 id="creating-objects-through-reflection">Creating Objects Through Reflection
 &lt;a class="header-anchor" href="#creating-objects-through-reflection">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -40,10 +43,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="getting-fields">Getting Fields
+&lt;/div>
+
+&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
 &lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;fieldName&amp;rdquo;)&lt;/p></description></item><item><title>Java Reflection &amp; Dynamic Proxy</title><link>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</link><pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/reflection/</guid><description>&lt;h2 id="reflection">Reflection
 &lt;a class="header-anchor" href="#reflection">&lt;/a>
@@ -52,7 +56,8 @@
 &lt;a class="header-anchor" href="#api">&lt;/a>
 &lt;/h3>&lt;h4 id="getting-a-class-object">Getting a Class Object
 &lt;a class="header-anchor" href="#getting-a-class-object">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -69,12 +74,14 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="creating-objects-via-reflection">Creating Objects via Reflection
+&lt;/div>
+
+&lt;h4 id="creating-objects-via-reflection">Creating Objects via Reflection
 &lt;a class="header-anchor" href="#creating-objects-via-reflection">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -87,10 +94,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="getting-fields">Getting Fields
+&lt;/div>
+
+&lt;h4 id="getting-fields">Getting Fields
 &lt;a class="header-anchor" href="#getting-fields">&lt;/a>
 &lt;/h4>&lt;p>&lt;code>getDeclaredField(&amp;quot;fieldName&amp;quot;)&lt;/code>&lt;/p></description></item><item><title>Exceptions and Generics</title><link>https://ruokezhang.github.io/en/post/java-exceptions-generics/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java-exceptions-generics/</guid><description>&lt;h2 id="exceptions">Exceptions
 &lt;a class="header-anchor" href="#exceptions">&lt;/a>
@@ -159,15 +167,17 @@ Unchecked Exception means that it will not be checked at compile time. It includ
 &lt;li>Implemented with hash table + linked list/red-black tree. Methods to resolve hash collisions include chaining/probing, generally using chaining.&lt;/li>
 &lt;li>How is hash value calculated? Get the key&amp;rsquo;s hashcode(). &lt;strong>XOR the original hashcode with the value of hashcode right-shifted by 16 bits&lt;/strong>.&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;ol start="3">
+&lt;/div>
+
+&lt;ol start="3">
 &lt;li>Calculate array index. &lt;strong>hash&amp;amp;(length-1)&lt;/strong>, equivalent to hash%length. Binary operations are faster than modulo operations.&lt;/li>
 &lt;li>If collision occurs, search in the linked list or red-black tree to see if the key exists. If it exists, directly replace the value; if not, add it. When linked list length reaches 8 and hash table length is greater than 64, upgrade to red-black tree.&lt;/li>
 &lt;li>When red-black tree node count is less than 6, convert back to linked list.&lt;/li>
@@ -226,15 +236,17 @@ If converted to red-black tree, operation time complexity stabilizes at O(log n)
 &lt;li>Implemented by hash table + linked list/red-black tree. Hash collision resolution methods include chaining/probing, usually chaining.&lt;/li>
 &lt;li>How is the hash value calculated? Get the &lt;code>hashCode()&lt;/code> of the key. Perform an XOR operation between the &lt;strong>original hashcode and the hashcode shifted right by 16 bits&lt;/strong>.&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;ol start="3">
+&lt;/div>
+
+&lt;ol start="3">
 &lt;li>Calculate array index. &lt;strong>&lt;code>hash &amp;amp; (length - 1)&lt;/code>&lt;/strong>, equivalent to &lt;code>hash % length&lt;/code>. Binary operations are faster than modulo operations.&lt;/li>
 &lt;li>If a collision occurs, check if the key exists in the linked list or red-black tree. If it exists, replace the value directly. If not, add it. When the linked list length is 8 and the hash table length is greater than 64, it is converted to a red-black tree.&lt;/li>
 &lt;li>If the number of red-black tree nodes is less than 6, it reverts to a linked list.&lt;/li>
@@ -252,6 +264,7 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;li>default method - Provides method body, available since Java 8&lt;/li>
 &lt;li>static method - Provides method body, available since Java 8, can be called via Interface.method()&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -353,10 +366,11 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call interface&amp;#39;s static method&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">staticMethod&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="abstract-class">Abstract Class
+&lt;/div>
+
+&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
 &lt;/h2>&lt;p>Abstract classes usually serve as base classes, like Person, Animal. Because different subclasses may have different method bodies for certain methods, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Interfaces and Abstract Classes</title><link>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/javabasic/interfaceabstractclass/</guid><description>&lt;h2 id="interface">Interface
 &lt;a class="header-anchor" href="#interface">&lt;/a>
@@ -366,6 +380,7 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;li>Default methods: Provide method bodies, available since Java 8.&lt;/li>
 &lt;li>Static methods: Provide method bodies, available since Java 8, can be called via &lt;code>Interface.method()&lt;/code>.&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -467,10 +482,11 @@ If converted to a red-black tree, the time complexity of operations will stabili
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Call the static method of the interface&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">staticMethod&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="abstract-class">Abstract Class
+&lt;/div>
+
+&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
 &lt;/h2>&lt;p>Abstract classes typically serve as base classes, such as Person, Animal. Because the body of certain methods may differ among various subclasses, these methods are placed as abstract methods in the abstract class.&lt;/p></description></item><item><title>Java 8 New Features</title><link>https://ruokezhang.github.io/en/post/java8-features/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java8-features/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>

@@ -16,6 +16,7 @@
 &lt;/h2>&lt;h3 id="埃氏筛">埃氏筛
 &lt;a class="header-anchor" href="#%e5%9f%83%e6%b0%8f%e7%ad%9b">&lt;/a>
 &lt;/h3>&lt;p>比如想找到[2, right]中的所有质数&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -37,10 +38,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> i &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(&lt;span style="color:#fe640b">2&lt;/span>, isqrt(right)&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> is_prime[i]:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> j &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(i &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> i, right&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#fe640b">1&lt;/span> i):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="204-计数质数">204. 计数质数
+&lt;/div>
+
+&lt;h4 id="204-计数质数">204. 计数质数
 &lt;a class="header-anchor" href="#204-%e8%ae%a1%e6%95%b0%e8%b4%a8%e6%95%b0">&lt;/a>
 &lt;/h4>&lt;p>p[i]表示小于等于i的质数数量。从i=2开始，p[i]==0 &amp;lt;=&amp;gt; i是质数。则从i&lt;em>i开始，标记i的倍数为合数（通过令p[i&lt;/em>k]=-1来实现）。并且，p[i]被赋值为p[i-1]+1&lt;/p></description></item><item><title>string</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/string/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3144832/fen-xiang-gun-ti-dan-zi-fu-chuan-kmpzhan-ugt4/" title="题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
@@ -117,7 +119,8 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;a class="header-anchor" href="#%e9%97%ad%e5%8c%ba%e9%97%b4%e5%86%99%e6%b3%95">&lt;/a>
 &lt;/h2>&lt;h3 id="找该数">找该数
 &lt;a class="header-anchor" href="#%e6%89%be%e8%af%a5%e6%95%b0">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -150,12 +153,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="找左边界">找左边界
+&lt;/div>
+
+&lt;h3 id="找左边界">找左边界
 &lt;a class="header-anchor" href="#%e6%89%be%e5%b7%a6%e8%be%b9%e7%95%8c">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -184,14 +189,16 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="左闭右开">左闭右开
+&lt;/div>
+
+&lt;h2 id="左闭右开">左闭右开
 &lt;a class="header-anchor" href="#%e5%b7%a6%e9%97%ad%e5%8f%b3%e5%bc%80">&lt;/a>
 &lt;/h2>&lt;h3 id="找左边界-1">找左边界
 &lt;a class="header-anchor" href="#%e6%89%be%e5%b7%a6%e8%be%b9%e7%95%8c-1">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -222,10 +229,11 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;/div>
+
+&lt;p>如果 target 不存在，搜索左侧边界的二分搜索返回的索引是大于 target 的最小索引。&lt;/p></description></item><item><title>图</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="图题单" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  图题单
  
@@ -309,7 +317,8 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;p>LC 189 [:]切片操作&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -334,10 +343,11 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> {&lt;span style="color:#40a02b">&amp;#39;apple&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;banana&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;cherry&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">3&lt;/span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> key &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> my_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>keys():
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
+&lt;/div>
+
+&lt;p>LC 49&lt;/p></description></item><item><title>滑动窗口</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/slidingwindow/</guid><description>&lt;p>reference：灵茶山艾府&lt;/p>
 &lt;h2 id="定长滑窗">定长滑窗
 &lt;a class="header-anchor" href="#%e5%ae%9a%e9%95%bf%e6%bb%91%e7%aa%97">&lt;/a>
 &lt;/h2>&lt;p>入：下标为i的元素进入窗口，更新相关统计量。如果i&amp;lt;k−1则重复第一步。&lt;/p>
@@ -353,6 +363,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/h2>&lt;h4 id="lc-1749">LC 1749
 &lt;a class="header-anchor" href="#lc-1749">&lt;/a>
 &lt;/h4>&lt;p>任意子数组和的绝对值的最大值: 在前缀和数组里面找最小值和最大值，他们的差的绝对值就是答案。&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -362,10 +373,11 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">maxAbsoluteSum&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">list&lt;/span>(accumulate(nums, initial&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>)) &lt;span style="color:#9ca0b0;font-style:italic"># nums 的前缀和&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
+&lt;/div>
+
+&lt;h4 id="2055-蜡烛之间的盘子">2055. 蜡烛之间的盘子
 &lt;a class="header-anchor" href="#2055-%e8%9c%a1%e7%83%9b%e4%b9%8b%e9%97%b4%e7%9a%84%e7%9b%98%e5%ad%90">&lt;/a>
 &lt;/h4>&lt;ol>
 &lt;li>找a或其右边第一个蜡烛&lt;/li>
@@ -417,7 +429,8 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/a>&lt;/p>
 &lt;h2 id="反转链表">反转链表
 &lt;a class="header-anchor" href="#%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -464,8 +477,9 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#连接1和4&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
+&lt;/div>
+
+&lt;p>反转链表关注 pre和cur在开始前和结束后的位置，在这一题中，旧pre的next为新的pre，旧cur的 next为新的cur.
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</guid><description>&lt;h1 id="rpc-basics">RPC Basics
+&lt;a class="header-anchor" href="#rpc-basics">&lt;/a>
+&lt;/h1>&lt;p>protobuf IDL&lt;/p>
+&lt;ol>
+&lt;li>Define the &lt;code>.proto&lt;/code> file: define Request/Response formats and function signatures.&lt;/li>
+&lt;li>Protobuf generates &lt;code>CalculatorStub&lt;/code> automatically.
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>channel &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> grpc.&lt;span style="color:#1e66f5">insecure_channel&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;server-ip:port&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> Client &lt;span style="color:#1e66f5">stub&lt;/span> (a local proxy &lt;span style="color:#8839ef">for&lt;/span> server&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>side methods)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stub &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> CalculatorStub(channel)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> Call Stub.&lt;span style="color:#1e66f5">Add&lt;/span> as &lt;span style="color:#8839ef">if&lt;/span> it were a local function
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> AddRequest(num1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>2, num2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>3)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stub.&lt;span style="color:#1e66f5">Add&lt;/span>(request)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;/li>
+&lt;li>Implement the actual logic for &lt;code>add&lt;/code> on the server side.&lt;/li>
+&lt;/ol>
+&lt;h2 id="semantics">Semantics
+&lt;a class="header-anchor" href="#semantics">&lt;/a>
+&lt;/h2>&lt;p>At most once&lt;/p></description></item></channel></rss>

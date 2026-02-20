@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LinkedList on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/linkedlist/</link><description>Recent content in LinkedList on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/linkedlist/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linked List</title><link>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
 &lt;a class="header-anchor" href="#reverse-linked-list">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -47,8 +48,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#Connect 1 and 4&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
+&lt;/div>
+
+&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

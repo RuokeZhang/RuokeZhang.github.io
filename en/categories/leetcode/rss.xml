@@ -287,7 +287,8 @@
 &lt;a class="header-anchor" href="#prime-numbers">&lt;/a>
 &lt;/h2>&lt;h3 id="sieve-of-eratosthenes">Sieve of Eratosthenes
 &lt;a class="header-anchor" href="#sieve-of-eratosthenes">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -308,10 +309,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> is_prime[i]:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> primes&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>append(i)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">for&lt;/span> j &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> &lt;span style="color:#04a5e5">range&lt;/span>(i &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> i, MX, i):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># j is a multiple of prime i&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_prime[j] &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">False&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># j is a multiple of prime i&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="204-count-primes">204. Count Primes
+&lt;/div>
+
+&lt;h4 id="204-count-primes">204. Count Primes
 &lt;a class="header-anchor" href="#204-count-primes">&lt;/a>
 &lt;/h4>&lt;p>p[i] represents the number of primes less than or equal to i. Starting from i=2, p[i]==0 &amp;lt;=&amp;gt; i is prime. Then, starting from i&lt;em>i, mark multiples of i as composite (by setting p[i&lt;/em>k]=-1). And, p[i] is assigned p[i-1]+1.&lt;/p></description></item><item><title>String</title><link>https://ruokezhang.github.io/en/post/leetcode/string/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/string/</guid><description>&lt;h3 id="kmp">KMP
 &lt;a class="header-anchor" href="#kmp">&lt;/a>
@@ -344,6 +346,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;li>The simulation ends when everyone has entered/exited.&lt;/li>
 &lt;li>Time is placed in the inner loop.&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;/code>&lt;/pre>&lt;/td>
@@ -388,7 +391,8 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;a class="header-anchor" href="#closed-interval-approach">&lt;/a>
 &lt;/h2>&lt;h3 id="find-target">Find Target
 &lt;a class="header-anchor" href="#find-target">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -421,12 +425,14 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="find-left-boundary">Find Left Boundary
+&lt;/div>
+
+&lt;h3 id="find-left-boundary">Find Left Boundary
 &lt;a class="header-anchor" href="#find-left-boundary">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -455,14 +461,16 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="left-closed-right-open">Left-Closed Right-Open
+&lt;/div>
+
+&lt;h2 id="left-closed-right-open">Left-Closed Right-Open
 &lt;a class="header-anchor" href="#left-closed-right-open">&lt;/a>
 &lt;/h2>&lt;h3 id="find-left-boundary-1">Find Left Boundary
 &lt;a class="header-anchor" href="#find-left-boundary-1">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -493,10 +501,11 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">elif&lt;/span> nums[mid] &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&lt;/span> target:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> mid
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> left&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>Graph</title><link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
+&lt;/div>
+
+&lt;p>If target doesn&amp;rsquo;t exist, left-bound binary search returns index of smallest element &amp;gt; target.&lt;/p></description></item><item><title>Graph</title><link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="Graph Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Graph Problem List
  
@@ -564,7 +573,8 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;p>LC 189 [:] slicing operation&lt;/p>
 &lt;h2 id="dict">dict
 &lt;a class="header-anchor" href="#dict">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -589,10 +599,11 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> {&lt;span style="color:#40a02b">&amp;#39;apple&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;banana&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#40a02b">&amp;#39;cherry&amp;#39;&lt;/span>: &lt;span style="color:#fe640b">3&lt;/span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">for&lt;/span> key &lt;span style="color:#04a5e5;font-weight:bold">in&lt;/span> my_dict&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>keys():
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">print&lt;/span>(&lt;span style="color:#d20f39">f&lt;/span>&lt;span style="color:#40a02b">&amp;#34;Key: &lt;/span>&lt;span style="color:#40a02b">{&lt;/span>key&lt;span style="color:#40a02b">}&lt;/span>&lt;span style="color:#40a02b">&amp;#34;&lt;/span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>LC 49&lt;/p></description></item><item><title>Prefix Sum</title><link>https://ruokezhang.github.io/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid><description>&lt;p>
+&lt;/div>
+
+&lt;p>LC 49&lt;/p></description></item><item><title>Prefix Sum</title><link>https://ruokezhang.github.io/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid><description>&lt;p>
 &lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="Prefix Sum Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Prefix Sum Problem List
  
@@ -604,6 +615,7 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;/h2>&lt;h3 id="lc-1749">LC 1749
 &lt;a class="header-anchor" href="#lc-1749">&lt;/a>
 &lt;/h3>&lt;p>Maximum absolute sum of any subarray: Find the minimum and maximum values in the prefix sum array, and the absolute difference between them is the answer.&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -613,10 +625,11 @@ Loop condition: i&amp;lt;=r. When i&amp;gt;r, nums[i] must be 2.&lt;/p></descrip
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">maxAbsoluteSum&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">list&lt;/span>(accumulate(nums, initial&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>)) &lt;span style="color:#9ca0b0;font-style:italic"># prefix sum of nums&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="2055-plates-between-candles">2055. Plates Between Candles
+&lt;/div>
+
+&lt;h3 id="2055-plates-between-candles">2055. Plates Between Candles
 &lt;a class="header-anchor" href="#2055-plates-between-candles">&lt;/a>
 &lt;/h3>&lt;ol>
 &lt;li>Find the first candle at or to the right of a&lt;/li>
@@ -651,7 +664,8 @@ LC 1052 Grumpy Bookstore Owner: Answer = number of customers during all non-grum
 Compare s[i], p[j]: if not match and p[j] is *, and s[i] matches p[j-1], three possibilities: match one letter, zero letters, multiple letters.
 If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item><item><title>Linked List</title><link>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/linkedlist/</guid><description>&lt;h2 id="reverse-linked-list">Reverse Linked List
 &lt;a class="header-anchor" href="#reverse-linked-list">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -698,8 +712,9 @@ If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>cur
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">#Connect 1 and 4&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p0&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>pre
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> dummy&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>next&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
+&lt;/div>
+
+&lt;p>Reverse linked list focuses on pre and cur positions before start and after end. In this case, old pre.next becomes new pre, old cur.next becomes new cur.
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/reverse.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

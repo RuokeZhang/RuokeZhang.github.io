@@ -13,20 +13,22 @@
  
 &lt;/a>&lt;/p>
 &lt;p>get Airflow&amp;rsquo;s official docker compose&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="mlflow">mlflow
+&lt;/div>
+
+&lt;h4 id="mlflow">mlflow
 &lt;a class="header-anchor" href="#mlflow">&lt;/a>
 &lt;/h4>&lt;h4 id="other-dependencies">other dependencies
 &lt;a class="header-anchor" href="#other-dependencies">&lt;/a>
-&lt;/h4>&lt;h3 id="heading">
-&lt;a class="header-anchor" href="#heading">&lt;/a>
+&lt;/h4>&lt;h3 id="">
+&lt;a class="header-anchor" href="#">&lt;/a>
 &lt;/h3></description></item><item><title>LLM笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
 &lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
 &lt;/h2>&lt;ol>

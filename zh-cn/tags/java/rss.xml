@@ -107,7 +107,8 @@
 &lt;a class="header-anchor" href="#api">&lt;/a>
 &lt;/h3>&lt;h4 id="获取class对象">获取Class对象
 &lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96class%e5%af%b9%e8%b1%a1">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -124,12 +125,14 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String str &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#40a02b">&amp;#34;test&amp;#34;&lt;/span>; 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> str.&lt;span style="color:#1e66f5">getClass&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Class&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> clazz &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Class.&lt;span style="color:#1e66f5">forName&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;java.lang.String&amp;#34;&lt;/span>);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="通过反射创建对象">通过反射创建对象
+&lt;/div>
+
+&lt;h4 id="通过反射创建对象">通过反射创建对象
 &lt;a class="header-anchor" href="#%e9%80%9a%e8%bf%87%e5%8f%8d%e5%b0%84%e5%88%9b%e5%bb%ba%e5%af%b9%e8%b1%a1">&lt;/a>
-&lt;/h4>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -142,10 +145,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getDeclaredConstructor&lt;/span>().&lt;span style="color:#1e66f5">newInstance&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Constructor&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;?&amp;gt;&lt;/span> constructor &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> clazz.&lt;span style="color:#1e66f5">getConstructor&lt;/span>(String.&lt;span style="color:#1e66f5">class&lt;/span>, &lt;span style="color:#d20f39">int&lt;/span>.&lt;span style="color:#1e66f5">class&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Object obj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> constructor.&lt;span style="color:#1e66f5">newInstance&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;Alice&amp;#34;&lt;/span>, 25);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="获取字段">获取字段
+&lt;/div>
+
+&lt;h4 id="获取字段">获取字段
 &lt;a class="header-anchor" href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e6%ae%b5">&lt;/a>
 &lt;/h4>&lt;p>getDeclaredField(&amp;ldquo;字段名&amp;rdquo;)&lt;/p></description></item><item><title>黑马点评登录设计</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/login/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/login/</guid><description>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/login.png" alt="Alt text" />&lt;/p>
 &lt;h2 id="短信验证码登录">短信验证码登录
@@ -219,15 +223,17 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;li>哈希表+链表/红黑树实现。解决哈希冲突的方法有 chaining/probing，一般使用chaining.&lt;/li>
 &lt;li>哈希值如何计算？拿到key的hashcode()。将&lt;strong>原 hashcode和hashcode右移16位的值进行异或运算&lt;/strong>。&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">int&lt;/span> hash &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (key &lt;span style="color:#04a5e5;font-weight:bold">==&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>) &lt;span style="color:#04a5e5;font-weight:bold">?&lt;/span> 0 : (key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">^&lt;/span> ((key.&lt;span style="color:#1e66f5">hashCode&lt;/span>()) &lt;span style="color:#04a5e5;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> 16);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;ol start="3">
+&lt;/div>
+
+&lt;ol start="3">
 &lt;li>计算数组下标。&lt;strong>hash&amp;amp;(length-1)&lt;/strong>，相当于hash%length. 二进制运算比取模运算更快。&lt;/li>
 &lt;li>如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，并且哈希表长度大于64时，升级成红黑树。&lt;/li>
 &lt;li>红黑树节点数少于6时，变回链表。&lt;/li>
@@ -251,12 +257,14 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;li>内存泄漏：可达但不再使用的对象仍然占用内存-&amp;gt;找到并释放这些对象&lt;/li>
 &lt;li>本身资源不够-&amp;gt;jmap -heap [process id]查看堆信息&lt;/li>
 &lt;/ol>
-&lt;blockquote>
-&lt;p>jmap是一个JDK命令行工具，用来生成heap dump。&lt;strong>heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息&lt;/strong>。&lt;br>
+
+ &lt;blockquote>
+ &lt;p>jmap是一个JDK命令行工具，用来生成heap dump。&lt;strong>heap dump叫做堆转储快照，是一个binary file，记录了堆里面所有对象的信息&lt;/strong>。&lt;br>
 或者，添加JVM参数-XX:+HeapDumpOnOutOfMemoryError，当程序发生OOM时，JVM会自动生成heap dump。&lt;/p></description></item><item><title>ThreadLocal&amp;线程池</title><link>https://ruokezhang.github.io/zh-cn/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/juc/threadlocal/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="threadlocal">ThreadLocal
 &lt;a class="header-anchor" href="#threadlocal">&lt;/a>
 &lt;/h2>&lt;p>&lt;strong>Thread类&lt;/strong>里面有一个变量threadLocals，可以视为一个 HashMap，用来存放线程私有的内容。&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -266,10 +274,11 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">/* ThreadLocal values pertaining to this thread. This map is maintained
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"> * by the ThreadLocal class. */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/zh-cn/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/juc/jmm/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;/div>
+
+&lt;p>ThreadLocal类里面有一个instance 方法 set,实际上是把内容存在threadLocals里面。key是&lt;strong>该ThreadLocal对象自己&lt;/strong>。&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/zh-cn/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/juc/jmm/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="并发问题">并发问题
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
@@ -300,7 +309,8 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;a class="header-anchor" href="#%e5%af%b9%e8%b1%a1%e5%b7%b2%e6%ad%bb">&lt;/a>
 &lt;/h2>&lt;h3 id="引用计数算法">引用计数算法
 &lt;a class="header-anchor" href="#%e5%bc%95%e7%94%a8%e8%ae%a1%e6%95%b0%e7%ae%97%e6%b3%95">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
@@ -347,12 +357,14 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// 假设在这行发生GC，objA和objB是否能被回收？&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#1e66f5">gc&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/zh-cn/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
+&lt;/div>
+
+&lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>Spring</title><link>https://ruokezhang.github.io/zh-cn/post/spring/</link><pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/spring/</guid><description>&lt;h2 id="beanfactory-interface">BeanFactory Interface
 &lt;a class="header-anchor" href="#beanfactory-interface">&lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -367,10 +379,11 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> &lt;span style="color:#d20f39">static&lt;/span> &lt;span style="color:#d20f39">void&lt;/span> &lt;span style="color:#1e66f5">main&lt;/span>(String&lt;span style="color:#04a5e5;font-weight:bold">[]&lt;/span> args) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConfigurableApplicationContext context&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> SpringApplication.&lt;span style="color:#1e66f5">run&lt;/span>(DemoJavaSpringApplication.&lt;span style="color:#1e66f5">class&lt;/span>, args);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
+&lt;/div>
+
+&lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
 这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
@@ -385,6 +398,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;li>default method，提供方法体，Java 8 以后有&lt;/li>
 &lt;li>static method, 提供方法体，Java 8 以后有，可以通过Interface.method()调用&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -486,10 +500,11 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// 调用接口的静态方法&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MyInterface.&lt;span style="color:#1e66f5">staticMethod&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="abstract-class">Abstract Class
+&lt;/div>
+
+&lt;h2 id="abstract-class">Abstract Class
 &lt;a class="header-anchor" href="#abstract-class">&lt;/a>
 &lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>黑马点评商户缓存</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="一致性">一致性
 &lt;a class="header-anchor" href="#%e4%b8%80%e8%87%b4%e6%80%a7">&lt;/a>
@@ -510,6 +525,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -537,10 +553,11 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> count&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">increment&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;icr:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>keyPrefix&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#40a02b">&amp;#34;:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>date);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">//拼接并返回&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&amp;lt;&lt;/span>COUNT_BITS&lt;span style="color:#04a5e5;font-weight:bold">|&lt;/span>count;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
+&lt;/div>
+
+&lt;p>这里的 keyPrefix表示一种object,比如优惠券订单&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
 &lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
@@ -551,7 +568,8 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;a class="header-anchor" href="#%e9%bb%91%e9%a9%ac%e7%82%b9%e8%af%84%e7%99%bb%e5%bd%95">&lt;/a>
 &lt;/h2>&lt;h3 id="第一次请求获取验证码">第一次请求：获取验证码
 &lt;a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%af%b7%e6%b1%82%e8%8e%b7%e5%8f%96%e9%aa%8c%e8%af%81%e7%a0%81">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -562,23 +580,27 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1e66f5;font-weight:bold">@PostMapping&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;/login&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">login&lt;/span>(&lt;span style="color:#1e66f5;font-weight:bold">@RequestBody&lt;/span> LoginFormDTO loginFormDTO, HttpSession session){
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> userService.&lt;span style="color:#1e66f5">login&lt;/span>(loginFormDTO, session);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端为其生成随机验证码，并且存入 session&lt;/p>
+&lt;/div>
+
+&lt;p>后端为其生成随机验证码，并且存入 session&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>session.&lt;span style="color:#1e66f5">setAttribute&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;code&amp;#34;&lt;/span>, code);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/zh-cn/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/javaio/</guid><description>&lt;h2 id="file">File
+&lt;/div>
+
+&lt;p>后端接着把Session ID通过 set cookie返回给前端浏览器。浏览器保存这个 Session ID, 把它存在 cookie 里面。&lt;/p></description></item><item><title>Java IO</title><link>https://ruokezhang.github.io/zh-cn/post/javaio/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/javaio/</guid><description>&lt;h2 id="file">File
 &lt;a class="header-anchor" href="#file">&lt;/a>
 &lt;/h2>&lt;h3 id="public-static-fields">Public Static Fields
 &lt;a class="header-anchor" href="#public-static-fields">&lt;/a>
 &lt;/h3>&lt;p>To let the code run on every system, use these variables.&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -590,14 +612,16 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// depends on the system. On Mac, it is &amp;#34;/&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">separator&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// On Mac, it&amp;#39;s &amp;#34;:&amp;#34;, used to separate filenames in a sequence of files given as a path list&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>System.&lt;span style="color:#1e66f5">out&lt;/span>.&lt;span style="color:#1e66f5">println&lt;/span>(File.&lt;span style="color:#1e66f5">pathSeparator&lt;/span>);&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>https://ruokezhang.github.io/zh-cn/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/maven/</guid><description>&lt;h2 id="basic">Basic
+&lt;/div>
+
+&lt;p>For example, if we want to get a path like &amp;ldquo;Users/ruoke&amp;rdquo;, we can create it using&lt;/p></description></item><item><title>Maven</title><link>https://ruokezhang.github.io/zh-cn/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/maven/</guid><description>&lt;h2 id="basic">Basic
 &lt;a class="header-anchor" href="#basic">&lt;/a>
 &lt;/h2>&lt;h3 id="java-version">Java Version
 &lt;a class="header-anchor" href="#java-version">&lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
 &lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
@@ -608,10 +632,12 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ruoke@Ruokes-MacBook-Pro ~ % mvn -v
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Apache Maven 3.9.6 &lt;span style="color:#04a5e5;font-weight:bold">(&lt;/span>bc0240f3c744dd6b6ec2920b3cd08dcc295161ae&lt;span style="color:#04a5e5;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Maven home: /Users/ruoke/Documents/devTools/apache-maven-3.9.6
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Java version: 21.0.3, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Java version: 21.0.3, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这个 Java 版本是 Maven 本身运行时使用的 Java 版本&lt;/p>
+&lt;/div>
+
+&lt;p>这个 Java 版本是 Maven 本身运行时使用的 Java 版本&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -621,8 +647,9 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;properties&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">&amp;lt;java.version&amp;gt;&lt;/span>1.8&lt;span style="color:#8839ef">&amp;lt;/java.version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;/properties&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
+&lt;/div>
+
+&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
 可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item></channel></rss>

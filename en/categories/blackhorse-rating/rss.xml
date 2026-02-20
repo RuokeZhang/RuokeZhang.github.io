@@ -23,6 +23,7 @@
 &lt;li>Check Redis to determine if current user liked this post&lt;/li>
 &lt;li>Add liked field to Blog object and return to frontend&lt;/li>
 &lt;/ol>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
@@ -34,10 +35,11 @@
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1e66f5;font-weight:bold">@PutMapping&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;/like/{id}&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">public&lt;/span> Result &lt;span style="color:#1e66f5">likeBlog&lt;/span>(&lt;span style="color:#1e66f5;font-weight:bold">@PathVariable&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;id&amp;#34;&lt;/span>) Long id) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> blogService.&lt;span style="color:#1e66f5">likeBlog&lt;/span>(id);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
+&lt;/div>
+
+&lt;p>Frontend doesn&amp;rsquo;t send current like status; backend checks if user liked by checking sorted set for user ID.&lt;/p></description></item><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
 &lt;a class="header-anchor" href="#consistency">&lt;/a>
 &lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
 &lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
@@ -64,6 +66,7 @@
 &lt;li>Large coupon volumes lead to oversized IDs; sharding causes ID conflicts.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/p>
+
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
@@ -91,7 +94,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d20f39">long&lt;/span> count&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stringRedisTemplate.&lt;span style="color:#1e66f5">opsForValue&lt;/span>().&lt;span style="color:#1e66f5">increment&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;icr:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>keyPrefix&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>&lt;span style="color:#40a02b">&amp;#34;:&amp;#34;&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span>date);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// Combine and return&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> timestamp&lt;span style="color:#04a5e5;font-weight:bold">&amp;lt;&amp;lt;&lt;/span>COUNT_BITS&lt;span style="color:#04a5e5;font-weight:bold">|&lt;/span>count;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item></channel></rss>
+&lt;/div>
+
+&lt;p>keyPrefix represents object type, e.g., coupon order.&lt;/p></description></item></channel></rss>

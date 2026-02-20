@@ -103,9 +103,9 @@ E-Commerce QPS估计 假设：日活跃用户（DAU）为 1000 万，峰值流�
 对用户进行身份验证 限制每个用户的请求数量 通过诸如轮询（Round Robin）等方法进行负载均衡，将请求分配到产品服务的多个实例上 商品的信息存在 Inventory Database 里面和 Elastic Search 里面，redis充当Elastic Search的缓存。当想要查看一个商品信息时，先查redis, 查不到就去查Elastic Search。
 当对数据库里的商品信息进行修改的时候，发送消息到MQ → 异步消费消息删除Redis并更新ES。
 下单 采用热点商品缓存策略，符合二八定律。
-1 2 3 4 5 6 [Order Service] │ ├── 热卖商品库存查询 → [Redis Cluster]（毫秒级响应） │ └── 非热卖商品查询 → [Inventory Service] （平均10-20ms，通过HTTP API） 缓存预热：秒杀活动开始之前，把热卖商品的库存手动缓存到 Redis 里面去。
+[Order Service] │ ├── 热卖商品库存查询 → [Redis Cluster]（毫秒级响应） │ └── 非热卖商品查询 → [Inventory Service] （平均10-20ms，通过HTTP API）缓存预热：秒杀活动开始之前，把热卖商品的库存手动缓存到 Redis 里面去。
 来了一个请求，只有热卖商品能经过布隆过滤器，在 redis里查询并扣库存。
-下单成 …  </content></entry><entry><title>贪心</title><url>/zh-cn/post/leetcode/greedy/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 300. 最长递增子序列 灵神视频 定义 g[i] 表示长为 i+1 的上升子序列的末尾元素的最小值。
+下单成功， …  </content></entry><entry><title>贪心</title><url>/zh-cn/post/leetcode/greedy/</url><categories><category>Leetcode</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[   灵神题单 300. 最长递增子序列 灵神视频 定义 g[i] 表示长为 i+1 的上升子序列的末尾元素的最小值。
 反证法可证明：g是一个严格递增的数组
 659. 分割数组为连续子序列 tail[i]用来表示，以i结尾的子序列个数。这样在遇到i+1时，就可以放进去了。
 如果放不了，则开辟一个新序列，并检查 cnt[i+1]&gt;0 and cnt[i+2]&gt;2， 如果不满足，返回 False。
