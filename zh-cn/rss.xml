@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 19 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Large Models</title><link>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</link><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</guid><description>&lt;h2 id="open-clip">Open Clip
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Dynamo</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</guid><description>&lt;h2 id="dynamo">Dynamo
+&lt;a class="header-anchor" href="#dynamo">&lt;/a>
+&lt;/h2>&lt;h3 id="virtual-nodes">virtual nodes
+&lt;a class="header-anchor" href="#virtual-nodes">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>compared to basic consistent hashing, each node is assigned to multiple points on the ring&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>advantages&lt;/p>
+&lt;ul>
+&lt;li>If a node becomes unavailable, the load handled by this node is evenly dispersed across the remaining available nodes.&lt;/li>
+&lt;li>When a new node is added to the system, the new node accepts a roughly equivalent amount of load from each of the other available nodes.&lt;/li>
+&lt;li>The number of virtual nodes that a node is responsible for can be decided based on its capacity, accounting for heterogeneity in the physical infrastructure.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>solved consistent hashing&amp;rsquo;s problems&lt;/p></description></item><item><title>Large Models</title><link>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</link><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</guid><description>&lt;h2 id="open-clip">Open Clip
 &lt;a class="header-anchor" href="#open-clip">&lt;/a>
 &lt;/h2>&lt;ol>
 &lt;li>create_model_and_transforms&lt;/li>
