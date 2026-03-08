@@ -1803,7 +1803,48 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/div>
 &lt;/div>
 
-&lt;p>对应第5,6,7步&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
+&lt;p>对应第5,6,7步&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</guid><description>&lt;p>source:
+
+&lt;a href="https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/" title="https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://stackoverflow.com/questions/28391748/oop-airline-reservation" title="https://stackoverflow.com/questions/28391748/oop-airline-reservation" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://stackoverflow.com/questions/28391748/oop-airline-reservation
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h1 id="airline-ticketing-design">Airline Ticketing Design
+&lt;a class="header-anchor" href="#airline-ticketing-design">&lt;/a>
+&lt;/h1>&lt;p>Airlines offer different ticket classes such as &lt;code>Economy&lt;/code>, &lt;code>Business&lt;/code>, and &lt;code>FirstClass&lt;/code>.&lt;/p>
+&lt;p>Each ticket has the following attributes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>airline_name&lt;/code>&lt;/li>
+&lt;li>&lt;code>class_name&lt;/code>&lt;/li>
+&lt;li>&lt;code>mileage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Example input:&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>tickets &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#40a02b">&amp;#34;American&amp;#34;&lt;/span>, &lt;span style="color:#40a02b">&amp;#34;Economy&amp;#34;&lt;/span>, &lt;span style="color:#fe640b">120.0&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#40a02b">&amp;#34;RyanAir&amp;#34;&lt;/span>, &lt;span style="color:#40a02b">&amp;#34;Business&amp;#34;&lt;/span>, &lt;span style="color:#fe640b">100.0&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>The operating cost depends on the ticket class. The initialization data is given as follows:&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</guid><description>&lt;h2 id="heap">heap
 &lt;a class="header-anchor" href="#heap">&lt;/a>
 &lt;/h2>&lt;ul>
 &lt;li>
