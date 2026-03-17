@@ -126,87 +126,75 @@ class CacheWrapper(Storage):
     def delete(self, key):
         self.storage.delete(key)
         self.cache.remove(key)
+import time
+class TTLCache(Cache):
+    def __init__(self, ttl):
+        self.data={} #key->(value, expire)
+        self.ttl=ttl
+    def get(self, key):
+        # get the key value, check if it expires
+        if key not in self.data:
+            return None
+        value, expire=self.data[key]
+        if time.time()>expire:
+            del self.data[key]
+            return None
+        return value
+    def put(self, key, value):
+        cur_time=time.time()
+        self.data[key]=[value, cur_time+self.ttl]
+    def remove(self, key):
+        del self.data[key]
 
+def test_ttl_cache():
+    print("=== Test TTLCache ===")
+    cache = TTLCache(ttl=2)
 
+    cache.put("a", 100)
+    print("put a=100")
+    print("immediately get a =", cache.get("a"))   # 100
 
-def print_lru(cache):
-    cur = cache.dummy.nxt
-    arr = []
-    while cur != cache.dummy:
-        arr.append(f"{cur.key}:{cur.value}")
-        cur = cur.nxt
-    print("LRU order (MRU -> LRU):", " -> ".join(arr) if arr else "empty")
+    time.sleep(1)
+    print("after 1 second, get a =", cache.get("a"))   # 100
 
-
-def test_simple_cache():
-    print("=== Test SimpleCache + CacheWrapper ===")
-    storage = SlowStorage()
-    cache = SimpleCache()
-    wrapper = CacheWrapper(storage, cache)
-
-    wrapper.write("a", 1)
-    wrapper.write("b", 2)
-
-    print("read a =", wrapper.read("a"))   # 1
-    print("read b =", wrapper.read("b"))   # 2
-    print("read c =", wrapper.read("c"))   # None
-
-    wrapper.delete("a")
-    print("after delete a, read a =", wrapper.read("a"))  # None
-
-    print("storage =", storage.data)
-    print("cache =", cache.data)
+    time.sleep(2)
+    print("after 3 seconds total, get a =", cache.get("a"))   # None
+    print("internal data =", cache.data)
     print()
 
 
-def test_lru_cache():
-    print("=== Test LRUCache ===")
-    lru = LRUCache(2)
-
-    lru.put("a", 1)
-    print_lru(lru)   # a
-
-    lru.put("b", 2)
-    print_lru(lru)   # b -> a
-
-    print("get a =", lru.get("a"))   # 1
-    print_lru(lru)   # a -> b
-
-    lru.put("c", 3)  # should evict b
-    print_lru(lru)   # c -> a
-    print("get b =", lru.get("b"))   # None
-    print("get a =", lru.get("a"))   # 1
-    print("get c =", lru.get("c"))   # 3
-
-    lru.remove("a")
-    print_lru(lru)   # c
-
-    print()
-
-
-def test_wrapper_with_lru():
-    print("=== Test CacheWrapper + LRUCache ===")
+def test_wrapper_with_ttl():
+    print("=== Test CacheWrapper + TTLCache ===")
     storage = SlowStorage()
-    cache = LRUCache(2)
+    cache = TTLCache(ttl=2)
     wrapper = CacheWrapper(storage, cache)
 
     wrapper.write("x", 10)
-    wrapper.write("y", 20)
-    print_lru(cache)   # y -> x
+    print("write x=10")
+    print("read x immediately =", wrapper.read("x"))   # 10
+    print("cache data =", cache.data)
+    print("storage data =", storage.data)
 
-    print("read x =", wrapper.read("x"))   # x becomes MRU
-    print_lru(cache)   # x -> y
+    time.sleep(3)
+    print("after ttl expired, read x =", wrapper.read("x"))  
+    # 应该 cache miss，但 storage 还有，所以返回 10，并重新写回 cache
 
-    wrapper.write("z", 30)   # should evict y
-    print_lru(cache)         # z -> x
+    print("cache data after refill =", cache.data)
+    print("storage data =", storage.data)
+    print()
 
-    print("read y =", wrapper.read("y"))   # miss in cache, hit in storage, refill
-    print_lru(cache)         # y -> z or y -> x depending on refill/eject sequence
-    print("storage =", storage.data)
+
+def test_ttl_remove():
+    print("=== Test TTLCache remove ===")
+    cache = TTLCache(ttl=5)
+    cache.put("k1", "v1")
+    print("before remove, get k1 =", cache.get("k1"))   # v1
+    cache.remove("k1")
+    print("after remove, get k1 =", cache.get("k1"))    # None
     print()
 
 
 if __name__ == "__main__":
-    test_simple_cache()
-    test_lru_cache()
-    test_wrapper_with_lru()
+    test_ttl_cache()
+    test_wrapper_with_ttl()
+    test_ttl_remove()
