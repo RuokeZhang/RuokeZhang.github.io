@@ -1,8 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 19 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>Large Models</title><link>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</link><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</guid><description>&lt;h2 id="open-clip">Open Clip
-&lt;a class="header-anchor" href="#open-clip">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>create_model_and_transforms&lt;/li>
-&lt;/ol></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>Pytorch</title><link>https://ruokezhang.github.io/zh-cn/ai/pytorch/</link><pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/pytorch/</guid><description>&lt;h2 id="module">Module
+&lt;a class="header-anchor" href="#module">&lt;/a>
+&lt;/h2>&lt;p>所有模型的父类，所有网络都继承它&lt;/p>
+&lt;ul>
+&lt;li>init(self)&lt;/li>
+&lt;li>forward(self, x)&lt;/li>
+&lt;/ul>
+&lt;h2 id="conv">conv
+&lt;a class="header-anchor" href="#conv">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1hE411t7RN?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478&amp;amp;p=18" title="b站" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ b站
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>output&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>F&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv2d(&lt;span style="color:#04a5e5">input&lt;/span>, kernel, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#进行卷积计算，得到feature matrix&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>Conv2d&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch.nn&lt;/span> &lt;span style="color:#8839ef">as&lt;/span> &lt;span style="color:#fe640b">nn&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">CNN&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>() 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">6&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>MaxPool2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, &lt;span style="color:#9ca0b0;font-style:italic"># 池化窗口大小：3×3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ceil_mode&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 向上取整模式，保留不完整的边缘窗口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># x: [b, 3, h, w]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># h&amp;#39;=(h+2*p-k)/s+1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第二步：过池化层，对特征图下采样&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h2 id="linear">Linear
+&lt;a class="header-anchor" href="#linear">&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>linear &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Linear(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1024&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">512&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 默认 True，要不要加偏置 b&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>weight = (512, 1024)&lt;br>
+bias = (512)&lt;br>
+y = x @ W.T + b&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
 &lt;a class="header-anchor" href="#orchestration">&lt;/a>
 &lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
 &lt;h3 id="step-1-docker-env">Step 1 Docker Env

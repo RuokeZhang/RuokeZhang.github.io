@@ -1,0 +1,174 @@
+<!doctype html><html lang=zh-CN data-theme=light><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.146.0"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content><meta itemprop=description content><meta name=description content><meta itemprop=image content="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/assets/avatar.JPG"><meta itemprop=keywords content="Hugo,NexT,主题,简单,强大"><link type=text/css rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1776194001"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>- Ruoke Zhang</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/zh-cn/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>Ruoke Zhang</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description></p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/zh-cn/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/zh-cn/about/ class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-categories"><a href=/zh-cn/categories/ class=hvr-icon-pulse rel=section><i class="fa fa-folder hvr-icon"></i>分类</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#candidate-part>Candidate Part</a></li><li><a href=#llm-part>LLM part</a><ul><li><a href=#round-1>ROUND 1:</a></li><li><a href=#round-2-deal-with-every-candidatesegment>ROUND 2: deal with every CandidateSegment</a></li><li><a href=#round-3-critique>ROUND 3: critique</a></li><li><a href=#round-4-refine>ROUND 4: refine</a></li><li><a href=#round-5-evaluate>ROUND 5: evaluate</a></li></ul></li><li><a href=#系统运行流程>系统运行流程</a><ul><li><a href=#轮询器poller>轮询器（Poller）</a></li><li><a href=#worker分布式循环>Worker（分布式）循环</a></li><li><a href=#token-bucket>token bucket</a></li><li><a href=#自动扩缩容>自动扩缩容</a></li></ul></li><li><a href=#剪视频>剪视频</a><ul><li><a href=#rocketmq>RocketMQ</a></li><li><a href=#redis>Redis</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt="Ruoke Zhang" src=/imgs/img-lazy-loading.gif data-src=https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/assets/avatar.JPG><p class=site-author-name itemprop=name>Ruoke Zhang</p><div class=site-description itemprop=description></div></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/RuokeZhang title="Github → https://github.com/RuokeZhang" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+</a></span><span class=links-of-social-item><a href=mailto:jaade1107@gmail.com title="E-Mail → mailto:jaade1107@gmail.com" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-envelope fa-fw hvr-icon"></i>
+</a></span><span class=links-of-social-item><a href=https://instagram.com/jaade023 title="Instagram → https://instagram.com/jaade023" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-instagram fa-fw hvr-icon"></i></a></span></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="0001-01-01 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=131540></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=303></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2026-03-05 00:00:00 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a href=https://github.com/RuokeZhang rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg>
+</a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/assets/avatar.JPG"><meta itemprop=name content="Ruoke Zhang"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Ruoke Zhang"><meta itemprop=description content></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content><meta itemprop=description content="
+
+    https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link
+    
+    
+    
+
+Candidate Part
+
+
+First, we aggregate the livestream into minute-level metrics, including normalized signals like watch PV, user actions, and order creation.
+Then, instead of using a single metric, we combine them into a composite score and apply a 5-minute rolling z-score to detect spikes relative to the recent baseline. This helps us identify highlight moments in a way that adapts to different livestream dynamics.
+for each peak, we calulate a contribution score, means how much a metric contribute to the composite score, and assign a tag to a peak. for example, a peak may have &ldquo;engagement-driven&rdquo; or &ldquo;conversion drivien&rdquo; tag
+For each peak, we verify whether the previous minute shows a similar pattern,
+Finally, we expand each detected peak into a candidate window. The expansion strategy depends on the tag—for example, traffic-driven highlights require more context, so we expand further, while conversion-driven highlights tend to be more localized.
+
+LLM part
+
+ROUND 1:
+
+
+give the model the product list and the full transcript of the candidate
+model&rsquo;s output will be converted into CandidateSegment
+
+
+
+
+1
+2
+3
+4
+5
+6
+
+
+PROMPT:
+Excerpts must retain the original wording, punctuation, capitalization, and grammar exactly as in the transcript, as they will be used to extract timestamps.
+
+Each excerpt should be a suitable length for a short video, conceptually between 15 and 60 seconds of spoken dialogue.
+
+ For each excerpt, provide a brief reasoning for its selection and list the product index(es) (maximum 3, separated by ||) from the product list that best match the demonstrated product.
+
+
+
+ROUND 2: deal with every CandidateSegment
+
+
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+
+
+segment_edit_prompt INFO:
+1. 输入信息：
+    ◦ 候选片段（可能用于高光视频的 transcript 片段）；
+    ◦ 产品列表（直播中销售的产品清单，按序号 1、2、3... 排列）；
+    ◦ 完整直播 transcript（供上下文参考）。
+
+• 识别主产品：从候选片段中确定 1 个最核心的产品，需与产品列表中的某一项精准匹配；
+• 验证片段有效性：确保片段包含该产品的清晰实物演示（如功能、用法、特点），且不包含无关信息；
+• 编辑片段：删除与主产品无关的内容（如其他产品、价格、直播互动话术等），生成连贯的独立演示脚本。
+
+1. 输出格式：包含 5 个字段：
+    ◦ reasoning：解释主产品的确定依据及片段有效性的理由；
+    ◦ edited_excerpt：编辑后的片段（含 ||| 标记）；
+    ◦ num_products：编辑后片段中涉及的产品数量（只能是 1 或 0）；
+    ◦ product_index：主产品在列表中的序号（如 “3”，无效时为 “-1”）；
+    ◦ is_valid：片段是否适合作为独立产品演示（True 或 False）。
+
+
+
+ROUND 3: critique
+
+分别给ChatGPT和Gemini发送：segment_text, edited_excerpt, main_product"></span><header class=post-header><h1 class=post-title itemprop="name headline"></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：0001-01-01T00:00:00+00:00 itemprop="dateCreated datePublished" datetime="0001-01-01 00:00:00 +0000 UTC">0001-01-01</time></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>2758</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>6分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/zh-cn/post/interview/internship/highlight/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class=post-body itemprop=articleBody><p><a href="https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link" title="https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link" rel="noopener external nofollow noreferrer" target=_blank class=exturl>https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link
+<i class="fa fa-external-link-alt"></i></a></p><h2 id=candidate-part>Candidate Part
+<a class=header-anchor href=#candidate-part></a></h2><ul><li>First, we aggregate the livestream into minute-level metrics, including normalized signals like watch PV, user actions, and order creation.</li><li>Then, instead of using a single metric, we combine them into a composite score and apply a 5-minute rolling z-score to detect spikes relative to the recent baseline. This helps us identify highlight moments in a way that adapts to different livestream dynamics.</li><li>for each peak, we calulate a contribution score, means how much a metric contribute to the composite score, and assign a tag to a peak. for example, a peak may have &ldquo;engagement-driven&rdquo; or &ldquo;conversion drivien&rdquo; tag</li><li>For each peak, we verify whether the previous minute shows a similar pattern,</li><li>Finally, we expand each detected peak into a candidate window. The expansion strategy depends on the tag—for example, traffic-driven highlights require more context, so we expand further, while conversion-driven highlights tend to be more localized.</li></ul><h2 id=llm-part>LLM part
+<a class=header-anchor href=#llm-part></a></h2><h3 id=round-1>ROUND 1:
+<a class=header-anchor href=#round-1></a></h3><ul><li>give the model the product list and the full transcript of the candidate</li><li>model&rsquo;s output will be converted into CandidateSegment</li></ul><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">6
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-md data-lang=md><span style=display:flex><span>PROMPT:
+</span></span><span style=display:flex><span>Excerpts must retain the original wording, punctuation, capitalization, and grammar exactly as in the transcript, as they will be used to extract timestamps.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Each excerpt should be a suitable length for a short video, conceptually between 15 and 60 seconds of spoken dialogue.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> For each excerpt, provide a brief reasoning for its selection and list the product index(es) (maximum 3, separated by ||) from the product list that best match the demonstrated product.</span></span></code></pre></td></tr></table></div></div><h3 id=round-2-deal-with-every-candidatesegment>ROUND 2: deal with every CandidateSegment
+<a class=header-anchor href=#round-2-deal-with-every-candidatesegment></a></h3><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">16
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-md data-lang=md><span style=display:flex><span>segment_edit_prompt INFO:
+</span></span><span style=display:flex><span><span style=color:#8839ef>1.</span> 输入信息：
+</span></span><span style=display:flex><span>    ◦ 候选片段（可能用于高光视频的 transcript 片段）；
+</span></span><span style=display:flex><span>    ◦ 产品列表（直播中销售的产品清单，按序号 1、2、3... 排列）；
+</span></span><span style=display:flex><span>    ◦ 完整直播 transcript（供上下文参考）。
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>• 识别主产品：从候选片段中确定 1 个最核心的产品，需与产品列表中的某一项精准匹配；
+</span></span><span style=display:flex><span>• 验证片段有效性：确保片段包含该产品的清晰实物演示（如功能、用法、特点），且不包含无关信息；
+</span></span><span style=display:flex><span>• 编辑片段：删除与主产品无关的内容（如其他产品、价格、直播互动话术等），生成连贯的独立演示脚本。
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>1.</span> 输出格式：包含 5 个字段：
+</span></span><span style=display:flex><span>    ◦ reasoning：解释主产品的确定依据及片段有效性的理由；
+</span></span><span style=display:flex><span>    ◦ edited_excerpt：编辑后的片段（含 ||| 标记）；
+</span></span><span style=display:flex><span>    ◦ num_products：编辑后片段中涉及的产品数量（只能是 1 或 0）；
+</span></span><span style=display:flex><span>    ◦ product_index：主产品在列表中的序号（如 “3”，无效时为 “-1”）；
+</span></span><span style=display:flex><span>    ◦ is_valid：片段是否适合作为独立产品演示（True 或 False）。</span></span></code></pre></td></tr></table></div></div><h3 id=round-3-critique>ROUND 3: critique
+<a class=header-anchor href=#round-3-critique></a></h3><p>分别给ChatGPT和Gemini发送：segment_text, edited_excerpt, main_product</p><a id=more></a><ol><li><p>产品展示（PRODUCT DEMONSTRATION）片段需清晰呈现主产品的物理属性（如外观、材质）、功能（如操作方式）、价值 / 好处（如使用体验），包括主播的个人使用感受或直接展示产品的对话（例如 “你看这个面料摸起来很柔软”“按这个按钮就能启动”）。</p></li><li><p>焦点清晰度（FOCUS CLARITY）片段必须仅围绕主产品展开，不能提及其他产品，也不能存在 “多个产品混杂、主次不分” 的模糊性。</p></li><li><p>内容相关性（CONTENT RELEVANCE）只保留与主产品展示相关的信息，必须删除：</p><ul><li>价格、促销、折扣；</li><li>直播特有话术（如 “点击链接”“关注直播间”）；</li><li>观众互动（如 “有人问尺码”）；</li><li>其他产品的提及。</li></ul></li><li><p>时效性（EVERGREEN POTENTIAL）避免时间敏感信息（如 “618 特价”“今天仅限 50 单”“7 月 1 日前发货”），但允许与季节 / 天气相关的描述（如 “冬天穿很保暖”“防雨材质适合雨季”）。</p></li><li><p>真实性（AUTHENTICITY）严格保留原始 transcript 的用词、拼写、语法、标点和大小写，不能擅自改写、修正或 paraphrase（意译）。</p></li></ol><h3 id=round-4-refine>ROUND 4: refine
+<a class=header-anchor href=#round-4-refine></a></h3><p>input: segment_text, edited_excerpt, main_product, gpt_critique, gemini_critique</p><p>二、核心约束（Important）这是优化的 “红线”，确保片段的真实性和合规性：
+• 严格保留原始内容：必须原样保留 transcript 中的用词、拼写、语法、标点和大小写，不能改写、修正或意译（paraphrase）。
+• 仅能删除或复制：优化只能通过两种操作实现：1. 删除初步编辑片段中的冗余内容；2. 从原始 transcript 中复制未被初步编辑包含的相关内容（原样添加，不做任何修改）。绝对禁止添加、推断 transcript 中没有的信息。</p><p>三、编辑规则（Editing Rules and Conventions）具体规定了优化的操作细节，确保格式和内容合规：</p><ol><li>删除标记：用 ||| 标记删除内容的位置（例如 “这个杯子 ||| 很耐用” 表示中间内容被删除）。</li><li>禁止修改原始文本：保留的任何文字必须与 transcript 完全一致（包括错别字、语法错误等）。</li><li>内容筛选：只保留与主产品 “实物演示” 直接相关的内容，删除：- 其他产品提及；- 直播特有话术（如 “点击下方链接”）；- 价格、促销信息；- 观众互动（如 “有人问尺码”）；- 模糊或重复内容。</li><li>片段长度：每个保留的连续片段至少 5 个词（避免过短导致语义不完整）。</li><li>整体要求：优化后的片段需连贯、聚焦主产品，可作为独立的产品演示视频脚本；若无法满足（如信息不足、焦点模糊），返回 null。</li></ol><h3 id=round-5-evaluate>ROUND 5: evaluate
+<a class=header-anchor href=#round-5-evaluate></a></h3><p>input: candidate_segment, binded_products, final_excerpt, product_name</p><p>输入final_excerpt，让大模型打分，分数为1-5分。不超过某个阈值的segment被视为不优秀的片段</p><ol><li><p>Product Identification: Is the main product explicitly named or described in the excerpt, matching the provided main product field? Do not infer or assume—accept only what is stated.</p></li><li><p>Ambiguity Check: Could the excerpt refer to more than one product in the product list? If so, note this ambiguity.</p></li><li><p>Claim Verification: Are all product features, names, and descriptions in the excerpt directly supported by the transcript and main product? Avoid any fabricated or unsupported claims.</p></li><li><p>Excerpt Quality: Is the excerpt suitable as a standalone product video clip? Confirm that:</p></li></ol><ul><li>All irrelevant content is removed and separated by ||| as instructed.</li><li>Each segment is at least 5 words long.</li><li>Each segment ends smoothly and naturally, not cutting off mid-sentence or mid-thought before the ||| separator.</li><li>The excerpt is coherent and understandable on its own.</li></ul><h2 id=系统运行流程>系统运行流程
+<a class=header-anchor href=#%e7%b3%bb%e7%bb%9f%e8%bf%90%e8%a1%8c%e6%b5%81%e7%a8%8b></a></h2><h3 id=轮询器poller>轮询器（Poller）
+<a class=header-anchor href=#%e8%bd%ae%e8%af%a2%e5%99%a8poller></a></h3><ul><li>我们的服务定期去查询 “是否有新的直播结束事件”，用SET NX尝试获取全局游标锁（存上次查到的最新直播结束时间），然后从Redis拿到这个全局游标的timestamp.<ul><li>SET poller_cursor_lock instance_A EX 10 NX</li><li>10秒过期</li></ul></li><li>将“生成任务”写入 Redis 延迟队列（score = 直播结束时间+5min，表示可立即执行， ZSET实现）</li><li>SET 全局游标为此次直播结束的timestamp</li><li>lua脚本先检查锁的value是不是自己的， 如果是，就释放锁</li></ul><h3 id=worker分布式循环>Worker（分布式）循环
+<a class=header-anchor href=#worker%e5%88%86%e5%b8%83%e5%bc%8f%e5%be%aa%e7%8e%af></a></h3><ul><li><p>核心逻辑：不断从延迟队列中获取“到期”任务（score ≤ now），处理流程如下：</p></li><li><p>Worker 抢到任务后，给这个任务加分布式锁（SETNX + UUID + TTL），超时时间30分钟</p><ul><li>必须在整个任务完全执行成功之后，才用 Lua 脚本释放（先判断是不是自己的锁，才能释放）</li><li>如果任务失败、中断、超时，不主动释放，让锁自动过期，配合看门狗续期，防止并发重复执行。同时启动一个后台线程作为 “看门狗”。这个线程会每隔一段时间（超时时间的 1/3) 检查当前任务是否还在执行，如果任务没执行完，就自动把锁的超时时间重新设置为 30 分钟</li></ul></li></ul><h3 id=token-bucket>token bucket
+<a class=header-anchor href=#token-bucket></a></h3><ul><li><p>在每轮调用之前，worker 调用 Redis Lua 全局 token-bucket 脚本尝试扣 tokens：</p></li><li><p>扣成功 → 直接调用模型；</p></li><li><p>扣不下 → 计算 wait_ms 或 backoff</p><ul><li>Backoff with Jitter: 第一次重试等 2 秒 ±1 秒，第二次等 4 秒 ±2 秒，分散重试流量</li></ul></li><li><p>五轮调用大概在25000 token, 大促期间平均一天1.3万场, qps=1, 然后平均每天10000美金</p></li><li><p>global token桶</p><ul><li>capacity: 10000</li><li>rate: 50000/60=8333（假设TPM为50000）</li></ul></li></ul><h3 id=自动扩缩容>自动扩缩容
+<a class=header-anchor href=#%e8%87%aa%e5%8a%a8%e6%89%a9%e7%bc%a9%e5%ae%b9></a></h3><p>挤压任务达到50，就增加20%服务器</p><h2 id=剪视频>剪视频
+<a class=header-anchor href=#%e5%89%aa%e8%a7%86%e9%a2%91></a></h2><h3 id=rocketmq>RocketMQ
+<a class=header-anchor href=#rocketmq></a></h3><ul><li>传call_back_uri: RocketMQ 的oec_dms_live_highlight_generation/web_common 主题</li><li>集群消费：给消费者组配置了集群消费模式。RocketMQ在发消息的时候，按顺序依次发给不同的消费者(go instance). 但是网络波动/重启都会导致同一条消息被消费多次</li><li>消费回调函数：查 Redis 状态→更新为done,发送 ACK</li></ul><h3 id=redis>Redis
+<a class=header-anchor href=#redis></a></h3><ul><li>cache_key: room_id+uuid</li><li>cache_value: 商品信息， status</li><li>收到剪辑完成的任务之后， 用 Lua 脚本把 “查询当前状态 + 更新状态” 做成一个原子操作，然后发送 ACK</li></ul></div><footer class=post-footer><hr><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/zh-cn/post/course_notes/llm/ rel=next title><i class="fa fa-chevron-left"></i></a></div><div class="post-nav-prev post-nav-item"><a href=/zh-cn/post/interview/ood/airline_ticketing_system/ rel=prev title><i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=中文 lang-url=/zh-cn/post/interview/internship/highlight/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2025 - 2026
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>Ruoke Zhang</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.146.0 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.8.3 target=_blank>Hugo NexT.Pisces</a> 强力驱动</div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":null,"isHome":false,"isPage":true,"path":"highlight","permalink":"https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/","title":"","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":false,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://ruokezhang.github.io/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Pisces","share":{"enable":false},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"cdnjs","router":{"home":"https://cdnjs.com","logo":"https://cdnjs.com/_/f7a2ebfb819c118086546e481876aef6.svg","name":"cdnjs","type":"modern","url":"https://cdnjs.cloudflare.com/ajax/libs"}},"version":"4.8.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1776194000" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1776194001" defer></script></body></html>

@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AIs on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/ai/</link><description>Recent content in AIs on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distribued Training</title><link>https://ruokezhang.github.io/zh-cn/ai/parallelism/</link><pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/parallelism/</guid><description>&lt;h2 id="通信实现方式">通信实现方式
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AIs on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/ai/</link><description>Recent content in AIs on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>Pytorch</title><link>https://ruokezhang.github.io/zh-cn/ai/pytorch/</link><pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/pytorch/</guid><description>&lt;h2 id="module">Module
+&lt;a class="header-anchor" href="#module">&lt;/a>
+&lt;/h2>&lt;p>所有模型的父类，所有网络都继承它&lt;/p>
+&lt;ul>
+&lt;li>init(self)&lt;/li>
+&lt;li>forward(self, x)&lt;/li>
+&lt;/ul>
+&lt;h2 id="conv">conv
+&lt;a class="header-anchor" href="#conv">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1hE411t7RN?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478&amp;amp;p=18" title="b站" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ b站
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>output&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>F&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv2d(&lt;span style="color:#04a5e5">input&lt;/span>, kernel, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#进行卷积计算，得到feature matrix&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>Conv2d&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch.nn&lt;/span> &lt;span style="color:#8839ef">as&lt;/span> &lt;span style="color:#fe640b">nn&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">CNN&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>() 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">6&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>MaxPool2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, &lt;span style="color:#9ca0b0;font-style:italic"># 池化窗口大小：3×3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ceil_mode&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 向上取整模式，保留不完整的边缘窗口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># x: [b, 3, h, w]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># h&amp;#39;=(h+2*p-k)/s+1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第二步：过池化层，对特征图下采样&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h2 id="linear">Linear
+&lt;a class="header-anchor" href="#linear">&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>linear &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Linear(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1024&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">512&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 默认 True，要不要加偏置 b&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>weight = (512, 1024)&lt;br>
+bias = (512)&lt;br>
+y = x @ W.T + b&lt;/p></description></item><item><title>Distribued Training</title><link>https://ruokezhang.github.io/zh-cn/ai/parallelism/</link><pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/parallelism/</guid><description>&lt;h2 id="通信实现方式">通信实现方式
 &lt;a class="header-anchor" href="#%e9%80%9a%e4%bf%a1%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f">&lt;/a>
 &lt;/h2>&lt;h3 id="机器内通信">机器内通信
 &lt;a class="header-anchor" href="#%e6%9c%ba%e5%99%a8%e5%86%85%e9%80%9a%e4%bf%a1">&lt;/a>
@@ -10,4 +123,179 @@ PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。&lt;/li>
 &lt;/ol>
 &lt;h3 id="机器间通信">机器间通信
 &lt;a class="header-anchor" href="#%e6%9c%ba%e5%99%a8%e9%97%b4%e9%80%9a%e4%bf%a1">&lt;/a>
-&lt;/h3>&lt;p>TCP/IP: 通信速率收到硬件限制，比机内通信更慢。&lt;/p></description></item></channel></rss>
+&lt;/h3>&lt;p>TCP/IP: 通信速率收到硬件限制，比机内通信更慢。&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</guid><description>&lt;h2 id="lecture-2">Lecture 2
+&lt;a class="header-anchor" href="#lecture-2">&lt;/a>
+&lt;/h2>&lt;h3 id="terminology">terminology
+&lt;a class="header-anchor" href="#terminology">&lt;/a>
+&lt;/h3>&lt;p>比如有10000个sample，batch size为100&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>epoch: 10000个sample全部经过forward+back prop。每次epoch之后，都要进行shuffle，来确保每次选的batch由不同的sample组成&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</guid><description>&lt;p>视觉/文本/音频，每个模态都产出semantic_emb和spatial_emb&lt;/p>
+&lt;h2 id="visualencoder">VisualEncoder
+&lt;a class="header-anchor" href="#visualencoder">&lt;/a>
+&lt;/h2>&lt;h3 id="离线特征">离线特征
+&lt;a class="header-anchor" href="#%e7%a6%bb%e7%ba%bf%e7%89%b9%e5%be%81">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>用 SigLIP2 自带的 preprocess 把图片 resize / crop / normalize&lt;/li>
+&lt;li>输入分辨率 256，patch size 16。所以一张图会被切成 16 × 16 = 256 个 patch&lt;/li>
+&lt;li>每个 patch 变成向量&lt;/li>
+&lt;li>过 Transformer trunk, 得到[B,256,1152]，也就是一张图片有256个patch，每个patch有1152维&lt;/li>
+&lt;/ol>
+&lt;h3 id="在线部分">在线部分
+&lt;a class="header-anchor" href="#%e5%9c%a8%e7%ba%bf%e9%83%a8%e5%88%86">&lt;/a>
+&lt;/h3>&lt;h4 id="semantic_emb">semantic_emb
+&lt;a class="header-anchor" href="#semantic_emb">&lt;/a>
+&lt;/h4>&lt;h5 id="attentionpool">AttentionPool
+&lt;a class="header-anchor" href="#attentionpool">&lt;/a>
+&lt;/h5>&lt;p>query是一个单独学出来的向量，它去看所有patch tokens, 压缩成每张图片一个1152维度的向量&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/representation_learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/representation_learning/</guid><description>&lt;h2 id="clip">CLIP
+&lt;a class="header-anchor" href="#clip">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://arxiv.org/pdf/2103.00020" title="paper" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ paper
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># image_encoder - ResNet or Vision Transformer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># text_encoder - CBOW or Text Transformer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># I[n, h, w, c] - minibatch of aligned images&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># T[n, l] - minibatch of aligned texts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># W_i[d_i, d_e] - learned proj of image to embed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># W_t[d_t, d_e] - learned proj of text to embed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># t - learned temperature parameter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># extract feature representations of each modality&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I_f &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> image_encoder(I) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_i]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>T_f &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> text_encoder(T) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_t]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># joint multimodal embedding [n, d_e]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I_e &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> l2_normalize(np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(I_f, W_i), axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_e]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>T_e &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> l2_normalize(np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(T_f, W_t), axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#[n, n]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># scaled pairwise cosine similarities [n, n]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logits &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(I_e, T_e&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>T) &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>exp(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># symmetric loss function&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>labels &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>arange(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss_i &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> cross_entropy_loss(logits, labels, axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># image-to-text loss&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss_t &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> cross_entropy_loss(logits, labels, axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>) 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (loss_i &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> loss_t)&lt;span style="color:#04a5e5;font-weight:bold">/&lt;/span>&lt;span style="color:#fe640b">2&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="architecture">architecture
+&lt;a class="header-anchor" href="#architecture">&lt;/a>
+&lt;/h3>&lt;h4 id="image-encoder">image encoder
+&lt;a class="header-anchor" href="#image-encoder">&lt;/a>
+&lt;/h4>&lt;h5 id="visiontransformer">VisionTransformer
+&lt;a class="header-anchor" href="#visiontransformer">&lt;/a>
+&lt;/h5>&lt;ul>
+&lt;li>输入：[B,3,H,W]&lt;/li>
+&lt;li>输出：[B,output_dim]&lt;/li>
+&lt;/ul>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">29
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">30
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">31
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">32
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">33
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">34
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">35
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">36
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">VisionTransformer&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, input_resolution: &lt;span style="color:#04a5e5">int&lt;/span>, patch_size: &lt;span style="color:#04a5e5">int&lt;/span>, width: &lt;span style="color:#04a5e5">int&lt;/span>, layers: &lt;span style="color:#04a5e5">int&lt;/span>, heads: &lt;span style="color:#04a5e5">int&lt;/span>, output_dim: &lt;span style="color:#04a5e5">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>input_resolution &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> input_resolution
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>output_dim &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> output_dim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>width, kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>patch_size, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>patch_size, bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">False&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#width表示Transformer 里每个 token 的隐藏维度。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># grid=input_resolution/patch_size&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 经过conv1变成[B, width, grid, grid]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> scale &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> width &lt;span style="color:#04a5e5;font-weight:bold">**&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">0.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>class_embedding &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn(width)) &lt;span style="color:#9ca0b0;font-style:italic">#class token, 一个专门负责“收集整张图信息”的特殊 token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>positional_embedding &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn((input_resolution &lt;span style="color:#04a5e5;font-weight:bold">//&lt;/span> patch_size) &lt;span style="color:#04a5e5;font-weight:bold">**&lt;/span> &lt;span style="color:#fe640b">2&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>, width)) &lt;span style="color:#9ca0b0;font-style:italic"># [(input_resolution//patch_size)2+1, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_pre &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> LayerNorm(width)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>transformer &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Transformer(width, layers, heads)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_post &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> LayerNorm(width)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn(width, output_dim))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x: torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Tensor):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, width, grid, grid]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>reshape(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">0&lt;/span>], x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">1&lt;/span>], &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, width, grid ** 2]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, grid ** 2, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>cat([&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>class_embedding&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>to(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype) &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>zeros(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">0&lt;/span>], &lt;span style="color:#fe640b">1&lt;/span>, x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>], dtype&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype, device&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>device), x], dim&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, grid ** 2 + 1, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>positional_embedding&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>to(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_pre(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># NLD -&amp;gt; LND&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>transformer(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># LND -&amp;gt; NLD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_post(x[:, &lt;span style="color:#fe640b">0&lt;/span>, :])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj &lt;span style="color:#04a5e5;font-weight:bold">is&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">not&lt;/span> &lt;span style="color:#fe640b">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x &lt;span style="color:#04a5e5;font-weight:bold">@&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h4 id="text-encoder">text encoder
+&lt;a class="header-anchor" href="#text-encoder">&lt;/a>
+&lt;/h4>&lt;h4 id="embedding-space">embedding space
+&lt;a class="header-anchor" href="#embedding-space">&lt;/a>
+&lt;/h4></description></item></channel></rss>

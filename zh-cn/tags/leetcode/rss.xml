@@ -394,7 +394,7 @@ abeabf&lt;/p></description></item><item><title>Simulation</title><link>https://r
 &lt;/a>&lt;/p>
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/leetcode/dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="排列型">排列型
 &lt;a class="header-anchor" href="#%e6%8e%92%e5%88%97%e5%9e%8b">&lt;/a>
 &lt;/h3>&lt;p>外层遍历target，内层遍历可用的数字&lt;/p>

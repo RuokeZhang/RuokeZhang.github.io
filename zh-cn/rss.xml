@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Dynamo</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</guid><description>&lt;h2 id="dynamo">Dynamo
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/</link><description>Recent content on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Pytorch</title><link>https://ruokezhang.github.io/zh-cn/ai/pytorch/</link><pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/pytorch/</guid><description>&lt;h2 id="module">Module
+&lt;a class="header-anchor" href="#module">&lt;/a>
+&lt;/h2>&lt;p>所有模型的父类，所有网络都继承它&lt;/p>
+&lt;ul>
+&lt;li>init(self)&lt;/li>
+&lt;li>forward(self, x)&lt;/li>
+&lt;/ul>
+&lt;h2 id="conv">conv
+&lt;a class="header-anchor" href="#conv">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://www.bilibili.com/video/BV1hE411t7RN?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478&amp;amp;p=18" title="b站" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ b站
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>output&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>F&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv2d(&lt;span style="color:#04a5e5">input&lt;/span>, kernel, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#进行卷积计算，得到feature matrix&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>Conv2d&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch.nn&lt;/span> &lt;span style="color:#8839ef">as&lt;/span> &lt;span style="color:#fe640b">nn&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">CNN&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>() 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">6&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>MaxPool2d(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, &lt;span style="color:#9ca0b0;font-style:italic"># 池化窗口大小：3×3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ceil_mode&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 向上取整模式，保留不完整的边缘窗口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># x: [b, 3, h, w]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># h&amp;#39;=(h+2*p-k)/s+1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第二步：过池化层，对特征图下采样&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h2 id="linear">Linear
+&lt;a class="header-anchor" href="#linear">&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>linear &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Linear(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1024&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">512&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 默认 True，要不要加偏置 b&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;p>weight = (512, 1024)&lt;br>
+bias = (512)&lt;br>
+y = x @ W.T + b&lt;/p></description></item><item><title>Dynamo</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_blog/</guid><description>&lt;h2 id="dynamo">Dynamo
 &lt;a class="header-anchor" href="#dynamo">&lt;/a>
 &lt;/h2>&lt;h3 id="virtual-nodes">virtual nodes
 &lt;a class="header-anchor" href="#virtual-nodes">&lt;/a>
@@ -15,11 +128,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>solved consistent hashing&amp;rsquo;s problems&lt;/p></description></item><item><title>Large Models</title><link>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</link><pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/ai/large_model/</guid><description>&lt;h2 id="open-clip">Open Clip
-&lt;a class="header-anchor" href="#open-clip">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>create_model_and_transforms&lt;/li>
-&lt;/ol></description></item><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
+&lt;p>solved consistent hashing&amp;rsquo;s problems&lt;/p></description></item><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basic">RPC Basic
 &lt;a class="header-anchor" href="#rpc-basic">&lt;/a>
 &lt;/h2>&lt;p>protobuf IDL&lt;/p>
 &lt;ol>
@@ -765,11 +874,11 @@ abeabf&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</ti
 &lt;p>对于无向图，如果不需要判断是否有环，则无需用parent，仅用vis即可&lt;/p>
 &lt;h4 id="261-以图判树">261. 以图判树
 &lt;a class="header-anchor" href="#261-%e4%bb%a5%e5%9b%be%e5%88%a4%e6%a0%91">&lt;/a>
-&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exceptionr/</guid><description>&lt;h2 id="异常">异常
+&lt;/h4>&lt;p>&lt;strong>无向图&lt;/strong>，判断是否&lt;strong>无环并且联通&lt;/strong>。&lt;/p></description></item><item><title>异常、泛型</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exception_r/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/exception_r/</guid><description>&lt;h2 id="异常">异常
 &lt;a class="header-anchor" href="#%e5%bc%82%e5%b8%b8">&lt;/a>
 &lt;/h2>&lt;h3 id="throwable">Throwable
 &lt;a class="header-anchor" href="#throwable">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="image.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/Exception_R/image.png" alt="Alt text" />
 Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;p>Error 类代表严重错误，往往不建议我们在程序中用 catch捕获的，我们只能通过优化代码来优化 Error。当出现 Error 时，&lt;strong>JVM 一般会选择终止线程&lt;/strong>。&lt;/p></description></item><item><title>Java集合</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/collection/</link><pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/collection/</guid><description>&lt;h2 id="collection接口">Collection接口
 &lt;a class="header-anchor" href="#collection%e6%8e%a5%e5%8f%a3">&lt;/a>
@@ -1180,7 +1289,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/a>&lt;/p>
 &lt;h2 id="线性dp">线性dp
 &lt;a class="header-anchor" href="#%e7%ba%bf%e6%80%a7dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
+&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/leetcode/dfs_dp.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="排列型">排列型
 &lt;a class="header-anchor" href="#%e6%8e%92%e5%88%97%e5%9e%8b">&lt;/a>
 &lt;/h3>&lt;p>外层遍历target，内层遍历可用的数字&lt;/p>
@@ -1628,7 +1737,182 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/li>
 &lt;li>
 &lt;p>std::move
-用于完成移动构造。移动构造避免不必要的拷贝，提高性能&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
+用于完成移动构造。移动构造避免不必要的拷贝，提高性能&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</guid><description>&lt;h2 id="lecture-2">Lecture 2
+&lt;a class="header-anchor" href="#lecture-2">&lt;/a>
+&lt;/h2>&lt;h3 id="terminology">terminology
+&lt;a class="header-anchor" href="#terminology">&lt;/a>
+&lt;/h3>&lt;p>比如有10000个sample，batch size为100&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>epoch: 10000个sample全部经过forward+back prop。每次epoch之后，都要进行shuffle，来确保每次选的batch由不同的sample组成&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</guid><description>&lt;p>视觉/文本/音频，每个模态都产出semantic_emb和spatial_emb&lt;/p>
+&lt;h2 id="visualencoder">VisualEncoder
+&lt;a class="header-anchor" href="#visualencoder">&lt;/a>
+&lt;/h2>&lt;h3 id="离线特征">离线特征
+&lt;a class="header-anchor" href="#%e7%a6%bb%e7%ba%bf%e7%89%b9%e5%be%81">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>用 SigLIP2 自带的 preprocess 把图片 resize / crop / normalize&lt;/li>
+&lt;li>输入分辨率 256，patch size 16。所以一张图会被切成 16 × 16 = 256 个 patch&lt;/li>
+&lt;li>每个 patch 变成向量&lt;/li>
+&lt;li>过 Transformer trunk, 得到[B,256,1152]，也就是一张图片有256个patch，每个patch有1152维&lt;/li>
+&lt;/ol>
+&lt;h3 id="在线部分">在线部分
+&lt;a class="header-anchor" href="#%e5%9c%a8%e7%ba%bf%e9%83%a8%e5%88%86">&lt;/a>
+&lt;/h3>&lt;h4 id="semantic_emb">semantic_emb
+&lt;a class="header-anchor" href="#semantic_emb">&lt;/a>
+&lt;/h4>&lt;h5 id="attentionpool">AttentionPool
+&lt;a class="header-anchor" href="#attentionpool">&lt;/a>
+&lt;/h5>&lt;p>query是一个单独学出来的向量，它去看所有patch tokens, 压缩成每张图片一个1152维度的向量&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/ai/representation_learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/representation_learning/</guid><description>&lt;h2 id="clip">CLIP
+&lt;a class="header-anchor" href="#clip">&lt;/a>
+&lt;/h2>&lt;p>
+&lt;a href="https://arxiv.org/pdf/2103.00020" title="paper" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ paper
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># image_encoder - ResNet or Vision Transformer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># text_encoder - CBOW or Text Transformer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># I[n, h, w, c] - minibatch of aligned images&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># T[n, l] - minibatch of aligned texts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># W_i[d_i, d_e] - learned proj of image to embed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># W_t[d_t, d_e] - learned proj of text to embed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># t - learned temperature parameter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># extract feature representations of each modality&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I_f &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> image_encoder(I) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_i]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>T_f &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> text_encoder(T) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_t]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># joint multimodal embedding [n, d_e]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I_e &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> l2_normalize(np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(I_f, W_i), axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#[n, d_e]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>T_e &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> l2_normalize(np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(T_f, W_t), axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#[n, n]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># scaled pairwise cosine similarities [n, n]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logits &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dot(I_e, T_e&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>T) &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>exp(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"># symmetric loss function&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>labels &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> np&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>arange(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss_i &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> cross_entropy_loss(logits, labels, axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># image-to-text loss&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss_t &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> cross_entropy_loss(logits, labels, axis&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>) 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loss &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> (loss_i &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> loss_t)&lt;span style="color:#04a5e5;font-weight:bold">/&lt;/span>&lt;span style="color:#fe640b">2&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="architecture">architecture
+&lt;a class="header-anchor" href="#architecture">&lt;/a>
+&lt;/h3>&lt;h4 id="image-encoder">image encoder
+&lt;a class="header-anchor" href="#image-encoder">&lt;/a>
+&lt;/h4>&lt;h5 id="visiontransformer">VisionTransformer
+&lt;a class="header-anchor" href="#visiontransformer">&lt;/a>
+&lt;/h5>&lt;ul>
+&lt;li>输入：[B,3,H,W]&lt;/li>
+&lt;li>输出：[B,output_dim]&lt;/li>
+&lt;/ul>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">29
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">30
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">31
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">32
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">33
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">34
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">35
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">36
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">VisionTransformer&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, input_resolution: &lt;span style="color:#04a5e5">int&lt;/span>, patch_size: &lt;span style="color:#04a5e5">int&lt;/span>, width: &lt;span style="color:#04a5e5">int&lt;/span>, layers: &lt;span style="color:#04a5e5">int&lt;/span>, heads: &lt;span style="color:#04a5e5">int&lt;/span>, output_dim: &lt;span style="color:#04a5e5">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>input_resolution &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> input_resolution
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>output_dim &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> output_dim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>width, kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>patch_size, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>patch_size, bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">False&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#width表示Transformer 里每个 token 的隐藏维度。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># grid=input_resolution/patch_size&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 经过conv1变成[B, width, grid, grid]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> scale &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> width &lt;span style="color:#04a5e5;font-weight:bold">**&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">0.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>class_embedding &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn(width)) &lt;span style="color:#9ca0b0;font-style:italic">#class token, 一个专门负责“收集整张图信息”的特殊 token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>positional_embedding &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn((input_resolution &lt;span style="color:#04a5e5;font-weight:bold">//&lt;/span> patch_size) &lt;span style="color:#04a5e5;font-weight:bold">**&lt;/span> &lt;span style="color:#fe640b">2&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#fe640b">1&lt;/span>, width)) &lt;span style="color:#9ca0b0;font-style:italic"># [(input_resolution//patch_size)2+1, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_pre &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> LayerNorm(width)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>transformer &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> Transformer(width, layers, heads)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_post &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> LayerNorm(width)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Parameter(scale &lt;span style="color:#04a5e5;font-weight:bold">*&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>randn(width, output_dim))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x: torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Tensor):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, width, grid, grid]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>reshape(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">0&lt;/span>], x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">1&lt;/span>], &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, width, grid ** 2]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>, &lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, grid ** 2, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>cat([&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>class_embedding&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>to(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype) &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> torch&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>zeros(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#fe640b">0&lt;/span>], &lt;span style="color:#fe640b">1&lt;/span>, x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>shape[&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>], dtype&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype, device&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>device), x], dim&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># shape = [*, grid ** 2 + 1, width]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x &lt;span style="color:#04a5e5;font-weight:bold">+&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>positional_embedding&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>to(x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>dtype)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_pre(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># NLD -&amp;gt; LND&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>transformer(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>permute(&lt;span style="color:#fe640b">1&lt;/span>, &lt;span style="color:#fe640b">0&lt;/span>, &lt;span style="color:#fe640b">2&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic"># LND -&amp;gt; NLD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>ln_post(x[:, &lt;span style="color:#fe640b">0&lt;/span>, :])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">if&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj &lt;span style="color:#04a5e5;font-weight:bold">is&lt;/span> &lt;span style="color:#04a5e5;font-weight:bold">not&lt;/span> &lt;span style="color:#fe640b">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> x &lt;span style="color:#04a5e5;font-weight:bold">@&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>proj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h4 id="text-encoder">text encoder
+&lt;a class="header-anchor" href="#text-encoder">&lt;/a>
+&lt;/h4>&lt;h4 id="embedding-space">embedding space
+&lt;a class="header-anchor" href="#embedding-space">&lt;/a>
+&lt;/h4></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/bq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/bq/</guid><description>&lt;h2 id="failure">failure
 &lt;a class="header-anchor" href="#failure">&lt;/a>
 &lt;/h2>&lt;p>During a big promotion our model’s TPM (500,000 tokens/min) was exhausted and many highlight requests started failing. My goal was to stabilize the service quickly without just dropping requests. I added a worker-side token bucket (Redis) so a task only calls the model if tokens are available, otherwise it gets delayed and retried later. I also tied autoscaling to token usage and queue length so we automatically add capacity when pressure rises. Within minutes the failure rate fell below 1% and the task queue stopped growing.&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_labs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/course_notes/distributed_systems_labs/</guid><description>&lt;h1 id="lab-0">Lab 0
 &lt;a class="header-anchor" href="#lab-0">&lt;/a>
@@ -1818,7 +2102,95 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 &lt;/div>
 &lt;/div>
 
-&lt;p>对应第5,6,7步&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</guid><description>&lt;p>source:
+&lt;p>对应第5,6,7步&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/</guid><description>&lt;p>
+&lt;a href="https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link" title="https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.notion.so/highlight-223867c5c52d8042b7ecdf429f10f046?source=copy_link
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="candidate-part">Candidate Part
+&lt;a class="header-anchor" href="#candidate-part">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>First, we aggregate the livestream into minute-level metrics, including normalized signals like watch PV, user actions, and order creation.&lt;/li>
+&lt;li>Then, instead of using a single metric, we combine them into a composite score and apply a 5-minute rolling z-score to detect spikes relative to the recent baseline. This helps us identify highlight moments in a way that adapts to different livestream dynamics.&lt;/li>
+&lt;li>for each peak, we calulate a contribution score, means how much a metric contribute to the composite score, and assign a tag to a peak. for example, a peak may have &amp;ldquo;engagement-driven&amp;rdquo; or &amp;ldquo;conversion drivien&amp;rdquo; tag&lt;/li>
+&lt;li>For each peak, we verify whether the previous minute shows a similar pattern,&lt;/li>
+&lt;li>Finally, we expand each detected peak into a candidate window. The expansion strategy depends on the tag—for example, traffic-driven highlights require more context, so we expand further, while conversion-driven highlights tend to be more localized.&lt;/li>
+&lt;/ul>
+&lt;h2 id="llm-part">LLM part
+&lt;a class="header-anchor" href="#llm-part">&lt;/a>
+&lt;/h2>&lt;h3 id="round-1">ROUND 1:
+&lt;a class="header-anchor" href="#round-1">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>give the model the product list and the full transcript of the candidate&lt;/li>
+&lt;li>model&amp;rsquo;s output will be converted into CandidateSegment&lt;/li>
+&lt;/ul>
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-md" data-lang="md">&lt;span style="display:flex;">&lt;span>PROMPT:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Excerpts must retain the original wording, punctuation, capitalization, and grammar exactly as in the transcript, as they will be used to extract timestamps.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Each excerpt should be a suitable length for a short video, conceptually between 15 and 60 seconds of spoken dialogue.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> For each excerpt, provide a brief reasoning for its selection and list the product index(es) (maximum 3, separated by ||) from the product list that best match the demonstrated product.&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="round-2-deal-with-every-candidatesegment">ROUND 2: deal with every CandidateSegment
+&lt;a class="header-anchor" href="#round-2-deal-with-every-candidatesegment">&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-md" data-lang="md">&lt;span style="display:flex;">&lt;span>segment_edit_prompt INFO:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">1.&lt;/span> 输入信息：
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ 候选片段（可能用于高光视频的 transcript 片段）；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ 产品列表（直播中销售的产品清单，按序号 1、2、3... 排列）；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ 完整直播 transcript（供上下文参考）。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>• 识别主产品：从候选片段中确定 1 个最核心的产品，需与产品列表中的某一项精准匹配；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>• 验证片段有效性：确保片段包含该产品的清晰实物演示（如功能、用法、特点），且不包含无关信息；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>• 编辑片段：删除与主产品无关的内容（如其他产品、价格、直播互动话术等），生成连贯的独立演示脚本。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">1.&lt;/span> 输出格式：包含 5 个字段：
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ reasoning：解释主产品的确定依据及片段有效性的理由；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ edited_excerpt：编辑后的片段（含 ||| 标记）；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ num_products：编辑后片段中涉及的产品数量（只能是 1 或 0）；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ product_index：主产品在列表中的序号（如 “3”，无效时为 “-1”）；
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ◦ is_valid：片段是否适合作为独立产品演示（True 或 False）。&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="round-3-critique">ROUND 3: critique
+&lt;a class="header-anchor" href="#round-3-critique">&lt;/a>
+&lt;/h3>&lt;p>分别给ChatGPT和Gemini发送：segment_text, edited_excerpt, main_product&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</guid><description>&lt;p>source:
 
 &lt;a href="https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/" title="https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  https://leetcode.com/discuss/post/1676563/faang-phone-interview-design-seniorstaff-s7l8/
@@ -2200,4 +2572,67 @@ master进程负责读取配置文件、管理worker进程；worker进程实际�
 
 &lt;h3 id="162-寻找峰值">162. 寻找峰值
 &lt;a class="header-anchor" href="#162-%e5%af%bb%e6%89%be%e5%b3%b0%e5%80%bc">&lt;/a>
-&lt;/h3>&lt;p>DoorDash面经&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</guid><description/></item></channel></rss>
+&lt;/h3>&lt;p>DoorDash面经&lt;/p></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/message_queue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/message_queue/</guid><description>&lt;h2 id="消息可靠性">消息可靠性
+&lt;a class="header-anchor" href="#%e6%b6%88%e6%81%af%e5%8f%af%e9%9d%a0%e6%80%a7">&lt;/a>
+&lt;/h2>&lt;h3 id="生产者-mq">生产者-&amp;gt;MQ
+&lt;a class="header-anchor" href="#%e7%94%9f%e4%ba%a7%e8%80%85-mq">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>生产者开启 confirm 模式
+
+&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>channel.&lt;span style="color:#1e66f5">confirmSelect&lt;/span>(); &lt;span style="color:#9ca0b0;font-style:italic">// 开启Confirm模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>channel.&lt;span style="color:#1e66f5">basicPublish&lt;/span>(exchange, routingKey, MessageProperties.&lt;span style="color:#1e66f5">PERSISTENT_TEXT_PLAIN&lt;/span>, message.&lt;span style="color:#1e66f5">getBytes&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">if&lt;/span> (&lt;span style="color:#04a5e5;font-weight:bold">!&lt;/span>channel.&lt;span style="color:#1e66f5">waitForConfirms&lt;/span>(5000)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic">// 消息未确认，重试或记录日志&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;/li>
+&lt;li>异步确认：发送消息后不阻塞等待 MQ 的 ACK，而是通过回调函数接收 ACK 通知；若回调中发现未确认（如 ACK 失败、超时），将未确认的消息存入本地缓存，定期触发重试，直到收到 ACK 或达到最大重试次数；&lt;/li>
+&lt;li>同步确认：发送消息后阻塞等待 ACK&lt;/li>
+&lt;/ul>
+&lt;h3 id="mq">MQ
+&lt;a class="header-anchor" href="#mq">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>持久化（必做）：设置消息和队列为「持久化模式」（RocketMQ 默认开启），MQ 会将消息和队列信息写入磁盘，即使 MQ 进程宕机、重启，也能从磁盘恢复消息，避免内存中的消息丢失；&lt;/li>
+&lt;li>集群多副本（进阶，提升可靠性）：搭建 RocketMQ 集群，配置多副本（类似镜像队列），将队列数据同步到集群多个节点，设置节点同步模式（如同步复制）；&lt;/li>
+&lt;/ol>
+&lt;h3 id="mq-消费者">MQ-&amp;gt;消费者
+&lt;a class="header-anchor" href="#mq-%e6%b6%88%e8%b4%b9%e8%80%85">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>手动 ACK
+&lt;ul>
+&lt;li>自动 ACK 的确定：会存在消费者收到，确认之后没消费，消费者挂了，数据丢失&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>死信队列： 当消息多次重试（如3次）仍处理失败（如系统异常），将消息转入「死信队列」，由人工介入排查处理，避免消息无限重试或被丢弃&lt;/li>
+&lt;/ol>
+&lt;h2 id="幂等性">幂等性
+&lt;a class="header-anchor" href="#%e5%b9%82%e7%ad%89%e6%80%a7">&lt;/a>
+&lt;/h2>&lt;h3 id="为什么会有重复的消息">为什么会有重复的消息
+&lt;a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e6%9c%89%e9%87%8d%e5%a4%8d%e7%9a%84%e6%b6%88%e6%81%af">&lt;/a>
+&lt;/h3>&lt;ol>
+&lt;li>生产者没收到 MQ 的 ACK，又发了一次&lt;/li>
+&lt;li>MQ 没收到消费者的 ACK，又发了一次&lt;/li>
+&lt;/ol>
+&lt;h3 id="解决">解决
+&lt;a class="header-anchor" href="#%e8%a7%a3%e5%86%b3">&lt;/a>
+&lt;/h3>&lt;ul>
+&lt;li>数据库唯一索引&lt;/li>
+&lt;li>Redis SETNX /Lua 脚本查状态改状态&lt;/li>
+&lt;/ul>
+&lt;h2 id="对比kafka的优势">对比Kafka的优势
+&lt;a class="header-anchor" href="#%e5%af%b9%e6%af%94kafka%e7%9a%84%e4%bc%98%e5%8a%bf">&lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>Consumer 端自带重试机制，当消费消息失败时，RocketMQ 会自动将消息放入重试队列。&lt;/li>
+&lt;li>当消费消息失败时，RocketMQ 会自动将消息放入重试队列&lt;/li>
+&lt;/ol></description></item><item><title/><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/bytedance_intern/</guid><description/></item></channel></rss>
