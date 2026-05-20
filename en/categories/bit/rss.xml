@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bit on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/bit/</link><description>Recent content in Bit on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/bit/rss.xml" rel="self" type="application/rss+xml"/><item><title>Bit Manipulation</title><link>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</link><pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</guid><description>&lt;h2 id="common-operations">Common Operations
-&lt;a class="header-anchor" href="#common-operations">&lt;/a>
-&lt;/h2>&lt;p>x.bit_count(): Returns the number of 1s in the binary representation of x. Can also be interpreted as the minimum number of powers of 2 needed to represent x.&lt;/p>
-&lt;h2 id="brain-teasers">Brain Teasers
-&lt;a class="header-anchor" href="#brain-teasers">&lt;/a>
-&lt;/h2>&lt;h4 id="2749-minimum-operations-to-make-the-integer-zero">2749. Minimum Operations to Make the Integer Zero
-&lt;a class="header-anchor" href="#2749-minimum-operations-to-make-the-integer-zero">&lt;/a>
-&lt;/h4>&lt;p>Let x = num1 - k * num2, then the problem transforms to: Can x be represented using k powers of 2 (duplicates allowed)?&lt;/p>
-&lt;p>Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bit on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/bit/</link>
+    <description>Recent content in Bit on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/bit/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bit Manipulation</title>
+      <link>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</link>
+      <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/leetcode/bit_manipulation/</guid>
+      <description>&lt;h2 id=&#34;common-operations&#34;&gt;Common Operations&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#common-operations&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;x.bit_count(): Returns the number of 1s in the binary representation of x. Can also be interpreted as the minimum number of powers of 2 needed to represent x.&lt;/p&gt;&#xA;&lt;h2 id=&#34;brain-teasers&#34;&gt;Brain Teasers&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#brain-teasers&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h4 id=&#34;2749-minimum-operations-to-make-the-integer-zero&#34;&gt;2749. Minimum Operations to Make the Integer Zero&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#2749-minimum-operations-to-make-the-integer-zero&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;Let x = num1 - k * num2, then the problem transforms to: Can x be represented using k powers of 2 (duplicates allowed)?&lt;/p&gt;&#xA;&lt;p&gt;Find the upper and lower bounds of x and enumerate. Plot x = num1 - k * num2 with k as x-axis and x as y-axis. The answer lies in some points on this line in the first quadrant. Analyze the equation x=2^(i1)+&amp;hellip;2^(ik) to find possible x values.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

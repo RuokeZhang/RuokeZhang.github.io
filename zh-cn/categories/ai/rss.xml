@@ -1,204 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/ai/</link><description>Recent content in AI on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/ai/rss.xml" rel="self" type="application/rss+xml"/><item><title>ML Basic</title><link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link><pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid><description>&lt;p>
-&lt;a href="https://github.com/andrewekhalel/MLQuestions" title="https://github.com/andrewekhalel/MLQuestions" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- https://github.com/andrewekhalel/MLQuestions
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-
-&lt;a href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=" title="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-
-&lt;a href="https://longxingtan.gitbook.io/mle-interview/02_ml" title="https://longxingtan.gitbook.io/mle-interview/02_ml" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- https://longxingtan.gitbook.io/mle-interview/02_ml
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;h2 id="supervised-learning">supervised learning
-&lt;a class="header-anchor" href="#supervised-learning">&lt;/a>
-&lt;/h2>&lt;p>training data includes both the input features and corresponding target labels&lt;/p>
-&lt;h3 id="classification">classification
-&lt;a class="header-anchor" href="#classification">&lt;/a>
-&lt;/h3>&lt;h4 id="logistic-regression">Logistic Regression
-&lt;a class="header-anchor" href="#logistic-regression">&lt;/a>
-&lt;/h4>&lt;p>linear classification， 二分&lt;br>
-loss function: Binary Cross-Entropy Loss&lt;/p>
-&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png" alt="alt text" />
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png" alt="alt text" />&lt;/p>
-
- &lt;blockquote>
- &lt;p>logistic regression有closed form 解嘛？&lt;/p></description></item><item><title>Pytorch</title><link>https://ruokezhang.github.io/zh-cn/ai/pytorch/</link><pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/ai/pytorch/</guid><description>&lt;h2 id="module">Module
-&lt;a class="header-anchor" href="#module">&lt;/a>
-&lt;/h2>&lt;p>所有模型的父类，所有网络都继承它&lt;/p>
-&lt;ul>
-&lt;li>init(self)&lt;/li>
-&lt;li>forward(self, x)&lt;/li>
-&lt;/ul>
-&lt;h2 id="conv">conv
-&lt;a class="header-anchor" href="#conv">&lt;/a>
-&lt;/h2>&lt;p>
-&lt;a href="https://www.bilibili.com/video/BV1hE411t7RN?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478&amp;amp;p=18" title="b站" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- b站
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>output&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>F&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv2d(&lt;span style="color:#04a5e5">input&lt;/span>, kernel, stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>) &lt;span style="color:#9ca0b0;font-style:italic">#进行卷积计算，得到feature matrix&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>Conv2d&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 8
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1"> 9
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">10
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">11
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">12
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">13
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">14
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">15
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">16
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">17
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">18
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">19
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">20
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">21
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">22
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">23
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">24
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">25
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">26
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">27
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">28
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#179299">import&lt;/span> &lt;span style="color:#fe640b">torch.nn&lt;/span> &lt;span style="color:#8839ef">as&lt;/span> &lt;span style="color:#fe640b">nn&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">class&lt;/span> &lt;span style="color:#df8e1d">CNN&lt;/span>(nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Module):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">__init__&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">super&lt;/span>()&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>&lt;span style="color:#1e66f5">__init__&lt;/span>() 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Conv2d(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_channels&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">6&lt;/span>, 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stride&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1&lt;/span>, 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1 &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>MaxPool2d(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kernel_size&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">3&lt;/span>, &lt;span style="color:#9ca0b0;font-style:italic"># 池化窗口大小：3×3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ceil_mode&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 向上取整模式，保留不完整的边缘窗口&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">forward&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, x):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># x: [b, 3, h, w]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>conv1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#9ca0b0;font-style:italic"># h&amp;#39;=(h+2*p-k)/s+1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>maxpool1(x) &lt;span style="color:#9ca0b0;font-style:italic"># 第二步：过池化层，对特征图下采样&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> x&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h2 id="linear">Linear
-&lt;a class="header-anchor" href="#linear">&lt;/a>
-&lt;/h2>
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#04a5e5">self&lt;/span>&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>linear &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> nn&lt;span style="color:#04a5e5;font-weight:bold">.&lt;/span>Linear(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">1024&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out_features&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">512&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bias&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">True&lt;/span> &lt;span style="color:#9ca0b0;font-style:italic"># 默认 True，要不要加偏置 b&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>weight = (512, 1024)&lt;br>
-bias = (512)&lt;br>
-y = x @ W.T + b&lt;/p></description></item><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
-&lt;a class="header-anchor" href="#orchestration">&lt;/a>
-&lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
-&lt;h3 id="step-1-docker-env">Step 1 Docker Env
-&lt;a class="header-anchor" href="#step-1-docker-env">&lt;/a>
-&lt;/h3>&lt;h4 id="airflow">airflow
-&lt;a class="header-anchor" href="#airflow">&lt;/a>
-&lt;/h4>&lt;p>
-&lt;a href="https://airflow.apache.org/docs/docker-stack/index.html" title="https://airflow.apache.org/docs/docker-stack/index.html" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- https://airflow.apache.org/docs/docker-stack/index.html
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;p>get Airflow&amp;rsquo;s official docker compose&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h4 id="mlflow">mlflow
-&lt;a class="header-anchor" href="#mlflow">&lt;/a>
-&lt;/h4>&lt;h4 id="other-dependencies">other dependencies
-&lt;a class="header-anchor" href="#other-dependencies">&lt;/a>
-&lt;/h4>&lt;h3 id="">
-&lt;a class="header-anchor" href="#">&lt;/a>
-&lt;/h3></description></item><item><title>LLM笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
-&lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>保持简洁&lt;/li>
-&lt;li>不用提供太多示例，示例会降低推理效果&lt;/li>
-&lt;/ol>
-&lt;h2 id="常见prompt">常见prompt
-&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81prompt">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>markdown 格式（任务指令提示和系统提示）&lt;/li>
-&lt;li>角色扮演（任务指令提示和系统提示）&lt;/li>
-&lt;li>奖励机制/情绪激励(任务指令提示)&lt;/li>
-&lt;li>具体的示例&lt;/li>
-&lt;li>隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示)&lt;/li>
-&lt;li>要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示)&lt;/li>
-&lt;/ol>
-&lt;h2 id="system-prompt">system prompt
-&lt;a class="header-anchor" href="#system-prompt">&lt;/a>
-&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
-&lt;a class="header-anchor" href="#project-1">&lt;/a>
-&lt;/h2>&lt;h3 id="project-setup">project setup
-&lt;a class="header-anchor" href="#project-setup">&lt;/a>
-&lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
-&lt;h4 id="setuppy">setup.py
-&lt;a class="header-anchor" href="#setuppy">&lt;/a>
-&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/categories/ai/</link>
+    <description>Recent content in AI on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/categories/ai/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Basic</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/andrewekhalel/MLQuestions&#34; title=&#34;https://github.com/andrewekhalel/MLQuestions&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://github.com/andrewekhalel/MLQuestions&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=&#34; title=&#34;https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://longxingtan.gitbook.io/mle-interview/02_ml&#34; title=&#34;https://longxingtan.gitbook.io/mle-interview/02_ml&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://longxingtan.gitbook.io/mle-interview/02_ml&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;supervised-learning&#34;&gt;supervised learning&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#supervised-learning&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;training data includes both the input features and corresponding target labels&lt;/p&gt;&#xA;&lt;h3 id=&#34;classification&#34;&gt;classification&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#classification&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;logistic-regression&#34;&gt;Logistic Regression&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#logistic-regression&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;linear classification， 二分&lt;br&gt;&#xA;loss function: Binary Cross-Entropy Loss&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png&#34; alt=&#34;alt text&#34;  /&gt;&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png&#34; alt=&#34;alt text&#34;  /&gt;&lt;/p&gt;&#xA;&#xA;  &lt;blockquote&gt;&#xA;    &lt;p&gt;logistic regression有closed form 解嘛？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pytorch</title>
+      <link>https://ruokezhang.github.io/zh-cn/ai/pytorch/</link>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/ai/pytorch/</guid>
+      <description>&lt;h2 id=&#34;module&#34;&gt;Module&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#module&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;所有模型的父类，所有网络都继承它&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;init(self)&lt;/li&gt;&#xA;&lt;li&gt;forward(self, x)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;conv&#34;&gt;conv&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#conv&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://www.bilibili.com/video/BV1hE411t7RN?spm_id_from=333.788.videopod.episodes&amp;amp;vd_source=512bb0b359ea7a5e16733b06bbe10478&amp;amp;p=18&#34; title=&#34;b站&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    b站&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;output&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;F&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;conv2d(&lt;span style=&#34;color:#04a5e5&#34;&gt;input&lt;/span&gt;, kernel, stride&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;#进行卷积计算，得到feature matrix&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;Conv2d&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;10&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;11&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;12&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;13&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;14&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;15&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;16&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;17&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;18&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;19&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;20&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;21&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;22&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;23&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;24&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;25&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;26&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;27&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;28&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#179299&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;torch&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#179299&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;torch.nn&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;nn&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#df8e1d&#34;&gt;CNN&lt;/span&gt;(nn&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;Module):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#1e66f5&#34;&gt;__init__&lt;/span&gt;(&lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#04a5e5&#34;&gt;super&lt;/span&gt;()&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#1e66f5&#34;&gt;__init__&lt;/span&gt;() &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;conv1 &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;Conv2d(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            in_channels&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;3&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            out_channels&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;6&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            kernel_size&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;3&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            stride&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            padding&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;0&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        )&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;maxpool1 &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;MaxPool2d(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            kernel_size&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;3&lt;/span&gt;,  &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 池化窗口大小：3×3&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ceil_mode&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;True&lt;/span&gt;  &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 向上取整模式，保留不完整的边缘窗口&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        )&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#1e66f5&#34;&gt;forward&lt;/span&gt;(&lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;, x):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序）&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# x: [b, 3, h, w]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;conv1(x)       &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# h&amp;#39;=(h+2*p-k)/s+1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;maxpool1(x)    &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 第二步：过池化层，对特征图下采样&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8839ef&#34;&gt;return&lt;/span&gt; x&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h2 id=&#34;linear&#34;&gt;Linear&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#linear&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;5&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;linear &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;Linear(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    in_features&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1024&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    out_features&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;512&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    bias&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;True&lt;/span&gt;        &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# 默认 True，要不要加偏置 b&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;weight = (512, 1024)&lt;br&gt;&#xA;bias = (512)&lt;br&gt;&#xA;y = x @ W.T + b&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mlops zoomcamp @DataTalksClub</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link>
+      <pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid>
+      <description>&lt;h2 id=&#34;orchestration&#34;&gt;Orchestration&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#orchestration&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Use Airflow and MLFlow&lt;/p&gt;&#xA;&lt;h3 id=&#34;step-1-docker-env&#34;&gt;Step 1 Docker Env&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#step-1-docker-env&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;airflow&#34;&gt;airflow&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#airflow&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://airflow.apache.org/docs/docker-stack/index.html&#34; title=&#34;https://airflow.apache.org/docs/docker-stack/index.html&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://airflow.apache.org/docs/docker-stack/index.html&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;get Airflow&amp;rsquo;s official docker compose&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h4 id=&#34;mlflow&#34;&gt;mlflow&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#mlflow&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;h4 id=&#34;other-dependencies&#34;&gt;other dependencies&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#other-dependencies&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;h3 id=&#34;&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>LLM笔记</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</guid>
+      <description>&lt;h2 id=&#34;推理模型的-prompt&#34;&gt;推理模型的 prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;保持简洁&lt;/li&gt;&#xA;&lt;li&gt;不用提供太多示例，示例会降低推理效果&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;常见prompt&#34;&gt;常见prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%b8%b8%e8%a7%81prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;markdown 格式（任务指令提示和系统提示）&lt;/li&gt;&#xA;&lt;li&gt;角色扮演（任务指令提示和系统提示）&lt;/li&gt;&#xA;&lt;li&gt;奖励机制/情绪激励(任务指令提示)&lt;/li&gt;&#xA;&lt;li&gt;具体的示例&lt;/li&gt;&#xA;&lt;li&gt;隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示)&lt;/li&gt;&#xA;&lt;li&gt;要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;system-prompt&#34;&gt;system prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#system-prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;角色设定、提供示例、设计工作流程&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mlops笔记</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid>
+      <description>&lt;h2 id=&#34;project-1&#34;&gt;Project 1&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#project-1&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;project-setup&#34;&gt;project setup&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#project-setup&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p&gt;&#xA;&lt;h4 id=&#34;setuppy&#34;&gt;setup.py&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#setuppy&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

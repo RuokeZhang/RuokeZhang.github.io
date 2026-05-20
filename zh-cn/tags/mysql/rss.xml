@@ -1,115 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/mysql/</link><description>Recent content in MySQL on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/mysql/rss.xml" rel="self" type="application/rss+xml"/><item><title>读写分离&amp;分表分库</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</link><pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</guid><description>&lt;h2 id="读写分离">读写分离
-&lt;a class="header-anchor" href="#%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb">&lt;/a>
-&lt;/h2>&lt;h3 id="常见架构">常见架构
-&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e6%9e%b6%e6%9e%84">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>一主多从&lt;/li>
-&lt;li>主主互备 + 多从：两个主库互为主从，解决主库单点故障，读请求仍走从库&lt;/li>
-&lt;/ul>
-&lt;h3 id="实现">实现
-&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>在业务和数据库之间加一层代理（MySQL Router），由它把读写请求分发给不同节点&lt;/li>
-&lt;li>第三方组件（sharding-jdbc）&lt;/li>
-&lt;/ul>
-&lt;h2 id="分库分表">分库分表
-&lt;a class="header-anchor" href="#%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>单表的数据达到千万级别以上-&amp;gt;分表&lt;/li>
-&lt;li>单库的 CPU/IO/ 连接数达到上限-&amp;gt;分库&lt;/li>
-&lt;/ul>
-&lt;h3 id="路由规则">路由规则
-&lt;a class="header-anchor" href="#%e8%b7%af%e7%94%b1%e8%a7%84%e5%88%99">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>哈希路由（取模）&lt;/li>
-&lt;li>范围路由 （user_id 1&lt;del>100 万→库 0，101&lt;/del>200 万→库 1）&lt;/li>
-&lt;li>一致性哈希（把 key 和节点映射到同一个哈希环上，key 顺时针找到第一个节点作为归属节点）&lt;/li>
-&lt;/ul>
-&lt;h3 id="数据迁移">数据迁移
-&lt;a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e8%bf%81%e7%a7%bb">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>停机迁移：在半夜做&lt;/li>
-&lt;li>双写：所有写操作同时写入旧存储和新存储，后台异步迁移旧存储中双写前的历史数据到新存储，对比新旧存储的数据，修正不一致的数据&lt;/li>
-&lt;/ul>
-&lt;h3 id="分布式事务">分布式事务
-&lt;a class="header-anchor" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e4%ba%8b%e5%8a%a1">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>分布式ID（订单ID）。比如“订单库写订单 + 库存库扣库存 + 用户库减余额”涉及到三个库，&lt;/li>
-&lt;li>本地消息表 + 消息队列
-&lt;ul>
-&lt;li>在一个 MySQL 单机事务里，同时完成两件事：创建订单+扣库存。一是往order表里面添加order，二是在msg_table里添加“扣库存消息”&lt;/li>
-&lt;li>异步线程扫一遍msg_table，把消息都发给message queue&lt;/li>
-&lt;li>消费者执行跨库操作。如果不成功，MQ会自动重试&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>MySQL日志</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/log/</guid><description>&lt;p>所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成&lt;/p>
-&lt;h2 id="redo-log">redo log
-&lt;a class="header-anchor" href="#redo-log">&lt;/a>
-&lt;/h2>&lt;p>
-&lt;a href="https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="视频讲解" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- 视频讲解
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />
-实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/p></description></item><item><title>MySQL常见面试题</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</guid><description>&lt;h2 id="存储引擎对比">存储引擎对比
-&lt;a class="header-anchor" href="#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e5%af%b9%e6%af%94">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址&lt;/li>
-&lt;li>InnoDB 支持 ACID 事务，MyISAM 不支持&lt;/li>
-&lt;li>InnoDB支持行级锁，MyISAM 不支持&lt;/li>
-&lt;/ol>
-&lt;h2 id="innodb的可重复读隔离级别下解决幻读">InnoDB的可重复读隔离级别下解决幻读
-&lt;a class="header-anchor" href="#innodb%e7%9a%84%e5%8f%af%e9%87%8d%e5%a4%8d%e8%af%bb%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e4%b8%8b%e8%a7%a3%e5%86%b3%e5%b9%bb%e8%af%bb">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>
-&lt;p>对于快照读(普通SELECT)：通过MVCC，可重复读隔离级别，在&lt;strong>事务第一次查询&lt;/strong>时创建ReadView&lt;/p></description></item><item><title>MySQL锁</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</guid><description>&lt;h2 id="全局锁">全局锁
-&lt;a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e9%94%81">&lt;/a>
-&lt;/h2>&lt;p>一般在做&lt;strong>全库备份&lt;/strong>的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>flush tables &lt;span style="color:#8839ef">with&lt;/span> &lt;span style="color:#8839ef">read&lt;/span> &lt;span style="color:#8839ef">lock&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h2 id="表级锁">表级锁
-&lt;a class="header-anchor" href="#%e8%a1%a8%e7%ba%a7%e9%94%81">&lt;/a>
-&lt;/h2>&lt;h3 id="表锁">表锁
-&lt;a class="header-anchor" href="#%e8%a1%a8%e9%94%81">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>表共享读锁。多个线程能同时获取这个锁，获取锁的线程可以读这个表，但不能写这个表。MyISAM 处理读请求时，会获取该表的表共享读锁。而 InnoDB 默认是&lt;strong>行锁&lt;/strong>，通过 MVCC 来处理读请求。&lt;/li>
-&lt;li>表独占写锁。只有一个线程能获取这个锁，它可以对表进行写操作。其它任何线程都不可以读这张表。&lt;/li>
-&lt;/ol>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/transactionmysql/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/transactionmysql/</guid><description>&lt;p>参考：小林 coding&lt;/p>
-&lt;h2 id="事务的特性">事务的特性
-&lt;a class="header-anchor" href="#%e4%ba%8b%e5%8a%a1%e7%9a%84%e7%89%b9%e6%80%a7">&lt;/a>
-&lt;/h2>&lt;p>atomicity: undo log&lt;/p>
-&lt;p>consistency: 由其他三个特性实现.事务在执行前后，数据库从一个一致性状态转变到另一个一致性状态。&lt;/p>
-&lt;p>isolation: MVCC/lock.一个事物的执行不影响其它事务的执行&lt;/p></description></item><item><title>索引</title><link>https://ruokezhang.github.io/zh-cn/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mysql/sqlindex/</guid><description>&lt;h2 id="聚簇索引二级索引">聚簇索引、二级索引
-&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95%e4%ba%8c%e7%ba%a7%e7%b4%a2%e5%bc%95">&lt;/a>
-&lt;/h2>&lt;h3 id="聚簇索引">聚簇索引
-&lt;a class="header-anchor" href="#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95">&lt;/a>
-&lt;/h3>&lt;p>InnoDB中，每个表都有一个聚簇索引，它决定着数据在磁盘上存储的物理顺序。&lt;/p>
-&lt;ol>
-&lt;li>如果有 primary key, 即为聚簇索引&lt;/li>
-&lt;li>如果没有 primary key, 选择一个唯一的非空索引作为聚簇索引&lt;/li>
-&lt;li>如果还是没有，InnoDB隐式地创建一个自增列作为聚簇索引&lt;/li>
-&lt;/ol>
-&lt;h3 id="b-tree">B+ Tree
-&lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/mysql/</link>
+    <description>Recent content in MySQL on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/mysql/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>读写分离&amp;分表分库</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</link>
+      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/performance/</guid>
+      <description>&lt;h2 id=&#34;读写分离&#34;&gt;读写分离&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;常见架构&#34;&gt;常见架构&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%b8%b8%e8%a7%81%e6%9e%b6%e6%9e%84&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;一主多从&lt;/li&gt;&#xA;&lt;li&gt;主主互备 + 多从：两个主库互为主从，解决主库单点故障，读请求仍走从库&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;实现&#34;&gt;实现&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ae%9e%e7%8e%b0&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;在业务和数据库之间加一层代理（MySQL Router），由它把读写请求分发给不同节点&lt;/li&gt;&#xA;&lt;li&gt;第三方组件（sharding-jdbc）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;分库分表&#34;&gt;分库分表&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;单表的数据达到千万级别以上-&amp;gt;分表&lt;/li&gt;&#xA;&lt;li&gt;单库的 CPU/IO/ 连接数达到上限-&amp;gt;分库&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;路由规则&#34;&gt;路由规则&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%b7%af%e7%94%b1%e8%a7%84%e5%88%99&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;哈希路由（取模）&lt;/li&gt;&#xA;&lt;li&gt;范围路由 （user_id 1&lt;del&gt;100 万→库 0，101&lt;/del&gt;200 万→库 1）&lt;/li&gt;&#xA;&lt;li&gt;一致性哈希（把 key 和节点映射到同一个哈希环上，key 顺时针找到第一个节点作为归属节点）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;数据迁移&#34;&gt;数据迁移&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%95%b0%e6%8d%ae%e8%bf%81%e7%a7%bb&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;停机迁移：在半夜做&lt;/li&gt;&#xA;&lt;li&gt;双写：所有写操作同时写入旧存储和新存储，后台异步迁移旧存储中双写前的历史数据到新存储，对比新旧存储的数据，修正不一致的数据&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;分布式事务&#34;&gt;分布式事务&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%88%86%e5%b8%83%e5%bc%8f%e4%ba%8b%e5%8a%a1&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;分布式ID（订单ID）。比如“订单库写订单 + 库存库扣库存 + 用户库减余额”涉及到三个库，&lt;/li&gt;&#xA;&lt;li&gt;本地消息表 + 消息队列&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在一个 MySQL 单机事务里，同时完成两件事：创建订单+扣库存。一是往order表里面添加order，二是在msg_table里添加“扣库存消息”&lt;/li&gt;&#xA;&lt;li&gt;异步线程扫一遍msg_table，把消息都发给message queue&lt;/li&gt;&#xA;&lt;li&gt;消费者执行跨库操作。如果不成功，MQ会自动重试&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>MySQL日志</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/log/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/log/</guid>
+      <description>&lt;p&gt;所有DML操作（INSERT/UPDATE/DELETE）都先在Buffer Pool中完成&lt;/p&gt;&#xA;&lt;h2 id=&#34;redo-log&#34;&gt;redo log&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#redo-log&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c&#34; title=&#34;视频讲解&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    视频讲解&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png&#34; alt=&#34;Alt text&#34;  /&gt;&#xA;实现事务的持久性。redo log先刷盘，脏页再刷盘&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL常见面试题</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</guid>
+      <description>&lt;h2 id=&#34;存储引擎对比&#34;&gt;存储引擎对比&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ad%98%e5%82%a8%e5%bc%95%e6%93%8e%e5%af%b9%e6%af%94&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;InnoDB中主键索引和数据放在一起，主键索引的B+树里放完整的数据行；MyISAM中索引和数据分开放，B树里存索引值和该行的物理地址&lt;/li&gt;&#xA;&lt;li&gt;InnoDB 支持 ACID 事务，MyISAM 不支持&lt;/li&gt;&#xA;&lt;li&gt;InnoDB支持行级锁，MyISAM 不支持&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;innodb的可重复读隔离级别下解决幻读&#34;&gt;InnoDB的可重复读隔离级别下解决幻读&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#innodb%e7%9a%84%e5%8f%af%e9%87%8d%e5%a4%8d%e8%af%bb%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e4%b8%8b%e8%a7%a3%e5%86%b3%e5%b9%bb%e8%af%bb&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;对于快照读(普通SELECT)：通过MVCC，可重复读隔离级别，在&lt;strong&gt;事务第一次查询&lt;/strong&gt;时创建ReadView&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL锁</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/lock/</guid>
+      <description>&lt;h2 id=&#34;全局锁&#34;&gt;全局锁&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%85%a8%e5%b1%80%e9%94%81&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;一般在做&lt;strong&gt;全库备份&lt;/strong&gt;的时候用到。会阻塞写操作，只允许读请求。因此一般选在业务低峰期去做全库备份。&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flush tables &lt;span style=&#34;color:#8839ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h2 id=&#34;表级锁&#34;&gt;表级锁&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%a1%a8%e7%ba%a7%e9%94%81&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;表锁&#34;&gt;表锁&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%a1%a8%e9%94%81&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;表共享读锁。多个线程能同时获取这个锁，获取锁的线程可以读这个表，但不能写这个表。MyISAM 处理读请求时，会获取该表的表共享读锁。而 InnoDB 默认是&lt;strong&gt;行锁&lt;/strong&gt;，通过 MVCC 来处理读请求。&lt;/li&gt;&#xA;&lt;li&gt;表独占写锁。只有一个线程能获取这个锁，它可以对表进行写操作。其它任何线程都不可以读这张表。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt; tables t_student &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;触发表锁：ALTER/DROP/TRUNCATE TABLE&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transaction</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/transactionmysql/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/transactionmysql/</guid>
+      <description>&lt;p&gt;参考：小林 coding&lt;/p&gt;&#xA;&lt;h2 id=&#34;事务的特性&#34;&gt;事务的特性&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%ba%8b%e5%8a%a1%e7%9a%84%e7%89%b9%e6%80%a7&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;atomicity:  undo log&lt;/p&gt;&#xA;&lt;p&gt;consistency: 由其他三个特性实现.事务在执行前后，数据库从一个一致性状态转变到另一个一致性状态。&lt;/p&gt;&#xA;&lt;p&gt;isolation: MVCC/lock.一个事物的执行不影响其它事务的执行&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>索引</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mysql/sqlindex/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mysql/sqlindex/</guid>
+      <description>&lt;h2 id=&#34;聚簇索引二级索引&#34;&gt;聚簇索引、二级索引&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95%e4%ba%8c%e7%ba%a7%e7%b4%a2%e5%bc%95&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;聚簇索引&#34;&gt;聚簇索引&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%81%9a%e7%b0%87%e7%b4%a2%e5%bc%95&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;InnoDB中，每个表都有一个聚簇索引，它决定着数据在磁盘上存储的物理顺序。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;如果有 primary key, 即为聚簇索引&lt;/li&gt;&#xA;&lt;li&gt;如果没有 primary key, 选择一个唯一的非空索引作为聚簇索引&lt;/li&gt;&#xA;&lt;li&gt;如果还是没有，InnoDB隐式地创建一个自增列作为聚簇索引&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;b-tree&#34;&gt;B+ Tree&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#b-tree&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;InnoDB在默认情况下，聚簇索引和二级索引都使用 B+ Tree存储。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

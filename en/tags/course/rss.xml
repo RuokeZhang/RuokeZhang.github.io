@@ -1,36 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/course/</link><description>Recent content in Course on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/course/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Systems</title><link>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</link><pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</guid><description>&lt;h2 id="rpc-basics">RPC Basics
-&lt;a class="header-anchor" href="#rpc-basics">&lt;/a>
-&lt;/h2>&lt;p>protobuf IDL&lt;/p>
-&lt;ol>
-&lt;li>Define the &lt;code>.proto&lt;/code> file: define Request/Response formats and function signatures.&lt;/li>
-&lt;li>Protobuf generates &lt;code>CalculatorStub&lt;/code> automatically.
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>channel &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> grpc.&lt;span style="color:#1e66f5">insecure_channel&lt;/span>(&lt;span style="color:#40a02b">&amp;#34;server-ip:port&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> Client &lt;span style="color:#1e66f5">stub&lt;/span> (a local proxy &lt;span style="color:#8839ef">for&lt;/span> server&lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span>side methods)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stub &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> CalculatorStub(channel)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#d20f39">#&lt;/span> Call Stub.&lt;span style="color:#1e66f5">Add&lt;/span> as &lt;span style="color:#8839ef">if&lt;/span> it were a local function
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> AddRequest(num1&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>2, num2&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>3)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> stub.&lt;span style="color:#1e66f5">Add&lt;/span>(request)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;/li>
-&lt;li>Implement the actual logic for &lt;code>add&lt;/code> on the server side.&lt;/li>
-&lt;/ol>
-&lt;h3 id="semantics">Semantics
-&lt;a class="header-anchor" href="#semantics">&lt;/a>
-&lt;/h3>&lt;p>At most once&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/tags/course/</link>
+    <description>Recent content in Course on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/tags/course/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributed Systems</title>
+      <link>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/course_notes/distributed_systems/</guid>
+      <description>&lt;h2 id=&#34;rpc-basics&#34;&gt;RPC Basics&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#rpc-basics&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;protobuf IDL&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Define the &lt;code&gt;.proto&lt;/code&gt; file: define Request/Response formats and function signatures.&lt;/li&gt;&#xA;&lt;li&gt;Protobuf generates &lt;code&gt;CalculatorStub&lt;/code&gt; automatically.&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;7&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;8&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;channel &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; grpc.&lt;span style=&#34;color:#1e66f5&#34;&gt;insecure_channel&lt;/span&gt;(&lt;span style=&#34;color:#40a02b&#34;&gt;&amp;#34;server-ip:port&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d20f39&#34;&gt;#&lt;/span&gt; Client &lt;span style=&#34;color:#1e66f5&#34;&gt;stub&lt;/span&gt; (a local proxy &lt;span style=&#34;color:#8839ef&#34;&gt;for&lt;/span&gt; server&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;side methods)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;stub &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; CalculatorStub(channel)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#d20f39&#34;&gt;#&lt;/span&gt; Call Stub.&lt;span style=&#34;color:#1e66f5&#34;&gt;Add&lt;/span&gt; as &lt;span style=&#34;color:#8839ef&#34;&gt;if&lt;/span&gt; it were a local function&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;request &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; AddRequest(num1&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;2, num2&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;3)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;response &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; stub.&lt;span style=&#34;color:#1e66f5&#34;&gt;Add&lt;/span&gt;(request)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Implement the actual logic for &lt;code&gt;add&lt;/code&gt; on the server side.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;semantics&#34;&gt;Semantics&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#semantics&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;At most once&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

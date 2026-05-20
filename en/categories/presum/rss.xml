@@ -1,35 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PreSum on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/presum/</link><description>Recent content in PreSum on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/presum/rss.xml" rel="self" type="application/rss+xml"/><item><title>Prefix Sum</title><link>https://ruokezhang.github.io/en/post/leetcode/presum/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid><description>&lt;p>
-&lt;a href="https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/" title="Prefix Sum Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Prefix Sum Problem List
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;h2 id="one-dimensional-prefix-sum">One-dimensional Prefix Sum
-&lt;a class="header-anchor" href="#one-dimensional-prefix-sum">&lt;/a>
-&lt;/h2>&lt;h3 id="lc-1749">LC 1749
-&lt;a class="header-anchor" href="#lc-1749">&lt;/a>
-&lt;/h3>&lt;p>Maximum absolute sum of any subarray: Find the minimum and maximum values in the prefix sum array, and the absolute difference between them is the answer.&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">def&lt;/span> &lt;span style="color:#1e66f5">maxAbsoluteSum&lt;/span>(&lt;span style="color:#04a5e5">self&lt;/span>, nums: List[&lt;span style="color:#04a5e5">int&lt;/span>]) &lt;span style="color:#04a5e5;font-weight:bold">-&amp;gt;&lt;/span> &lt;span style="color:#04a5e5">int&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#04a5e5">list&lt;/span>(accumulate(nums, initial&lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span>&lt;span style="color:#fe640b">0&lt;/span>)) &lt;span style="color:#9ca0b0;font-style:italic"># prefix sum of nums&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">return&lt;/span> &lt;span style="color:#04a5e5">max&lt;/span>(s) &lt;span style="color:#04a5e5;font-weight:bold">-&lt;/span> &lt;span style="color:#04a5e5">min&lt;/span>(s)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h3 id="2055-plates-between-candles">2055. Plates Between Candles
-&lt;a class="header-anchor" href="#2055-plates-between-candles">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>Find the first candle at or to the right of a&lt;/li>
-&lt;li>Find the first candle at or to the left of b&lt;/li>
-&lt;li>Use prefix sum to count the number of plates between them&lt;/li>
-&lt;/ol>
-&lt;p>Steps 1 and 2 can use binary search, but it will time out.
-It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PreSum on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/presum/</link>
+    <description>Recent content in PreSum on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/presum/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prefix Sum</title>
+      <link>https://ruokezhang.github.io/en/post/leetcode/presum/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/leetcode/presum/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://leetcode.cn/discuss/post/3583665/fen-xiang-gun-ti-dan-chang-yong-shu-ju-j-bvmv/&#34; title=&#34;Prefix Sum Problem List&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Prefix Sum Problem List&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;one-dimensional-prefix-sum&#34;&gt;One-dimensional Prefix Sum&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#one-dimensional-prefix-sum&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;lc-1749&#34;&gt;LC 1749&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#lc-1749&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Maximum absolute sum of any subarray: Find the minimum and maximum values in the prefix sum array, and the absolute difference between them is the answer.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#1e66f5&#34;&gt;maxAbsoluteSum&lt;/span&gt;(&lt;span style=&#34;color:#04a5e5&#34;&gt;self&lt;/span&gt;, nums: List[&lt;span style=&#34;color:#04a5e5&#34;&gt;int&lt;/span&gt;]) &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;int&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    s &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;list&lt;/span&gt;(accumulate(nums, initial&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;0&lt;/span&gt;))  &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;# prefix sum of nums&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;max&lt;/span&gt;(s) &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#04a5e5&#34;&gt;min&lt;/span&gt;(s)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h3 id=&#34;2055-plates-between-candles&#34;&gt;2055. Plates Between Candles&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#2055-plates-between-candles&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;Find the first candle at or to the right of a&lt;/li&gt;&#xA;&lt;li&gt;Find the first candle at or to the left of b&lt;/li&gt;&#xA;&lt;li&gt;Use prefix sum to count the number of plates between them&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Steps 1 and 2 can use binary search, but it will time out.&#xA;It&amp;rsquo;s best to pre-process and record the position of the first candle to the left/right of each position.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

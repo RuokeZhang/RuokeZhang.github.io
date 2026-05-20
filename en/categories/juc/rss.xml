@@ -1,42 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JUC on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/juc/</link><description>Recent content in JUC on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/juc/rss.xml" rel="self" type="application/rss+xml"/><item><title>ThreadLocal &amp; ThreadPool</title><link>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</link><pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
-&lt;h2 id="threadlocal">ThreadLocal
-&lt;a class="header-anchor" href="#threadlocal">&lt;/a>
-&lt;/h2>&lt;p>The &lt;strong>&lt;code>Thread&lt;/code> class&lt;/strong> has a variable &lt;code>threadLocals&lt;/code>, which can be considered a &lt;code>HashMap&lt;/code> used to store thread-private content.&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">/* ThreadLocal values pertaining to this thread. This map is maintained
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic"> * by the ThreadLocal class. */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ThreadLocal.&lt;span style="color:#1e66f5">ThreadLocalMap&lt;/span> threadLocals &lt;span style="color:#04a5e5;font-weight:bold">=&lt;/span> &lt;span style="color:#fe640b">null&lt;/span>;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>The &lt;code>ThreadLocal&lt;/code> class has an instance method &lt;code>set&lt;/code>, which actually stores the content in &lt;code>threadLocals&lt;/code>. The key is &lt;strong>the &lt;code>ThreadLocal&lt;/code> object itself&lt;/strong>.&lt;/p></description></item><item><title>JMM</title><link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
-&lt;h2 id="concurrency-issues">Concurrency Issues
-&lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
-&lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
-&lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
-The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
-&lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
-&lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
-&lt;/h3>&lt;h3 id="compiler-optimization-reordering">Compiler Optimization Reordering
-&lt;a class="header-anchor" href="#compiler-optimization-reordering">&lt;/a>
-&lt;/h3>&lt;p>JVM and JIT do this. For Java programs, instruction reordering is performed during compilation without changing its semantics, similar to g1, g2 optimization reordering.&lt;/p>
-&lt;p>Solution: Prohibit compiler reordering&lt;/p>
-&lt;h3 id="instruction-parallel-reordering">Instruction Parallel Reordering
-&lt;a class="header-anchor" href="#instruction-parallel-reordering">&lt;/a>
-&lt;/h3>&lt;p>CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p></description></item><item><title>Java Threads</title><link>https://ruokezhang.github.io/en/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid><description>&lt;p>Reference: JavaGuide&lt;/p>
-&lt;h2 id="threads">Threads
-&lt;a class="header-anchor" href="#threads">&lt;/a>
-&lt;/h2>&lt;h3 id="thread-implementation">Thread Implementation
-&lt;a class="header-anchor" href="#thread-implementation">&lt;/a>
-&lt;/h3>&lt;p>A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p>
-&lt;h4 id="one-to-one-thread-model">One-to-One Thread Model✨
-&lt;a class="header-anchor" href="#one-to-one-thread-model">&lt;/a>
-&lt;/h4>&lt;p>Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JUC on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/juc/</link>
+    <description>Recent content in JUC on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/juc/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ThreadLocal &amp; ThreadPool</title>
+      <link>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/java/juc/threadlocal/</guid>
+      <description>&lt;p&gt;Reference: JavaGuide&lt;/p&gt;&#xA;&lt;h2 id=&#34;threadlocal&#34;&gt;ThreadLocal&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#threadlocal&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;&lt;code&gt;Thread&lt;/code&gt; class&lt;/strong&gt; has a variable &lt;code&gt;threadLocals&lt;/code&gt;, which can be considered a &lt;code&gt;HashMap&lt;/code&gt; used to store thread-private content.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;/* ThreadLocal values pertaining to this thread. This map is maintained&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;    * by the ThreadLocal class. */&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ThreadLocal.&lt;span style=&#34;color:#1e66f5&#34;&gt;ThreadLocalMap&lt;/span&gt; threadLocals &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;The &lt;code&gt;ThreadLocal&lt;/code&gt; class has an instance method &lt;code&gt;set&lt;/code&gt;, which actually stores the content in &lt;code&gt;threadLocals&lt;/code&gt;. The key is &lt;strong&gt;the &lt;code&gt;ThreadLocal&lt;/code&gt; object itself&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JMM</title>
+      <link>https://ruokezhang.github.io/en/post/java/juc/jmm/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/java/juc/jmm/</guid>
+      <description>&lt;p&gt;Reference: JavaGuide&lt;/p&gt;&#xA;&lt;h2 id=&#34;concurrency-issues&#34;&gt;Concurrency Issues&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#concurrency-issues&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;cpu-cache&#34;&gt;CPU Cache&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cpu-cache&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png&#34; alt=&#34;Alt text&#34;  /&gt;&#xA;The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p&gt;&#xA;&lt;h3 id=&#34;instruction-level-reordering&#34;&gt;Instruction-Level Reordering&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#instruction-level-reordering&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h3 id=&#34;compiler-optimization-reordering&#34;&gt;Compiler Optimization Reordering&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#compiler-optimization-reordering&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;JVM and JIT do this. For Java programs, instruction reordering is performed during compilation without changing its semantics, similar to g1, g2 optimization reordering.&lt;/p&gt;&#xA;&lt;p&gt;Solution: Prohibit compiler reordering&lt;/p&gt;&#xA;&lt;h3 id=&#34;instruction-parallel-reordering&#34;&gt;Instruction Parallel Reordering&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#instruction-parallel-reordering&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;CPU does this, related to CPU pipeline. It means a thread can run in parallel on different CPU hardware.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java Threads</title>
+      <link>https://ruokezhang.github.io/en/post/java/juc/thread/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/java/juc/thread/</guid>
+      <description>&lt;p&gt;Reference: JavaGuide&lt;/p&gt;&#xA;&lt;h2 id=&#34;threads&#34;&gt;Threads&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#threads&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;thread-implementation&#34;&gt;Thread Implementation&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#thread-implementation&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;A Java program runs as a process and is actually multi-threaded concurrently; the main function is the main thread. Each instance of java.lang.Thread that has called start() and not yet finished is a thread. Java threads are the concurrent execution units of Java programs.&lt;/p&gt;&#xA;&lt;h4 id=&#34;one-to-one-thread-model&#34;&gt;One-to-One Thread Model✨&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#one-to-one-thread-model&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;Each Java thread corresponds to a kernel thread in the operating system, fully utilizing multi-core processors. (Now Windows and Linux use this.)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,223 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MySQL on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/mysql/</link><description>Recent content in MySQL on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/mysql/rss.xml" rel="self" type="application/rss+xml"/><item><title>MySQL Logs</title><link>https://ruokezhang.github.io/en/post/mysql-logs/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-logs/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p>
-&lt;h2 id="redo-log">redo log
-&lt;a class="header-anchor" href="#redo-log">&lt;/a>
-&lt;/h2>&lt;p>
-&lt;a href="https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Video Explanation" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Video Explanation
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
-&lt;ol>
-&lt;li>Implements transaction durability. redo log is flushed to disk first, then dirty pages are flushed to disk&lt;/li>
-&lt;/ol>
-&lt;h3 id="physical-storage-characteristics">Physical Storage Characteristics
-&lt;a class="header-anchor" href="#physical-storage-characteristics">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>File Structure&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Composed of fixed-size files (such as &lt;code>ib_logfile0&lt;/code>, &lt;code>ib_logfile1&lt;/code>)&lt;/li>
-&lt;li>Circular write (ring buffer) design&lt;/li>
-&lt;li>&lt;strong>Physical writes are always appended to the end of the file&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Write Mode&lt;/strong>&lt;/p></description></item><item><title>MySQL Logs</title><link>https://ruokezhang.github.io/en/post/mysql/log/</link><pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/log/</guid><description>&lt;p>All DML operations (INSERT/UPDATE/DELETE) are first performed in the Buffer Pool.&lt;/p>
-&lt;h2 id="redo-log">Redo Log
-&lt;a class="header-anchor" href="#redo-log">&lt;/a>
-&lt;/h2>&lt;p>
-&lt;a href="https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c" title="Video (Chinese)" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Video (Chinese)
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png" alt="Alt text" />&lt;/p>
-&lt;ol>
-&lt;li>Provides transaction durability. Redo log is flushed first; dirty pages are flushed later.&lt;/li>
-&lt;/ol>
-&lt;h3 id="physical-storage-characteristics">Physical Storage Characteristics
-&lt;a class="header-anchor" href="#physical-storage-characteristics">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>File structure&lt;/p>
-&lt;ul>
-&lt;li>Fixed-size files (e.g., ib_logfile0, ib_logfile1)&lt;/li>
-&lt;li>Circular write (ring buffer)&lt;/li>
-&lt;li>Physical appends are always to the end of file&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Write pattern&lt;/p>
-&lt;/li>
-&lt;/ol>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">// Pseudocode for physical writes
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#9ca0b0;font-style:italic">&lt;/span>&lt;span style="color:#1e66f5">write&lt;/span>(log_file, log_record, log_size); &lt;span style="color:#9ca0b0;font-style:italic">// always append
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h3 id="write-ahead-logging-wal">Write-Ahead Logging (WAL)
-&lt;a class="header-anchor" href="#write-ahead-logging-wal">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>Update data pages in the Buffer Pool; the page becomes a dirty page.&lt;/li>
-&lt;li>Write the physical changes (e.g., &amp;ldquo;page X, offset Y, write Z&amp;rdquo;) sequentially to the redo log buffer.&lt;/li>
-&lt;li>On COMMIT, behavior depends on innodb_flush_log_at_trx_commit (commonly 1 by default):&lt;/li>
-&lt;/ul>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>Value&lt;/th>
- &lt;th>Behavior&lt;/th>
- &lt;th>Durability&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>1 (default)&lt;/td>
- &lt;td>1) write to OS page cache; 2) fsync() immediately&lt;/td>
- &lt;td>Full durability&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>0&lt;/td>
- &lt;td>Batch write+fsync every 1s&lt;/td>
- &lt;td>May lose up to 1s of data&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>2&lt;/td>
- &lt;td>Write to OS page cache but delay fsync&lt;/td>
- &lt;td>Safe unless OS crashes&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;ul>
-&lt;li>Dirty page flushing is asynchronous; background threads flush Buffer Pool pages to disk.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redolog1.png" alt="Alt text" />&lt;/p></description></item><item><title>Common MySQL Interview Questions</title><link>https://ruokezhang.github.io/en/post/mysql-interview/</link><pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-interview/</guid><description>&lt;h2 id="storage-engine-comparison">Storage Engine Comparison
-&lt;a class="header-anchor" href="#storage-engine-comparison">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li>
-&lt;li>InnoDB supports ACID transactions, MyISAM does not&lt;/li>
-&lt;li>InnoDB supports row-level locking, MyISAM does not&lt;/li>
-&lt;/ol>
-&lt;h2 id="what-is-page-split">What is Page Split
-&lt;a class="header-anchor" href="#what-is-page-split">&lt;/a>
-&lt;/h2>&lt;p>When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p></description></item><item><title>MySQL Locks</title><link>https://ruokezhang.github.io/en/post/mysql-locks/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-locks/</guid><description>&lt;h2 id="global-lock">Global Lock
-&lt;a class="header-anchor" href="#global-lock">&lt;/a>
-&lt;/h2>&lt;p>Generally used when doing &lt;strong>full database backup&lt;/strong>. It blocks write operations and only allows read requests. Therefore, it&amp;rsquo;s usually chosen during business low-peak periods for full database backup.&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>flush tables &lt;span style="color:#8839ef">with&lt;/span> &lt;span style="color:#8839ef">read&lt;/span> &lt;span style="color:#8839ef">lock&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h2 id="table-level-locks">Table-Level Locks
-&lt;a class="header-anchor" href="#table-level-locks">&lt;/a>
-&lt;/h2>&lt;h3 id="table-lock">Table Lock
-&lt;a class="header-anchor" href="#table-lock">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>Table shared read lock. Multiple threads can acquire this lock simultaneously. Threads with this lock can read the table but cannot write to it. MyISAM acquires table shared read locks when processing read requests. InnoDB defaults to &lt;strong>row locks&lt;/strong> and handles read requests through MVCC.&lt;/li>
-&lt;li>Table exclusive write lock. Only one thread can acquire this lock and perform write operations on the table. No other threads can read this table.&lt;/li>
-&lt;/ol>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p></description></item><item><title>MySQL Locks</title><link>https://ruokezhang.github.io/en/post/mysql/lock/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/lock/</guid><description>&lt;h2 id="global-locks">Global Locks
-&lt;a class="header-anchor" href="#global-locks">&lt;/a>
-&lt;/h2>&lt;p>Typically used for full backups. Blocks writes and allows only reads, so usually run during off-peak.&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>flush tables &lt;span style="color:#8839ef">with&lt;/span> &lt;span style="color:#8839ef">read&lt;/span> &lt;span style="color:#8839ef">lock&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h2 id="table-level-locks">Table-Level Locks
-&lt;a class="header-anchor" href="#table-level-locks">&lt;/a>
-&lt;/h2>&lt;h3 id="table-locks">Table Locks
-&lt;a class="header-anchor" href="#table-locks">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>Shared read lock: multiple threads can read the table concurrently, but cannot write. MyISAM uses a shared read lock for reads; InnoDB prefers row locks and MVCC for reads.&lt;/li>
-&lt;li>Exclusive write lock: only one thread can acquire it; others cannot read or write.&lt;/li>
-&lt;/ol>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">lock&lt;/span> tables t_student &lt;span style="color:#8839ef">read&lt;/span>;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>DDL such as ALTER/DROP/TRUNCATE triggers table locks.&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</guid><description>&lt;p>Reference: Xiaolin coding&lt;/p>
-&lt;h2 id="acid-properties">ACID Properties
-&lt;a class="header-anchor" href="#acid-properties">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>Atomicity: implemented via undo log.&lt;/li>
-&lt;li>Consistency: ensured by the other three properties. Before and after execution, the database transitions between consistent states.&lt;/li>
-&lt;li>Isolation: MVCC/locks. One transaction’s execution should not affect others.&lt;/li>
-&lt;li>Durability: redo log. Once committed, changes are permanent even after crash.&lt;/li>
-&lt;/ul>
-&lt;h2 id="starting-a-transaction">Starting a Transaction
-&lt;a class="header-anchor" href="#starting-a-transaction">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>begin/start transaction marks the beginning. The transaction actually starts only when the first SELECT after this statement executes.&lt;/li>
-&lt;li>start transaction with consistent snapshot: immediately starts the transaction and takes a snapshot.&lt;/li>
-&lt;/ul>
-&lt;h2 id="isolation-levels">Isolation Levels
-&lt;a class="header-anchor" href="#isolation-levels">&lt;/a>
-&lt;/h2>&lt;p>Possible anomalies: dirty read, non-repeatable read, phantom read.&lt;/p></description></item><item><title>Transaction</title><link>https://ruokezhang.github.io/en/post/mysql-transaction/</link><pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-transaction/</guid><description>&lt;p>Reference: Xiaolin Coding&lt;/p>
-&lt;h2 id="transaction-properties">Transaction Properties
-&lt;a class="header-anchor" href="#transaction-properties">&lt;/a>
-&lt;/h2>&lt;p>&lt;strong>Atomicity&lt;/strong>: Implemented via &lt;code>undo log&lt;/code>.&lt;/p>
-&lt;p>&lt;strong>Consistency&lt;/strong>: Achieved through the other three properties. Before and after a transaction, the database transitions from one consistent state to another.&lt;/p>
-&lt;p>&lt;strong>Isolation&lt;/strong>: Implemented via MVCC/locking. The execution of one transaction does not affect the execution of others.&lt;/p>
-&lt;p>&lt;strong>Durability&lt;/strong>: Implemented via &lt;code>redo log&lt;/code>. Once a transaction is committed, its changes to the database are permanent, even in the event of a system failure or crash.&lt;/p></description></item><item><title>Indexes</title><link>https://ruokezhang.github.io/en/post/mysql-indexes/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql-indexes/</guid><description>&lt;h2 id="clustered-index-secondary-index">Clustered Index, Secondary Index
-&lt;a class="header-anchor" href="#clustered-index-secondary-index">&lt;/a>
-&lt;/h2>&lt;h3 id="clustered-index">Clustered Index
-&lt;a class="header-anchor" href="#clustered-index">&lt;/a>
-&lt;/h3>&lt;p>In InnoDB, each table has a clustered index that determines the physical order of data storage on disk.&lt;/p>
-&lt;ol>
-&lt;li>If there is a primary key, it serves as the clustered index&lt;/li>
-&lt;li>If there is no primary key, choose a unique non-null index as the clustered index&lt;/li>
-&lt;li>If there still isn&amp;rsquo;t one, InnoDB implicitly creates an auto-increment column as the clustered index&lt;/li>
-&lt;/ol>
-&lt;h3 id="b-tree">B+ Tree
-&lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p></description></item><item><title>Indexes</title><link>https://ruokezhang.github.io/en/post/mysql/sqlindex/</link><pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/mysql/sqlindex/</guid><description>&lt;h2 id="clustered-vs-secondary-indexes">Clustered vs Secondary Indexes
-&lt;a class="header-anchor" href="#clustered-vs-secondary-indexes">&lt;/a>
-&lt;/h2>&lt;h3 id="clustered-index">Clustered Index
-&lt;a class="header-anchor" href="#clustered-index">&lt;/a>
-&lt;/h3>&lt;p>In InnoDB, every table has a clustered index that defines the physical order of rows on disk.&lt;/p>
-&lt;ol>
-&lt;li>If there’s a primary key, it is the clustered index.&lt;/li>
-&lt;li>If there’s no primary key, InnoDB chooses a unique, non-null index as the clustered index.&lt;/li>
-&lt;li>If neither exists, InnoDB creates an implicit auto-increment column as the clustered index.&lt;/li>
-&lt;/ol>
-&lt;h3 id="b-tree">B+ Tree
-&lt;a class="header-anchor" href="#b-tree">&lt;/a>
-&lt;/h3>&lt;p>By default, InnoDB stores both clustered and secondary indexes as B+ Trees.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/tags/mysql/</link>
+    <description>Recent content in MySQL on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/tags/mysql/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL Logs</title>
+      <link>https://ruokezhang.github.io/en/post/mysql-logs/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql-logs/</guid>
+      <description>&lt;p&gt;All DML operations (INSERT/UPDATE/DELETE) are first completed in the Buffer Pool&lt;/p&gt;&#xA;&lt;h2 id=&#34;redo-log&#34;&gt;redo log&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#redo-log&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c&#34; title=&#34;Video Explanation&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Video Explanation&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png&#34; alt=&#34;Alt text&#34;  /&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Implements transaction durability. redo log is flushed to disk first, then dirty pages are flushed to disk&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;physical-storage-characteristics&#34;&gt;Physical Storage Characteristics&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#physical-storage-characteristics&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;File Structure&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Composed of fixed-size files (such as &lt;code&gt;ib_logfile0&lt;/code&gt;, &lt;code&gt;ib_logfile1&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Circular write (ring buffer) design&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Physical writes are always appended to the end of the file&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Write Mode&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL Logs</title>
+      <link>https://ruokezhang.github.io/en/post/mysql/log/</link>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql/log/</guid>
+      <description>&lt;p&gt;All DML operations (INSERT/UPDATE/DELETE) are first performed in the Buffer Pool.&lt;/p&gt;&#xA;&lt;h2 id=&#34;redo-log&#34;&gt;Redo Log&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#redo-log&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://www.bilibili.com/video/BV1Dr4y197ai/?spm_id_from=333.1391.0.0&amp;amp;vd_source=3417d90294dd8bcb1cc2b3dc8bc1ef3c&#34; title=&#34;Video (Chinese)&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Video (Chinese)&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redoLog.png&#34; alt=&#34;Alt text&#34;  /&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Provides transaction durability. Redo log is flushed first; dirty pages are flushed later.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;physical-storage-characteristics&#34;&gt;Physical Storage Characteristics&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#physical-storage-characteristics&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;File structure&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Fixed-size files (e.g., ib_logfile0, ib_logfile1)&lt;/li&gt;&#xA;&lt;li&gt;Circular write (ring buffer)&lt;/li&gt;&#xA;&lt;li&gt;Physical appends are always to the end of file&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Write pattern&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;// Pseudocode for physical writes&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#1e66f5&#34;&gt;write&lt;/span&gt;(log_file, log_record, log_size); &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;// always append&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h3 id=&#34;write-ahead-logging-wal&#34;&gt;Write-Ahead Logging (WAL)&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#write-ahead-logging-wal&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;Update data pages in the Buffer Pool; the page becomes a dirty page.&lt;/li&gt;&#xA;&lt;li&gt;Write the physical changes (e.g., &amp;ldquo;page X, offset Y, write Z&amp;rdquo;) sequentially to the redo log buffer.&lt;/li&gt;&#xA;&lt;li&gt;On COMMIT, behavior depends on innodb_flush_log_at_trx_commit (commonly 1 by default):&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Value&lt;/th&gt;&#xA;          &lt;th&gt;Behavior&lt;/th&gt;&#xA;          &lt;th&gt;Durability&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;1 (default)&lt;/td&gt;&#xA;          &lt;td&gt;1) write to OS page cache; 2) fsync() immediately&lt;/td&gt;&#xA;          &lt;td&gt;Full durability&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;0&lt;/td&gt;&#xA;          &lt;td&gt;Batch write+fsync every 1s&lt;/td&gt;&#xA;          &lt;td&gt;May lose up to 1s of data&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2&lt;/td&gt;&#xA;          &lt;td&gt;Write to OS page cache but delay fsync&lt;/td&gt;&#xA;          &lt;td&gt;Safe unless OS crashes&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dirty page flushing is asynchronous; background threads flush Buffer Pool pages to disk.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/redolog1.png&#34; alt=&#34;Alt text&#34;  /&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Common MySQL Interview Questions</title>
+      <link>https://ruokezhang.github.io/en/post/mysql-interview/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql-interview/</guid>
+      <description>&lt;h2 id=&#34;storage-engine-comparison&#34;&gt;Storage Engine Comparison&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#storage-engine-comparison&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;In InnoDB, primary key index and data are stored together, with the primary key index B+ tree containing complete data rows; in MyISAM, index and data are stored separately, with the B tree storing index values and physical addresses of rows&lt;/li&gt;&#xA;&lt;li&gt;InnoDB supports ACID transactions, MyISAM does not&lt;/li&gt;&#xA;&lt;li&gt;InnoDB supports row-level locking, MyISAM does not&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;what-is-page-split&#34;&gt;What is Page Split&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#what-is-page-split&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;When inserting new data into a full index page (usually 16KB), the storage engine will split the current page into two pages to accommodate the new data&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL Locks</title>
+      <link>https://ruokezhang.github.io/en/post/mysql-locks/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql-locks/</guid>
+      <description>&lt;h2 id=&#34;global-lock&#34;&gt;Global Lock&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#global-lock&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Generally used when doing &lt;strong&gt;full database backup&lt;/strong&gt;. It blocks write operations and only allows read requests. Therefore, it&amp;rsquo;s usually chosen during business low-peak periods for full database backup.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flush tables &lt;span style=&#34;color:#8839ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h2 id=&#34;table-level-locks&#34;&gt;Table-Level Locks&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#table-level-locks&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;table-lock&#34;&gt;Table Lock&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#table-lock&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;Table shared read lock. Multiple threads can acquire this lock simultaneously. Threads with this lock can read the table but cannot write to it. MyISAM acquires table shared read locks when processing read requests. InnoDB defaults to &lt;strong&gt;row locks&lt;/strong&gt; and handles read requests through MVCC.&lt;/li&gt;&#xA;&lt;li&gt;Table exclusive write lock. Only one thread can acquire this lock and perform write operations on the table. No other threads can read this table.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt; tables t_student &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;Table locks are triggered by: ALTER/DROP/TRUNCATE TABLE&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL Locks</title>
+      <link>https://ruokezhang.github.io/en/post/mysql/lock/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql/lock/</guid>
+      <description>&lt;h2 id=&#34;global-locks&#34;&gt;Global Locks&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#global-locks&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Typically used for full backups. Blocks writes and allows only reads, so usually run during off-peak.&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flush tables &lt;span style=&#34;color:#8839ef&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h2 id=&#34;table-level-locks&#34;&gt;Table-Level Locks&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#table-level-locks&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;table-locks&#34;&gt;Table Locks&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#table-locks&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;Shared read lock: multiple threads can read the table concurrently, but cannot write. MyISAM uses a shared read lock for reads; InnoDB prefers row locks and MVCC for reads.&lt;/li&gt;&#xA;&lt;li&gt;Exclusive write lock: only one thread can acquire it; others cannot read or write.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;lock&lt;/span&gt; tables t_student &lt;span style=&#34;color:#8839ef&#34;&gt;read&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;DDL such as ALTER/DROP/TRUNCATE triggers table locks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transaction</title>
+      <link>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql/transactionmysql/</guid>
+      <description>&lt;p&gt;Reference: Xiaolin coding&lt;/p&gt;&#xA;&lt;h2 id=&#34;acid-properties&#34;&gt;ACID Properties&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#acid-properties&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Atomicity: implemented via undo log.&lt;/li&gt;&#xA;&lt;li&gt;Consistency: ensured by the other three properties. Before and after execution, the database transitions between consistent states.&lt;/li&gt;&#xA;&lt;li&gt;Isolation: MVCC/locks. One transaction’s execution should not affect others.&lt;/li&gt;&#xA;&lt;li&gt;Durability: redo log. Once committed, changes are permanent even after crash.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;starting-a-transaction&#34;&gt;Starting a Transaction&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#starting-a-transaction&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;begin/start transaction marks the beginning. The transaction actually starts only when the first SELECT after this statement executes.&lt;/li&gt;&#xA;&lt;li&gt;start transaction with consistent snapshot: immediately starts the transaction and takes a snapshot.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;isolation-levels&#34;&gt;Isolation Levels&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#isolation-levels&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Possible anomalies: dirty read, non-repeatable read, phantom read.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transaction</title>
+      <link>https://ruokezhang.github.io/en/post/mysql-transaction/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql-transaction/</guid>
+      <description>&lt;p&gt;Reference: Xiaolin Coding&lt;/p&gt;&#xA;&lt;h2 id=&#34;transaction-properties&#34;&gt;Transaction Properties&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#transaction-properties&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Atomicity&lt;/strong&gt;: Implemented via &lt;code&gt;undo log&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Consistency&lt;/strong&gt;: Achieved through the other three properties. Before and after a transaction, the database transitions from one consistent state to another.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Isolation&lt;/strong&gt;: Implemented via MVCC/locking. The execution of one transaction does not affect the execution of others.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Durability&lt;/strong&gt;: Implemented via &lt;code&gt;redo log&lt;/code&gt;. Once a transaction is committed, its changes to the database are permanent, even in the event of a system failure or crash.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Indexes</title>
+      <link>https://ruokezhang.github.io/en/post/mysql-indexes/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql-indexes/</guid>
+      <description>&lt;h2 id=&#34;clustered-index-secondary-index&#34;&gt;Clustered Index, Secondary Index&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#clustered-index-secondary-index&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;clustered-index&#34;&gt;Clustered Index&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#clustered-index&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;In InnoDB, each table has a clustered index that determines the physical order of data storage on disk.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;If there is a primary key, it serves as the clustered index&lt;/li&gt;&#xA;&lt;li&gt;If there is no primary key, choose a unique non-null index as the clustered index&lt;/li&gt;&#xA;&lt;li&gt;If there still isn&amp;rsquo;t one, InnoDB implicitly creates an auto-increment column as the clustered index&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;b-tree&#34;&gt;B+ Tree&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#b-tree&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;By default, InnoDB uses B+ Tree storage for both clustered and secondary indexes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Indexes</title>
+      <link>https://ruokezhang.github.io/en/post/mysql/sqlindex/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/mysql/sqlindex/</guid>
+      <description>&lt;h2 id=&#34;clustered-vs-secondary-indexes&#34;&gt;Clustered vs Secondary Indexes&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#clustered-vs-secondary-indexes&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;clustered-index&#34;&gt;Clustered Index&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#clustered-index&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;In InnoDB, every table has a clustered index that defines the physical order of rows on disk.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;If there’s a primary key, it is the clustered index.&lt;/li&gt;&#xA;&lt;li&gt;If there’s no primary key, InnoDB chooses a unique, non-null index as the clustered index.&lt;/li&gt;&#xA;&lt;li&gt;If neither exists, InnoDB creates an implicit auto-increment column as the clustered index.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;b-tree&#34;&gt;B+ Tree&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#b-tree&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;By default, InnoDB stores both clustered and secondary indexes as B+ Trees.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

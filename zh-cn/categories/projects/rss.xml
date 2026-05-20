@@ -1,33 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/projects/</link><description>Recent content in Projects on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/projects/rss.xml" rel="self" type="application/rss+xml"/><item><title>IntelliFLow</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link><pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid><description>&lt;p>
-&lt;a href="https://lilianweng.github.io/posts/2023-06-23-agent/" title="agent overview" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- agent overview
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;p>
-&lt;a href="https://modelcontextprotocol.io/docs/develop/build-server" title="mcp tutorial" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- mcp tutorial
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;p>
-&lt;a href="https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/rag/rag-chunking-phase" title="RAG chunking by Microsoft" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- RAG chunking by Microsoft
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p></description></item><item><title>Java RPC</title><link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link><pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid><description>&lt;h2 id="rpc和http的区别">RPC和HTTP的区别
-&lt;a class="header-anchor" href="#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>RPC has small header overhead, 能灵活定制传输格式&lt;/li>
-&lt;li>服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li>
-&lt;li>负载均衡：RPC 在客户端实现负载均衡&lt;/li>
-&lt;li>容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li>
-&lt;/ul>
-&lt;h2 id="serialization">Serialization
-&lt;a class="header-anchor" href="#serialization">&lt;/a>
-&lt;/h2>&lt;h3 id="kyro">Kyro
-&lt;a class="header-anchor" href="#kyro">&lt;/a>
-&lt;/h3>&lt;p>速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/categories/projects/</link>
+    <description>Recent content in Projects on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/categories/projects/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IntelliFLow</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://lilianweng.github.io/posts/2023-06-23-agent/&#34; title=&#34;agent overview&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    agent overview&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://modelcontextprotocol.io/docs/develop/build-server&#34; title=&#34;mcp tutorial&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    mcp tutorial&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/rag/rag-chunking-phase&#34; title=&#34;RAG chunking by Microsoft&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    RAG chunking by Microsoft&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java RPC</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid>
+      <description>&lt;h2 id=&#34;rpc和http的区别&#34;&gt;RPC和HTTP的区别&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;RPC has small header overhead, 能灵活定制传输格式&lt;/li&gt;&#xA;&lt;li&gt;服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li&gt;&#xA;&lt;li&gt;负载均衡：RPC 在客户端实现负载均衡&lt;/li&gt;&#xA;&lt;li&gt;容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;serialization&#34;&gt;Serialization&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#serialization&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;kyro&#34;&gt;Kyro&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#kyro&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

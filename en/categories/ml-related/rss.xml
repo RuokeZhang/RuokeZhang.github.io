@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ML-Related on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/ml-related/</link><description>Recent content in ML-Related on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/ml-related/rss.xml" rel="self" type="application/rss+xml"/><item><title>Distributed Training</title><link>https://ruokezhang.github.io/en/ai/parallelism/</link><pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/ai/parallelism/</guid><description>&lt;h2 id="communication-methods">Communication Methods
-&lt;a class="header-anchor" href="#communication-methods">&lt;/a>
-&lt;/h2>&lt;h3 id="intra-machine-communication">Intra-Machine Communication
-&lt;a class="header-anchor" href="#intra-machine-communication">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>NVLink: Technology for direct communication between GPUs. NVLink 3.0 has a unidirectional bandwidth of up to 50 GB/s.&lt;/li>
-&lt;li>PCIe: A universal high-speed bus standard used to connect GPUs, CPUs, and other peripherals.
-Under the PCIe architecture, communication between GPUs requires going through the CPU and system memory, with bandwidth and latency not as good as NVLink. PCIe 4.0 x16 has a unidirectional bandwidth of 31.5 GB/s.
-PCIe Switch is used to expand PCIe lanes, allowing multiple devices to share bandwidth.&lt;/li>
-&lt;/ol>
-&lt;h3 id="inter-machine-communication">Inter-Machine Communication
-&lt;a class="header-anchor" href="#inter-machine-communication">&lt;/a>
-&lt;/h3>&lt;p>TCP/IP: Communication rate is limited by hardware and is slower than intra-machine communication.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML-Related on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/ml-related/</link>
+    <description>Recent content in ML-Related on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/ml-related/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributed Training</title>
+      <link>https://ruokezhang.github.io/en/ai/parallelism/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/ai/parallelism/</guid>
+      <description>&lt;h2 id=&#34;communication-methods&#34;&gt;Communication Methods&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#communication-methods&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;intra-machine-communication&#34;&gt;Intra-Machine Communication&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#intra-machine-communication&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;NVLink: Technology for direct communication between GPUs. NVLink 3.0 has a unidirectional bandwidth of up to 50 GB/s.&lt;/li&gt;&#xA;&lt;li&gt;PCIe: A universal high-speed bus standard used to connect GPUs, CPUs, and other peripherals.&#xA;Under the PCIe architecture, communication between GPUs requires going through the CPU and system memory, with bandwidth and latency not as good as NVLink. PCIe 4.0 x16 has a unidirectional bandwidth of 31.5 GB/s.&#xA;PCIe Switch is used to expand PCIe lanes, allowing multiple devices to share bandwidth.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;inter-machine-communication&#34;&gt;Inter-Machine Communication&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#inter-machine-communication&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;TCP/IP: Communication rate is limited by hardware and is slower than intra-machine communication.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

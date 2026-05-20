@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dp on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/dp/</link><description>Recent content in Dp on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/dp/rss.xml" rel="self" type="application/rss+xml"/><item><title>Dynamic Programming</title><link>https://ruokezhang.github.io/en/post/leetcode/dp/</link><pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dp/</guid><description>&lt;p>
-&lt;a href="https://leetcode.cn/circle/discuss/tXLS3i/" title="Ling Shen Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Ling Shen Problem List
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;h2 id="linear-dp">Linear DP
-&lt;a class="header-anchor" href="#linear-dp">&lt;/a>
-&lt;/h2>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="./dfs_dp.png" alt="Alt text" />&lt;/p>
-&lt;h4 id="10-regular-expression-matching">10. Regular Expression Matching
-&lt;a class="header-anchor" href="#10-regular-expression-matching">&lt;/a>
-&lt;/h4>&lt;p>dp[i][j] indicates if s(0,i-1) matches p(0,j-1)&lt;/p>
-&lt;p>Base case: s empty, p empty → True; s empty, p x&lt;em>x&lt;/em> type → True
-Compare s[i], p[j]: if not match and p[j] is *, and s[i] matches p[j-1], three possibilities: match one letter, zero letters, multiple letters.
-If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dp on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/dp/</link>
+    <description>Recent content in Dp on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/dp/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dynamic Programming</title>
+      <link>https://ruokezhang.github.io/en/post/leetcode/dp/</link>
+      <pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/leetcode/dp/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://leetcode.cn/circle/discuss/tXLS3i/&#34; title=&#34;Ling Shen Problem List&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Ling Shen Problem List&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;linear-dp&#34;&gt;Linear DP&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#linear-dp&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;./dfs_dp.png&#34; alt=&#34;Alt text&#34;  /&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;10-regular-expression-matching&#34;&gt;10. Regular Expression Matching&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#10-regular-expression-matching&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;dp[i][j] indicates if s(0,i-1) matches p(0,j-1)&lt;/p&gt;&#xA;&lt;p&gt;Base case: s empty, p empty → True; s empty, p x&lt;em&gt;x&lt;/em&gt; type → True&#xA;Compare s[i], p[j]: if not match and p[j] is *, and s[i] matches p[j-1], three possibilities: match one letter, zero letters, multiple letters.&#xA;If not match and p[j] is *, and s[i] doesn&amp;rsquo;t match p[j-1], check zero letter option.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Graph on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/categories/graph/</link><description>Recent content in Graph on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/categories/graph/rss.xml" rel="self" type="application/rss+xml"/><item><title>Graph</title><link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid><description>&lt;p>
-&lt;a href="https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/" title="Graph Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Graph Problem List
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;p>
-&lt;a href="https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/" title="Grid Graph Problem List" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- Grid Graph Problem List
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;h2 id="graph">Graph
-&lt;a class="header-anchor" href="#graph">&lt;/a>
-&lt;/h2>&lt;h3 id="dfs">DFS
-&lt;a class="header-anchor" href="#dfs">&lt;/a>
-&lt;/h3>&lt;p>Find connected components, check for cycles&lt;/p>
-&lt;h4 id="261-graph-valid-tree">261. Graph Valid Tree
-&lt;a class="header-anchor" href="#261-graph-valid-tree">&lt;/a>
-&lt;/h4>&lt;p>&lt;strong>Undirected graph&lt;/strong>, check if it&amp;rsquo;s &lt;strong>acyclic and connected&lt;/strong>.&lt;/p>
-&lt;p>Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/graph/</link>
+    <description>Recent content in Graph on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/graph/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graph</title>
+      <link>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/leetcode/dfs_bfs/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://leetcode.cn/discuss/post/3581143/fen-xiang-gun-ti-dan-tu-lun-suan-fa-dfsb-qyux/&#34; title=&#34;Graph Problem List&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Graph Problem List&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/&#34; title=&#34;Grid Graph Problem List&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    Grid Graph Problem List&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;graph&#34;&gt;Graph&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#graph&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;dfs&#34;&gt;DFS&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#dfs&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Find connected components, check for cycles&lt;/p&gt;&#xA;&lt;h4 id=&#34;261-graph-valid-tree&#34;&gt;261. Graph Valid Tree&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#261-graph-valid-tree&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Undirected graph&lt;/strong&gt;, check if it&amp;rsquo;s &lt;strong&gt;acyclic and connected&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Using vis[i]=True is sufficient. However, since it&amp;rsquo;s an undirected graph, when traversing neighbors, you need to skip the parent node, so it needs to be passed as a parameter.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

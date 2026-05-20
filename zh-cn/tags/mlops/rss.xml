@@ -1,57 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mlops on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/tags/mlops/</link><description>Recent content in Mlops on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 22 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/tags/mlops/rss.xml" rel="self" type="application/rss+xml"/><item><title>mlops zoomcamp @DataTalksClub</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link><pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid><description>&lt;h2 id="orchestration">Orchestration
-&lt;a class="header-anchor" href="#orchestration">&lt;/a>
-&lt;/h2>&lt;p>Use Airflow and MLFlow&lt;/p>
-&lt;h3 id="step-1-docker-env">Step 1 Docker Env
-&lt;a class="header-anchor" href="#step-1-docker-env">&lt;/a>
-&lt;/h3>&lt;h4 id="airflow">airflow
-&lt;a class="header-anchor" href="#airflow">&lt;/a>
-&lt;/h4>&lt;p>
-&lt;a href="https://airflow.apache.org/docs/docker-stack/index.html" title="https://airflow.apache.org/docs/docker-stack/index.html" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- https://airflow.apache.org/docs/docker-stack/index.html
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>&lt;/p>
-&lt;p>get Airflow&amp;rsquo;s official docker compose&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;h4 id="mlflow">mlflow
-&lt;a class="header-anchor" href="#mlflow">&lt;/a>
-&lt;/h4>&lt;h4 id="other-dependencies">other dependencies
-&lt;a class="header-anchor" href="#other-dependencies">&lt;/a>
-&lt;/h4>&lt;h3 id="">
-&lt;a class="header-anchor" href="#">&lt;/a>
-&lt;/h3></description></item><item><title>LLM笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</guid><description>&lt;h2 id="推理模型的-prompt">推理模型的 prompt
-&lt;a class="header-anchor" href="#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>保持简洁&lt;/li>
-&lt;li>不用提供太多示例，示例会降低推理效果&lt;/li>
-&lt;/ol>
-&lt;h2 id="常见prompt">常见prompt
-&lt;a class="header-anchor" href="#%e5%b8%b8%e8%a7%81prompt">&lt;/a>
-&lt;/h2>&lt;ol>
-&lt;li>markdown 格式（任务指令提示和系统提示）&lt;/li>
-&lt;li>角色扮演（任务指令提示和系统提示）&lt;/li>
-&lt;li>奖励机制/情绪激励(任务指令提示)&lt;/li>
-&lt;li>具体的示例&lt;/li>
-&lt;li>隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示)&lt;/li>
-&lt;li>要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示)&lt;/li>
-&lt;/ol>
-&lt;h2 id="system-prompt">system prompt
-&lt;a class="header-anchor" href="#system-prompt">&lt;/a>
-&lt;/h2>&lt;p>角色设定、提供示例、设计工作流程&lt;/p></description></item><item><title>mlops笔记</title><link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link><pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid><description>&lt;h2 id="project-1">Project 1
-&lt;a class="header-anchor" href="#project-1">&lt;/a>
-&lt;/h2>&lt;h3 id="project-setup">project setup
-&lt;a class="header-anchor" href="#project-setup">&lt;/a>
-&lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
-&lt;h4 id="setuppy">setup.py
-&lt;a class="header-anchor" href="#setuppy">&lt;/a>
-&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mlops on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/mlops/</link>
+    <description>Recent content in Mlops on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 22 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/mlops/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mlops zoomcamp @DataTalksClub</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</link>
+      <pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/zoomcamp/</guid>
+      <description>&lt;h2 id=&#34;orchestration&#34;&gt;Orchestration&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#orchestration&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Use Airflow and MLFlow&lt;/p&gt;&#xA;&lt;h3 id=&#34;step-1-docker-env&#34;&gt;Step 1 Docker Env&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#step-1-docker-env&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;airflow&#34;&gt;airflow&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#airflow&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://airflow.apache.org/docs/docker-stack/index.html&#34; title=&#34;https://airflow.apache.org/docs/docker-stack/index.html&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://airflow.apache.org/docs/docker-stack/index.html&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;get Airflow&amp;rsquo;s official docker compose&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LfO &amp;#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;h4 id=&#34;mlflow&#34;&gt;mlflow&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#mlflow&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;h4 id=&#34;other-dependencies&#34;&gt;other dependencies&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#other-dependencies&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;h3 id=&#34;&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>LLM笔记</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</guid>
+      <description>&lt;h2 id=&#34;推理模型的-prompt&#34;&gt;推理模型的 prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b%e7%9a%84-prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;保持简洁&lt;/li&gt;&#xA;&lt;li&gt;不用提供太多示例，示例会降低推理效果&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;常见prompt&#34;&gt;常见prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%b8%b8%e8%a7%81prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;markdown 格式（任务指令提示和系统提示）&lt;/li&gt;&#xA;&lt;li&gt;角色扮演（任务指令提示和系统提示）&lt;/li&gt;&#xA;&lt;li&gt;奖励机制/情绪激励(任务指令提示)&lt;/li&gt;&#xA;&lt;li&gt;具体的示例&lt;/li&gt;&#xA;&lt;li&gt;隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示)&lt;/li&gt;&#xA;&lt;li&gt;要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;system-prompt&#34;&gt;system prompt&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#system-prompt&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;角色设定、提供示例、设计工作流程&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mlops笔记</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/mlops/project/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/mlops/project/</guid>
+      <description>&lt;h2 id=&#34;project-1&#34;&gt;Project 1&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#project-1&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;project-setup&#34;&gt;project setup&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#project-setup&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p&gt;&#xA;&lt;h4 id=&#34;setuppy&#34;&gt;setup.py&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#setuppy&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

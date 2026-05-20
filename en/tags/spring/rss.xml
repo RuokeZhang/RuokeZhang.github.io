@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/spring/</link><description>Recent content in Spring on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/spring/rss.xml" rel="self" type="application/rss+xml"/><item><title>BlackHorse Rating Merchant Cache</title><link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid><description>&lt;h2 id="consistency">Consistency
-&lt;a class="header-anchor" href="#consistency">&lt;/a>
-&lt;/h2>&lt;h3 id="cache-update-strategies">Cache Update Strategies
-&lt;a class="header-anchor" href="#cache-update-strategies">&lt;/a>
-&lt;/h3>&lt;ol>
-&lt;li>Memory Eviction: Redis automatically evicts data when memory is low; cache updated on next request.&lt;/li>
-&lt;li>TTL Expiry: Set TTL on cached data; deleted automatically when expired; updated on next request.&lt;/li>
-&lt;li>Active Update: Update cache simultaneously with database modification.&lt;/li>
-&lt;/ol>
-&lt;h3 id="cache-database-consistency">Cache-Database Consistency
-&lt;a class="header-anchor" href="#cache-database-consistency">&lt;/a>
-&lt;/h3>&lt;p>Concurrent requests can cause inconsistency regardless of update order (cache first or database first).&lt;/p>
-&lt;p>Use &lt;strong>Cache Aside&lt;/strong> strategy: cache only updated during read operations.&lt;/p>
-&lt;ul>
-&lt;li>Write strategy: When modifying data, update database and &lt;strong>delete&lt;/strong> cache.&lt;/li>
-&lt;li>Read strategy: When reading data, if cache miss, read from database and update cache.&lt;/li>
-&lt;/ul>
-&lt;h4 id="update-then-delete-delayed-double-delete">Update-Then-Delete (Delayed Double Delete)
-&lt;a class="header-anchor" href="#update-then-delete-delayed-double-delete">&lt;/a>
-&lt;/h4>&lt;p>Thread A reading, Thread B updating simultaneously:&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/tags/spring/</link>
+    <description>Recent content in Spring on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/tags/spring/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BlackHorse Rating Merchant Cache</title>
+      <link>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/blackhorserating/shopcache/</guid>
+      <description>&lt;h2 id=&#34;consistency&#34;&gt;Consistency&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#consistency&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;cache-update-strategies&#34;&gt;Cache Update Strategies&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cache-update-strategies&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;Memory Eviction: Redis automatically evicts data when memory is low; cache updated on next request.&lt;/li&gt;&#xA;&lt;li&gt;TTL Expiry: Set TTL on cached data; deleted automatically when expired; updated on next request.&lt;/li&gt;&#xA;&lt;li&gt;Active Update: Update cache simultaneously with database modification.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;cache-database-consistency&#34;&gt;Cache-Database Consistency&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cache-database-consistency&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Concurrent requests can cause inconsistency regardless of update order (cache first or database first).&lt;/p&gt;&#xA;&lt;p&gt;Use &lt;strong&gt;Cache Aside&lt;/strong&gt; strategy: cache only updated during read operations.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Write strategy: When modifying data, update database and &lt;strong&gt;delete&lt;/strong&gt; cache.&lt;/li&gt;&#xA;&lt;li&gt;Read strategy: When reading data, if cache miss, read from database and update cache.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;update-then-delete-delayed-double-delete&#34;&gt;Update-Then-Delete (Delayed Double Delete)&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#update-then-delete-delayed-double-delete&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;Thread A reading, Thread B updating simultaneously:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

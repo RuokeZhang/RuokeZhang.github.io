@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Ruoke Zhang</title><link>https://ruokezhang.github.io/en/tags/web/</link><description>Recent content in Web on Ruoke Zhang</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/en/tags/web/rss.xml" rel="self" type="application/rss+xml"/><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/en/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/jmeter/</guid><description>&lt;p>
-&lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter Usage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- JMeter Usage
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p>
-&lt;p>In this path, run the sh jmeter command to start JMeter.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/tags/web/</link>
+    <description>Recent content in Web on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/tags/web/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JMeter on Mac</title>
+      <link>https://ruokezhang.github.io/en/post/jmeter/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/jmeter/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1838392&#34; title=&#34;JMeter Usage&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    JMeter Usage&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p&gt;&#xA;&lt;p&gt;In this path, run the sh jmeter command to start JMeter.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

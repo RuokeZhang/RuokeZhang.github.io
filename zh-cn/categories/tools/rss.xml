@@ -1,84 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on Ruoke Zhang</title><link>https://ruokezhang.github.io/zh-cn/categories/tools/</link><description>Recent content in Tools on Ruoke Zhang</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ruokezhang.github.io/zh-cn/categories/tools/rss.xml" rel="self" type="application/rss+xml"/><item><title>Kafka</title><link>https://ruokezhang.github.io/zh-cn/post/kafka/</link><pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/kafka/</guid><description>&lt;h2 id="architecture">architecture
-&lt;a class="header-anchor" href="#architecture">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>同一个topic的partition不会跨cluster&lt;/li>
-&lt;li>一个broker里面可能含有不同topic的partition&lt;/li>
-&lt;li>partition在存储上可以被看作为一个可追加的日志文件，每条消息加进去的时候带有一个offset&lt;/li>
-&lt;li>fault-tolerant: 多个节点故障时，集群仍能持续提供服务且数据不丢失。
-&lt;ul>
-&lt;li>同一个partition会有多个replica,每个replica要么是leader（只有一个）, 要么是follower&lt;/li>
-&lt;li>同一个broker里面不会有同一个partition的多个replica&lt;/li>
-&lt;li>同一个broker里面会有同一个topic的不同的partition&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li>
-&lt;li>Zookeeper: 管理broker的状态&lt;/li>
-&lt;/ul>
-&lt;h2 id="partiton">partiton
-&lt;a class="header-anchor" href="#partiton">&lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>高并发：多个producer可以向多个partition同时写入&lt;/li>
-&lt;li>Kafka 只保证在单个 Partition 内消息的顺序性&lt;/li>
-&lt;li>高可用：多个replica&lt;/li>
-&lt;/ul>
-&lt;h3 id="leader">leader
-&lt;a class="header-anchor" href="#leader">&lt;/a>
-&lt;/h3>&lt;ul>
-&lt;li>负责读写&lt;/li>
-&lt;li>Leader 负责管理 In-Sync Replicas（同步副本集）。它要确保 Follower 能跟上自己的进度，将落后的 Follower 踢出 ISR。
-&lt;ul>
-&lt;li>ISR：如果一个 Follower 在replica.lag.time.max.ms时间内没有发送pull request,它就会被踢出ISR&lt;/li>
-&lt;li>ISR存放在zookeeper中，controller broker会查看ISR中的信息，以方便知道每个partition的follwer是否跟上了它们的leader&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="follower">follower
-&lt;a class="header-anchor" href="#follower">&lt;/a>
-&lt;/h3>&lt;p>定期向leader发送&lt;strong>pull&lt;/strong>请求&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/zh-cn/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/jmeter/</guid><description>&lt;p>
-&lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- JMeter使用
- 
- &lt;i class="fa fa-external-link-alt">&lt;/i>
- 
-&lt;/a>
-安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
-&lt;a class="header-anchor" href="#cli">&lt;/a>
-&lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
-&lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。
-master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p></description></item><item><title>Maven</title><link>https://ruokezhang.github.io/zh-cn/post/maven/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/maven/</guid><description>&lt;h2 id="basic">Basic
-&lt;a class="header-anchor" href="#basic">&lt;/a>
-&lt;/h2>&lt;h3 id="java-version">Java Version
-&lt;a class="header-anchor" href="#java-version">&lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ruoke@Ruokes-MacBook-Pro ~ % mvn -v
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Apache Maven 3.9.6 &lt;span style="color:#04a5e5;font-weight:bold">(&lt;/span>bc0240f3c744dd6b6ec2920b3cd08dcc295161ae&lt;span style="color:#04a5e5;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Maven home: /Users/ruoke/Documents/devTools/apache-maven-3.9.6
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Java version: 21.0.3, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>这个 Java 版本是 Maven 本身运行时使用的 Java 版本&lt;/p>
-
-&lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8839ef">&amp;lt;java.version&amp;gt;&lt;/span>1.8&lt;span style="color:#8839ef">&amp;lt;/java.version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8839ef">&amp;lt;/properties&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-
-&lt;p>我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。
-可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/categories/tools/</link>
+    <description>Recent content in Tools on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/categories/tools/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/kafka/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/kafka/</guid>
+      <description>&lt;h2 id=&#34;architecture&#34;&gt;architecture&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#architecture&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;同一个topic的partition不会跨cluster&lt;/li&gt;&#xA;&lt;li&gt;一个broker里面可能含有不同topic的partition&lt;/li&gt;&#xA;&lt;li&gt;partition在存储上可以被看作为一个可追加的日志文件，每条消息加进去的时候带有一个offset&lt;/li&gt;&#xA;&lt;li&gt;fault-tolerant: 多个节点故障时，集群仍能持续提供服务且数据不丢失。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;同一个partition会有多个replica,每个replica要么是leader（只有一个）, 要么是follower&lt;/li&gt;&#xA;&lt;li&gt;同一个broker里面不会有同一个partition的多个replica&lt;/li&gt;&#xA;&lt;li&gt;同一个broker里面会有同一个topic的不同的partition&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li&gt;&#xA;&lt;li&gt;Zookeeper: 管理broker的状态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;partiton&#34;&gt;partiton&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#partiton&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;高并发：多个producer可以向多个partition同时写入&lt;/li&gt;&#xA;&lt;li&gt;Kafka 只保证在单个 Partition 内消息的顺序性&lt;/li&gt;&#xA;&lt;li&gt;高可用：多个replica&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;leader&#34;&gt;leader&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#leader&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;负责读写&lt;/li&gt;&#xA;&lt;li&gt;Leader 负责管理 In-Sync Replicas（同步副本集）。它要确保 Follower 能跟上自己的进度，将落后的 Follower 踢出 ISR。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ISR：如果一个 Follower 在replica.lag.time.max.ms时间内没有发送pull request,它就会被踢出ISR&lt;/li&gt;&#xA;&lt;li&gt;ISR存放在zookeeper中，controller broker会查看ISR中的信息，以方便知道每个partition的follwer是否跟上了它们的leader&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;follower&#34;&gt;follower&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#follower&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;定期向leader发送&lt;strong&gt;pull&lt;/strong&gt;请求&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JMeter on Mac</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/jmeter/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/jmeter/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1838392&#34; title=&#34;JMeter使用&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    JMeter使用&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nginx</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/nginx/</link>
+      <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid>
+      <description>&lt;h2 id=&#34;cli&#34;&gt;CLI&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cli&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p&gt;&#xA;&lt;p&gt;nginx命令启动master进程，nginx分为master进程和worker进程。&#xA;master进程负责读取配置文件、管理worker进程；worker进程实际处理HTTP请求。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maven</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/maven/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/maven/</guid>
+      <description>&lt;h2 id=&#34;basic&#34;&gt;Basic&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#basic&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;java-version&#34;&gt;Java Version&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#java-version&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ruoke@Ruokes-MacBook-Pro ~ % mvn -v&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Apache Maven 3.9.6 &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;(&lt;/span&gt;bc0240f3c744dd6b6ec2920b3cd08dcc295161ae&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Maven home: /Users/ruoke/Documents/devTools/apache-maven-3.9.6&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java version: 21.0.3, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;这个 Java 版本是 Maven 本身运行时使用的 Java 版本&lt;/p&gt;&#xA;&#xD;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;&amp;lt;java.version&amp;gt;&lt;/span&gt;1.8&lt;span style=&#34;color:#8839ef&#34;&gt;&amp;lt;/java.version&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;我项目里的 pom指定该项目的Java编译时版本，会影响maven-compiler-plugin去找哪个版本的JDK；但这里并不指定该项目的运行时版本。&#xA;可以在Project Structure里面规定哪个版本JDK用来编译文件&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
