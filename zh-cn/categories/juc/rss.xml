@@ -21,7 +21,7 @@
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。&lt;/p>
 &lt;h3 id="指令级重排">指令级重排
 &lt;a class="header-anchor" href="#%e6%8c%87%e4%bb%a4%e7%ba%a7%e9%87%8d%e6%8e%92">&lt;/a>

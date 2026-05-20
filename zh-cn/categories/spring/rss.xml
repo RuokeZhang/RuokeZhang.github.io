@@ -21,5 +21,5 @@
 &lt;/div>
 
 &lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/bean.png" alt="Alt text" />
 这个context里面包含了一个beanFactory变量。&lt;/p></description></item></channel></rss>

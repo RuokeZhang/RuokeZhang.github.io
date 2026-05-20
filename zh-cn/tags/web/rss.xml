@@ -25,7 +25,7 @@
 &lt;/div>
 
 &lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/bean.png" alt="Alt text" />
 这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>JMeter on Mac</title><link>https://ruokezhang.github.io/zh-cn/post/jmeter/</link><pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/jmeter/</guid><description>&lt;p>
 &lt;a href="https://cloud.tencent.com/developer/article/1838392" title="JMeter使用" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  JMeter使用

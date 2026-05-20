@@ -267,7 +267,7 @@ Throwable具有 Exception和 Error 两个子类&lt;/p>
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。&lt;/p>
 &lt;h3 id="指令级重排">指令级重排
 &lt;a class="header-anchor" href="#%e6%8c%87%e4%bb%a4%e7%ba%a7%e9%87%8d%e6%8e%92">&lt;/a>
@@ -466,7 +466,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/h2>&lt;p>抽象类通常作为基类，比如 Person，Animal。因为不同子类的某种方法的 body可能不一样，所以把这些方法作为abstract method放在抽象类中。&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。

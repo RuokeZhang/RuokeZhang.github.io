@@ -985,13 +985,47 @@ KT：内核线程&lt;/p></description></item><item><title>持久化</title><link
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。&lt;/p>
 &lt;h3 id="指令级重排">指令级重排
 &lt;a class="header-anchor" href="#%e6%8c%87%e4%bb%a4%e7%ba%a7%e9%87%8d%e6%8e%92">&lt;/a>
 &lt;/h3>&lt;h3 id="编译器优化重排">编译器优化重排
 &lt;a class="header-anchor" href="#%e7%bc%96%e8%af%91%e5%99%a8%e4%bc%98%e5%8c%96%e9%87%8d%e6%8e%92">&lt;/a>
-&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
+&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>ML Basic</title><link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid><description>&lt;p>
+&lt;a href="https://github.com/andrewekhalel/MLQuestions" title="https://github.com/andrewekhalel/MLQuestions" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://github.com/andrewekhalel/MLQuestions
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=" title="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://longxingtan.gitbook.io/mle-interview/02_ml" title="https://longxingtan.gitbook.io/mle-interview/02_ml" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://longxingtan.gitbook.io/mle-interview/02_ml
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="supervised-learning">supervised learning
+&lt;a class="header-anchor" href="#supervised-learning">&lt;/a>
+&lt;/h2>&lt;p>training data includes both the input features and corresponding target labels&lt;/p>
+&lt;h3 id="classification">classification
+&lt;a class="header-anchor" href="#classification">&lt;/a>
+&lt;/h3>&lt;h4 id="logistic-regression">Logistic Regression
+&lt;a class="header-anchor" href="#logistic-regression">&lt;/a>
+&lt;/h4>&lt;p>linear classification， 二分&lt;br>
+loss function: Binary Cross-Entropy Loss&lt;/p>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png" alt="alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png" alt="alt text" />&lt;/p>
+
+ &lt;blockquote>
+ &lt;p>logistic regression有closed form 解嘛？&lt;/p></description></item><item><title>Sorting</title><link>https://ruokezhang.github.io/zh-cn/post/leetcode/sort/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/leetcode/sort/</guid><description>&lt;h2 id="merge-sort">merge sort
 &lt;a class="header-anchor" href="#merge-sort">&lt;/a>
 &lt;/h2>&lt;h3 id="lc-148-sort-a-linked-list">LC 148: sort a linked list
 &lt;a class="header-anchor" href="#lc-148-sort-a-linked-list">&lt;/a>
@@ -1272,7 +1306,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/div>
 
 &lt;p>可以发现ConfigurableApplicationContext接口继承了BeanFactory接口
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/bean.png" alt="Alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/bean.png" alt="Alt text" />
 这个context里面包含了一个beanFactory变量。&lt;/p></description></item><item><title>Java 8的新特性</title><link>https://ruokezhang.github.io/zh-cn/post/java/javabasic/java8/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/javabasic/java8/</guid><description>&lt;h2 id="functional-interface">Functional Interface
 &lt;a class="header-anchor" href="#functional-interface">&lt;/a>
 &lt;/h2>&lt;p>函数式接口的定义是，必须只含有一个abstract method，它可以拥有许多static或default method(包含实现), 但是 abstract method必须只有一个。&lt;/p></description></item><item><title>达人探店</title><link>https://ruokezhang.github.io/zh-cn/post/blackhorserating/post/</link><pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/blackhorserating/post/</guid><description>&lt;h2 id="点赞设计">点赞设计
@@ -1434,7 +1468,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;ol>
 &lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
 
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
@@ -1496,7 +1530,7 @@ Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算
 &lt;/h2>&lt;p>只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/classFile.png" alt="Alt text" />&lt;/p></description></item><item><title>Nginx</title><link>https://ruokezhang.github.io/zh-cn/post/nginx/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/nginx/</guid><description>&lt;h2 id="cli">CLI
 &lt;a class="header-anchor" href="#cli">&lt;/a>
 &lt;/h2>&lt;p>nginx -V 查看 Nginx配置文件的位置：/opt/homebrew/etc/nginx/nginx.conf&lt;/p>
 &lt;p>nginx命令启动master进程，nginx分为master进程和worker进程。

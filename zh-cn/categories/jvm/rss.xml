@@ -85,4 +85,4 @@
 &lt;p>缺点：这两个对象互相引用，导致他们的 reference counting 始终不能为 0，无法被回收。&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>Java文件经过javac编译后，得到.class字节码文件，再放在JVM上面跑。ClassFile是一种结构规范，所有.class文件都应该符合这样的格式。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p></description></item></channel></rss>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/classFile.png" alt="Alt text" />&lt;/p></description></item></channel></rss>

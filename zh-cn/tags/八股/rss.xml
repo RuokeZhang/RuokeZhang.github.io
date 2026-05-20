@@ -135,13 +135,47 @@
 &lt;a class="header-anchor" href="#%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 Cahce中某个变量的值可能与 Main memory中的值不一致，导致计算出错。&lt;/p>
 &lt;h3 id="指令级重排">指令级重排
 &lt;a class="header-anchor" href="#%e6%8c%87%e4%bb%a4%e7%ba%a7%e9%87%8d%e6%8e%92">&lt;/a>
 &lt;/h3>&lt;h3 id="编译器优化重排">编译器优化重排
 &lt;a class="header-anchor" href="#%e7%bc%96%e8%af%91%e5%99%a8%e4%bc%98%e5%8c%96%e9%87%8d%e6%8e%92">&lt;/a>
-&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/zh-cn/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
+&lt;/h3>&lt;p>JVM, JIT做这件事。对于Java程序，在不改变它的语义的情况下，编译时进行指令重排序，类似g1, g2 optimization的重排。&lt;/p></description></item><item><title>ML Basic</title><link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid><description>&lt;p>
+&lt;a href="https://github.com/andrewekhalel/MLQuestions" title="https://github.com/andrewekhalel/MLQuestions" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://github.com/andrewekhalel/MLQuestions
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=" title="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://longxingtan.gitbook.io/mle-interview/02_ml" title="https://longxingtan.gitbook.io/mle-interview/02_ml" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://longxingtan.gitbook.io/mle-interview/02_ml
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="supervised-learning">supervised learning
+&lt;a class="header-anchor" href="#supervised-learning">&lt;/a>
+&lt;/h2>&lt;p>training data includes both the input features and corresponding target labels&lt;/p>
+&lt;h3 id="classification">classification
+&lt;a class="header-anchor" href="#classification">&lt;/a>
+&lt;/h3>&lt;h4 id="logistic-regression">Logistic Regression
+&lt;a class="header-anchor" href="#logistic-regression">&lt;/a>
+&lt;/h4>&lt;p>linear classification， 二分&lt;br>
+loss function: Binary Cross-Entropy Loss&lt;/p>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png" alt="alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png" alt="alt text" />&lt;/p>
+
+ &lt;blockquote>
+ &lt;p>logistic regression有closed form 解嘛？&lt;/p></description></item><item><title>Java线程</title><link>https://ruokezhang.github.io/zh-cn/post/java/juc/thread/</link><pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/java/juc/thread/</guid><description>&lt;p>参考：JavaGuide&lt;/p>
 &lt;h2 id="线程">线程
 &lt;a class="header-anchor" href="#%e7%ba%bf%e7%a8%8b">&lt;/a>
 &lt;/h2>&lt;h3 id="线程的实现">线程的实现

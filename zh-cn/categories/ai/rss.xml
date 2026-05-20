@@ -167,4 +167,38 @@ y = x @ W.T + b&lt;/p></description></item><item><title>mlops zoomcamp @DataTalk
 &lt;/h3>&lt;p>src，config, untils需要被视作为 package，因此在它们的folder里创建一个名为__init__.py的文件。&lt;/p>
 &lt;h4 id="setuppy">setup.py
 &lt;a class="header-anchor" href="#setuppy">&lt;/a>
-&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item></channel></rss>
+&lt;/h4>&lt;p>setup.py 是一个用于配置 Python 项目分发的脚本。它使用 setuptools 库来定义项目的元数据和依赖项。&lt;/p></description></item><item><title>ML Basic</title><link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link><pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid><description>&lt;p>
+&lt;a href="https://github.com/andrewekhalel/MLQuestions" title="https://github.com/andrewekhalel/MLQuestions" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://github.com/andrewekhalel/MLQuestions
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=" title="https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>
+
+&lt;a href="https://longxingtan.gitbook.io/mle-interview/02_ml" title="https://longxingtan.gitbook.io/mle-interview/02_ml" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://longxingtan.gitbook.io/mle-interview/02_ml
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;h2 id="supervised-learning">supervised learning
+&lt;a class="header-anchor" href="#supervised-learning">&lt;/a>
+&lt;/h2>&lt;p>training data includes both the input features and corresponding target labels&lt;/p>
+&lt;h3 id="classification">classification
+&lt;a class="header-anchor" href="#classification">&lt;/a>
+&lt;/h3>&lt;h4 id="logistic-regression">Logistic Regression
+&lt;a class="header-anchor" href="#logistic-regression">&lt;/a>
+&lt;/h4>&lt;p>linear classification， 二分&lt;br>
+loss function: Binary Cross-Entropy Loss&lt;/p>
+&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png" alt="alt text" />
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png" alt="alt text" />&lt;/p>
+
+ &lt;blockquote>
+ &lt;p>logistic regression有closed form 解嘛？&lt;/p></description></item></channel></rss>

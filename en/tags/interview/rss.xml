@@ -243,7 +243,7 @@
 &lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
 &lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
 &lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>

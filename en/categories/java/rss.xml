@@ -296,7 +296,7 @@ Or add -XX:+HeapDumpOnOutOfMemoryError so the JVM dumps the heap automatically o
 &lt;a class="header-anchor" href="#concurrency-issues">&lt;/a>
 &lt;/h2>&lt;h3 id="cpu-cache">CPU Cache
 &lt;a class="header-anchor" href="#cpu-cache">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/CPUCache.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/CPUCache.png" alt="Alt text" />
 The value of a variable in the Cache may be inconsistent with the value in Main Memory, leading to calculation errors.&lt;/p>
 &lt;h3 id="instruction-level-reordering">Instruction-Level Reordering
 &lt;a class="header-anchor" href="#instruction-level-reordering">&lt;/a>
@@ -573,10 +573,10 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;p>This abstract method indicates that it can perform a certain behavior, but the specific action is determined by the caller through overriding this abstract method. This can be achieved using anonymous inner classes or lambda expressions.&lt;/p></description></item><item><title>JVM Basic</title><link>https://ruokezhang.github.io/en/post/java/jvm/basic/</link><pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><guid>https://ruokezhang.github.io/en/post/java/jvm/basic/</guid><description>&lt;h2 id="classfile">ClassFile
 &lt;a class="header-anchor" href="#classfile">&lt;/a>
 &lt;/h2>&lt;p>After a Java source file is compiled by javac, it becomes a .class bytecode file and then runs on the JVM. A ClassFile is a structured specification; all .class files must conform to this format.
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/classFile.png" alt="Alt text" />&lt;/p>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/classFile.png" alt="Alt text" />&lt;/p>
 &lt;h3 id="basic-info">Basic Info
 &lt;a class="header-anchor" href="#basic-info">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/general.png" alt="Alt text" />&lt;/p>
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/general.png" alt="Alt text" />&lt;/p>
 &lt;ol>
 &lt;li>magic number: 0xCAFEBABE. Every .class must start with these 4 bytes.&lt;/li>
 &lt;li>Version number, representing the compiler (javac) version.&lt;/li>
@@ -584,5 +584,5 @@ The value of a variable in the Cache may be inconsistent with the value in Main 
 &lt;/ol>
 &lt;h3 id="constant-pool">Constant Pool
 &lt;a class="header-anchor" href="#constant-pool">&lt;/a>
-&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/constantPool.png" alt="Alt text" />
+&lt;/h3>&lt;p>&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/constantPool.png" alt="Alt text" />
 There are 14 kinds of constants, grouped into literals and symbolic references. Literals are strings, final constants, etc. Symbolic references are things like method names and field names; they point to a string entry, i.e., a literal.&lt;/p></description></item></channel></rss>

@@ -53,7 +53,7 @@
 &lt;ol>
 &lt;li>可能会暴露给用户一些信息：用户可能会根据此推断，一天之内销售出了多少张优惠券。&lt;/li>
 &lt;li>当优惠券太多时，会导致数据库ID过大。但如果为优惠券分表，又会出现许多优惠券共用同一个ID的情况。
-&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://ruokezhang.github.io/uniqueID.png" alt="Alt text" />&lt;/li>
+&lt;img src="https://ruokezhang.github.io/imgs/img-lazy-loading.gif" data-src="https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/uniqueID.png" alt="Alt text" />&lt;/li>
 &lt;/ol>
 
 &lt;div class="highlight">&lt;div style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
