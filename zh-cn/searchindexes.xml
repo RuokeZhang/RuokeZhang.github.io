@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Pytorch</title><url>/zh-cn/ai/pytorch/</url><categories><category>AI</category></categories><tags><tag>AI</tag></tags><content type="html">  Module 所有模型的父类，所有网络都继承它
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>ML Basic</title><url>/zh-cn/post/interview/ml_basic/</url><categories><category>AI</category></categories><tags><tag>八股</tag></tags><content type="html"><![CDATA[   https://github.com/andrewekhalel/MLQuestions https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra= https://longxingtan.gitbook.io/mle-interview/02_ml supervised learning training data includes both the input features and corresponding target labels
+classification Logistic Regression linear classification， 二分
+loss function: Binary Cross-Entropy Loss
+logistic regression有closed form 解嘛？
+没有闭式解。因为逻辑回归的损失函数是交叉熵损失，结合 sigmoid 函数后，其目标函数（最小化交叉熵损失）是凸的，但求导后得到的是含指数项的非线性方程，无法通过求导令其等于 0，解出 w 和 b 的解析表达式，所以只能用 SGD（或批量梯度下降、小批量梯度下降）这种迭代方法来求解参数
+为什么最好不用MSE当loss?
+non-convex vanishing gradients While MSE can technically be used with a sigmoid output, it leads to a non-convex objective and introduces an extra σ&amp;rsquo;(z) term in the gradient, which can cause vanishing gradients. In contrast, cross-entropy comes from the Bernoulli likelihood, is convex for logistic regression, and yields a simpler gradient (ŷ − y)x, making optimization more stable.
+Multiclass Logistic Regression …  ]]></content></entry><entry><title>Pytorch</title><url>/zh-cn/ai/pytorch/</url><categories><category>AI</category></categories><tags><tag>AI</tag></tags><content type="html">  Module 所有模型的父类，所有网络都继承它
 init(self) forward(self, x) conv b站 1 output=F.conv2d(input, kernel, stride=1) #进行卷积计算，得到feature matrix Conv2d
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 import torch import torch.nn as nn class CNN(nn.Module): def __init__(self): super().__init__() self.conv1 = nn.Conv2d( in_channels=3, out_channels=6, kernel_size=3, stride=1, padding=0 ) self.maxpool1 = nn.MaxPool2d( kernel_size=3, # 池化窗口大小：3×3 ceil_mode=True # 向上取整模式，保留不完整的边缘窗口 # stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致 ) def forward(self, x): # 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序） # x: [b, 3, h, w] x = self.conv1(x) # 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;amp;#39;, w&amp;amp;#39;] # h&amp;amp;#39;=(h+2*p-k)/s+1 x = self.maxpool1(x) # 第二步：过池化层，对特征图下采样 return x Linear 1 2 3 4 5 self.linear = nn.Linear( in_features=1024, out_features=512, bias=True # 默认 True，要不要加偏置 b ) weight = (512, 1024)
 bias = (512)
@@ -398,14 +405,7 @@ happens before 如果一个操作 happens-before 另一个操作，那么第一�
 volatile 变量规则：对一个 volatile 变量的写操作 happens-before 于后面对这个 volatile 变量的读操作。 程序顺序规则：一个线程内，按照代码顺序，书写在前面的操作 happens-before 于书写在后面的操作。 三个重要特性 原子性：一组操作要么全部成功执行，要么全都不执行。 可见性：如果一个线程对某个共享变量做了修改，那么其它线程马上可以看到这个变量最新的值。 有序性：指令重排序在多线程下是不安全的，使用volatile可以禁止重排序。
 Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变量是共享且不稳定的。它可以保证可见性。
 每次读这个变量，都需要从主存中获取。 对这个变量进行读写操作时，通过插入内存屏障来禁止指令重排序。 无法保证原子性 在创建单例对象时，需要用到 volatile
-1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>ML Basic</title><url>/zh-cn/post/interview/ml_basic/</url><categories><category>AI</category></categories><tags><tag>八股</tag></tags><content type="html"><![CDATA[   https://github.com/andrewekhalel/MLQuestions https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra= https://longxingtan.gitbook.io/mle-interview/02_ml supervised learning training data includes both the input features and corresponding target labels
-classification Logistic Regression linear classification， 二分
-loss function: Binary Cross-Entropy Loss
-logistic regression有closed form 解嘛？
-没有闭式解。因为逻辑回归的损失函数是交叉熵损失，结合 sigmoid 函数后，其目标函数（最小化交叉熵损失）是凸的，但求导后得到的是含指数项的非线性方程，无法通过求导令其等于 0，解出 w 和 b 的解析表达式，所以只能用 SGD（或批量梯度下降、小批量梯度下降）这种迭代方法来求解参数
-为什么最好不用MSE当loss?
-non-convex vanishing gradients While MSE can technically be used with a sigmoid output, it leads to a non-convex objective and introduces an extra σ&amp;rsquo;(z) term in the gradient, which can cause vanishing gradients. In contrast, cross-entropy comes from the Bernoulli likelihood, is convex for logistic regression, and yields a simpler gradient (ŷ − y)x, making optimization more stable.
-Multiclass Logistic Regression …  ]]></content></entry><entry><title>Sorting</title><url>/zh-cn/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
+1 2 3 4 5 6 7 8 9 …  </content></entry><entry><title>Sorting</title><url>/zh-cn/post/leetcode/sort/</url><categories><category>Leetcode</category><category>Sorting</category></categories><tags><tag>leetcode</tag></tags><content type="html"><![CDATA[  merge sort LC 148: sort a linked list 快慢指针分成两半，断开中间，分别递归排序，最后升序合并两个链表。边界条件：head==None or head.next==None
 LC 23. Merge k Sorted Lists 注意边界情况
 quick sort 以数组某个元素（一般选取首元素）为基准数，将所有小于基准数的元素移动至其左边，大于基准数的元素移动至其右边。 python模版 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 def partition(nums, left, right): pivot = nums[left]#初始化一个待比较数据 i,j = left, right while(i &lt; j): while(i&lt;j and nums[j]&gt;=pivot): #从后往前查找，直到找到一个比pivot更小的数 j-=1 nums[i] = nums[j] #将更小的数放入左边 while(i&lt;j and nums[i]&lt;=pivot): #从前往后找，直到找到一个比pivot更大的数 i+=1 nums[j] = nums[i] #将更大的数放入右边 #循环结束，i与j相等 nums[i] = pivot #待比较数据放入最终位置 return i #返回待比较数据最终位置 def quickSort(self, nums, low, high): if low&lt;high: pivot=self.partition(nums, low, high) self.quickSort(nums,low, pivot-1) self.quickSort(nums, pivot+1, high) 215 数组中的第K个最大元素 灵神题解 视频讲解 时间复杂度：O(N/2)+O(N/4)+O(N/8)+&hellip;=O(N)
 partition(l,r)的作用：
