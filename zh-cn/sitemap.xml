@@ -2,18 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ruokezhang.github.io/zh-cn/categories/ai/</loc>
-    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</loc>
-    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/</loc>
-    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -28,7 +18,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/</loc>
-    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -41,6 +31,16 @@
                 hreflang="zh-CN"
                 href="https://ruokezhang.github.io/zh-cn/"
                 />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/categories/ai/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/</loc>
     <lastmod>2026-05-20T00:00:00+00:00</lastmod>
@@ -1452,15 +1452,15 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/computer_vision/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/ai/representation_learning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>

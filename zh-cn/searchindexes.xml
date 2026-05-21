@@ -1650,6 +1650,29 @@ int a=5 中的 5 i++（返回自增前的临时值） 纯右值（prvalue）：�
   
   <entry>
     <title></title>
+    <url>/zh-cn/ai/computer_vision/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer 输入：[B,3,H,W] 输出：[B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width表示Transformer 里每个 token 的隐藏维度。 # grid=input_resolution/patch_size # 经过conv1变成[B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, 一个专门负责“收集整张图信息”的特殊 token self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution//patch_size)2+1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space ViT Funnel ViT paper Self-supervised learning 231n lecture 12 Pretext tasks from image transformations Pretext task：不是最终任务，而是为了训练 encoder 设计的代理任务
+rotation：让模型去学判断这个图片被旋转了多少度。4-way classification predict relative patch locations：8-class classification task Inpainting: 拿一张完整图片 x，人为遮住一块，得到 corrupted image。
+输入 corrupted image，让模型预测被遮住区域的 pixels。
+原图中被遮住的那一块就是 target，所以不需要人工 label。
+有两个 model:
+F: inpainting model / generator，用来补全缺失区域。 D: discriminator，输出“这张图是真图”的概率。 训练方式是交替训练：
+先用 F 生成补全后的 fake image。 训练 D： 用 BCE loss 分辨 real image 和 fake image。 real image label = 1 fake image label = 0 再训练 F： loss = reconstruction loss + adversarial loss。 reconstruction loss 让补出来的 pixels 接近真实 pixels。 adversarial loss 让补出来的图骗过 D，让 D(fake) 接近 1。 Reconstruction loss: 只在 masked region 上算预测 pixels 和真实 pixels 的差距。 目标是内容要对。
+Adversarial loss: 本质是 BCE / GAN loss。 对 D 来说：学会分辨 real/fake。 对 F 来说：学会生成让 D 以为是真的 fake image。 目标是视觉上更真实、更不模糊。
+Contrastive representation learning Gen Discriminative Model 给定一个输入 x，它属于哪个 label y。数学上就是学：p(y | x)。
+比如给一张cat image, 输出cat/dog label
+No way to handle unreasonable inputs
+  ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
     <url>/zh-cn/ai/deep_learning/</url>
     <categories>
       
@@ -1681,18 +1704,6 @@ Momentum：当前的更新方向不仅考虑当前的梯度，还会加入上一
     <content type="html"><![CDATA[  视觉/文本/音频，每个模态都产出semantic_emb和spatial_emb
 VisualEncoder 离线特征 用 SigLIP2 自带的 preprocess 把图片 resize / crop / normalize 输入分辨率 256，patch size 16。所以一张图会被切成 16 × 16 = 256 个 patch 每个 patch 变成向量 过 Transformer trunk, 得到[B,256,1152]，也就是一张图片有256个patch，每个patch有1152维 在线部分 semantic_emb AttentionPool query是一个单独学出来的向量，它去看所有patch tokens, 压缩成每张图片一个1152维度的向量
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 class SigLIP2AttentionPool(nn.Module): &amp;#34;&amp;#34;&amp;#34;AttentionPoolLatent matching SigLIP2&amp;#39;s pretrained structure. This replicates the exact architecture from: model.visual.trunk.attn_pool in open_clip SigLIP2 Also includes the trunk.norm that should be applied before attn_pool. Can be …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
-    <url>/zh-cn/ai/representation_learning/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer 输入：[B,3,H,W] 输出：[B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width表示Transformer 里每个 token 的隐藏维度。 # grid=input_resolution/patch_size # 经过conv1变成[B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, 一个专门负责“收集整张图信息”的特殊 token self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution//patch_size)2+1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space   ]]></content>
   </entry>
   
   <entry>
