@@ -3,6 +3,33 @@
 <search>
   
   <entry>
+    <title>Visual Search</title>
+    <url>/zh-cn/post/interview/company_wise/pinterest/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>Multimodal</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[   cs 231n Multimodal Foundation Models &amp; Embeddings PinClip image encoder CNN Stem Funnel ViT text encoder SigLIP descriptive text: The sparkling glitter adds a touch of glamour to any outfit&hellip; keyword text: men shoes/streetwear/sneaker，更像是一个search query 不是把两种text拼接在一起,因为太长影响效果 Fusion encoder 把image和text token拼接起来，得到[I1, I2, &hellip;, T1, T2, &hellip;], 维度[N, d], N=Nv + Nt 过 2 层 Transformer, 得到Z_j，维度[N, d] cross attention r_j = MHA(q, Z_j, Z_j), [1, d] q:[1,d] L2 normalization Image-to-text Alignment 每个 image-text pair 单独做 binary classification,每一个pair只有两个取值，match/unmatch L_I2T = L_desc + L_key I → image encoder → image embedding T_desc → text encoder → desc text embedding T_key → text encoder → keyword text embedding 用sigmoid loss, BCE-with-logits 正样本 loss = -log(sigmoid(score)) 负样本 loss = -log(1 - sigmoid(score)) Pin-to-Pin alignment image tokens + descriptive text tokens经过Fusion Encoder，得到fused Pin embedding M&rsquo;_j 也是BCE，score = t * (u_i · v_j) - c t: temperature, 属于[-1, 1]，作用是把 similarity 的差异放大或缩小 c: bias，决定 similarity 要高到什么程度，模型才认为这对 pair 是正样本。需要bias是因为 contrastive learning 里负样本远多于正样本 u_i，v_j：同一个batch中每个pin的fused embedding random walk：从一个 query Pin 出发，在图上随机走，走很多次之后，看哪些 Pin 被访问得最多。 For each query Pin, sample N = 5 positive Pins。离线计算每个 query Pin 的 top 50 neighbor candidates，训练时sample N = 5. 最后有2.4 billion Pin pairs MRL L_total = L_I2T(full 256d) + L_P2P(full 256d)
+0.1 * L(prefix 64d) 0.1 * L(prefix 128d) 1.0 * L(prefix 256d) int8 embedding quantization x_q = round(x / s + z) x_dq = (x_q - z) · s 1 2 3 4 5 x = 原始 float 数值 s = scale，刻度大小 z = zero-point，零点偏移 x_q = quantized int8 数值，真正存起来的整数 x_dq = dequantized 数值，还原后的近似 float 比如x=0.123, s=0.01,z=0 那么x_q=12, 是一个int8. 存embedding的时候就存x_q
+然后x_dq=0.12，和原来的会有误差
+Evaluation PinText image-text retrieval
+query: image embedding retrieve: paired text embedding Related Pins retrieval
+image-image retrieval: query: query Pin 的 image embedding retrieve: related target Pin 的 image embedding
+multimodal retrieval: query: query Pin 的 fusion embedding retrieve: related target Pin 的 fusion embedding
+Search retrieval
+Search text-image retrieval: query: search keyword/text embedding retrieve: image embedding
+Search multimodal retrieval: query: search keyword/text embedding retrieve: target Pin 的 fusion embedding
+visual tokenization methods VAEs
+VQGAN
+Object Detection and Scene Understanding Faster R-CNN how to efficiently apply object detection using metadata filtering to save compute
+Search Infrastructure &amp; Scalability Approximate Nearest Neighbor HNSW/Manas distributed indexing efficient feature computation pipelines Efficiency Optimization Matryoshka Representation Learning (MRL) int8 embedding quantization FlashAttention activation checkpointing Generative Engine Optimization (GEO) &amp; Agents integrating LLMs/VLMs for content representation and evaluating AI-generated outputs   ]]></content>
+  </entry>
+  
+  <entry>
     <title>ML Basic</title>
     <url>/zh-cn/post/interview/ml_basic/</url>
     <categories>
@@ -17,10 +44,12 @@
 classification Logistic Regression linear classification， 二分
 loss function: Binary Cross-Entropy Loss
 logistic regression有closed form 解嘛？
-没有闭式解。因为逻辑回归的损失函数是交叉熵损失，结合 sigmoid 函数后，其目标函数（最小化交叉熵损失）是凸的，但求导后得到的是含指数项的非线性方程，无法通过求导令其等于 0，解出 w 和 b 的解析表达式，所以只能用 SGD（或批量梯度下降、小批量梯度下降）这种迭代方法来求解参数
+没有闭式解。虽然loss function 是convex的，但求导后得到的是含指数项的非线性方程，无法通过求导令其等于 0，解出 w 和 b 的解析表达式，所以只能用gradient decesent
 为什么最好不用MSE当loss?
-non-convex vanishing gradients While MSE can technically be used with a sigmoid output, it leads to a non-convex objective and introduces an extra σ&amp;rsquo;(z) term in the gradient, which can cause vanishing gradients. In contrast, cross-entropy comes from the Bernoulli likelihood, is convex for logistic regression, and yields a simpler gradient (ŷ − y)x, making optimization more stable.
-Multiclass Logistic Regression …  ]]></content>
+non-convex vanishing gradients It leads to a non-convex objective and introduces an extra σ&amp;rsquo;(z) term in the gradient, which can cause vanishing gradients.
+Multiclass Logistic Regression use softmax instead of softmax Naive Bayes P(Y|X) = P(X|Y) * P(Y) / P(X) Decision Tree 同时支持回归和分类。
+classification 每一次分裂的时候，从所有 feature 和所有可能 threshold 里，找一个最能把数据“分干净”的 split。
+计算gini impurity，1-sigma(pi^2), pi代表这次分裂时，每个类别的probability 比较这次gini impurity和下次分裂的值。下降值越大，说明这次分裂让数据 …  ]]></content>
   </entry>
   
   <entry>
@@ -1657,18 +1686,7 @@ int a=5 中的 5 i++（返回自增前的临时值） 纯右值（prvalue）：�
     <tags>
       
     </tags>
-    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer 输入：[B,3,H,W] 输出：[B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width表示Transformer 里每个 token 的隐藏维度。 # grid=input_resolution/patch_size # 经过conv1变成[B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, 一个专门负责“收集整张图信息”的特殊 token self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution//patch_size)2+1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space ViT Funnel ViT paper Self-supervised learning 231n lecture 12 Pretext tasks from image transformations Pretext task：不是最终任务，而是为了训练 encoder 设计的代理任务
-rotation：让模型去学判断这个图片被旋转了多少度。4-way classification predict relative patch locations：8-class classification task Inpainting: 拿一张完整图片 x，人为遮住一块，得到 corrupted image。
-输入 corrupted image，让模型预测被遮住区域的 pixels。
-原图中被遮住的那一块就是 target，所以不需要人工 label。
-有两个 model:
-F: inpainting model / generator，用来补全缺失区域。 D: discriminator，输出“这张图是真图”的概率。 训练方式是交替训练：
-先用 F 生成补全后的 fake image。 训练 D： 用 BCE loss 分辨 real image 和 fake image。 real image label = 1 fake image label = 0 再训练 F： loss = reconstruction loss + adversarial loss。 reconstruction loss 让补出来的 pixels 接近真实 pixels。 adversarial loss 让补出来的图骗过 D，让 D(fake) 接近 1。 Reconstruction loss: 只在 masked region 上算预测 pixels 和真实 pixels 的差距。 目标是内容要对。
-Adversarial loss: 本质是 BCE / GAN loss。 对 D 来说：学会分辨 real/fake。 对 F 来说：学会生成让 D 以为是真的 fake image。 目标是视觉上更真实、更不模糊。
-Contrastive representation learning Gen Discriminative Model 给定一个输入 x，它属于哪个 label y。数学上就是学：p(y | x)。
-比如给一张cat image, 输出cat/dog label
-No way to handle unreasonable inputs
-  ]]></content>
+    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer 输入：[B,3,H,W] 输出：[B,output_dim] 1 2 3 4 …  ]]></content>
   </entry>
   
   <entry>
