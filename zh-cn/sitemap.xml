@@ -3,9 +3,89 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/ai/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/ai/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/tags/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/tags/ai/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/ai/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/computer_vision/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/tags/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/categories/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/categories/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/multimodal/</loc>
     <lastmod>2026-05-22T00:00:00+00:00</lastmod>
@@ -27,55 +107,10 @@
                 href="https://ruokezhang.github.io/zh-cn/post/"
                 />
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/"
-                />
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/tags/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/tags/"
-                />
-  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/interview/company_wise/pinterest/</loc>
     <lastmod>2026-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/categories/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/categories/"
-                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</loc>
     <lastmod>2026-05-20T00:00:00+00:00</lastmod>
@@ -86,36 +121,6 @@
     <lastmod>2026-05-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/tags/ai/</loc>
-    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/tags/ai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/tags/ai/"
-                />
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/ai/</loc>
-    <lastmod>2026-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/ai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/ai/"
-                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/pytorch/</loc>
     <lastmod>2026-04-12T00:00:00+00:00</lastmod>
@@ -1462,11 +1467,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/ai/computer_vision/</loc>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</loc>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/models/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
