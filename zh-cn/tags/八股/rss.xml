@@ -6,13 +6,20 @@
     <description>Recent content in 八股 on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/tags/%E5%85%AB%E8%82%A1/rss.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Deep Learning</title>
+      <link>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</link>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</guid>
+      <description>&lt;h2 id=&#34;neural-network&#34;&gt;Neural Network&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#neural-network&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;terminology&#34;&gt;terminology&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#terminology&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;比如有10000个sample，batch size为100&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;epoch: 10000个sample全部经过forward+back prop。每次epoch之后，都要进行shuffle，来确保每次选的batch由不同的sample组成&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>ML Basic</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</link>
+      <link>https://ruokezhang.github.io/zh-cn/ai/ml_basic/</link>
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/interview/ml_basic/</guid>
+      <guid>https://ruokezhang.github.io/zh-cn/ai/ml_basic/</guid>
       <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/andrewekhalel/MLQuestions&#34; title=&#34;https://github.com/andrewekhalel/MLQuestions&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://github.com/andrewekhalel/MLQuestions&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;amp;tid=998257&amp;amp;page=1&amp;amp;extra=&#34; title=&#34;https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra=&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://longxingtan.gitbook.io/mle-interview/02_ml&#34; title=&#34;https://longxingtan.gitbook.io/mle-interview/02_ml&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://longxingtan.gitbook.io/mle-interview/02_ml&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;supervised-learning&#34;&gt;supervised learning&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#supervised-learning&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;training data includes both the input features and corresponding target labels&lt;/p&gt;&#xA;&lt;h3 id=&#34;classification&#34;&gt;classification&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#classification&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;logistic-regression&#34;&gt;Logistic Regression&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#logistic-regression&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;linear classification， 二分&lt;br&gt;&#xA;loss function: Binary Cross-Entropy Loss&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression.png&#34; alt=&#34;alt text&#34;  /&gt;&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/post/interview/images/logistic_regression_loss.png&#34; alt=&#34;alt text&#34;  /&gt;&lt;/p&gt;&#xA;&#xA;  &lt;blockquote&gt;&#xA;    &lt;p&gt;logistic regression有closed form 解嘛？&lt;/p&gt;</description>
     </item>
     <item>

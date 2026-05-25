@@ -6,15 +6,8 @@
     <description>Recent content in Projects on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/tags/projects/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>IntelliFLow</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</link>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/intelliflow/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://lilianweng.github.io/posts/2023-06-23-agent/&#34; title=&#34;agent overview&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    agent overview&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://modelcontextprotocol.io/docs/develop/build-server&#34; title=&#34;mcp tutorial&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    mcp tutorial&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/rag/rag-chunking-phase&#34; title=&#34;RAG chunking by Microsoft&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    RAG chunking by Microsoft&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Java RPC</title>
       <link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link>

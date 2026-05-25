@@ -661,16 +661,6 @@
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/categories/ml-related/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/categories/ml-related/"
-                />
   </url><url>
     <loc>https://ruokezhang.github.io/en/tags/csapp/</loc>
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
