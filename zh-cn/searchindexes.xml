@@ -36,15 +36,10 @@ Momentum：当前的更新方向不仅考虑当前的梯度，还会加入上一
       <tag>AI</tag>
       
     </tags>
-    <content type="html"><![CDATA[  ViT slides Funnel ViT paper Self-supervised learning 231n lecture 12 Pretext tasks from image transformations Pretext task：不是最终任务，而是为了训练 encoder 设计的代理任务
-rotation：让模型去学判断这个图片被旋转了多少度。4-way classification predict relative patch locations：8-class classification task Inpainting: 拿一张完整图片 x，人为遮住一块，得到 corrupted image。
-输入 corrupted image，让模型预测被遮住区域的 pixels。
-原图中被遮住的那一块就是 target，所以不需要人工 label。
-有两个 model:
-F: inpainting model / generator，用来补全缺失区域。 D: discriminator，输出“这张图是真图”的概率。 训练方式是交替训练：
-先用 F 生成补全后的 fake image。 训练 D： 用 BCE loss 分辨 real image 和 fake image。 real image label = 1 fake image label = 0 再训练 F： loss = reconstruction loss + adversarial loss。 reconstruction loss 让补出来的 pixels 接近真实 pixels。 adversarial loss 让补出来的图骗过 D，让 D(fake) 接近 1。 Reconstruction loss: 只在 masked region 上算预测 pixels 和真实 pixels 的差距。 目标是内容要对。
-Adversarial loss: 本质是 BCE / GAN loss。 对 D 来说：学会分辨 real/fake。 对 F 来说：学会生成让 D 以为是真的 fake image。 目标是视觉上更真实、更不模糊。
-Contrastive representation learning Gen Definition Discriminative Model …  ]]></content>
+    <content type="html"><![CDATA[  ViT Funnel ViT paper Object Detection slides Single Object label是：Cat + (x&amp;rsquo;, y&amp;rsquo;, w&amp;rsquo;, h&#39;) x, y = box 左上角的位置，w = box 宽度，h = box 高度，这些是人工标注的 CNN把图片变成4096维向量 classification head：Fully connected，4096 -&amp;gt; 1000，输出1000个类别的分数, 做softmax localization head：Fully connected: 4096 -&amp;gt; 4，输出predicted box = (x, y, w, h)，这些是连续值，用L2 loss Total Loss = Softmax Loss + L2 Loss R-CNN R-CNN uses Selective Search to generate around 2000 region proposals, warps each proposal to a fixed 224×224 image, then runs a CNN on each region to classify it and later refine the box.
+Selective Search: 传统CV RoI: 候选的感兴趣区域 生成很多 RoI 图中每个 RoI 都被 crop 出来，然后 resize 成224 x 224，再分别送进 ConvNet，得到很多个feature vector 每个feature vector SVMs：判断这个 RoI 是什么类别(每个类别输出一个logit) bbox reg：修正这个 RoI 的框, 预测(dx, dy, dw, dh)，即对之前那个框的修正 Fast R-CNN 先对整张图片做 CNN backbone，得到一张 spatial feature map。
+feature map 仍然保留大致位置信息，不是一个 single vector。 用 external proposal method 得到 RoIs。
+在原始 Fast R-CNN 里，RoI 通常来自 Selective Search。 注意：RPN 是 Faster R-CNN  …  ]]></content>
   </entry>
   
   <entry>
