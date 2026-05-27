@@ -3,6 +3,30 @@
 <search>
   
   <entry>
+    <title>Visual Search</title>
+    <url>/zh-cn/post/system_design/visual_search/</url>
+    <categories>
+      <category>AI</category><category>System Design</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>System Design</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[   bytebytego tutorial dataset 一个query image (n-1)个negative images 一个positive image, 即和query image最像的image. positive image在所有images中的index label. build dataset human judgement: 人去annotate最像的image user interaction noisy sparse: may not have click data available for lots of the images generate similar images Offline metrics Mean reciprocal rank (MRR) MRR=1/m * sum(1/rank_i)
+downside
+considers only the first relevant item and ignores other relevant items in the list, it does not measure the precision and ranking quality of a ranked list Recall@k recall@k= number of relevant items among the top k items in the output list / total relevant items
+downside
+in search engines, the total number of relevant items can be very high. 分母会太大。 Precision@k Precision@k = number of relevant items among the top k items in the output list / k
+downside
+This metric measures how precise the output lists are, but it doesn’t consider the ranking quality mAP AP = Precision@i if i’th item is relevant to the user / total relevant items mAP = AP / # of ranked lists ​ mAP is designed for binary relevances; in other words, it works well when each item is either relevant or irrelevant. For continuous relevance scores, nDCG is a better choice.
+nDCG rank = 模型排出来的位置 rel = 这个位置上的 item 的真实相关性
+Visual Search at Pinterest paper   ]]></content>
+  </entry>
+  
+  <entry>
     <title>Deep Learning</title>
     <url>/zh-cn/ai/deep_learning/</url>
     <categories>
@@ -40,33 +64,6 @@ Momentum：当前的更新方向不仅考虑当前的梯度，还会加入上一
 Selective Search: 传统CV RoI: 候选的感兴趣区域 生成很多 RoI 图中每个 RoI 都被 crop 出来，然后 resize 成224 x 224，再分别送进 ConvNet，得到很多个feature vector 每个feature vector SVMs：判断这个 RoI 是什么类别(每个类别输出一个logit) bbox reg：修正这个 RoI 的框, 预测(dx, dy, dw, dh)，即对之前那个框的修正 Fast R-CNN 先对整张图片做 CNN backbone，得到一张 spatial feature map。
 feature map 仍然保留大致位置信息，不是一个 single vector。 用 external proposal method 得到 RoIs。
 在原始 Fast R-CNN 里，RoI 通常来自 Selective Search。 注意：RPN 是 Faster R-CNN  …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Visual Search</title>
-    <url>/zh-cn/post/interview/company_wise/pinterest/</url>
-    <categories>
-      <category>AI</category>
-    </categories>
-    <tags>
-      
-      <tag>Multimodal</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[   cs 231n Multimodal Foundation Models &amp; Embeddings PinClip image encoder CNN Stem Funnel ViT text encoder SigLIP descriptive text: The sparkling glitter adds a touch of glamour to any outfit&hellip; keyword text: men shoes/streetwear/sneaker，更像是一个search query 不是把两种text拼接在一起,因为太长影响效果 Fusion encoder 把image和text token拼接起来，得到[I1, I2, &hellip;, T1, T2, &hellip;], 维度[N, d], N=Nv + Nt 过 2 层 Transformer, 得到Z_j，维度[N, d] cross attention r_j = MHA(q, Z_j, Z_j), [1, d] q:[1,d] L2 normalization Image-to-text Alignment 每个 image-text pair 单独做 binary classification,每一个pair只有两个取值，match/unmatch L_I2T = L_desc + L_key I → image encoder → image embedding T_desc → text encoder → desc text embedding T_key → text encoder → keyword text embedding 用sigmoid loss, BCE-with-logits 正样本 loss = -log(sigmoid(score)) 负样本 loss = -log(1 - sigmoid(score)) Pin-to-Pin alignment image tokens + descriptive text tokens经过Fusion Encoder，得到fused Pin embedding M&rsquo;_j 也是BCE，score = t * (u_i · v_j) - c t: temperature, 属于[-1, 1]，作用是把 similarity 的差异放大或缩小 c: bias，决定 similarity 要高到什么程度，模型才认为这对 pair 是正样本。需要bias是因为 contrastive learning 里负样本远多于正样本 u_i，v_j：同一个batch中每个pin的fused embedding random walk：从一个 query Pin 出发，在图上随机走，走很多次之后，看哪些 Pin 被访问得最多。 For each query Pin, sample N = 5 positive Pins。离线计算每个 query Pin 的 top 50 neighbor candidates，训练时sample N = 5. 最后有2.4 billion Pin pairs MRL L_total = L_I2T(full 256d) + L_P2P(full 256d)
-0.1 * L(prefix 64d) 0.1 * L(prefix 128d) 1.0 * L(prefix 256d) int8 embedding quantization x_q = round(x / s + z) x_dq = (x_q - z) · s 1 2 3 4 5 x = 原始 float 数值 s = scale，刻度大小 z = zero-point，零点偏移 x_q = quantized int8 数值，真正存起来的整数 x_dq = dequantized 数值，还原后的近似 float 比如x=0.123, s=0.01,z=0 那么x_q=12, 是一个int8. 存embedding的时候就存x_q
-然后x_dq=0.12，和原来的会有误差
-Evaluation PinText image-text retrieval
-query: image embedding retrieve: paired text embedding Related Pins retrieval
-image-image retrieval: query: query Pin 的 image embedding retrieve: related target Pin 的 image embedding
-multimodal retrieval: query: query Pin 的 fusion embedding retrieve: related target Pin 的 fusion embedding
-Search retrieval
-Search text-image retrieval: query: search keyword/text embedding retrieve: image embedding
-Search multimodal retrieval: query: search keyword/text embedding retrieve: target Pin 的 fusion embedding
-visual tokenization methods VAEs
-VQGAN
-Object Detection and Scene Understanding Faster R-CNN how to efficiently apply object detection using metadata filtering to save compute
-Search Infrastructure &amp; Scalability Approximate Nearest Neighbor HNSW/Manas distributed indexing efficient feature computation pipelines Efficiency Optimization Matryoshka Representation Learning (MRL) int8 embedding quantization FlashAttention activation checkpointing Generative Engine Optimization (GEO) &amp; Agents integrating LLMs/VLMs for content representation and evaluating AI-generated outputs   ]]></content>
   </entry>
   
   <entry>
@@ -1774,6 +1771,31 @@ a token get its defualt embedding from the initial huge matrix
 拿当前 Token 的 $Q$ 去和所有 Token 的 $K$ 做点积 row-wise softmax. 现在每一行（一个token）的总和为1
 把这个得到的相似度矩阵和V相乘，得到Z，然后把12个Z拼接到一起
   ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <url>/zh-cn/post/interview/company_wise/pinterest/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[   cs 231n Multimodal Foundation Models &amp; Embeddings PinClip image encoder CNN Stem Funnel ViT text encoder SigLIP descriptive text: The sparkling glitter adds a touch of glamour to any outfit&hellip; keyword text: men shoes/streetwear/sneaker，更像是一个search query 不是把两种text拼接在一起,因为太长影响效果 Fusion encoder 把image和text token拼接起来，得到[I1, I2, &hellip;, T1, T2, &hellip;], 维度[N, d], N=Nv + Nt 过 2 层 Transformer, 得到Z_j，维度[N, d] cross attention r_j = MHA(q, Z_j, Z_j), [1, d] q:[1,d] L2 normalization Image-to-text Alignment 每个 image-text pair 单独做 binary classification,每一个pair只有两个取值，match/unmatch L_I2T = L_desc + L_key I → image encoder → image embedding T_desc → text encoder → desc text embedding T_key → text encoder → keyword text embedding 用sigmoid loss, BCE-with-logits 正样本 loss = -log(sigmoid(score)) 负样本 loss = -log(1 - sigmoid(score)) Pin-to-Pin alignment image tokens + descriptive text tokens经过Fusion Encoder，得到fused Pin embedding M&rsquo;_j 也是BCE，score = t * (u_i · v_j) - c t: temperature, 属于[-1, 1]，作用是把 similarity 的差异放大或缩小 c: bias，决定 similarity 要高到什么程度，模型才认为这对 pair 是正样本。需要bias是因为 contrastive learning 里负样本远多于正样本 u_i，v_j：同一个batch中每个pin的fused embedding random walk：从一个 query Pin 出发，在图上随机走，走很多次之后，看哪些 Pin 被访问得最多。 For each query Pin, sample N = 5 positive Pins。离线计算每个 query Pin 的 top 50 neighbor candidates，训练时sample N = 5. 最后有2.4 billion Pin pairs MRL L_total = L_I2T(full 256d) + L_P2P(full 256d)
+0.1 * L(prefix 64d) 0.1 * L(prefix 128d) 1.0 * L(prefix 256d) int8 embedding quantization x_q = round(x / s + z) x_dq = (x_q - z) · s 1 2 3 4 5 x = 原始 float 数值 s = scale，刻度大小 z = zero-point，零点偏移 x_q = quantized int8 数值，真正存起来的整数 x_dq = dequantized 数值，还原后的近似 float 比如x=0.123, s=0.01,z=0 那么x_q=12, 是一个int8. 存embedding的时候就存x_q
+然后x_dq=0.12，和原来的会有误差
+Evaluation PinText image-text retrieval
+query: image embedding retrieve: paired text embedding Related Pins retrieval
+image-image retrieval: query: query Pin 的 image embedding retrieve: related target Pin 的 image embedding
+multimodal retrieval: query: query Pin 的 fusion embedding retrieve: related target Pin 的 fusion embedding
+Search retrieval
+Search text-image retrieval: query: search keyword/text embedding retrieve: image embedding
+Search multimodal retrieval: query: search keyword/text embedding retrieve: target Pin 的 fusion embedding
+visual tokenization methods VAEs
+VQGAN
+Object Detection and Scene Understanding Faster R-CNN how to efficiently apply object detection using metadata filtering to save compute
+Search Infrastructure &amp; Scalability Approximate Nearest Neighbor HNSW/Manas distributed indexing efficient feature computation pipelines Efficiency Optimization Matryoshka Representation Learning (MRL) int8 embedding quantization FlashAttention activation checkpointing Generative Engine Optimization (GEO) &amp; Agents integrating LLMs/VLMs for content representation and evaluating AI-generated outputs   ]]></content>
   </entry>
   
   <entry>
