@@ -3,6 +3,103 @@
 <search>
   
   <entry>
+    <title>Visual Search</title>
+    <url>/en/post/system_design/visual_search/</url>
+    <categories>
+      <category>AI</category><category>System Design</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>System Design</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[   bytebytego tutorial dataset A query image (n-1) negative images A positive image, i.e., the image most similar to the query image. The index label of the positive image among all the images. build dataset human judgement: humans annotate the most similar image user interaction noisy sparse: may not have click data available for lots of the images generate similar images Offline metrics Mean reciprocal rank (MRR) MRR=1/m * sum(1/rank_i)
+downside
+considers only the first relevant item and ignores other relevant items in the list, so it does not measure the precision and ranking quality of the full ranked list Recall@k recall@k= number of relevant items among the top k items in the output list / total relevant items
+downside
+in search engines, the total number of relevant items can be very high, so the denominator ends up being too large. Precision@k Precision@k = number of relevant items among the top k items in the output list / k
+downside
+This metric measures how precise the output …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title>Deep Learning</title>
+    <url>/en/ai/deep_learning/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>Interview</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[  Neural Network terminology For example, suppose there are 10,000 samples with a batch size of 100:
+epoch: all 10,000 samples go through forward + back prop once. After every epoch, the data should be shuffled to make sure each batch is made up of a different combination of samples each time.
+iteration: one iteration means 100 samples go through one forward pass (computing the loss) + backpropagation (computing the gradients), and then optimizer.step() updates the weights.
+The larger the batch size, the more accurate the gradient estimate, but the slower the convergence.
+Activation function: nonlinearity can only be introduced when an activation function is used.
+back prop umich slides GD vs SGD Batch GD: the batch size is N, i.e. the full dataset. All samples are used together to do forward + backward, updating the parameters once. SGD(traditional): the batch size is 1; if there are 10,000 samples, the parameters are updated 10,000 times. mini-batch SGD: a single small batch is fast …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title>Computer Vision</title>
+    <url>/en/ai/computer_vision/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[  ViT Funnel ViT paper Object Detection slides Single Object The label is: Cat + (x&amp;rsquo;, y&amp;rsquo;, w&amp;rsquo;, h&#39;) x, y = the position of the box&amp;rsquo;s top-left corner, w = box width, h = box height; these are manually annotated The CNN turns the image into a 4096-dim vector classification head: Fully connected, 4096 -&amp;gt; 1000, outputs scores for 1000 classes, then softmax localization head: Fully connected: 4096 -&amp;gt; 4, outputs predicted box = (x, y, w, h); these are continuous values, using L2 loss Total Loss = Softmax Loss + L2 Loss R-CNN R-CNN uses Selective Search to generate around 2000 region proposals, warps each proposal to a fixed 224×224 image, then runs a CNN on each region to classify it and later refine the box.
+Selective Search: a traditional CV method RoI: candidate region of interest Generate many RoIs Each RoI in the image is cropped out, then resized to 224 x 224, and fed separately into a ConvNet to get many feature vectors For each feature vector: SVMs: …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title>Machine Learning Basics</title>
+    <url>/en/ai/ml_basic/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>Interview</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[   https://github.com/andrewekhalel/MLQuestions https://www.1point3acres.com/bbs/forum.php?mod=viewthread&amp;tid=998257&amp;page=1&amp;extra= https://longxingtan.gitbook.io/mle-interview/02_ml supervised learning training data includes both the input features and corresponding target labels
+classification Logistic Regression linear classification, binary classification loss function: Binary Cross-Entropy Loss
+Does logistic regression have a closed-form solution?
+No, there is no closed-form solution. Although the loss function is convex, taking its derivative yields a nonlinear equation containing an exponential term, so we cannot set the derivative to 0 and solve for closed-form expressions of w and b; we can only use gradient descent.
+Why is it better not to use MSE as the loss?
+non-convex vanishing gradients It leads to a non-convex objective and introduces an extra σ&amp;rsquo;(z) term in the gradient, which can cause vanishing gradients.
+Multiclass Logistic Regression Use softmax instead of …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title>PyTorch</title>
+    <url>/en/ai/pytorch/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[  Module The parent class of all models; every network inherits from it
+init(self) forward(self, x) conv Bilibili 1 output=F.conv2d(input, kernel, stride=1) # performs the convolution computation, producing the feature matrix Conv2d
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 import torch import torch.nn as nn class CNN(nn.Module): def __init__(self): super().__init__() self.conv1 = nn.Conv2d( in_channels=3, out_channels=6, kernel_size=3, stride=1, padding=0 ) self.maxpool1 = nn.MaxPool2d( kernel_size=3, # Pooling window size: 3×3 ceil_mode=True # Ceiling mode, keeps incomplete edge windows # stride defaults to kernel_size=3; you can also explicitly write stride=3, with exactly the same effect ) def forward(self, x): # Forward pass: **first convolve to extract features, then pool to downsample** (standard CNN order) # x: [b, 3, h, w] x = self.conv1(x) # Step 1: pass through the conv layer, producing a 6-channel feature map, [b, 6, h&#39;, w&#39;] # h&#39;=(h+2*p-k)/s+1 x = self.maxpool1(x) # Step 2: pass through the pooling layer, downsampling the feature map return x Linear 1 2 3 4 5 self.linear = nn.Linear( in_features=1024, out_features=512, bias=True # Default True; whether to add the bias b ) weight = (512, 1024) bias = (512) y = x @ W.T + b
+nn.BatchNorm2d For the same channel C, all H×W pixels of every image in the entire batch are grouped together to compute the mean and variance. Conv → BN → Activation The parameter is feature_num 1 2 3 4 5 6 7 8 9 # Convolution block (standard structure) self.conv1 = nn.Conv2d(3, 16, 3) #out_channel=16 self.bn1 = nn.BatchNorm2d(16) self.relu = nn.ReLU() # Forward pass x = self.conv1(x) x = self.bn1(x) x = self.relu(x) nn.Sequential 1 2 3 4 5 6 7 8 from collections import OrderedDict model = nn.Sequential(OrderedDict([ (&#39;conv1&#39;, nn.Conv2d(1, 20, 5)), # Name the 1st layer &#34;conv1&#34; (&#39;relu1&#39;, nn.ReLU()), # Name the 2nd layer &#34;relu1&#34; (&#39;conv2&#39;, nn.Conv2d(20, 64, 5)), # Name the 3rd layer &#34;conv2&#34; (&#39;relu2&#39;, nn.ReLU()) # Name the 4th layer &#34;relu2&#34; ])) A simple way to chain these layers together
+nn.CrossEntropyLoss Softmax (converts the output into 0~1 probabilities) Take the log Cross-entropy computation If a CNN is used for classification, you must flatten 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 class CNN(nn.Module): def __init__(self): super().__init__() self.conv1 = nn.Conv2d(3,6,3) self.pool = nn.MaxPool2d(2) self.flatten = nn.Flatten() # After convolution and pooling, each sample has shape [6, 15, 15]. self.fc = nn.Linear(6*15*15, 10) def forward(self, x): # Assume the input is [B,3,32,32] x = self.conv1(x) # [B,6,30,30] ✅ you got it right x = self.pool(x) # [B,6,15,15] ✅ you got it right x = self.flatten(x) # [B,6*15*15] ✅ x = self.fc(x) # [B,10] return x # Training model = CNN() criterion = nn.CrossEntropyLoss() # dedicated to classification for inputs, labels in dataloader: outputs = model(inputs) loss = criterion(outputs, labels) # compute the loss loss.backward() nn.MSELoss
+nn.Dropout
+nn.Embedding 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # 1. Word vocabulary: word → numeric ID vocab = {&#34;I&#34;:1, &#34;love&#34;:2, &#34;AI&#34;:3, &#34;ML&#34;:4} # 2. Real sentences → converted to numbers sentences = [[1,2,3], [1,2,4]] # 2 sentences, 3 words each input = torch.tensor(sentences) # 3. Define the Embedding: the vocabulary has 5 words total (0-4), each word converted to a 4-dim vector emb = nn.Embedding(num_embeddings=5, embedding_dim=4) # 4. Look up the table: number → vector output = emb(input) # Result print(&#34;Input shape:&#34;, input.shape) # (2, 3) print(&#34;Output shape:&#34;, output.shape)# (2, 3, 4) nn.Softmax 1 2 3 4 5 6 7 8 # Model output: 2 images, 10 classes (raw scores, can be positive or negative) logits = torch.randn(2, 10) # Softmax converts to probabilities prob = nn.Softmax(dim=-1)(logits) # applies softmax over the last dimension of the input print(prob.shape) # [2, 10] shape unchanged print(prob.sum(dim=-1)) # [1,1] each row sums to 1 nn.MultiheadAttention 1 2 3 4 5 6 attn = nn.MultiheadAttention(embed_dim=8, num_heads=2, batch_first=True) # Input: 2 samples, each with 3 vectors, each vector 8-dim x = torch.randn(2, 3, 8) # Self-attention (Q=K=V use the same input) output, _ = attn(x, x, x) print(output.shape) # [2, 3, 8] → the shape is exactly the same as the input nn.Parameter 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import torch import torch.nn as nn class MyLayer(nn.Module): def __init__(self): super().__init__() # ✅ Correct: a trainable parameter self.weight = nn.Parameter(torch.randn(5, 3)) # ❌ Wrong: a plain tensor, not involved in training self.bias = torch.randn(5) model = MyLayer() # Only the weight above will be printed; bias will not appear print(list(model.parameters())) nn.TransformerEncoderLayer nn.Upsample nn.AdaptiveAvgPool2d nn.ConvTranspose2d nn.GELU
+  ]]></content>
+  </entry>
+  
+  <entry>
     <title>Distributed Systems</title>
     <url>/en/post/course_notes/distributed_systems/</url>
     <categories>
@@ -52,20 +149,6 @@ Since the smallest power of 2 is 1, x &gt;= k When x is maximum, k is minimum, i
 Enumerate k from small to large, the first satisfying equation is the answer.
 3495. Minimum Operations to Make All Array Elements Zero Dividing a number by 4 and flooring it: binary right shift by two bits For a number with n bits in binary representation, it requires (n+1)//2 operations to become 0
 1 2 3 4 5 6 7 8 9 10 11 12 13 def get(x): # Calculate the sum of (bit_length + 1)//2 for all numbers from 1 to x # e.g. from 16 to 31 (1000 to 1111), all are 4-bit numbers # 1=1, 2=10, 3=11, 4=100,5=101,6=110,7=111,8=1110 base = 1 cnt = 0 i = 1 # Start from 1-bit binary numbers while base &lt;= x: end = min(x, 2*base - 1) cnt += (i + 1) // 2 * (end - base + 1) # bit_length * count of i-bit numbers base *= 2 i += 1 return cnt   ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Company Wise</title>
-    <url>/en/post/leetcode/company_wise/</url>
-    <categories>
-      <category>Leetcode</category><category>Company</category>
-    </categories>
-    <tags>
-      
-      <tag>leetcode</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[   Reorganize String (Roblox) Task Scheduler (Roblox, Snowflake) Top K Frequent Words (Adobe) Top K Frequent Elements (Adobe, Bloomberg) Maximum Number of Events That Can Be Attended (Snowflake) Find K Pairs with Smallest Sums (Linkedin, Google) Last Stone Weight (Nvidia) Find Median from Data Stream (Snowflake) Merge k Sorted Lists (Bloomberg, Snowflake, Nvidia, Microsoft) Stock Price Fluctuation (Google) Meeting Rooms III Prefix Sum Subarray Product Less Than K (Airbnb) Max Consecutive Ones III (Microsoft, Expedia) Subarrays with K Different Integers (Expedia) Range Sum Query 2D - Immutable (Snowflake) Subarray Sum Equals K (Bloomberg) Product of Array Except Self (Bloomberg, Microsoft) Meeting Rooms II (Microsoft) Trie Add and Search Word - Data structure design (Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) Longest Common Prefix (Bloomberg) Find the Length of the Longest Common Prefix (Databricks) Implement Trie (Prefix Tree) (Snowflake) Design In-Memory File System (Snowflake) Remove Sub-Folders (Snowflake, Google) Search Suggestions System (Docusign, Amazon) Word Search II (Microsoft, Google, Airbnb) Stack Basic Calculator II (Tesla) Max Stack (Linkedin) Nested List Weight Sum II (Linkedin) Valid Parentheses (Nvidia, Expedia) Evaluate Reverse Polish Notation (Microsoft) Basic Calculator (Microsoft) Valid Parentheses (Microsoft) Longest Valid Parentheses (Tiktok) Maximal Rectangle (Tiktok) Largest Rectangle in Histogram (Microsoft) Simplify Path (Snowflake, Tiktok) Remove Duplicate Letters (Expedia) Number of Visible People in a Queue (Expedia) Minimum Number of Swaps to Make the String Balanced (Expedia) Sum of Subarray Ranges (Tiktok) Queue Design Circular Queue (Tesla, Cloudflare) Design Hit Counter (Snowflake, Cloudflare, Databricks) Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit (Google) Common Mistakes Design Circular Queue (Tesla, Cloudflare) Hash First Missing Positive (Tesla) Missing Number (Meta, Microsoft, Bloomberg) Sort Kth Largest Element in an Array (Microsoft) Sliding Window Max Consecutive Ones III (SAP, Salesforce, LinkedIn, Meta, Google) Longest Repeating Character Replacement (Adobe, Amazon, Bytedance, Bloomberg) Maximum Number of Occurrences of a Substring (Hubspot, Salesforce) Longest Substring with At Most Two Distinct Characters (Ebay, Google, Tiktok) Longest Substring with At Most K Distinct Characters (Microsoft) Subarray Product Less Than K (Paypal, Oracle, Salesforce) Smallest Range Covering Elements from K Lists (Lyft, Databricks) Number of Subarrays of Size K and Average Greater than or Equal to Threshold (LinkedIn)   ]]></content>
   </entry>
   
   <entry>
@@ -1377,6 +1460,30 @@ Loading A …  ]]></content>
   
   <entry>
     <title></title>
+    <url>/en/ai/models/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer Input: [B,3,H,W] Output: [B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width is the hidden dimension of each token in the Transformer. # grid=input_resolution/patch_size # after conv1, becomes [B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, a special token dedicated to &#34;collecting information from the whole image&#34; self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution // patch_size) ** 2 + 1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space   ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <url>/en/post/leetcode/company_wise/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[  Heap Reorganize String (Roblox) Task Scheduler (Roblox, Snowflake) Top K Frequent Words (Adobe) Top K Frequent Elements (Adobe, Bloomberg) Maximum Number of Events That Can Be Attended (Snowflake) Find K Pairs with Smallest Sums (Linkedin, Google) Last Stone Weight (Nvidia) Find Median from Data Stream (Snowflake) Merge k Sorted Lists (Bloomberg, Snowflake, Nvidia, Microsoft) Stock Price Fluctuation (Google) Meeting Rooms III Prefix Sum Subarray Product Less Than K (Airbnb) Max Consecutive Ones III (Microsoft, Expedia) Subarrays with K Different Integers (Expedia) Range Sum Query 2D - Immutable (Snowflake) Subarray Sum Equals K (Bloomberg) Product of Array Except Self (Bloomberg, Microsoft) Meeting Rooms II (Microsoft) Trie Add and Search Word - Data structure design (Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) Longest Common Prefix (Bloomberg) Find the Length of the Longest Common Prefix (Databricks) Implement Trie (Prefix Tree) (Snowflake) Design In-Memory File System (Snowflake) Remove Sub-Folders (Snowflake, Google) Search Suggestions System (Docusign, Amazon) Word Search II (Microsoft, Google, Airbnb) Stack Basic Calculator II (Tesla) Max Stack (Linkedin) Nested List Weight Sum II (Linkedin) Valid Parentheses (Nvidia, Expedia) Evaluate Reverse Polish Notation (Microsoft) Basic Calculator (Microsoft) Valid Parentheses (Microsoft) Longest Valid Parentheses (Tiktok) Maximal Rectangle (Tiktok) Largest Rectangle in Histogram (Microsoft) Simplify Path (Snowflake, Tiktok) Remove Duplicate Letters (Expedia) Number of Visible People in a Queue (Expedia) Minimum Number of Swaps to Make the String Balanced (Expedia) Sum of Subarray Ranges (Tiktok) Queue Design Circular Queue (Tesla, Cloudflare) Design Hit Counter (Snowflake, Cloudflare, Databricks) Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit (Google) Common Mistakes Design Circular Queue (Tesla, Cloudflare) Hash First Missing Positive (Tesla) Missing Number (Meta, Microsoft, Bloomberg) Sort Kth Largest Element in an Array (Microsoft) Sliding Window Max Consecutive Ones III (SAP, Salesforce, LinkedIn, Meta, Google) Longest Repeating Character Replacement (Adobe, Amazon, Bytedance, Bloomberg) Maximum Number of Occurrences of a Substring (Hubspot, Salesforce) Longest Substring with At Most Two Distinct Characters (Ebay, Google, Tiktok) Longest Substring with At Most K Distinct Characters (Microsoft) Subarray Product Less Than K (Paypal, Oracle, Salesforce) Smallest Range Covering Elements from K Lists (Lyft, Databricks) Number of Subarrays of Size K and Average Greater than or Equal to Threshold (LinkedIn)   ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
     <url>/en/post/leetcode/stackqueue/</url>
     <categories>
       
@@ -1397,6 +1504,24 @@ Loading A …  ]]></content>
       
     </tags>
     <content type="html"><![CDATA[    ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <url>/en/post/system_design/text_to_image/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[   https://medium.com/pinterest-engineering/building-pinterest-canvas-a-text-to-image-foundation-model-aa34965e84d9 https://arxiv.org/abs/2603.06453?utm_source=chatgpt.com https://github.com/junfanz1/Awesome-AI-Review/blob/main/System%20Design/GenAI%20System%20Design.md#5-text-to-image Pinterest Canvas Text-To-Image Generate images conditioned on both text prompts and reference images.
+1. text-to-image Inference Embed the text prompt to obtain the text embedding Feed the noisy target latent and the text embedding into the DiT together to obtain the clean target latent The clean target latent passes through the VAE decoder to produce the image Training Training data: (text prompt, real image) Only the DiT is trained. Both the text encoder and the VAE use pretrained weights, and are then frozen The real image passes through the VAE encoder to obtain the real latent. During training, x_t is generated from the real latent 2. multimodal image editing tasks Stage 2 starts from the trained Stage 1 text-to-image model.
+The reference image passes through the VAE encoder and becomes image latent tokens, which are then concatenated with the noisy target latent tokens to form image tokens
+The text embedding acts as a condition and learns its own W_q/k/v; the resulting Q/K/V projections are concatenated with the image tokens&rsquo; Q/K/V projections to form the final Q/K/V used for self-attention
+The DiT block outputs the hidden states of all tokens:
+hidden states of the target noisy latent tokens hidden states of the reference image tokens hidden states of the text tokens However, in the end only the hidden states corresponding to the target noisy latent tokens pass through the final output head, and get mapped into the velocity v.
+3. High-Resolution Multimodal Training Stage 3 continues training on top of the Stage 2 multimodal image editing model The core change is raising the resolution from 256² to 512² / 1024². Loss is still the flow matching loss in-painting out-painting   ]]></content>
   </entry>
   
 </search>

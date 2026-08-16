@@ -21,9 +21,7 @@ considers only the first relevant item and ignores other relevant items in the l
 downside
 in search engines, the total number of relevant items can be very high. 分母会太大。 Precision@k Precision@k = number of relevant items among the top k items in the output list / k
 downside
-This metric measures how precise the output lists are, but it doesn’t consider the ranking quality mAP AP = Precision@i if i’th item is relevant to the user / total relevant items mAP = AP / # of ranked lists ​ mAP is designed for binary relevances; in other words, it works well when each item is either relevant or irrelevant. For continuous relevance scores, nDCG is a better choice.
-nDCG rank = 模型排出来的位置 rel = 这个位置上的 item 的真实相关性
-Visual Search at Pinterest paper   ]]></content>
+This metric measures how precise the output lists are, but it doesn’t consider the ranking quality mAP AP = Precision@i if i’th item is relevant to the user / …  ]]></content>
   </entry>
   
   <entry>
@@ -1775,6 +1773,36 @@ a token get its defualt embedding from the initial huge matrix
   
   <entry>
     <title></title>
+    <url>/zh-cn/post/interview/bind/bind/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[  General X^m = (s_global^m, K object slots) each object slot = semantic embedding s_i^m + spatial attributes r_i^m + confidence c_i^m Encoder Audio Semantic Encoder Input:
+two-channel binaural waveform: [B, 2, T] Steps:
+Average L/R binaural waveform into mono. Resample to 16 kHz. Use frozen M2D-CLAP audio encoder to extract semantic audio patch tokens. Output before alignment:
+M2D-CLAP semantic audio tokens: [B, 310, 768] Use pretrained residual MLP alignment module: [B, 310, 768] → [B, 310, 1152] Output:
+F_A^sem / H_A^sem: [B, 310, 1152] Notation:
+F_A^sem means audio semantic context tokens. These tokens are used as memory/KV for the audio semantic decoder. Audio Spatial Encoder 这是唯一一个 encoder 层中可训练的模块
+对10s audio的L/R做resample, 采样率是16kHZ, 所以single sample: [2, 160000] 对L/R的waveform分别作STFT, 得到L/R的magnitude和phase n_fft = 1024，hop_size = 512，代表对每一段取1024个采样点，步长为512. freq_bins = n_fft / 2 + 1，代表spectrogram的纵轴一共有513个bin T_stft = floor(160000 / 512) + 1 = 313, 代表横轴一共被分成313个时间块 这里得到[B, 4, 513, …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <url>/zh-cn/post/interview/bind/possible_story/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[   semantic decoder里面cross attention的query数量是如何确定的   ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
     <url>/zh-cn/post/interview/company_wise/pinterest/</url>
     <categories>
       
@@ -1877,6 +1905,24 @@ leaf-to-leaf 最大路径和 如果是单链表（没有至少两个node，则�
       
     </tags>
     <content type="html"><![CDATA[  消息可靠性 生产者-&gt;MQ 生产者开启 confirm 模式 1 2 3 4 5 channel.confirmSelect(); // 开启Confirm模式 channel.basicPublish(exchange, routingKey, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes()); if (!channel.waitForConfirms(5000)) { // 消息未确认，重试或记录日志 } 异步确认：发送消息后不阻塞等待 MQ 的 ACK，而是通过回调函数接收 ACK 通知；若回调中发现未确认（如 ACK 失败、超时），将未确认的消息存入本地缓存，定期触发重试，直到收到 ACK 或达到最大重试次数； 同步确认：发送消息后阻塞等待 ACK MQ 持久化（必做）：设置消息和队列为「持久化模式」（RocketMQ 默认开启），MQ 会将消息和队列信息写入磁盘，即使 MQ 进程宕机、重启，也能从磁盘恢复消息，避免内存中的消息丢失； 集群多副本（进阶，提升可靠性）：搭建 RocketMQ 集群，配置多副本（类似镜像队列），将队列数据同步到集群多个节点，设置节点同步模式（如同步复制）； MQ-&gt;消费者 手动 ACK 自动 ACK 的确定：会存在消费者收到，确认之后没消费，消费者挂了，数据丢失 死信队列： 当消息多次重试（如3次）仍处理失败（如系统异常），将消息转入「死信队列」，由人工介入排查处理，避免消息无限重试或被丢弃 幂等性 为什么会有重复的消息 生产者没收到 MQ 的 ACK，又发了一次 MQ 没收到消费者的 ACK，又发了一次 解决 数据库唯一索引 Redis SETNX /Lua 脚本查状态改状态 对比Kafka的优势 Consumer 端自带重试机制，当消费消息失败时，RocketMQ 会自动将消息放入重试队列。 当消费消息失败时，RocketMQ 会自动将消息放入重试队列   ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <url>/zh-cn/post/system_design/text_to_image/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[   https://medium.com/pinterest-engineering/building-pinterest-canvas-a-text-to-image-foundation-model-aa34965e84d9 https://arxiv.org/abs/2603.06453?utm_source=chatgpt.com https://github.com/junfanz1/Awesome-AI-Review/blob/main/System%20Design/GenAI%20System%20Design.md#5-text-to-image Pinterest Canvas Text-To-Image generate images conditioned on both text prompts and reference images
+1. text-to-image Inference 对Text prompt做embedding, 得到text embedding noisy target latent和text embedding一起送进DiT，得到clean target latent clean target latent经过VAE decoder得到图片 Training 训练数据(text prompt, real image) 只训DiT。text encoder和VAE都用pretrained, 然后freeze real image经过VAE encoder得到real latent。训练时根据real latent去生成x_t 2. multimodal image editing tasks Stage 2 starts from the trained Stage 1 text-to-image model.
+reference image经过VAE encoder，变成image latent tokens，然后和noisy target latent tokens 拼在一起，成为image tokens
+text embedding作为condition，学自己的W_q/k/v, 最后得到的Q/K/V和image tokens的Q/K/V拼在一起，得到最后做self attention的Q/K/V
+DiT block 会输出所有 tokens 的 hidden states：
+target noisy latent tokens 的 hidden states reference image tokens 的 hidden states text tokens 的 hidden states 但是最终只有 target noisy latent tokens 对应的 hidden states 会经过 final output head， 被映射成 velocity v。
+3: High-resolution Multimodal Training Stage 3 是在 Stage 2 的 multimodal image editing model 基础上继续训练 核心变化是把 resolution 从 256² 提升到 512² / 1024²。 Loss 仍然是 flow matching loss in-painting out-painting   ]]></content>
   </entry>
   
 </search>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System Design on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/system-design/</link>
+    <description>Recent content in System Design on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/system-design/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Search</title>
+      <link>https://ruokezhang.github.io/en/post/system_design/visual_search/</link>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/system_design/visual_search/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://bytebytego.com/courses/machine-learning-system-design-interview/visual-search-system&#34; title=&#34;bytebytego tutorial&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    bytebytego tutorial&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;dataset&#34;&gt;dataset&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#dataset&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;A query image&lt;/li&gt;&#xA;&lt;li&gt;(n-1) negative images&lt;/li&gt;&#xA;&lt;li&gt;A positive image, i.e., the image most similar to the query image.&lt;/li&gt;&#xA;&lt;li&gt;The index label of the positive image among all the images.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;build-dataset&#34;&gt;build dataset&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#build-dataset&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;human judgement: humans annotate the most similar image&lt;/li&gt;&#xA;&lt;li&gt;user interaction&#xA;&lt;ul&gt;&#xA;&lt;li&gt;noisy&lt;/li&gt;&#xA;&lt;li&gt;sparse: may not have click data available for lots of the images&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;generate similar images&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;offline-metrics&#34;&gt;Offline metrics&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#offline-metrics&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;mean-reciprocal-rank-mrr&#34;&gt;Mean reciprocal rank (MRR)&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#mean-reciprocal-rank-mrr&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;MRR=1/m * sum(1/rank_i)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

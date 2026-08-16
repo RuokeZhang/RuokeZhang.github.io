@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/en/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://ruokezhang.github.io/en/tags/ai/</link>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design</title>
+      <link>https://ruokezhang.github.io/en/tags/system-design/</link>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/tags/system-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>https://ruokezhang.github.io/en/tags/interview/</link>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/tags/interview/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Course</title>
       <link>https://ruokezhang.github.io/en/tags/course/</link>
@@ -30,13 +51,6 @@
       <description></description>
     </item>
     <item>
-      <title>Interview</title>
-      <link>https://ruokezhang.github.io/en/tags/interview/</link>
-      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/tags/interview/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>MySQL</title>
       <link>https://ruokezhang.github.io/en/tags/mysql/</link>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
@@ -55,13 +69,6 @@
       <link>https://ruokezhang.github.io/en/tags/redis/</link>
       <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/en/tags/redis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI</title>
-      <link>https://ruokezhang.github.io/en/tags/ai/</link>
-      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/tags/ai/</guid>
       <description></description>
     </item>
     <item>
