@@ -3,6 +3,28 @@
 <search>
   
   <entry>
+    <title>Text-to-Image System Design</title>
+    <url>/en/post/system_design/text_to_image/</url>
+    <categories>
+      <category>AI</category><category>System Design</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>System Design</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[   https://medium.com/pinterest-engineering/building-pinterest-canvas-a-text-to-image-foundation-model-aa34965e84d9 https://arxiv.org/abs/2603.06453?utm_source=chatgpt.com https://github.com/junfanz1/Awesome-AI-Review/blob/main/System%20Design/GenAI%20System%20Design.md#5-text-to-image Pinterest Canvas Text-To-Image Generate images conditioned on both text prompts and reference images.
+1. text-to-image Inference Embed the text prompt to obtain the text embedding Feed the noisy target latent and the text embedding into the DiT together to obtain the clean target latent The clean target latent passes through the VAE decoder to produce the image Training Training data: (text prompt, real image) Only the DiT is trained. Both the text encoder and the VAE use pretrained weights, and are then frozen The real image passes through the VAE encoder to obtain the real latent. During training, x_t is generated from the real latent 2. multimodal image editing tasks Stage 2 starts from the trained Stage 1 text-to-image model.
+The reference image passes through the VAE encoder and becomes image latent tokens, which are then concatenated with the noisy target latent tokens to form image tokens
+The text embedding acts as a condition and learns its own W_q/k/v; the resulting Q/K/V projections are concatenated with the image tokens&rsquo; Q/K/V projections to form the final Q/K/V used for self-attention
+The DiT block outputs the hidden states of all tokens:
+hidden states of the target noisy latent tokens hidden states of the reference image tokens hidden states of the text tokens However, in the end only the hidden states corresponding to the target noisy latent tokens pass through the final output head, and get mapped into the velocity v.
+3. High-Resolution Multimodal Training Stage 3 continues training on top of the Stage 2 multimodal image editing model The core change is raising the resolution from 256² to 512² / 1024². Loss is still the flow matching loss in-painting out-painting   ]]></content>
+  </entry>
+  
+  <entry>
     <title>Visual Search</title>
     <url>/en/post/system_design/visual_search/</url>
     <categories>
@@ -41,6 +63,20 @@ iteration: one iteration means 100 samples go through one forward pass (computin
 The larger the batch size, the more accurate the gradient estimate, but the slower the convergence.
 Activation function: nonlinearity can only be introduced when an activation function is used.
 back prop umich slides GD vs SGD Batch GD: the batch size is N, i.e. the full dataset. All samples are used together to do forward + backward, updating the parameters once. SGD(traditional): the batch size is 1; if there are 10,000 samples, the parameters are updated 10,000 times. mini-batch SGD: a single small batch is fast …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title>AI Models</title>
+    <url>/en/ai/models/</url>
+    <categories>
+      <category>AI</category>
+    </categories>
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer Input: [B,3,H,W] Output: [B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width is the hidden dimension of each token in the Transformer. # grid=input_resolution/patch_size # after conv1, becomes [B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, a special token dedicated to &#34;collecting information from the whole image&#34; self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution // patch_size) ** 2 + 1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space   ]]></content>
   </entry>
   
   <entry>
@@ -1460,18 +1496,6 @@ Loading A …  ]]></content>
   
   <entry>
     <title></title>
-    <url>/en/ai/models/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[  CLIP paper 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.dot(I_f, W_i), axis=1) #[n, d_e] T_e = l2_normalize(np.dot(T_f, W_t), axis=1) #[n, n] # scaled pairwise cosine similarities [n, n] logits = np.dot(I_e, T_e.T) * np.exp(t) # symmetric loss function labels = np.arange(n) loss_i = cross_entropy_loss(logits, labels, axis=1) # image-to-text loss loss_t = cross_entropy_loss(logits, labels, axis=0) loss = (loss_i + loss_t)/2 architecture image encoder VisionTransformer Input: [B,3,H,W] Output: [B,output_dim] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 class VisionTransformer(nn.Module): def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int): super().__init__() self.input_resolution = input_resolution self.output_dim = output_dim self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False) #width is the hidden dimension of each token in the Transformer. # grid=input_resolution/patch_size # after conv1, becomes [B, width, grid, grid] scale = width ** -0.5 self.class_embedding = nn.Parameter(scale * torch.randn(width)) #class token, a special token dedicated to &#34;collecting information from the whole image&#34; self.positional_embedding = nn.Parameter(scale * torch.randn((input_resolution // patch_size) ** 2 + 1, width)) # [(input_resolution // patch_size) ** 2 + 1, width] self.ln_pre = LayerNorm(width) self.transformer = Transformer(width, layers, heads) self.ln_post = LayerNorm(width) self.proj = nn.Parameter(scale * torch.randn(width, output_dim)) def forward(self, x: torch.Tensor): x = self.conv1(x) # shape = [*, width, grid, grid] x = x.reshape(x.shape[0], x.shape[1], -1) # shape = [*, width, grid ** 2] x = x.permute(0, 2, 1) # shape = [*, grid ** 2, width] x = torch.cat([self.class_embedding.to(x.dtype) + torch.zeros(x.shape[0], 1, x.shape[-1], dtype=x.dtype, device=x.device), x], dim=1) # shape = [*, grid ** 2 + 1, width] x = x + self.positional_embedding.to(x.dtype) x = self.ln_pre(x) x = x.permute(1, 0, 2) # NLD -&gt; LND x = self.transformer(x) x = x.permute(1, 0, 2) # LND -&gt; NLD x = self.ln_post(x[:, 0, :]) if self.proj is not None: x = x @ self.proj return x text encoder embedding space   ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
     <url>/en/post/leetcode/company_wise/</url>
     <categories>
       
@@ -1504,24 +1528,6 @@ Loading A …  ]]></content>
       
     </tags>
     <content type="html"><![CDATA[    ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
-    <url>/en/post/system_design/text_to_image/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[   https://medium.com/pinterest-engineering/building-pinterest-canvas-a-text-to-image-foundation-model-aa34965e84d9 https://arxiv.org/abs/2603.06453?utm_source=chatgpt.com https://github.com/junfanz1/Awesome-AI-Review/blob/main/System%20Design/GenAI%20System%20Design.md#5-text-to-image Pinterest Canvas Text-To-Image Generate images conditioned on both text prompts and reference images.
-1. text-to-image Inference Embed the text prompt to obtain the text embedding Feed the noisy target latent and the text embedding into the DiT together to obtain the clean target latent The clean target latent passes through the VAE decoder to produce the image Training Training data: (text prompt, real image) Only the DiT is trained. Both the text encoder and the VAE use pretrained weights, and are then frozen The real image passes through the VAE encoder to obtain the real latent. During training, x_t is generated from the real latent 2. multimodal image editing tasks Stage 2 starts from the trained Stage 1 text-to-image model.
-The reference image passes through the VAE encoder and becomes image latent tokens, which are then concatenated with the noisy target latent tokens to form image tokens
-The text embedding acts as a condition and learns its own W_q/k/v; the resulting Q/K/V projections are concatenated with the image tokens&rsquo; Q/K/V projections to form the final Q/K/V used for self-attention
-The DiT block outputs the hidden states of all tokens:
-hidden states of the target noisy latent tokens hidden states of the reference image tokens hidden states of the text tokens However, in the end only the hidden states corresponding to the target noisy latent tokens pass through the final output head, and get mapped into the velocity v.
-3. High-Resolution Multimodal Training Stage 3 continues training on top of the Stage 2 multimodal image editing model The core change is raising the resolution from 256² to 512² / 1024². Loss is still the flow matching loss in-painting out-painting   ]]></content>
   </entry>
   
 </search>

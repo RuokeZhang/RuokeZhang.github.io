@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/ai/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -18,7 +18,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/ai/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -33,7 +33,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -48,7 +48,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/system-design/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -78,7 +78,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/system-design/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -93,7 +93,7 @@
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -105,6 +105,36 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://ruokezhang.github.io/zh-cn/tags/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/categories/</loc>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/categories/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/post/system_design/text_to_image/</loc>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/system_design/text_to_image/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/system_design/text_to_image/"
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/system_design/visual_search/</loc>
@@ -120,21 +150,6 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://ruokezhang.github.io/zh-cn/post/system_design/visual_search/"
-                />
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/categories/</loc>
-    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/categories/"
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/</loc>
@@ -171,6 +186,21 @@
     <lastmod>2026-05-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/ai/models/</loc>
+    <lastmod>2026-05-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/ai/models/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/ai/models/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/computer_vision/</loc>
     <lastmod>2026-05-24T00:00:00+00:00</lastmod>
@@ -1537,20 +1567,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/ai/models/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/ai/models/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/ai/models/"
-                />
-  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1608,19 +1624,5 @@
     <loc>https://ruokezhang.github.io/zh-cn/post/message_queue/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/system_design/text_to_image/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/post/system_design/text_to_image/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/post/system_design/text_to_image/"
-                />
   </url>
 </urlset>
