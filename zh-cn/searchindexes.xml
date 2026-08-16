@@ -146,7 +146,7 @@ nn.BatchNorm2d 对同一个通道 C，把整个 batch 里所有图的所有 H×W
     <title>Dynamo</title>
     <url>/zh-cn/post/course_notes/distributed_systems_blog/</url>
     <categories>
-      <category>Course</category>
+      
     </categories>
     <tags>
       
@@ -169,7 +169,7 @@ only small amount of hash values need to be transferred no need to compare the w
     <title>Distributed Systems</title>
     <url>/zh-cn/post/course_notes/distributed_systems/</url>
     <categories>
-      <category>Course</category>
+      
     </categories>
     <tags>
       
@@ -245,7 +245,7 @@ OS 维护了一张Open File Table,里面记录一系列指针，每个指针指�
     <title>Kafka</title>
     <url>/zh-cn/post/kafka/</url>
     <categories>
-      <category>Tools</category>
+      
     </categories>
     <tags>
       
@@ -277,7 +277,7 @@ if you don&amp;rsquo;t set a key, kafka will do …  ]]></content>
     <title>Bit Manipulation</title>
     <url>/zh-cn/post/leetcode/bit_manipulation/</url>
     <categories>
-      <category>Leetcode</category><category>Bit</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -297,7 +297,7 @@ if you don&amp;rsquo;t set a key, kafka will do …  ]]></content>
     <title>Math</title>
     <url>/zh-cn/post/leetcode/math/</url>
     <categories>
-      <category>Leetcode</category><category>Math</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -365,22 +365,6 @@ dummy_input = [&ldquo;Hello&rdquo;,&ldquo;World&rdquo;]
   </entry>
   
   <entry>
-    <title>mlops zoomcamp @DataTalksClub</title>
-    <url>/zh-cn/post/mlops/zoomcamp/</url>
-    <categories>
-      <category>AI</category>
-    </categories>
-    <tags>
-      
-      <tag>mlops</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Orchestration Use Airflow and MLFlow
-Step 1 Docker Env airflow https://airflow.apache.org/docs/docker-stack/index.html get Airflow&rsquo;s official docker compose
-1 curl -LfO &#39;https://airflow.apache.org/docs/apache-airflow/3.0.2/docker-compose.yaml&#39; mlflow other dependencies   ]]></content>
-  </entry>
-  
-  <entry>
     <title>LLM笔记</title>
     <url>/zh-cn/post/mlops/llm/</url>
     <categories>
@@ -393,21 +377,6 @@ Step 1 Docker Env airflow https://airflow.apache.org/docs/docker-stack/index.htm
     </tags>
     <content type="html"><![CDATA[  推理模型的 prompt 保持简洁 不用提供太多示例，示例会降低推理效果 常见prompt markdown 格式（任务指令提示和系统提示） 角色扮演（任务指令提示和系统提示） 奖励机制/情绪激励(任务指令提示) 具体的示例 隐式思维链：让它输出思考过程：“请一步一步地思考”(任务指令提示和系统提示) 要求LLM给出置信度或对结果的信心/概率分数(适用于任务指令提示和系统提示) system prompt 角色设定、提供示例、设计工作流程
   ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Simulation</title>
-    <url>/zh-cn/post/leetcode/simulation/</url>
-    <categories>
-      <category>Leetcode</category>
-    </categories>
-    <tags>
-      
-      <tag>leetcode</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  755. 倒水 799. 香槟塔 用row=[pour]表示初始情况下，第0排的水杯数。然后遍历每一行，把每一行多余的水放到下一行去（每一次循环，创建下一排的容量数组）。
-时间顺序 2534. 通过门的时间 模拟的结束条件为所有人都进入/离开 内层循环里放时间 枚举 2468. 根据限制分割消息   ]]></content>
   </entry>
   
   <entry>
@@ -428,28 +397,10 @@ setup.py setup.py 是一个用于配置 Python 项目分发的脚本。它使用
   </entry>
   
   <entry>
-    <title>数据结构</title>
-    <url>/zh-cn/post/leetcode/data_structure/</url>
-    <categories>
-      <category>Leetcode</category>
-    </categories>
-    <tags>
-      
-      <tag>leetcode</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Trie 440. 字典序的第K小数字 如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。 如何得到某个节点的孩子个数？用同一层下一个 union find 305. 岛屿数量 II 给网格图的每个位置编一个索引即可。每加入一块陆地，就在它的上下左右搜索是否有陆地，如果有，连通它们，并且cc-=1
-1258. 近义词句子 基本思路就是回溯，遍历到某个单词的时候，看它是否有近义词，如果有，就替换。
-关键在于：如何得到一个单词，它所有的近义词？
-union find: 为每一组近义词，选一个root。然后再用一个字典来表示近义词，key为root, value为一个set，装着root的所有近义词。
-线段树 3479. 水果成篮 III video   ]]></content>
-  </entry>
-  
-  <entry>
     <title>网络</title>
     <url>/zh-cn/post/network/</url>
     <categories>
-      <category>NetWork</category>
+      
     </categories>
     <tags>
       
@@ -693,7 +644,7 @@ master_repl_offset标记主节点写到的位置，slave_repl_offse标记从节�
     <title>Binary Search</title>
     <url>/zh-cn/post/leetcode/binarysearch/</url>
     <categories>
-      <category>Leetcode</category><category>BinarySearch</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -742,7 +693,7 @@ LoginInterceptor 检查 UserHolder.get()，发现是 null
     <title>图</title>
     <url>/zh-cn/post/leetcode/dfs_bfs/</url>
     <categories>
-      <category>Leetcode</category><category>graph</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1082,7 +1033,7 @@ ThreadLocal Thread类里面有一个变量threadLocals，可以视为一个 Hash
     <title>Array</title>
     <url>/zh-cn/post/leetcode/array/</url>
     <categories>
-      <category>Leetcode</category><category>Array</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1145,7 +1096,7 @@ Volatile 如果把某个变量声明为volatile，相当于告诉JVM，这个变
     <title>Sorting</title>
     <url>/zh-cn/post/leetcode/sort/</url>
     <categories>
-      <category>Leetcode</category><category>Sorting</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1215,7 +1166,7 @@ del cnt[x] 删除对于x的计数。len(cnt)获取一共给几个元素计数。
     <title>滑动窗口</title>
     <url>/zh-cn/post/leetcode/slidingwindow/</url>
     <categories>
-      <category>Leetcode</category><category>SlidingWindow</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1250,7 +1201,7 @@ LC 3
     <title>前缀和</title>
     <url>/zh-cn/post/leetcode/presum/</url>
     <categories>
-      <category>Leetcode</category><category>preSum</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1295,7 +1246,7 @@ LC 560 输入：nums = [1,2,3], k = 3 输出：2
     <title>动态规划</title>
     <url>/zh-cn/post/leetcode/dp/</url>
     <categories>
-      <category>Leetcode</category><category>dp</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1326,7 +1277,7 @@ dp[i+1][j+1]表示遍历到grid[i][j]时的方案数。初始化时，dp[0][1]=1
     <title>二叉树</title>
     <url>/zh-cn/post/leetcode/binarytree/binarytree/</url>
     <categories>
-      <category>Leetcode</category><category>BinaryTree</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1359,7 +1310,7 @@ dfs可以理解为，当前root的所有叶子，他们从叶子到真正root的
     <title>回溯</title>
     <url>/zh-cn/post/leetcode/backtrack/backtracking/</url>
     <categories>
-      <category>Leetcode</category><category>Backtracking</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1378,7 +1329,7 @@ LC 90 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution: def subset
     <title>Linked List</title>
     <url>/zh-cn/post/leetcode/linkedlist/</url>
     <categories>
-      <category>Leetcode</category><category>LinkedList</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1556,22 +1507,6 @@ Failed Attempt 2: Test And Set 也就是用一个标志来当作锁，错误的�
 超卖问题 假设200qps，200 个请求同时抢优惠券，然而优惠券的总数只有 100 张。 JMeter 测试发现，有 45% 的失败率；数据库查看，发现此时该库存数量为 -9，出现超卖情况。
 乐观锁-版本号法 先从数据库查到一个版本号 A，向数据库更新的时候确认一下自己拿到的版本号A和此时数据库里的版本号B是否一致。 如果一致, set version+1; 不一致，则放弃更新操作。
 乐观锁-CAS 1 2 3 4 5 //扣减库存 boolean success= seckillVoucherService.update().setSql(&amp;#34;stock=stock-1&amp;#34;) .eq(&amp;#34;voucher_id&amp;#34;,voucherId) …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title>JMeter on Mac</title>
-    <url>/zh-cn/post/jmeter/</url>
-    <categories>
-      <category>Tools</category>
-    </categories>
-    <tags>
-      
-      <tag>Web</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[   JMeter使用 安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin
-在此路径下，sh jmeter 命令来启动 Jmeter。
-  ]]></content>
   </entry>
   
   <entry>
@@ -1811,18 +1746,6 @@ M2D-CLAP semantic audio tokens: [B, 310, 768] Use pretrained residual MLP alignm
 F_A^sem / H_A^sem: [B, 310, 1152] Notation:
 F_A^sem means audio semantic context tokens. These tokens are used as memory/KV for the audio semantic decoder. Audio Spatial Encoder 这是唯一一个 encoder 层中可训练的模块
 对10s audio的L/R做resample, 采样率是16kHZ, 所以single sample: [2, 160000] 对L/R的waveform分别作STFT, 得到L/R的magnitude和phase n_fft = 1024，hop_size = 512，代表对每一段取1024个采样点，步长为512. freq_bins = n_fft / 2 + 1，代表spectrogram的纵轴一共有513个bin T_stft = floor(160000 / 512) + 1 = 313, 代表横轴一共被分成313个时间块 这里得到[B, 4, 513, …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
-    <url>/zh-cn/post/interview/bind/possible_story/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[   semantic decoder里面cross attention的query数量是如何确定的   ]]></content>
   </entry>
   
   <entry>

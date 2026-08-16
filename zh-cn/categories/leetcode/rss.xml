@@ -30,20 +30,6 @@
       <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://leetcode.cn/discuss/post/3144832/fen-xiang-gun-ti-dan-zi-fu-chuan-kmpzhan-ugt4/&#34; title=&#34;题单&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    题单&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;kmp&#34;&gt;KMP&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#kmp&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://www.zhihu.com/question/21923021/answer/37475572&#34; title=&#34;https://www.zhihu.com/question/21923021/answer/37475572&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    https://www.zhihu.com/question/21923021/answer/37475572&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;28-找出字符串中第一个匹配项的下标&#34;&gt;28. 找出字符串中第一个匹配项的下标&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#28-%e6%89%be%e5%87%ba%e5%ad%97%e7%ac%a6%e4%b8%b2%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8c%b9%e9%85%8d%e9%a1%b9%e7%9a%84%e4%b8%8b%e6%a0%87&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;模式串：abababzababab&lt;/p&gt;&#xA;&lt;p&gt;第一步：一边遍历模式串，一边构造next数组。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;next[i]表示字符串s[0:i+1]的前缀和后缀&lt;strong&gt;最大的&lt;/strong&gt;公共长度&lt;/li&gt;&#xA;&lt;li&gt;初始化j=0，i从1遍历到n-1。j的位置表示，此时s[:j]是公共前后缀&lt;/li&gt;&#xA;&lt;li&gt;遍历时，如果&lt;strong&gt;此时有公共前后缀&lt;/strong&gt;，不断比较s[i]和s[j]，一旦发现他们不同，则&lt;strong&gt;在循环中回退j，直到s[:j]成为公共前后缀&lt;/strong&gt;。回退到此时的&lt;strong&gt;次长公共前后缀&lt;/strong&gt;，将j移动到next[j-1]即可&lt;/li&gt;&#xA;&lt;li&gt;再次比较s[i]和s[j]，如果相同，则移动j，并且为next[i]赋值&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;第二步：比较两个字符串&lt;br&gt;&#xA;abeababeabf&lt;br&gt;&#xA;abeabf&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Simulation</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</link>
-      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/leetcode/simulation/</guid>
-      <description>&lt;h4 id=&#34;755-倒水&#34;&gt;755. 倒水&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#755-%e5%80%92%e6%b0%b4&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;h4 id=&#34;799-香槟塔&#34;&gt;799. 香槟塔&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#799-%e9%a6%99%e6%a7%9f%e5%a1%94&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;用row=[pour]表示初始情况下，第0排的水杯数。然后遍历每一行，把每一行多余的水放到下一行去（每一次循环，创建下一排的容量数组）。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>数据结构</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/leetcode/data_structure/</link>
-      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/leetcode/data_structure/</guid>
-      <description>&lt;h2 id=&#34;trie&#34;&gt;Trie&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#trie&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h4 id=&#34;440-字典序的第k小数字&#34;&gt;440. 字典序的第K小数字&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#440-%e5%ad%97%e5%85%b8%e5%ba%8f%e7%9a%84%e7%ac%ack%e5%b0%8f%e6%95%b0%e5%ad%97&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;如何得到字典序从小到大的序列？对数字建立一棵十叉树，然后对其先序遍历。&lt;/li&gt;&#xA;&lt;li&gt;如何得到某个节点的孩子个数？用同一层下一个&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;union-find&#34;&gt;union find&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#union-find&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h4 id=&#34;305-岛屿数量-ii&#34;&gt;305. 岛屿数量 II&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#305-%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f-ii&#34;&gt;&lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;给网格图的每个位置编一个索引即可。每加入一块陆地，就在它的上下左右搜索是否有陆地，如果有，连通它们，并且cc-=1&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>贪心</title>
       <link>https://ruokezhang.github.io/zh-cn/post/leetcode/greedy/</link>
       <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>

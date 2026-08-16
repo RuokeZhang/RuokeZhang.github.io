@@ -23,38 +23,10 @@
       <description></description>
     </item>
     <item>
-      <title>Course</title>
-      <link>https://ruokezhang.github.io/en/categories/course/</link>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/course/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bit</title>
-      <link>https://ruokezhang.github.io/en/categories/bit/</link>
-      <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/bit/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Leetcode</title>
       <link>https://ruokezhang.github.io/en/categories/leetcode/</link>
       <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/en/categories/leetcode/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Math</title>
-      <link>https://ruokezhang.github.io/en/categories/math/</link>
-      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/math/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>NetWork</title>
-      <link>https://ruokezhang.github.io/en/categories/network/</link>
-      <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/network/</guid>
       <description></description>
     </item>
     <item>
@@ -79,31 +51,10 @@
       <description></description>
     </item>
     <item>
-      <title>BinarySearch</title>
-      <link>https://ruokezhang.github.io/en/categories/binarysearch/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/binarysearch/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>BlackHorse Rating</title>
       <link>https://ruokezhang.github.io/en/categories/blackhorse-rating/</link>
       <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/en/categories/blackhorse-rating/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Graph</title>
-      <link>https://ruokezhang.github.io/en/categories/graph/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/graph/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ML-Related</title>
-      <link>https://ruokezhang.github.io/en/categories/ml-related/</link>
-      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/ml-related/</guid>
       <description></description>
     </item>
     <item>
@@ -125,55 +76,6 @@
       <link>https://ruokezhang.github.io/en/categories/juc/</link>
       <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/en/categories/juc/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Array</title>
-      <link>https://ruokezhang.github.io/en/categories/array/</link>
-      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/array/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sorting</title>
-      <link>https://ruokezhang.github.io/en/categories/sorting/</link>
-      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/sorting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PreSum</title>
-      <link>https://ruokezhang.github.io/en/categories/presum/</link>
-      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/presum/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SlidingWindow</title>
-      <link>https://ruokezhang.github.io/en/categories/slidingwindow/</link>
-      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/slidingwindow/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dp</title>
-      <link>https://ruokezhang.github.io/en/categories/dp/</link>
-      <pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/dp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LinkedList</title>
-      <link>https://ruokezhang.github.io/en/categories/linkedlist/</link>
-      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/linkedlist/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>https://ruokezhang.github.io/en/categories/tools/</link>
-      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/en/categories/tools/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,22 +6,8 @@
     <description>Recent content in Tools on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/categories/tools/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Kafka</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/kafka/</link>
-      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/kafka/</guid>
-      <description>&lt;h2 id=&#34;architecture&#34;&gt;architecture&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#architecture&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;同一个topic的partition不会跨cluster&lt;/li&gt;&#xA;&lt;li&gt;一个broker里面可能含有不同topic的partition&lt;/li&gt;&#xA;&lt;li&gt;partition在存储上可以被看作为一个可追加的日志文件，每条消息加进去的时候带有一个offset&lt;/li&gt;&#xA;&lt;li&gt;fault-tolerant: 多个节点故障时，集群仍能持续提供服务且数据不丢失。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;同一个partition会有多个replica,每个replica要么是leader（只有一个）, 要么是follower&lt;/li&gt;&#xA;&lt;li&gt;同一个broker里面不会有同一个partition的多个replica&lt;/li&gt;&#xA;&lt;li&gt;同一个broker里面会有同一个topic的不同的partition&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;一群broker中有一个是controller,它不负责消息的传递，只负责选举partition的新leader&lt;/li&gt;&#xA;&lt;li&gt;Zookeeper: 管理broker的状态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;partiton&#34;&gt;partiton&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#partiton&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;高并发：多个producer可以向多个partition同时写入&lt;/li&gt;&#xA;&lt;li&gt;Kafka 只保证在单个 Partition 内消息的顺序性&lt;/li&gt;&#xA;&lt;li&gt;高可用：多个replica&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;leader&#34;&gt;leader&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#leader&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;负责读写&lt;/li&gt;&#xA;&lt;li&gt;Leader 负责管理 In-Sync Replicas（同步副本集）。它要确保 Follower 能跟上自己的进度，将落后的 Follower 踢出 ISR。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ISR：如果一个 Follower 在replica.lag.time.max.ms时间内没有发送pull request,它就会被踢出ISR&lt;/li&gt;&#xA;&lt;li&gt;ISR存放在zookeeper中，controller broker会查看ISR中的信息，以方便知道每个partition的follwer是否跟上了它们的leader&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;follower&#34;&gt;follower&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#follower&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;定期向leader发送&lt;strong&gt;pull&lt;/strong&gt;请求&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>JMeter on Mac</title>
-      <link>https://ruokezhang.github.io/zh-cn/post/jmeter/</link>
-      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/post/jmeter/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1838392&#34; title=&#34;JMeter使用&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    JMeter使用&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&#xA;安装路径：/Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Nginx</title>
       <link>https://ruokezhang.github.io/zh-cn/post/nginx/</link>

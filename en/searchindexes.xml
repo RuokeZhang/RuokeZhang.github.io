@@ -139,7 +139,7 @@ nn.Embedding 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # 1. Word vocabulary: word �
     <title>Distributed Systems</title>
     <url>/en/post/course_notes/distributed_systems/</url>
     <categories>
-      <category>Course</category>
+      
     </categories>
     <tags>
       
@@ -171,7 +171,7 @@ Contact Email: jaade1107@gmail.com GitHub: RuokeZhang Instagram: jaade023   ]]><
     <title>Bit Manipulation</title>
     <url>/en/post/leetcode/bit_manipulation/</url>
     <categories>
-      <category>Leetcode</category><category>Bit</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -191,7 +191,7 @@ Enumerate k from small to large, the first satisfying equation is the answer.
     <title>Math</title>
     <url>/en/post/leetcode/math/</url>
     <categories>
-      <category>Leetcode</category><category>Math</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -222,38 +222,10 @@ i traverses string, j points to pattern. In each loop, j position indicates need
   </entry>
   
   <entry>
-    <title>Simulation</title>
-    <url>/en/post/leetcode/simulation/</url>
-    <categories>
-      <category>Leetcode</category>
-    </categories>
-    <tags>
-      
-      <tag>leetcode</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  755. Pour Water Time Order 2534. Time to Pass a Gate The simulation ends when everyone has entered/exited. Time is placed in the inner loop.   ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Data Structure</title>
-    <url>/en/post/leetcode/data_structure/</url>
-    <categories>
-      <category>Leetcode</category>
-    </categories>
-    <tags>
-      
-      <tag>leetcode</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Trie 440. K-th Smallest in Lexicographical Order How to get lexicographical order from smallest to largest? Build a deca-tree for numbers and then traverse it in pre-order. How to get the number of children of a node? Use the next node on the same level.   ]]></content>
-  </entry>
-  
-  <entry>
     <title>Network</title>
     <url>/en/post/network/</url>
     <categories>
-      <category>NetWork</category>
+      
     </categories>
     <tags>
       
@@ -319,33 +291,6 @@ Master opens a thread to handle binlog distribution, called Binlog Dump thread.
 Slave has two key threads: one is I/O thread, responsible for establishing connection with master, requesting master binlog, then writing to its own relay log; the other is SQL thread, reading content from relay log written by I/O thread, executing SQL statements on slave to update data.
 Master Parameters log-bin enables binary logging, binlog-format sets log format
 Slave Parameters Master_Host is the master&rsquo;s IP Master_User is the user Master_Port is the port Master_Log_File is the master binlog filename   ]]></content>
-  </entry>
-  
-  <entry>
-    <title>MySQL Logs</title>
-    <url>/en/post/mysql/log/</url>
-    <categories>
-      <category>MySQL</category>
-    </categories>
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>Interview</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  All DML operations (INSERT/UPDATE/DELETE) are first performed in the Buffer Pool.
-Redo Log Video (Chinese) Provides transaction durability. Redo log is flushed first; dirty pages are flushed later. Physical Storage Characteristics File structure
-Fixed-size files (e.g., ib_logfile0, ib_logfile1) Circular write (ring buffer) Physical appends are always to the end of file Write pattern
-1 2 // Pseudocode for physical writes write(log_file, log_record, log_size); // always append Write-Ahead Logging (WAL) Update data pages in the Buffer Pool; the page becomes a dirty page. Write the physical changes (e.g., &ldquo;page X, offset Y, write Z&rdquo;) sequentially to the redo log buffer. On COMMIT, behavior depends on innodb_flush_log_at_trx_commit (commonly 1 by default): Value Behavior Durability 1 (default) 1) write to OS page cache; 2) fsync() immediately Full durability 0 Batch write+fsync every 1s May lose up to 1s of data 2 Write to OS page cache but delay fsync Safe unless OS crashes Dirty page flushing is asynchronous; background threads flush Buffer Pool pages to disk. Undo Log Enables transaction rollback to ensure atomicity Works with ReadView to implement MVCC, maintaining a version chain for each record Binlog Basics Binlog (Binary Log) is the MySQL Server-layer binary log that records all data changes as logical events; entries are written when a transaction commits.
-Key Properties What it records:
-All DDL (CREATE/ALTER/&hellip;) and DML (INSERT/UPDATE/DELETE) Stored as events with metadata like execution time and error codes Binlog vs Redo Log
-Binlog Redo Log Layer Server layer InnoDB engine layer Type Logical (SQL/events) Physical (page changes) Purpose Replication/point-in-time restore Crash recovery Formats:
-STATEMENT: records original SQL (may cause replica divergence due to environment differences) ROW: records row-level changes (recommended default) MIXED: hybrid mode Replication server-id uniquely identifies a MySQL instance; both primary and replicas must have one and they must be distinct, to differentiate nodes.
-The primary opens a thread to distribute binlog events, called the Binlog Dump thread.
-On the replica there are two key threads: an I/O thread that connects to the primary, requests binlog events, and writes them to the relay log; and an SQL thread that reads the relay log and replays it to update data on the replica.
-Primary parameters log-bin enables the binary log, and binlog-format sets the format.
-Replica parameters Master_Host: primary’s IP Master_User: replication user Master_Port: port Master_Log_File: current binlog file name on the primary   ]]></content>
   </entry>
   
   <entry>
@@ -439,71 +384,19 @@ Intention Locks Intention locks are table-level locks, and their main purpose is
 Intention locks don&rsquo;t conflict with row-level locks, and intention locks don&rsquo;t conflict with each other.
 Lock Type Table S Lock (Shared) Table X Lock (Exclusive) Table IS Lock (Intention Shared) Table IX Lock (Intention Exclusive) Table S Lock (Shared) Compatible Conflict Compatible Compatible Table X Lock (Exclusive) Conflict Conflict Conflict Conflict Table IS Lock (Intention Shared) Compatible Conflict Compatible Compatible Table IX Lock (Intention Exclusive) Conflict Conflict Compatible Compatible Intention Shared Lock (IS) 1 SELECT... LOCK IN SHARE MODE When we read a row using this operation, it adds a row-level read lock to that row, and the database also adds a table-level intention shared lock to the table.
 When another thread tries to add a write lock to a specific row, it checks the index to see if the row has a read lock. If not, the write lock can be acquired; if the row already has a read lock, the write lock cannot be added. When another thread tries to add a write lock to the entire table, it discovers the table already has an intention shared lock, so the write operation cannot be completed. 🌟 When another thread tries to add a read lock to a specific row/entire table, there&rsquo;s no conflict. Intention Exclusive Lock (IX) 1 select ... for update; This operation adds an intention exclusive lock to the table and adds a write lock to the specific row.
-  ]]></content>
-  </entry>
-  
-  <entry>
-    <title>MySQL Locks</title>
-    <url>/en/post/mysql/lock/</url>
-    <categories>
-      <category>MySQL</category>
-    </categories>
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>Interview</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Global Locks Typically used for full backups. Blocks writes and allows only reads, so usually run during off-peak.
-1 flush tables with read lock Table-Level Locks Table Locks Shared read lock: multiple threads can read the table concurrently, but cannot write. MyISAM uses a shared read lock for reads; InnoDB prefers row locks and MVCC for reads. Exclusive write lock: only one thread can acquire it; others cannot read or write. 1 lock tables t_student read; DDL such as ALTER/DROP/TRUNCATE triggers table locks.
-Intention Locks Intention locks are table-level locks to avoid full-table scans when checking for conflicts. InnoDB does NOT set intention locks for MVCC-consistent reads of a single record.
-Intention locks do not conflict with row locks, nor with each other.
-Lock Type Table S (Shared) Table X (Exclusive) Table IS (Intention S) Table IX (Intention X) Table S Compatible Conflict Compatible Compatible Table X Conflict Conflict Conflict Conflict Table IS Compatible Conflict Compatible Compatible Table IX Conflict Conflict Compatible Compatible IS (Intention Shared) 1 SELECT ... LOCK IN SHARE MODE When reading a row in this mode, a row-level shared lock is set, and the table gets an IS lock.
-Another thread attempting a row-level X (write) lock checks via the index; if the row isn’t locked, it can lock; if it is, it must wait. Another thread attempting a table-level X lock sees the table already has an IS lock and cannot proceed. Another thread applying S (row/table) locks doesn’t conflict. IX (Intention Exclusive) 1 select ... for update; This sets an IX on the table and a row-level X lock on the target row(s).
-Another thread attempting a row-level X lock checks the index; if the row isn’t X-locked, it can lock; otherwise it waits. Another thread attempting a table-level X lock sees IX and cannot proceed. Another thread attempting a row-level S lock conflicts if it’s the same row; otherwise OK. Another thread attempting a table-level S lock is allowed. Row Locks Row locks are per-record.
-Record Lock Row-level S/X locks.
-Gap Lock Locks the gaps between index records (ranges can be open/closed on either side). Only in RR isolation for InnoDB, used to prevent phantom inserts.
-May lead to deadlocks.
-Next-Key Lock A combination of record+gap locks; locks a half-open interval (left-open, right-closed). Prevents phantoms while also locking specific rows.
-Interview Tips UPDATE without WHERE: InnoDB acquires table IX plus X on all rows to ensure atomicity/consistency; MyISAM takes a table-level X lock that blocks all reads/writes. UPDATE with WHERE: InnoDB locks matching rows with X and adds gap locks in RR to prevent phantoms. If the WHERE uses an index, it locks via the index; without an index, it may escalate to a table lock. MyISAM still takes a table-level X lock regardless.   ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Transaction</title>
-    <url>/en/post/mysql/transactionmysql/</url>
-    <categories>
-      <category>MySQL</category>
-    </categories>
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>Interview</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Reference: Xiaolin coding
-ACID Properties Atomicity: implemented via undo log. Consistency: ensured by the other three properties. Before and after execution, the database transitions between consistent states. Isolation: MVCC/locks. One transaction’s execution should not affect others. Durability: redo log. Once committed, changes are permanent even after crash. Starting a Transaction begin/start transaction marks the beginning. The transaction actually starts only when the first SELECT after this statement executes. start transaction with consistent snapshot: immediately starts the transaction and takes a snapshot. Isolation Levels Possible anomalies: dirty read, non-repeatable read, phantom read.
-Dirty read: A reads B’s uncommitted data; if B rolls back, A read wrong data.
-Non-repeatable read: within the same transaction, reading the same row twice yields different values due to another committed update.
-Phantom read: within the same transaction, the count of rows matching a predicate changes between reads.
-Read Uncommitted: highest performance, weakest consistency; rarely used in production. Directly reads latest data without locks or MVCC.
-Read Committed: uses row locks/MVCC.
-Repeatable Read: InnoDB’s default.
-Serializable: reads take shared locks; writes take exclusive locks.
-MVCC Two hidden columns maintained in undo log: trx_id and roll_pointer.
-Read View fields:
-m_ids: list of active transaction IDs at snapshot creation. min_trx_id: smallest active transaction ID. max_trx_id: largest active transaction ID + 1. creator_trx_id: the transaction that created the Read View. Visibility rules when selecting a row version chain:
-If version.trx_id == creator_trx_id, visible. Else if version.trx_id &lt; min_trx_id, visible (committed before snapshot). Else if version.trx_id &gt;= max_trx_id, invisible (started after snapshot); check next version. Else (between min and max): visible only if version.trx_id not in m_ids; otherwise check next version. Snapshot timing:
-Read Committed: a new snapshot is created for each read. Repeatable Read: snapshot is created when the transaction starts. Handling Phantoms At Repeatable Read, InnoDB largely prevents phantoms:
-For snapshot reads, data inserted after snapshot creation is not visible. For locking reads, InnoDB uses next-key/gap locks to prevent phantom inserts. Transaction Propagation (Spring) REQUIRED: Method B joins A’s transaction if present; otherwise creates its own. REQUIRES_NEW: Always creates a new transaction regardless of caller.   ]]></content>
+Another thread attempting a row-level exclusive lock checks the index. It can lock a different row, but must wait if the target row is already exclusively locked. Another thread attempting a table-level exclusive lock conflicts with the intention exclusive lock and must wait. Another thread attempting a row-level shared lock conflicts only when it targets the same row. Another thread attempting a table-level shared lock is allowed. Row Locks Row locks apply to indexed records.
+Record Lock A shared or exclusive lock on a specific index record.
+Gap Lock Locks a gap between index records. InnoDB uses gap locks under Repeatable Read to prevent inserts that would create phantom rows.
+Gap locks can increase the risk of deadlocks.
+Next-Key Lock Combines a record lock with a gap lock, usually covering a left-open, right-closed interval. It prevents phantom inserts while locking the matching record.
+Interview Tips UPDATE without WHERE: InnoDB takes a table intention exclusive lock plus exclusive locks on all affected rows. MyISAM takes a table-level exclusive lock. UPDATE with WHERE: InnoDB locks matching rows and may add gap locks under Repeatable Read. Without a usable index, it may scan and lock many rows.   ]]></content>
   </entry>
   
   <entry>
     <title>Binary Search</title>
     <url>/en/post/leetcode/binarysearch/</url>
     <categories>
-      <category>Leetcode</category><category>BinarySearch</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -617,7 +510,7 @@ throw and throws throw actively throws an exception.
     <title>Graph</title>
     <url>/en/post/leetcode/dfs_bfs/</url>
     <categories>
-      <category>Leetcode</category><category>graph</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -698,7 +591,7 @@ ConcurrentHashMap For single key-value pairs, CAS is generally used. When dealin
     <title>Distributed Training</title>
     <url>/en/ai/parallelism/</url>
     <categories>
-      <category>ML-related</category>
+      <category>AI</category>
     </categories>
     <tags>
       
@@ -855,6 +748,7 @@ In the Read Committed isolation level, a snapshot is generated every time the tr
 In the transaction chain, read their transaction IDs from top to bottom:
 Compare it with creator_trx_id. If they are equal, it means the current transaction is the creator, and it can access its own version. If not, proceed to the next step. Compare it with min_trx_id. If this transaction ID is less than the smallest active transaction ID, it means it was committed before this snapshot was created, so this version of the transaction can be selected. If not, proceed to the next step. Compare it with max_trx_id. If it is greater, it means this transaction was started after the snapshot was created, so it cannot be selected. Skip to the next transaction. If not, proceed to the next step. If it is between min_trx_id and max_trx_id and is not in the list of active transactions, it can be selected. If not, skip to the next transaction. Solving Phantom Reads InnoDB&rsquo;s Repeatable Read isolation level largely solves the problem of phantom reads.
 For snapshot reads, the snapshot is generated when the transaction starts. Therefore, if new data is added after the transaction has started, it will not be visible in queries.
+For locking reads, InnoDB uses next-key and gap locks to prevent matching rows from being inserted into the locked range.
 Transaction Propagation If method A starts a transaction, and method A calls method B, the call to method B also requires a transaction.
 PROPAGATION_REQUIRED: Method B can join method A&rsquo;s transaction. If method A has not started a transaction, method B creates its own.
 PROPAGATION_REQUIRES_NEW: A new transaction is created regardless of whether an existing transaction is present.
@@ -880,51 +774,6 @@ B+ trees only store data in leaf nodes, with data in each leaf node sorted by pr
 Both indexes and data are stored on hard disk, so accessing each node is one disk I/O operation. B+ trees storing tens of millions of data only need 3-4 levels, which means 3-4 disk I/O operations.
 Advantages of B+ trees over B trees:
 Non-leaf nodes of B+ trees can store more key values and …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Indexes</title>
-    <url>/en/post/mysql/sqlindex/</url>
-    <categories>
-      <category>MySQL</category>
-    </categories>
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>Interview</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Clustered vs Secondary Indexes Clustered Index In InnoDB, every table has a clustered index that defines the physical order of rows on disk.
-If there’s a primary key, it is the clustered index. If there’s no primary key, InnoDB chooses a unique, non-null index as the clustered index. If neither exists, InnoDB creates an implicit auto-increment column as the clustered index. B+ Tree By default, InnoDB stores both clustered and secondary indexes as B+ Trees.
-Only leaf nodes hold data; leaves are sorted by primary key and adjacent leaves are linked by a doubly linked list. Internal nodes hold keys and child pointers.
-Indexes and data reside on disk; accessing any node is a disk I/O. Even at tens of millions of rows, a B+ Tree typically has 3–4 levels, i.e., 3–4 I/Os per point lookup.
-Advantages over B-Trees:
-Internal nodes can store more keys/pointers, reducing height and I/O. Range queries only need to traverse leaf chains, not the entire tree. Efficient sequential access. Advantages over binary trees: A node can have up to m children (hundreds to thousands). Time complexity is O(log_m N).
-Secondary Index Clustered index leaf nodes store actual rows; secondary index leaves store primary keys.
-If you query by a secondary index and need more than the primary key, you need a back-to-table lookup (two B+ Tree traversals). If only the primary key is needed, no back lookup is required.
-Primary, Unique, and Prefix Indexes 1 CREATE UNIQUE INDEX xxx ON xxxtable(col1, col2) A table can have multiple unique indexes, each on UNIQUE columns.
-Normal index: no PRIMARY or UNIQUE requirement.
-Prefix index: build on the first N characters of a string column (char, varchar, binary, varbinary) to reduce index size.
-binary stores byte strings; can store images, videos, etc.
-Single-Column vs Composite Indexes Composite (multi-column) indexes are created on multiple columns. Put high-cardinality columns first.
-Leftmost Prefix Rule For a composite index (col1, col2, col3), the B+ Tree is sorted by col1 first, then col2, then col3.
-Usable conditions:
-col1 = ? col2 = ? AND col1 = ? (optimizer can reorder) col1 = ? AND col2 = ? AND col3 = ? Not usable:
-col2 = ? (doesn’t start from col1) col3 = ? (doesn’t start from col1) Can a composite index support range queries? Yes, but columns after a range condition cannot be used. For (col1, col2, col3) and WHERE col1 = 1 AND col2 &gt; 2 AND col3 = 3, col3 cannot use the index because the order on col3 is undefined within col2 &gt; 2.
-How to tell if a composite index is used?
-1 EXPLAIN SELECT * FROM users WHERE age &gt; 25 and salary=50000; If key_len shows 4 (one int), salary likely isn’t used by the index.
-What about WHERE age &gt;= 25 and salary = 50000? Both can be used. For age = 25, salary remains ordered, so the index can still narrow the scan.
-What about WHERE age BETWEEN 20 AND 30 and salary=50000? BETWEEN means 20 &lt;= age &lt;= 30, so both columns can participate.
-What about WHERE name like &lsquo;j%&rsquo; and salary=50000 for index (name, salary)? Both can be used. name like &lsquo;j%&rsquo; selects a prefix range; within name = &lsquo;j&rsquo;, salary remains ordered.
-Index Condition Pushdown (ICP) 1 2 SELECT * FROM employees WHERE department_id = 10 AND hire_date BETWEEN &#39;2024-01-01&#39; AND &#39;2024-12-31&#39;; Without ICP: scan all department_id=10 entries via the index, then back to table for full rows and filter hire_date.
-With ICP: during index scan, apply the hire_date BETWEEN condition so mismatching rows are rejected before back-to-table, reducing I/O and memory.
-Index Selectivity For composite indexes, put the most selective (highest cardinality) column first. Selectivity = #distinct / total rows.
-When Indexes Fail Left/leading/bi-directional wildcard LIKE patterns. Only right-anchored patterns can leverage ordered lookups. Functions on indexed columns: e.g., where length(name)=6. You can index the expression result instead (functional index in newer MySQL/MariaDB). Expressions on indexed columns: e.g., where age+1=30 won’t use index; where age=30-1 will. Implicit type conversion. MySQL converts strings to numbers. If the column is INT and the predicate literal is VARCHAR, MySQL casts the literal (index still usable). If the column is VARCHAR and the predicate is INT, MySQL effectively casts the column (index not used). Composite index not following the leftmost rule. OR conditions where only one side is indexed. Slow Queries Symptoms: slow page loads or API latency &gt; 1s.
-Use APM (e.g., SkyWalking) to find slow endpoints and SQLs. Use MySQL’s slow query log. 1 2 slow_query_log=1 long_query_time=2 EXPLAIN Clues select_type: SIMPLE: simple SELECT without subqueries/UNION type: system: table has only one row const: using primary/unique index to fetch a single row eq_ref: join using primary/unique key ref: equality on a non-unique index extra: using index: covering index using index condition: ICP (engine-level filtering) using where: needs back-to-table using temporary: extra temporary table (e.g., GROUP BY/ORDER BY on non-indexed cols) using filesort: extra sorting (ORDER BY not covered by same index as WHERE, or sorting on non-indexed col, or non-driving table) Connections Too Low Increase server max_connections (default 100) and application pool size.
-Buffer Pool Too Small Check Buffer Pool hit ratio; typically above 99%.
-Tablespaces .frm stores table schema; .ibd stores table data. Page Splits Non-auto-increment primary keys can cause page splits on random inserts.
-Sharding   ]]></content>
   </entry>
   
   <entry>
@@ -979,7 +828,7 @@ Median Number of elements smaller than it = number of elements larger than it OR
     <title>Array</title>
     <url>/en/post/leetcode/array/</url>
     <categories>
-      <category>Leetcode</category><category>Array</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1033,7 +882,7 @@ Abstraction JMM abstracts the concepts of local memory and main memory. All … 
     <title>Sorting</title>
     <url>/en/post/leetcode/sort/</url>
     <categories>
-      <category>Leetcode</category><category>Sorting</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1128,7 +977,7 @@ Deadlock Deadlock conditions: mutual exclusion, hold and wait, no preemption, ci
     <title>Prefix Sum</title>
     <url>/en/post/leetcode/presum/</url>
     <categories>
-      <category>Leetcode</category><category>preSum</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1161,7 +1010,7 @@ Prefix Sum of Powers 2438. Range Product Queries of Powers Two-dimensional Prefi
     <title>Sliding Window</title>
     <url>/en/post/leetcode/slidingwindow/</url>
     <categories>
-      <category>Leetcode</category><category>SlidingWindow</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1243,7 +1092,7 @@ Interview Prompts G1 phases (initial mark with minor GC, concurrent mark, remark
     <title>Dynamic Programming</title>
     <url>/en/post/leetcode/dp/</url>
     <categories>
-      <category>Leetcode</category><category>dp</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1263,7 +1112,7 @@ Beginner DP House Robber LC 198 Space optimization.
     <title>Linked List</title>
     <url>/en/post/leetcode/linkedlist/</url>
     <categories>
-      <category>Leetcode</category><category>LinkedList</category>
+      <category>Leetcode</category>
     </categories>
     <tags>
       
@@ -1461,22 +1310,6 @@ Lua Script for Validation 1 2 -- Script logic for stock check and user validatio
   </entry>
   
   <entry>
-    <title>JMeter on Mac</title>
-    <url>/en/post/jmeter/</url>
-    <categories>
-      <category>Tools</category>
-    </categories>
-    <tags>
-      
-      <tag>Web</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[   JMeter Usage Installation path: /Users/ruoke/Documents/devTools/apache-jmeter-5.6.3/bin
-In this path, run the sh jmeter command to start JMeter.
-  ]]></content>
-  </entry>
-  
-  <entry>
     <title>JVM Basic</title>
     <url>/en/post/java/jvm/basic/</url>
     <categories>
@@ -1504,30 +1337,6 @@ Loading A …  ]]></content>
       
     </tags>
     <content type="html"><![CDATA[  Heap Reorganize String (Roblox) Task Scheduler (Roblox, Snowflake) Top K Frequent Words (Adobe) Top K Frequent Elements (Adobe, Bloomberg) Maximum Number of Events That Can Be Attended (Snowflake) Find K Pairs with Smallest Sums (Linkedin, Google) Last Stone Weight (Nvidia) Find Median from Data Stream (Snowflake) Merge k Sorted Lists (Bloomberg, Snowflake, Nvidia, Microsoft) Stock Price Fluctuation (Google) Meeting Rooms III Prefix Sum Subarray Product Less Than K (Airbnb) Max Consecutive Ones III (Microsoft, Expedia) Subarrays with K Different Integers (Expedia) Range Sum Query 2D - Immutable (Snowflake) Subarray Sum Equals K (Bloomberg) Product of Array Except Self (Bloomberg, Microsoft) Meeting Rooms II (Microsoft) Trie Add and Search Word - Data structure design (Docusign, LinkedIn, Snowflake, Rubrik, Tiktok) Longest Common Prefix (Bloomberg) Find the Length of the Longest Common Prefix (Databricks) Implement Trie (Prefix Tree) (Snowflake) Design In-Memory File System (Snowflake) Remove Sub-Folders (Snowflake, Google) Search Suggestions System (Docusign, Amazon) Word Search II (Microsoft, Google, Airbnb) Stack Basic Calculator II (Tesla) Max Stack (Linkedin) Nested List Weight Sum II (Linkedin) Valid Parentheses (Nvidia, Expedia) Evaluate Reverse Polish Notation (Microsoft) Basic Calculator (Microsoft) Valid Parentheses (Microsoft) Longest Valid Parentheses (Tiktok) Maximal Rectangle (Tiktok) Largest Rectangle in Histogram (Microsoft) Simplify Path (Snowflake, Tiktok) Remove Duplicate Letters (Expedia) Number of Visible People in a Queue (Expedia) Minimum Number of Swaps to Make the String Balanced (Expedia) Sum of Subarray Ranges (Tiktok) Queue Design Circular Queue (Tesla, Cloudflare) Design Hit Counter (Snowflake, Cloudflare, Databricks) Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit (Google) Common Mistakes Design Circular Queue (Tesla, Cloudflare) Hash First Missing Positive (Tesla) Missing Number (Meta, Microsoft, Bloomberg) Sort Kth Largest Element in an Array (Microsoft) Sliding Window Max Consecutive Ones III (SAP, Salesforce, LinkedIn, Meta, Google) Longest Repeating Character Replacement (Adobe, Amazon, Bytedance, Bloomberg) Maximum Number of Occurrences of a Substring (Hubspot, Salesforce) Longest Substring with At Most Two Distinct Characters (Ebay, Google, Tiktok) Longest Substring with At Most K Distinct Characters (Microsoft) Subarray Product Less Than K (Paypal, Oracle, Salesforce) Smallest Range Covering Elements from K Lists (Lyft, Databricks) Number of Subarrays of Size K and Average Greater than or Equal to Threshold (LinkedIn)   ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
-    <url>/en/post/leetcode/stackqueue/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[    ]]></content>
-  </entry>
-  
-  <entry>
-    <title></title>
-    <url>/en/post/mysql/mysql_interview/</url>
-    <categories>
-      
-    </categories>
-    <tags>
-      
-    </tags>
-    <content type="html"><![CDATA[    ]]></content>
   </entry>
   
 </search>
