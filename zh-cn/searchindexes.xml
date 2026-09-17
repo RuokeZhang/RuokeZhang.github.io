@@ -124,25 +124,6 @@ classification 每一次分裂的时候，从所有 feature 和所有可能 thre
   </entry>
   
   <entry>
-    <title>Pytorch</title>
-    <url>/zh-cn/ai/pytorch/</url>
-    <categories>
-      <category>AI</category>
-    </categories>
-    <tags>
-      
-      <tag>AI</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  Module 所有模型的父类，所有网络都继承它
-init(self) forward(self, x) conv b站 1 output=F.conv2d(input, kernel, stride=1) #进行卷积计算，得到feature matrix Conv2d
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 import torch import torch.nn as nn class CNN(nn.Module): def __init__(self): super().__init__() self.conv1 = nn.Conv2d( in_channels=3, out_channels=6, kernel_size=3, stride=1, padding=0 ) self.maxpool1 = nn.MaxPool2d( kernel_size=3, # 池化窗口大小：3×3 ceil_mode=True # 向上取整模式，保留不完整的边缘窗口 # stride默认等于kernel_size=3，也可以显式写stride=3，效果完全一致 ) def forward(self, x): # 前向传播：**先卷积提取特征，再池化下采样**（CNN标准顺序） # x: [b, 3, h, w] x = self.conv1(x) # 第一步：过卷积层，生成6通道特征图, [b, 6, h&amp;#39;, w&amp;#39;] # h&amp;#39;=(h+2*p-k)/s+1 x = self.maxpool1(x) # 第二步：过池化层，对特征图下采样 return x Linear 1 2 3 4 5 self.linear = nn.Linear( in_features=1024, out_features=512, bias=True # 默认 True，要不要加偏置 b ) weight = (512, 1024)
-bias = (512)
-y = x @ W.T + b
-nn.BatchNorm2d 对同一个通道 C，把整个 batch 里所有图的所有 H×W个像素全部放在一起求均值和方差。 Conv → BN → 激活 parameter …  ]]></content>
-  </entry>
-  
-  <entry>
     <title>Dynamo</title>
     <url>/zh-cn/post/course_notes/distributed_systems_blog/</url>
     <categories>
@@ -700,7 +681,9 @@ LoginInterceptor 检查 UserHolder.get()，发现是 null
       <tag>leetcode</tag>
       
     </tags>
-    <content type="html"><![CDATA[   图题单 网格图题单 图 DFS 找连通块、判断是否有环
+    <content type="html"><![CDATA[   图题单 网格图题单 邻接表空间复杂度 空间由两部分构成：
+每个节点对应一个邻接列表：$O(V)$ 邻接列表中保存边的端点：无向图的每条边存两次，因此是 $O(2E) = O(E)$ 总空间复杂度为 $O(V + E)$。
+DFS 找连通块、判断是否有环
 对于无向图，如果不需要判断是否有环，则无需用parent，仅用vis即可
 261. 以图判树 无向图，判断是否无环并且联通。
 用vis[i]=True判断即可。但是由于是无向图，在遍历邻居的时候要跳过父节点，所以需要作为参数被传递
@@ -716,8 +699,7 @@ dfs条件：当下一个节点在本次搜索之中，没有被搜到过的时�
 比如0-&amp;gt;3-&amp;gt;6, 0-&amp;gt;4-&amp;gt;6。第二次到6的时候其实是不同的一条路，这个时候6被标记为没有被访问过～
 当 start = 0：
 走路径 0→3→6 时，第一次到达 6，满足 vis[6] != 0，于是 ans[6].append(0)，然后你回溯时如果写了 vis[6] = -1，等于擦掉“6 已被 start=0 访问过”的标记。
-回到 0 再走另一条路径 0→4→6，再次检查到 vis[6] != 0（因为被你复原成了 -1），又会 ans[6].append(0) —— 同一个祖先 0 被加了两次。
-1 2 3 4 5 6 7 8 9 10 def dfs(i, start): # …  ]]></content>
+回到 0 再走另一条路径 0→4→6， …  ]]></content>
   </entry>
   
   <entry>
@@ -753,31 +735,6 @@ try-catch-finally finally关闭输入输出流、关闭数据库连接。
       
     </tags>
     <content type="html"><![CDATA[  Collection接口 List ArrayList 基本内容 可以允许null值 内存是连续的，节省内存空间。 插入时间复杂度：插在队头O(n)因为要把后面的元素都往后移动一位；插在队尾，如果不需要扩容，则是 O（1），如果需要扩容则先需要 O(n)把原来的 ArryList复制一遍，再执行O（1）的插入操作。 插在队中间，O(n). 删除时间复杂度：与插入的时间复杂度相对应。 并非线程安全。 底层实现 由动态数组实现，随机访问某个节点，只需要计算它的地址值，因此随机访问O(1). 实现了RandomAccess这一个标识借口。 如果没有指定初始容量，那么默认初始容量为0，第一次添加元素时，容量变成10. 每次动态扩容，容量变成原来的1.5倍。 ArrayList与 Array 的区别 ArrayList可以动态扩容；Array则不行，它的长度是固定的，并且需要在初始化数组的时候就指定长度 ArrayList支持泛型 ArrayList只支持对象，对于基本数据类型则需要使用它们的包装类如Integer, Double。Array支持基本数据类型和对象。 LinkedList 底层实现 双向链表实现。在头部/尾部进行插入/删除的时间复杂度均为O(1) 不支持随机访问。每次访问指定元素的时间复杂度为O(n) 性能不如ArrayList, 在实际开发中基本不会用到。 线程不安全。 允许null值 除了数据之外还要存指针，所以占用空间比LinkedList大。 HashMap 实现原理 哈希表+链表/红黑树实现。解决哈希冲突的方法有 chaining/probing，一般使用chaining. 哈希值如何计算？拿到key的hashcode()。将原 hashcode和hashcode右移16位的值进行异或运算。 1 int hash = (key == null) ? 0 : (key.hashCode()) ^ ((key.hashCode()) &amp;gt;&amp;gt;&amp;gt; 16); 计算数组下标。hash&amp;amp;(length-1)，相当于hash%length. 二进制运算比取模运算更快。 如果遇到碰撞，就在链表或红黑树中找是否存在该key，如果存在则直接替换值，如果不存在，就加到里面去。链表长度为 8，并且哈希表长度大于64时，升级成红黑树。 红黑树节点数少于6 …  ]]></content>
-  </entry>
-  
-  <entry>
-    <title>Distribued Training</title>
-    <url>/zh-cn/ai/parallelism/</url>
-    <categories>
-      <category>AI</category>
-    </categories>
-    <tags>
-      
-      <tag>AI</tag>
-      
-    </tags>
-    <content type="html"><![CDATA[  通信实现方式 机器内通信 NVLink：GPU之间直接通信的技术。NVLink 3.0 的单向带宽可达 50 GB/s。 PCIe：一种通用的高速总线标准，用于连接 GPU、CPU 和其他外设。 在 PCIe 架构下，GPU 之间的通信需要通过 CPU 和系统内存，带宽和延迟不如 NVLink。PCIe 4.0 x16 的单向带宽为 31.5 GB/s。 PCIe Switch 用于扩展 PCIe 通道，允许多个设备共享带宽。 机器间通信 TCP/IP: 通信速率收到硬件限制，比机内通信更慢。
-通信后端 NCCL NCCL 是 NVIDIA 开发的高性能通信库，专为多 GPU 和多节点之间的通信优化。
-利用 NVLink、PCIe 等高速互联技术，提供极高的带宽和低延迟。
-NCCL-Test 则是用来验证 NCCL 在不同硬件环境（如 NVLink、PCIe、TCP）下的性能和正确性的工具。
-Gloo 适合 CPU 分布式训练或多节点训练
-RLlib RLlib 是 Ray 生态系统中的一个库，专注于强化学习的分布式训练。
-微调 速度指标 tgs (tokens/gpu/second)
-含义：该指标用于测算每秒单块 GPU 能够通过 token 的数量。其中，token 表示一个离散的文本单元 ，可以是单词、标点符号、数字或其他语言元素，这些元素被用作训练和生成文本的基本单位。 作用：它是核心性能指标之一，反映了 GPU 在处理文本数据时的运算速度。在自然语言处理任务中，token 的处理速度直接影响到模型训练和推理的效率。例如，在大语言模型训练过程中，较高的 tgs 值意味着 GPU 能够更快地处理输入文本，从而加快训练进程。
-tf lops
-含义：即 Teraflops，代表每秒浮点运算次数，也就是每秒浮点运算的亿次。它是一种用于衡量计算机或计算设备性能的指标，表示处理器每秒钟能够执行的浮点运算次数。 作用：在模型训练中，大量的计算涉及到浮点运算，如矩阵乘法、向量运算等。tf lops 值越高，说明计算设备的计算能力越强，能够更快地完成模型训练中的复杂计算任务，对于加速模型训练和提高训练效率具有重要意义。
-性能指标 Loss 损失值
-含义：在 SFT（监督微调）中，以 Loss 损失值作为评估模型性能和指导模型调优过程的重要指标。Loss 损失值反映了模型对训练 …  ]]></content>
   </entry>
   
   <entry>
