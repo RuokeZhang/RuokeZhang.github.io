@@ -1725,6 +1725,20 @@ F_A^sem means audio semantic context tokens. These tokens are used as memory/KV 
   
   <entry>
     <title></title>
+    <url>/zh-cn/post/interview/internship/linkdin_agentic_rl/</url>
+    <categories>
+      
+    </categories>
+    <tags>
+      
+    </tags>
+    <content type="html"><![CDATA[  项目总览 LinkedIn 通知系统的 Agentic RL,dual-agent 架构:
+user agent:模拟真实用户对通知的反应(点没点、退没退订、有没有主动上 LinkedIn)。用 110K production member-day trajectories SFT Qwen3.5-4B,在 forward-in-time held-out set 上 &amp;lt;ORG:YES&amp;gt; 的 AUROC 达到 0.962。 rec agent:决定发不发、发什么(push/email/badge)、什么时候发(一天 6 个 4h 窗口)。SFT 之后用 GRPO 训练,以 user agent 作为环境,把模拟发送量削减 ~53%。 Scaling:SFT 栈从单卡 4B 扩到 16×H200 上跑 9B/27B,用多节点 FSDP/HSDP。 user agent 数据结构 一条 Avro record = (一个 member, 一天),展开成 6 个 SFT 样本(对应一天的 6 个 4h 窗口)。每个样本是一段 chat:
+system = 固定的 SYSTEM_MODULE(说明输出协议) user = context_module + memory_module + nextDayPrompt[i-1](第 2 个窗口起才有 ndp) assistant = windowPrompt[i],里面内嵌了 &amp;lt;RES/ORG/QUAL&amp;gt; 答案 输入(user turn) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 [Context Module] ← cm(全天 6 个窗口都相同) memberId=abc123 industry=Software, country=US, tenure_days=1420, tier=free notification_prefs={push:on, email:weekly_digest} ... [Memory Module] ← mm(过去 14 天历史,全天相同) …  ]]></content>
+  </entry>
+  
+  <entry>
+    <title></title>
     <url>/zh-cn/post/interview/ood/airline_ticketing_system/</url>
     <categories>
       

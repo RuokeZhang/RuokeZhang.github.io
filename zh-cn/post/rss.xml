@@ -493,6 +493,13 @@
     </item>
     <item>
       <title></title>
+      <link>https://ruokezhang.github.io/zh-cn/post/interview/internship/linkdin_agentic_rl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/interview/internship/linkdin_agentic_rl/</guid>
+      <description>&lt;h2 id=&#34;项目总览&#34;&gt;项目总览&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%a1%b9%e7%9b%ae%e6%80%bb%e8%a7%88&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;LinkedIn 通知系统的 Agentic RL,dual-agent 架构:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;user agent&lt;/strong&gt;:模拟真实用户对通知的反应(点没点、退没退订、有没有主动上 LinkedIn)。用 110K production member-day trajectories SFT Qwen3.5-4B,在 forward-in-time held-out set 上 &lt;code&gt;&amp;lt;ORG:YES&amp;gt;&lt;/code&gt; 的 AUROC 达到 0.962。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;rec agent&lt;/strong&gt;:决定发不发、发什么(push/email/badge)、什么时候发(一天 6 个 4h 窗口)。SFT 之后用 GRPO 训练,以 user agent 作为环境,把模拟发送量削减 ~53%。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scaling&lt;/strong&gt;:SFT 栈从单卡 4B 扩到 16×H200 上跑 9B/27B,用多节点 FSDP/HSDP。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;user-agent-数据结构&#34;&gt;user agent 数据结构&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#user-agent-%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;一条 Avro record = (一个 member, 一天),展开成 6 个 SFT 样本(对应一天的 6 个 4h 窗口)。每个样本是一段 chat:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</guid>
