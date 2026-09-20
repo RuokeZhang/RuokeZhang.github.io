@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ruokezhang.github.io/zh-cn/</loc>
+    <lastmod>2026-09-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/research/</loc>
+    <lastmod>2026-09-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/ai/</loc>
     <lastmod>2026-08-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -15,21 +35,6 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://ruokezhang.github.io/zh-cn/ai/"
-                />
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/</loc>
-    <lastmod>2026-08-29T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/"
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/ai/</loc>
@@ -1287,10 +1292,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/internship/linkdin_agentic_rl/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
