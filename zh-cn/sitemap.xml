@@ -1283,22 +1283,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/bind/bind/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/company_wise/pinterest/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/internship/highlight/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/interview/ood/airline_ticketing_system/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/leetcode/company_wise/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
