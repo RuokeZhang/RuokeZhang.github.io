@@ -13,21 +13,21 @@
       <link>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</link>
       <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/</guid>
-      <description>&lt;h2 id=&#34;zset&#34;&gt;Zset&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#zset&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;压缩列表&#34;&gt;压缩列表&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%8e%8b%e7%bc%a9%e5%88%97%e8%a1%a8&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;zset&#34;&gt;Zset&lt;/h2&gt;&#xA;&lt;h3 id=&#34;压缩列表&#34;&gt;压缩列表&lt;/h3&gt;&#xA;&lt;p&gt;当元素数量 ≤ zset-max-ziplist-entries（默认128）且所有元素长度 ≤ zset-max-ziplist-value（默认64字节）时使用，内存紧凑。&lt;/p&gt;</description>
     </item>
     <item>
       <title>高可用</title>
       <link>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/post/redis/highavailability/</guid>
-      <description>&lt;h2 id=&#34;主从复制master---slave-replication&#34;&gt;主从复制(master - slave replication)&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%bb%e4%bb%8e%e5%a4%8d%e5%88%b6master---slave-replication&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;主要优点：数据备份、读写分离，通常和&lt;strong&gt;哨兵模式&lt;/strong&gt;结合使用。&#xA;&lt;img src=&#34;https://ruokezhang.github.io/imgs/img-lazy-loading.gif&#34; data-src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png&#34; alt=&#34;Alt text&#34;  /&gt;&#xA;主服务器负责&lt;strong&gt;读写请求&lt;/strong&gt;，从服务器&lt;strong&gt;默认只负责读请求&lt;/strong&gt;。&lt;br&gt;&#xA;主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;主从复制master---slave-replication&#34;&gt;主从复制(master - slave replication)&lt;/h2&gt;&#xA;&lt;p&gt;主要优点：数据备份、读写分离，通常和&lt;strong&gt;哨兵模式&lt;/strong&gt;结合使用。&#xA;&lt;img src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png&#34; alt=&#34;Alt text&#34;&gt;&#xA;主服务器负责&lt;strong&gt;读写请求&lt;/strong&gt;，从服务器&lt;strong&gt;默认只负责读请求&lt;/strong&gt;。&lt;br&gt;&#xA;主节点在执行完写请求之后，将写命令同步到从节点，然后从节点再执行这条命令，保证和主节点的数据一致。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Redis缓存</title>
       <link>https://ruokezhang.github.io/zh-cn/post/redis/caching_patterns/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/post/redis/caching_patterns/</guid>
-      <description>&lt;h2 id=&#34;caching-patterns&#34;&gt;Caching Patterns&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#caching-patterns&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&#xA;&lt;a href=&#34;https://redis.io/learn/howtos/solutions/microservices/caching&#34; title=&#34; Redis Doc: How to use Redis for Query Caching&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;     Redis Doc: How to use Redis for Query Caching&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns/&#34; title=&#34;这里有图片！&#34; rel=&#34;noopener external nofollow noreferrer&#34; target=&#34;_blank&#34; class=&#34; exturl&#34;&gt;&#xA;    这里有图片！&#xA;    &#xA;    &lt;i class=&#34;fa fa-external-link-alt&#34;&gt;&lt;/i&gt;&#xA;    &#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cache-aside-lazy-loading&#34;&gt;Cache-Aside (Lazy Loading)&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cache-aside-lazy-loading&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;caching-patterns&#34;&gt;Caching Patterns&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://redis.io/learn/howtos/solutions/microservices/caching&#34;&gt; Redis Doc: How to use Redis for Query Caching&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns/&#34;&gt;这里有图片！&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cache-aside-lazy-loading&#34;&gt;Cache-Aside (Lazy Loading)&lt;/h2&gt;&#xA;&lt;p&gt;只有我们想查看数据的时候，Redis Cache才有可能被更新。当我们发出一个Query,后端先判断数据是否在Redis Cache里面。如果不在，则查数据库，并且把查到的数据放到Redis Cache里。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -47,21 +47,6 @@
                 href="https://ruokezhang.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://ruokezhang.github.io/en/post/</loc>
-    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://ruokezhang.github.io/zh-cn/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ruokezhang.github.io/en/post/"
-                />
-  </url><url>
     <loc>https://ruokezhang.github.io/en/</loc>
     <lastmod>2026-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -75,6 +60,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ruokezhang.github.io/en/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/en/post/</loc>
+    <lastmod>2026-05-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/"
                 />
   </url><url>
     <loc>https://ruokezhang.github.io/en/categories/system-design/</loc>
@@ -1049,6 +1049,34 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ruokezhang.github.io/en/post/leetcode/company_wise/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/en/blogs/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/blogs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/blogs/"
+                />
+  </url><url>
+    <loc>https://ruokezhang.github.io/en/projects/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/projects/"
                 />
   </url>
 </urlset>

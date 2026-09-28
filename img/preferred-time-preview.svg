@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" role="img" aria-labelledby="title desc">
+  <title id="title">Preferred Time recommendation pipeline</title>
+  <desc id="desc">ALS embeddings flow through HNSW retrieval, LambdaRank ranking, and MMR reranking, served by a backend API.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#0d1b30"/>
+      <stop offset="1" stop-color="#174f83"/>
+    </linearGradient>
+    <linearGradient id="card" x2="1" y2="1">
+      <stop stop-color="#ffffff" stop-opacity=".17"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".07"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="375" rx="18" fill="url(#background)"/>
+  <circle cx="550" cy="14" r="160" fill="#64b4ee" opacity=".09"/>
+  <circle cx="30" cy="345" r="170" fill="#64b4ee" opacity=".07"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="34" y="53" fill="#ffffff" font-size="25" font-weight="700">Preferred Time</text>
+    <text x="35" y="80" fill="#a9d7f8" font-size="13">MovieLens-25M · recommendation pipeline</text>
+    <rect x="30" y="111" width="540" height="155" rx="18" fill="url(#card)" stroke="#a9d7f8" stroke-opacity=".28"/>
+    <g fill="#eef8ff" font-size="14" font-weight="600" text-anchor="middle">
+      <rect x="46" y="147" width="116" height="78" rx="12" fill="#ffffff" fill-opacity=".13" stroke="#a9d7f8" stroke-opacity=".32"/>
+      <text x="104" y="183">ALS</text><text x="104" y="204" fill="#add7f5" font-size="11">embeddings</text>
+      <rect x="177" y="147" width="116" height="78" rx="12" fill="#ffffff" fill-opacity=".13" stroke="#a9d7f8" stroke-opacity=".32"/>
+      <text x="235" y="183">HNSW</text><text x="235" y="204" fill="#add7f5" font-size="11">ANN retrieval</text>
+      <rect x="308" y="147" width="116" height="78" rx="12" fill="#ffffff" fill-opacity=".13" stroke="#a9d7f8" stroke-opacity=".32"/>
+      <text x="366" y="183">LambdaRank</text><text x="366" y="204" fill="#add7f5" font-size="11">ranking</text>
+      <rect x="439" y="147" width="116" height="78" rx="12" fill="#ffffff" fill-opacity=".13" stroke="#a9d7f8" stroke-opacity=".32"/>
+      <text x="497" y="183">MMR</text><text x="497" y="204" fill="#add7f5" font-size="11">diversity</text>
+    </g>
+    <g fill="#82c9f7" font-size="23" text-anchor="middle"><text x="169" y="193">›</text><text x="300" y="193">›</text><text x="431" y="193">›</text></g>
+    <rect x="35" y="299" width="214" height="37" rx="18" fill="#ffffff" fill-opacity=".12" stroke="#a9d7f8" stroke-opacity=".25"/>
+    <rect x="260" y="299" width="305" height="37" rx="18" fill="#ffffff" fill-opacity=".12" stroke="#a9d7f8" stroke-opacity=".25"/>
+    <text x="142" y="323" fill="#e8f5ff" font-size="12" text-anchor="middle">FastAPI · versioned serving</text>
+    <text x="412" y="323" fill="#e8f5ff" font-size="12" text-anchor="middle">Airflow · optional Kafka → S3</text>
+  </g>
+</svg>

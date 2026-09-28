@@ -13,7 +13,7 @@
       <link>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</link>
       <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/</guid>
-      <description>&lt;h2 id=&#34;rpc和http的区别&#34;&gt;RPC和HTTP的区别&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#rpc%e5%92%8chttp%e7%9a%84%e5%8c%ba%e5%88%ab&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;RPC has small header overhead, 能灵活定制传输格式&lt;/li&gt;&#xA;&lt;li&gt;服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li&gt;&#xA;&lt;li&gt;负载均衡：RPC 在客户端实现负载均衡&lt;/li&gt;&#xA;&lt;li&gt;容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;serialization&#34;&gt;Serialization&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#serialization&#34;&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;kyro&#34;&gt;Kyro&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#kyro&#34;&gt;&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;rpc和http的区别&#34;&gt;RPC和HTTP的区别&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RPC has small header overhead, 能灵活定制传输格式&lt;/li&gt;&#xA;&lt;li&gt;服务发现：服务提供者启动时自动注册，消费者通过注册中心动态发现服务地址&lt;/li&gt;&#xA;&lt;li&gt;负载均衡：RPC 在客户端实现负载均衡&lt;/li&gt;&#xA;&lt;li&gt;容错机制：我的项目实现了重试（Retry）、熔断（Circuit Breaker）和限流（Rate Limiting）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;serialization&#34;&gt;Serialization&lt;/h2&gt;&#xA;&lt;h3 id=&#34;kyro&#34;&gt;Kyro&lt;/h3&gt;&#xA;&lt;p&gt;速度快，体积小，只支持序列化和反序列化Java对象，线程不安全&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
