@@ -276,6 +276,16 @@
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/os/file_system/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/os/file_system/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/operating-system/</loc>
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
@@ -311,16 +321,46 @@
     <lastmod>2025-12-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/personal_projects/java_rpc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/personal_projects/java_rpc/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/projects/</loc>
     <lastmod>2025-12-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/categories/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/categories/projects/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/projects/</loc>
     <lastmod>2025-12-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/tags/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/tags/projects/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/mysql/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
@@ -457,21 +497,6 @@
                 href="https://ruokezhang.github.io/zh-cn/post/leetcode/string/"
                 />
   </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/mlops/llm/</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/tags/mlops/</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/mlops/project/</loc>
-    <lastmod>2025-04-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/interview/</loc>
     <lastmod>2025-03-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -551,11 +576,31 @@
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/categories/cache/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/categories/cache/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/categories/redis/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/categories/redis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/categories/redis/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/tags/redis/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
@@ -576,6 +621,16 @@
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/redis/redis_interview/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/redis/redis_interview/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/mysql/mysql_interview/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
@@ -676,6 +731,16 @@
     <lastmod>2025-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/redis/highavailability/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/redis/highavailability/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/leetcode/binarysearch/</loc>
     <lastmod>2025-03-13T00:00:00+00:00</lastmod>
@@ -791,6 +856,16 @@
     <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/redis/aofrdb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/redis/aofrdb/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/os/virtualization/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
@@ -1071,6 +1146,16 @@
     <lastmod>2025-02-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/leetcode/binarytree/binarytree/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/leetcode/binarytree/binarytree/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/leetcode/backtrack/backtracking/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
@@ -1091,16 +1176,6 @@
                 hreflang="zh-CN"
                 href="https://ruokezhang.github.io/zh-cn/post/leetcode/linkedlist/"
                 />
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/categories/spring/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/spring/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/java/javabasic/java8/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
@@ -1211,6 +1286,16 @@
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/post/redis/caching_patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/post/redis/caching_patterns/"
+                />
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/java/jvm/basic/</loc>
     <lastmod>2025-01-30T00:00:00+00:00</lastmod>
@@ -1249,21 +1334,6 @@
   </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/post/maven/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/categories/c-/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/post/cpp/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://ruokezhang.github.io/zh-cn/tags/c-/</loc>
-    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>

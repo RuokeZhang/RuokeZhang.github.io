@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cache on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/cache/</link>
+    <description>Recent content in Cache on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/cache/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis Interview Notes</title>
+      <link>https://ruokezhang.github.io/en/post/redis/redis_interview/</link>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/redis/redis_interview/</guid>
+      <description>&lt;h2 id=&#34;sorted-sets-zset&#34;&gt;Sorted Sets (&lt;code&gt;ZSET&lt;/code&gt;)&lt;/h2&gt;&#xA;&lt;p&gt;A sorted set maps each unique member to a score and orders members by score. Range queries and updates are typically O(log N).&lt;/p&gt;&#xA;&lt;h3 id=&#34;compact-encoding&#34;&gt;Compact Encoding&lt;/h3&gt;&#xA;&lt;p&gt;Small sorted sets can use a compact listpack representation. Redis converts to its general representation when the set exceeds limits such as &lt;code&gt;zset-max-listpack-entries&lt;/code&gt; or &lt;code&gt;zset-max-listpack-value&lt;/code&gt;. Older Redis versions used a ziplist and correspondingly named settings. Check the settings for the version you run.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Redis High Availability</title>
+      <link>https://ruokezhang.github.io/en/post/redis/highavailability/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/redis/highavailability/</guid>
+      <description>&lt;p&gt;References: &lt;a href=&#34;https://redis.io/docs/latest/operate/oss_and_stack/management/replication/&#34;&gt;Redis replication&lt;/a&gt;, &lt;a href=&#34;https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/&#34;&gt;Sentinel&lt;/a&gt;, and &lt;a href=&#34;https://redis.io/docs/latest/operate/oss_and_stack/management/scaling/&#34;&gt;Redis Cluster&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;primaryreplica-replication&#34;&gt;Primary–Replica Replication&lt;/h2&gt;&#xA;&lt;p&gt;Replication provides copies of data and can serve reads from replicas. A primary accepts writes and sends updates to its replicas. Replication is asynchronous, so a replica can lag behind a successful write.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/static/availability.png&#34; alt=&#34;Redis replication&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;full-synchronization&#34;&gt;Full Synchronization&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;A replica connects to a primary and requests synchronization with &lt;code&gt;PSYNC&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;If a partial sync is impossible, the primary responds with &lt;code&gt;FULLRESYNC&lt;/code&gt;, including its replication ID and offset.&lt;/li&gt;&#xA;&lt;li&gt;The primary produces an RDB snapshot and sends it to the replica while buffering subsequent writes.&lt;/li&gt;&#xA;&lt;li&gt;The replica loads the snapshot and applies the buffered updates, then continues receiving the replication stream over a long-lived connection.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To configure a replica, use &lt;code&gt;REPLICAOF &amp;lt;primary-host&amp;gt; &amp;lt;primary-port&amp;gt;&lt;/code&gt;. A full sync consumes network and CPU resources; replicas can also replicate from other replicas to reduce load on the primary.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Redis Caching Patterns and Failure Modes</title>
+      <link>https://ruokezhang.github.io/en/post/redis/caching_patterns/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/redis/caching_patterns/</guid>
+      <description>&lt;p&gt;References: &lt;a href=&#34;https://redis.io/learn/howtos/solutions/microservices/caching&#34;&gt;Redis query caching&lt;/a&gt;, &lt;a href=&#34;https://hazelcast.com/blog/a-hitchhikers-guide-to-caching-patterns/&#34;&gt;caching patterns&lt;/a&gt;, and &lt;a href=&#34;https://redis.io/docs/latest/develop/reference/eviction/&#34;&gt;Redis key eviction&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;caching-patterns&#34;&gt;Caching Patterns&lt;/h2&gt;&#xA;&lt;h3 id=&#34;cache-aside-lazy-loading&#34;&gt;Cache-Aside (Lazy Loading)&lt;/h3&gt;&#xA;&lt;p&gt;On a read, the application checks Redis first. A hit returns immediately. On a miss, it queries the database, stores the result in Redis, and returns it. The cache is filled only for requested data, which suits read-heavy workloads and keeps the cache smaller.&lt;/p&gt;&#xA;&lt;h3 id=&#34;read-through&#34;&gt;Read-Through&lt;/h3&gt;&#xA;&lt;p&gt;The application asks a cache provider for data. The provider performs a database read on a miss and manages filling the cache, so the application does not contain the miss-handling logic.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

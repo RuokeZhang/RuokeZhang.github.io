@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/en/categories/projects/</link>
+    <description>Recent content in Projects on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/en/categories/projects/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java RPC: Transport, Discovery, and Reliability</title>
+      <link>https://ruokezhang.github.io/en/post/personal_projects/java_rpc/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/personal_projects/java_rpc/</guid>
+      <description>&lt;h2 id=&#34;rpc-and-http&#34;&gt;RPC and HTTP&lt;/h2&gt;&#xA;&lt;p&gt;In this project, the RPC protocol uses a small, customizable message header. Providers register themselves when they start, and consumers discover their addresses through a registry. The client handles load balancing, retries, and circuit breaking; the server applies rate limiting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;serialization&#34;&gt;Serialization&lt;/h2&gt;&#xA;&lt;h3 id=&#34;kryo&#34;&gt;Kryo&lt;/h3&gt;&#xA;&lt;p&gt;Kryo serializes Java objects compactly and quickly, but a Kryo instance is not thread-safe. Registering a class assigns it an ID, so a serialized message can refer to that ID rather than repeatedly writing the full class name:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

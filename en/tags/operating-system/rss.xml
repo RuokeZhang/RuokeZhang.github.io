@@ -6,8 +6,15 @@
     <description>Recent content in Operating System on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/en/tags/operating-system/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>File Systems and I/O Models</title>
+      <link>https://ruokezhang.github.io/en/post/os/file_system/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/en/post/os/file_system/</guid>
+      <description>&lt;h2 id=&#34;file-systems&#34;&gt;File Systems&lt;/h2&gt;&#xA;&lt;h3 id=&#34;inodes&#34;&gt;Inodes&lt;/h3&gt;&#xA;&lt;p&gt;An inode identifies a file within one file system. It stores metadata such as:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Permissions, owner UID, and group GID&lt;/li&gt;&#xA;&lt;li&gt;File size and timestamps: &lt;code&gt;ctime&lt;/code&gt; for metadata changes, &lt;code&gt;mtime&lt;/code&gt; for content changes, and &lt;code&gt;atime&lt;/code&gt; for access&lt;/li&gt;&#xA;&lt;li&gt;Pointers to data blocks&lt;/li&gt;&#xA;&lt;li&gt;A link count, which tracks hard links to the inode&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;To read a regular file, the OS resolves each component of its path through directory entries, finds the file&amp;rsquo;s inode, and uses its block pointers to locate the data. A symbolic link has its own inode and contains a target path, which the OS resolves in turn.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Process</title>
       <link>https://ruokezhang.github.io/en/post/os/process/</link>
