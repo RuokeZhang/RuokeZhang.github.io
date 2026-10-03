@@ -1205,6 +1205,20 @@
                 href="https://ruokezhang.github.io/en/blogs/"
                 />
   </url><url>
+    <loc>https://ruokezhang.github.io/en/photography/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://ruokezhang.github.io/zh-cn/photography/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ruokezhang.github.io/en/photography/"
+                />
+  </url><url>
     <loc>https://ruokezhang.github.io/en/projects/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
