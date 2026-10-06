@@ -6,7 +6,14 @@
     <description>Recent content in 研究笔记 on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/research/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://ruokezhang.github.io/zh-cn/research/papers/autoresearch/benchmark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/research/papers/autoresearch/benchmark/</guid>
+      <description>&lt;h1 id=&#34;mle-dojo-benchmark&#34;&gt;MLE-Dojo Benchmark&lt;/h1&gt;&#xA;&lt;h2 id=&#34;这是什么&#34;&gt;这是什么&lt;/h2&gt;&#xA;&lt;p&gt;MLE-Dojo 是一个面向 LLM machine learning engineering（MLE）agent 的交互式 benchmark / Gym-style 环境。它把真实 Kaggle 竞赛整理成可执行任务，让 agent 不只是回答问题，而是要反复读数据、写代码、运行实验、根据反馈调试，并提交预测结果。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
