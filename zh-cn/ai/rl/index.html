@@ -1,0 +1,101 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ruoke Zhang's personal website, projects, and writing."><title>· Ruoke Zhang</title>
+<link rel=stylesheet href=/css/site.min.012e3370c36905787e9cfca38cced785ce3bb6ad02ebb59e57ab1faa11c8c5a7.css integrity="sha256-AS4zcMNpBXh+nPyjjM7Xhc47tq0C67WeV6sfqhHIxac=" crossorigin=anonymous></head><body><div class=site-shell><header class=site-header><a class=site-name href=/zh-cn/>Ruoke Zhang</a><nav class=main-nav aria-label="Main navigation"><a href=/zh-cn/>首页</a>
+<a href=/zh-cn/projects/>项目</a>
+<a href=/zh-cn/photography/>摄影</a>
+<a href=/zh-cn/blogs/ aria-current=page>博客</a></nav><nav class=language-nav aria-label=Language><a href=/en/>EN</a>
+<a href=/zh-cn/ai/rl/ aria-current=page>中文</a></nav></header><main id=main-content><article class="article has-toc"><aside class=article-toc><details open><summary>本文目录</summary><nav id=TableOfContents><ul><li><a href=#off-policy>Off-policy</a><ul><li><a href=#dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</a></li><li><a href=#ddpg>DDPG</a></li><li><a href=#universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</a></li></ul></li><li><a href=#on-policy>On-policy</a><ul><li><a href=#ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</a></li></ul></li></ul><ul><li><ul><li></li></ul></li></ul></nav></details></aside><div class=article-body><header class="page-heading article-heading"><a class=back-link href=/zh-cn/blogs/>← 博客</a><h1></h1></header><div class=prose><p><strong>Optimal Policy 与 Optimal Q-function</strong></p><p>Let $\pi^<em>$ denote an optimal policy, i.e. any policy $\pi^</em>$ s.t.</p><p>$$
+Q^{\pi^*}(s,a) \ge Q^\pi(s,a)
+$$</p><p>for every $s \in S$, $a \in A$, and any policy $\pi$.</p><p>All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.</p><p>对于任意固定的 $(s,a)$，第一步已经确定，后面无论交给哪个最优策略，都能取得相同的最优后续回报。</p><p>如果环境有随机性，即使两个策略都最优，单次运行得到的累计折扣奖励也可能不同；相同的是对所有可能结果按概率加权后的平均值。</p><p><strong>Bellman Equation（贝尔曼方程）</strong></p><p>它表达的是：
+从现在开始的累计回报，可以拆成“现在这一步的奖励”＋“从下一步开始的累计回报”。</p><p>对于一个固定策略 $\pi$：</p><p>$$
+Q^\pi(s,a)=
+\mathbb E_{s&rsquo;}
+\left[
+\underbrace{r(s,a)}<em>{\text{现在的奖励}}
++\gamma\underbrace{Q^\pi(s&rsquo;,\pi(s&rsquo;))}</em>{\text{下一步继续按 }\pi\text{ 行动的价值}}
+\right]
+$$</p><p>在训练中的用处是：即使一开始不知道完整的长期回报，也可以用“实际观察到的一步奖励＋目前估计的下一状态价值”，逐渐修正当前 Q 值。</p><h2 id=off-policy>Off-policy</h2><p>采集数据的策略和更新所针对的策略可以不同</p><h3 id=dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</h3><p>DQN 使用 $Q_\theta(s,a)$ 表示每个动作的预期长期回报，通常用 $\epsilon$-greedy 选择动作。</p><p>设 $\epsilon=0.1$，这句话的两部分分别是：</p><ul><li><p>“with probability $\epsilon$ takes a random action”：有 10% 的概率进入探索分支，忽略 Q 值，从四个动作中均匀随机选择，每个动作被选中的概率都是 $1/4$。</p></li><li><p>“takes the action $\pi_Q(s)$ with probability $1-\epsilon$”：有 90% 的概率进入贪心分支，直接选 Q 值最高的“左”。</p></li><li><p>在线网络 $Q_\theta$：正在训练、不断修改的版本。</p></li><li><p>目标网络 $Q_{\theta^-}$：暂时冻结的旧版本，用来提供稳定的训练目标。</p></li></ul><h4 id=step-1-收集经验>Step 1. 收集经验</h4><p>在状态 $s_t$，在线 Q 网络估计各个动作的价值，再用 $\epsilon$-greedy 选出 $a_t$。执行后，环境返回即时奖励 $r_t$ 和下一状态 $s_{t+1}$，得到一条经验：</p><p>$$
+(s_t,a_t,r_t,s_{t+1})
+$$</p><p>将经验存入经验回放池（Replay Buffer），训练时再从中抽取 transition。</p><h4 id=step-2-使用目标网络构造训练目标>Step 2. 使用目标网络构造训练目标</h4><p>我们要修正在线网络对 $Q_\theta(s_t,a_t)$ 的估计。目标值来自 Bellman 方程：</p><p>$$
+\boxed{y_t=r_t+\gamma\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)}
+$$</p><p>训练时，对经验池里抽出的 $s_{t+1}$，目标网络计算所有动作的价值：</p><p>$$
+Q_{\theta^-}(s_{t+1},a&rsquo;),
+\qquad a&rsquo;\in\mathcal A
+$$</p><p>然后直接取最大值对应的动作：</p><p>$$
+a^*=\arg\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)
+$$</p><p>这里的 $a&rsquo;$ 是遍历所有候选动作的变量，不是与环境交互时实际执行的动作，因此不通过 $\epsilon$-greedy 选择。</p><p>也就是：这个动作的价值应接近“实际即时奖励＋下一状态的最佳后续价值估计”。</p><table><thead><tr><th>部分</th><th>来源</th></tr></thead><tbody><tr><td>$r_t$</td><td>与环境交互时实际观察到的奖励</td></tr><tr><td>$\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)$</td><td>目标网络对未来回报的估计</td></tr></tbody></table><p><strong>示例：</strong></p><p>把下一状态 $s_{t+1}$ 输入目标网络。假设它估计：</p><table><thead><tr><th>下一步动作</th><th style=text-align:right>目标网络预测的 Q 值</th></tr></thead><tbody><tr><td>上</td><td style=text-align:right>5</td></tr><tr><td>下</td><td style=text-align:right>10</td></tr><tr><td>左</td><td style=text-align:right>3</td></tr><tr><td>右</td><td style=text-align:right>4</td></tr></tbody></table><p>最高值是 $10$。取 $r_t=2$、$\gamma=0.9$，构造参考值：</p><p>$$
+y_t=
+\underbrace{2}<em>{\text{实际即时奖励}}
++0.9\times\underbrace{10}</em>{\text{目标网络估计的后续价值}}
+=11
+$$</p><p>这个 $11$ 是训练目标，仍然是估计，不是真实答案。</p><h4 id=step-3-更新在线网络>Step 3. 更新在线网络</h4><p>在线网络目前对**当前状态 $s_t$ 的实际动作“左”**预测为 $3$：</p><p>$$
+Q_\theta(s_t,\text{左})=3
+$$</p><p>用 MSE 计算损失：</p><p>$$
+L=\left(Q_\theta(s_t,\text{左})-y_t\right)^2=(3-11)^2
+$$</p><p>反向传播只修改在线网络，让这个预测向 $11$ 靠近。目标网络此时不动。</p><h4 id=step-4-更新目标网络>Step 4. 更新目标网络</h4><p>训练一段时间后，把已经改进的在线网络复制给目标网络：</p><p>$$
+\theta^- \leftarrow \theta
+$$</p><p>然后继续上述过程。</p><h4 id=为什么-dqn-是-off-policy>为什么 DQN 是 Off-policy</h4><p>Off-policy 体现在：“实际怎么走”和“更新时假定后面怎么走”可以不同。</p><p>假设到了 $s_{t+1}$，网络估计：</p><table><thead><tr><th>动作</th><th style=text-align:right>Q 值</th></tr></thead><tbody><tr><td>左</td><td style=text-align:right>10</td></tr><tr><td>右</td><td style=text-align:right>2</td></tr></tbody></table><p>收集数据时使用 $\epsilon$-greedy，可能因为探索而实际选择“右”。</p><p>但 DQN 构造 $y_t$ 时，仍然使用：</p><p>$$
+\max_{a&rsquo;}Q(s_{t+1},a&rsquo;)=10
+$$</p><p>也就是**“左”的价值**，而不是实际探索选择的“右”的价值。</p><p>设 $r_t=1$、$\gamma=0.9$，DQN 的目标是：</p><p>$$
+y_t=1+0.9\times10=10
+$$</p><h3 id=ddpg>DDPG</h3><p>DDPG 有两类网络：Actor（Action 网络）和 Critic（Q 网络）。训练时，两者各有一个在线网络和目标网络。</p><h4 id=网络结构>网络结构</h4><table><thead><tr><th>网络</th><th>用途</th><th>更新方式</th></tr></thead><tbody><tr><td>在线 Actor $\pi_\theta$</td><td>输出动作，交互时加噪声进行探索</td><td>梯度更新</td></tr><tr><td>在线 Critic $Q_\phi$</td><td>评价动作，并指导在线 Actor 学习</td><td>梯度更新</td></tr><tr><td>目标 Actor $\pi_{\theta^-}$</td><td>提供计算训练目标时的下一步动作</td><td>缓慢跟随在线 Actor</td></tr><tr><td>目标 Critic $Q_{\phi^-}$</td><td>评价上述动作，帮助计算训练目标</td><td>缓慢跟随在线 Critic</td></tr></tbody></table><h4 id=探索>探索</h4><p>采集数据时，给 Actor 输出的动作加一点随机噪声。目的和 DQN 的 $\epsilon$-greedy 类似：增加探索。</p><p>$$
+\pi_b(s)=\pi_\theta(s)+\mathcal N(0,1)
+$$</p><h4 id=训练目标>训练目标</h4><p>$$
+\boxed{
+y_t=r_t+\gamma
+Q_{\phi^-}!\left(s_{t+1},\pi_{\theta^-}(s_{t+1})\right)
+}
+$$</p><p>也就是：目标 Actor 选下一步动作 → 目标 Critic 评价它 → 得到训练目标 $y_t$。</p><h4 id=更新在线-critic>更新在线 Critic</h4><p>对 Replay Buffer 中抽取的 mini-batch，最小化 Critic Loss：</p><p>$$
+L_{\text{critic}}
+=\mathbb E\left[(Q_\phi(s_t,a_t)-y_t)^2\right]
+$$</p><p>通过梯度更新在线 Critic，使其评价更接近训练目标：</p><p>$$
+\phi_{\text{old}}\longrightarrow\phi_{\text{new}}
+$$</p><h4 id=更新在线-actor>更新在线 Actor</h4><p>Critic 更新完成后，在线 Actor 使用同一个 mini-batch 中的状态重新生成训练动作：</p><p>$$
+\hat a_i=\pi_\theta(s_i)
+$$</p><p>这个 $\hat a_i$ 不是 Replay Buffer 中实际执行过的动作 $a_i$。它只用于这次 Actor 训练，不会在环境中执行，也不会写回 Replay Buffer。</p><p>然后，使用更新后的在线 Critic $Q_{\phi_{\text{new}}}$ 评价这些动作，并指导在线 Actor：</p><p>$$
+L_{\text{actor}}
+=-\mathbb E_{s\sim\mathcal D}
+\left[Q_{\phi_{\text{new}}}(s,\pi_\theta(s))\right]
+$$</p><p>这里的期望不是一个被学习或更新的参数，而是用 mini-batch 中的状态平均值来近似：</p><p>$$
+L_{\text{actor}}
+\approx-\frac{1}{N}\sum_{i=1}^{N}
+Q_{\phi_{\text{new}}}!\left(s_i,\pi_\theta(s_i)\right)
+$$</p><p>计算 Actor Loss 时固定 Critic 的参数 $\phi_{\text{new}}$，只更新 Actor 的参数 $\theta$。</p><h4 id=软更新目标网络>软更新目标网络</h4><p>两个目标网络不直接做梯度更新，而是通常采用软更新，例如：</p><p>$$
+\phi^-\leftarrow(1-\tau)\phi^-+\tau\phi
+$$</p><h3 id=universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</h3><p>DQN/DDPG的extension，multi-goal版本</p><h2 id=on-policy>On-policy</h2><h3 id=ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</h3><h4 id=两个模型>两个模型</h4><p><strong>Actor (Policy Model)</strong></p><ul><li>学习做出更好的 Action。</li><li>通过 Policy Loss 更新参数。</li></ul><p><strong>Critic (Value Model)</strong></p><ul><li>学习预测当前 State 的 Expected Return。</li><li>通过 Value Loss 更新参数。</li><li>它不负责产生 Reward，而是估计未来能获得多少 Reward。</li></ul><h4 id=step-1-rollout>Step 1. Rollout</h4><p>假设 Memory Manager 当前输入为 State $s$，Actor 采样到 Action <code>UPDATE</code>，记录：</p><p>$$
+\pi_{\mathrm{old}}(\text{UPDATE}\mid s)=0.6,
+\qquad R=1,
+\qquad V_\phi(s)=0.2
+$$</p><p>其中，$R$ 是下游 QA 回答正确后得到的实际 Reward；$V_\phi(s)$ 是 Critic 对 Expected Return 的预测，不是人工标注。</p><h4 id=step-2-calculate-advantage>Step 2. Calculate Advantage</h4><p>Advantage 衡量这次 Action 的结果比预期好多少。在单步任务的简化情况下：</p><p>$$
+A=R-V_\phi(s)=1-0.2=\boxed{0.8}
+$$</p><ul><li>$A > 0$：实际结果好于预期，应提高这个 Action 的概率。</li><li>$A &lt; 0$：实际结果差于预期，应降低这个 Action 的概率。</li></ul><p>真实多步 PPO 通常使用 GAE 等方法计算 Advantage。</p><h4 id=step-3-calculate-ppo-objective>Step 3. Calculate PPO Objective</h4><p>定义 Probability Ratio：</p><p>$$
+r(\theta)=\frac{\pi_\theta(a\mid s)}{\pi_{\mathrm{old}}(a\mid s)}
+$$</p><p>分母是 Rollout 时旧 Policy 对 Action 的概率，分子是当前 Policy 对<strong>同一个 Action</strong>重新计算的概率。训练刚开始时，新旧 Policy 参数相同，因此 $r=0.6/0.6=1$。</p><p>PPO 引入 Clipping：</p><h1 id=operatornameclipr0812>$$
+\operatorname{clip}(r,,0.8,,1.2)</h1><p>\begin{cases}
+0.8, & r &lt; 0.8, \[4pt]
+r, & 0.8 \le r \le 1.2, \[4pt]
+1.2, & r > 1.2.
+\end{cases}
+$$</p><p>最终 PPO 希望最大化：</p><p>$$
+L^{\mathrm{CLIP}}(\theta)
+=\min!\left(
+rA,;
+\operatorname{clip}(r,,0.8,,1.2)A
+\right)
+$$</p><p>代入初始值，$L^{\mathrm{CLIP}}=\min(1\times0.8,1\times0.8)=0.8$。</p><p><strong>Clipping 的作用：</strong></p><ul><li>Advantage 为正且 Ratio 超过 1.2 时，概率继续增大不会带来额外优化收益。</li><li>Advantage 为负且 Ratio 低于 0.8 时，概率继续减小不会带来额外优化收益。</li></ul><p>它的目的是防止 Policy 一次更新得过于激进；限制的是优化收益，并不硬性限制概率变化。</p><h4 id=step-4-backpropagation--update-actor>Step 4. Backpropagation — Update Actor</h4><p>当前 Ratio = 1，尚未触发 Clipping。此时 Objective 仍依赖模型参数 $\theta$：</p><p>$$
+\begin{aligned}
+L(\theta)
+&=0.8,\frac{\pi_\theta(\text{UPDATE}\mid s)}{0.6}, \[4pt]
+\nabla_\theta L(\theta)
+&=\frac{0.8}{0.6},\nabla_\theta\pi_\theta(\text{UPDATE}\mid s).
+\end{aligned}
+$$</p><p>Optimizer 利用梯度更新 Actor。由于 Advantage 为正，这次更新倾向于提高 UPDATE 的概率。例如：</p><p>$$
+\pi_\theta(\text{UPDATE}\mid s): 0.60\longrightarrow0.65,
+\qquad r=\frac{0.65}{0.60}\approx1.083
+$$</p><p>$0.65$ 只是举例，实际变化由梯度和 Learning Rate 决定。继续使用同一批 Rollout 数据训练时，不需要重新 Rollout，只需要重新计算 Action 的概率。</p><p>因为优化器通常使用 Gradient Descent，实际代码一般最小化：</p><p>$$
+L_{\mathrm{policy}}(\theta)=-L^{\mathrm{CLIP}}(\theta)
+$$</p><h4 id=step-5-update-critic>Step 5. Update Critic</h4><p>Actor 更新 Policy 的同时，Critic 通过最小化 Value Loss 学习预测 Expected Return。在单步任务中：</p><p>$$
+L_{\mathrm{value}}(\phi)
+=\bigl(V_\phi(s)-R\bigr)^2
+=(0.2-1)^2
+=\boxed{0.64}
+$$</p><p>Critic 预测的是期望回报，不要求每次预测都与单次随机 Rollout 的结果一致。</p></div></div></article></main><footer class=site-footer><span>© 2026 Ruoke Zhang</span><span>学习、构建、记录。</span></footer></div></body></html>
