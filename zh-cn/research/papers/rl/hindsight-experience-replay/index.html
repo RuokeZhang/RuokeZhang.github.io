@@ -1,0 +1,64 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ruoke Zhang's personal website, projects, and writing."><title>Hindsight Experience Replay (HER) · Ruoke Zhang</title>
+<link rel=stylesheet href=/css/site.min.012e3370c36905787e9cfca38cced785ce3bb6ad02ebb59e57ab1faa11c8c5a7.css integrity="sha256-AS4zcMNpBXh+nPyjjM7Xhc47tq0C67WeV6sfqhHIxac=" crossorigin=anonymous><script>window.MathJax={tex:{displayMath:[["\\[","\\]"],["$$","$$"]],inlineMath:[["\\(","\\)"],["$","$"]],processEscapes:!0}}</script><script id=MathJax-script defer src=https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js></script></head><body><div class=site-shell><header class=site-header><a class=site-name href=/zh-cn/>Ruoke Zhang</a><nav class=main-nav aria-label="Main navigation"><a href=/zh-cn/>首页</a>
+<a href=/zh-cn/projects/>项目</a>
+<a href=/zh-cn/photography/>摄影</a>
+<a href=/zh-cn/blogs/ aria-current=page>博客</a></nav><nav class=language-nav aria-label=Language><a href=/en/>EN</a>
+<a href=/zh-cn/research/papers/rl/hindsight-experience-replay/ aria-current=page>中文</a></nav></header><main id=main-content><article class="article has-toc"><aside class=article-toc><details open><summary>本文目录</summary><nav id=TableOfContents><ul><li><a href=#30-秒结论>30 秒结论</a></li><li><a href=#核心思想>核心思想</a><ul><li><a href=#一个直观例子>一个直观例子</a></li><li><a href=#multi-goal-rl>Multi-goal RL</a></li></ul></li><li><a href=#训练算法>训练算法</a><ul><li><a href=#step-1-初始化网络和经验池>Step 1. 初始化网络和经验池</a></li><li><a href=#step-2-收集一条轨迹>Step 2. 收集一条轨迹</a></li><li><a href=#step-3-构造并存储原始数据与-her-数据>Step 3. 构造并存储原始数据与 HER 数据</a></li><li><a href=#step-4-更新在线-critic>Step 4. 更新在线 Critic</a></li><li><a href=#step-5-更新在线-actor>Step 5. 更新在线 Actor</a></li><li><a href=#step-6-更新目标网络并重复训练>Step 6. 更新目标网络并重复训练</a></li></ul></li><li><a href=#最容易混淆的地方>最容易混淆的地方</a><ul><li><a href=#一个-episode-内目标固定与训练-batch-混合目标并不冲突>“一个 episode 内目标固定”与“训练 batch 混合目标”并不冲突</a></li><li><a href=#her-为什么需要离策略算法>HER 为什么需要离策略算法</a></li><li><a href=#her-没有把失败说成成功>HER 没有把失败说成成功</a></li></ul></li><li><a href=#来源>来源</a></li></ul></nav></details></aside><div class=article-body><header class="page-heading article-heading"><a class=back-link href=/zh-cn/blogs/>← 博客</a><h1>Hindsight Experience Replay (HER)</h1><time datetime=2026-10-22>October 22, 2026</time></header><div class=prose><blockquote><p><strong>AI 整理笔记：</strong> 本文由 AI 根据学习过程中的问题辅助整理，并非作者逐字手写。</p></blockquote><h2 id=30-秒结论>30 秒结论</h2><p>HER 的核心不是修改已经执行过的动作，而是修改观察这段轨迹时所使用的目标：即使 Agent 没有完成原目标，也可以把它实际达到的状态当作替代目标，重新计算奖励，从失败轨迹中构造出有学习信号的经验。</p><p>训练顺序可以概括为：</p><ol><li><strong>收集一个 episode：</strong> 固定原目标 $g$，执行 $T$ 步并记录真实轨迹。</li><li><strong>重标注这一局的数据：</strong> 保存原目标版本，再从实际到达的状态中选择替代目标 $g'$，重新计算奖励并保存 HER 版本。</li><li><strong>训练：</strong> 从整个 replay buffer 随机抽取 mini-batch，执行 $N$ 次离策略更新。一个 batch 可以混合不同 episode、不同目标的数据。</li></ol><p><img src=https://blog-ruoke.oss-cn-hongkong.aliyuncs.com/blog/images/zh-cn/research/papers/RL/her-algorithm.png alt="HER 原论文算法：收集轨迹、目标重标注与离策略更新"></p><h2 id=核心思想>核心思想</h2><h3 id=一个直观例子>一个直观例子</h3><p>原任务是：
+把方块推到 $g=(0.8,0.6)$。</p><p>实际轨迹中，方块的位置是：</p>$$
+(0.2,0.2)\rightarrow(0.4,0.2)\rightarrow(0.5,0.3)
+$$<p>没有到达原目标。</p><p>可以把最终位置作为额外目标：</p>$$
+g'=(0.5,0.3)
+$$<p>这段经历就可以用来学习“如何把方块推到 $(0.5,0.3)$”。这里的目标是坐标，不是二进制串，也不需要生成自然语言指令。</p><h3 id=multi-goal-rl>Multi-goal RL</h3><h4 id=目标与奖励>目标与奖励</h4><p>$f_g(s)$ 是一个检查函数：状态 $s$ 是否已经满足目标 $g$？</p>$$
+f_g(s)=
+\begin{cases}
+1,&\text{满足目标},\\
+0,&\text{不满足目标}.
+\end{cases}
+$$<p>论文采用的奖励为：</p>$$
+r=
+\begin{cases}
+0,&\text{成功},\\
+-1,&\text{未成功}.
+\end{cases}
+$$<h4 id=额外目标采样>额外目标采样</h4><p>环境记录了每个时间点的完整状态，其中包含方块的位置。</p><ul><li><strong>Final</strong>：读取最后状态里的方块坐标，得到 $g'=(0.5,0.3)$。</li><li><strong>Future</strong>：对某条 transition，从它之后的状态中随机抽一个，再读取那个状态里的方块坐标。</li></ul><p>随机抽取的是已经发生的状态，再用 $m(s)$ 提取物体坐标，而不是凭空生成一个位置。</p><h4 id=重新计算奖励>重新计算奖励</h4><p>比较动作执行后方块的位置与新目标的距离：</p>$$
+r'_t=
+\begin{cases}
+0,&\|\operatorname{pos}(s_{t+1})-g'\|\leq\varepsilon,\\
+-1,&\text{否则}.
+\end{cases}
+$$<p>假设允许误差 $\varepsilon=0.05$，新目标是 $(0.5,0.3)$：</p><table><thead><tr><th>动作后方块位置</th><th style=text-align:right>到新目标的距离</th><th style=text-align:right>新奖励</th></tr></thead><tbody><tr><td>$(0.4,0.2)$</td><td style=text-align:right>约 $0.141$</td><td style=text-align:right>$-1$</td></tr><tr><td>$(0.5,0.3)$</td><td style=text-align:right>$0$</td><td style=text-align:right>$0$</td></tr></tbody></table><h4 id=隐式课程>隐式课程</h4><p>HER 是一种 implicit curriculum（隐式课程）：它没有显式排好难度顺序，而是从 Agent 实际达到的状态生成训练目标；随着能力提升，能产生的目标也可能更复杂。</p><h2 id=训练算法>训练算法</h2><h3 id=step-1-初始化网络和经验池>Step 1. 初始化网络和经验池</h3><p>准备四个网络：</p><ul><li>在线 Actor $\pi_\theta(s,g)$：输出动作。</li><li>在线 Critic $Q_\phi(s,a,g)$：估计动作价值。</li><li>目标 Actor：在线 Actor 的缓慢更新副本。</li><li>目标 Critic：在线 Critic 的缓慢更新副本。</li></ul><p>另外准备经验池 $R$，用于保存交互数据。</p><h3 id=step-2-收集一条轨迹>Step 2. 收集一条轨迹</h3><p>假设原目标是把方块推到位置 A，最多执行 3 步：</p>$$
+s_0\xrightarrow{a_0}s_1
+\xrightarrow{a_1}s_2
+\xrightarrow{a_2}s_3
+$$<p>每一步的动作来自：</p>$$
+a_t=\pi_\theta(s_t,A)+\text{探索噪声}
+$$<p>假设最后方块停在 B，没有到 A。这个阶段只记录实际发生的状态和动作，不更新参数。</p><p>$a_t$ 是夹爪的移动和开合指令，不是直接让方块跳到某个位置。</p><h3 id=step-3-构造并存储原始数据与-her-数据>Step 3. 构造并存储原始数据与 HER 数据</h3><p>假设方块只有最后一步进入 B 的容差范围，全程没有到 A。按照动作后的状态计算奖励：</p><table><thead><tr><th>数据来源</th><th>状态</th><th>实际动作</th><th style=text-align:right>奖励</th><th>下一状态</th><th>目标</th></tr></thead><tbody><tr><td>原始</td><td>$s_0$</td><td>$a_0$</td><td style=text-align:right>$-1$</td><td>$s_1$</td><td>A</td></tr><tr><td>原始</td><td>$s_1$</td><td>$a_1$</td><td style=text-align:right>$-1$</td><td>$s_2$</td><td>A</td></tr><tr><td>原始</td><td>$s_2$</td><td>$a_2$</td><td style=text-align:right>$-1$</td><td>$s_3$</td><td>A</td></tr><tr><td>HER</td><td>$s_0$</td><td>$a_0$</td><td style=text-align:right>$-1$</td><td>$s_1$</td><td>B</td></tr><tr><td>HER</td><td>$s_1$</td><td>$a_1$</td><td style=text-align:right>$-1$</td><td>$s_2$</td><td>B</td></tr><tr><td>HER</td><td>$s_2$</td><td>$a_2$</td><td style=text-align:right>$0$</td><td>$s_3$</td><td>B</td></tr></tbody></table><p>最后一条 HER 数据的奖励来自：</p>$$
+\boxed{
+f_B(s_3)=1\ \text{（成功）}
+\quad\Longrightarrow\quad
+r_2=0\ \text{（奖励）}
+}
+$$<p>这 6 条数据都存进经验池。到这里还没有做梯度更新，只是增加了数据；经验池也不必清空，之后仍然可以抽到以前 episode 的数据。</p><h3 id=step-4-更新在线-critic>Step 4. 更新在线 Critic</h3><p>从经验池随机抽取一个 mini-batch。假设其中包含一条 HER 经验：</p>$$
+(s_2,a_2,0,s_3,B)
+$$<p>先用两个目标网络计算训练目标。一般形式为：</p>$$
+y_i=r_i+\gamma(1-d_i)Q_{\phi^-}
+\left(s'_i,\pi_{\theta^-}(s'_i,g_i),g_i\right),
+$$<p>其中 $d_i$ 表示这一条经验的下一状态是否终止。对于示例中的 HER 经验：</p>$$
+y=0+\gamma(1-d_2)Q_{\phi^-}
+\left(s_3,\pi_{\theta^-}(s_3,B),B\right).
+$$<p>含义是：这次实际奖励是 $0$；如果 $s_3$ 不是终止状态，再加上“从 $s_3$ 继续追求 B”的后续价值估计。</p><p>在线 Critic 对真实执行过的动作打分：</p>$$
+q=Q_\phi(s_2,a_2,B)
+$$<p>用平方误差训练：</p>$$
+L_{\text{critic}}=(q-y)^2
+$$<p>对整批样本取平均，再反向传播，更新 Critic 参数 $\phi$。</p><p>“到达目标、奖励为 $0$”不自动意味着后续项为 $0$；只有这条经验的终止标记 $d_i=1$ 时，才去掉后续项。</p><h3 id=step-5-更新在线-actor>Step 5. 更新在线 Actor</h3><p>取同一个状态和目标 $(s_2,B)$，让在线 Actor 重新输出一个动作：</p>$$
+\hat a=\pi_\theta(s_2,B)
+$$<p>这个 $\hat a$ 不一定等于经验中实际执行过的 $a_2$。让在线 Critic 评价它：</p>$$
+Q_\phi(s_2,\hat a,B)
+$$<p>Actor 的损失是：</p>$$
+L_{\text{actor}}
+=-\frac{1}{|B_{\text{batch}}|}
+\sum_i Q_\phi(s_i,\pi_\theta(s_i,g_i),g_i)
+$$<p>这一步固定 Critic 参数，让梯度经过 Critic 传到 Actor，调整 $\theta$，使 Actor 输出的动作获得更高评价。这不是把旧动作 $a_2$ 当作标准答案，让 Actor 照抄。</p><ul><li>Critic 用真实动作、奖励和下一状态来学习评价。</li><li>Actor 根据 Critic 的梯度，学习怎样选择更好的动作。</li></ul><p>HER 数据就是通过这两个环节影响策略的。</p><h3 id=step-6-更新目标网络并重复训练>Step 6. 更新目标网络并重复训练</h3><p>把两个目标网络向在线网络缓慢更新。然后再次从经验池抽取 batch，继续优化，总共执行 $N$ 次。完成后进入下一个 episode，用更新后的 Actor 与环境交互。</p><p>完整顺序是：</p><blockquote><p>实际执行一条轨迹 → 保存原始和 HER 数据 → 抽取 batch，更新 Critic、Actor 和目标网络，重复 $N$ 次 → 执行下一条轨迹。</p></blockquote><p>因此，“HER 相当于增加训练样本”是准确的：它改变了最后优化步骤会抽到的状态—动作—目标—奖励组合，但底层训练仍然是 DDPG。</p><h2 id=最容易混淆的地方>最容易混淆的地方</h2><h3 id=一个-episode-内目标固定与训练-batch-混合目标并不冲突>“一个 episode 内目标固定”与“训练 batch 混合目标”并不冲突</h3><p>固定的是<strong>与环境交互时的原目标</strong>。收集第 $k$ 个 episode 时，策略的每一步都以同一个 $g_k$ 为条件：</p>$$
+a_t\sim\pi_b(a\mid s_t,g_k),
+\qquad t=0,\ldots,T-1.
+$$<p>episode 结束后，HER 才把这条已经发生的轨迹复制成带有替代目标 $g'$ 的训练经验。不同 episode 产生的数据会一起留在 replay buffer 中，因此梯度更新时抽到的 batch 完全可以同时包含多个目标。前者描述的是 rollout 的条件，后者描述的是离线采样训练数据的方式。</p><h3 id=her-为什么需要离策略算法>HER 为什么需要离策略算法</h3><p>动作 $a_t$ 是在原目标 $g$ 下由行为策略产生的，但重标注后的经验会把同一个动作解释为追求 $g'$ 时采取的动作。换句话说，训练样本中的目标已经改变，这条经验不再严格来自当前要学习的目标条件策略。DQN、DDPG 等离策略算法允许使用这类由其他行为策略产生的数据，因此可以直接配合 HER。</p><h3 id=her-没有把失败说成成功>HER 没有把失败说成成功</h3><p>HER 不会声称轨迹完成了原目标。它保留原始失败经验，同时额外提出一个与实际结果一致的新问题：“如果目标原本就是 $g'$，这一步的奖励应该是多少？”因此，改变的是训练条件和奖励标签，状态、动作与下一状态都保持不变。</p><h2 id=来源>来源</h2><ul><li><a href=https://arxiv.org/abs/1707.01495>Hindsight Experience Replay</a>, Andrychowicz et al., 2017.</li></ul></div></div></article></main><footer class=site-footer><span>© 2026 Ruoke Zhang</span><span>学习、构建、记录。</span></footer></div></body></html>

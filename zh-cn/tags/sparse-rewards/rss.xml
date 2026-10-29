@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparse-Rewards on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/sparse-rewards/</link>
+    <description>Recent content in Sparse-Rewards on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/sparse-rewards/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hindsight Experience Replay (HER)</title>
+      <link>https://ruokezhang.github.io/zh-cn/research/papers/rl/hindsight-experience-replay/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/research/papers/rl/hindsight-experience-replay/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI 整理笔记：&lt;/strong&gt; 本文由 AI 根据学习过程中的问题辅助整理，并非作者逐字手写。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;30-秒结论&#34;&gt;30 秒结论&lt;/h2&gt;&#xA;&lt;p&gt;HER 的核心不是修改已经执行过的动作，而是修改观察这段轨迹时所使用的目标：即使 Agent 没有完成原目标，也可以把它实际达到的状态当作替代目标，重新计算奖励，从失败轨迹中构造出有学习信号的经验。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hindsight-Learning on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/hindsight-learning/</link>
+    <description>Recent content in Hindsight-Learning on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/hindsight-learning/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning from Hindsight for VLA Reinforcement Learning</title>
+      <link>https://ruokezhang.github.io/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/</guid>
+      <description>&lt;h2 id=&#34;研究问题&#34;&gt;研究问题&lt;/h2&gt;&#xA;&lt;h2 id=&#34;learning-from-hindsight&#34;&gt;Learning from Hindsight&lt;/h2&gt;&#xA;&lt;h3 id=&#34;rollout-relabeling&#34;&gt;Rollout Relabeling&lt;/h3&gt;&#xA;&lt;p&gt;每轮训练开始时，初始化原始数据 Batch、Hindsight Batch 和旧策略：&lt;/p&gt;&#xA;$$&#xA;\mathcal B\leftarrow\varnothing,&#xA;\qquad&#xA;\widetilde{\mathcal B}\leftarrow\varnothing,&#xA;\qquad&#xA;\pi_{\theta_{\mathrm{old}}}\leftarrow\pi_\theta.&#xA;$$&lt;p&gt;之后按以下流程收集并重标记数据：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;从任务分布中采样指令 $g$，使用旧策略采集包含 $K$ 条轨迹的 Group：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

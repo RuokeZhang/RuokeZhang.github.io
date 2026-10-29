@@ -1,0 +1,63 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ruoke Zhang's personal website, projects, and writing."><title>Learning from Hindsight for VLA Reinforcement Learning · Ruoke Zhang</title>
+<link rel=stylesheet href=/css/site.min.012e3370c36905787e9cfca38cced785ce3bb6ad02ebb59e57ab1faa11c8c5a7.css integrity="sha256-AS4zcMNpBXh+nPyjjM7Xhc47tq0C67WeV6sfqhHIxac=" crossorigin=anonymous><script>window.MathJax={tex:{displayMath:[["\\[","\\]"],["$$","$$"]],inlineMath:[["\\(","\\)"],["$","$"]],processEscapes:!0}}</script><script id=MathJax-script defer src=https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js></script></head><body><div class=site-shell><header class=site-header><a class=site-name href=/zh-cn/>Ruoke Zhang</a><nav class=main-nav aria-label="Main navigation"><a href=/zh-cn/>首页</a>
+<a href=/zh-cn/projects/>项目</a>
+<a href=/zh-cn/photography/>摄影</a>
+<a href=/zh-cn/blogs/ aria-current=page>博客</a></nav><nav class=language-nav aria-label=Language><a href=/en/>EN</a>
+<a href=/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/ aria-current=page>中文</a></nav></header><main id=main-content><article class="article has-toc"><aside class=article-toc><details open><summary>本文目录</summary><nav id=TableOfContents><ul><li><a href=#研究问题>研究问题</a></li><li><a href=#learning-from-hindsight>Learning from Hindsight</a><ul><li><a href=#rollout-relabeling>Rollout Relabeling</a></li><li><a href=#training-objective>Training Objective</a></li></ul></li><li><a href=#实验>实验</a><ul><li><a href=#实验设置>实验设置</a></li><li><a href=#对比方法>对比方法</a></li></ul></li><li><a href=#局限与我的判断>局限与我的判断</a></li><li><a href=#来源>来源</a></li></ul></nav></details></aside><div class=article-body><header class="page-heading article-heading"><a class=back-link href=/zh-cn/blogs/>← 博客</a><h1>Learning from Hindsight for VLA Reinforcement Learning</h1><time datetime=2026-10-22>October 22, 2026</time></header><div class=prose><h2 id=研究问题>研究问题</h2><h2 id=learning-from-hindsight>Learning from Hindsight</h2><h3 id=rollout-relabeling>Rollout Relabeling</h3><p>每轮训练开始时，初始化原始数据 Batch、Hindsight Batch 和旧策略：</p>$$
+\mathcal B\leftarrow\varnothing,
+\qquad
+\widetilde{\mathcal B}\leftarrow\varnothing,
+\qquad
+\pi_{\theta_{\mathrm{old}}}\leftarrow\pi_\theta.
+$$<p>之后按以下流程收集并重标记数据：</p><ol><li><p>从任务分布中采样指令 $g$，使用旧策略采集包含 $K$ 条轨迹的 Group：</p>$$
+\mathcal G
+=\{(\tau_i,g,R_i)\}_{i=1}^{K},
+$$<p>并将其加入 $\mathcal B$。</p></li><li><p>计算 Group 的平均奖励。只有平均奖励低于阈值 $\eta$ 时，才启动 Hindsight Relabeling：</p>$$
+\frac{1}{K}\sum_{i=1}^{K}R_i<\eta.
+$$</li><li><p>从 Group 的失败轨迹中随机选择一条作为 Anchor（锚点轨迹）。VLM 先判断 Anchor 是否包含有意义的行为；如果只是悬停、空转或没有发生实质性交互，就丢弃这个 Anchor。</p></li><li><p>VLM 根据 Anchor 的实际行为生成新任务 $g'$，再使用同一个 $g'$ 重新评估原 Group 中的每一条轨迹：</p>$$
+\widetilde R_i
+=M_{\mathrm{reward}}(\tau_i,g')
+\in\{0,0.5,1\}.
+$$<p>其中，$0$、$0.5$ 和 $1$ 分别表示失败、不确定和成功。共享同一个 $g'$，可以保证 Group 内不同轨迹的奖励仍然可比较。</p></li><li><p>将得到的 Hindsight Group 加入 $\widetilde{\mathcal B}$，最后同时使用 $\mathcal B$ 和 $\widetilde{\mathcal B}$ 更新模型。</p></li></ol><h4 id=challenge-1-vlm-可能为一段行为强行生成任务>Challenge 1. VLM 可能为一段行为强行生成任务</h4><p>假设机器人实际上只碰了一下杯子，杯子晃了晃。你问 VLM“机器人完成了什么任务”，它仍可能回答：</p><blockquote><p>“把杯子移动到桌子中央。”</p></blockquote><p>但杯子可能根本没到桌子中央，也可能只是偶然晃动，没形成什么明确结果。</p><p><strong>解决方法：Constrained Judgment</strong></p><p>作者把 VLM 的工作拆成两次提问：</p><ol><li><p><strong>生成候选任务。</strong> 根据场景中实际存在的物体，判断机器人完成了什么。例如，原任务是“把杯子放进柜子”，但机器人把杯子放到了桌上，那么可以生成新指令：</p><blockquote><p>“把杯子放到桌上。”</p></blockquote><p>如果机器人只是乱动，没有完成明确的事情，则允许回答：</p><blockquote><p>“没有完成任何任务。”</p></blockquote></li><li><p><strong>验证候选任务。</strong> 给定生成的新指令，再检查视频是否真的证明它已经完成。例如，新指令是“把杯子放到桌上”，但最后杯子被机械臂挡住，看不清它有没有放稳，则允许回答：</p><blockquote><p>“不确定。”</p></blockquote></li></ol><p>这就是 Constrained Judgment：受场景事实约束的判断。它不再是“无论视频里发生什么，都必须写出一个任务描述”。</p><h3 id=training-objective>Training Objective</h3><h4 id=challenge-2-重标记轨迹并非由新指令采样得到>Challenge 2. 重标记轨迹并非由新指令采样得到</h4><p>假设杯子确实被放到了桌上，新标签完全正确。</p><p>但机器人当时听到的是：</p>$$
+g=\text{“放进柜子”}
+$$<p>所以动作来自：</p>$$
+\pi(a\mid s,g)
+$$<p>现在重新标注后，你要训练的是：</p>$$
+g'=\text{“放到桌上”}
+$$<p>对应的动作分布是：</p>$$
+\pi(a\mid s,g')
+$$<p><strong>普通 GRPO：当前策略与采样时旧策略的比值</strong></p>$$
+r_t(\theta)=
+\frac{\pi_\theta(a_t\mid o_t,g)}
+{\pi_{\theta_{\mathrm{old}}}(a_t\mid o_t,g)}
+$$<p>分母固定，分子参与参数更新。这是我们前面一直讲的情况。</p><p><strong>HPG 的目标切换比值：没有显式区分新旧模型</strong></p>$$
+W_t=
+\prod_{s=1}^{t}
+\frac{\pi(a_s\mid o_s,g')}
+{\pi(a_s\mid o_s,g)}
+$$<p>这个式子单独讨论的是：固定同一套模型参数，只改变任务指令，轨迹前缀的概率会怎样变化？</p><p><strong>GRPO 目标</strong></p>$$
+L_{\mathrm{GRPO}}(\theta)=
+\mathbb E_{g,\{\tau_i\}}
+\left[
+\frac{1}{K}
+\sum_{i=1}^{K}
+\sum_{t=0}^{T-1}
+\ell_{i,t}(\theta)
+\right]
+$$<p>其中：</p>$$
+\ell_{i,t}(\theta)=
+\min\!\left(
+r_{i,t}\hat A_i,
+\bar r_{i,t}\hat A_i
+\right)-
+\beta\,D_{\mathrm{KL}}
+\!\left(\pi_\theta\,\|\,\pi_{\mathrm{ref}}\right),
+$$$$
+\bar r_{i,t}=
+\operatorname{clip}\!\left(r_{i,t},1-\epsilon,1+\epsilon\right).
+$$<p>定义 Hindsight 目标 $L_{\mathrm{H\text{-}GRPO}}$：</p><ul><li>使用重标记后的奖励 $\tilde R_i$ 计算 Advantage $\tilde A_i$；</li><li>用新的概率比 $\tilde r_{i,t}$ 替换原来的 $r_{i,t}$；</li><li>在新指令 $g'$ 的条件下计算 KL 项。</li></ul><p>为限制含噪声或不匹配的重标记结果所产生的影响，在给 $L_{\mathrm{H\text{-}GRPO}}$ 乘上权重之前，先对它进行截断：</p>$$
+L_{\mathrm{LfH}}(\theta)=
+L_{\mathrm{GRPO}}(\theta)
++
+\lambda\min\!\left(L_{\mathrm{H\text{-}GRPO}}(\theta),c\right).
+$$<p>也就是说，总目标由原始 GRPO 项（未经重标记的原始轨迹）和加权后的 Hindsight 项组成；Hindsight 项先以 $c$ 为上限截断，再乘以权重 $\lambda$。</p><h2 id=实验>实验</h2><h3 id=实验设置>实验设置</h3><ul><li><strong>初始模型：</strong> 使用 3.3B 的 $\pi_{0.5}$，从 <code>RLinf-Pi05-LIBERO-SFT</code> Checkpoint 开始，再进行 GRPO 或 LfH 训练。</li><li><strong>Benchmark：</strong> LIBERO-PRO，包括 Spatial、Goal、Object 和 Long 四个 OOD Task Suite，每个 Suite 包含 10 个任务。</li><li><strong>OOD 设置：</strong> 保留原有场景、物体和环境动力学，但改变任务指令中的目标物体、目标状态或动作要求。</li><li><strong>训练方式：</strong> 四个 Suite 分别训练，比较不同方法在稀疏奖励条件下的样本效率。</li></ul><h3 id=对比方法>对比方法</h3><table><thead><tr><th>方法</th><th>使用的训练信号</th></tr></thead><tbody><tr><td>GRPO</td><td>原始任务的稀疏成功奖励</td></tr><tr><td>GRPO + RoboMETER</td><td>原始任务上的稠密进度奖励，相当于更细粒度地判断任务完成程度</td></tr><tr><td>GRPO + LfH</td><td>除原始奖励外，将失败轨迹重标记为已经完成的新任务</td></tr></tbody></table><h2 id=局限与我的判断>局限与我的判断</h2><h2 id=来源>来源</h2></div></div></article></main><footer class=site-footer><span>© 2026 Ruoke Zhang</span><span>学习、构建、记录。</span></footer></div></body></html>

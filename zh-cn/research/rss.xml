@@ -6,8 +6,22 @@
     <description>Recent content in 研究笔记 on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/research/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hindsight Experience Replay (HER)</title>
+      <link>https://ruokezhang.github.io/zh-cn/research/papers/rl/hindsight-experience-replay/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/research/papers/rl/hindsight-experience-replay/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI 整理笔记：&lt;/strong&gt; 本文由 AI 根据学习过程中的问题辅助整理，并非作者逐字手写。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;30-秒结论&#34;&gt;30 秒结论&lt;/h2&gt;&#xA;&lt;p&gt;HER 的核心不是修改已经执行过的动作，而是修改观察这段轨迹时所使用的目标：即使 Agent 没有完成原目标，也可以把它实际达到的状态当作替代目标，重新计算奖励，从失败轨迹中构造出有学习信号的经验。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning from Hindsight for VLA Reinforcement Learning</title>
+      <link>https://ruokezhang.github.io/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/</guid>
+      <description>&lt;h2 id=&#34;研究问题&#34;&gt;研究问题&lt;/h2&gt;&#xA;&lt;h2 id=&#34;learning-from-hindsight&#34;&gt;Learning from Hindsight&lt;/h2&gt;&#xA;&lt;h3 id=&#34;rollout-relabeling&#34;&gt;Rollout Relabeling&lt;/h3&gt;&#xA;&lt;p&gt;每轮训练开始时，初始化原始数据 Batch、Hindsight Batch 和旧策略：&lt;/p&gt;&#xA;$$&#xA;\mathcal B\leftarrow\varnothing,&#xA;\qquad&#xA;\widetilde{\mathcal B}\leftarrow\varnothing,&#xA;\qquad&#xA;\pi_{\theta_{\mathrm{old}}}\leftarrow\pi_\theta.&#xA;$$&lt;p&gt;之后按以下流程收集并重标记数据：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;从任务分布中采样指令 $g$，使用旧策略采集包含 $K$ 条轨迹的 Group：&lt;/p&gt;</description>
+    </item>
     <item>
       <title></title>
       <link>https://ruokezhang.github.io/zh-cn/research/papers/autoresearch/benchmark/</link>

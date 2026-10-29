@@ -117,6 +117,61 @@
                 href="https://ruokezhang.github.io/zh-cn/"
                 />
   </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/experience-replay/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/research/papers/rl/hindsight-experience-replay/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/hindsight-learning/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/research/papers/rl/learning-from-hindsight-vla-rl/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/off-policy/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/reinforcement-learning/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/categories/research/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/categories/rl/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/robot-learning/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/sparse-rewards/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://ruokezhang.github.io/zh-cn/tags/vision-language-action/</loc>
+    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://ruokezhang.github.io/zh-cn/research/</loc>
     <lastmod>2026-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
