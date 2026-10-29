@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/kubernetes/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes 基础</title>
+      <link>https://ruokezhang.github.io/zh-cn/post/k8s/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/post/k8s/</guid>
+      <description>&lt;p&gt;Kubernetes（K8s）用于编排容器化应用。一个集群由 Control Plane 和多个 Worker Node 组成：Control Plane 维护集群的期望状态，Worker Node 负责运行实际工作负载。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
