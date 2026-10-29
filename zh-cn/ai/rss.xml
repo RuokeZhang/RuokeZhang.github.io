@@ -13,7 +13,7 @@
       <link>https://ruokezhang.github.io/zh-cn/ai/rl/</link>
       <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/ai/rl/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Optimal Policy 与 Optimal Q-function&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let $\pi^&lt;em&gt;$ denote an optimal policy, i.e. any policy $\pi^&lt;/em&gt;$ s.t.&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;Q^{\pi^*}(s,a) \ge Q^\pi(s,a)&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;for every $s \in S$, $a \in A$, and any policy $\pi$.&lt;/p&gt;&#xA;&lt;p&gt;All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.&lt;/p&gt;&#xA;&lt;p&gt;对于任意固定的 $(s,a)$，第一步已经确定，后面无论交给哪个最优策略，都能取得相同的最优后续回报。&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI 整理笔记：&lt;/strong&gt; 本文由 AI 根据学习过程中的问题辅助整理，并非作者逐字手写。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Optimal Policy 与 Optimal Q-function&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let $\pi^*$ denote an optimal policy, i.e. any policy $\pi^*$ s.t.&lt;/p&gt;&#xA;$$&#xA;Q^{\pi^*}(s,a) \ge Q^\pi(s,a)&#xA;$$&lt;p&gt;for every $s \in S$, $a \in A$, and any policy $\pi$.&lt;/p&gt;&#xA;&lt;p&gt;All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Deep Learning</title>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 整理 on Ruoke Zhang</title>
+    <link>https://ruokezhang.github.io/zh-cn/tags/ai-%E6%95%B4%E7%90%86/</link>
+    <description>Recent content in AI 整理 on Ruoke Zhang</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ruokezhang.github.io/zh-cn/tags/ai-%E6%95%B4%E7%90%86/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://ruokezhang.github.io/zh-cn/ai/rl/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/ai/rl/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;AI 整理笔记：&lt;/strong&gt; 本文由 AI 根据学习过程中的问题辅助整理，并非作者逐字手写。&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Optimal Policy 与 Optimal Q-function&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let $\pi^*$ denote an optimal policy, i.e. any policy $\pi^*$ s.t.&lt;/p&gt;&#xA;$$&#xA;Q^{\pi^*}(s,a) \ge Q^\pi(s,a)&#xA;$$&lt;p&gt;for every $s \in S$, $a \in A$, and any policy $\pi$.&lt;/p&gt;&#xA;&lt;p&gt;All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
