@@ -1,9 +1,10 @@
-<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ruoke Zhang's personal website, projects, and writing."><title>· Ruoke Zhang</title>
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ruoke Zhang's personal website, projects, and writing."><title>Reinforcement Learning · Ruoke Zhang</title>
 <link rel=stylesheet href=/css/site.min.012e3370c36905787e9cfca38cced785ce3bb6ad02ebb59e57ab1faa11c8c5a7.css integrity="sha256-AS4zcMNpBXh+nPyjjM7Xhc47tq0C67WeV6sfqhHIxac=" crossorigin=anonymous></head><body><div class=site-shell><header class=site-header><a class=site-name href=/zh-cn/>Ruoke Zhang</a><nav class=main-nav aria-label="Main navigation"><a href=/zh-cn/>首页</a>
 <a href=/zh-cn/projects/>项目</a>
 <a href=/zh-cn/photography/>摄影</a>
 <a href=/zh-cn/blogs/ aria-current=page>博客</a></nav><nav class=language-nav aria-label=Language><a href=/en/>EN</a>
-<a href=/zh-cn/ai/rl/ aria-current=page>中文</a></nav></header><main id=main-content><article class="article has-toc"><aside class=article-toc><details open><summary>本文目录</summary><nav id=TableOfContents><ul><li><a href=#off-policy>Off-policy</a><ul><li><a href=#dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</a></li><li><a href=#ddpg>DDPG</a></li><li><a href=#universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</a></li></ul></li><li><a href=#on-policy>On-policy</a><ul><li><a href=#ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</a></li></ul></li></ul><ul><li><ul><li></li></ul></li></ul></nav></details></aside><div class=article-body><header class="page-heading article-heading"><a class=back-link href=/zh-cn/blogs/>← 博客</a><h1></h1></header><div class=prose><p><strong>Optimal Policy 与 Optimal Q-function</strong></p><p>Let $\pi^<em>$ denote an optimal policy, i.e. any policy $\pi^</em>$ s.t.</p><p>$$
+<a href=/zh-cn/ai/rl/ aria-current=page>中文</a></nav></header><main id=main-content><article class="article has-toc"><aside class=article-toc><details open><summary>本文目录</summary><nav id=TableOfContents><ul><li><a href=#off-policy>Off-policy</a><ul><li><a href=#dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</a></li><li><a href=#ddpg>DDPG</a></li><li><a href=#universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</a></li></ul></li></ul><ul><li><ul><li></li></ul></li></ul><ul><li><a href=#on-policy>On-policy</a><ul><li><a href=#ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</a></li></ul></li></ul><ul><li><ul><li></li><li><a href=#grpo>GRPO</a></li></ul></li></ul><ul><li><ul><li><a href=#dpo>DPO</a></li></ul></li></ul><ul><li><a href=#pi_mathrmrefymid-x_text好回答的概率变化>\underbrace{\log\frac{\pi_\theta(y^+\mid x)}
+{\pi_{\mathrm{ref}}(y^+\mid x)}}_{\text{好回答的概率变化}}</a></li></ul></nav></details></aside><div class=article-body><header class="page-heading article-heading"><a class=back-link href=/zh-cn/blogs/>← 博客</a><h1>Reinforcement Learning</h1><time datetime=2026-10-29>October 29, 2026</time></header><div class=prose><p><strong>Optimal Policy 与 Optimal Q-function</strong></p><p>Let $\pi^<em>$ denote an optimal policy, i.e. any policy $\pi^</em>$ s.t.</p><p>$$
 Q^{\pi^*}(s,a) \ge Q^\pi(s,a)
 $$</p><p>for every $s \in S$, $a \in A$, and any policy $\pi$.</p><p>All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.</p><p>对于任意固定的 $(s,a)$，第一步已经确定，后面无论交给哪个最优策略，都能取得相同的最优后续回报。</p><p>如果环境有随机性，即使两个策略都最优，单次运行得到的累计折扣奖励也可能不同；相同的是对所有可能结果按概率加权后的平均值。</p><p><strong>Bellman Equation（贝尔曼方程）</strong></p><p>它表达的是：
 从现在开始的累计回报，可以拆成“现在这一步的奖励”＋“从下一步开始的累计回报”。</p><p>对于一个固定策略 $\pi$：</p><p>$$
@@ -13,27 +14,70 @@ Q^\pi(s,a)=
 \underbrace{r(s,a)}<em>{\text{现在的奖励}}
 +\gamma\underbrace{Q^\pi(s&rsquo;,\pi(s&rsquo;))}</em>{\text{下一步继续按 }\pi\text{ 行动的价值}}
 \right]
-$$</p><p>在训练中的用处是：即使一开始不知道完整的长期回报，也可以用“实际观察到的一步奖励＋目前估计的下一状态价值”，逐渐修正当前 Q 值。</p><h2 id=off-policy>Off-policy</h2><p>采集数据的策略和更新所针对的策略可以不同</p><h3 id=dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</h3><p>DQN 使用 $Q_\theta(s,a)$ 表示每个动作的预期长期回报，通常用 $\epsilon$-greedy 选择动作。</p><p>设 $\epsilon=0.1$，这句话的两部分分别是：</p><ul><li><p>“with probability $\epsilon$ takes a random action”：有 10% 的概率进入探索分支，忽略 Q 值，从四个动作中均匀随机选择，每个动作被选中的概率都是 $1/4$。</p></li><li><p>“takes the action $\pi_Q(s)$ with probability $1-\epsilon$”：有 90% 的概率进入贪心分支，直接选 Q 值最高的“左”。</p></li><li><p>在线网络 $Q_\theta$：正在训练、不断修改的版本。</p></li><li><p>目标网络 $Q_{\theta^-}$：暂时冻结的旧版本，用来提供稳定的训练目标。</p></li></ul><h4 id=step-1-收集经验>Step 1. 收集经验</h4><p>在状态 $s_t$，在线 Q 网络估计各个动作的价值，再用 $\epsilon$-greedy 选出 $a_t$。执行后，环境返回即时奖励 $r_t$ 和下一状态 $s_{t+1}$，得到一条经验：</p><p>$$
-(s_t,a_t,r_t,s_{t+1})
-$$</p><p>将经验存入经验回放池（Replay Buffer），训练时再从中抽取 transition。</p><h4 id=step-2-使用目标网络构造训练目标>Step 2. 使用目标网络构造训练目标</h4><p>我们要修正在线网络对 $Q_\theta(s_t,a_t)$ 的估计。目标值来自 Bellman 方程：</p><p>$$
-\boxed{y_t=r_t+\gamma\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)}
-$$</p><p>训练时，对经验池里抽出的 $s_{t+1}$，目标网络计算所有动作的价值：</p><p>$$
-Q_{\theta^-}(s_{t+1},a&rsquo;),
+$$</p><p>在训练中的用处是：即使一开始不知道完整的长期回报，也可以用“实际观察到的一步奖励＋目前估计的下一状态价值”，逐渐修正当前 Q 值。</p><h2 id=off-policy>Off-policy</h2><p>采集数据的策略和更新所针对的策略可以不同</p><h3 id=dqn-与-epsilon-greedy>DQN 与 $\epsilon$-greedy</h3><p>DQN 使用 $Q_\theta(s,a)$ 表示每个动作的预期长期回报，通常用 $\epsilon$-greedy 选择动作。</p><p>设 $\epsilon=0.1$：</p><ul><li>有 10% 的概率进入探索分支，忽略 Q 值，从四个动作中均匀随机选择，每个动作被选中的概率都是 $1/4$。</li><li>有 90% 的概率进入贪心分支，直接选 Q 值最高的“左”。</li></ul><p>在线网络 $Q_\theta$：正在训练、不断修改的版本。</p><p>目标网络 $Q_{\theta^-}$：暂时冻结的旧版本，用来提供稳定的训练目标。</p><h4 id=step-1-收集经验>Step 1. 收集经验</h4><p>先区分三个容易混淆的下标：</p><table><thead><tr><th>记号</th><th>含义</th></tr></thead><tbody><tr><td>$t$</td><td>环境中的时间步</td></tr><tr><td>$k$</td><td>第几次梯度更新</td></tr><tr><td>$i$</td><td>从 Replay Buffer 抽出的第几条样本</td></tr></tbody></table><p>在状态 $s_t$，在线 Q 网络估计各个动作的价值，再用 $\epsilon$-greedy 选出 $a_t$。执行一次 <code>env.step(a_t)</code> 后，环境返回即时奖励 $r_t$、下一状态 $s_{t+1}$ 和终止标记 $d_t$，得到一条 transition：</p><p>$$
+(s_t,a_t,r_t,s_{t+1},d_t)
+$$</p><p>这条 transition 会立即存入 Replay Buffer，不需要等整条轨迹结束。</p><p><strong>一次 training loop 到底采集多少 rollout？</strong> DQN 没有统一规定，而且通常不按完整 rollout 组织训练。最简单的实现中，外层循环每执行一个环境 step，就向 buffer 加 <strong>1 条 transition</strong>；如果一局有 $T$ 步，那么这一局最终会加入 $T$ 条 transition，而不是把整局当成一个不可拆分的训练样本。</p><p>实际采集与训练节奏通常由以下参数控制：</p><table><thead><tr><th>参数</th><th>作用</th></tr></thead><tbody><tr><td><code>learning_starts</code></td><td>先只收集多少条 transition，再开始训练</td></tr><tr><td><code>train_freq</code></td><td>每收集多少个环境 step，触发一次训练</td></tr><tr><td><code>gradient_steps</code></td><td>每次触发训练后，执行多少次梯度更新</td></tr><tr><td><code>batch_size</code></td><td>每次梯度更新从整个 buffer 随机抽多少条旧、新 transition</td></tr></tbody></table><p>例如，buffer 已经过了预热阶段，单环境设置 <code>train_freq=4</code>、<code>gradient_steps=1</code>、<code>batch_size=32</code>：</p><ol><li>连续与环境交互 4 步，向 buffer 新增 4 条 transition。</li><li>从整个 buffer 随机抽取 32 条 transition，不要求是刚加入的 4 条。</li><li>用这 32 条数据做 1 次梯度更新。</li><li>再收集 4 条，然后重复。</li></ol><p>如果同时运行 $N$ 个并行环境，那么一次并行环境 step 会新增 $N$ 条 transition。也可以把 <code>train_freq</code> 配置成一整个 episode，但这只是实现选择，不是 DQN 算法要求。</p><h4 id=step-2-使用目标网络构造训练目标>Step 2. 使用目标网络构造训练目标</h4><p>当 buffer 中已有足够数据并到达训练时机时，随机抽取一个 mini-batch：</p><p>$$
+\mathcal B=
+{(s_i,a_i,r_i,s&rsquo;<em>i,d_i)}</em>{i=1}^{B}
+$$</p><p>这里的 $i$ 是 batch 样本编号。不同样本可能来自不同 episode、不同时间步，并不要求按 $t$ 的先后顺序排列。</p><p>对于 batch 中每一条 transition，我们要修正在线网络对 $Q_\theta(s_i,a_i)$ 的估计。目标值来自 Bellman 方程：</p><p>$$
+\boxed{
+y_i=r_i+\gamma(1-d_i)\max_{a&rsquo;}Q_{\theta^-}(s&rsquo;_i,a&rsquo;)
+}
+$$</p><p>其中 $s&rsquo;_i$ 就是这条经验里的下一状态。目标网络对 batch 中所有 $s&rsquo;_i$ 做一次前向传播，为每个状态输出所有候选动作的 Q 值：</p><p>$$
+Q_{\theta^-}(s&rsquo;_i,a&rsquo;),
 \qquad a&rsquo;\in\mathcal A
-$$</p><p>然后直接取最大值对应的动作：</p><p>$$
-a^*=\arg\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)
-$$</p><p>这里的 $a&rsquo;$ 是遍历所有候选动作的变量，不是与环境交互时实际执行的动作，因此不通过 $\epsilon$-greedy 选择。</p><p>也就是：这个动作的价值应接近“实际即时奖励＋下一状态的最佳后续价值估计”。</p><table><thead><tr><th>部分</th><th>来源</th></tr></thead><tbody><tr><td>$r_t$</td><td>与环境交互时实际观察到的奖励</td></tr><tr><td>$\max_{a&rsquo;}Q_{\theta^-}(s_{t+1},a&rsquo;)$</td><td>目标网络对未来回报的估计</td></tr></tbody></table><p><strong>示例：</strong></p><p>把下一状态 $s_{t+1}$ 输入目标网络。假设它估计：</p><table><thead><tr><th>下一步动作</th><th style=text-align:right>目标网络预测的 Q 值</th></tr></thead><tbody><tr><td>上</td><td style=text-align:right>5</td></tr><tr><td>下</td><td style=text-align:right>10</td></tr><tr><td>左</td><td style=text-align:right>3</td></tr><tr><td>右</td><td style=text-align:right>4</td></tr></tbody></table><p>最高值是 $10$。取 $r_t=2$、$\gamma=0.9$，构造参考值：</p><p>$$
-y_t=
+$$</p><p>然后对每条样本取最大的动作价值：</p><p>$$
+\max_{a&rsquo;}Q_{\theta^-}(s&rsquo;_i,a&rsquo;)
+$$</p><p>这里的 $a&rsquo;$ 是遍历所有候选动作的变量，不是 Replay Buffer 中实际执行的动作 $a_i$，因此不通过 $\epsilon$-greedy 选择。若 $d_i=1$，说明这条 transition 到达终止状态，目标就是 $y_i=r_i$，不再估计后续价值。</p><p>也就是：当前状态下实际动作 $a_i$ 的价值，应接近“实际即时奖励＋下一状态的最佳后续价值估计”。</p><table><thead><tr><th>部分</th><th>来源</th></tr></thead><tbody><tr><td>$r_i$</td><td>这条 buffer 样本中实际观察到的奖励</td></tr><tr><td>$\max_{a&rsquo;}Q_{\theta^-}(s&rsquo;_i,a&rsquo;)$</td><td>目标网络对这条样本的未来回报估计</td></tr></tbody></table><p><strong>示例：</strong></p><p>从同一个 mini-batch 中取一条样本：</p><p>$$
+(s_i,a_i=\text{左},r_i=2,s&rsquo;_i,d_i=0)
+$$</p><p>把其中的下一状态 $s&rsquo;_i$ 输入目标网络。假设它估计：</p><table><thead><tr><th>下一步动作</th><th style=text-align:right>目标网络预测的 Q 值</th></tr></thead><tbody><tr><td>上</td><td style=text-align:right>5</td></tr><tr><td>下</td><td style=text-align:right>10</td></tr><tr><td>左</td><td style=text-align:right>3</td></tr><tr><td>右</td><td style=text-align:right>4</td></tr></tbody></table><p>最高值是 $10$。取 $r_i=2$、$\gamma=0.9$，构造参考值：</p><p>$$
+y_i=
 \underbrace{2}<em>{\text{实际即时奖励}}
 +0.9\times\underbrace{10}</em>{\text{目标网络估计的后续价值}}
 =11
-$$</p><p>这个 $11$ 是训练目标，仍然是估计，不是真实答案。</p><h4 id=step-3-更新在线网络>Step 3. 更新在线网络</h4><p>在线网络目前对**当前状态 $s_t$ 的实际动作“左”**预测为 $3$：</p><p>$$
-Q_\theta(s_t,\text{左})=3
-$$</p><p>用 MSE 计算损失：</p><p>$$
-L=\left(Q_\theta(s_t,\text{左})-y_t\right)^2=(3-11)^2
-$$</p><p>反向传播只修改在线网络，让这个预测向 $11$ 靠近。目标网络此时不动。</p><h4 id=step-4-更新目标网络>Step 4. 更新目标网络</h4><p>训练一段时间后，把已经改进的在线网络复制给目标网络：</p><p>$$
+$$</p><p>这个 $11$ 是训练目标，仍然是估计，不是真实答案。</p><h4 id=step-3-更新在线网络>Step 3. 更新在线网络</h4><p>Step 3 使用的就是 Step 2 从 buffer 抽出的<strong>同一个 mini-batch</strong>，不会重新采样。</p><p>对于上面的同一条样本，在线网络输入当前状态 $s_i$，输出所有动作的 Q 值。由于 buffer 记录的实际动作是 $a_i=\text{左}$，所以从输出中取出“左”的预测。假设：</p><p>$$
+Q_\theta(s_i,a_i)=Q_\theta(s_i,\text{左})=3
+$$</p><p>对 batch 中的每条样本都做同样的选择，然后计算平均损失：</p><p>$$
+L(\theta)
+=\frac{1}{B}\sum_{i=1}^{B}
+\left(Q_\theta(s_i,a_i)-y_i\right)^2
+$$</p><p>在这条示例中，对应的误差项是 $(3-11)^2$。反向传播只修改在线网络，让 $Q_\theta(s_i,\text{左})$ 向 $11$ 靠近；目标网络此时不动，$y_i$ 也不参与梯度计算。</p><p>同一个 batch 的数据流可以概括为：</p><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>s&#39;_i ──&gt; 目标网络 Q_{θ⁻} ──&gt; y_i
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>s_i  ──&gt; 在线网络 Q_θ ──&gt; 取实际动作 a_i 的 Q 值
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>                         prediction 与 y_i 计算 loss
+</span></span></code></pre></td></tr></table></div></div><h4 id=step-4-更新目标网络>Step 4. 更新目标网络</h4><p>训练一段时间后，把已经改进的在线网络复制给目标网络：</p><p>$$
 \theta^- \leftarrow \theta
-$$</p><p>然后继续上述过程。</p><h4 id=为什么-dqn-是-off-policy>为什么 DQN 是 Off-policy</h4><p>Off-policy 体现在：“实际怎么走”和“更新时假定后面怎么走”可以不同。</p><p>假设到了 $s_{t+1}$，网络估计：</p><table><thead><tr><th>动作</th><th style=text-align:right>Q 值</th></tr></thead><tbody><tr><td>左</td><td style=text-align:right>10</td></tr><tr><td>右</td><td style=text-align:right>2</td></tr></tbody></table><p>收集数据时使用 $\epsilon$-greedy，可能因为探索而实际选择“右”。</p><p>但 DQN 构造 $y_t$ 时，仍然使用：</p><p>$$
+$$</p><p>然后继续上述过程。</p><p>完整训练时序可以概括为：</p><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">12
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>先收集 learning_starts 条 transition
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>循环：
+</span></span><span style=display:flex><span>    收集 train_freq 个环境 step，并逐条写入 Replay Buffer
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    重复 gradient_steps 次：
+</span></span><span style=display:flex><span>        从整个 Replay Buffer 随机抽取同一个 mini-batch
+</span></span><span style=display:flex><span>        用 s&#39;_i 和目标网络计算 y_i
+</span></span><span style=display:flex><span>        用 s_i、a_i 和在线网络计算 prediction
+</span></span><span style=display:flex><span>        用 prediction 与 y_i 的差更新在线网络
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    每隔一段时间，把在线网络参数复制给目标网络
+</span></span></code></pre></td></tr></table></div></div><h4 id=为什么-dqn-是-off-policy>为什么 DQN 是 Off-policy</h4><p>Off-policy 体现在：“实际怎么走”和“更新时假定后面怎么走”可以不同。</p><p>假设到了 $s_{t+1}$，网络估计：</p><table><thead><tr><th>动作</th><th style=text-align:right>Q 值</th></tr></thead><tbody><tr><td>左</td><td style=text-align:right>10</td></tr><tr><td>右</td><td style=text-align:right>2</td></tr></tbody></table><p>收集数据时使用 $\epsilon$-greedy，可能因为探索而实际选择“右”。</p><p>但 DQN 构造 $y_t$ 时，仍然使用：</p><p>$$
 \max_{a&rsquo;}Q(s_{t+1},a&rsquo;)=10
 $$</p><p>也就是**“左”的价值**，而不是实际探索选择的“右”的价值。</p><p>设 $r_t=1$、$\gamma=0.9$，DQN 的目标是：</p><p>$$
 y_t=1+0.9\times10=10
@@ -61,7 +105,55 @@ L_{\text{actor}}
 Q_{\phi_{\text{new}}}!\left(s_i,\pi_\theta(s_i)\right)
 $$</p><p>计算 Actor Loss 时固定 Critic 的参数 $\phi_{\text{new}}$，只更新 Actor 的参数 $\theta$。</p><h4 id=软更新目标网络>软更新目标网络</h4><p>两个目标网络不直接做梯度更新，而是通常采用软更新，例如：</p><p>$$
 \phi^-\leftarrow(1-\tau)\phi^-+\tau\phi
-$$</p><h3 id=universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</h3><p>DQN/DDPG的extension，multi-goal版本</p><h2 id=on-policy>On-policy</h2><h3 id=ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</h3><h4 id=两个模型>两个模型</h4><p><strong>Actor (Policy Model)</strong></p><ul><li>学习做出更好的 Action。</li><li>通过 Policy Loss 更新参数。</li></ul><p><strong>Critic (Value Model)</strong></p><ul><li>学习预测当前 State 的 Expected Return。</li><li>通过 Value Loss 更新参数。</li><li>它不负责产生 Reward，而是估计未来能获得多少 Reward。</li></ul><h4 id=step-1-rollout>Step 1. Rollout</h4><p>假设 Memory Manager 当前输入为 State $s$，Actor 采样到 Action <code>UPDATE</code>，记录：</p><p>$$
+$$</p><h3 id=universal-value-function-approximators-uvfa>Universal Value Function Approximators (UVFA)</h3><p>UVFA 是 DQN、DDPG 等算法在多目标任务上的扩展。它引入目标空间 $\mathcal G$，每个目标 $g\in\mathcal G$ 对应一个奖励函数：</p><p>$$
+r_g:\mathcal S\times\mathcal A\rightarrow\mathbb R
+$$</p><p>普通 DQN 学习 $Q_\theta(s,a)$；UVFA 把目标也作为网络输入，学习共享的 goal-conditioned Q-function：</p><p>$$
+Q_\theta(s,a,g)
+$$</p><p>它表示：在状态 $s$ 执行动作 $a$，并且当前目标是 $g$ 时，预期能够获得多少长期回报。对应的策略也依赖目标：</p><p>$$
+\pi:\mathcal S\times\mathcal G\rightarrow\mathcal A
+$$</p><h4 id=多目标数据如何收集>多目标数据如何收集</h4><p>每个 episode 开始时，从分布 $p(s_0,g)$ 中采样初始状态和本局目标。目标在这个 episode 中保持不变。</p><p>例如，本局目标是“到达红色位置”。在状态 $s_t$，使用当前状态和红色目标选择动作：</p><p>$$
+a_t\sim\epsilon\text{-greedy}\left(Q_\theta(s_t,\cdot,g)\right)
+$$</p><p>执行动作后，根据本局目标对应的奖励函数计算奖励：</p><p>$$
+r_t=r_g(s_t,a_t)
+$$</p><p>然后向 Replay Buffer 保存一条带有目标的 transition：</p><p>$$
+(s_t,a_t,r_t,s_{t+1},g,d_t)
+$$</p><p>如果这一局有 $T$ 个环境 step，就会向 buffer 加入 $T$ 条带有相同目标 $g$ 的 transition。transition 可以在每个环境 step 后立即写入，不需要等整个 episode 结束才统一保存。</p><p>这一局结束后，下一局会重新采样目标，例如从“红色”换成“蓝色”。经过许多 episode 后，同一个 Replay Buffer 中就会同时包含：</p><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>红色目标的 transition
+</span></span><span style=display:flex><span>蓝色目标的 transition
+</span></span><span style=display:flex><span>绿色目标的 transition
+</span></span></code></pre></td></tr></table></div></div><p>因此，“同时学习多个目标”不是指一个 episode 内不断更换目标，而是不同 episode 采集不同目标的数据，再使用同一个网络统一训练。如果使用多个并行环境，也可以让不同环境同时采集不同目标。</p><h4 id=从-buffer-抽取混合-batch>从 Buffer 抽取混合 Batch</h4><p>训练时，从整个 Replay Buffer 随机抽取一个 mini-batch：</p><p>$$
+\mathcal B=
+{(s_i,a_i,r_i,s&rsquo;<em>i,g_i,d_i)}</em>{i=1}^{B}
+$$</p><p>同一个 batch 中可以混合不同目标。例如：</p><table><thead><tr><th>样本</th><th>当前状态</th><th>实际动作</th><th>目标</th></tr></thead><tbody><tr><td>1</td><td>$s_3$</td><td>左</td><td>红色</td></tr><tr><td>2</td><td>$s_{17}$</td><td>右</td><td>蓝色</td></tr><tr><td>3</td><td>$s_8$</td><td>上</td><td>绿色</td></tr><tr><td>4</td><td>$s_{25}$</td><td>下</td><td>红色</td></tr></tbody></table><p>对于每条样本，使用这条 transition 自己携带的目标 $g_i$ 构造 TD target：</p><p>$$
+y_i=
+r_i+
+\gamma(1-d_i)
+\max_{a&rsquo;}Q_{\theta^-}(s&rsquo;_i,a&rsquo;,g_i)
+$$</p><p>在线网络使用同一个 batch 计算：</p><p>$$
+Q_\theta(s_i,a_i,g_i)
+$$</p><p>整个 batch 的损失为：</p><h1 id=ltheta>$$
+L(\theta)</h1><p>\frac{1}{B}
+\sum_{i=1}^{B}
+\left(Q_\theta(s_i,a_i,g_i)-y_i\right)^2
+$$</p><p>一次梯度更新可以同时包含红色、蓝色和绿色目标的训练信号。虽然不同目标共享同一组网络参数 $\theta$，但目标 $g$ 是输入的一部分，因此同一个状态和动作在不同目标下可以有不同价值：</p><p>$$
+Q_\theta(s,a,\text{红色})
+\ne
+Q_\theta(s,a,\text{蓝色})
+$$</p><p>共享参数还允许网络学习目标之间的共同结构。例如，当目标表示为目标位置时，网络可能学会根据当前位置与目标位置的相对方向选择动作，从而泛化到训练时没有见过的 state-goal 组合。</p><h4 id=为什么一局内固定目标>为什么一局内固定目标</h4><p>$Q(s,a,g)$ 表示目标 $g$ 保持不变时的预期累计回报：</p><h1 id=qsag>$$
+Q(s,a,g)</h1><p>\mathbb E\left[R_t\mid s_t=s,a_t=a,g\right]
+$$</p><p>如果在 episode 中途随意更换目标，前面动作所对应的长期回报定义也会改变，Bellman target 就不再描述同一个任务。因此标准 UVFA 的训练结构是：</p><div class=highlight><div style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#8c8fa1">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>一个 episode 内：目标固定
+</span></span><span style=display:flex><span>不同 episode 间：重新采样目标
+</span></span><span style=display:flex><span>Replay Buffer：混合保存不同目标的 transition
+</span></span><span style=display:flex><span>训练 mini-batch：可以同时包含多个目标
+</span></span><span style=display:flex><span>共享网络：通过输入 g 区分不同任务
+</span></span></code></pre></td></tr></table></div></div><h2 id=on-policy>On-policy</h2><p>用近期策略收集一批数据 → 在这批数据上做有限次更新 → 再用新策略收集数据。</p><h3 id=ppo-proximal-policy-optimization>PPO (Proximal Policy Optimization)</h3><h4 id=两个模型>两个模型</h4><p><strong>Actor (Policy Model)</strong></p><ul><li>学习做出更好的 Action。</li><li>通过 Policy Loss 更新参数。</li></ul><p><strong>Critic (Value Model)</strong></p><ul><li>学习预测当前 State 的 Expected Return。</li><li>通过 Value Loss 更新参数。</li><li>它不负责产生 Reward，而是估计未来能获得多少 Reward。</li></ul><h4 id=step-1-rollout>Step 1. Rollout</h4><p>假设 Memory Manager 当前输入为 State $s$，Actor 采样到 Action <code>UPDATE</code>，记录：</p><p>$$
 \pi_{\mathrm{old}}(\text{UPDATE}\mid s)=0.6,
 \qquad R=1,
 \qquad V_\phi(s)=0.2
@@ -98,4 +190,26 @@ L_{\mathrm{value}}(\phi)
 =\bigl(V_\phi(s)-R\bigr)^2
 =(0.2-1)^2
 =\boxed{0.64}
-$$</p><p>Critic 预测的是期望回报，不要求每次预测都与单次随机 Rollout 的结果一致。</p></div></div></article></main><footer class=site-footer><span>© 2026 Ruoke Zhang</span><span>学习、构建、记录。</span></footer></div></body></html>
+$$</p><p>Critic 预测的是期望回报，不要求每次预测都与单次随机 Rollout 的结果一致。</p><h3 id=grpo>GRPO</h3><p>假设这一轮选择了 4 个任务，每个任务执行 8 次：</p><table><thead><tr><th>名称</th><th>这个例子中包含什么</th><th>用来干什么</th></tr></thead><tbody><tr><td>Group</td><td>同一条任务指令下的 8 条轨迹</td><td>比较奖励，计算各条轨迹的 Advantage</td></tr><tr><td>Rollout Batch</td><td>4 个 Group，共 32 条轨迹</td><td>这一轮收集的全部交互数据</td></tr><tr><td>Mini-batch</td><td>从这批数据中取出的一个小部分</td><td>做一次梯度更新</td></tr></tbody></table><p>通常会把 Mini-batch 中各条轨迹的所有有效动作位置都计入 Loss，再汇总起来做一次参数更新。Mini-batch 也可以混合不同 Group 的轨迹，不要求每个 Group 都完整地放在一起。</p><p>这一个 Rollout Batch 收集完，并完成了对它的训练更新后，再用更新后的模型收集下一批轨迹；新一轮的分母也随之更新。</p><p><strong>Group-relative Advantage</strong></p><p>$$
+A_i=
+\frac{R_i-\operatorname{mean}(R_1,\ldots,R_G)}
+{\operatorname{std}(R_1,\ldots,R_G)+\epsilon}
+$$</p><p><strong>Policy Ratio</strong></p><h1 id=tilde-r_ittheta>$$
+\tilde r_{i,t}(\theta)</h1><p>\frac{\pi_\theta(a_{i,t}\mid o_{i,t},g&rsquo;)}
+{\pi_{\theta_{\mathrm{old}}}(a_{i,t}\mid o_{i,t},g)}
+$$</p><p><strong>GRPO 目标项</strong></p><h1 id=ell_it>$$
+\ell_{i,t}</h1><p>\min\left(
+r_{i,t}A_i,;
+\operatorname{clip}(r_{i,t},1-\varepsilon,1+\varepsilon)A_i
+\right)
+$$</p><p><strong>Mini-batch Loss</strong></p><p>将上述目标项汇总：</p><h1 id=l_textmini-batch>$$
+L_{\text{mini-batch}}</h1><p>-\frac{1}{B}
+\sum_{i\in\text{mini-batch}}
+\frac{1}{T_i}
+\sum_{t=1}^{T_i}\ell_{i,t}
+$$</p><h3 id=dpo>DPO</h3><p>同一个问题，比较两个回答。</p><h1 id=s_mathrmdpo>例如同一个问题 (x)，好回答 (y^+)，差回答 (y^-)：
+[
+s_{\mathrm{DPO}}</h1><h2 id=pi_mathrmrefymid-x_text好回答的概率变化>\underbrace{\log\frac{\pi_\theta(y^+\mid x)}
+{\pi_{\mathrm{ref}}(y^+\mid x)}}_{\text{好回答的概率变化}}</h2><p>\underbrace{\log\frac{\pi_\theta(y^-\mid x)}
+{\pi_{\mathrm{ref}}(y^-\mid x)}}_{\text{差回答的概率变化}}
+]</p></div></div></article></main><footer class=site-footer><span>© 2026 Ruoke Zhang</span><span>学习、构建、记录。</span></footer></div></body></html>

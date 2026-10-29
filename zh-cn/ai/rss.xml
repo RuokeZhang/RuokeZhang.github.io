@@ -6,8 +6,15 @@
     <description>Recent content in AIs on Ruoke Zhang</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 25 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ruokezhang.github.io/zh-cn/ai/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://ruokezhang.github.io/zh-cn/ai/rl/</link>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://ruokezhang.github.io/zh-cn/ai/rl/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Optimal Policy 与 Optimal Q-function&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let $\pi^&lt;em&gt;$ denote an optimal policy, i.e. any policy $\pi^&lt;/em&gt;$ s.t.&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;Q^{\pi^*}(s,a) \ge Q^\pi(s,a)&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;for every $s \in S$, $a \in A$, and any policy $\pi$.&lt;/p&gt;&#xA;&lt;p&gt;All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.&lt;/p&gt;&#xA;&lt;p&gt;对于任意固定的 $(s,a)$，第一步已经确定，后面无论交给哪个最优策略，都能取得相同的最优后续回报。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Deep Learning</title>
       <link>https://ruokezhang.github.io/zh-cn/ai/deep_learning/</link>
@@ -42,13 +49,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ruokezhang.github.io/zh-cn/ai/parallact_bind/</guid>
       <description>&lt;p&gt;视觉/文本/音频，每个模态都产出semantic_emb和spatial_emb&lt;/p&gt;&#xA;&lt;h2 id=&#34;visualencoder&#34;&gt;VisualEncoder&lt;/h2&gt;&#xA;&lt;h3 id=&#34;离线特征&#34;&gt;离线特征&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;用 SigLIP2 自带的 preprocess 把图片 resize / crop / normalize&lt;/li&gt;&#xA;&lt;li&gt;输入分辨率 256，patch size 16。所以一张图会被切成 16 × 16 = 256 个 patch&lt;/li&gt;&#xA;&lt;li&gt;每个 patch 变成向量&lt;/li&gt;&#xA;&lt;li&gt;过 Transformer trunk, 得到[B,256,1152]，也就是一张图片有256个patch，每个patch有1152维&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;在线部分&#34;&gt;在线部分&lt;/h3&gt;&#xA;&lt;h4 id=&#34;semantic_emb&#34;&gt;semantic_emb&lt;/h4&gt;&#xA;&lt;h5 id=&#34;attentionpool&#34;&gt;AttentionPool&lt;/h5&gt;&#xA;&lt;p&gt;query是一个单独学出来的向量，它去看所有patch tokens, 压缩成每张图片一个1152维度的向量&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://ruokezhang.github.io/zh-cn/ai/rl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ruokezhang.github.io/zh-cn/ai/rl/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Optimal Policy 与 Optimal Q-function&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Let $\pi^&lt;em&gt;$ denote an optimal policy, i.e. any policy $\pi^&lt;/em&gt;$ s.t.&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;Q^{\pi^*}(s,a) \ge Q^\pi(s,a)&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;for every $s \in S$, $a \in A$, and any policy $\pi$.&lt;/p&gt;&#xA;&lt;p&gt;All optimal policies have the same Q-function, which is called the optimal Q-function and denoted $Q^*$.&lt;/p&gt;&#xA;&lt;p&gt;对于任意固定的 $(s,a)$，第一步已经确定，后面无论交给哪个最优策略，都能取得相同的最优后续回报。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
